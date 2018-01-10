@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe/component'
+import Component from 'wireframe/src/component'
 import style from './style.css'
 
 const {enhancers: {withProps}, hoistStatics} = $editor
