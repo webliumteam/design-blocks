@@ -1,1 +1,6 @@
-@import "wireframe/src/style.css";
+@import "wireframe-block/src/style.css";
+
+.section {
+  color: #fff;
+  background-color: #333;
+}
