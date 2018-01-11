@@ -1,11 +1,9 @@
 import $editor from 'weblium/editor'
 
-const {pick} = _
-
 const WireframeBlock = ({components: {Text}, style, mods}) => (
   <div className={style.section}>
     <Text bind="title" />
-    {mods.showSubtitle && <Text bind="subtititle" />}
+    {_.get('showSubtitle', mods) && <Text bind="subtititle" />}
   </div>
 )
 
@@ -18,6 +16,6 @@ WireframeBlock.defaultContent = {
   subtititle: 'Wireframe Subtitle',
 }
 
-WireframeBlock.components = pick(['Text'])($editor.components)
+WireframeBlock.components = _.pick(['Text'])($editor.components)
 
 export default WireframeBlock
