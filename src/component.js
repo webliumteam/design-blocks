@@ -6,15 +6,12 @@ class Block extends React.Component {
     $block: PropTypes.object.isRequired,
   }
 
-  getModifierValue(path) {
-    return _.get(['modifier', path], this.props.$block)
-  }
+  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
 
-  getImageSize(fullWidth){
-    return fullWidth
+  getImageSize = (fullWidth) =>
+    fullWidth
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570} 
-  }
+      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
     const {components: {Text, Image, Button, SocialIcons}, mods, style: css} = this.props
@@ -24,13 +21,13 @@ class Block extends React.Component {
       this.getModifierValue('text') ||
       this.getModifierValue('socialIcons')
     )
-    const showButtonGroups =  this.getModifierValue('link') || this.getModifierValue('button')
+    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
 
     return (
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
           <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)}/>
+            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
             <div className={css.article__content}>
               {this.getModifierValue('title') && (
                 <h1 className={css.article__title}>
@@ -53,13 +50,17 @@ class Block extends React.Component {
                   <SocialIcons bind="socialIcons" />
                 </div>
               )}
-              {showButtonGroups && <div className={css['btns-group']}>
-                {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                {this.getModifierValue('button') && <Button
-                  className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                  bind="button"
-                />}
-              </div>}
+              {showButtonGroups && (
+                <div className={css['btns-group']}>
+                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
+                  {this.getModifierValue('button') && (
+                    <Button
+                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+                      bind="button"
+                    />
+                  )}
+                </div>
+              )}
             </div>
           </article>
         </div>
