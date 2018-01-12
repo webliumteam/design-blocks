@@ -1,10 +1,10 @@
 import $editor from 'weblium/editor'
 
 class Block extends React.Component {
-  // static propTypes = {
-  //   components: PropTypes.object.isRequired,
-  //   mods: PropTypes.object
-  // }
+  static propTypes = {
+    components: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
+  }
 
   getModifierValue(path) {
     return _.get(['modifier', path], this.props.$block)
