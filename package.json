@@ -1,6 +1,6 @@
 {
-  "name": "wireframe-master",
-  "version": "0.0.1",
-  "description": "",
-  "main": "src/index.js"
+    "name": "wireframe-zapdos-header",
+    "version": "0.0.1",
+    "description": "",
+    "main": "src/index.js"
 }
