@@ -8,80 +8,105 @@ class Block extends React.Component {
 
   getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
 
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Image}, style: css} = this.props
+    return (
+      <article className={classNames(css.item, className)}>
+        {children}
+        <div className={css['item__picture-wrapper']}>
+          <Image
+            pictureClassName={css.item__picture}
+            imgClassName={css.item__image}
+            bind={`awards[${index}].picture`}
+            size={{'min-width: 320px': 450, 'min-width: 480px': 358}}
+          />
+        </div>
+        {this.getModifierValue('heading') && (
+          <p className={css.item__title}>
+            <Text bind={`awards[${index}].title`} />
+          </p>
+        )}
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, mods, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
+    const {components: {Collection, Text, Button}, mods, style: css} = this.props
     const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
 
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+          {this.getModifierValue('title') && (
+            <h1 className={css.title}>
+              <Text bind="title" />
+            </h1>
+          )}
+          {this.getModifierValue('subtitle') && (
+            <p className={css.subtitle}>
+              <Text bind="subtitle" />
+            </p>
+          )}
+          <Collection
+            className={css['items-wrapper']}
+            bind="awards"
+            Item={this.collectionItem}
+          />
+          {this.getModifierValue('button') && (
+            <div className={css['btns-group']}>
+              <Button
+                className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+                bind="cta"
+              />
             </div>
-          </article>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+  awards: [
+    {
+      id: '8130928a-e7c6-4e26-a3ca-a820fa36380e',
+      title: "America's Most Admired Corporations",
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Award illustration photo',
+      },
+    },
+    {
+      id: '057c27bf-4977-4b28-bf35-f4a6db60d5aa',
+      title: '100 Best Companies',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Award illustration photo',
+      },
+    },
+    {
+      id: 'c8e93041-896b-4b78-b8d0-37e21a79070f',
+      title: 'Best Places to Work for LGBT Equality',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Award illustration photo',
+      },
+    },
+    {
+      id: '3ea9fdda-c0e6-418e-9bfe-7bf1b06a534d',
+      title: '2017 Employer Support Freedom Award',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Award illustration photo',
+      },
+    },
+  ],
+  title: 'Awards',
+  subtitle:
+    'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain',
+  cta: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -92,87 +117,33 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Main button',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
     id: 'button',
     type: 'checkbox',
-    label: 'Contact us button',
+    label: 'Button',
     defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
   },
   {
     id: 'title',
     type: 'checkbox',
     label: 'Block title',
+    defaultValue: true,
+  },
+  {
+    id: 'subtitle',
+    type: 'checkbox',
+    label: 'Block description',
+    defaultValue: false,
+  },
+  {
+    id: 'heading',
+    type: 'checkbox',
+    label: 'Awards title',
     defaultValue: true,
   },
 ]
