@@ -1,110 +1,115 @@
 import $editor from 'weblium/editor'
+import css from './style.css'
 
 class Block extends React.Component {
-  // static propTypes = {
-  //   components: PropTypes.object.isRequired,
-  //   mods: PropTypes.object
-  // }
-
-  getModifierValue(path) {
-    return _.get(['modifier', path], this.props.$block)
+  static propTypes = {
+    components: PropTypes.object.isRequired,
   }
 
-  getImageSize(fullWidth){
-    return fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570} 
-  }
+  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+
+
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, mods, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
+    const {components: {Logo, Text, Map, SocialIcons}} = this.props
+
+    const textWithSocials = !(
+      this.getModifierValue('logo') ||
+      this.getModifierValue('phone') ||
+      this.getModifierValue('email') ||
       this.getModifierValue('socialIcons')
     )
-    const showButtonGroups =  this.getModifierValue('link') || this.getModifierValue('button')
 
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={classNames(css.section, {[css['section--state-8']]: textWithSocials})}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)}/>
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && <div className={css['btns-group']}>
-                {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                {this.getModifierValue('button') && <Button
-                  className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                  bind="button"
-                />}
+          <h1 className={css.title}>
+            <Text bind="title" />
+          </h1>
+          <div className={css.section__main}>
+            {this.getModifierValue('map') && <div className={css['map-wrapper']}>
+              <div className={css.map}>
+                <Map className={css.map__preview} bind="map" />
+              </div>
+            </div>}
+            <div className={css.contacts}>
+              {this.getModifierValue('logo') && <div className={css['logo-wrapper']}>
+                <Logo bind="logo" className={css.logo} textClassName={css.logo__title} />
               </div>}
+              <ul className={css['contacts-list']}>
+                <li className={css['contacts-list__item']}>
+                  <h3 className={css.contacts__title}>
+                    <Text bind="address-title" />
+                  </h3>
+                  <p className={css.contacts__desc}>
+                    <Text bind="address-content" />
+                  </p>
+                </li>
+                {this.getModifierValue('phone') && <li className={css['contacts-list__item']}>
+                  <h3 className={css.contacts__title}>
+                    <Text bind="phone-title" />
+                  </h3>
+                  <p className={css.contacts__desc}>
+                    <Text bind="phone-content" />
+                  </p>
+                </li>}
+                {this.getModifierValue('email') && <li className={css['contacts-list__item']}>
+                  <h3 className={css.contacts__title}>
+                    <Text bind="email-title" />
+                  </h3>
+                  <p className={css.contacts__desc}>
+                    <Text bind="email-content" />
+                  </p>
+                </li>}
+              </ul>
+              {this.getModifierValue('social') && <SocialIcons className={css.socials} bind="socialIcons" />}
             </div>
-          </article>
+          </div>
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
+  title: 'Contacts',
+  logo: {
+    text: {
+      value: 'Company Logo',
+      tagName: 'h2'
     },
-    textValue: 'Contact us',
   },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
+  'address-title': 'Address',
+  'phone-title': 'Phone',
+  'email-title': 'E-mail',
+  'address-content': 'Head office in London - 36 Regent St.',
+  'phone-content': '+1 (234) 567 89 00',
+  'email-content': 'mysite@weblium.com',
+  map: {
+    preset: 'default',
+    height: '100%',
+    center: {
+      lat: 50.4589633,
+      lng: 30.5247585,
     },
-    textValue: 'More about us',
+    zoom: 18,
+    activeMarker: '2aceeb6f-623c-41f8-b0d3-6f0f085e8e48',
+    disableDefaultUI: true,
+    allowZoomOnScroll: false,
+    markers: [
+      {
+        position: {
+          lat: 50.4589633,
+          lng: 30.5247585,
+        },
+        name: 'Best Marker',
+        description: 'This is marker description',
+        address: 'Kiev Poshtova Ploshcha',
+        id: '2aceeb6f-623c-41f8-b0d3-6f0f085e8e48',
+      },
+    ],
   },
   socialIcons: {
     networks: [
@@ -129,7 +134,7 @@ Block.defaultContent = {
       border: 'circle',
       innerFill: true,
       preset: 'preset001',
-      padding: 20,
+      marginRight: 20,
       color: '',
       sizes: [10, 20, 30, 40],
       size: '40px',
@@ -139,39 +144,33 @@ Block.defaultContent = {
 
 Block.modifierScheme = [
   {
-    id: 'text',
+    id: 'map',
     type: 'checkbox',
-    label: 'Company main text',
+    label: 'Map',
     defaultValue: true,
   },
   {
-    id: 'link',
+    id: 'logo',
     type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
+    label: 'Logo',
     defaultValue: true,
   },
   {
-    id: 'socialIcons',
+    id: 'phone',
     type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
+    label: 'Phone text block',
+    defaultValue: true,
   },
   {
-    id: 'subtitle',
+    id: 'email',
     type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
+    label: 'E-mail text block',
+    defaultValue: true,
   },
   {
-    id: 'title',
+    id: 'social',
     type: 'checkbox',
-    label: 'Block title',
+    label: 'Social Media Buttons',
     defaultValue: true,
   },
 ]
