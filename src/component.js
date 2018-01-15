@@ -4,175 +4,153 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
-
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
+    const {components: {Text, Menu, Logo}, style: css} = this.props
 
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
+      <footer className={css.footer}>
+        <div className={css.footer__inner}>
+          {this.getModifierValue('title') && (
+            <div className={css.logo}>
+              <Logo
+                bind="logo"
+                textClassName={css.logo__title}
+              />
               {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
+                <p className={css.logo__subtitle}>
                   <Text bind="subtitle" />
                 </p>
               )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
             </div>
-          </article>
+          )}
+          <nav className={css.nav}>
+            <Menu
+              className={css['nav-list']}
+              itemClassName={css['nav-list__item']}
+              linkClassName={css['nav-list__link']}
+              bind="menu"
+            />
+          </nav>
+          <section className={css.footer__bottom}>
+            <small className={css.footer__meta}>
+              <Text bind="copyright" />
+            </small>
+            <small className={css.footer__meta}>
+              <Text bind="additional" />
+            </small>
+          </section>
         </div>
-      </section>
+      </footer>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Menu', 'Logo'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
+  logo: {
+    text: {
+      value: 'CompanyLogo',
+    },
   },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
+  subtitle: 'CompanySlogan',
+  copyright: 'Produced by Weblium.com. All rights Reserved',
+  additional: 'Demo preview for {Template name} {Concept name}',
+  menu: [
+    {
+      id: '10c06b19-6e0d-4ad1-b1d5-213501dd321c',
+      metadata: {
+        displayName: 'About us',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
+    {
+      id: '29f03a3e-117d-490e-963c-ace78d85258f',
+      metadata: {
+        displayName: 'Services',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
         },
       },
     },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
+    {
+      id: '8914ae89-ca69-4b81-8d70-68fefdb22f49',
+      metadata: {
+        displayName: 'Projects',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
       },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
     },
-  },
+    {
+      id: '2bf3b2aa-061b-42af-afd2-48301733a536',
+      metadata: {
+        displayName: 'Testimonials',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'a24bbd34-4a84-451d-82bf-929f35264e2d',
+      metadata: {
+        displayName: 'Contact us',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+  ],
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
+    id: 'title',
     type: 'checkbox',
-    label: 'Company main text',
+    label: 'Company name',
     defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
   },
   {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
+    label: 'Company slogan',
     defaultValue: true,
   },
 ]
