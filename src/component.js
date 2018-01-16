@@ -4,84 +4,57 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
-
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
+    const {components: {Text, Button}, style: css} = this.props
+    const showButtonGroups = this.getModifierValue('primary-btn') || this.getModifierValue('secondary-btn')
+    const alignClass = this.getModifierValue('align') !== 'left'
+      ? css[`section--${this.getModifierValue('align')}`]
+      : ''
 
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={classNames(css.section, alignClass)}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
+          <h1 className={css.title}>
+            <Text bind="title" />
+          </h1>
+          {this.getModifierValue('subtitle') && (
+            <p className={css.subtitle}>
+              <Text bind="subtitle" />
+            </p>
+          )}
+          {showButtonGroups && (
+            <div className={css['btns-group']}>
+              {this.getModifierValue('primary-btn') && (
+                <Button
+                  className={classNames(css.button, css['button--primary'], css['button--size-lg'])}
+                  bind="cta-1"
+                />
               )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
+              {this.getModifierValue('secondary-btn') && (
+                <Button
+                  className={classNames(css.button, css['button--secondary'], css['button--size-lg'])}
+                  bind="cta-2"
+                />
               )}
             </div>
-          </article>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Button'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+  title: 'Type something',
+  subtitle: 'Type something',
+  'cta-1': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -92,9 +65,9 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
+    textValue: 'Main button (L)',
   },
-  link: {
+  'cta-2': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -105,75 +78,48 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Additional button (L)',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
     id: 'subtitle',
     type: 'checkbox',
     label: 'Subtitle',
-    defaultValue: false,
+    defaultValue: true,
   },
   {
-    id: 'title',
+    id: 'primary-btn',
     type: 'checkbox',
-    label: 'Block title',
+    label: 'Primary button',
     defaultValue: true,
+  },
+  {
+    id: 'secondary-btn',
+    type: 'checkbox',
+    label: 'Secondary button',
+    defaultValue: true,
+  },
+  {
+    id: 'align',
+    type: 'radio-button-group',
+    name: 'Aligning',
+    defaultValue: 'left',
+    children: [
+      {
+        id: 'left',
+        label: 'left',
+      },
+      {
+        id: 'center',
+        label: 'center',
+      },
+      {
+        id: 'right',
+        label: 'right',
+      },
+    ],
   },
 ]
 
