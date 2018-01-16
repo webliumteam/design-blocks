@@ -1,8 +1,6 @@
 {
-  "text": true,
-  "socialIcons": true,
+  "image": false,
   "subtitle": true,
-  "link": true,
-  "button": true,
-  "title": true
+  "position": false,
+  "publishDate": true
 }
