@@ -4,84 +4,199 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Button, Image}, style: css} = this.props
+    return (
+      <article className={classNames(css.item, className)}>
+        {children}
+
+        <div className={css.item__inner}>
+          <div title="Read more" className={css['item__pic-link']}>
+            <Image
+              pictureClassName={css.item__pic}
+              imgClassName={css.item__img}
+              bind={`team[${index}].picture`}
+            />
+          </div>
+          <h2 className={css.item__title}>
+            <Text bind={`team[${index}].name`} />
+          </h2>
+          <p className={css.item__position}>
+            <Text bind={`team[${index}].position`} />
+          </p>
+          {this.getModifierValue('member-desc') && (
+            <p className={css.item__desc}>
+              <Text bind={`team[${index}].description`} />
+            </p>
+          )}
+          {this.getModifierValue('member-link') && (
+            <Button className={css.link} bind={`team[${index}].more`} />
+          )}
+          {this.getModifierValue('member-email') && (
+            <div className={css['item__email-wrapper']}>
+              <Button className={css.item__email} bind={`team[${index}].email`} />
+            </div>
+          )}
+        </div>
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-
+    const {components: {Collection, Text, Button}, style: css} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+          {this.getModifierValue('title') && (
+            <h1 className={css.title}>
+              <Text bind="title" />
+            </h1>
+          )}
+          {this.getModifierValue('subtitle') && (
+            <p className={css.subtitle}>
+              <Text bind="subtitle" />
+            </p>
+          )}
+          <Collection className={css['items-wrapper']} bind="team" Item={this.collectionItem} />
+          {this.getModifierValue('block-button') && (
+            <div className={css['btns-group']}>
+              <Button
+                className={classNames(css.button, css['button--size-md'], css['button--secondary'])}
+                bind="cta"
+              />
             </div>
-          </article>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+  team: [
+    {
+      id: '06567442-178b-46ab-a822-661218143093',
+      name: 'Glen Riley',
+      position: 'Professional',
+      description:
+        'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Glen Riley photo',
+      },
+      more: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Know more',
+      },
+      email: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'glen.riley@gmail.com',
+      },
+    },
+    {
+      id: 'd7b368a3-75c8-4039-80ef-15c783140026',
+      name: 'Glen Riley',
+      position: 'Professional',
+      description:
+        'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Glen Riley photo',
+      },
+      more: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Know more',
+      },
+      email: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'glen.riley@gmail.com',
+      },
+    },
+    {
+      id: 'b29ef90b-8d5c-4fd9-b6e4-64e248da29db',
+      name: 'Glen Riley',
+      position: 'Professional',
+      description:
+        'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Glen Riley photo',
+      },
+      more: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Know more',
+      },
+      email: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'glen.riley@gmail.com',
+      },
+    },
+  ],
+  title: 'Our Team',
+  subtitle:
+    'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
+  cta: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -92,87 +207,45 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Medium button',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
+    id: 'title',
     type: 'checkbox',
-    label: 'Company main text',
+    label: 'Block title',
     defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
   },
   {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
+    label: 'Team description',
+    defaultValue: true,
   },
   {
-    id: 'title',
+    id: 'block-button',
     type: 'checkbox',
-    label: 'Block title',
+    label: 'Block button',
+    defaultValue: true,
+  },
+  {
+    id: 'member-link',
+    type: 'checkbox',
+    label: 'Team member link',
+    defaultValue: true,
+  },
+  {
+    id: 'member-desc',
+    type: 'checkbox',
+    label: 'Team member bio',
+    defaultValue: true,
+  },
+  {
+    id: 'member-email',
+    type: 'checkbox',
+    label: 'Team member email',
     defaultValue: true,
   },
 ]
