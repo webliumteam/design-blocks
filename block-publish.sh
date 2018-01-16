@@ -17,8 +17,9 @@ done
 
 wm-cli login -u $USERNAME -h $HOST && (
   for block in "${array[@]}"; do
-    git checkout "w/zapdos/${block}" && (
-      git pull origin "w/zapdos/${block}"
+    BRANCH="w/zapdos/${block}"
+    git checkout $BRANCH && (
+      git pull origin $BRANCH
       REPLACED=${HOST//:/.}
       CONFIG_FILE="block.${REPLACED//\/\//}"
 
@@ -30,10 +31,11 @@ wm-cli login -u $USERNAME -h $HOST && (
         ENTRYPOINT="./src/index.js"
 
         wm-cli block init --name=${NAME//\"} --categories=${CATEGORY//\"} --entrypoint=./${ENTRYPOINT//\"} wireframe true
-        # if [$HOST -ne LOCALHOST];then
+        if [$HOST -ne LOCALHOST];then
           git add $CONFIG_FILE
           git commit -m "init block, add ${CONFIG_FILE} file"
-        # fi
+          git push origin $BRANCH
+        fi
       fi
 
       wm-cli block commit
