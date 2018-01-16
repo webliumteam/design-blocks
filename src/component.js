@@ -1,87 +1,173 @@
 import $editor from 'weblium/editor'
+import css from './style.css'
 
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
-
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Button, Image}} = this.props
+    return (
+      <article className={classNames(css.article, className)}>
+        {children}
+        <div className={css['article__picture-wrapper']}>
+          <Image
+            pictureClassName={css.article__picture}
+            imgClassName={css.article__image}
+            bind={`services[${index}].picture`}
+          />
+        </div>
+        <h2 className={css.article__title}>
+          <Text bind={`services[${index}].title`} />
+        </h2>
+        <p className={css.article__text}>
+          <Text bind={`services[${index}].description`} />
+        </p>
+        <Button className={css.article__link} bind={`services[${index}].cta`} />
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-
+    const {components: {Collection, Text, Button}} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+          <header className={css.section__header}>
+            <h1 className={css.title}>
+              <Text bind="title" />
+            </h1>
+            <p className={css.subtitle}>
+              <Text bind="description" />
+            </p>
+          </header>
+          <Collection
+            className={css['articles-wrapper']}
+            bind="services"
+            Item={this.collectionItem}
+            fakeHelpers={{
+              count: 3,
+              className: css.fake,
+            }}
+          />
+          <div className={css['btns-group']}>
+            <Button
+              className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+              bind="button-1"
+            />
+            <Button
+              className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+              bind="button-2"
+            />
+          </div>
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+  services: [
+    {
+      id: '900aa334-14f2-4c05-b078-78099a5725e5',
+      title: 'Service 1',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Service illustration photo',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+      },
+    },
+    {
+      id: 'cfb2c56d-7708-4459-bdf2-6780f4ba62b9',
+      title: 'Service 2',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Service illustration photo',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+      },
+    },
+    {
+      id: 'eea21546-b56e-406b-8cba-18a5a5ec1820',
+      title: 'Service 3',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Service illustration photo',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+      },
+    },
+    {
+      id: 'aa5d3a04-43b7-4bb3-9c7a-00e1986f359e',
+      title: 'Service 4',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Service illustration photo',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+      },
+    },
+  ],
+  title: 'Services We Provide',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  'button-1': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -92,9 +178,9 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
+    textValue: 'Book a service',
   },
-  link: {
+  'button-2': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -105,74 +191,39 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'All services',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
+    label: 'Services description',
     defaultValue: false,
   },
   {
-    id: 'title',
+    id: 'logo',
     type: 'checkbox',
-    label: 'Block title',
+    label: 'Logo',
+    defaultValue: true,
+  },
+  {
+    id: 'phone',
+    type: 'checkbox',
+    label: 'Phone text block',
+    defaultValue: true,
+  },
+  {
+    id: 'email',
+    type: 'checkbox',
+    label: 'E-mail text block',
+    defaultValue: true,
+  },
+  {
+    id: 'social',
+    type: 'checkbox',
+    label: 'Social Media Buttons',
     defaultValue: true,
   },
 ]
