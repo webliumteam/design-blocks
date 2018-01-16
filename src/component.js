@@ -4,84 +4,168 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Button, Image}, style: css} = this.props
+    return (
+      <article className={classNames(css.article, className)}>
+        {children}
+        <div className={css['article__picture-wrapper']}>
+          <Image
+            pictureClassName={css.article__picture}
+            imgClassName={css.article__image}
+            bind={`projects[${index}].picture`}
+            size={{
+              'min-width: 320px': 450,
+              'min-width: 480px': 768,
+              'min-width: 768px': 962,
+              'min-width: 992px': 586,
+            }}
+          />
+        </div>
+        <div className={css.article__content}>
+          {this.getModifierValue('project-category') && (
+            <p className={css.article__caption}>
+              <Text bind={`projects[${index}].subtitle`} />
+            </p>
+          )}
+          <h2 className={css.article__title}>
+            <Text bind={`projects[${index}].title`} />
+          </h2>
+          {this.getModifierValue('project-description') && (
+            <p className={css.article__text}>
+              <Text bind={`projects[${index}].text`} />
+            </p>
+          )}
+          {this.getModifierValue('project-button') && (
+            <Button className={css.article__link} bind={`projects[${index}].cta`} />
+          )}
+        </div>
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-
+    const {components: {Collection, Text, Button}, style: css} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+          <header className={css.section__header}>
+            {this.getModifierValue('title') && (
+              <h1 className={css.title}>
+                <Text bind="title" />
+              </h1>
+            )}
+            {this.getModifierValue('subtitle') && (
+              <p className={css.subtitle}>
+                <Text bind="subtitle" />
+              </p>
+            )}
+          </header>
+          <Collection
+            className={css['articles-wrapper']}
+            bind="projects"
+            Item={this.collectionItem}
+          />
+          {this.getModifierValue('block-button') && (
+            <div className={css['btns-group']}>
+              <Button
+                className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+                bind="cta"
+              />
             </div>
-          </article>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+  projects: [
+    {
+      id: 'e9ec34d7-3cc6-49f3-a9ad-6ea69f59409c',
+      title: 'Project 1',
+      subtitle: 'UX DESIGN',
+      text:
+        'A side-project with the goal to create a product that does one job incredibly well and learn a new programming language along the way.',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Project 1',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+      },
+    },
+    {
+      id: '9310272a-1fa2-4876-b1db-a879bbd4bc52',
+      title: 'Project 2',
+      subtitle: 'BRANDING',
+      text:
+        'A side-project with the goal to create a product that does one job incredibly well and learn a new programming language along the way.',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Project 2',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+      },
+    },
+    {
+      id: 'fdb764de-b808-4248-9c32-b423b71080bd',
+      title: 'Project 3',
+      subtitle: 'UX DESIGN',
+      text:
+        'A side-project with the goal to create a product that does one job incredibly well and learn a new programming language along the way.',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Project 3',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+      },
+    },
+  ],
+  title: 'Our Projects',
+  subtitle:
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  cta: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -92,76 +176,16 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'All projects',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
+    id: 'title',
     type: 'checkbox',
-    label: 'Company main text',
+    label: 'Block title',
     defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
   },
   {
     id: 'subtitle',
@@ -170,9 +194,27 @@ Block.modifierScheme = [
     defaultValue: false,
   },
   {
-    id: 'title',
+    id: 'block-button',
     type: 'checkbox',
-    label: 'Block title',
+    label: 'Block button',
+    defaultValue: true,
+  },
+  {
+    id: 'project-category',
+    type: 'checkbox',
+    label: 'Project category',
+    defaultValue: true,
+  },
+  {
+    id: 'project-description',
+    type: 'checkbox',
+    label: 'Project description',
+    defaultValue: true,
+  },
+  {
+    id: 'project-button',
+    type: 'checkbox',
+    label: 'Project button',
     defaultValue: true,
   },
 ]
