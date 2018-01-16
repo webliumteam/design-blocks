@@ -6,25 +6,28 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
   }
 
+  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+
   collectionItem = ({index, children, className}) => {
     const {components: {Text, Button, Image}} = this.props
     return (
       <article className={classNames(css.article, className)}>
         {children}
-        <div className={css['article__picture-wrapper']}>
+        {this.getModifierValue('image') && <div className={css['article__picture-wrapper']}>
           <Image
             pictureClassName={css.article__picture}
             imgClassName={css.article__image}
             bind={`services[${index}].picture`}
+            size={{'min-width: 320px': 446, 'min-width: 480px': 738, 'min-width: 768px': 460}}
           />
-        </div>
-        <h2 className={css.article__title}>
+        </div>}
+        {this.getModifierValue('heading') && <h2 className={css.article__title}>
           <Text bind={`services[${index}].title`} />
-        </h2>
-        <p className={css.article__text}>
+        </h2>}
+        {this.getModifierValue('body') && <p className={css.article__text}>
           <Text bind={`services[${index}].description`} />
-        </p>
-        <Button className={css.article__link} bind={`services[${index}].cta`} />
+        </p>}
+        {this.getModifierValue('link') && <Button className={css.article__link} bind={`services[${index}].cta`} />}
       </article>
     )
   }
@@ -34,14 +37,14 @@ class Block extends React.Component {
     return (
       <section className={css.section}>
         <div className={css.section__inner}>
-          <header className={css.section__header}>
-            <h1 className={css.title}>
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && <header className={css.section__header}>
+            {this.getModifierValue('title') && <h1 className={css.title}>
               <Text bind="title" />
-            </h1>
-            <p className={css.subtitle}>
+            </h1>}
+            {this.getModifierValue('subtitle') && <p className={css.subtitle}>
               <Text bind="description" />
-            </p>
-          </header>
+            </p>}
+          </header>}
           <Collection
             className={css['articles-wrapper']}
             bind="services"
@@ -51,16 +54,12 @@ class Block extends React.Component {
               className: css.fake,
             }}
           />
-          <div className={css['btns-group']}>
-            <Button
-              className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-              bind="button-1"
-            />
+          {this.getModifierValue('button') && <div className={css['btns-group']}>
             <Button
               className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
               bind="button-2"
             />
-          </div>
+          </div>}
         </div>
       </section>
     )
@@ -197,33 +196,45 @@ Block.defaultContent = {
 
 Block.modifierScheme = [
   {
+    id: 'title',
+    type: 'checkbox',
+    label: 'Block title',
+    defaultValue: true,
+  },
+  {
     id: 'subtitle',
     type: 'checkbox',
     label: 'Services description',
     defaultValue: false,
   },
   {
-    id: 'logo',
+    id: 'image',
     type: 'checkbox',
-    label: 'Logo',
+    label: 'Image',
     defaultValue: true,
   },
   {
-    id: 'phone',
+    id: 'heading',
     type: 'checkbox',
-    label: 'Phone text block',
+    label: 'Service title',
     defaultValue: true,
   },
   {
-    id: 'email',
+    id: 'body',
     type: 'checkbox',
-    label: 'E-mail text block',
+    label: 'Service main text',
     defaultValue: true,
   },
   {
-    id: 'social',
+    id: 'link',
     type: 'checkbox',
-    label: 'Social Media Buttons',
+    label: 'Link',
+    defaultValue: true,
+  },
+  {
+    id: 'button',
+    type: 'checkbox',
+    label: 'Secondary button',
     defaultValue: true,
   },
 ]
