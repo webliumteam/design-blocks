@@ -4,84 +4,118 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Icon}, style} = this.props
+    return (
+      <article className={classNames(style.item, className)}>
+        {children}
+        <div className={style.item__icon}>
+          <Icon bind={`articles[${index}].icon`} />
+        </div>
+        <h2 className={style.item__title}>
+          <Text bind={`articles[${index}].title`} />
+        </h2>
+        {this.getModifierValue('item-description') && (
+          <p className={style.item__desc}>
+            <Text bind={`articles[${index}].description`} />
+          </p>
+        )}
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-
+    const {components: {Collection, Text, Button}, style} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          {this.getModifierValue('title') && (
+            <h1 className={style.title}>
+              <Text bind="title" />
+            </h1>
+          )}
+          {this.getModifierValue('subtitle') && (
+            <p className={style.subtitle}>
+              <Text bind="description" />
+            </p>
+          )}
+          <Collection
+            className={style['items-wrapper']}
+            bind="articles"
+            Item={this.collectionItem}
+          />
+          <div className={style['btns-group']}>
+            {this.getModifierValue('button-secondary') && (
+              <Button
+                className={classNames(
+                  style.button,
+                  style['button--secondary'],
+                  style['button--size-md'],
+                )}
+                bind="button-1"
+              />
+            )}
+            {this.getModifierValue('button-primary') && (
+              <Button
+                className={classNames(
+                  style.button,
+                  style['button--primary'],
+                  style['button--size-md'],
+                )}
+                bind="button-2"
+              />
+            )}
+          </div>
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+  articles: [
+    {
+      id: 'f822d787-b3e2-432d-a03e-689c58efb302',
+      title: 'Our mission',
+      icon: {
+        svg:
+          "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 16'><path d='M22.48 1.054L5.808 12.977 3.245 4.833l3.055 2.1c.437.297 1.02.262 1.416-.083l4.803-4.186 2.45 2.072 1.93-1.374L13.255.274c-.437-.366-1.076-.366-1.506.007L6.87 4.537 1.807 1.06C1.398.78.864.793.468 1.076c-.395.29-.562.8-.416 1.27l4.026 12.83c.11.35.39.628.736.745.118.042.243.062.368.062.236 0 .472-.076.673-.214L21.23 4.77l-2.102 8.18-3.415-2.356-1.986 1.423 5.456 3.758c.306.214.7.262 1.056.13.353-.13.616-.427.714-.786L24.25 2.283c.12-.463-.07-.96-.464-1.23-.396-.262-.91-.262-1.305 0z'></path></svg>",
+      },
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+    },
+    {
+      id: '18ce5632-46d1-4c9e-b249-ca0e37f665c2',
+      title: 'Our mission',
+      icon: {
+        svg:
+          "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 16'><path d='M22.48 1.054L5.808 12.977 3.245 4.833l3.055 2.1c.437.297 1.02.262 1.416-.083l4.803-4.186 2.45 2.072 1.93-1.374L13.255.274c-.437-.366-1.076-.366-1.506.007L6.87 4.537 1.807 1.06C1.398.78.864.793.468 1.076c-.395.29-.562.8-.416 1.27l4.026 12.83c.11.35.39.628.736.745.118.042.243.062.368.062.236 0 .472-.076.673-.214L21.23 4.77l-2.102 8.18-3.415-2.356-1.986 1.423 5.456 3.758c.306.214.7.262 1.056.13.353-.13.616-.427.714-.786L24.25 2.283c.12-.463-.07-.96-.464-1.23-.396-.262-.91-.262-1.305 0z'></path></svg>",
+      },
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+    },
+    {
+      id: '7986b4e0-751f-48f6-8861-5ace080e284b',
+      title: 'Our mission',
+      icon: {
+        svg:
+          "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 16'><path d='M22.48 1.054L5.808 12.977 3.245 4.833l3.055 2.1c.437.297 1.02.262 1.416-.083l4.803-4.186 2.45 2.072 1.93-1.374L13.255.274c-.437-.366-1.076-.366-1.506.007L6.87 4.537 1.807 1.06C1.398.78.864.793.468 1.076c-.395.29-.562.8-.416 1.27l4.026 12.83c.11.35.39.628.736.745.118.042.243.062.368.062.236 0 .472-.076.673-.214L21.23 4.77l-2.102 8.18-3.415-2.356-1.986 1.423 5.456 3.758c.306.214.7.262 1.056.13.353-.13.616-.427.714-.786L24.25 2.283c.12-.463-.07-.96-.464-1.23-.396-.262-.91-.262-1.305 0z'></path></svg>",
+      },
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+    },
+  ],
+  title: 'Why Choose Us',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  'button-1': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -92,9 +126,9 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
+    textValue: 'Medium button',
   },
-  link: {
+  'button-2': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -105,75 +139,40 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Medium button',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
+    id: 'title',
     type: 'checkbox',
-    label: 'Company main text',
+    label: 'Advantages title',
     defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
   },
   {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
+    label: 'Advantages description',
     defaultValue: false,
   },
   {
-    id: 'title',
+    id: 'item-description',
     type: 'checkbox',
-    label: 'Block title',
+    label: 'Advantages item description',
     defaultValue: true,
+  },
+  {
+    id: 'button-secondary',
+    type: 'checkbox',
+    label: 'Secondary Button',
+    defaultValue: false,
+  },
+  {
+    id: 'button-primary',
+    type: 'checkbox',
+    label: 'Primary Button',
+    defaultValue: false,
   },
 ]
 
