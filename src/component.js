@@ -4,84 +4,164 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Button, Image}, style: css} = this.props
+    return (
+      <article className={classNames(css.article, className)}>
+        {children}
+        {this.getModifierValue('post-image') && (
+          <div className={css['article__picture-wrapper']}>
+            <Image
+              pictureClassName={css.article__picture}
+              imgClassName={css.article__image}
+              bind={`blog[${index}].picture`}
+            />
+          </div>
+        )}
+        {this.getModifierValue('post-publish-date') && (
+          <small className={css.article__meta}>
+            <Text bind={`blog[${index}].category`} />
+            &nbsp;|&nbsp;
+            <Text bind={`blog[${index}].date`} />
+          </small>
+        )}
+        <h2 className={css.article__title}>
+          <Text bind={`blog[${index}].title`} />
+        </h2>
+        {this.getModifierValue('post-description') && (
+          <p className={css.article__text}>
+            <Text bind={`blog[${index}].description`} />
+          </p>
+        )}
+        {this.getModifierValue('post-link') && (
+          <Button className={css.link} bind={`blog[${index}].cta`} />
+        )}
+      </article>
+    )
+  }
+
+  // {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-
+    const {components: {Collection, Text, Button}, style: css} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+          {this.getModifierValue('title') && (
+            <h1 className={css.title}>
+              <Text bind="title" />
+            </h1>
+          )}
+          <Collection
+            className={css['articles-wrapper']}
+            bind="blog"
+            Item={this.collectionItem}
+            fakeHelpers={{
+              count: 2,
+              className: css.fake,
+            }}
+          />
+          {this.getModifierValue('block-button') && (
+            <div className={css['btns-group']}>
+              <Button
+                className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+                bind="cta"
+              />
             </div>
-          </article>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+  blog: [
+    {
+      id: '21a46d6e-0354-4a96-9af0-928ddae32095',
+      title: 'The two most important questions when scoping your MVP',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+      category: 'Creative Process',
+      date: 'September 22, 2017',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Article illustration photo',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Read more',
+      },
+    },
+    {
+      id: '41db0c4f-46b3-4835-8e77-062de63d018a',
+      title: 'The two most important questions when scoping your MVP',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+      category: 'Creative Process',
+      date: '| September 22, 2017',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Article illustration photo',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Read more',
+      },
+    },
+    {
+      id: 'fff4b459-6e4f-4645-901e-4c1b1aa94e51',
+      title: 'The two most important questions when scoping your MVP',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+      category: 'Creative Process',
+      date: '| September 22, 2017',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Article illustration photo',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Read more',
+      },
+    },
+  ],
+  title: 'Blog',
+  cta: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -92,87 +172,45 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'All blog posts',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
     id: 'title',
     type: 'checkbox',
     label: 'Block title',
+    defaultValue: true,
+  },
+  {
+    id: 'post-publish-date',
+    type: 'checkbox',
+    label: 'Date of publishing',
+    defaultValue: true,
+  },
+  {
+    id: 'post-image',
+    type: 'checkbox',
+    label: 'Post image',
+    defaultValue: true,
+  },
+  {
+    id: 'post-description',
+    type: 'checkbox',
+    label: 'Post main text',
+    defaultValue: true,
+  },
+  {
+    id: 'post-link',
+    type: 'checkbox',
+    label: 'Post link',
+    defaultValue: true,
+  },
+  {
+    id: 'block-button',
+    type: 'checkbox',
+    label: 'Block button',
     defaultValue: true,
   },
 ]
