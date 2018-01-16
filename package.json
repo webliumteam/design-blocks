@@ -8,11 +8,11 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "eslint --fix",
+      "eslint",
       "git add"
     ],
     "src/**/*.css": [
-      "stylelint --fix",
+      "stylelint",
       "git add"
     ]
   },
