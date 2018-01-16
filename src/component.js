@@ -1,5 +1,11 @@
 import $editor from 'weblium/editor'
 
+const setStyleProperties = (properties) => (node) =>
+  properties.map(([propertyName, value]) => node.style.setProperty(propertyName, value))
+
+const resetStyleProperties = (properties) => (node) =>
+  properties.map((propertyName) => node.style.removeProperty(propertyName))
+
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
@@ -9,17 +15,15 @@ class Block extends React.Component {
   state = {
     opened: false,
   }
+
   setStylesForBody = () => {
     const {opened} = this.state
-    const html = document.getElementsByTagName('html')[0]
-    const body = document.body
+    const nodes = [document.getElementsByTagName('html')[0], document.body]
 
     if (opened) {
-      html.classList.add('header-w1__nav--open')
-      body.classList.add('header-w1__nav--open')
+      nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
     } else {
-      html.classList.remove('header-w1__nav--open')
-      body.classList.add('header-w1__nav--open')
+      nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
     }
   }
 
@@ -72,7 +76,7 @@ Block.defaultContent = {
   logo: {
     text: {
       value: 'Company Logo',
-      tagName: 'h2'
+      tagName: 'h2',
     },
   },
   menu: [
