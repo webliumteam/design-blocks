@@ -10,7 +10,7 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button, Image}, style: css} = this.props
+    const {components: {Text, Button, Image, SocialIcons}, style: css} = this.props
     return (
       <article className={classNames(css.item, className)}>
         {children}
@@ -42,6 +42,7 @@ class Block extends React.Component {
               <Button className={css.item__email} bind={`team[${index}].email`} />
             </div>
           )}
+          <SocialIcons className={css.socials} bind={`team[${index}].socialIcons`} />
         </div>
       </article>
     )
@@ -77,7 +78,8 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
+Block.components =
+  _.pick(['Collection', 'Text', 'Button', 'Image', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
   team: [
@@ -117,6 +119,35 @@ Block.defaultContent = {
         },
         textValue: 'glen.riley@gmail.com',
       },
+      socialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'https://facebook.com/',
+          },
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'https://twitter.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          marginRight: 20,
+          color: '',
+          sizes: [15, 25, 35, 45],
+          size: '25px',
+        },
+      },
     },
     {
       id: 'd7b368a3-75c8-4039-80ef-15c783140026',
@@ -154,6 +185,35 @@ Block.defaultContent = {
         },
         textValue: 'glen.riley@gmail.com',
       },
+      socialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'https://facebook.com/',
+          },
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'https://twitter.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          marginRight: 20,
+          color: '',
+          sizes: [15, 25, 35, 45],
+          size: '25px',
+        },
+      },
     },
     {
       id: 'b29ef90b-8d5c-4fd9-b6e4-64e248da29db',
@@ -190,6 +250,35 @@ Block.defaultContent = {
           },
         },
         textValue: 'glen.riley@gmail.com',
+      },
+      socialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'https://facebook.com/',
+          },
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'https://twitter.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          marginRight: 20,
+          color: '',
+          sizes: [15, 25, 35, 45],
+          size: '25px',
+        },
       },
     },
   ],
