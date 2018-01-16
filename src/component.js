@@ -1,4 +1,5 @@
 import $editor from 'weblium/editor'
+import css from './style.css'
 
 class Block extends React.Component {
   static propTypes = {
@@ -6,82 +7,98 @@ class Block extends React.Component {
     $block: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Icon}} = this.props
+    return (
+      <li className={classNames(css.list__item, className)}>
+        {children}
+        {this.getModifierValue('icon') && <div className={css['list__item-icon']} />}
+        <span className={css['list__item-text']}>
+          <Text bind={`careers[${index}].title`} />
+        </span>
+      </li>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-
+    const {components: {Collection, Text, Image, Button}} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
+          <h1 className={css.title}>
+            <Text bind="title" />
+          </h1>
+          {this.getModifierValue('subtitle') && (
+            <p className={css.subtitle}>
+              <Text bind="subtitle" />
+            </p>
+          )}
+          <div className={css.content}>
+            {this.getModifierValue('image') && (
+              <div className={css['media-wrap']}>
+                <Image
+                  pictureClassName={css.media}
+                  imgClassName={css.media__image}
+                  bind="picture"
+                  size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
+                />
+              </div>
+            )}
+            <div className={css.content__main}>
+              {this.getModifierValue('body') && (
+                <p className={css.content__text}>
                   <Text bind="text" />
                 </p>
               )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+
+              <Collection
+                className={css.list}
+                TagName="ul"
+                bind="careers"
+                Item={this.collectionItem}
+              />
             </div>
-          </article>
+          </div>
+          {this.getModifierValue('button') && (
+            <div className={css['btns-group']}>
+              <Button
+                className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+                bind="button-1"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Image', 'Button', 'Icon'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
+  careers: [
+    {
+      title: 'We have more than 40,000 employees worldwide',
+    },
+    {
+      title: 'We serve more than 24,000 pharmacies',
+    },
+    {
+      title: 'We’re in nearly 85% of U.S. hospitals.',
+    },
+  ],
+  title: 'Careers',
+  subtitle:
+    'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of',
   text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
+    "Why consider a future with Cardinal Health? As a global, growing company, we’re able to offer rewarding careers that let you make a positive impact on our customers and communities. We think of ourselves as the business behind healthcare because we focus on making it more cost-effective. We're an essential link that allows healthcare providers to reduce costs, improve operations and increase quality, so that they can offer better care to their patients. Here are a few facts about us:",
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
+    alt: 'Illustration',
   },
-  button: {
+  'button-1': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -92,87 +109,39 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Additional button (M)',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
+    id: 'subtitle',
     type: 'checkbox',
-    label: 'Company main text',
+    label: 'Careers description',
     defaultValue: true,
   },
   {
-    id: 'link',
+    id: 'image',
     type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
+    label: 'Сareers photo',
+    defaultValue: true,
+  },
+  {
+    id: 'body',
+    type: 'checkbox',
+    label: 'Careers main text',
+    defaultValue: true,
+  },
+  {
+    id: 'icon',
+    type: 'checkbox',
+    label: 'Careers icon',
+    defaultValue: true,
   },
   {
     id: 'button',
     type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
+    label: 'Secondary button',
     defaultValue: true,
   },
 ]
