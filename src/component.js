@@ -11,8 +11,12 @@ class Block extends React.Component {
 
   render() {
     const {components: {Text}, style: css} = this.props
+    const alignClass = this.getModifierValue('align') !== 'center'
+      ? css[`section--${this.getModifierValue('align')}`]
+      : ''
+
     return (
-      <section className={css.section}>
+      <section className={classNames(css.section, alignClass)}>
         <div className={css.section__inner}>
           <header className={css.section__header}>
             <h1 className={css.title}>
@@ -82,6 +86,26 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Main text',
     defaultValue: true,
+  },
+  {
+    id: 'align',
+    type: 'radio-button-group',
+    name: 'Aligning',
+    defaultValue: 'center',
+    children: [
+      {
+        id: 'left',
+        label: 'left',
+      },
+      {
+        id: 'center',
+        label: 'center',
+      },
+      {
+        id: 'right',
+        label: 'right',
+      },
+    ],
   },
 ]
 
