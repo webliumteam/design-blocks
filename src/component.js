@@ -11,7 +11,7 @@ class Block extends React.Component {
 
 
   render() {
-    const {components: {Logo, Text, Map, SocialIcons}} = this.props
+    const {components: {Logo, Text, Map, SocialIcons, Button}} = this.props
 
     const textWithSocials = !(
       this.getModifierValue('logo') ||
@@ -50,7 +50,7 @@ class Block extends React.Component {
                     <Text bind="phone-title" />
                   </h3>
                   <p className={css.contacts__desc}>
-                    <Text bind="phone-content" />
+                    <Button bind="phone-link" />
                   </p>
                 </li>}
                 {this.getModifierValue('email') && <li className={css['contacts-list__item']}>
@@ -58,7 +58,7 @@ class Block extends React.Component {
                     <Text bind="email-title" />
                   </h3>
                   <p className={css.contacts__desc}>
-                    <Text bind="email-content" />
+                    <Button bind="email-link" />
                   </p>
                 </li>}
               </ul>
@@ -71,7 +71,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons', 'Button'])($editor.components)
 
 Block.defaultContent = {
   title: 'Contacts',
@@ -85,8 +85,28 @@ Block.defaultContent = {
   'phone-title': 'Phone',
   'email-title': 'E-mail',
   'address-content': 'Head office in London - 36 Regent St.',
-  'phone-content': '+1 (234) 567 89 00',
-  'email-content': 'mysite@weblium.com',
+  'phone-link': {
+    actionConfig: {
+      action: 'external',
+      actions: {
+        external: {
+          url: 'tel:+12345678900'
+        }
+      },
+    },
+    textValue: '+1 (234) 567 89 00',
+  },
+  'email-link': {
+    actionConfig: {
+      action: 'external',
+      actions: {
+        external: {
+          url: 'mailto:mysite@weblium.com'
+        }
+      },
+    },
+    textValue: 'mysite@weblium.com',
+  },
   map: {
     preset: 'default',
     height: '100%',
