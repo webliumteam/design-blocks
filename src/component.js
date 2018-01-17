@@ -24,12 +24,10 @@ class Block extends React.Component {
               <Text bind="description" />
             </p>
           )}
-          {this.getModifierValue('button') && (
-            <Button
-              className={classNames(style.button, style['button--primary'], style['button--size-lg'])}
-              bind="cta"
-            />
-          )}
+          <Button
+            className={classNames(style.button, style['button--primary'], style['button--size-lg'])}
+            bind="cta"
+          />
         </div>
       </section>
     )
@@ -69,12 +67,6 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Title description',
     defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Primary button',
-    defaultValue: true,
   },
 ]
 
