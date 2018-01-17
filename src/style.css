@@ -4,6 +4,7 @@
     text-decoration: none;
     text-align: center;
     font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
     cursor: pointer;
     transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
     word-wrap: break-word;
@@ -113,9 +114,10 @@
   }
   
   .button--size-lg {
-    padding: var(--ui-btn-lg-padding);
+    padding: 14px 32px;
+    border-radius: 0;
+    font-size: 14px;
     font-size: var(--ui-btn-lg-size);
-    border-radius: var(--ui-btn-lg-border-radius);
   }
   
   .section {
@@ -143,7 +145,6 @@
   
   .section--column .article {
     flex-direction: column;
-    align-items: center;
   }
   
   .section--column .article__picture {

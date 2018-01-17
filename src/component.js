@@ -1,11 +1,12 @@
-import $editor from 'weblium/editor';
-const {loadFont} = $editor
+import $editor from 'weblium/editor'
+
+const { loadFont } = $editor
 
 loadFont(['Rubik', 'Roboto'])
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired
+    $block: PropTypes.object.isRequired,
   };
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block);
@@ -19,14 +20,15 @@ class Block extends React.Component {
     const {
       components: { Text, Image, Button, SocialIcons },
       $block: { options },
-      style: css
-    } = this.props;
+      style: css,
+    } = this.props
+
     const columnLayout = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
       this.getModifierValue('text') ||
       this.getModifierValue('socialIcons')
-    );
+    )
     const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button');
 
     return (
@@ -74,7 +76,7 @@ class Block extends React.Component {
                       className={classNames(
                         css.button,
                         css['button--primary'],
-                        css['button--size-md']
+                        css['button--size-lg'],
                       )}
                       bind="button"
                     />
@@ -85,13 +87,14 @@ class Block extends React.Component {
           </article>
         </div>
       </section>
-    );
+    )
   }
 }
 
 Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components);
 
 Block.defaultContent = {
+  theme: 'dark',
   title: 'Декларація небайдужих',
   'text-1': 'Follow us:',
   subtitle:
@@ -100,7 +103,7 @@ Block.defaultContent = {
     'Ми переконані, що корупція є найбільшою внутрішньою загрозою для нашої держави та її майбутнього, так само як російська агресія – зовнішньою. Починаючи з 2014 року новій владі, за активної допомоги активістів та Заходу вдалося зробити перші кроки у боротьбі з корупцією. Такого в нашій країні ще не було з часів проголошення Незалежності. ',
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company'
+    alt: 'Picture about the company',
   },
   button: {
     actionConfig: {
@@ -109,11 +112,11 @@ Block.defaultContent = {
         link: {
           type: '',
           innerPage: '',
-          url: ''
-        }
-      }
+          url: '',
+        },
+      },
     },
-    textValue: 'Детальніше'
+    textValue: 'Детальніше',
   },
   link: {
     actionConfig: {
@@ -122,29 +125,29 @@ Block.defaultContent = {
         link: {
           type: '',
           innerPage: '',
-          url: ''
-        }
-      }
+          url: '',
+        },
+      },
     },
-    textValue: 'More about us'
+    textValue: 'More about us',
   },
   socialIcons: {
     networks: [
       {
         id: 'facebook',
         name: 'Facebook',
-        url: 'http://facebook.com/'
+        url: 'http://facebook.com/',
       },
       {
         id: 'instagram',
         name: 'Instagram',
-        url: 'http://instagram.com/'
+        url: 'http://instagram.com/',
       },
       {
         id: 'youtube',
         name: 'YouTube',
-        url: 'http://youtube.com/'
-      }
+        url: 'http://youtube.com/',
+      },
     ],
     target: '_blank',
     design: {
@@ -154,48 +157,52 @@ Block.defaultContent = {
       padding: 20,
       color: '',
       sizes: [10, 20, 30, 40],
-      size: '40px'
-    }
-  }
-};
+      size: '40px',
+    },
+  },
+}
+
+Block.options = {
+  invert: true,
+}
 
 Block.modifierScheme = [
   {
     id: 'text',
     type: 'checkbox',
     label: 'Company main text',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'link',
     type: 'checkbox',
     label: 'About us link',
-    defaultValue: false
+    defaultValue: false,
   },
   {
     id: 'button',
     type: 'checkbox',
     label: 'Contact us button',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'socialIcons',
     type: 'checkbox',
     label: 'Social media buttons',
-    defaultValue: false
+    defaultValue: false,
   },
   {
     id: 'subtitle',
     type: 'checkbox',
     label: 'Subtitle',
-    defaultValue: false
+    defaultValue: false,
   },
   {
     id: 'title',
     type: 'checkbox',
     label: 'Block title',
-    defaultValue: true
-  }
-];
+    defaultValue: true,
+  },
+]
 
-export default Block;
+export default Block
