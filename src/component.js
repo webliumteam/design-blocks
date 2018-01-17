@@ -10,9 +10,9 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
-  }
+  };
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block);
 
   render() {
     const {components: {Text}, style: css} = this.props
@@ -63,6 +63,12 @@ class Block extends React.Component {
             <Text bind="text4" />
           </p>
         </div>
+        <a href="/" title="home" className={css['button-home']}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 459 459">
+            <path d="M178.5 140.25v-102L0 216.75l178.5 178.5V290.7c127.5 0 216.75 40.8 280.5 130.05-25.5-127.5-102-255-280.5-280.5z" />
+          </svg>
+          <span className={css['button-home__label']}>На головну</span>
+        </a>
       </section>
     )
   }
