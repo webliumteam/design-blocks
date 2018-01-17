@@ -1,3 +1,4 @@
 {
-  "some-modifier": true
+  "heading": false,
+  "subheading": false
 }
