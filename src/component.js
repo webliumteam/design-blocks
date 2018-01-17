@@ -11,9 +11,11 @@ class Block extends React.Component {
     return (
       <div className={classNames(css.item, className)}>
         {children}
-        <h2 className={css.item__title}>
-          <Text bind={`numbers[${index}].title`} />
-        </h2>
+        {this.getModifierValue('numbers-title') && (
+          <h2 className={css.item__title}>
+            <Text bind={`numbers[${index}].title`} />
+          </h2>
+        )}
         <div className={css.item__content}>
           {this.getModifierValue('numbers') && (
             <strong className={css.item__number}>
@@ -101,6 +103,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = [
+  {
+    id: 'numbers-title',
+    type: 'checkbox',
+    label: 'Numbers title',
+    defaultValue: true,
+  },
   {
     id: 'numbers',
     type: 'checkbox',
