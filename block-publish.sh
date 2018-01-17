@@ -35,7 +35,7 @@ wm-cli login -u $USERNAME -h $HOST && (
           echo "!!!!!!!!!!!!!!here $CONFIG_FILE !!!!!!!!!!!!!"
           git add -f $CONFIG_FILE
           git commit -m "init block, add ${CONFIG_FILE} file"
-          git push origin $BRANCH
+          # git push origin $BRANCH
         fi  
       fi
 
