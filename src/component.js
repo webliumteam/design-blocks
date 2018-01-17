@@ -181,7 +181,7 @@ Block.modifierScheme = [
   {
     id: 'button',
     type: 'checkbox',
-    label: 'Request button',
+    label: 'Primary Button',
     defaultValue: true,
   },
 ]
