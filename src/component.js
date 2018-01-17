@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-const { loadFont } = $editor
+const {loadFont} = $editor
 
 loadFont(['Rubik', 'Roboto'])
 class Block extends React.Component {
@@ -13,13 +13,13 @@ class Block extends React.Component {
 
   getImageSize = fullWidth =>
     fullWidth
-      ? { 'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170 }
-      : { 'min-widt0-h: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570 };
+      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
+      : {'min-widt0-h: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570};
 
   render() {
     const {
-      components: { Text, Image, Button, SocialIcons },
-      $block: { options },
+      components: {Text, Image, Button, SocialIcons},
+      $block: {options},
       style: css,
     } = this.props
 
@@ -29,10 +29,10 @@ class Block extends React.Component {
       this.getModifierValue('text') ||
       this.getModifierValue('socialIcons')
     )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button');
+    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
 
     return (
-      <section className={classNames(css.section, { [css['section--column']]: columnLayout })}>
+      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
           <article className={css.article}>
             <div className={css.article__picture}>
@@ -91,7 +91,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components);
+Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
   theme: 'dark',
