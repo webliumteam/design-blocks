@@ -4,11 +4,12 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
+  collectionItem = ({index, children, className, showHeading}) => {
     const {components: {Text, Image}, style: css} = this.props
     return (
       <article className={classNames(css.item, className)}>
@@ -21,7 +22,7 @@ class Block extends React.Component {
             size={{'min-width: 320px': 450, 'min-width: 480px': 358}}
           />
         </div>
-        {this.getModifierValue('heading') && (
+        {showHeading && (
           <p className={css.item__title}>
             <Text bind={`awards[${index}].title`} />
           </p>
@@ -31,8 +32,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, mods, style: css} = this.props
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
+    const {components: {Collection, Text, Button}, style: css} = this.props
 
     return (
       <section className={css.section}>
@@ -51,6 +51,9 @@ class Block extends React.Component {
             className={css['items-wrapper']}
             bind="awards"
             Item={this.collectionItem}
+            itemProps={{
+              showHeading: this.getModifierValue('heading'),
+            }}
           />
           {this.getModifierValue('button') && (
             <div className={css['btns-group']}>
