@@ -117,9 +117,9 @@
   padding: 14px 32px;
   border-radius: 0;
   font-size: 14px;
-  color: var(--ui-block-title-color);
+  color: var(--ui-brand-color);
   font-size: var(--ui-btn-lg-size);
-  border: 2px solid var(--ui-brand-color);
+  border: 2px solid var(--ui-block-title-color);
   background-color: transparent;
 
   &:hover {
