@@ -40,7 +40,7 @@ class Block extends React.Component {
                 title="Декларація небайдужих"
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/KamN0UIOSZY"
+                src="https://youtu.be/3BBPLyGptak"
                 frameBorder="0"
                 allow="autoplay; encrypted-media"
                 allowFullScreen
