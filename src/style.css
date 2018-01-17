@@ -182,7 +182,7 @@
   .section {
     display: flex;
     align-items: center;
-    height: calc(100vh - 124px);
+    height: 100vh;
     padding: 0;
   }
 }
