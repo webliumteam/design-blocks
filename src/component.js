@@ -1,65 +1,83 @@
 import $editor from 'weblium/editor'
-import css from './style.css'
 
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button, Image}} = this.props
+  collectionItem = ({index, children, className, modifier}) => {
+    const {components: {Text, Button, Image}, style} = this.props
     return (
-      <article className={classNames(css.article, className)}>
+      <article className={classNames(style.article, className)}>
         {children}
-        {this.getModifierValue('image') && <div className={css['article__picture-wrapper']}>
+        <div className={style['article__picture-wrapper']}>
           <Image
-            pictureClassName={css.article__picture}
-            imgClassName={css.article__image}
+            pictureClassName={style.article__picture}
+            imgClassName={style.article__image}
             bind={`services[${index}].picture`}
             size={{'min-width: 320px': 446, 'min-width: 480px': 738, 'min-width: 768px': 460}}
           />
-        </div>}
-        {this.getModifierValue('heading') && <h2 className={css.article__title}>
-          <Text bind={`services[${index}].title`} />
-        </h2>}
-        {this.getModifierValue('body') && <p className={css.article__text}>
-          <Text bind={`services[${index}].description`} />
-        </p>}
-        {this.getModifierValue('link') && <Button className={css.article__link} bind={`services[${index}].cta`} />}
+        </div>
+        {_.get('heading')(modifier) && (
+          <h2 className={style.article__title}>
+            <Text bind={`services[${index}].title`} />
+          </h2>
+        )}
+        {_.get('body')(modifier) && (
+          <p className={style.article__text}>
+            <Text bind={`services[${index}].description`} />
+          </p>
+        )}
+        {_.get('link')(modifier) && (
+          <Button className={style.article__link} bind={`services[${index}].cta`} />
+        )}
       </article>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button}} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
-          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && <header className={css.section__header}>
-            {this.getModifierValue('title') && <h1 className={css.title}>
-              <Text bind="title" />
-            </h1>}
-            {this.getModifierValue('subtitle') && <p className={css.subtitle}>
-              <Text bind="description" />
-            </p>}
-          </header>}
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+            <header className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <h1 className={style.title}>
+                  <Text bind="title" />
+                </h1>
+              )}
+              {this.getModifierValue('subtitle') && (
+                <p className={style.subtitle}>
+                  <Text bind="description" />
+                </p>
+              )}
+            </header>
+          )}
           <Collection
-            className={css['articles-wrapper']}
+            className={style['articles-wrapper']}
             bind="services"
             Item={this.collectionItem}
             fakeHelpers={{
               count: 3,
-              className: css.fake,
+              className: style.fake,
+            }}
+            itemProps={{
+              modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && <div className={css['btns-group']}>
-            <Button
-              className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
-              bind="button-2"
-            />
-          </div>}
+          {this.getModifierValue('button') && (
+            <div className={style['btns-group']}>
+              <Button
+                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+                bind="button-2"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -206,12 +224,6 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Services description',
     defaultValue: false,
-  },
-  {
-    id: 'image',
-    type: 'checkbox',
-    label: 'Image',
-    defaultValue: true,
   },
   {
     id: 'heading',

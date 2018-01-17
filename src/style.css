@@ -6,6 +6,7 @@
   cursor: pointer;
   transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
   width: 100%;
+  max-width: 100%;
 }
 
 .button--primary {
@@ -300,6 +301,10 @@
   display: block;
   color: var(--ui-text-color);
   margin-bottom: 21px;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .article__image {
@@ -318,6 +323,10 @@
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
   font-weight: var(--ui-text-font-weight);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .article__link {
@@ -342,6 +351,10 @@
   color: var(--ui-heading-color);
   line-height: var(--ui-heading-line-height);
   font-weight: var(--ui-heading-font-weight);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .article__title-link {
