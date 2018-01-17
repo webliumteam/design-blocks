@@ -5,8 +5,8 @@
   "background": {
     "type": "image",
     "position": {
-      "repeat": "repaet"
+      "type": "tile"
     },
-    "src": "main-bg.jpg"
+    "src": "main-bg-pattern.jpg"
   }
 }
