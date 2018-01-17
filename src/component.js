@@ -33,7 +33,7 @@ class Block extends React.Component {
           </nav>
         </div>
       </footer>
-    );
+    )
   }
 }
 
