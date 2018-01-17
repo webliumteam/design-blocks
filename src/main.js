@@ -12,12 +12,18 @@ const config = {
 const app = firebase.initializeApp(config)
 
 const provider = new firebase.auth.FacebookAuthProvider()
-const userCountRef = firebase.database().ref().child('userCount')
+const userCountRef = firebase.database().ref().child('count')
 
 const firebasLogin = () => firebase.auth()
   .signInWithPopup(provider)
-  .then(result => result.additionalUserInfo.isNewUser && userCountRef
-    .transaction(current_value => (current_value || 0) + 1))
+  .then((result) => {
+    if (!result.additionalUserInfo.isNewUser) return
+
+    const {profile} = result.additionalUserInfo
+    const {uid} = result.user
+    firebase.database().ref(`users/${uid}`).set(profile)
+    userCountRef.transaction(value => (value || 0) + 1)
+  })
   .catch(error => console.log(error))
 
 export {
