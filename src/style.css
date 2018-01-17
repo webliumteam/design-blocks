@@ -20,6 +20,11 @@ button {
   word-wrap: break-word;
 }
 
+@media (min-width: 768px) {
+  .footer {
+    position: fixed;
+  }
+}
 @media (min-width: 992px) {
   .footer {
     padding: 53px 0;
