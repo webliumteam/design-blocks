@@ -1,3 +1,39 @@
 @import "wireframe-zapdos-awards/src/style.css";
 
 /* start here */
+.subtitle {
+  max-width: 520px;
+  margin: 15px auto 25px;
+}
+
+.item {
+  &__picture {
+    padding-top: 0;
+    max-height: 200px;
+    background-color: #fff;
+
+    &-wrapper {
+      background-color: #fff;
+      border: 2px solid #f7f7f7;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      min-height: 260px;
+      padding: 30px 0;
+
+      &:hover {
+        border-color: #f9b91e;
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    max-height: 200px;
+    width: auto;
+  }
+}
+
+.items-wrapper {
+  margin-bottom: 60px;
+}
