@@ -1,5 +1,4 @@
 import $editor from 'weblium/editor'
-import css from './style.css'
 
 class Block extends React.Component {
   static propTypes = {
@@ -8,10 +7,8 @@ class Block extends React.Component {
 
   getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
 
-
-
   render() {
-    const {components: {Logo, Text, Map, SocialIcons, Button}} = this.props
+    const {components: {Logo, Text, Map, SocialIcons, Button}, style} = this.props
 
     const textWithSocials = !(
       this.getModifierValue('logo') ||
@@ -21,48 +18,48 @@ class Block extends React.Component {
     )
 
     return (
-      <section className={classNames(css.section, {[css['section--state-8']]: textWithSocials})}>
-        <div className={css.section__inner}>
-          <h1 className={css.title}>
+      <section className={classNames(style.section, {[style['section--state-8']]: textWithSocials})}>
+        <div className={style.section__inner}>
+          <h1 className={style.title}>
             <Text bind="title" />
           </h1>
-          <div className={css.section__main}>
-            {this.getModifierValue('map') && <div className={css['map-wrapper']}>
-              <div className={css.map}>
-                <Map className={css.map__preview} bind="map" />
+          <div className={style.section__main}>
+            {this.getModifierValue('map') && <div className={style['map-wrapper']}>
+              <div className={style.map}>
+                <Map className={style.map__preview} bind="map" />
               </div>
             </div>}
-            <div className={css.contacts}>
-              {this.getModifierValue('logo') && <div className={css['logo-wrapper']}>
-                <Logo bind="logo" className={css.logo} textClassName={css.logo__title} />
+            <div className={style.contacts}>
+              {this.getModifierValue('logo') && <div className={style['logo-wrapper']}>
+                <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
               </div>}
-              <ul className={css['contacts-list']}>
-                <li className={css['contacts-list__item']}>
-                  <h3 className={css.contacts__title}>
+              <ul className={style['contacts-list']}>
+                <li className={style['contacts-list__item']}>
+                  <h3 className={style.contacts__title}>
                     <Text bind="address-title" />
                   </h3>
-                  <p className={css.contacts__desc}>
+                  <p className={style.contacts__desc}>
                     <Text bind="address-content" />
                   </p>
                 </li>
-                {this.getModifierValue('phone') && <li className={css['contacts-list__item']}>
-                  <h3 className={css.contacts__title}>
+                {this.getModifierValue('phone') && <li className={style['contacts-list__item']}>
+                  <h3 className={style.contacts__title}>
                     <Text bind="phone-title" />
                   </h3>
-                  <p className={css.contacts__desc}>
+                  <p className={style.contacts__desc}>
                     <Button bind="phone-link" />
                   </p>
                 </li>}
-                {this.getModifierValue('email') && <li className={css['contacts-list__item']}>
-                  <h3 className={css.contacts__title}>
+                {this.getModifierValue('email') && <li className={style['contacts-list__item']}>
+                  <h3 className={style.contacts__title}>
                     <Text bind="email-title" />
                   </h3>
-                  <p className={css.contacts__desc}>
+                  <p className={style.contacts__desc}>
                     <Button bind="email-link" />
                   </p>
                 </li>}
               </ul>
-              {this.getModifierValue('social') && <SocialIcons className={css.socials} bind="socialIcons" />}
+              {this.getModifierValue('social') && <SocialIcons className={style.socials} bind="socialIcons" />}
             </div>
           </div>
         </div>
