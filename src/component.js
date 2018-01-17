@@ -1,31 +1,31 @@
-import $editor from 'weblium/editor';
+import $editor from 'weblium/editor'
 
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired
+    $block: PropTypes.object.isRequired,
   };
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block);
 
   getImageSize = fullWidth =>
     fullWidth
-      ? { 'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170 }
-      : { 'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570 };
+      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
+      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570};
 
   render() {
     const {
-      components: { Text, Image, Button, SocialIcons },
-      $block: { options },
-      style: css
-    } = this.props;
+      components: {Text, Image, Button, SocialIcons},
+      $block: {options},
+      style: css,
+    } = this.props
     const columnLayout = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
       this.getModifierValue('text') ||
       this.getModifierValue('socialIcons')
-    );
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button');
+    )
+    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
 
     return (
       <header className={css.header}>
@@ -41,57 +41,57 @@ class Block extends React.Component {
           </a>
         </nav>
       </header>
-    );
+    )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button'])($editor.components);
+Block.components = _.pick(['Text', 'Image', 'Button'])($editor.components)
 
 Block.defaultContent = {
-  theme: 'dark'
-};
+  theme: 'dark',
+}
 
 Block.options = {
-  invert: true
-};
+  invert: true,
+}
 
 Block.modifierScheme = [
   {
     id: 'text',
     type: 'checkbox',
     label: 'Company main text',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'link',
     type: 'checkbox',
     label: 'About us link',
-    defaultValue: false
+    defaultValue: false,
   },
   {
     id: 'button',
     type: 'checkbox',
     label: 'Contact us button',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'socialIcons',
     type: 'checkbox',
     label: 'Social media buttons',
-    defaultValue: false
+    defaultValue: false,
   },
   {
     id: 'subtitle',
     type: 'checkbox',
     label: 'Subtitle',
-    defaultValue: false
+    defaultValue: false,
   },
   {
     id: 'title',
     type: 'checkbox',
     label: 'Block title',
-    defaultValue: true
-  }
-];
+    defaultValue: true,
+  },
+]
 
-export default Block;
+export default Block
