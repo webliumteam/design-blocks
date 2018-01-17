@@ -102,6 +102,9 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
+    type: 'separator',
+  },
+  {
     id: 'align',
     type: 'radio-button-group',
     name: 'Aligning',
