@@ -31,7 +31,7 @@ wm-cli login -u $USERNAME -h $HOST && (
         ENTRYPOINT="./src/index.js"
 
         wm-cli block init --name=${NAME//\"} --categories=${CATEGORY//\"} --entrypoint=./${ENTRYPOINT//\"} wireframe true
-        if [ $HOST -eq $LOCALHOST ];then
+        if [ $HOST = $LOCALHOST ];then
           echo "!!!!!!!!!!!!!!here $CONFIG_FILE !!!!!!!!!!!!!"
           git add -f $CONFIG_FILE
           git commit -m "init block, add ${CONFIG_FILE} file"
