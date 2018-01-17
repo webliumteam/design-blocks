@@ -1,17 +1,17 @@
-import $editor from 'weblium/editor';
-import css from './style.css';
+import $editor from 'weblium/editor'
+import css from './style.css'
 
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
-    style: PropTypes.object.isRequired
+    style: PropTypes.object.isRequired,
   };
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block);
 
   render() {
-    const { components: { Text, Menu, Button }, style: css } = this.props;
+    const {components: {Text, Menu, Button}, style: css} = this.props
 
     return (
       <footer className={css.footer}>
@@ -37,7 +37,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Menu', 'Button'])($editor.components);
+Block.components = _.pick(['Text', 'Menu', 'Button'])($editor.components)
 
 Block.defaultContent = {
   theme: 'dark',
@@ -48,18 +48,18 @@ Block.defaultContent = {
         link: {
           type: '',
           innerPage: '',
-          url: ''
-        }
-      }
+          url: '',
+        },
+      },
     },
-    textValue: 'Долучитись'
+    textValue: 'Долучитись',
   },
   text1: 'Наразi долучилось: ',
   text2: '1347 людей',
   logo: {
     text: {
-      value: 'CompanyLogo'
-    }
+      value: 'CompanyLogo',
+    },
   },
   subtitle: 'CompanySlogan',
   copyright: 'Produced by Weblium.com. All rights Reserved',
@@ -75,10 +75,10 @@ Block.defaultContent = {
           actions: {
             page: '',
             link: '',
-            block: ''
-          }
-        }
-      }
+            block: '',
+          },
+        },
+      },
     },
     {
       id: '29f03a3e-117d-490e-963c-ace78d85258f',
@@ -90,27 +90,27 @@ Block.defaultContent = {
           actions: {
             page: '',
             link: '',
-            block: ''
-          }
-        }
-      }
-    }
-  ]
-};
+            block: '',
+          },
+        },
+      },
+    },
+  ],
+}
 
 Block.modifierScheme = [
   {
     id: 'title',
     type: 'checkbox',
     label: 'Company name',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'subtitle',
     type: 'checkbox',
     label: 'Company slogan',
-    defaultValue: true
-  }
-];
+    defaultValue: true,
+  },
+]
 
-export default Block;
+export default Block
