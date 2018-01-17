@@ -1,3 +1,79 @@
 {
-  "title": "Design title"
+  "title": "Blog",
+
+  "blog": [
+    {
+    "id": "21a46d6e-0354-4a96-9af0-928ddae32095",
+    "title": "The two most important questions when scoping your MVP",
+    "description": "Imagine yourself 3 months from now. You’ve poured your life savings into bringing your app to life. It’s jam packed with all of these features that you just know your users are going to love. You’ve been working on traction while your team has been building the app so you get a steady stream of […]",
+    "category": "Creative Process",
+    "date": "November 22, 2017",
+    "picture": {
+      "src": "img/blog-pic-1.jpg",
+      "alt": "Article illustration photo"
+    },
+    "cta": {
+      "actionConfig": {
+        "action": "link",
+        "actions": {
+          "link": {
+            "type": "",
+            "innerPage": "",
+            "url": ""
+          }
+        }
+      },
+      "textValue": "Read more"
+    }
+  },
+  {
+    "id": "21a46d6e-0354-4a96-9af0-928ddae32095",
+    "title": "The two most important questions when scoping your MVP",
+    "description": "Imagine yourself 3 months from now. You’ve poured your life savings into bringing your app to life. It’s jam packed with all of these features that you just know your users are going to love. You’ve been working on traction while your team has been building the app so you get a steady stream of […]",
+    "category": "Creative Process",
+    "date": "November 22, 2017",
+    "picture": {
+      "src": "img/blog-pic-2.jpg",
+      "alt": "Article illustration photo"
+    },
+    "cta": {
+      "actionConfig": {
+        "action": "link",
+        "actions": {
+          "link": {
+            "type": "",
+            "innerPage": "",
+            "url": ""
+          }
+        }
+      },
+      "textValue": "Read more"
+    }
+  },
+  {
+    "id": "21a46d6e-0354-4a96-9af0-928ddae32095",
+    "title": "The two most important questions when scoping your MVP",
+    "description": "Imagine yourself 3 months from now. You’ve poured your life savings into bringing your app to life. It’s jam packed with all of these features that you just know your users are going to love. You’ve been working on traction while your team has been building the app so you get a steady stream of […]",
+    "category": "Creative Process",
+    "date": "November 22, 2017",
+    "picture": {
+      "src": "img/blog-pic-3.jpg",
+      "alt": "Article illustration photo"
+    },
+    "cta": {
+      "actionConfig": {
+        "action": "link",
+        "actions": {
+          "link": {
+            "type": "",
+            "innerPage": "",
+            "url": ""
+          }
+        }
+      },
+      "textValue": "Read more"
+    }
+  }
+]
+
 }
