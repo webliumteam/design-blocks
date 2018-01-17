@@ -117,16 +117,22 @@
 
 .section {
   min-width: 320px;
-  padding: 60px 0;
+  padding: 50px 0;
   text-align: center;
-
-  /* background-color: var(--ui-block-bg); */
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
+  
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding: 75px 0;
+  }
 }
 
 .section__inner {
