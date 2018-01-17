@@ -2,7 +2,7 @@
   min-width: 320px;
   padding: 60px 0;
   padding-top: 120;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 
   /* background-color: var(--ui-block-bg); */
   font-size: var(--ui-text-size);
@@ -52,7 +52,7 @@
 .title {
   max-width: 970px;
   margin: 0 auto 5px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-family: var(--ui-block-title-font-family);
   font-size: var(--ui-block-title-size);
   color: var(--ui-block-title-color);
@@ -67,8 +67,8 @@
 .subtitle {
   max-width: 570px;
   margin: 0 auto;
-  font-family: 'Rubik', sans-serif;
-    font-size: var(--ui-subtitle-size);
+  font-family: "Rubik", sans-serif;
+  font-size: var(--ui-subtitle-size);
   color: var(--ui-subtitle-color);
   line-height: var(--ui-subtitle-line-height);
   font-weight: var(--ui-subtitle-font-weight);
@@ -77,7 +77,7 @@
 .heading {
   max-width: 970px;
   margin: 0 auto 10px;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: var(--ui-heading-size);
   color: var(--ui-heading-color);
   line-height: var(--ui-heading-line-height);
@@ -88,17 +88,19 @@
 .subheading {
   max-width: 770px;
   margin: 0 auto 20px;
-  font-family: 'Rubik', sans-serif;
-    font-size: var(--ui-subheading-size);
+  font-family: "Rubik", sans-serif;
+  font-size: var(--ui-subheading-size);
   color: var(--ui-subheading-color);
   line-height: var(--ui-subheading-line-height);
   font-weight: var(--ui-subheading-font-weight);
 }
+
 .text {
   font-size: 19px;
   line-height: 1.47;
   color: #999;
   margin-bottom: 25px;
+
   &--italic {
     font-style: italic;
   }
