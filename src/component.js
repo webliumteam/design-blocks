@@ -2,57 +2,64 @@ import $editor from 'weblium/editor'
 
 class Block extends React.Component {
 
-  getModifierValue(path) {
-    return _.get(['modifier', path], this.props.$block)
+  static propTypes = {
+    components: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
   }
 
-  collectionItem = ({index, children, className}) => {
-    const {components: {Text}, style: css} = this.props
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  collectionItem = ({index, children, className, modifier}) => {
+    const {components: {Text}, style} = this.props
     return (
-      <div className={classNames(css.item, className)}>
+      <div className={classNames(style.item, className)}>
         {children}
-        {this.getModifierValue('numbers-title') && (
-          <h2 className={css.item__title}>
+        {_.get('number-title')(modifier) && (
+          <h2 className={style.item__title}>
             <Text bind={`numbers[${index}].title`} />
           </h2>
         )}
-        <div className={css.item__content}>
-          {this.getModifierValue('numbers') && (
-            <strong className={css.item__number}>
+        <div className={style.item__content}>
+            <strong className={style.item__number}>
               <Text bind={`numbers[${index}].value`} />
             </strong>)
-          }
-          <p className={css.item__text}>
-            <Text bind={`numbers[${index}].label`} />
-          </p>
+          {_.get('number-title')(modifier) && (
+            <p className={style.item__text}>
+              <Text bind={`numbers[${index}].label`} />
+            </p>
+          )}
         </div>
       </div>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button}, mods, style: css} = this.props
+    const {components: {Collection, Text, Button}, mods, style} = this.props
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
+      <section className={style.section}>
+        <div className={style.section__inner}>
           {this.getModifierValue('title') && (
-            <h1 className={css.title}>
+            <h1 className={style.title}>
               <Text bind="title" />
             </h1>)
           }
           <Collection
-            className={css['items-wrapper']}
+            className={style['items-wrapper']}
             bind="numbers"
             Item={this.collectionItem}
             fakeHelpers={{
               count: 2,
-              className: css.fake,
+              className: style.fake,
+            }}
+            itemProps={{
+              modifier: $block.modifier
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={css['btns-group']}>
+            <div className={style['btns-group']}>
               <Button
-                className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
                 bind="cta"
               />
             </div>)
@@ -104,21 +111,21 @@ Block.defaultContent = {
 
 Block.modifierScheme = [
   {
-    id: 'numbers-title',
+    id: 'number-title',
     type: 'checkbox',
-    label: 'Numbers title',
-    defaultValue: true,
-  },
-  {
-    id: 'numbers',
-    type: 'checkbox',
-    label: 'Numbers',
+    label: 'Additional information on numbers',
     defaultValue: true,
   },
   {
     id: 'title',
     type: 'checkbox',
     label: 'Block title',
+    defaultValue: true,
+  },
+  {
+    id: 'body',
+    type: 'checkbox',
+    label: 'Numbers description',
     defaultValue: true,
   },
   {
