@@ -3,59 +3,75 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
+  collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Image}, style: css} = this.props
     return (
       <article className={classNames(css.item, className)}>
         {children}
 
         <div className={css.item__inner}>
-          {this.getModifierValue('image') && <Image
-            pictureClassName={css.item__pic}
-            imgClassName={css.item__img}
-            bind={`testimonials[${index}].image`}
-          />}
+          {_.get('image')(modifier) && (
+            <Image
+              pictureClassName={css.item__pic}
+              imgClassName={css.item__img}
+              bind={`testimonials[${index}].image`}
+            />
+          )}
           <div className={css.item__contacts}>
             <h2 className={css.item__title}>
               <Text bind={`testimonials[${index}].name`} />
             </h2>
           </div>
-          {this.getModifierValue('position') && <p className={css.item__position}>
-            <Text bind={`testimonials[${index}].position`} />
-          </p>}
+          {_.get('position')(modifier) && (
+            <p className={css.item__position}>
+              <Text bind={`testimonials[${index}].position`} />
+            </p>
+          )}
           <p className={css.item__desc}>
             <Text bind={`testimonials[${index}].description`} />
           </p>
-          {this.getModifierValue('publishDate') && <time className={css.item__time}>
-            <Text bind={`testimonials[${index}].date`} />
-          </time>}
+          {_.get('publishDate')(modifier) && (
+            <time className={css.item__time}>
+              <Text bind={`testimonials[${index}].date`} />
+            </time>
+          )}
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Slider, Text, Button}, style: css} = this.props
+    const {components: {Slider, Text, Button}, style: css, $block} = this.props
     return (
       <section className={css.section}>
         <div className={css.section__inner}>
           <h1 className={css.title}>
             <Text bind="title" />
           </h1>
-          {this.getModifierValue('subtitle') && <p className={css.subtitle}>
-            <Text bind="subtitle" />
-          </p>}
-          <Slider className={css['items-wrapper']} bind="testimonials" Item={this.collectionItem} />
-          {this.getModifierValue('button') && <div className={css['btns-group']}>
-            <Button
-              className={classNames(css.button, css['button--size-md'], css['button--secondary'])}
-              bind="cta"
-            />
-          </div>}
+          {this.getModifierValue('subtitle') && (
+            <p className={css.subtitle}>
+              <Text bind="subtitle" />
+            </p>
+          )}
+          <Slider
+            className={css['items-wrapper']}
+            bind="testimonials"
+            Item={props => <this.collectionItem {...props} modifier={$block.modifier} />}
+          />
+          {this.getModifierValue('button') && (
+            <div className={css['btns-group']}>
+              <Button
+                className={classNames(css.button, css['button--size-md'], css['button--secondary'])}
+                bind="cta"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -128,12 +144,12 @@ Block.modifierScheme = [
     label: 'Reviewer job position',
     defaultValue: true,
   },
-  {
-    id: 'socialButtons',
-    type: 'checkbox',
-    label: 'Social Buttons',
-    defaultValue: false,
-  },
+  // {
+  //   id: 'socialButtons',
+  //   type: 'checkbox',
+  //   label: 'Social Buttons',
+  //   defaultValue: false,
+  // },
   // {
   //   id: 'rating',
   //   type: 'checkbox',
@@ -151,7 +167,7 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Secondary Button',
     defaultValue: true,
-  }
+  },
 ]
 
 export default Block
