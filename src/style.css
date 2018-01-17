@@ -183,8 +183,12 @@
 }
 
 .item__inner {
-  max-width: 860px;
+  max-width: 100%;
   margin: 0 auto;
+  
+  @media (min-width: 992px) {
+    max-width: 860px;
+  }
 }
 
 @media (min-width: 768px) {
