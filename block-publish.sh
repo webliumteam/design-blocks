@@ -31,12 +31,12 @@ wm-cli login -u $USERNAME -h $HOST && (
         ENTRYPOINT="./src/index.js"
 
         wm-cli block init --name=${NAME//\"} --categories=${CATEGORY//\"} --entrypoint=./${ENTRYPOINT//\"} wireframe true
-        if [$HOST -ne LOCALHOST];then
+        if [ $HOST -ne LOCALHOST ];then
           echo "!!!!!!!!!!!!!!here $CONFIG_FILE !!!!!!!!!!!!!"
-          git add $CONFIG_FILE
+          git add -f $CONFIG_FILE
           git commit -m "init block, add ${CONFIG_FILE} file"
           git push origin $BRANCH
-        fi
+        fi  
       fi
 
       wm-cli block commit
@@ -46,5 +46,5 @@ wm-cli login -u $USERNAME -h $HOST && (
       echo "block ${block} published"
     )
   done
-  git checkout w/master
+  git checkout block-publish
 )
