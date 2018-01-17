@@ -1,7 +1,6 @@
 .header {
   position: relative;
   color: #fff;
-
 }
 
 .nav {
@@ -29,8 +28,4 @@
     height: 70px;
     fill: currentColor;
   }
-}
-
-body {
-  background-color: #000;
 }
