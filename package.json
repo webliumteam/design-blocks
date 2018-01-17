@@ -28,5 +28,8 @@
         "stylelint": "^8.4.0",
         "stylelint-scss": "^2.2.0",
         "stylelint-selector-bem-pattern": "^2.0.0"
+    },
+    "dependencies": {
+        "firebase": "^4.8.2"
     }
 }

@@ -1,5 +1,7 @@
 import $editor from 'weblium/editor'
 import css from './style.css'
+import {userCountRef, firebasLogin} from './main'
+
 
 class Block extends React.Component {
   static propTypes = {
@@ -8,10 +10,20 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   };
 
+  state = {
+    usersTotal: 0,
+  }
+
+  componentWillMount() {
+    userCountRef.on('value', snapshot => this.setState({usersTotal: snapshot.val()}))
+  }
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block);
 
   render() {
     const {components: {Text, Menu, Button}, style: css} = this.props
+    const {usersTotal} = this.state
+
 
     return (
       <footer className={css.footer}>
@@ -26,9 +38,9 @@ class Block extends React.Component {
             <div className={css.nav__right}>
               <div className={css.flex}>
                 <Text bind="text1" className={css.text} />
-                <Text bind="text2" className={classNames(css.text, css['text--value'])} />
+                <span className={classNames(css.text, css['text--value'])}>&nbsp;{usersTotal} людей</span>
               </div>
-              <Button className={classNames(css.button)} bind="button" />
+              <button className={classNames(css.button)} onClick={firebasLogin}>Долучитись</button>
             </div>
           </nav>
         </div>
