@@ -1,33 +1,49 @@
-import $editor from 'weblium/editor'
+import $editor from 'weblium/editor';
+const {loadFont} = $editor
 
+loadFont(['Rubik', 'Roboto'])
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
-  }
+    $block: PropTypes.object.isRequired
+  };
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block);
 
-  getImageSize = (fullWidth) =>
+  getImageSize = fullWidth =>
     fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+      ? { 'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170 }
+      : { 'min-widt0-h: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570 };
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
+    const {
+      components: { Text, Image, Button, SocialIcons },
+      $block: { options },
+      style: css
+    } = this.props;
     const columnLayout = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
       this.getModifierValue('text') ||
       this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
+    );
+    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button');
 
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={classNames(css.section, { [css['section--column']]: columnLayout })}>
         <div className={css.section__inner}>
           <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
+            <div className={css.article__picture}>
+              <iframe
+                title="Декларація небайдужих"
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/KamN0UIOSZY"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+            </div>
             <div className={css.article__content}>
               {this.getModifierValue('title') && (
                 <h1 className={css.article__title}>
@@ -55,7 +71,11 @@ class Block extends React.Component {
                   {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
                   {this.getModifierValue('button') && (
                     <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+                      className={classNames(
+                        css.button,
+                        css['button--primary'],
+                        css['button--size-md']
+                      )}
                       bind="button"
                     />
                   )}
@@ -65,21 +85,22 @@ class Block extends React.Component {
           </article>
         </div>
       </section>
-    )
+    );
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components);
 
 Block.defaultContent = {
-  title: 'About The Company',
+  title: 'Декларація небайдужих',
   'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
+  subtitle:
+    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
   text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
+    'Ми переконані, що корупція є найбільшою внутрішньою загрозою для нашої держави та її майбутнього, так само як російська агресія – зовнішньою. Починаючи з 2014 року новій владі, за активної допомоги активістів та Заходу вдалося зробити перші кроки у боротьбі з корупцією. Такого в нашій країні ще не було з часів проголошення Незалежності. ',
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
+    alt: 'Picture about the company'
   },
   button: {
     actionConfig: {
@@ -88,11 +109,11 @@ Block.defaultContent = {
         link: {
           type: '',
           innerPage: '',
-          url: '',
-        },
-      },
+          url: ''
+        }
+      }
     },
-    textValue: 'Contact us',
+    textValue: 'Детальніше'
   },
   link: {
     actionConfig: {
@@ -101,29 +122,29 @@ Block.defaultContent = {
         link: {
           type: '',
           innerPage: '',
-          url: '',
-        },
-      },
+          url: ''
+        }
+      }
     },
-    textValue: 'More about us',
+    textValue: 'More about us'
   },
   socialIcons: {
     networks: [
       {
         id: 'facebook',
         name: 'Facebook',
-        url: 'http://facebook.com/',
+        url: 'http://facebook.com/'
       },
       {
         id: 'instagram',
         name: 'Instagram',
-        url: 'http://instagram.com/',
+        url: 'http://instagram.com/'
       },
       {
         id: 'youtube',
         name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
+        url: 'http://youtube.com/'
+      }
     ],
     target: '_blank',
     design: {
@@ -133,48 +154,48 @@ Block.defaultContent = {
       padding: 20,
       color: '',
       sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
-  },
-}
+      size: '40px'
+    }
+  }
+};
 
 Block.modifierScheme = [
   {
     id: 'text',
     type: 'checkbox',
     label: 'Company main text',
-    defaultValue: true,
+    defaultValue: true
   },
   {
     id: 'link',
     type: 'checkbox',
     label: 'About us link',
-    defaultValue: false,
+    defaultValue: false
   },
   {
     id: 'button',
     type: 'checkbox',
     label: 'Contact us button',
-    defaultValue: true,
+    defaultValue: true
   },
   {
     id: 'socialIcons',
     type: 'checkbox',
     label: 'Social media buttons',
-    defaultValue: false,
+    defaultValue: false
   },
   {
     id: 'subtitle',
     type: 'checkbox',
     label: 'Subtitle',
-    defaultValue: false,
+    defaultValue: false
   },
   {
     id: 'title',
     type: 'checkbox',
     label: 'Block title',
-    defaultValue: true,
-  },
-]
+    defaultValue: true
+  }
+];
 
-export default Block
+export default Block;

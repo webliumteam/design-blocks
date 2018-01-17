@@ -1,8 +1,8 @@
 {
   "text": true,
-  "socialIcons": true,
-  "subtitle": true,
-  "link": true,
+  "socialIcons": false,
+  "subtitle": false,
+  "link": false,
   "button": true,
   "title": true
 }
