@@ -1,12 +1,12 @@
 import * as firebase from 'firebase'
 
 const config = {
-  apiKey: 'AIzaSyB38AxG5lKznD4BD0KyYfuv_9bzL0UfNmA',
-  authDomain: 'weblium-test-90a10.firebaseapp.com',
-  databaseURL: 'https://weblium-test-90a10.firebaseio.com',
-  projectId: 'weblium-test-90a10',
-  storageBucket: 'weblium-test-90a10.appspot.com',
-  messagingSenderId: '57590192789',
+  apiKey: 'AIzaSyB6bf3E9m2h_mSggOPnzZOwCin-rsb0G6Q',
+  authDomain: 'nebaiduzhi-3e7fa.firebaseapp.com',
+  databaseURL: 'https://nebaiduzhi-3e7fa.firebaseio.com',
+  projectId: 'nebaiduzhi-3e7fa',
+  storageBucket: 'nebaiduzhi-3e7fa.appspot.com',
+  messagingSenderId: '201685568896',
 }
 
 const app = firebase.initializeApp(config)
