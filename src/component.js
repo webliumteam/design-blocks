@@ -11,14 +11,18 @@ class Block extends React.Component {
   };
 
   state = {
-    usersTotal: 0,
+    usersTotal: null,
   }
 
   componentWillMount() {
-    userCountRef.on('value', snapshot => this.setState({usersTotal: snapshot.val()}))
+    userCountRef.on('value', this.updateValue)
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block);
+
+  updateValue = (snapshot) => {
+    this.setState({usersTotal: snapshot.val()})
+  }
 
   render() {
     const {components: {Text, Menu, Button}, style: css} = this.props
@@ -36,10 +40,14 @@ class Block extends React.Component {
               bind="menu"
             />
             <div className={css.nav__right}>
-              <div className={css.flex}>
-                <Text bind="text1" className={css.text} />
-                <span className={classNames(css.text, css['text--value'])}>&nbsp;{usersTotal} людей</span>
-              </div>
+              {
+                usersTotal !== null && (
+                  <div className={css.flex}>
+                    <Text bind="text1" className={css.text} />
+                    <span className={classNames(css.text, css['text--value'])}>&nbsp;{usersTotal} людей</span>
+                  </div>
+                )
+              }
               <button className={classNames(css.button)} onClick={firebasLogin}>Долучитись</button>
             </div>
           </nav>
