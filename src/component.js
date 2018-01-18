@@ -1,21 +1,23 @@
 import $editor from 'weblium/editor'
-import css from './style.css'
 
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
-    const {components: {Text, Icon}} = this.props
+  collectionItem = ({index, children, className, showIcon}) => {
+    const {components: {Text}, style} = this.props
     return (
-      <li className={classNames(css.list__item, className)}>
+      <li className={classNames(style.list__item, className)}>
         {children}
-        {this.getModifierValue('icon') && <div className={css['list__item-icon']} />}
-        <span className={css['list__item-text']}>
+        {showIcon && (
+          <div className={style['list__item-icon']} />
+        )}
+        <span className={style['list__item-text']}>
           <Text bind={`careers[${index}].title`} />
         </span>
       </li>
@@ -23,48 +25,51 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Image, Button}} = this.props
+    const {components: {Collection, Text, Image, Button}, style} = this.props
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
-          <h1 className={css.title}>
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <h1 className={style.title}>
             <Text bind="title" />
           </h1>
           {this.getModifierValue('subtitle') && (
-            <p className={css.subtitle}>
+            <p className={style.subtitle}>
               <Text bind="subtitle" />
             </p>
           )}
-          <div className={css.content}>
+          <div className={style.content}>
             {this.getModifierValue('image') && (
-              <div className={css['media-wrap']}>
+              <div className={style['media-wrap']}>
                 <Image
-                  pictureClassName={css.media}
-                  imgClassName={css.media__image}
+                  pictureClassName={style.media}
+                  imgClassName={style.media__image}
                   bind="picture"
                   size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
                 />
               </div>
             )}
-            <div className={css.content__main}>
+            <div className={style.content__main}>
               {this.getModifierValue('body') && (
-                <p className={css.content__text}>
+                <p className={style.content__text}>
                   <Text bind="text" />
                 </p>
               )}
 
               <Collection
-                className={css.list}
+                className={style.list}
                 TagName="ul"
                 bind="careers"
                 Item={this.collectionItem}
+                itemProps={{
+                  showIcon: this.getModifierValue('icon'),
+                }}
               />
             </div>
           </div>
           {this.getModifierValue('button') && (
-            <div className={css['btns-group']}>
+            <div className={style['btns-group']}>
               <Button
-                className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
                 bind="button-1"
               />
             </div>
