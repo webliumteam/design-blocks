@@ -4,15 +4,10 @@
 
 .title {
   position: relative;
-  color: var(--ui-light-shade-color);
-  font-family: var(--ui-hero-title-font-family);
-  font-size: var(--ui-hero-title-size);
-  font-weight: var(--ui-hero-title-font-weight);
-  line-height: var(--ui-hero-title-line-height);
   letter-spacing: -1.6px;
 }
 
-.title:before {
+.title::before {
   content: "";
   position: absolute;
   left: 10px;
@@ -21,30 +16,9 @@
   margin: auto;
   width: 50px;
   height: 3px;
-  background: var(--ui-light-shade-color);
+  background-color: var(--ui-hero-color);
 }
 
 .subtitle {
   opacity: 0.5;
-  color: var(--ui-light-shade-color);
-  font-family: var(--ui-heading-font-family);
-  font-size: var(--ui-heading-size);
-  font-weight: var(--ui-heading-font-weight);
-  line-height: var(--ui-heading-line-height);
-}
-
-.button--primary {
-  border-color: var(--ui-btn-primary-border-color);
-  background: var(--ui-btn-primary-bg);
-  color: var(--ui-btn-primary-color);
-  font-family: var(--ui-caption-font-family);
-  font-size: var(--ui-caption-size);
-  font-weight: var(--ui-caption-font-weight);
-  line-height: var(--ui-caption-line-height);
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.button--primary:hover {
-  text-decoration: none;
 }
