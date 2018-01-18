@@ -1,14 +1,6 @@
 @import "wireframe-zapdos-contacts/src/style.css";
 
 /* start here */
-.title {
-  font-size: var(--ui-block-title-size);
-  color: var(--ui-block-title-color);
-  line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: var(--ui-block-title-font-weight);
-}
-
 .contacts {
   text-align: center;
 
@@ -18,29 +10,12 @@
 
   &-list {
     margin-top: 0;
-
-    &-list__item {
-
-      @media (min-width: 768px) {
-        margin-bottom: 25px;
-      }
-    }
   }
 
-  .logo-wrapper {
-    background-color: var(--ui-light-shade-color);
-    margin-bottom: 0;
+  &-list__item {
 
-    .logo {
-      padding-left: 0;
-      padding-right: 0;
-
-      &__title {
-        color: var(--ui-dark-shade-color);
-        font-size: var(--ui-sub-heading-size);
-        font-weight: var(--ui-heading-large-font-weight);
-        font-family: var(--ui-caption-font-family);
-      }
+    @media (min-width: 768px) {
+      margin-bottom: 25px;
     }
   }
 
@@ -50,10 +25,6 @@
     line-height: var(--ui-subtitle-line-height);
     font-family: var(--ui-subtitle-font-family);
     font-weight: var(--ui-subtitle-font-weight);
-
-    @media (min-width: 992px) {
-      font-size: var(--ui-subtitle-size);
-    }
   }
 
   &__desc {
@@ -69,11 +40,26 @@
   }
 }
 
-.map-wrapper {
+.logo-wrapper {
+  background-color: var(--ui-light-shade-color);
+  margin-bottom: 0;
+}
 
-  @media (min-width: 992px) {
+.logo {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.logo__title {
+  color: var(--ui-dark-shade-color);
+  font-size: var(--ui-sub-heading-size);
+  font-weight: var(--ui-heading-large-font-weight);
+  font-family: var(--ui-caption-font-family);
+}
+
+@media (min-width: 992px) {
+  .map-wrapper {
     width: 68.4%;
     height: 423px;
   }
 }
-
