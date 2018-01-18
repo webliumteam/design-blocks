@@ -1,3 +1,90 @@
 @import "wireframe-zapdos-projects/src/style.css";
 
 /* start here */
+
+.title {
+  margin-top: -40px;
+
+  span {
+    font-size: var(--ui-block-title-size);
+    letter-spacing: -2px;
+  }
+}
+
+.article {
+  &__picture {
+    opacity: 0;
+  }
+
+  &__caption {
+    display: none;
+  }
+
+  &__title {
+    span {
+      font-size: var(--ui-hero-title-size);
+      font-family: var(--ui-block-title-font-family);
+      color: var(--ui-block-bg);
+      letter-spacing: -3px;
+    }
+  }
+
+  &__text {
+    span {
+      font-family: var(--ui-block-title-font-family);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--ui-small-text-font-family);
+    font-size: var(--ui-small-text-size);
+    color: var(--ui-block-bg);
+  }
+}
+
+.article:nth-child(1) {
+  .article__content {
+    padding-left: 115px;
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  .article__text {
+    width: 100%;
+    padding-left: 0;
+    padding-right: calc(100% - 370px);
+    text-align: left;
+  }
+}
+
+.article:nth-child(2) {
+  .article__title {
+    text-align: right;
+  }
+
+  .article__content {
+    padding-left: 0;
+    padding-right: 115px;
+
+    .article__text {
+      width: 100%;
+      padding-right: 0;
+      padding-left: calc(100% - 370px);
+      text-align: right;
+    }
+
+    .article__link {
+      display: block;
+      width: 100%;
+      padding-left: calc(100% - 77px);
+    }
+  }
+}
+
+.article:nth-child(3) {
+  display: none;
+}
