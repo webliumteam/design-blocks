@@ -343,6 +343,10 @@
   color: var(--ui-heading-color);
   line-height: var(--ui-heading-line-height);
   font-weight: var(--ui-heading-font-weight);
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .article__title-link {
