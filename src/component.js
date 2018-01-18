@@ -1,25 +1,25 @@
-import $editor from 'weblium/editor';
-import classNames from 'classnames';
+import $editor from 'weblium/editor'
+import classNames from 'classnames'
 
-const { loadFont } = $editor;
+const {loadFont} = $editor
 
-loadFont(['Rubik', 'Roboto']);
+loadFont(['Rubik', 'Roboto'])
 
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
-    style: PropTypes.object.isRequired
+    style: PropTypes.object.isRequired,
   };
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block);
 
   render() {
-    const { components: { Text }, style: css } = this.props;
+    const {components: {Text}, style: css} = this.props
     const alignClass =
       this.getModifierValue('align') !== 'center'
         ? css[`section--${this.getModifierValue('align')}`]
-        : '';
+        : ''
 
     return (
       <section className={classNames(css.section, alignClass)}>
@@ -71,9 +71,9 @@ class Block extends React.Component {
               <Text bind="subheading2" />
             </p>
           )}
-          {this.getModifierValue('text4') && (
+          {this.getModifierValue('text5') && (
             <p className={classNames(css.text, css['text--italic'])}>
-              <Text bind="text4" />
+              <Text bind="text5" />
             </p>
           )}
         </div>
@@ -84,11 +84,11 @@ class Block extends React.Component {
           <span className={css['button-home__label']}>На головну</span>
         </button>
       </section>
-    );
+    )
   }
 }
 
-Block.components = _.pick(['Text'])($editor.components);
+Block.components = _.pick(['Text'])($editor.components)
 
 Block.defaultContent = {
   title: 'Our Text Title',
@@ -113,79 +113,85 @@ Block.defaultContent = {
   text5:
     'Підписуючи цю Декларацію, особа підтверджує, що не переслідує жодних особистих корисливих чи неправомірних цілей, не представляє інтереси будь-якої політичної партії, іноземної організації, будь-якої третьої сторони та діє виключно від свого імені та в інтересах українського суспільства. Підписант Декларації зобов’язується прикласти усіх зусиль та використати усі надані законодавством можливості для досягнення зазначених вище цілей. Підписант Декларації зобов’язується дотримуватися Конституції та законів України.',
   text6:
-    'Підписуючи цю Декларацію, особа підтверджує, що не переслідує жодних особистих корисливих чи неправомірних цілей, не представляє інтереси будь-якої політичної партії, іноземної організації, будь-якої третьої сторони та діє виключно від свого імені та в інтересах українського суспільства. Підписант Декларації зобов’язується прикласти усіх зусиль та використати усі надані законодавством можливості для досягнення зазначених вище цілей. Підписант Декларації зобов’язується дотримуватися Конституції та законів України.'
-};
+    'Підписуючи цю Декларацію, особа підтверджує, що не переслідує жодних особистих корисливих чи неправомірних цілей, не представляє інтереси будь-якої політичної партії, іноземної організації, будь-якої третьої сторони та діє виключно від свого імені та в інтересах українського суспільства. Підписант Декларації зобов’язується прикласти усіх зусиль та використати усі надані законодавством можливості для досягнення зазначених вище цілей. Підписант Декларації зобов’язується дотримуватися Конституції та законів України.',
+}
 
 Block.options = {
-  invert: true
-};
+  invert: true,
+}
 
 Block.modifierScheme = [
   {
     id: 'subtitle',
     type: 'checkbox',
     label: 'Description',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'heading',
     type: 'checkbox',
     label: 'Title',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'subheading',
     type: 'checkbox',
     label: 'Subtitle',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'subheading2',
     type: 'checkbox',
     label: 'Subtitle-2',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'text',
     type: 'checkbox',
     label: 'Main text',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'text2',
     type: 'checkbox',
     label: 'Main text-2',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'text3',
     type: 'checkbox',
     label: 'Main text-3',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'text4',
     type: 'checkbox',
     label: 'Main text-4',
-    defaultValue: true
+    defaultValue: true,
+  },
+  {
+    id: 'text5',
+    type: 'checkbox',
+    label: 'Main text-5',
+    defaultValue: true,
   },
   {
     id: 'list1',
     type: 'checkbox',
     label: 'List 1',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'list2',
     type: 'checkbox',
     label: 'List 2',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'list3',
     type: 'checkbox',
     label: 'List 3',
-    defaultValue: true
+    defaultValue: true,
   },
   {
     id: 'align',
@@ -195,18 +201,18 @@ Block.modifierScheme = [
     children: [
       {
         id: 'left',
-        label: 'left'
+        label: 'left',
       },
       {
         id: 'center',
-        label: 'center'
+        label: 'center',
       },
       {
         id: 'right',
-        label: 'right'
-      }
-    ]
-  }
-];
+        label: 'right',
+      },
+    ],
+  },
+]
 
-export default Block;
+export default Block
