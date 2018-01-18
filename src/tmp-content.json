@@ -1,3 +1,97 @@
 {
-  "title": "Design title"
+  "title": "Services we provide",
+  "services": [
+    {
+      "id": "900aa334-14f2-4c05-b078-78099a5725e5",
+      "title": "Service 1",
+      "description":
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt",
+      "picture": {
+        "src": "depositphotos-146804477-original.png",
+        "alt": "Service illustration photo"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Learn more"
+      }
+    },
+    {
+      "id": "cfb2c56d-7708-4459-bdf2-6780f4ba62b9",
+      "title": "Service 2",
+      "description":
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt",
+      "picture": {
+        "src": "depositphotos-150504326-original.png",
+        "alt": "Service illustration photo"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Learn more"
+      }
+    },
+    {
+      "id": "eea21546-b56e-406b-8cba-18a5a5ec1820",
+      "title": "Service 3",
+      "description":
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt",
+      "picture": {
+        "src": "depositphotos-159638720-original.png",
+        "alt": "Service illustration photo"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Learn more"
+      }
+    },
+    {
+      "id": "aa5d3a04-43b7-4bb3-9c7a-00e1986f359e",
+      "title": "Service 4",
+      "description":
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt",
+      "picture": {
+        "src": "depositphotos-169507418-original.png",
+        "alt": "Service illustration photo"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Learn more"
+      }
+    }
+  ]
 }
