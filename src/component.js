@@ -113,7 +113,7 @@ Block.defaultContent = {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
       category: 'Creative Process',
-      date: '| September 22, 2017',
+      date: 'September 22, 2017',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
@@ -138,7 +138,7 @@ Block.defaultContent = {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
       category: 'Creative Process',
-      date: '| September 22, 2017',
+      date: 'September 22, 2017',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
