@@ -176,6 +176,10 @@
   font-weight: var(--ui-text-font-weight);
   font-family: var(--ui-text-font-family);
   word-wrap: break-word;
+
+  @media (max-height: 812px) {
+    height: auto;
+  }
 }
 
 @media (min-width: 768px) {
@@ -184,6 +188,12 @@
     //align-items: center;
     height: 100vh;
     padding: 0;
+  }
+}
+@media (max-height: 812px) {
+  .section {
+    height: auto;
+
   }
 }
 
