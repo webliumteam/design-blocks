@@ -1,3 +1,35 @@
 @import "wireframe-zapdos-numbers/src/style.css";
 
-/* start here */
+.item__content {
+  flex-direction: column;
+}
+
+.item__number {
+  font-size: var(--ui-block-title-size);
+  line-height: var(--ui-block-title-line-height);
+  font-family: var(--ui-block-title-font-family);
+  font-weight: 700;
+}
+
+.item__text {
+  font-size: calc(var(--ui-text-size)*1.125);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+@media (min-width:992px) {
+  .item:nth-last-of-type(4):first-child,
+  .item:nth-last-of-type(4):first-child ~ .item {
+    flex-basis: 25%;
+    max-width: 25%;
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .item {
+    flex-basis: 25%;
+    max-width: 25%;
+    margin-top: 25px;
+  }
+}
