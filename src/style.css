@@ -215,6 +215,17 @@
   max-width: var(--ui-content-container);
   margin: 0 auto;
   padding: var(--ui-content-gutter);
+  
+  @media (min-height: 602px) {
+    padding-top: 213px;
+  }
+
+  @media (min-height: 732px) {
+    padding-top: 111px;
+  }
+
+  
+
 }
 
 .article {
