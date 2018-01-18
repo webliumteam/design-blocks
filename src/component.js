@@ -4,17 +4,23 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getImageSize = (fullWidth) =>
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
+  getImageSize = fullWidth =>
     fullWidth
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
       : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
+  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, $block: {options}, style: css} = this.props
+    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
     const columnLayout = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
@@ -22,12 +28,20 @@ class Block extends React.Component {
       this.getModifierValue('socialIcons')
     )
     const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-
+    const ImageComponent = (
+      <Image
+        pictureClassName={css.article__picture}
+        bind="picture"
+        size={this.getImageSize(columnLayout)}
+      />
+    )
     return (
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
           <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
+            {this.getOptionValue('image_wrapper')
+              ? this.wrapImage(ImageComponent)
+              : ImageComponent}
             <div className={css.article__content}>
               {this.getModifierValue('title') && (
                 <h1 className={css.article__title}>
@@ -55,7 +69,11 @@ class Block extends React.Component {
                   {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
                   {this.getModifierValue('button') && (
                     <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+                      className={classNames(
+                        css.button,
+                        css['button--primary'],
+                        css['button--size-md'],
+                      )}
                       bind="button"
                     />
                   )}
@@ -74,7 +92,8 @@ Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.co
 Block.defaultContent = {
   title: 'About The Company',
   'text-1': 'Follow us:',
-  subtitle: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
+  subtitle:
+    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
   text:
     'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
   picture: {
