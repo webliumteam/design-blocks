@@ -86,7 +86,7 @@ Block.modifierScheme = [
   {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
+    label: 'Title description',
     defaultValue: true,
   },
   {
