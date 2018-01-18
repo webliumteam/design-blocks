@@ -1,15 +1,64 @@
 {
   "projects": [
     {
+      "id": "e9ec34d7-3cc6-49f3-a9ad-6ea69f59409c",
+      "title": "Project 1",
+      "text":
+        "A side-project with the goal to create a product that does one job incredibly well and learn a new programming language along the way.",
       "picture": {
-        "src": "bg-1.png"
+        "src": "bg-1.png",
+        "alt": "Project 1"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Learn more"
       }
     },
     {
+      "id": "9310272a-1fa2-4876-b1db-a879bbd4bc52",
+      "title": "Project 2",
+      "text":
+        "A side-project with the goal to create a product that does one job incredibly well and learn a new programming language along the way.",
       "picture": {
-        "src": "bg-2.png"
+        "src": "bg-2.png",
+        "alt": "Project 2"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Learn more"
       }
     }
   ],
-  "title": "Our projects"
+  "title": "Our Projects",
+  "cta": {
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "All projects"
+  }
 }
