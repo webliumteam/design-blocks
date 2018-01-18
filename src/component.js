@@ -66,12 +66,20 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
+          {(this.getModifierValue('button-secondary') || this.getModifierValue('button-primary')) && (
             <div className={style['btns-group']}>
-              <Button
-                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
-                bind="button-2"
-              />
+              {this.getModifierValue('button-primary') && (
+                <Button
+                  className={classNames(style.button, style['button--primary'], style['button--size-md'])}
+                  bind="button-1"
+                />
+              )}
+              {this.getModifierValue('button-secondary') && (
+                <Button
+                  className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+                  bind="button-2"
+                />
+              )}
             </div>
           )}
         </div>
@@ -234,7 +242,13 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'button',
+    id: 'button-primary',
+    type: 'checkbox',
+    label: 'Primary button',
+    defaultValue: false,
+  },
+  {
+    id: 'button-secondary',
     type: 'checkbox',
     label: 'Secondary button',
     defaultValue: true,
