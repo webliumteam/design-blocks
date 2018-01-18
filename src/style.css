@@ -18,6 +18,9 @@ button {
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
+  @media (max-height: 812px) {
+    position: relative;
+  }
 }
 
 @media (min-width: 768px) {
@@ -27,6 +30,11 @@ button {
     bottom: 0;
     left: 0;
     width: 100%;
+  }
+}
+@media (max-height: 812px) {
+  .footer {
+    position: relative;
   }
 }
 
@@ -170,16 +178,15 @@ button {
   }
 
   &::after {
-
     @media (min-width: 768px) {
-      content: "|";
+      content: '|';
       margin-left: 10px;
       margin-right: 10px;
       color: #8c8c8c;
     }
 
     @media (min-width: 991) {
-      content: "|";
+      content: '|';
       margin-left: 25px;
       margin-right: 25px;
       color: #8c8c8c;
