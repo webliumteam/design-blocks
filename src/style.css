@@ -319,6 +319,12 @@
     counter-increment: list;
     content: counter(list);
   }
+
+  &--counter-none {
+    &::before {
+      content: "";
+    }
+  }
 }
 
 @media (min-width: 768px) {
