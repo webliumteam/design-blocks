@@ -9,15 +9,15 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button, Image}, style: css} = this.props
+  collectionItem = ({index, children, className, modifier}) => {
+    const {components: {Text, Button, Image}, style} = this.props
     return (
-      <article className={classNames(css.article, className)}>
+      <article className={classNames(style.article, className)}>
         {children}
-        <div className={css['article__picture-wrapper']}>
+        <div className={style['article__picture-wrapper']}>
           <Image
-            pictureClassName={css.article__picture}
-            imgClassName={css.article__image}
+            pictureClassName={style.article__picture}
+            imgClassName={style.article__image}
             bind={`projects[${index}].picture`}
             size={{
               'min-width: 320px': 450,
@@ -27,22 +27,22 @@ class Block extends React.Component {
             }}
           />
         </div>
-        <div className={css.article__content}>
-          {this.getModifierValue('project-category') && (
-            <p className={css.article__caption}>
+        <div className={style.article__content}>
+          {_.get('project-category')(modifier) && (
+            <p className={style.article__caption}>
               <Text bind={`projects[${index}].subtitle`} />
             </p>
           )}
-          <h2 className={css.article__title}>
+          <h2 className={style.article__title}>
             <Text bind={`projects[${index}].title`} />
           </h2>
-          {this.getModifierValue('project-description') && (
-            <p className={css.article__text}>
+          {_.get('project-description')(modifier) && (
+            <p className={style.article__text}>
               <Text bind={`projects[${index}].text`} />
             </p>
           )}
-          {this.getModifierValue('project-button') && (
-            <Button className={css.article__link} bind={`projects[${index}].cta`} />
+          {_.get('project-button')(modifier) && (
+            <Button className={style.article__link} bind={`projects[${index}].cta`} />
           )}
         </div>
       </article>
@@ -50,31 +50,34 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style: css} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
-          <header className={css.section__header}>
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <header className={style.section__header}>
             {this.getModifierValue('title') && (
-              <h1 className={css.title}>
+              <h1 className={style.title}>
                 <Text bind="title" />
               </h1>
             )}
             {this.getModifierValue('subtitle') && (
-              <p className={css.subtitle}>
+              <p className={style.subtitle}>
                 <Text bind="subtitle" />
               </p>
             )}
           </header>
           <Collection
-            className={css['articles-wrapper']}
+            className={style['articles-wrapper']}
             bind="projects"
             Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
           />
           {this.getModifierValue('block-button') && (
-            <div className={css['btns-group']}>
+            <div className={style['btns-group']}>
               <Button
-                className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
                 bind="cta"
               />
             </div>
