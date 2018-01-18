@@ -22,8 +22,8 @@ class Block extends React.Component {
         <div className={style.item__content}>
           <strong className={style.item__number}>
             <Text bind={`numbers[${index}].value`} />
-          </strong>)
-          {_.get('number-title')(modifier) && (
+          </strong>
+          {_.get('body')(modifier) && (
             <p className={style.item__text}>
               <Text bind={`numbers[${index}].label`} />
             </p>
@@ -36,7 +36,7 @@ class Block extends React.Component {
   render() {
     const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, {[style['section--without-button']]: !this.getModifierValue('button')})}>
         <div className={style.section__inner}>
           {this.getModifierValue('title') && (
             <h1 className={style.title}>
