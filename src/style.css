@@ -136,9 +136,10 @@
   }
 }
 
-@media (min-width: 768px) {
-  .section__header {
-    padding-top: 30px;
+.section__header {
+  padding-top: 30px;
+  
+  @media (min-width: 768px) {
     margin-bottom: 10px;
   }
 }
