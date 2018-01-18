@@ -9,14 +9,18 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className, showIcon}) => {
-    const {components: {Text}, style} = this.props
+  getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
+
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Icon}, style} = this.props
+    const collectionIcon = this.getOptionValue('collection-icons')
     return (
       <li className={classNames(style.list__item, className)}>
         {children}
-        {showIcon && (
-          <div className={style['list__item-icon']} />
-        )}
+        {this.getModifierValue('icon') &&
+        <div className={classNames(style['list__item-icon'], {[style['list__item-icon--counter-none']]: collectionIcon})}>
+            {collectionIcon && <Icon bind={`careers[${index}].icon`} />}
+        </div>}
         <span className={style['list__item-text']}>
           <Text bind={`careers[${index}].title`} />
         </span>
@@ -86,12 +90,21 @@ Block.defaultContent = {
   careers: [
     {
       title: 'We have more than 40,000 employees worldwide',
+      icon: {
+        svg: '<svg></svg>',
+      },
     },
     {
       title: 'We serve more than 24,000 pharmacies',
+      icon: {
+        svg: '<svg></svg>',
+      },
     },
     {
       title: 'We’re in nearly 85% of U.S. hospitals.',
+      icon: {
+        svg: '<svg></svg>',
+      },
     },
   ],
   title: 'Careers',
