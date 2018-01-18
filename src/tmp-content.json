@@ -1,3 +1,15 @@
 {
+  "projects": [
+    {
+      "picture": {
+        "src": "bg-1.png"
+      }
+    },
+    {
+      "picture": {
+        "src": "bg-2.png"
+      }
+    }
+  ],
   "title": "Our projects"
 }

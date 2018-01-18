@@ -12,8 +12,8 @@
 }
 
 .article {
-  &__picture {
-    opacity: 0;
+  &__picture-wrapper {
+    position: relative;
   }
 
   &__caption {
@@ -45,6 +45,16 @@
 }
 
 .article:nth-child(1) {
+  .article__picture {
+    width: 1170px;
+    height: 370px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+  }
+
   .article__content {
     padding-left: 115px;
   }
@@ -62,6 +72,16 @@
 }
 
 .article:nth-child(2) {
+  .article__picture {
+    width: 1170px;
+    height: 370px;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: -585px;
+    z-index: -10;
+  }
+
   .article__title {
     text-align: right;
   }
