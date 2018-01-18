@@ -1,7 +1,6 @@
 import $editor from 'weblium/editor'
 
 class Block extends React.Component {
-
   static propTypes = {
     components: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
@@ -21,9 +20,9 @@ class Block extends React.Component {
           </h2>
         )}
         <div className={style.item__content}>
-            <strong className={style.item__number}>
-              <Text bind={`numbers[${index}].value`} />
-            </strong>)
+          <strong className={style.item__number}>
+            <Text bind={`numbers[${index}].value`} />
+          </strong>)
           {_.get('number-title')(modifier) && (
             <p className={style.item__text}>
               <Text bind={`numbers[${index}].label`} />
@@ -35,7 +34,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, mods, style} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -53,7 +52,7 @@ class Block extends React.Component {
               className: style.fake,
             }}
             itemProps={{
-              modifier: $block.modifier
+              modifier: $block.modifier,
             }}
           />
           {this.getModifierValue('button') && (
