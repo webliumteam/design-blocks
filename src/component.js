@@ -10,36 +10,36 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button, Image}, style: css} = this.props
+    const {components: {Text, Button, Image}, style} = this.props
     return (
-      <article className={classNames(css.article, className)}>
+      <article className={classNames(style.article, className)}>
         {children}
         {this.getModifierValue('post-image') && (
-          <div className={css['article__picture-wrapper']}>
+          <div className={style['article__picture-wrapper']}>
             <Image
-              pictureClassName={css.article__picture}
-              imgClassName={css.article__image}
+              pictureClassName={style.article__picture}
+              imgClassName={style.article__image}
               bind={`blog[${index}].picture`}
             />
           </div>
         )}
         {this.getModifierValue('post-publish-date') && (
-          <small className={css.article__meta}>
+          <small className={style.article__meta}>
             <Text bind={`blog[${index}].category`} />
             &nbsp;|&nbsp;
             <Text bind={`blog[${index}].date`} />
           </small>
         )}
-        <h2 className={css.article__title}>
+        <h2 className={style.article__title}>
           <Text bind={`blog[${index}].title`} />
         </h2>
         {this.getModifierValue('post-description') && (
-          <p className={css.article__text}>
+          <p className={style.article__text}>
             <Text bind={`blog[${index}].description`} />
           </p>
         )}
         {this.getModifierValue('post-link') && (
-          <Button className={css.link} bind={`blog[${index}].cta`} />
+          <Button className={style.link} bind={`blog[${index}].cta`} />
         )}
       </article>
     )
@@ -48,28 +48,26 @@ class Block extends React.Component {
   // {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
-    const {components: {Collection, Text, Button}, style: css} = this.props
+    const {components: {Collection, Text, Button}, style} = this.props
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
-          {this.getModifierValue('title') && (
-            <h1 className={css.title}>
-              <Text bind="title" />
-            </h1>
-          )}
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <h1 className={style.title}>
+            <Text bind="title" />
+          </h1>
           <Collection
-            className={css['articles-wrapper']}
+            className={style['articles-wrapper']}
             bind="blog"
             Item={this.collectionItem}
             fakeHelpers={{
               count: 2,
-              className: css.fake,
+              className: style.fake,
             }}
           />
           {this.getModifierValue('block-button') && (
-            <div className={css['btns-group']}>
+            <div className={style['btns-group']}>
               <Button
-                className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
                 bind="cta"
               />
             </div>
@@ -177,12 +175,6 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
   {
     id: 'post-publish-date',
     type: 'checkbox',
