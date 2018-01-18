@@ -20,65 +20,34 @@ class Block extends React.Component {
   wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Text, Image, Button}, style: css} = this.props
+
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
           <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
+            <Image
+              pictureClassName={css.article__picture}
+              bind="picture"
+              size={{'max-width: 479px': 480, 'min-width: 768px': 400, 'min-width: 480px': 800}}
+            />
             <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+              <h1 className={css.article__title}>
+                <Text bind="title" />
+              </h1>
+              <p className={css.article__subtitle}>
+                <Text bind="subtitle" />
+              </p>
+              <p className={css.article__text}>
+                <Text bind="text" />
+              </p>
+              <div className={css['btns-group']}>
+                <Button className={css.link} bind="link" />
+                <Button
+                  className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+                  bind="button"
+                />
+              </div>
             </div>
           </article>
         </div>
@@ -87,15 +56,18 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Button'])($editor.components)
+
+Block.options = {
+  invert: true,
+}
 
 Block.defaultContent = {
-  title: 'About The Company',
+  title: 'О нас',
   'text-1': 'Follow us:',
   subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
+    'Наша команда – это дизайнеры и архитекторы с 10-летним стажем.',
+  text: 'Мы любим свою работу и гордимся ее результатами уже 18 лет. Наши клиенты повторно обращаются к нам, потому что они довольны качеством наших работ. Компания сертифицирована на выполнение всех видов проектных работ и разрабатывает архитектурные проекты «с нуля» и «под ключ».',
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
     alt: 'Picture about the company',
@@ -126,74 +98,6 @@ Block.defaultContent = {
     },
     textValue: 'More about us',
   },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
-  },
 }
-
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
 
 export default Block
