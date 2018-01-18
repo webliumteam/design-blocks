@@ -1,3 +1,60 @@
 @import "wireframe-zapdos-footer/src/style.css";
 
 /* start here */
+
+/* .wf-montserrat-n1-active { */
+
+/* height: 100%; */
+
+/* } */
+.footer {
+  padding: 85px 0 0;
+  background: var(--ui-dark-shade-color);
+}
+
+.footer__inner .logo a {
+  text-decoration: none;
+}
+
+.logo__title {
+  font-size: calc(var(--ui-sub-heading-size)*1.05);
+  font-family: var(--ui-sub-heading-font-family);
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--ui-light-shade-color);
+  display: flex;
+
+  &:after {
+    content: "hose";
+    display: block;
+    color: var(--ui-light-accent-color);
+  }
+
+  @media (max-width: 991px) {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.logo__subtitle {
+  font-size: calc(var(--ui-small-text-size)/1.2);
+  color: var(--ui-light-shade-color);
+  text-transform: uppercase;
+}
+
+.footer__inner .nav .nav-list {
+  font-size: var(--ui-text-size);
+  font-family: var(--ui-text-font-family);
+  font-weight: var(--ui-text-font-weight);
+  color: var(--ui-light-shade-color);
+}
+
+.footer .footer__inner .footer__bottom {
+  margin-top: 38px;
+  border-top: 1px solid #4d4d4d;
+  padding: 84px 0 46px;
+}
+
+.footer .footer__inner .footer__meta {
+  color: var(--ui-small-color);
+}

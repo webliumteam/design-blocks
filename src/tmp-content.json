@@ -1,3 +1,19 @@
 {
-  "title": "Design title"
+  "title": "Design title",
+  "additional": "Demo Preview for GreatHouse Building Company Concept",
+  "logo": {
+    "text": {
+      "value": "Great"
+    }
+  },
+  "subtitle": "An estate company",
+
+  "background": {
+    "type": "image",
+    "position": {
+      "type": "cover",
+      "cover": "50% 50%"
+    },
+    "src": "rule.png"
+  }
 }
