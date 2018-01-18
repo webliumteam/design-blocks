@@ -7,7 +7,7 @@
     font-size: var(--ui-heading-size);
     line-height: var(--ui-heading-line-height);
     font-family: var(--ui-heading-font-family);
-    font-weight: var(--ui-heading-font-weight);
+    font-weight: 700;
   }
 
   &__subtitle {
