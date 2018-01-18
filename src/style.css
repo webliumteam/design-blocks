@@ -283,6 +283,7 @@
   align-items: center;
   margin-top: 20px;
   flex-direction: column;
+  min-height: 70px;
 }
 
 @media (min-width: 768px) {
@@ -342,7 +343,7 @@
 @media (min-width: 768px) {
   .list__item .list__item-icon + .list__item-text {
     text-align: left;
-    max-width: calc(100% - 90px);
+    max-width: 100%;
   }
 }
 
@@ -360,7 +361,7 @@
 @media (min-width: 768px) {
   .list__item-text {
     text-align: center;
-    max-width: calc(100% - 90px);
+    max-width: 100%;
   }
 }
 

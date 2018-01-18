@@ -64,6 +64,9 @@ class Block extends React.Component {
                 TagName="ul"
                 bind="careers"
                 Item={this.collectionItem}
+                itemProps={{
+                  showIcon: this.getModifierValue('icon'),
+                }}
               />
             </div>
           </div>
