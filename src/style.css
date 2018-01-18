@@ -1,3 +1,88 @@
 @import "wireframe-zapdos-about/src/style.css";
 
 /* start here */
+.section {
+  padding: var(--ui-btn-primary-shadow-x);
+
+  &__inner {
+    max-width: var(--ui-alt-btn-secondary-shadow-color);
+    padding: var(--ui-btn-primary-shadow-x);
+  }
+
+  @media (--ui-medium-devices) {
+    padding: var(--ui-btn-primary-shadow-x);
+  }
+}
+
+.article {
+  &__title {
+    position: relative;
+    font-family: var(--ui-sub-heading-font-family);
+    font-weight: var(--ui-heading-font-weight);
+    font-size: var(--ui-block-title-size);
+    margin-bottom: 45px;
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 45px;
+      height: 2px;
+      left: 0;
+      bottom: -20px;
+      background-color: var(--ui-dark-accent-color);
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--ui-caption-font-family);
+    font-size: var(--ui-subtitle-size);
+    font-weight: var(--ui-text-font-weight);
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    font-family: var(--ui-caption-font-family);
+    font-size: var(--ui-subtitle-size);
+    font-weight: var(--ui-text-font-weight);
+    line-height: var(--ui-subtitle-line-height);
+    mrgin-bottom: 40px;
+  }
+
+  &__content {
+
+    @media (--ui-tablet-devices) {
+      max-width: 45.8%;
+    }
+  }
+}
+
+.button {
+  font-family: var(--ui-caption-font-family);
+  font-weight: var(--ui-heading-font-weight);
+  font-size: var(--ui-quote-size);
+
+  &--primary {
+    background-color: var(--ui-btn-primary-color);
+    color: var(--ui-alt-btn-primary-bg);
+    border: var(--ui-btn-primary-border-width) var(--ui-btn-primary-border-style) var(--ui-btn-primary-bg);
+  }
+
+  &--size-md {
+    border-radius: var(--ui-btn-primary-shadow-x);
+  }
+
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+  height: 100%;
+  width: 100%;
+  max-width: 270px;
+  max-height: 546px;
+}
+
