@@ -1,3 +1,60 @@
 @import "wireframe-zapdos-footer/src/style.css";
 
 /* start here */
+
+.logo {
+  &__title {
+    font-size: var(--ui-heading-size);
+    line-height: var(--ui-heading-line-height);
+    font-family: var(--ui-heading-font-family);
+    font-weight: var(--ui-heading-font-weight);
+  }
+
+  &__subtitle {
+    font-size: 11px;
+    font-family: var(--ui-heading-font-family);
+    font-weight: var(---ui-sub-heading-font-weight);
+    text-transform: uppercase;
+  }
+
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.nav-list {
+  margin-top: -10px;
+
+  &__link {
+    font-size: 11px;
+    font-family: var(--ui-heading-font-family);
+    font-weight: var(--ui-heading-font-weight);
+    text-transform: uppercase;
+    opacity: 0.8;
+    transition: all 0.3s;
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid var(--ui-light-shade-color);
+      color: var(--ui-light-shade-color);
+      opacity: 1;
+    }
+  }
+}
+
+.footer {
+  &__meta span {
+    font-size: calc(var(--ui-small-text-size) * 0.92);
+    font-family: var(--ui-heading-font-family);
+    font-weight: var(---ui-sub-heading-font-weight);
+    text-transform: uppercase;
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    margin-top: 24px;
+    padding: 28px 0 22px;
+  }
+}
