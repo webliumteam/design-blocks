@@ -3,21 +3,8 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
-
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
 
   render() {
     const {components: {Text, Image, Button}, style: css} = this.props
