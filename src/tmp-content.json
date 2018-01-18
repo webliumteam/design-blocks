@@ -1,3 +1,11 @@
 {
-  "title": "Design title"
+  "title": "Type Something",
+  "background": {
+    "type": "image",
+    "position":{
+      "type": "cover"
+
+      },
+    "src": "cover_bg.jpg"
+  }
 }
