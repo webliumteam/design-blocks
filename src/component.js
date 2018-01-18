@@ -1,15 +1,16 @@
 import $editor from 'weblium/editor'
 
-const setStyleProperties = (properties) => (node) =>
+const setStyleProperties = properties => node =>
   properties.map(([propertyName, value]) => node.style.setProperty(propertyName, value))
 
-const resetStyleProperties = (properties) => (node) =>
-  properties.map((propertyName) => node.style.removeProperty(propertyName))
+const resetStyleProperties = properties => node =>
+  properties.map(propertyName => node.style.removeProperty(propertyName))
 
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
   }
 
   state = {
@@ -27,9 +28,12 @@ class Block extends React.Component {
     }
   }
 
+
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
   toggleOpened = () => this.setState({opened: !this.state.opened}, this.setStylesForBody)
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
 
   render() {
     const {components: {Logo, Menu, Button}, style: css} = this.props
