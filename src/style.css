@@ -370,6 +370,10 @@
 
 .button:last-child {
   margin-top: 15px;
+  
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 480px) {
