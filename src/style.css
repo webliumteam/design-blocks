@@ -9,9 +9,6 @@
     padding: var(--ui-btn-primary-shadow-x);
   }
 
-  @media (--ui-medium-devices) {
-    padding: var(--ui-btn-primary-shadow-x);
-  }
 }
 
 .article {
@@ -73,16 +70,3 @@
   }
 
 }
-
-.background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: auto;
-  left: auto;
-  height: 100%;
-  width: 100%;
-  max-width: 270px;
-  max-height: 546px;
-}
-
