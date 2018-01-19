@@ -90,18 +90,21 @@ Block.defaultContent = {
   careers: [
     {
       title: 'We have more than 40,000 employees worldwide',
+      id: 'dc11a56a-3863-477a-8a53-fb64c7bb71e6',
       icon: {
         svg: '<svg></svg>',
       },
     },
     {
       title: 'We serve more than 24,000 pharmacies',
+      id: '80c3446a-8a89-4652-89bb-b861e55f3f7d',
       icon: {
         svg: '<svg></svg>',
       },
     },
     {
       title: 'We’re in nearly 85% of U.S. hospitals.',
+      id: '83cc85d7-1543-44f3-9926-6c8b20909dcd',
       icon: {
         svg: '<svg></svg>',
       },
