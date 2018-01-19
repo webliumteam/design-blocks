@@ -15,7 +15,7 @@
   &__title {
     position: relative;
     font-family: var(--ui-sub-heading-font-family);
-    font-weight: var(--ui-heading-font-weight);
+    font-weight: 600;
     font-size: var(--ui-block-title-size);
     margin-bottom: 45px;
 
@@ -56,7 +56,7 @@
 
 .button {
   font-family: var(--ui-caption-font-family);
-  font-weight: var(--ui-heading-font-weight);
+  font-weight: 600;
   font-size: var(--ui-quote-size);
 
   &--primary {
