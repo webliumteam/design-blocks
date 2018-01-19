@@ -1,4 +1,8 @@
 {
   "some-modifier": true,
-  "subheading": false
+  "title": true,
+  "subtitle": true,
+  "heading": true,
+  "subheading": false,
+  "text": true
 }
