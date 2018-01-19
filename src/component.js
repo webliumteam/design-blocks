@@ -130,7 +130,7 @@ Block.defaultContent = {
       border: 'circle',
       innerFill: true,
       preset: 'preset001',
-      padding: 20,
+      marginRight: 20,
       color: '',
       sizes: [10, 20, 30, 40],
       size: '40px',
