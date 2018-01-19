@@ -3,197 +3,167 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Icon}, style: css} = this.props
+    return (
+      <article className={classNames(css.article, className)}>
+        {children}
+        <Icon className={css.article__icon} bind={`steps[${index}].icon`} />
+        <div className={css.article__content}>
+          <h2 className={css.article__title}>
+            <Text bind={`steps[${index}].title`} />
+          </h2>
+          <p className={css.article__text}>
+            <Text bind={`steps[${index}].description`} />
+          </p>
+        </div>
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Collection, Text, Button}, style: css} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
+          <h1 className={css.title}>
+            <Text bind="title" />
+          </h1>
+          <Collection className={css['articles-wrapper']} bind="steps" Item={this.collectionItem} />
+          <h2 className={css.subtitle}>
+            <Text bind="description2" />
+          </h2>
+          <div className={css['btns-group']}>
+            <Button
+              className={classNames(
+                css.button, css['button--primary'],
+                css['button--size-md'],
+                css['button--custom'],
               )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+              bind="cta"
+            />
+          </div>
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.components)
 
-Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
-  },
+Block.options = {
+  invert: true,
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
+Block.defaultContent = {
+  theme: 'dark',
+  steps: [
+    {
+      id: '07a5468d-b105-4866-98a5-dcf2cf46db3a',
+      title: 'Экономия времени',
+      number: '1',
+      icon: {
+        id: '12748',
+        fill: '#AED581',
+        preview: 'https://d30y9cdsu7xlg0.cloudfront.net/png/12748-200.png',
+        svg:
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" style="max-width:100%"><g fill="#AED581"><path d="M40.9 64.3L25.4 48.7l2.8-2.8 12.7 12.7 26.9-26.9 2.8 2.9z"/><path d="M48 90C24.8 90 6 71.2 6 48S24.8 6 48 6s42 18.8 42 42-18.8 42-42 42zm0-80c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"/></g></svg>',
+      },
+      description:
+        'мы создаем индивидуальный проект в котором будут учтены все мелочи',
+    },
+    {
+      id: '12e39a62-f8f4-4bf5-b2a0-5d536eeecd27',
+      title: 'Качественный сервис',
+      number: '2',
+      icon: {
+        id: '12748',
+        fill: '#AED581',
+        preview: 'https://d30y9cdsu7xlg0.cloudfront.net/png/12748-200.png',
+        svg:
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" style="max-width:100%"><g fill="#AED581"><path d="M40.9 64.3L25.4 48.7l2.8-2.8 12.7 12.7 26.9-26.9 2.8 2.9z"/><path d="M48 90C24.8 90 6 71.2 6 48S24.8 6 48 6s42 18.8 42 42-18.8 42-42 42zm0-80c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"/></g></svg>',
+      },
+      description:
+        'мы умеем слушать и слышать клиента, не настаивая на своих решениях, делаем все максимально так, как хочет заказчик',
+    },
+    {
+      id: '5095f30d-1fbc-4809-a8c5-82bb203f3505',
+      title: 'Справедливая цена',
+      number: '3',
+      icon: {
+        id: '12748',
+        fill: '#AED581',
+        preview: 'https://d30y9cdsu7xlg0.cloudfront.net/png/12748-200.png',
+        svg:
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" style="max-width:100%"><g fill="#AED581"><path d="M40.9 64.3L25.4 48.7l2.8-2.8 12.7 12.7 26.9-26.9 2.8 2.9z"/><path d="M48 90C24.8 90 6 71.2 6 48S24.8 6 48 6s42 18.8 42 42-18.8 42-42 42zm0-80c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"/></g></svg>',
+      },
+      description:
+        'наши цены начинаются от 10$ кв.м. Мы даем гарантии качества',
+    },
+    {
+      id: '5095f30d-1fbc-4809-a8c5-82bb203f3509',
+      title: '18-летний опыт',
+      number: '4',
+      icon: {
+        id: '12748',
+        fill: '#AED581',
+        preview: 'https://d30y9cdsu7xlg0.cloudfront.net/png/12748-200.png',
+        svg:
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" style="max-width:100%"><g fill="#AED581"><path d="M40.9 64.3L25.4 48.7l2.8-2.8 12.7 12.7 26.9-26.9 2.8 2.9z"/><path d="M48 90C24.8 90 6 71.2 6 48S24.8 6 48 6s42 18.8 42 42-18.8 42-42 42zm0-80c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"/></g></svg>',
+      },
+      description:
+        'мы понимаем, что дизайн должен быть не только красивым, но и функциональным',
+    },
+    {
+      id: '5095f30d-1fbc-4809-a8c5-82bb203f3506',
+      title: 'Полный цикл работ',
+      number: '5',
+      icon: {
+        id: '12748',
+        fill: '#AED581',
+        preview: 'https://d30y9cdsu7xlg0.cloudfront.net/png/12748-200.png',
+        svg:
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" style="max-width:100%"><g fill="#AED581"><path d="M40.9 64.3L25.4 48.7l2.8-2.8 12.7 12.7 26.9-26.9 2.8 2.9z"/><path d="M48 90C24.8 90 6 71.2 6 48S24.8 6 48 6s42 18.8 42 42-18.8 42-42 42zm0-80c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"/></g></svg>',
+      },
+      description:
+        'кроме дизайн-проекта, мы занимаемся авторским надзором и производством мебели. У вас не будет болеть об этом голова.',
+    },
+    {
+      id: '5095f30d-1fbc-4809-a8c5-82bb203f3501',
+      title: 'Контроль и решение проблем',
+      number: '6',
+      icon: {
+        id: '12748',
+        fill: '#AED581',
+        preview: 'https://d30y9cdsu7xlg0.cloudfront.net/png/12748-200.png',
+        svg:
+          '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" style="max-width:100%"><g fill="#AED581"><path d="M40.9 64.3L25.4 48.7l2.8-2.8 12.7 12.7 26.9-26.9 2.8 2.9z"/><path d="M48 90C24.8 90 6 71.2 6 48S24.8 6 48 6s42 18.8 42 42-18.8 42-42 42zm0-80c-21 0-38 17-38 38s17 38 38 38 38-17 38-38-17-38-38-38z"/></g></svg>',
+      },
+      description:
+        'мы составляем детальную смету, помогаем с выбором и контролем подрядчика, экономя ваше время',
+    },
+  ],
+  title: 'НАШИ ПРЕИМУЩЕСТВА',
+  description:
+    'Many people were hoping that if the Democrats won control of Congress they would reverse the online gambling ban, but experts doubt they will even try or that if they do that the will be successful. Once the bill was passed and signed into law.',
+  description2:
+    'Дизайн-проект - это 20% визуализаций и 80% чертежей - доверьте их профессионалам',
+  cta: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'More about out process',
   },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
+}
 
 export default Block
