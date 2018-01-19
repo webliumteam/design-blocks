@@ -10,9 +10,9 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = planIndex => ({index, children, className}) => {
-    const {components: {Text}, style: css} = this.props
+    const {components: {Text}, style} = this.props
     return (
-      <li className={classNames(css['plan__list-item'], className)}>
+      <li className={classNames(style['plan__list-item'], className)}>
         {children}
         <Text bind={`plan-list-${planIndex}[${index}].text`} />
       </li>
@@ -20,41 +20,40 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, $block: {options}, style: css} = this.props
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
+    const {components: {Collection, Text, Button, Icon}, $block: {options}, style} = this.props
 
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
+      <section className={style.section}>
+        <div className={style.section__inner}>
           {this.getModifierValue('block-title') && (
-            <h1 className={css.title}>
+            <h1 className={style.title}>
               <Text bind="title" />
             </h1>
           )}
           {this.getModifierValue('subtitle') && (
-            <p className={css.subtitle}>
+            <p className={style.subtitle}>
               <Text bind="description" />
             </p>
           )}
-          <div className={css['plans-wrapper']}>
-            <article className={css.plan}>
-              <h2 className={css.plan__title}>
+          <div className={style['plans-wrapper']}>
+            <article className={style.plan}>
+              <h2 className={style.plan__title}>
                 <Text bind="plan-title-1" />
               </h2>
               {this.getModifierValue('plan-icon') && (
-                <div className={css['plan__icon-wrapper']}>
+                <div className={style['plan__icon-wrapper']}>
                   <Icon
                     bind="plan-icon-1"
                   />
                 </div>
               )}
               {this.getModifierValue('plan-price') && (
-                <p className={css.plan__price}>
-                  <strong className={css['plan__price-count']}>
+                <p className={style.plan__price}>
+                  <strong className={style['plan__price-count']}>
                     <Text bind="plan-price-count-1" />
                   </strong>
                   {this.getModifierValue('plan-additional-info') && (
-                    <span className={css['plan__price-text']}>
+                    <span className={style['plan__price-text']}>
                       <Text bind="plan-price-text-1" />
                     </span>
                   )}
@@ -62,7 +61,7 @@ class Block extends React.Component {
               )}
               {this.getModifierValue('plan-description') && (
                 <Collection
-                  className={css.plan__list}
+                  className={style.plan__list}
                   TagName="ul"
                   bind="plan-list-1"
                   Item={this.collectionItem('1')}
@@ -71,33 +70,33 @@ class Block extends React.Component {
               {this.getModifierValue('plan-button') && (
                 <Button
                   className={classNames(
-                    css.button,
-                    css['button--primary'],
-                    css['button--size-sm'],
-                    css.plan__button,
+                    style.button,
+                    style['button--primary'],
+                    style['button--size-sm'],
+                    style.plan__button,
                   )}
                   bind="plan-cta-1"
                 />
               )}
             </article>
-            <article className={classNames(css.plan, css['plan--main'])}>
-              <h2 className={css.plan__title}>
+            <article className={classNames(style.plan, style['plan--main'])}>
+              <h2 className={style.plan__title}>
                 <Text bind="plan-title-2" />
               </h2>
               {this.getModifierValue('plan-icon') && (
-                <div className={css['plan__icon-wrapper']}>
+                <div className={style['plan__icon-wrapper']}>
                   <Icon
                     bind="plan-icon-2"
                   />
                 </div>
               )}
               {this.getModifierValue('plan-price') && (
-                <p className={css.plan__price}>
-                  <strong className={css['plan__price-count']}>
+                <p className={style.plan__price}>
+                  <strong className={style['plan__price-count']}>
                     <Text bind="plan-price-count-2" />
                   </strong>
                   {this.getModifierValue('plan-additional-info') && (
-                    <span className={css['plan__price-text']}>
+                    <span className={style['plan__price-text']}>
                       <Text bind="plan-price-text-2" />
                     </span>
                   )}
@@ -105,7 +104,7 @@ class Block extends React.Component {
               )}
               {this.getModifierValue('plan-description') && (
                 <Collection
-                  className={css.plan__list}
+                  className={style.plan__list}
                   TagName="ul"
                   bind="plan-list-2"
                   Item={this.collectionItem('2')}
@@ -114,33 +113,33 @@ class Block extends React.Component {
               {this.getModifierValue('plan-button') && (
                 <Button
                   className={classNames(
-                    css.button,
-                    css['button--primary'],
-                    css['button--size-md'],
-                    css.plan__button,
+                    style.button,
+                    style['button--primary'],
+                    style['button--size-md'],
+                    style.plan__button,
                   )}
                   bind="plan-cta-2"
                 />
               )}
             </article>
-            <article className={css.plan}>
-              <h2 className={css.plan__title}>
+            <article className={style.plan}>
+              <h2 className={style.plan__title}>
                 <Text bind="plan-title-3" />
               </h2>
               {this.getModifierValue('plan-icon') && (
-                <div className={css['plan__icon-wrapper']}>
+                <div className={style['plan__icon-wrapper']}>
                   <Icon
                     bind="plan-icon-3"
                   />
                 </div>
               )}
               {this.getModifierValue('plan-price') && (
-                <p className={css.plan__price}>
-                  <strong className={css['plan__price-count']}>
+                <p className={style.plan__price}>
+                  <strong className={style['plan__price-count']}>
                     <Text bind="plan-price-count-3" />
                   </strong>
                   {this.getModifierValue('plan-additional-info') && (
-                    <span className={css['plan__price-text']}>
+                    <span className={style['plan__price-text']}>
                       <Text bind="plan-price-text-3" />
                     </span>
                   )}
@@ -148,7 +147,7 @@ class Block extends React.Component {
               )}
               {this.getModifierValue('plan-description') && (
                 <Collection
-                  className={css.plan__list}
+                  className={style.plan__list}
                   TagName="ul"
                   bind="plan-list-3"
                   Item={this.collectionItem('3')}
@@ -157,10 +156,10 @@ class Block extends React.Component {
               {this.getModifierValue('plan-button') && (
                 <Button
                   className={classNames(
-                    css.button,
-                    css['button--primary'],
-                    css['button--size-sm'],
-                    css.plan__button,
+                    style.button,
+                    style['button--primary'],
+                    style['button--size-sm'],
+                    style.plan__button,
                   )}
                   bind="plan-cta-3"
                 />
@@ -168,9 +167,9 @@ class Block extends React.Component {
             </article>
           </div>
           {this.getModifierValue('additional-btn') && (
-            <div className={css['btns-group']}>
+            <div className={style['btns-group']}>
               <Button
-                className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
                 bind="cta"
               />
             </div>
@@ -314,13 +313,13 @@ Block.modifierScheme = [
   {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
+    label: 'Title description',
     defaultValue: false,
   },
   {
     id: 'additional-btn',
     type: 'checkbox',
-    label: 'Additional button',
+    label: 'Secondary button',
     defaultValue: false,
   },
   {
@@ -350,7 +349,7 @@ Block.modifierScheme = [
   {
     id: 'plan-button',
     type: 'checkbox',
-    label: 'Product button',
+    label: 'Package button',
     defaultValue: true,
   },
 ]

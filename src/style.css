@@ -117,15 +117,21 @@
 
 .section {
   min-width: 320px;
-  padding: 40px 0;
-
-  /* background-color: var(--ui-block-bg); */
+  padding: 50px 0;
   font-size: var(--ui-text-size);
   font-family: var(--ui-text-font-family);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
+  
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding: 75px 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -135,12 +141,6 @@
 
   .section--no-icon .plan--main .plan__button {
     margin-top: 50px;
-  }
-}
-
-@media (min-width: 992px) {
-  .section {
-    padding: 80px 0;
   }
 }
 
@@ -251,6 +251,10 @@
   color: var(--ui-heading-lg-color);
 }
 
+.plan__list {
+  margin-bottom: 40px;
+}
+
 .plan__list-item {
   margin-bottom: 15px;
 }
@@ -261,7 +265,6 @@
 
 .plan__button {
   width: 100%;
-  margin-top: 40px;
 }
 
 @media (min-width: 768px) {
@@ -291,8 +294,12 @@
   height: 90px;
 }
 
+.plan--main .plan__list {
+  margin-bottom: 40px;
+}
+
 .plan--main .plan__button {
-  margin-top: 45px;
+  margin-top: 15px;
 }
 
 .btns-group {
