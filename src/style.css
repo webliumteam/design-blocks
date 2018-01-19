@@ -200,10 +200,13 @@
     align-items: flex-start;
   }
 
+  .contacts:first-child .logo-wrapper {
+    margin-right: 4%;
+  }
+
   .contacts:first-child .logo {
     max-width: 170px;
     min-height: 75px;
-    margin-right: 4%;
     margin-bottom: 0;
   }
 
@@ -248,20 +251,24 @@
 .logo-wrapper {
   display: none;
   margin-bottom: 30px;
-  min-height: 120px;
-  background-color: var(--ui-media-bg);
 }
 
 .logo {
   display: flex;
   width: 100%;
   max-width: 270px;
-  padding-left: 20px;
-  padding-right: 20px;
+  min-height: 120px;
+  padding-left: 15px;
+  padding-right: 15px;
   align-items: center;
   justify-content: center;
   color: var(--ui-text-color);
   text-decoration: none;
+  background-color: var(--ui-media-bg);
+  
+  img {
+    max-width: 100%;
+  }
 }
 
 @media (min-width: 992px) {

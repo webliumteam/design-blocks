@@ -14,11 +14,20 @@ class Block extends React.Component {
       this.getModifierValue('logo') ||
       this.getModifierValue('phone') ||
       this.getModifierValue('email') ||
-      this.getModifierValue('socialIcons')
+      this.getModifierValue('social')
+    )
+
+    const mapWithSocials = !(
+      this.getModifierValue('map') ||
+      this.getModifierValue('social')
     )
 
     return (
-      <section className={classNames(style.section, {[style['section--state-8']]: textWithSocials})}>
+      <section className={classNames(style.section, {
+        [style['section--state-8']]: textWithSocials,
+        [style['section--column']]: mapWithSocials
+      }
+      )}>
         <div className={style.section__inner}>
           <h1 className={style.title}>
             <Text bind="title" />
@@ -34,14 +43,14 @@ class Block extends React.Component {
                 <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
               </div>}
               <ul className={style['contacts-list']}>
-                <li className={style['contacts-list__item']}>
+                {this.getModifierValue('address') && <li className={style['contacts-list__item']}>
                   <h3 className={style.contacts__title}>
                     <Text bind="address-title" />
                   </h3>
                   <p className={style.contacts__desc}>
                     <Text bind="address-content" />
                   </p>
-                </li>
+                </li>}
                 {this.getModifierValue('phone') && <li className={style['contacts-list__item']}>
                   <h3 className={style.contacts__title}>
                     <Text bind="phone-title" />
@@ -182,6 +191,12 @@ Block.modifierScheme = [
     id: 'email',
     type: 'checkbox',
     label: 'E-mail text block',
+    defaultValue: true,
+  },
+  {
+    id: 'address',
+    type: 'checkbox',
+    label: 'Address text block',
     defaultValue: true,
   },
   {
