@@ -259,7 +259,7 @@
 }
 
 .item__number {
-  max-width: 100%;
+  max-width: 50%;
   margin-right: 10px;
   font-family: var(--ui-block-title-font-family);
   font-size: var(--ui-block-title-size);
