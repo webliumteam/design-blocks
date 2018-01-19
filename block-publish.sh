@@ -1,10 +1,11 @@
 #!/bin/bash
 LOCALHOST=http://localhost:3000
-while getopts u:h:b: option
+while getopts u:h:b:e: option
 do
  case "${option}"
  in
  u) USERNAME=${OPTARG};;
+ e) ENV=${OPTARG};;
  b) IFS=','
     array=(${OPTARG});;
  h) HOST=$OPTARG;;
@@ -17,7 +18,7 @@ done
 
 wm-cli login -u $USERNAME -h $HOST && (
   for block in "${array[@]}"; do
-    BRANCH="w/zapdos/${block}"
+    BRANCH="w/zapdos/${block}/${ENV}"
     git checkout $BRANCH && (
       git pull origin $BRANCH
       REPLACED=${HOST//:/.}
