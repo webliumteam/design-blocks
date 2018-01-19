@@ -29,7 +29,7 @@ class Block extends React.Component {
 
     return (
       <header className={css.header}>
-        <nav className={classNames(css.nav, this.getModifierValue && css['nav--absolute'])}>
+        <nav className={classNames(css.nav, this.getModifierValue('absolute') && css['nav--absolute'])}>
           <a href="/" className={css.logo}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332 72">
               <path fill="none" stroke="#fff" strokeWidth="2" d="M1 1h330v70H1z" />
