@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 import css from './style.css'
-import {userCountRef, firebasLogin} from './main'
+import firebasLogin from './main'
 
 class Block extends React.Component {
   static propTypes = {
@@ -15,16 +15,26 @@ class Block extends React.Component {
   }
 
   componentWillMount() {
-    userCountRef.on('value', this.updateValue)
+    fetch('https://us-central1-nebaiduzhi-3e7fa.cloudfunctions.net/getTotal')
+      .then(response => response.json())
+      .then(this.updateValue)
+  }
+
+  login = () => {
+    firebasLogin()
+      .then(() => this.toggleModal())
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  updateValue = (snapshot) => {
-    this.setState({usersTotal: snapshot.val()})
+  updateValue = ({total}) => {
+    console.log(total)
+    this.setState({usersTotal: total})
   }
 
-  toggleModal = () => this.setState({openModal: !this.state.openModal})
+  toggleModal = () => {
+    this.setState({openModal: !this.state.openModal})
+  }
 
   render() {
     const {components: {Text, Menu, Button}, style: css} = this.props
@@ -51,7 +61,7 @@ class Block extends React.Component {
                   </span>
                 </div>
               )}
-              <button className={classNames(css.button)} onClick={firebasLogin}>
+              <button className={classNames(css.button)} onClick={this.login}>
                 Долучитись
               </button>
             </div>
