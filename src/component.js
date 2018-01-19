@@ -30,7 +30,7 @@ class Block extends React.Component {
 
 
     return (
-      <footer className={css.footer}>
+      <footer className={classNames(css.footer, this.getModifierValue('fixed') && css['footer--fixed'])}>
         <div className={css.footer__inner}>
           <nav className={css.nav}>
             <Menu
@@ -130,6 +130,12 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Company slogan',
     defaultValue: true,
+  },
+  {
+    id: 'fixed',
+    type: 'checkbox',
+    label: 'Fixed Block',
+    defaultValue: false,
   },
 ]
 
