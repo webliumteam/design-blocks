@@ -8,10 +8,47 @@
 
 .subtitle {
   margin-bottom: 16px;
+  color: var(--ui-text-color);
 }
 
 @media (min-width: 992px) {
   .subtitle {
     max-width: 886px;
+  }
+
+  .content {
+    .media-wrap {
+      .media {
+        min-height: 550px;
+      }
+    }
+
+    &__text {
+      max-width: 539px;
+      margin-bottom: 25px;
+    }
+
+    .list {
+      &__item {
+        &-text {
+          padding-right: 150px;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  .list {
+    &__item {
+      &-icon {
+        background-color: transparent;
+        margin-right: 25px;
+      }
+
+      &-text {
+        font-size: var(--ui-subtitle-size);
+      }
+    }
   }
 }
