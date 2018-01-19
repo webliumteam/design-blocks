@@ -9,6 +9,7 @@ button {
 .footer {
   min-width: 320px;
   padding: 20px 0;
+  padding-bottom: 0;
   background-color: #141414;
 
   /* background-color: var(--ui-block-bg); */
@@ -43,7 +44,8 @@ button {
 
 @media (min-width: 768px) {
   .footer {
-    padding: 53px 0;
+    padding: 52px 0;
+    padding-bottom: 0;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -53,6 +55,7 @@ button {
 @media (min-width: 992px) {
   .footer {
     padding: 53px 0;
+    padding-bottom: 0;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -226,7 +229,8 @@ button {
 }
 
 .footer {
-  padding: 35px 0;
+  padding: 52px 0;
+  padding-bottom: 0;
   border-top: 1px solid #4d4d4d40;
 }
 
@@ -326,7 +330,6 @@ button {
     color: #fff;
     margin-bottom: 55px;
 
-
     @media (min-width: 768px) {
       font-size: 60px;
     }
@@ -339,7 +342,7 @@ button {
     line-height: 1.69;
     background-color: transparent;
     text-align: center;
-    border:0;
+    border: 0;
     color: #fae27c;
     text-decoration: underline;
 
@@ -366,7 +369,46 @@ button {
   }
 }
 
+.footer {
+  &__privacy {
+    line-height: 1.73;
+    background-color: #0f0f0f;
+    color: #8c8c8c;
+    margin-top: 54px;
+  }
 
+  &__inner--privacy {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    text-align: center;
 
+    @media (min-width: 768px) {
+      text-align: left;
+      flex-direction: row;
 
+    }
+  }
+}
 
+.text {
+  &__link {
+    text-decoration: none;
+    font-size: 15px;
+
+    text-align: right;
+    color: #8c8c8c;
+    transition: color .2s ease-out;
+
+    &:hover {
+      color: #fff;
+    }
+
+    svg {
+      fill: #fff;
+      display: inline-block;
+      margin-right: 17px;
+    }
+  }
+}
