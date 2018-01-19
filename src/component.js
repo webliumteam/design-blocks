@@ -28,8 +28,8 @@ class Block extends React.Component {
     const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
 
     return (
-      <header className={classNames(css.header, this.getModifierValue('fixed') && css['header--fixed'])}>
-        <nav className={css.nav}>
+      <header className={css.header}>
+        <nav className={classNames(css.nav, this.getModifierValue && css['nav--absolute'])}>
           <a href="/" className={css.logo}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332 72">
               <path fill="none" stroke="#fff" strokeWidth="2" d="M1 1h330v70H1z" />
@@ -93,9 +93,9 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'fixed',
+    id: 'absolute',
     type: 'checkbox',
-    label: 'Block fixed',
+    label: 'Absolute position',
     defaultValue: false,
   },
 ]
