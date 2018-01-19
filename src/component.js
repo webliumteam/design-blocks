@@ -3,197 +3,87 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
-
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Text, ContactForm, Icon}, style: css} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
+        <h1 className={css.title}>
+          <Text bind="title" />
+        </h1>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+          <header className={css.section__header}>
+            <p className={css.text}>
+              <span className={css.text__inner}><Text bind="telTitle" /></span>
+              <a href="tel:+380673258146" className={css.text__phone}><Text bind="phone" /></a>
+              <span className={css.text__inner}><Text bind="orForme" /></span>
+            </p>
+          </header>
+          <div className={css.section__icon}>
+            <Icon bind="icon" />
+          </div>
+          <ContactForm
+            bind="contactForm"
+            className={css.form}
+            labelClassName={css.form__item}
+            fieldClassName={css.form__field}
+            buttonClassName={classNames(
+              css.button,
+              css['button--size-md'],
+              css['button--primary'],
+              css.form__button,
+              css['form__button--custom'],
+            )}
+          />
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'ContactForm', 'Icon'])($editor.components)
 
-Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
-  },
+Block.options = {
+  invert: true,
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
+Block.defaultContent = {
+  title: 'СПРОЕКТИРУЕМ УДОБНЫЙ ДИЗАЙН ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ $10 ЗА КВАДРАТНЫЙ МЕТР',
+  background: {},
+  theme: 'dark',
+  icon: {
+    svg:
+      "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' style='max-width:100%'><path d='M48.156 16.656c-.424.053-.831.201-1.156.469-1.63 1.342-1.39 3.901-1.5 6.156-.139 2.859-.917 5.77-2.344 8.25-1.563 2.72-4.705 4.231-6.531 6.782-.989 1.38-1.478 3.052-2.313 4.53-1.535 2.721-2.398 6.15-4.937 7.97-1.57 1.125-5.594 1.28-5.594 1.28v27.438s5.413.604 7.407.906c3.13.476 10.742 2.907 14.312 2.907h20.969c2.282 0 4.125-1.749 4.125-4.031 0-1.575-.893-2.928-2.188-3.626 2.79-.177 5-2.508 5-5.343a5.3 5.3 0 0 0-3.594-5.031 5.546 5.546 0 0 0 4.407-5.438c0-2.732-1.993-5.011-4.594-5.469C92.34 54.406 95 53.67 95 48.781s-4.741-5.625-26.531-5.625H52.03c-1.179 0-1.63-.912-1.718-1.531-.262-1.842 1.333-3.49 1.937-5.25.677-1.97 1.517-3.891 1.906-5.938.39-2.05.54-4.166.407-6.25-.102-1.571-.086-3.28-.907-4.625-.736-1.204-1.986-2.239-3.343-2.625-.687-.195-1.45-.37-2.157-.28zM5.281 48.72A.29.29 0 0 0 5 49v33.656a.29.29 0 0 0 .281.281h15.407a.29.29 0 0 0 .28-.28V49a.29.29 0 0 0-.28-.281H5.28zm9.969 26.343a3.153 3.153 0 0 1 3.156 3.157 3.153 3.153 0 0 1-3.156 3.156 3.153 3.153 0 0 1-3.156-3.156 3.153 3.153 0 0 1 3.156-3.156z' fill='#fff' fill-rule='evenodd' stroke='#fff'/></svg>",
+    id: '12345',
   },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
+  telTitle: 'бесплатная консультация по тел:',
+  phone: '+38 067 325 81 46',
+  orForme: 'или ЗАПОЛНИТЕ ФОРМУ',
+  contactForm: {
+    fields: [
+      {
+        type: 'text',
+        id: 'contactForm_name',
+        title: ' ',
+        placeholder: 'Ваше имя ',
+        required: true,
+      },
+      {
+        type: 'phone',
+        id: 'contactForm_phoneNumber ',
+        title: ' ',
+        placeholder: 'Номер телефона ',
+        required: true,
+      },
+    ],
+    submitButton: {
+      title: 'ПЕРЕЗВОНИТЕ МНЕ',
+    },
+    className: 'form',
+    buttonClassName: 'button button--size-md button--primary form__button',
   },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
+}
 
 export default Block
