@@ -240,6 +240,7 @@
   padding: 0 20px;
   margin-top: 40px;
   flex-grow: 0;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -257,16 +258,16 @@
 }
 
 @media (min-width: 992px) {
-  .item:nth-last-child(4):first-child,
-  .item:nth-last-child(4):first-child ~ .item {
+  .item:nth-last-of-type(4):first-child,
+  .item:nth-last-of-type(4):first-child ~ .item {
     flex-basis: 25%;
     max-width: 25%;
   }
 }
 
 @media (min-width: 992px) {
-  .item:nth-last-child(7):first-child,
-  .item:nth-last-child(7):first-child ~ .item {
+  .item:nth-last-of-type(7):first-child,
+  .item:nth-last-of-type(7):first-child ~ .item {
     flex-basis: 25%;
     max-width: 25%;
   }
