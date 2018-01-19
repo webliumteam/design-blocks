@@ -249,9 +249,25 @@
 }
 
 @media (min-width: 992px) {
-  .nav:first-child .nav-list:first-child:last-child {
-    width: 100%;
-    justify-content: flex-start;
+  .nav:first-child {
+    .nav-list {
+      &:first-child:last-child {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      &__item {
+
+        @media (min-width: 992px) {
+          margin-right: 34px;
+          margin-left: 0;
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -306,10 +322,10 @@
 
 @media (min-width: 992px) {
   .nav-list__item {
-    margin-right: 34px;
+    margin-left: 34px;
 
     &:last-child {
-      margin-right: 0;
+      margin-left: 0;
     }
   }
 }
