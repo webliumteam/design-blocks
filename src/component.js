@@ -89,21 +89,21 @@ Block.components = _.pick(['Collection', 'Text', 'Image', 'Button', 'Icon'])($ed
 Block.defaultContent = {
   careers: [
     {
-      title: 'We have more than 40,000 employees worldwide',
+      title: 'Trainee program for young talents',
       id: 'dc11a56a-3863-477a-8a53-fb64c7bb71e6',
       icon: {
         svg: '<svg></svg>',
       },
     },
     {
-      title: 'We serve more than 24,000 pharmacies',
+      title: 'Relocation and full support for experts from other cities and countries',
       id: '80c3446a-8a89-4652-89bb-b861e55f3f7d',
       icon: {
         svg: '<svg></svg>',
       },
     },
     {
-      title: 'We’re in nearly 85% of U.S. hospitals.',
+      title: '100+ experts who work in different industry fields ',
       id: '83cc85d7-1543-44f3-9926-6c8b20909dcd',
       icon: {
         svg: '<svg></svg>',
@@ -112,9 +112,9 @@ Block.defaultContent = {
   ],
   title: 'Careers',
   subtitle:
-    'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of',
+    'Do you want to join our company? Check the list of open vacancies or contact our HR director to get to know about open positions.',
   text:
-    "Why consider a future with Cardinal Health? As a global, growing company, we’re able to offer rewarding careers that let you make a positive impact on our customers and communities. We think of ourselves as the business behind healthcare because we focus on making it more cost-effective. We're an essential link that allows healthcare providers to reduce costs, improve operations and increase quality, so that they can offer better care to their patients. Here are a few facts about us:",
+    'Our company is always looking for professional and inspired people who are ready to work, according to our principles and standards. Look through the list of our advantages to see what you get by becoming a part of our team.',
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
     alt: 'Illustration',
