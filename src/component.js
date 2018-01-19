@@ -9,65 +9,72 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button, Image, SocialIcons}, style: css} = this.props
+  collectionItem = ({index, children, className, modifier}) => {
+    const {components: {Text, Button, Image, SocialIcons}, style} = this.props
     return (
-      <article className={classNames(css.item, className)}>
+      <article className={classNames(style.item, className)}>
         {children}
 
-        <div className={css.item__inner}>
-          <div title="Read more" className={css['item__pic-link']}>
+        <div className={style.item__inner}>
+          <div title="Read more" className={style['item__pic-link']}>
             <Image
-              pictureClassName={css.item__pic}
-              imgClassName={css.item__img}
+              pictureClassName={style.item__pic}
+              imgClassName={style.item__img}
               bind={`team[${index}].picture`}
             />
           </div>
-          <h2 className={css.item__title}>
+          <h2 className={style.item__title}>
             <Text bind={`team[${index}].name`} />
           </h2>
-          <p className={css.item__position}>
+          <p className={style.item__position}>
             <Text bind={`team[${index}].position`} />
           </p>
-          {this.getModifierValue('member-desc') && (
-            <p className={css.item__desc}>
+          {_.get('member-desc')(modifier) && (
+            <p className={style.item__desc}>
               <Text bind={`team[${index}].description`} />
             </p>
           )}
-          {this.getModifierValue('member-link') && (
-            <Button className={css.link} bind={`team[${index}].more`} />
+          {_.get('member-link')(modifier) && (
+            <Button className={style.link} bind={`team[${index}].more`} />
           )}
-          {this.getModifierValue('member-email') && (
-            <div className={css['item__email-wrapper']}>
-              <Button className={css.item__email} bind={`team[${index}].email`} />
+          {_.get('member-email')(modifier) && (
+            <div className={style['item__email-wrapper']}>
+              <Button className={style.item__email} bind={`team[${index}].email`} />
             </div>
           )}
-          <SocialIcons className={css.socials} bind={`team[${index}].socialIcons`} />
+          <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style: css} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
+      <section className={style.section}>
+        <div className={style.section__inner}>
           {this.getModifierValue('title') && (
-            <h1 className={css.title}>
+            <h1 className={style.title}>
               <Text bind="title" />
             </h1>
           )}
           {this.getModifierValue('subtitle') && (
-            <p className={css.subtitle}>
+            <p className={style.subtitle}>
               <Text bind="subtitle" />
             </p>
           )}
-          <Collection className={css['items-wrapper']} bind="team" Item={this.collectionItem} />
+          <Collection
+            className={style['items-wrapper']}
+            bind="team"
+            Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
+          />
           {this.getModifierValue('block-button') && (
-            <div className={css['btns-group']}>
+            <div className={style['btns-group']}>
               <Button
-                className={classNames(css.button, css['button--size-md'], css['button--secondary'])}
+                className={classNames(style.button, style['button--size-md'], style['button--secondary'])}
                 bind="cta"
               />
             </div>
@@ -85,13 +92,13 @@ Block.defaultContent = {
   team: [
     {
       id: '06567442-178b-46ab-a822-661218143093',
-      name: 'Glen Riley',
-      position: 'Professional',
+      name: 'Andrew Shimmer',
+      position: 'CEO',
       description:
-        'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
+        'Andrew Shimmer has a 15-year experience in IT development and marketing. He has successfully run companies specializing in innovative technologies.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Glen Riley photo',
+        alt: 'Andrew Shimmer photo',
       },
       more: {
         actionConfig: {
@@ -108,16 +115,14 @@ Block.defaultContent = {
       },
       email: {
         actionConfig: {
-          action: 'link',
+          action: 'external',
           actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+            external: {
+              url: 'mailto:shimmer@gmail.com',
             },
           },
         },
-        textValue: 'glen.riley@gmail.com',
+        textValue: 'shimmer@gmail.com',
       },
       socialIcons: {
         networks: [
@@ -151,13 +156,13 @@ Block.defaultContent = {
     },
     {
       id: 'd7b368a3-75c8-4039-80ef-15c783140026',
-      name: 'Glen Riley',
-      position: 'Professional',
+      name: 'Ann Maisner',
+      position: 'Marketing Director',
       description:
-        'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
+        'Ann is a high-skilled professional with over 10 years of experience in marketing. She has been rewarded by the Association of Marketing as one of the most successful directors. ',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Glen Riley photo',
+        alt: 'Ann Maisner photo',
       },
       more: {
         actionConfig: {
@@ -174,16 +179,14 @@ Block.defaultContent = {
       },
       email: {
         actionConfig: {
-          action: 'link',
+          action: 'external',
           actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+            external: {
+              url: 'mailto:maisner@gmail.com',
             },
           },
         },
-        textValue: 'glen.riley@gmail.com',
+        textValue: 'maisner@gmail.com',
       },
       socialIcons: {
         networks: [
@@ -217,13 +220,13 @@ Block.defaultContent = {
     },
     {
       id: 'b29ef90b-8d5c-4fd9-b6e4-64e248da29db',
-      name: 'Glen Riley',
-      position: 'Professional',
+      name: 'Tomas Abbar',
+      position: 'Product Manager',
       description:
-        'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
+        'For 13 years, Tomas has been taking a position of product manager at Quantum. He successfully launched several best-selling products. Now he is working on 3 new products.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Glen Riley photo',
+        alt: 'Tomas Abbar photo',
       },
       more: {
         actionConfig: {
@@ -240,16 +243,14 @@ Block.defaultContent = {
       },
       email: {
         actionConfig: {
-          action: 'link',
+          action: 'external',
           actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+            external: {
+              url: 'mailto:abbar@gmail.com',
             },
           },
         },
-        textValue: 'glen.riley@gmail.com',
+        textValue: 'abbar@gmail.com',
       },
       socialIcons: {
         networks: [
@@ -284,7 +285,7 @@ Block.defaultContent = {
   ],
   title: 'Our Team',
   subtitle:
-    'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
+    'Our team is our proud. Each of the team members is dedicated to delivering the best results to the clients. Meet some of our expert who will work on your case:',
   cta: {
     actionConfig: {
       action: 'link',
