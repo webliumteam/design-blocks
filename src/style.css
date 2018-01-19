@@ -263,7 +263,7 @@
   margin-bottom: 15px;
 }
 
-.plan__list-item:last-child {
+.plan__list-item:last-of-type {
   margin-bottom: 0;
 }
 
