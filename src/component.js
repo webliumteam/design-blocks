@@ -17,15 +17,7 @@ class Block extends React.Component {
         <div className={css.footer__inner}>
           {this.getModifierValue('title') && (
             <div className={css.logo}>
-              <Logo
-                bind="logo"
-                textClassName={css.logo__title}
-              />
-              {this.getModifierValue('subtitle') && (
-                <p className={css.logo__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
+              <Logo bind="logo" textClassName={css.logo__title} />
             </div>
           )}
           <nav className={css.nav}>
@@ -36,14 +28,20 @@ class Block extends React.Component {
               bind="menu"
             />
           </nav>
-          <section className={css.footer__bottom}>
-            <small className={css.footer__meta}>
-              <Text bind="copyright" />
-            </small>
-            <small className={css.footer__meta}>
-              <Text bind="additional" />
-            </small>
-          </section>
+          {(this.getModifierValue('text-left') || this.getModifierValue('text-right')) && (
+            <section className={css.footer__bottom}>
+              {this.getModifierValue('text-left') && (
+                <small className={css.footer__meta}>
+                  <Text bind="copyright" />
+                </small>
+              )}
+              {this.getModifierValue('text-right') && (
+                <small className={css.footer__meta}>
+                  <Text bind="additional" />
+                </small>
+              )}
+            </section>
+          )}
         </div>
       </footer>
     )
@@ -58,7 +56,6 @@ Block.defaultContent = {
       value: 'CompanyLogo',
     },
   },
-  subtitle: 'CompanySlogan',
   copyright: 'Produced by Weblium.com. All rights Reserved',
   additional: 'Demo preview for {Template name} {Concept name}',
   menu: [
@@ -148,9 +145,15 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'subtitle',
+    id: 'text-left',
     type: 'checkbox',
-    label: 'Company slogan',
+    label: 'Left text',
+    defaultValue: true,
+  },
+  {
+    id: 'text-right',
+    type: 'checkbox',
+    label: 'Right text',
     defaultValue: true,
   },
 ]
