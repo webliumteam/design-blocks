@@ -3,197 +3,150 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Icon}, style: css} = this.props
+    return (
+      <article className={classNames(css.item, className)}>
+        {children}
+        <div className={css.item__icon}>
+          <Icon
+            bind={`articles[${index}].icon`}
+          />
+        </div>
+        <h2 className={css.item__title}>
+          <Text bind={`articles[${index}].title`} />
+        </h2>
+        <p className={css.item__desc}>
+          <Text bind={`articles[${index}].description`} />
+        </p>
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Collection, Text, Button}, style: css} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+          <h1 className={css.title}>
+            <Text bind="title" />
+          </h1>
+          <p className={css.subtitle}>
+            <Text bind="description" />
+          </p>
+          <Collection className={css['items-wrapper']} bind="articles" Item={this.collectionItem} />
+          <div className={css['btns-group']}>
+            <Button
+              className={classNames(css.button, css['button--secondary'], css['button--size-md'])}
+              bind="button-1"
+            />
+            <Button
+              className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+              bind="button-2"
+            />
+          </div>
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.components)
 
-Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
-  },
+Block.options = {
+  invert: true,
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
+Block.defaultContent = {
+  articles: [
+    {
+      id: 'f822d787-b3e2-432d-a03e-689c58efb302',
+      title: '457',
+      icon: {
+        fill: '#d70044',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="max-width:100%"><path fill="#C2185B" d="M10.9 73.1H29v2.7H10.9zM13.9 61.1h5.7v4.4h-5.7zM13.9 66.7h5.7V71h-5.7zM13.9 55.2h5.7V60h-5.7zM20.7 55.2h5.8V60h-5.8zM20.7 66.7h5.8V71h-5.8zM20.7 61.1h5.8v4.4h-5.8zM69.4 73.1h18.1v2.7H69.4zM72.4 61.1h5.7v4.4h-5.7zM72.4 66.7h5.7V71h-5.7zM72.4 55.2h5.7V60h-5.7zM79.2 55.2H85V60h-5.8zM79.2 66.7H85V71h-5.8zM79.2 61.1H85v4.4h-5.8z"/><path fill="#C2185B" d="M2.7 47.4H5V87h90.3V46.8h1.4l-7.6-33.3H9.9L2.7 47.4zm62.8 2.9h1.2v-3.4H93v37.9H66.7v-6.2h-1.2V50.3zm-29.9 0h1.1v-2.9h.3l12.4-13.5 12.7 12.9v3.5h1.1v28.3h-1.1v6.2H59v-2.6h-1.7v-2.3h-1.2V50.6H43.4v29.3h-1.1v2.3h-1.7v2.6h-3.9v-6.2h-1.1V50.3zm-2.3 28.3h-1.1v6.2H7.3V47.4h24.9v2.9h1.1v28.3z"/></svg>',
+        id: '12345',
+      },
+      description:
+        'домов и квартир',
+    },
+    {
+      id: '18ce5632-46d1-4c9e-b249-ca0e37f665c2',
+      title: '11',
+      icon: {
+        fill: '#d70044',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" style="max-width:100%" height="100%"><g style="" fill="#C2185B"><path d="M76.472,41.587c-4.062,0-7.327,3.312-7.327,7.443v17.606c0,3.423,5.01,3.423,5.01,0V50.538h1.186v44.082   c0,4.576,6.671,4.441,6.671,0v-25.59h1.149v25.59c0,4.441,6.707,4.576,6.707,0V50.538h1.158v16.099c0,3.449,4.983,3.449,4.975,0   V49.136c0-3.81-2.959-7.54-7.417-7.54L76.472,41.587L76.472,41.587z" style="" fill="#C2185B"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M82.309,22.207c3.571,3.181,7.142,7.086,10.713,10.545   c-1.005,1.005-2.01,2.009-3.013,3.013c-2.016-2.016-4.198-4.197-6.361-6.36c-0.675-0.675-1.778-1.451-2.091-2.092   C81.143,26.467,82.449,23.167,82.309,22.207z" style="" fill="#C2185B"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M80.635,28.233c2.846,2.846,5.691,5.691,8.536,8.536   c-2.924,3.638-6.67,5.001-9.624,2.762c-2.94-2.23-3.54-6.066-0.836-8.871c-0.67-0.67-1.339-1.339-2.01-2.009   C78.013,28.366,79.324,28.267,80.635,28.233z" style="" fill="#C2185B"></path><path d="M63,87.038v-36.52c0-1.14-0.86-2.064-2-2.064c-1.141,0-2,0.924-2,2.064V78H12V66.002c0-1.141-0.86-2.064-2-2.064   s-2,0.924-2,2.064v20.005c-2,0.826-3.481,2.878-3.481,5.284c0,3.136,2.606,5.678,5.744,5.678c3.135,0,5.513-2.542,5.513-5.678   c0-2.406-0.775-4.459-3.775-5.284V85h47v2.039c-2,0.826-3.693,2.878-3.693,5.284c0,3.136,2.501,5.678,5.64,5.678   c3.136,0,5.671-2.542,5.671-5.678C66.617,89.917,65,87.864,63,87.038z" style="" fill="#C2185B"></path><g style="" fill="#C2185B"><path d="M22.989,31.364h-2.63c-1.821-0.004-3.58-1.338-3.582-3.663c0,0,0.002-16.601,0-16.653    c0.002-2.057,1.719-3.619,3.582-3.622h2.63V31.364L22.989,31.364z" style="" fill="#C2185B"></path><path d="M39.541,7.466V4.027c0.01-1.241-1.09-2.033-2.429-2.022c0,0-5.116-0.01-5.099,0c-1.332-0.01-2.45,0.781-2.448,2.022v3.439    H24.77v23.938h19.604V7.466H39.541z M37.74,7.466h-6.414V3.926h6.414V7.466z" style="" fill="#C2185B"></path><path d="M46.138,31.364h2.629c1.807-0.004,3.567-1.338,3.561-3.663c0,0,0.006-16.601,0-16.653    c0.006-2.057-1.711-3.619-3.561-3.622h-2.629V31.364L46.138,31.364z" style="" fill="#C2185B"></path></g><g style="" fill="#C2185B"><path d="M22.989,74.959h-2.63c-1.821-0.004-3.58-1.338-3.582-3.662c0,0,0.002-16.602,0-16.653    c0.002-2.058,1.719-3.618,3.582-3.622h2.63V74.959L22.989,74.959z" style="" fill="#C2185B"></path><path d="M39.541,51.062v-3.44c0.01-1.241-1.09-2.033-2.429-2.022c0,0-5.116-0.01-5.099,0c-1.332-0.01-2.45,0.781-2.448,2.022v3.44    H24.77V75h19.604V51.062H39.541z M37.74,51.062h-6.414v-3.541h6.414V51.062z" style="" fill="#C2185B"></path><path d="M46.138,74.959h2.629c1.807-0.004,3.567-1.338,3.561-3.662c0,0,0.006-16.602,0-16.653    c0.006-2.058-1.711-3.618-3.561-3.622h-2.629V74.959L46.138,74.959z" style="" fill="#C2185B"></path></g><g style="" fill="#C2185B"><path d="M30.854,43.987h-0.841c-0.583-0.001-1.146-0.428-1.146-1.171c0,0,0-5.31,0-5.326c0-0.658,0.55-1.157,1.146-1.158h0.841    V43.987L30.854,43.987z" style="" fill="#C2185B"></path><path d="M36.149,36.344v-1.101c0.002-0.397-0.35-0.65-0.777-0.646c0,0-1.637-0.003-1.631,0c-0.426-0.003-0.783,0.25-0.783,0.646    v1.101h-1.533V44h6.27v-7.656H36.149z M35.573,36.344h-2.052v-1.133h2.052V36.344z" style="" fill="#C2185B"></path><path d="M38.259,43.987H39.1c0.577-0.001,1.141-0.428,1.14-1.171c0,0,0.001-5.31,0-5.326c0.001-0.658-0.548-1.157-1.14-1.158    h-0.841V43.987L38.259,43.987z" style="" fill="#C2185B"></path></g><g style="" fill="#C2185B"><path d="M12.625,47.98h-1.287c-0.894-0.001-1.755-0.655-1.755-1.794c0,0,0-8.132,0-8.158c0-1.007,0.843-1.772,1.755-1.774h1.287    V47.98L12.625,47.98z" style="" fill="#C2185B"></path><path d="M20.735,36.274v-1.686c0.003-0.608-0.535-0.996-1.19-0.99c0,0-2.507-0.005-2.498,0c-0.652-0.005-1.199,0.382-1.199,0.99    v1.686h-2.349V48h9.603V36.274H20.735z M19.852,36.274H16.71v-1.735h3.142V36.274z" style="" fill="#C2185B"></path><path d="M23.966,47.98h1.287C26.138,47.979,27,47.325,27,46.186c0,0,0.001-8.132,0-8.158c0.001-1.007-0.839-1.772-1.746-1.774    h-1.287V47.98L23.966,47.98z" style="" fill="#C2185B"></path></g><g style="" fill="#C2185B"><path d="M45.042,47.98h-1.287C42.862,47.979,42,47.325,42,46.186c0,0,0-8.132,0-8.158c0-1.007,0.843-1.772,1.755-1.774h1.287    V47.98L45.042,47.98z" style="" fill="#C2185B"></path><path d="M53.152,36.274v-1.686c0.004-0.608-0.535-0.996-1.189-0.99c0,0-2.507-0.005-2.499,0c-0.652-0.005-1.199,0.382-1.199,0.99    v1.686h-2.349V48h9.603V36.274H53.152z M52.27,36.274h-3.141v-1.735h3.141V36.274z" style="" fill="#C2185B"></path><path d="M56.385,47.98h1.287c0.885-0.001,1.746-0.655,1.746-1.794c0,0,0-8.132,0-8.158c0-1.007-0.84-1.772-1.746-1.774h-1.287    V47.98L56.385,47.98z" style="" fill="#C2185B"></path></g></g></svg>',
+        id: '12345',
+      },
+      description:
+        'гостиниц',
+    },
+    {
+      id: '7986b4e0-751f-48f6-8861-5ace080e284b',
+      title: '28',
+      icon: {
+        fill: '#d70044',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" style="max-width:100%"><g fill="#C2185B"><path d="M41.9 48.2c.8-1.5 2-2.5 3.6-2.5 3 0 7.1 1 8.5-2.5.8-2 1-4.2 1-6.4 0-4.8-3.3-9-.5-13.4.7-1.1 2-2 3.1-1.5.9.5 1.3 1.8 1.3 2.9.3 3.4-.2 6.9-.4 10.3 0 .5-.1 1.1-.1 1.6-.3 3.6-.6 7.3-1.8 10.6-.2.5-.4 1-.7 1.3-.5.5-1.4.6-2.1.6h-1.1v1.9c0 .6-.1 1.1-.7 1.1V57c1.3.5 2.6 1.5 3.9 3 .4.5.3 1.2-.1 1.6-.2.2-.4.3-.7.3-.3 0-.5-.1-.7-.4-1.3-1.6-2.7-2.5-4-2.6-1.3.1-2.7.9-4 2.6-.2.2-.5.4-.7.4-.2 0-.5-.1-.7-.3-.4-.4-.4-1.1-.1-1.6 1.2-1.5 2.5-2.5 3.9-3v-4.6c-.7 0-.8-.6-.7-1.1v-2.1c-1.5.1-2.8.4-3.7 1.3-.6.6-1.4.6-2 0-.8-.6-1-1.5-.5-2.3z"/><g><path d="M51.7 37.3v1.5c0 2.9-2 4.8-4.9 4.6-2.2-.2-4.5-.3-6.7-.5-.8-.1-1.3.4-1.4 1.2-.4 3.8-.7 7.5-1.1 11.3 0 .4-.1.7-.1 1.1-.2 1-.7 1.4-1.6 1.5h-1.7c-.8 0-1.3-.3-1.6-.8-.2-.3-.3-.7-.3-1.2v-9.7-6.2c0-2 1.2-3.2 3.2-3.2h5.7c1.1 0 1.7-.5 1.8-1.6l-.4-8.8c-.5.3-.8.6-1.2.8-.9.5-1.6 1.2-2.7 1.2h-7c-1.6 0-2.7-1.2-2.7-2.8 0-.6.2-1.1.5-1.5.5-.7 1.3-1.2 2.3-1.1h4.9c.3 0 1.4-.1 1.6-.2.9-.5 1.8-1.1 2.7-1.7.9-.5 1.7-1.1 2.7-1.5.2-.1.4-.2.6-.2 1.5-.4 3-.2 4.5-.1 1.4.1 2.6 1.4 2.8 2.8.1.7.1 1.5.1 2.2v12.9zM51.7 11.6c0 1.9-.9 3.5-2.4 4.5-.9.6-2 1-3.2 1-.5 0-.9-.1-1.3-.2-2.4-.6-4-2.8-4-5.5 0-3.2 2.4-5.6 5.4-5.6 3 .1 5.5 2.5 5.5 5.8z"/></g><path d="M7.5 21.1h31.2c-.3.2-.7.4-1 .6-.2 0-.8.1-1.1.1h-4.9c-1.4 0-2.6.6-3.3 1.7-.4.6-.7 1.4-.7 2.2v.3H7.5C6.1 26 5 24.9 5 23.6s1.1-2.5 2.5-2.5zM8.1 27v32h19V27h-19zm17.3 18.9c0 .7-.6 1.2-1.2 1.2-.3 0-.6-.1-.9-.4-.2-.2-.4-.5-.4-.9V40c0-.7.6-1.2 1.2-1.2.3 0 .6.1.9.4.2.2.4.5.4.9v5.8zM41.4 28.8l.1 1.9H27.9v-3.5c.2.6.5 1.1.9 1.5.7.7 1.7 1.1 2.8 1.1h7.1c1.2 0 2-.5 2.7-1zM11.4 2.1v14.1H20v1.2c-1.8.3-3.2 1-3.7 1.8-.2.3 0 .8.4.8h11.5c.4 0 .6-.4.4-.8-.5-.8-1.9-1.5-3.7-1.8v-1.2H33.5V2.1H11.4zM32 14.9H12.8V3.2H32v11.7z"/></g></svg>',
+        id: '12345',
+      },
+      description:
+        'офисных центров',
+    },
+    {
+      id: '7986b4e0-751f-48f6-8861-5ace080e284b',
+      title: '15',
+      icon: {
+        fill: '#d70044',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="max-width:100%"><g fill="#C2185B"><path d="M99.082 54.687v-5.489c0-7.977-5.911-15.796-15.249-15.796l-4.675-.002-9.532 19.744-9.532-19.751-5.411-.002c-8.501 0-14.788 6.935-14.788 15.587v14.08H2.59a1.853 1.853 0 0 0-1.853 1.851c0 1.022.83 1.851 1.853 1.851h18.868c-5.569 1.121-5.135 9.338 1.312 9.338H44.6v-.028c2.378.016 4.765-1.776 4.765-5.372V49.963h3.018l-.008 42.838H86.72l.004-16.706h7.649v-.028c2.361.016 4.729-1.776 4.729-5.372V54.687h-.02zM83.385 89.105H71.474v-22.48h11.911v22.48zm6.316-22.48h-2.975l.004-16.662h2.954v10.261h.017v6.401z"/><path d="M74.408 37.915H64.65v-4.526h9.758v4.526z"/><circle cx="69.333" cy="19.291" r="10.764"/><path d="M30.586 35.417v-9.43h-3.704v9.43c-2.24.773-3.861 2.877-3.861 5.38v20.08H34.45v-20.08c0-2.503-1.621-4.609-3.864-5.38zM5.579 38.153v7.372c0 3.429 2.465 6.288 5.714 6.915v8.438h2.676V52.44c3.25-.626 5.716-3.485 5.716-6.915v-7.372H5.579zm11.429 7.372a4.382 4.382 0 0 1-4.378 4.377 4.38 4.38 0 0 1-4.375-4.377v-4.698h8.754v4.698z"/></g></svg>',
+        id: '12345',
+      },
+      description:
+        'ресторанов',
+    },
+    {
+      id: '7986b4e0-751f-48f6-8861-5ace080e284b',
+      title: '18',
+      icon: {
+        fill: '#d70044',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="max-width:100%"><path d="M13.839 12.09L4.62 28.997v3.645c0 1.93 1.546 3.492 3.46 3.492s3.461-1.562 3.461-3.492v-3.645l7.81-16.907h-5.512zm11.011 0l-6.386 16.907v3.645c0 1.93 1.546 3.492 3.46 3.492 1.915 0 3.461-1.562 3.461-3.492v-3.645l4.961-16.907H24.85zm11.01 0l-3.552 16.907v3.645c0 1.93 1.546 3.492 3.46 3.492s3.462-1.562 3.462-3.492v-3.645l2.127-16.907H35.86zm16.509 0h-5.498l-.719 16.907v3.645c0 1.93 1.561 3.492 3.46 3.492 1.915 0 3.461-1.562 3.461-3.492v-3.645l-.704-16.907zm11.012 0h-5.515l2.145 16.907v3.645c0 1.93 1.546 3.492 3.46 3.492 1.9 0 3.463-1.562 3.463-3.492v-3.645L63.381 12.09zm11.011 0h-5.515l4.978 16.907v3.645c0 1.93 1.546 3.492 3.461 3.492 1.914 0 3.46-1.562 3.46-3.492v-3.645L74.392 12.09zm10.995 0h-5.499L87.7 28.997v3.645c0 1.93 1.546 3.492 3.46 3.492 1.915 0 3.461-1.562 3.461-3.492v-3.645L85.387 12.09zM67.209 58.937h8.407v-8.47h-8.407v8.47zm8.407-18.287h-8.407v8.469h8.407V40.65zm1.407 18.287h8.408v-8.47h-8.408v8.47zm-10.565 5.098c0 .645.535 1.18 1.179 1.18a1.19 1.19 0 0 0 1.18-1.18c0-.658-.537-1.193-1.18-1.193-.644 0-1.179.535-1.179 1.193zM85.432 40.65h-8.408v8.469h8.408V40.65zm-24.885-.107v23.018H13.349V40.543h47.198zm27.152-4.547a4.77 4.77 0 0 1-3.461 1.5 4.775 4.775 0 0 1-3.463-1.5 4.759 4.759 0 0 1-3.46 1.5 4.77 4.77 0 0 1-3.461-1.5 4.79 4.79 0 0 1-3.462 1.5 4.766 4.766 0 0 1-3.459-1.5 4.793 4.793 0 0 1-3.463 1.5 4.773 4.773 0 0 1-3.46-1.5c-.888.918-2.113 1.5-3.478 1.5-1.348 0-2.572-.583-3.46-1.5a4.768 4.768 0 0 1-3.461 1.5 4.794 4.794 0 0 1-3.46-1.5c-.874.918-2.099 1.5-3.462 1.5s-2.588-.583-3.46-1.5c-.874.918-2.099 1.5-3.462 1.5s-2.588-.583-3.46-1.5a4.77 4.77 0 0 1-3.461 1.5 4.77 4.77 0 0 1-3.461-1.5 4.766 4.766 0 0 1-3.461 1.5 4.766 4.766 0 0 1-3.46-1.5c-.874.918-2.098 1.5-3.461 1.5s-2.588-.583-3.46-1.5a4.766 4.766 0 0 1-2.221 1.316v44.366h55.253V38.506h23.354v43.172h1.854V37.282a4.76 4.76 0 0 1-2.084-1.286zM62.568 65.598H11.342V38.506h51.226v27.092zm32.052 22.91h-90v-4.764h90v4.764z" fill="#C2185B"/></svg>',
+        id: '12345',
+      },
+      description:
+        'магазинов',
+    },
+  ],
+  title: 'МЫ В ЦИФРАХ',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  'button-1': {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Medium button',
   },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
+  'button-2': {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Medium button',
   },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
+}
 
 export default Block
