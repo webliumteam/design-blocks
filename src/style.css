@@ -267,7 +267,8 @@
   }
 
   .social-title {
-      margin-right: 20px;
+    margin-right: 20px;
+    flex-shrink: 0;
   }
   
   .article .article__title + .article__socials {
@@ -288,6 +289,7 @@
   
   .socials {
     display: flex;
+    flex-shrink: 0;
   }
   
   .socials__item {
