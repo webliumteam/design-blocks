@@ -232,6 +232,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-height: 812px) {
+   margin-bottom: 87px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -458,6 +462,9 @@
   @media (min-width: 992px) {
     padding-bottom: 192px;
   }
+  @media (max-height: 812px) {
+    padding-bottom: 60px;
+   }
 }
   
 .logo {
