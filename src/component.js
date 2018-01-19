@@ -105,7 +105,7 @@ Block.defaultContent = {
     textValue: 'mysite@weblium.com',
   },
   map: {
-    preset: 'default',
+    preset: 'silver',
     height: '100%',
     center: {
       lat: 50.4589633,
@@ -121,9 +121,9 @@ Block.defaultContent = {
           lat: 50.4589633,
           lng: 30.5247585,
         },
-        name: 'Best Marker',
+        name: 'Address',
         description: 'This is marker description',
-        address: 'Kiev Poshtova Ploshcha',
+        address: 'Head office in London - 36 Regent St.',
         id: '2aceeb6f-623c-41f8-b0d3-6f0f085e8e48',
       },
     ],
