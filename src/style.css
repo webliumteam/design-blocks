@@ -190,6 +190,7 @@
     padding: 0;
   }
 }
+
 @media (max-height: 812px) {
   .section {
     height: auto;
@@ -234,7 +235,7 @@
   align-items: center;
 
   @media (max-height: 812px) {
-   margin-bottom: 87px;
+    margin-bottom: 87px;
   }
 }
 
@@ -462,9 +463,10 @@
   @media (min-width: 992px) {
     padding-bottom: 192px;
   }
+
   @media (max-height: 812px) {
     padding-bottom: 60px;
-   }
+  }
 }
   
 .logo {
@@ -486,6 +488,7 @@
   svg {
     width: 330px;
     height: 70px;
+    max-height: 100%;
     fill: currentColor;
   }
 }
