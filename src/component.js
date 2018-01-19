@@ -3,197 +3,185 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+  state = {
+    opened: false,
+  }
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
+  setStylesForBody = () => {
+    const {opened} = this.state
+    const html = document.getElementsByTagName('html')[0]
+    const body = document.getElementsByTagName('html')[0]
 
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+    if (opened) {
+      html.classList.add('header-w1__nav--open')
+      body.classList.add('header-w1__nav--open')
+    } else {
+      html.classList.remove('header-w1__nav--open')
+      body.classList.add('header-w1__nav--open')
+    }
+  }
 
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+  toggleOpened = () => this.setState({opened: !this.state.opened}, this.setStylesForBody)
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Text, Menu, Button, Logo}, style: css} = this.props
+    const {opened} = this.state
+
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+      <header
+        className={classNames(css.header, opened && css['header--nav-open'])}
+        data-header="target"
+      >
+        <div className={css.header__inner}>
+          <Logo bind="logo" className={css.logo} />
+          <nav className={css.nav}>
+            <Menu
+              className={css['nav-list']}
+              itemClassName={css['nav-list__item']}
+              linkClassName={css['nav-list__link']}
+              bind="menu"
+            />
+            <a
+              href="tel:+380673258146"
+              className={classNames(css.header__button, css.button, css['button--primary'])}
+              bind="cta"
+            >
+              <Text bind="phone" />
+            </a>
+          </nav>
+
+          <button
+            type="button"
+            className={classNames(css['nav-button'])}
+            onClick={this.toggleOpened}
+            title="Switch menu"
+          >
+            <span className={css['nav-button__line']} aria-hidden="true" />
+            <span className={css['nav-button__line']} aria-hidden="true" />
+            <span className={css['nav-button__line']} aria-hidden="true" />
+          </button>
         </div>
-      </section>
+      </header>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Menu', 'Button', 'Logo'])($editor.components)
 
-Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
-  },
+Block.options = {
+  invert: true,
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
+Block.defaultContent = {
+  title: 'CompanyLogo',
+  subtitle: 'CompanySlogan',
+  theme: 'dark',
+  logo: {
+    text: {
+      value: 'Your logo',
+    },
+    image: {
+      resourceRef: null,
+      width: null,
+      height: null,
+      proportion: 1,
+    },
+    tagName: 'a',
   },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
+  phone: '+38-067-325-81-46',
+  menu: [
+    {
+      id: 'b72a2300-1a8e-48b5-810b-616deb2bf4b1',
+      metadata: {
+        displayName: 'о нас',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'cf9a2600-1bb2-4579-9c46-a176263caead',
+      metadata: {
+        displayName: 'портфолио',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: '7835f494-84ad-4de1-aadd-321064670976',
+      metadata: {
+        displayName: 'преимущества',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: '369bb292-644f-4070-b188-2b0066973fa8',
+      metadata: {
+        displayName: 'ОТЗЫВЫ КЛИЕНТОВ',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: '1c4e7978-19e0-4774-ad33-bb45807b7356',
+      metadata: {
+        displayName: 'контакты',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+  ],
+  cta: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Request a quote',
   },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
+}
 
 export default Block
