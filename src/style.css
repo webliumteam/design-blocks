@@ -324,7 +324,7 @@
   .nav-list__item {
     margin-left: 34px;
 
-    &:last-child {
+    &:first-child {
       margin-left: 0;
     }
   }
