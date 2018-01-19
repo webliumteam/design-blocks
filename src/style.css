@@ -1,38 +1,40 @@
 @import "wireframe-zapdos-header/src/style.css";
 
 /* start here */
-.logo__title {
-  font-size: var(--ui-heading-size);
-  font-family: var(--ui-heading-font-family);
-  font-weight: var(--ui-heading-font-weight);
-  color: #fff;
-}
-
-.nav-list__link {
-  position: relative;
-  color: #ededed;
-  display: inline-block;
-  text-transform: uppercase;
-
-  &:hover {
+.logo {
+  &__title {
+    font-size: var(--ui-sub-heading-size);
+    font-family: var(--ui-caption-font-family);
+    font-weight: var(--ui-block-title-font-weight);
     color: var(--ui-light-shade-color);
   }
+}
 
-  &:hover::after {
-    content: "";
-    position: absolute;
+.nav-list {
+  &__link {
+    position: relative;
     display: inline-block;
-    width: 100%;
-    height: 2px;
-    background: var(--ui-light-shade-color);
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -2px;
+    text-transform: uppercase;
+    color: var(--ui-link-color);
+    font-family: var(--ui-caption-font-family);
+    font-size: var(--ui-caption-size);
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:hover::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      background: var(--ui-link-color);
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -2px;
+    }
   }
 }
 
-.header__button {
-  background-color: transparent;
-  border: 1px solid var(--ui-light-shade-color);
-  text-transform: uppercase;
-}
