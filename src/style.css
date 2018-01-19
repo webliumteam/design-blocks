@@ -461,7 +461,7 @@
   text-align: center;
 
   @media (min-width: 992px) {
-    padding-bottom: 192px;
+    padding-bottom: 100px;
   }
 
   @media (max-height: 812px) {
