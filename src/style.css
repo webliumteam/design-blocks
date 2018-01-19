@@ -1,3 +1,17 @@
 @import "wireframe-zapdos-careers/src/style.css";
 
 /* start here */
+
+.title {
+  margin-bottom: 39px;
+}
+
+.subtitle {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 992px) {
+  .subtitle {
+    max-width: 886px;
+  }
+}
