@@ -296,3 +296,77 @@ button {
   align-items: center;
   justify-content: space-between;
 }
+
+.modal {
+  background-color: #141414;
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 99;
+  transition: opacity 0.2s ease-out;
+
+  &--active {
+    display: flex;
+    opacity: 1;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 49px;
+    font-weight: 500;
+    line-height: 1.17;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 55px;
+
+
+    @media (min-width: 768px) {
+      font-size: 60px;
+    }
+  }
+
+  &__link {
+    font-family: "Rubik", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.69;
+    background-color: transparent;
+    text-align: center;
+    border:0;
+    color: #fae27c;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+    }
+  }
+
+  .gerb {
+    width: 100%;
+    max-width: 519px;
+    height: 793px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+
+    svg {
+      fill: #171717;
+      display: block;
+    }
+  }
+}
+
+
+
+
+
