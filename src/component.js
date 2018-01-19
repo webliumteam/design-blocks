@@ -3,197 +3,140 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Image}, style: css} = this.props
+    return (
+      <article className={classNames(css.item, className)}>
+        {children}
+        <div className={css.item__inner}>
+          <Image
+            pictureClassName={css.item__pic}
+            imgClassName={css.item__img}
+            bind={`testimonials[${index}].picture`}
+            size={{'max-width: 479px': 300, 'min-width: 768px': 300, 'min-width: 480px': 300}}
+          />
+          <div className={css.item__contacts}>
+            <h2 className={css.item__title}>
+              <Text bind={`testimonials[${index}].title`} />
+            </h2>
+          </div>
+          <p className={css.item__position}>
+            <Text bind={`testimonials[${index}].position`} />
+          </p>
+          <p className={css.item__desc}>
+            <Text bind={`testimonials[${index}].description`} />
+          </p>
+          <time className={css.item__time}>
+            <Text bind={`testimonials[${index}].date`} />
+          </time>
+        </div>
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Slider, Text}, style: css} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={css.section}>
         <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+          <h1 className={css.title}>
+            <Text bind="title" />
+          </h1>
+          <p className={css.subtitle}>
+            <Text bind="position" />
+          </p>
+          <Slider className={css['items-wrapper']} bind="testimonials" Item={this.collectionItem} />
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Slider', 'Text', 'Button', 'Image'])($editor.components)
 
-Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
-  },
+Block.options = {
+  invert: true,
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
+Block.defaultContent = {
+  testimonials: [
+    {
+      id: 'bf40db18-b817-4a19-bd5b-b72cfacce814',
+      title: 'ЕКАТЕРИНА',
+      position: 'сеть розничных магазинов',
+      description:
+        "“Наша компания сотрудничала с Your-Best.Design в рамках разработки дизайн проектов бренд зон для сети 'Эпицентр'. Результатом работы довольны, все получилось стильно и функционально.”",
+      date: 'October 28, 2017',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'ЕКАТЕРИНА',
+      },
+    },
+    {
+      id: '5ee25c3a-0026-4ab8-b291-238b72e1f6cc',
+      title: 'АННА',
+      position: 'сеть ЖК',
+      description:
+        'Выражаю благодарность компании Your-best.Design за разработку дизайна шоу-румов для нашего жилого комплекса! Отличная работа, всё оперативно и со вкусом! Воплощаем в жизнь!',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'АННА',
+      },
+    },
+    {
+      id: '5ee25c3a-0026-4ab8-b291-238b72e1f4cc',
+      title: 'АЛЕКСАНДР',
+      position: 'владелец арт-пространства',
+      description:
+        'Давно сотрудничаю с компанией Your-Best.Design. Благодарна за оперативность и креативность. Отдельное спасибо за визуализацию нашего арт-пространства! Очень стильно! Именно то, что мы хотели!',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'АЛЕКСАНДР',
+      },
+    },
+    {
+      id: '5ee25c3a-0026-4ab8-b291-228b72e124cc',
+      title: 'ИРИНА',
+      position: 'управляющая апарт-отеля',
+      description:
+        'Была на промо-консультации, которую они предлагают бесплатно. На удивление проконсультировали очень хорошо, предложили много интересных вариантов. чувствуется что люди действительно настоящие профессионалы. Огромное спасибо за уделенное время. В итоге заказали у них все под ключ (с ремонтом и авторским надзором) - остались очень довольны. Они немногие из тех, кто соблюдают все договоренности и даже сроки! Спасибо!',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'ИРИНА',
+      },
+    },
+    {
+      id: '5ee25c3a-0026-4ab8-b291-228b72e5f4cc',
+      title: 'МИХАИЛ',
+      position: 'со-владелец ресторана',
+      description:
+        'Мы делали дизайн-проект с компанией Your-Best.Design, очень понравилось работать с данной компанией, ребята профессионалы, знают свое дело, учитывают все пожелания, дают практические советы, что очень важно, когда сам делаешь ремонт впервые. Качество работ на высоком уровне. Рекомендую!',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'МИХАИЛ',
+      },
+    },
+  ],
+  title: 'ОТЗЫВЫ КЛИЕНТОВ',
+  theme: 'dark',
+  position:
+    'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain of',
+  cta: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Additional button (M)',
   },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
+}
 
 export default Block
