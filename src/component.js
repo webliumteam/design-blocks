@@ -14,11 +14,20 @@ class Block extends React.Component {
       this.getModifierValue('logo') ||
       this.getModifierValue('phone') ||
       this.getModifierValue('email') ||
-      this.getModifierValue('socialIcons')
+      this.getModifierValue('social')
+    )
+
+    const mapWithSocials = !(
+      this.getModifierValue('map') ||
+      this.getModifierValue('social')
     )
 
     return (
-      <section className={classNames(style.section, {[style['section--state-8']]: textWithSocials})}>
+      <section className={classNames(style.section, {
+        [style['section--state-8']]: textWithSocials,
+        [style['section--column']]: mapWithSocials
+      }
+      )}>
         <div className={style.section__inner}>
           <h1 className={style.title}>
             <Text bind="title" />
@@ -34,14 +43,14 @@ class Block extends React.Component {
                 <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
               </div>}
               <ul className={style['contacts-list']}>
-                <li className={style['contacts-list__item']}>
+                {this.getModifierValue('address') && <li className={style['contacts-list__item']}>
                   <h3 className={style.contacts__title}>
                     <Text bind="address-title" />
                   </h3>
                   <p className={style.contacts__desc}>
                     <Text bind="address-content" />
                   </p>
-                </li>
+                </li>}
                 {this.getModifierValue('phone') && <li className={style['contacts-list__item']}>
                   <h3 className={style.contacts__title}>
                     <Text bind="phone-title" />
@@ -105,7 +114,7 @@ Block.defaultContent = {
     textValue: 'mysite@weblium.com',
   },
   map: {
-    preset: 'default',
+    preset: 'silver',
     height: '100%',
     center: {
       lat: 50.4589633,
@@ -121,9 +130,9 @@ Block.defaultContent = {
           lat: 50.4589633,
           lng: 30.5247585,
         },
-        name: 'Best Marker',
+        name: 'Address',
         description: 'This is marker description',
-        address: 'Kiev Poshtova Ploshcha',
+        address: 'Head office in London - 36 Regent St.',
         id: '2aceeb6f-623c-41f8-b0d3-6f0f085e8e48',
       },
     ],
@@ -182,6 +191,12 @@ Block.modifierScheme = [
     id: 'email',
     type: 'checkbox',
     label: 'E-mail text block',
+    defaultValue: true,
+  },
+  {
+    id: 'address',
+    type: 'checkbox',
+    label: 'Address text block',
     defaultValue: true,
   },
   {
