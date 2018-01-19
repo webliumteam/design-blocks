@@ -47,7 +47,7 @@ class Block extends React.Component {
               {this.getModifierValue('socialIcons') && (
                 <div className={css.article__socials}>
                   <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" className={css.social}/>
+                  <SocialIcons bind="socialIcons" className={css.socials}/>
                 </div>
               )}
               {showButtonGroups && (
