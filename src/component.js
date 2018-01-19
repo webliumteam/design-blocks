@@ -3,197 +3,142 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
-
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Text, Menu, Logo}, style: css} = this.props
+
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+      <footer className={css.footer}>
+        <div className={css.footer__inner}>
+          <Logo bind="logo" className={css.logo} />
+          <nav className={css.nav}>
+            <Menu
+              className={css['nav-list']}
+              itemClassName={css['nav-list__item']}
+              linkClassName={css['nav-list__link']}
+              bind="menu"
+            />
+            <a
+              href="tel:+380673258146"
+              className={classNames(css.footer__button, css.button, css['button--primary'])}
+            >
+              <Text bind="phone" />
+            </a>
+          </nav>
+          <section className={css.footer__bottom}>
+            <small className={css.footer__meta}>
+              <Text bind="copyright" />
+            </small>
+          </section>
         </div>
-      </section>
+      </footer>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Menu', 'Logo'])($editor.components)
 
-Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
-  },
+Block.options = {
+  invert: true,
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
+Block.defaultContent = {
+  title: 'CompanyLogo',
+  theme: 'dark',
+  phone: '3-8067-32-58-146',
+  logo: {
+    text: {
+      value: 'Your logo',
+    },
+    image: {
+      resourceRef: null,
+      width: null,
+      height: null,
+      proportion: 1,
+    },
+    tagName: 'a',
   },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
+  subtitle: 'CompanySlogan',
+  copyright: 'Produced by Weblium.com. All rights Reserved',
+  menu: [
+    {
+      id: '10c06b19-6e0d-4ad1-b1d5-213501dd321c',
+      metadata: {
+        displayName: 'О НАС',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: '29f03a3e-117d-490e-963c-ace78d85258f',
+      metadata: {
+        displayName: 'УСЛУГИ',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: '8914ae89-ca69-4b81-8d70-68fefdb22f49',
+      metadata: {
+        displayName: 'ПРЕИМУЩЕСТВА',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: '2bf3b2aa-061b-42af-afd2-48301733a536',
+      metadata: {
+        displayName: 'ОТЗЫВЫ КЛИЕНТОВ',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'a24bbd34-4a84-451d-82bf-929f35264e2d',
+      metadata: {
+        displayName: 'КОНТАКТЫ',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+  ],
+}
 
 export default Block
