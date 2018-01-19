@@ -10,6 +10,47 @@ class Block extends React.Component {
     opened: false,
   }
 
+  componentDidMount() {
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.async = true
+    script.innerHTML = `
+    <!-- Google Analytics -->
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-111402702-1', 'auto');
+    ga('send', 'pageview');
+    <!-- End Google Analytics -->
+
+    if(window.location.pathname == '/') {
+      // тут мы типа достаём все кнопки и якоря
+      const forms = document.getElementsByTagName('form')
+      const anchors = document.getElementsByTagName('a')
+      
+      // а тут из этих кнопок достаём нужную
+      const callMeForm = forms && forms[0]
+      const sendRequestForm = forms && forms[1]
+      // а ниже из якорей
+      const leaveRequest = anchors && Array.from(anchors).map(button => (button.innerText).startsWith('ОСТАВИТЬ ЗАЯВКУ'))[0]
+      
+      
+      // навешиваем функционал на клик
+      callMeForm.onsubmit = () => ga('send', 'event', 'Button', 'click', 'Callback_header');
+      sendRequestForm.onsubmit = () => ga('send', 'event', 'Button', 'click', 'send_request');
+      leaveRequest.onclick = () => ga('send', 'event', 'Button', 'click', 'request_advantages')
+
+      if(window.location.pathname == '/services') {
+        const forms = document.getElementsByTagName('form')
+        const callMeFormServices = forms && forms[0]
+        callMeFormServices.onsubmit = () => ga('send', 'event', 'Button','click', 'Callback_services');
+      }
+    }`
+    this.instance.appendChild(script)
+  }
+
   setStylesForBody = () => {
     const {opened} = this.state
     const html = document.getElementsByTagName('html')[0]
@@ -34,6 +75,9 @@ class Block extends React.Component {
       <header
         className={classNames(css.header, opened && css['header--nav-open'])}
         data-header="target"
+        ref={(ref) => {
+          this.instance = ref
+        }}
       >
         <div className={css.header__inner}>
           <a className={css.logo} href="/">
