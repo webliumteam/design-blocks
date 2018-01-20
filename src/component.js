@@ -9,27 +9,37 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
+  itemHeader = (itemNumber) => {
+    const {components: {Text, Image}, style} = this.props
+    return [
+      this.getModifierValue('post-image') && (
+        <div className={style['article__picture-wrapper']}>
+          <Image
+            pictureClassName={style.article__picture}
+            imgClassName={style.article__image}
+            bind={`blog[${itemNumber}].picture`}
+          />
+        </div>
+      ),
+      this.getModifierValue('post-publish-date') && (
+        <small className={style.article__meta}>
+          <Text bind={`blog[${itemNumber}].category`} />
+          &nbsp;|&nbsp;
+          <Text bind={`blog[${itemNumber}].date`} />
+        </small>
+      ),
+    ]
+  }
+
   collectionItem = ({index, children, className}) => {
     const {components: {Text, Button, Image}, style} = this.props
     return (
       <article className={classNames(style.article, className)}>
         {children}
-        {this.getModifierValue('post-image') && (
-          <div className={style['article__picture-wrapper']}>
-            <Image
-              pictureClassName={style.article__picture}
-              imgClassName={style.article__image}
-              bind={`blog[${index}].picture`}
-            />
-          </div>
-        )}
-        {this.getModifierValue('post-publish-date') && (
-          <small className={style.article__meta}>
-            <Text bind={`blog[${index}].category`} />
-            &nbsp;|&nbsp;
-            <Text bind={`blog[${index}].date`} />
-          </small>
-        )}
+        {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(index)}</div> : this.itemHeader(index)}
         <h2 className={style.article__title}>
           <Text bind={`blog[${index}].title`} />
         </h2>
