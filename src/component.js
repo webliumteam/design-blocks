@@ -34,15 +34,24 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style, $block} = this.props
+    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
     return (
-      <section className={classNames(style.section, {[style['section--without-button']]: !this.getModifierValue('button')})}>
+      <section
+        className={classNames(style.section, {
+          [style['section--without-button']]: !this.getModifierValue('button'),
+        })}
+      >
         <div className={style.section__inner}>
+          {this.getModifierValue('top-icon') && (
+            <div className={style['top-icon-wrapper']}>
+              <Icon className={style['top-icon']} bind="topIcon" />
+            </div>
+          )}
           {this.getModifierValue('title') && (
             <h1 className={style.title}>
               <Text bind="title" />
-            </h1>)
-          }
+            </h1>
+          )}
           <Collection
             className={style['items-wrapper']}
             bind="numbers"
@@ -58,18 +67,22 @@ class Block extends React.Component {
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+                className={classNames(
+                  style.button,
+                  style['button--secondary'],
+                  style['button--size-md'],
+                )}
                 bind="cta"
               />
-            </div>)
-          }
+            </div>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   numbers: [
@@ -92,6 +105,10 @@ Block.defaultContent = {
       id: '84957801-e554-42e1-ab7b-323f483e3f81',
     },
   ],
+  topIcon: {
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+  },
   title: 'Each month we…',
   cta: {
     actionConfig: {
@@ -132,6 +149,12 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Button',
     defaultValue: true,
+  },
+  {
+    id: 'top-icon',
+    type: 'hidden',
+    label: 'Top icon decorator',
+    defaultValue: false,
   },
 ]
 
