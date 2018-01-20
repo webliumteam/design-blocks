@@ -329,3 +329,12 @@
     margin-right: 0;
   }
 }
+
+.top-icon-wrapper {
+  width: 20px;
+
+  .top-icon {
+    color: red;
+  }
+}
+
