@@ -12,7 +12,15 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
+  componentWillMount() {
+    fetch('https://us-central1-nebaiduzhi-3e7fa.cloudfunctions.net/list?count=5')
+      .then(response => response.json)
+      .then(data => console.log(data))
+      .catch(error => ({error}))
+  }
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
 
   render() {
     const {components: {Text}, style: css} = this.props

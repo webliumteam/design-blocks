@@ -220,7 +220,6 @@
     position: relative;
     align-items: center;
     font-size: 19px;
-    padding-left: 10px;
     list-style-position: inside;
     justify-content: space-between;
     color: var(--ui-subheading-color);
