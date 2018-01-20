@@ -334,7 +334,10 @@
   width: 20px;
 
   .top-icon {
-    color: red;
+    color: var(--ui-brand-color);
   }
 }
 
+.article__header {
+  position: relative;
+}
