@@ -152,3 +152,30 @@
 .description {
   margin-bottom: 15px;
 }
+
+.content-wrapper {
+  backgronud-color: var(--ui-brand-color);
+}
+
+.section__picture {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 57%;
+  background-color: var(--ui-media-bg);
+}
+
+.section__picture-wrapper {
+  display: block;
+  color: inherit;
+  margin-bottom: 20px;
+}
+
+.section__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}

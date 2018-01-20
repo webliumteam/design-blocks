@@ -9,32 +9,54 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  render() {
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
+  getContent = () => {
     const {components: {Text, Button}, style} = this.props
+    return [
+      this.getModifierValue('title') && (
+        <h1 className={style.title}>
+          <Text bind="title" />
+        </h1>
+      ),
+      this.getModifierValue('subtitle') && (
+        <p className={style.description}>
+          <Text bind="description" />
+        </p>
+      ),
+      (<Button
+        className={classNames(style.button, style['button--primary'], style['button--size-lg'])}
+        bind="cta"
+      />),
+    ]
+  }
+
+  render() {
+    const {components: {Image}, style} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          {this.getModifierValue('title') && (
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
-          )}
-          {this.getModifierValue('subtitle') && (
-            <p className={style.description}>
-              <Text bind="description" />
-            </p>
-          )}
-          <Button
-            className={classNames(style.button, style['button--primary'], style['button--size-lg'])}
-            bind="cta"
-          />
+          {this.getOptionValue('content-wrapper') ?
+            <div className={style['content-wrapper']}>{this.getContent()}</div> :
+            this.getContent()
+          }
         </div>
+        {this.getModifierValue('picture') && (
+          <div className={style['section__picture-wrapper']}>
+            <Image
+              pictureClassName={style.section__picture}
+              imgClassName={style.section__image}
+              bind="picture"
+            />
+          </div>
+        )}
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Button'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
   title: 'Want to work with us?',
@@ -53,6 +75,10 @@ Block.defaultContent = {
     },
     textValue: 'Request a quote',
   },
+  picture: {
+    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+    alt: 'Illustration photo',
+  },
 }
 
 Block.modifierScheme = [
@@ -66,6 +92,12 @@ Block.modifierScheme = [
     id: 'subtitle',
     type: 'checkbox',
     label: 'Title description',
+    defaultValue: false,
+  },
+  {
+    id: 'picture',
+    type: 'hidden',
+    label: 'Picture',
     defaultValue: false,
   },
 ]
