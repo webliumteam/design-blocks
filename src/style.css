@@ -20,7 +20,7 @@ button {
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
 
-  @media (max-height: 900px) {
+  @media (max-height: 970px) {
     position: relative;
   }
 
@@ -33,7 +33,7 @@ button {
       width: 100%;
     }
 
-    @media (max-height: 900px) {
+    @media (max-height: 970px) {
       position: relative;
       bottom: 0;
       left: 0;
