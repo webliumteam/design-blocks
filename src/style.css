@@ -202,12 +202,12 @@
 }
 
 .list {
+  position: relative;
   list-style: decimal;
   max-width: 300px;
   text-align: left;
   margin: 0 auto;
-  list-style-position: inside;
-  position: relative;
+  font-family: 'Rubik', sans-serif;
   font-style: 19px;
   margin-bottom: 55px;
 
@@ -219,12 +219,19 @@
     display: list-item;
     position: relative;
     align-items: center;
-    max
+    font-size: 19px;
+    padding-left: 10px;
+    list-style-position: inside;
     justify-content: space-between;
     color: var(--ui-subheading-color);
 
     &:not(:last-child) {
       margin-bottom: 33px;
+    }
+
+    &-inner {
+      display: inline-block;
+      padding-left: 10px;
     }
   }
 
