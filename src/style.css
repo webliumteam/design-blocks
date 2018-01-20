@@ -9,6 +9,7 @@ button {
 .footer {
   min-width: 320px;
   padding: 20px 0;
+  z-index: 1;
   padding-bottom: 0;
   background-color: #141414;
 
