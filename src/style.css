@@ -315,7 +315,7 @@
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
   font-weight: var(--ui-text-font-weight);
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -366,4 +366,12 @@
 .link:focus,
 .link:active {
   color: var(--ui-link-hover-color);
+}
+
+.top-icon-wrapper {
+  width: 20px;
+
+  .top-icon {
+    color: #f00;
+  }
 }
