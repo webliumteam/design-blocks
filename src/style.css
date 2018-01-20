@@ -125,7 +125,7 @@
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
-  
+
   @media (min-width: 768px) {
     padding: 60px 0;
   }
@@ -223,4 +223,12 @@
   max-width: 970px;
   margin: 0 auto;
   text-align: left;
+}
+
+.top-icon-wrapper {
+  width: 20px;
+
+  .top-icon {
+    color: #f00;
+  }
 }
