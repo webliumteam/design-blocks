@@ -337,6 +337,8 @@ button {
   }
 
   &__link {
+    display: inline-flex;
+    align-items: center;
     font-family: "Rubik", sans-serif;
     font-size: 13px;
     font-weight: 500;
