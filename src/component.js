@@ -48,13 +48,21 @@ class Block extends React.Component {
   // {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
-    const {components: {Collection, Text, Button}, style} = this.props
+    const {components: {Collection, Text, Button, Icon}, style} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
+          {this.getModifierValue('top-icon') && (
+            <div className={style['top-icon-wrapper']}><Icon className={style['top-icon']} bind="topIcon" /></div>
+          )}
           <h1 className={style.title}>
             <Text bind="title" />
           </h1>
+          {this.getModifierValue('subtitle') && (
+            <p className={style.subtitle}>
+              <Text bind="subtitle" />
+            </p>
+          )}
           <Collection
             className={style['articles-wrapper']}
             bind="blog"
@@ -67,7 +75,11 @@ class Block extends React.Component {
           {this.getModifierValue('block-button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+                className={classNames(
+                  style.button,
+                  style['button--secondary'],
+                  style['button--size-md'],
+                )}
                 bind="cta"
               />
             </div>
@@ -78,7 +90,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   blog: [
@@ -158,7 +170,11 @@ Block.defaultContent = {
       },
     },
   ],
+  topIcon: {
+    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+  },
   title: 'Blog',
+  subtitle: 'Subtitle here',
   cta: {
     actionConfig: {
       action: 'link',
@@ -204,6 +220,18 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Block button',
     defaultValue: true,
+  },
+  {
+    id: 'subtitle',
+    type: 'hidden',
+    label: 'Subtitle',
+    defaultValue: false,
+  },
+  {
+    id: 'top-icon',
+    type: 'hidden',
+    label: 'Top icon decorator',
+    defaultValue: false,
   },
 ]
 
