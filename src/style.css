@@ -21,6 +21,7 @@
     opacity: 0.5;
 
     &:hover {
+      color: var(--ui-link-color);
       opacity: 1;
     }
 
