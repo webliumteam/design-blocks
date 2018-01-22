@@ -1,3 +1,4 @@
 {
-  "some-modifier": true
+  "some-modifier": true,
+  "button": false
 }
