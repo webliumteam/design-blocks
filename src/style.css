@@ -1,33 +1,12 @@
 @import "wireframe-zapdos-cta/src/style.css";
 
 /* start here */
-.section__inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .title {
   font-size: var(--ui-hero-title-size);
   color: var(--ui-light-shade-color);
   font-family: var(--ui-hero-title-font-family);
   font-weight: var(--ui-hero-title-font-weight);
-  flex-basis: 50%;
-  text-align: right;
   position: relative;
-  padding-right: 35px;
-
-  &::after {
-    content: "";
-    position: absolute;
-    display: inline-block;
-    height: 100%;
-    width: 1px;
-    top: 0;
-    right: 0;
-    background: var(--ui-light-shade-color);
-  }
-
 }
 
 .description {
@@ -35,8 +14,43 @@
   font-size: var(--ui-subtitle-size);
   font-family: var(--ui-subtitle-font-family);
   font-weight: var(--ui-subtitle-font-weight);
-  flex-basis: 50%;
-  text-align: left;
-  padding-left: 35px;
-  margin-top: 40px;
+}
+
+@media (min-width: 992px) {
+  .section__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    flex-basis: 50%;
+    max-width: 50%;
+    text-align: right;
+    padding-right: 35px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      height: 100%;
+      width: 1px;
+      top: 0;
+      right: 0;
+      background: var(--ui-light-shade-color);
+      opacity: .5;
+    }
+  }
+
+  .description {
+    flex-basis: 50%;
+    max-width: 50%;
+    text-align: left;
+    padding-left: 35px;
+
+    span {
+      max-width: 350px;
+    }
+  }
 }
