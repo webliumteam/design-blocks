@@ -64,14 +64,14 @@ Block.defaultContent = {
     svg:
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
   },
-  title: 'Our Text Title',
-  heading: 'Our Text Heading',
+  title: 'Our Values',
+  heading: 'High Standards',
   subtitle:
-    'Join 13000 clients who already worked with us. Request a quote to get best solutions in your area.',
+    'We are a customer-oriented company, and our values drive us to achieve more.',
   subheading:
-    'Join 13000 clients who already worked with us. Request a quote to get best solutions in your area.',
+    'We always aim to establish long-term relationships with customers. That’s why we believe that quality always comes first. This notion is the cornerstone of our mission, solidified by the highest standards we apply in every operation.',
   text:
-    'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain of events that resounded all over Europe; the old regime became, in their imaginary, a paradise lost. This explains why some romantic poets born in the higher classes were keen on seeing themselves as faded aristocrats, expelled from their comfortable milieu by a reverse of fortune or a design of destiny. Byron and Shelley are the prime instances of this vital pose. In The Giaour he writes on a vampiric character: “The common crowd but see the gloom/ Of wayward deeds and fitting doom;/ The close observer can espy/A noble soul, and lineage high.”',
+    'We always work hard to improve our goods and services to achieve higher results for our clients. We love challenging tasks that require an innovative approach. Thus, if your business needs a unique solution, we are ready to fine-tune our existing products to meet all your demands. Our company is a group of devotees sharing mutual priorities and values. We know that only those committed to their work can provide the best-quality products and services. That’s why every person that wants to join our team should undergo rigorous selection.',
 }
 
 Block.modifierScheme = [
