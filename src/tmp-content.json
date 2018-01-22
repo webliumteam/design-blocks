@@ -1,3 +1,25 @@
 {
-  "title": "Design title"
+  "title": "Design title",
+  "theme": "dark",
+  "background": {
+    "type": "image",
+    "position": {
+      "type": "tile",
+      "cover": "50% 50%"
+    },
+    "src": "header-bg.jpg"
+  },  
+  "cta": {
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "Request a quote"
+  }
 }
