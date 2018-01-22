@@ -21,6 +21,7 @@ class Block extends React.Component {
             pictureClassName={style.article__picture}
             imgClassName={style.article__image}
             bind={`blog[${itemNumber}].picture`}
+            size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
           />
         </div>
       ),
@@ -35,7 +36,7 @@ class Block extends React.Component {
   }
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button, Image}, style} = this.props
+    const {components: {Text, Button}, style} = this.props
     return (
       <article className={classNames(style.article, className)}>
         {children}
@@ -54,8 +55,6 @@ class Block extends React.Component {
       </article>
     )
   }
-
-  // {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
     const {components: {Collection, Text, Button, Icon}, style} = this.props
@@ -106,9 +105,9 @@ Block.defaultContent = {
   blog: [
     {
       id: '21a46d6e-0354-4a96-9af0-928ddae32095',
-      title: 'The two most important questions when scoping your MVP',
+      title: 'How to Hire Only Professional and Dedicated Employees? Useful Tips from Our HR Director.',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Our HR Director shares his experience how to fill positions with the best candidates, where to find talents, and how to attract professionals to your business. ',
       category: 'Creative Process',
       date: 'September 22, 2017',
       picture: {
@@ -131,9 +130,9 @@ Block.defaultContent = {
     },
     {
       id: '41db0c4f-46b3-4835-8e77-062de63d018a',
-      title: 'The two most important questions when scoping your MVP',
+      title: 'How to Achieve Higher Profits in Retail with Our New Product?',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Do you want to achieve higher profits this year? Our new product will help you get what you want. In this article, you will find out how to use it to get more benefits.',
       category: 'Creative Process',
       date: 'September 22, 2017',
       picture: {
@@ -156,9 +155,9 @@ Block.defaultContent = {
     },
     {
       id: 'fff4b459-6e4f-4645-901e-4c1b1aa94e51',
-      title: 'The two most important questions when scoping your MVP',
+      title: 'Top 5 Tips to Improve Your Engineering Department.',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'You engineers can bring you better results! Get to know how to improve engineering department to make a new step for your company growth. ',
       category: 'Creative Process',
       date: 'September 22, 2017',
       picture: {
