@@ -69,9 +69,10 @@
     flex-basis: 50%;
     max-width: 50%;
     margin-top: 70px;
+
+    &:first-of-type {
+      margin-top: 70px;
+    }
   }
 
-  .item:first-of-type {
-    margin-top: 70px;
-  }
 }
