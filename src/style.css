@@ -341,6 +341,11 @@
   
   .button:last-child {
     margin-right: 0;
+    margin-bottom: 0;
+    
+    @media (min-width: 480px) {
+      margin-bottom: 20px;
+    }
   }
   
   .link {
