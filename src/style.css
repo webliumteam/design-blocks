@@ -18,12 +18,12 @@ a {
   text-transform: uppercase;
   color: var(--ui-light-shade-color);
   display: flex;
-}
 
-.logo__title:after {
-  content: "hose";
-  display: block;
-  color: var(--ui-light-accent-color);
+  &::after {
+    content: "hose";
+    display: block;
+    color: var(--ui-light-accent-color);
+  }
 }
 
 @media (max-width: 991px) {
