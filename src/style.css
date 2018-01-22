@@ -343,7 +343,7 @@
 @media (min-width: 768px) {
   .list__item .list__item-icon + .list__item-text {
     text-align: left;
-    max-width: 100%;
+    max-width: calc(100% - 90px);
   }
 }
 
