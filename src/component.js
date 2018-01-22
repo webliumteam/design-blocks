@@ -110,7 +110,7 @@ Block.defaultContent = {
       id: '900aa334-14f2-4c05-b078-78099a5725e5',
       title: 'Service 1',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Multipurpose assistance for online stores and offline retail businesses.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -133,7 +133,7 @@ Block.defaultContent = {
       id: 'cfb2c56d-7708-4459-bdf2-6780f4ba62b9',
       title: 'Service 2',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Developing marketing and business strategy to help company grow fast.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -156,7 +156,7 @@ Block.defaultContent = {
       id: 'eea21546-b56e-406b-8cba-18a5a5ec1820',
       title: 'Service 3',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Building brand awareness for micro and small businesses. ',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -179,7 +179,7 @@ Block.defaultContent = {
       id: 'aa5d3a04-43b7-4bb3-9c7a-00e1986f359e',
       title: 'Service 4',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Aftersales support in marketing, sales, and staff training.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -205,7 +205,7 @@ Block.defaultContent = {
   },
   title: 'Services We Provide',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    'We deliver all kind of services that support small and micro businesses. Here are some of them:',
   'button-1': {
     actionConfig: {
       action: 'link',
