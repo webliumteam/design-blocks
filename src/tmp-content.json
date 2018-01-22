@@ -1,3 +1,10 @@
 {
-  "title": "Design title"
+  "title": "Design title",
+  "theme": "dark",
+  "resourceRef": "logo.png",
+  "logo": {
+    "text": {
+      "value": "Great"
+    }
+  }
 }
