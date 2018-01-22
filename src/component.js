@@ -9,14 +9,14 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className, modifier}) => {
+  collectionItem = ({index, children, className}) => {
     const {components: {Text, Image}, style: css} = this.props
     return (
       <article className={classNames(css.item, className)}>
         {children}
 
         <div className={css.item__inner}>
-          {_.get('image')(modifier) && (
+          {this.getModifierValue('image') && (
             <Image
               pictureClassName={css.item__pic}
               imgClassName={css.item__img}
@@ -28,7 +28,7 @@ class Block extends React.Component {
               <Text bind={`testimonials[${index}].name`} />
             </h2>
           </div>
-          {_.get('position')(modifier) && (
+          {this.getModifierValue('position') && (
             <p className={css.item__position}>
               <Text bind={`testimonials[${index}].position`} />
             </p>
@@ -36,7 +36,7 @@ class Block extends React.Component {
           <p className={css.item__desc}>
             <Text bind={`testimonials[${index}].description`} />
           </p>
-          {_.get('publishDate')(modifier) && (
+          {this.getModifierValue('publishDate') && (
             <time className={css.item__time}>
               <Text bind={`testimonials[${index}].date`} />
             </time>
@@ -47,7 +47,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Slider, Text, Button}, style: css, $block} = this.props
+    const {components: {Slider, Text, Button}, style: css} = this.props
     return (
       <section className={css.section}>
         <div className={css.section__inner}>
@@ -62,7 +62,7 @@ class Block extends React.Component {
           <Slider
             className={css['items-wrapper']}
             bind="testimonials"
-            Item={props => <this.collectionItem {...props} modifier={$block.modifier} />}
+            Item={this.collectionItem}
           />
           {this.getModifierValue('button') && (
             <div className={css['btns-group']}>
