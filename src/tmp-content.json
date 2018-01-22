@@ -1,3 +1,10 @@
 {
-  "title": "Design title"
+  "title": "Design title",
+  "uikit": "photographer",
+  "logo": {
+    "text": {
+      "value": "AR",
+      "tagName": "h2"
+    }
+  }
 }
