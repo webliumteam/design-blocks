@@ -1,5 +1,9 @@
 @import "wireframe-zapdos-awards/src/style.css";
 
+.section {
+  background: #f7f7f7;
+}
+
 .subtitle {
   margin-top: 35px;
 }
