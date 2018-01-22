@@ -84,32 +84,32 @@ Block.defaultContent = {
   testimonials: [
     {
       id: 'bf40db18-b817-4a19-bd5b-b72cfacce814',
-      name: 'Julia Banks',
-      position: 'CEO at Minor Thinking',
+      name: 'Amanda Peterson',
+      position: 'Marketing Director at Fresh Food Co.',
       description:
-        "“They are always accountable. I have confidence when I make a decision. I know it's going to get done. If they could lose money on a project just because they're trying to make the customer happy, they probably would do that.”",
-      date: 'October 28, 2017',
+        '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
+      date: 'December 15, 2017',
       image: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Julia Banks photo',
+        alt: 'Amanda Peterson photo',
       },
     },
     {
       id: '5ee25c3a-0026-4ab8-b291-238b72e1f6cc',
-      name: 'Glen Riley',
-      position: 'Professional',
+      name: 'Amanda Peterson',
+      position: 'Marketing Director at Fresh Food Co.',
       description:
-        'Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath.',
-      date: 'October 28, 2017',
+        '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
+      date: 'December 15, 2017',
       image: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Glen Riley photo',
+        alt: 'Amanda Peterson photo',
       },
     },
   ],
   title: 'Testimonials',
   subtitle:
-    'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain of',
+    'Read the success stories of our customers to find out why so many companies choose us.',
   cta: {
     actionConfig: {
       action: 'link',
