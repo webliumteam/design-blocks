@@ -10,12 +10,12 @@
 
   &-list {
     margin-top: 0;
-  }
 
-  &-list__item {
+    &__item {
 
-    @media (min-width: 768px) {
-      margin-bottom: 25px;
+      @media (min-width: 768px) {
+        margin-bottom: 25px;
+      }
     }
   }
 
@@ -48,13 +48,13 @@
 .logo {
   padding-left: 0;
   padding-right: 0;
-}
 
-.logo__title {
-  color: var(--ui-dark-shade-color);
-  font-size: var(--ui-sub-heading-size);
-  font-weight: var(--ui-heading-large-font-weight);
-  font-family: var(--ui-caption-font-family);
+  &__title {
+    color: var(--ui-dark-shade-color);
+    font-size: var(--ui-sub-heading-size);
+    font-weight: var(--ui-heading-large-font-weight);
+    font-family: var(--ui-caption-font-family);
+  }
 }
 
 @media (min-width: 992px) {
