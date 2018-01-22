@@ -86,7 +86,6 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  flex: 3 0 auto;
 
   a {
     text-decoration: none;
