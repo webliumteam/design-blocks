@@ -1,9 +1,5 @@
 @import "wireframe-zapdos-awards/src/style.css";
 
-.section {
-  background: #f7f7f7;
-}
-
 .subtitle {
   margin-top: 35px;
 }
@@ -16,6 +12,16 @@
   flex-direction: column;
   align-items: stretch;
   position: relative;
+
+  &__picture {
+    background-color: transparent;
+
+    &-wrapper {
+      margin-bottom: 50px;
+      height: 55px;
+      overflow: hidden;
+    }
+  }
 
   &::after {
     content: "";
@@ -40,10 +46,22 @@
       padding: 5px 0 3px;
     }
   }
+
+  &:first-of-type {
+    margin-top: 70px;
+  }
+
+  &__image {
+    object-fit: contain;
+  }
+
+  &__title {
+    font-size: calc(var(--ui-heading-size) * 0.769);
+  }
 }
 
-.item:first-of-type {
-  margin-top: 70px;
+.btns-group {
+  margin-top: 58px;
 }
 
 @media (min-width: 480px) {
@@ -56,26 +74,4 @@
   .item:first-of-type {
     margin-top: 70px;
   }
-}
-
-.item__picture {
-  background-color: white;
-}
-
-.item__picture-wrapper {
-  margin-bottom: 50px;
-  height: 55px;
-  overflow: hidden;
-}
-
-.item__image {
-  object-fit: contain;
-}
-
-.item__title {
-  font-size: calc(var(--ui-heading-size) * 0.769);
-}
-
-.btns-group {
-  margin-top: 58px;
 }
