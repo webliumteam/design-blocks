@@ -61,15 +61,15 @@ class Block extends React.Component {
             </p>
           )}
           <ol className={css.list}>
-          <li className={css.list__spinner}>
+            <li className={css.list__spinner}>
               <div className={css['sk-cube-grid']}>
                 <div className={classNames(css['sk-cube'], css['sk-cube1'])} />
-                <div className={classNames(css['sk-cube'], css['sk-cube2'])}  />
-                <div className={classNames(css['sk-cube'], css['sk-cube3'])}  />
-                <div className={classNames(css['sk-cube'], css['sk-cube4'])}  />
-                <div className={classNames(css['sk-cube'], css['sk-cube5'])}  />
-                <div className={classNames(css['sk-cube'], css['sk-cube6'])}  />
-                <div className={classNames(css['sk-cube'], css['sk-cube7'])}  />
+                <div className={classNames(css['sk-cube'], css['sk-cube2'])} />
+                <div className={classNames(css['sk-cube'], css['sk-cube3'])} />
+                <div className={classNames(css['sk-cube'], css['sk-cube4'])} />
+                <div className={classNames(css['sk-cube'], css['sk-cube5'])} />
+                <div className={classNames(css['sk-cube'], css['sk-cube6'])} />
+                <div className={classNames(css['sk-cube'], css['sk-cube7'])} />
                 <div className={classNames(css['sk-cube'], css['sk-cube8'])} />
                 <div className={classNames(css['sk-cube'], css['sk-cube9'])} />
               </div>
