@@ -143,6 +143,7 @@
   
   .section--column .article__picture-wrapper {
     max-width: none;
+    flex-basis: auto;
   }
 
   .section--column .article__picture {
