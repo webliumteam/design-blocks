@@ -52,8 +52,8 @@ class Block extends React.Component {
 Block.components = _.pick(['Text', 'Button'])($editor.components)
 
 Block.defaultContent = {
-  title: 'Type something',
-  subtitle: 'Type something',
+  title: 'Quantum Company',
+  subtitle: 'We can execute even the most unpredictable ideas! ',
   'cta-1': {
     actionConfig: {
       action: 'link',
