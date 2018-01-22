@@ -36,7 +36,9 @@ class Block extends React.Component {
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
           <article className={css.article}>
-            <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
+            <div className={css['article__picture-wrapper']}>
+              <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
+            </div>
             {!onlyImage && (
               <div className={css.article__content}>
                 {this.getModifierValue('title') && (

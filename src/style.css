@@ -182,19 +182,28 @@
   }
   
   .article__picture {
-    position: relative;
-    width: 100%;
+    display: block;
     min-height: 200px;
-    padding-top: 35.56%;
+    padding-top: 70%;
     order: -1;
     background-color: var(--ui-media-bg);
+  }
+
+  .article__picture-wrapper {
+    position: relative;
+    width: 100%;
+    max-height: 410px;
+    overflow: hidden;
   }
   
   @media (min-width: 768px) {
     .article__picture {
-      flex-basis: 50%;
-      max-width: 48.7%;
       order: unset;
+    }
+
+    .article__picture-wrapper {
+      max-width: 50%;
+      flex-basis: 50%;
     }
   }
   
@@ -217,9 +226,10 @@
   
   @media (min-width: 768px) {
     .article__content {
-      max-width: 48.8%;
+      max-width: 50%;
       padding-top: 0;
       flex-basis: 50%;
+      padding-left: 30px;
     }
   }
   
