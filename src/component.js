@@ -9,7 +9,7 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
+  collectionItem = ({index, children, className, itemDesc}) => {
     const {components: {Text, Icon}, style} = this.props
     return (
       <article className={classNames(style.item, className)}>
@@ -20,7 +20,7 @@ class Block extends React.Component {
         <h2 className={style.item__title}>
           <Text bind={`articles[${index}].title`} />
         </h2>
-        {this.getModifierValue('item-description') && (
+        {itemDesc && (
           <p className={style.item__desc}>
             <Text bind={`articles[${index}].description`} />
           </p>
@@ -48,6 +48,9 @@ class Block extends React.Component {
             className={style['items-wrapper']}
             bind="articles"
             Item={this.collectionItem}
+            itemProps={{
+              itemDesc: this.getModifierValue('item-description'),
+            }}
           />
           <div className={style['btns-group']}>
             {this.getModifierValue('button-secondary') && (
