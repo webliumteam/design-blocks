@@ -1,32 +1,57 @@
 @import "wireframe-zapdos-numbers/src/style.css";
 
-section {
-  background: #f8f8f8;
+.section {
+  position: relative;
+  background-color: transparent;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+  }
 }
 
-.item__content {
-  flex-direction: column;
-}
+.item {
+  &__content {
+    flex-direction: column;
+  }
 
-.item__number {
-  font-size: var(--ui-block-title-size);
-  line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: 700;
-}
+  &__number {
+    font-size: var(--ui-block-title-size);
+    line-height: var(--ui-block-title-line-height);
+    font-family: var(--ui-block-title-font-family);
+    font-weight: 700;
+  }
 
-.item__text {
-  font-size: calc(var(--ui-text-size)*1.125);
-  font-weight: 700;
-  text-transform: uppercase;
+  &__text {
+    font-size: calc(var(--ui-text-size)*1.125);
+    line-height: calc(var(--ui-block-title-line-height)*1.364);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 }
 
 @media (min-width:992px) {
+  .item {
+    &__number {
+      margin-right: 0;
+    }
+  }
+
+  .item:nth-child(3) .item__content,
+  .item:nth-child(4) .item__content {
+    margin-right: 20px;
+  }
+
   .item:nth-last-of-type(4):first-child,
   .item:nth-last-of-type(4):first-child ~ .item {
     flex-basis: 25%;
     max-width: 25%;
-    margin-top: 25px;
   }
 }
 
@@ -35,5 +60,6 @@ section {
     flex-basis: 25%;
     max-width: 25%;
     margin-top: 25px;
+    margin-bottom: 25px;
   }
 }

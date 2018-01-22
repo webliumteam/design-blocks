@@ -1,4 +1,13 @@
 {
+  "background": {
+    "type": "image",
+    "position": {
+      "type": "tile",
+      "tile": "no-repeat"
+      },
+    "src": "img_bg_ruler.png"
+  },
+
   "numbers": [
     {
       "label": "Hours of work",
