@@ -227,8 +227,8 @@
 
 .top-icon-wrapper {
   width: 20px;
+}
 
-  .top-icon {
-    color: #f00;
-  }
+.top-icon {
+  color: #f00;
 }
