@@ -141,7 +141,7 @@
     align-items: center;
   }
   
-  .section--column .article__picture {
+  .section--column .article__picture-wrapper {
     max-width: none;
   }
   
@@ -150,7 +150,7 @@
     margin-bottom: 40px;
   }
   
-  .section--column .article__picture + .article__content {
+  .section--column .article__picture-wrapper + .article__content {
     margin-top: 30px;
     margin-bottom: 0;
     padding-top: 0;
