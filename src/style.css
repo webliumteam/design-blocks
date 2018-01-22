@@ -37,6 +37,7 @@
 }
 
 .footer__main {
+  justify-content: space-between;
 
   @media (min-width: 992px) {
     display: flex;
