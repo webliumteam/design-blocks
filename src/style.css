@@ -72,9 +72,7 @@
   max-width: 100%;
 
   @media (min-width: 992px) {
-    .footer__meta {
-      max-width: 50%;
-    }
+    max-width: 50%;
   }
 }
 
