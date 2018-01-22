@@ -144,6 +144,10 @@
   .section--column .article__picture-wrapper {
     max-width: none;
   }
+
+  .section--column .article__picture {
+    padding-top: 35%;
+  }
   
   .section--column .article__content {
     max-width: none;
@@ -199,6 +203,7 @@
   @media (min-width: 768px) {
     .article__picture {
       order: unset;
+      min-height: 410px;
     }
 
     .article__picture-wrapper {
