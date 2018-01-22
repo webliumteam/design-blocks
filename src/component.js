@@ -147,37 +147,13 @@ Block.defaultContent = {
         textValue: 'Learn more',
       },
     },
-    {
-      id: 'fdb764de-b808-4248-9c32-b423b71080bd',
-      title: 'Project 3',
-      subtitle: 'UX DESIGN',
-      text:
-        'A side-project with the goal to create a product that does one job incredibly well and learn a new programming language along the way.',
-      picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Project 3',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-      },
-    },
   ],
   topIcon: {
     svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
   },
   title: 'Our Projects',
   subtitle:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    'Each month, we usefully close our projects. Here is the list of our recent ones:',
   cta: {
     actionConfig: {
       action: 'link',
