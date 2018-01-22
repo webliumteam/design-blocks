@@ -244,6 +244,7 @@
   padding: 0 20px;
   margin-top: 40px;
   flex-grow: 0;
+  width: 100%;
   max-width: 100%;
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
