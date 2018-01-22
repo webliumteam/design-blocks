@@ -1,5 +1,9 @@
 @import "wireframe-zapdos-numbers/src/style.css";
 
+section {
+  background: #fcfcfc;
+}
+
 .item__content {
   flex-direction: column;
 }
