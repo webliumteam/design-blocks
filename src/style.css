@@ -7,9 +7,11 @@
 }
 
 .item {
+  margin-top: 30px;
+
   &__icon {
-    width: 65px;
-    margin-bottom: 55px;
+    max-width: 95px;
+    margin-bottom: 35px;
     position: relative;
 
     &::after {
@@ -22,7 +24,7 @@
       left: 50%;
       top: 100%;
       transform: translateX(-50%);
-      margin-top: 30px;
+      margin-top: 9px;
     }
 
     svg {
