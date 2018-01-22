@@ -3,72 +3,87 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
   }
 
-  getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
     const {components: {Logo, Text, Map, SocialIcons, Button}, style} = this.props
 
-    const textWithSocials = !(
-      this.getModifierValue('logo') ||
-      this.getModifierValue('phone') ||
-      this.getModifierValue('email') ||
-      this.getModifierValue('social')
-    )
+    const textWithSocials = (
+      !this.getModifierValue('logo') &&
+      !this.getModifierValue('phone') &&
+      !this.getModifierValue('email') &&
+      !this.getModifierValue('map')
+    ) && (this.getModifierValue('address') && this.getModifierValue('social'))
 
-    const mapWithSocials = !(
-      this.getModifierValue('map') ||
-      this.getModifierValue('social')
-    )
+    const mapWithSocials = (
+      !this.getModifierValue('logo') &&
+      !this.getModifierValue('phone') &&
+      !this.getModifierValue('email') &&
+      !this.getModifierValue('address')
+    ) && (this.getModifierValue('map') && this.getModifierValue('social'))
 
     return (
       <section className={classNames(style.section, {
         [style['section--state-8']]: textWithSocials,
-        [style['section--column']]: mapWithSocials
-      }
-      )}>
+        [style['section--column']]: mapWithSocials})}
+      >
         <div className={style.section__inner}>
           <h1 className={style.title}>
             <Text bind="title" />
           </h1>
           <div className={style.section__main}>
-            {this.getModifierValue('map') && <div className={style['map-wrapper']}>
-              <div className={style.map}>
-                <Map className={style.map__preview} bind="map" />
+            {this.getModifierValue('map') && (
+              <div className={style['map-wrapper']}>
+                <div className={style.map}>
+                  <Map className={style.map__preview} bind="map" />
+                </div>
               </div>
-            </div>}
+            )}
             <div className={style.contacts}>
-              {this.getModifierValue('logo') && <div className={style['logo-wrapper']}>
-                <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
-              </div>}
+              {this.getModifierValue('logo') && (
+                <div className={style['logo-wrapper']}>
+                  <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
+                </div>
+              )}
               <ul className={style['contacts-list']}>
-                {this.getModifierValue('address') && <li className={style['contacts-list__item']}>
-                  <h3 className={style.contacts__title}>
-                    <Text bind="address-title" />
-                  </h3>
-                  <p className={style.contacts__desc}>
-                    <Text bind="address-content" />
-                  </p>
-                </li>}
-                {this.getModifierValue('phone') && <li className={style['contacts-list__item']}>
-                  <h3 className={style.contacts__title}>
-                    <Text bind="phone-title" />
-                  </h3>
-                  <p className={style.contacts__desc}>
-                    <Button bind="phone-link" />
-                  </p>
-                </li>}
-                {this.getModifierValue('email') && <li className={style['contacts-list__item']}>
-                  <h3 className={style.contacts__title}>
-                    <Text bind="email-title" />
-                  </h3>
-                  <p className={style.contacts__desc}>
-                    <Button bind="email-link" />
-                  </p>
-                </li>}
+                {this.getModifierValue('address') && (
+                  <li className={style['contacts-list__item']}>
+                    <h3 className={style.contacts__title}>
+                      <Text bind="address-title" />
+                    </h3>
+                    <p className={style.contacts__desc}>
+                      <Text bind="address-content" />
+                    </p>
+                  </li>
+                )}
+                {this.getModifierValue('phone') && (
+                  <li className={style['contacts-list__item']}>
+                    <h3 className={style.contacts__title}>
+                      <Text bind="phone-title" />
+                    </h3>
+                    <p className={style.contacts__desc}>
+                      <Button bind="phone-link" />
+                    </p>
+                  </li>
+                )}
+                {this.getModifierValue('email') && (
+                  <li className={style['contacts-list__item']}>
+                    <h3 className={style.contacts__title}>
+                      <Text bind="email-title" />
+                    </h3>
+                    <p className={style.contacts__desc}>
+                      <Button bind="email-link" />
+                    </p>
+                  </li>
+                )}
               </ul>
-              {this.getModifierValue('social') && <SocialIcons className={style.socials} bind="socialIcons" />}
+              {this.getModifierValue('social') && (
+                <SocialIcons className={style.socials} bind="socialIcons" />
+              )}
             </div>
           </div>
         </div>
@@ -84,7 +99,7 @@ Block.defaultContent = {
   logo: {
     text: {
       value: 'Company Logo',
-      tagName: 'h2'
+      tagName: 'h2',
     },
   },
   'address-title': 'Address',
@@ -96,8 +111,8 @@ Block.defaultContent = {
       action: 'external',
       actions: {
         external: {
-          url: 'tel:+12345678900'
-        }
+          url: 'tel:+12345678900',
+        },
       },
     },
     textValue: '+1 (234) 567 89 00',
@@ -107,8 +122,8 @@ Block.defaultContent = {
       action: 'external',
       actions: {
         external: {
-          url: 'mailto:mysite@weblium.com'
-        }
+          url: 'mailto:mysite@weblium.com',
+        },
       },
     },
     textValue: 'mysite@weblium.com',
