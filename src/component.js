@@ -23,45 +23,56 @@ class Block extends React.Component {
     )
     const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
 
+    const onlyImage = !(
+      this.getModifierValue('title') ||
+      this.getModifierValue('subtitle') ||
+      this.getModifierValue('text') ||
+      this.getModifierValue('socialIcons') ||
+      this.getModifierValue('link') ||
+      this.getModifierValue('button')
+    )
+
     return (
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
           <article className={css.article}>
             <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" className={css.socials}/>
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(css.button, css['button--primary'], css['button--size-md'])}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
+            {!onlyImage && (
+              <div className={css.article__content}>
+                {this.getModifierValue('title') && (
+                  <h1 className={css.article__title}>
+                    <Text bind="title" />
+                  </h1>
+                )}
+                {this.getModifierValue('subtitle') && (
+                  <p className={css.article__subtitle}>
+                    <Text bind="subtitle" />
+                  </p>
+                )}
+                {this.getModifierValue('text') && (
+                  <p className={css.article__text}>
+                    <Text bind="text" />
+                  </p>
+                )}
+                {this.getModifierValue('socialIcons') && (
+                  <div className={css.article__socials}>
+                    <h2 className={css['social-title']}>Follow us: </h2>
+                    <SocialIcons bind="socialIcons" className={css.socials}/>
+                  </div>
+                )}
+                {showButtonGroups && (
+                  <div className={css['btns-group']}>
+                    {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
+                    {this.getModifierValue('button') && (
+                      <Button
+                        className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+                        bind="button"
+                      />
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
           </article>
         </div>
       </section>
@@ -140,10 +151,28 @@ Block.defaultContent = {
 
 Block.modifierScheme = [
   {
+    id: 'title',
+    type: 'checkbox',
+    label: 'Block title',
+    defaultValue: true,
+  },
+  {
+    id: 'subtitle',
+    type: 'checkbox',
+    label: 'Subtitle',
+    defaultValue: false,
+  },
+  {
     id: 'text',
     type: 'checkbox',
     label: 'Company main text',
     defaultValue: true,
+  },
+  {
+    id: 'socialIcons',
+    type: 'checkbox',
+    label: 'Social media buttons',
+    defaultValue: false,
   },
   {
     id: 'link',
@@ -155,24 +184,6 @@ Block.modifierScheme = [
     id: 'button',
     type: 'checkbox',
     label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
     defaultValue: true,
   },
 ]
