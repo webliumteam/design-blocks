@@ -1,6 +1,7 @@
 {
-  "title": "Design title",
-  "subtitle": "We can execute even the most unpredictable ideas! ",
+  "title": "Building your dreams Creating reality",
+  "subtitle":
+    "We are the nation's building leader with a spacious customer network",
   "cta-1": {
     "actionConfig": {
       "action": "link",
@@ -12,19 +13,14 @@
         }
       }
     },
-    "textValue": "Main button (L)"
+    "textValue": "Read More"
   },
-  "cta-2": {
-    "actionConfig": {
-      "action": "link",
-      "actions": {
-        "link": {
-          "type": "",
-          "innerPage": "",
-          "url": ""
-        }
-      }
+  "background": {
+    "type": "image",
+    "position": {
+      "type": "cover",
+      "cover": "50% 50%"
     },
-    "textValue": "Additional button (L)"
+    "src": "cover-bg.png"
   }
 }
