@@ -40,7 +40,9 @@ class Block extends React.Component {
 
     return (
       <footer
-        className={classNames(css.footer, this.getModifierValue('fixed') && css['footer--fixed'])}
+        className={classNames(css.footer, this.getModifierValue('fixed') && css['footer--fixed'],
+        this.getModifierValue('home') && css['footer--home'],
+      )}
       >
         <div className={css.footer__inner}>
           <nav className={css.nav}>
@@ -183,6 +185,12 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Company slogan',
     defaultValue: true,
+  },
+  {
+    id: 'home',
+    type: 'checkbox',
+    label: 'Home footer',
+    defaultValue: false,
   },
   {
     id: 'fixed',
