@@ -9,6 +9,12 @@
     },
     "src": "header-bg.jpg"
   },
+  "logo": {
+    "image": {
+      "resourceRef": "logo.png",
+      "alt": "Logo"
+    }
+  },
   "cta": {
     "actionConfig": {
       "action": "link",

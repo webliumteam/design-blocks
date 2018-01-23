@@ -16,8 +16,18 @@
   margin-top: 4px;
 }
 
-@media (min-width: 992px) {
-  .nav-list__item:not(:first-child) {
-    margin-left: 30px;
+.nav-list__item {
+  margin-top: 6px;
+  margin-bottom: 6px;
+
+  &:not(:first-child) {
+
+    @media (min-width: 992px) {
+      margin-left: 30px;
+    }
   }
+}
+
+.nav {
+  align-items: flex-start;
 }
