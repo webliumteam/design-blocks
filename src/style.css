@@ -300,7 +300,7 @@
 
 .plan--main .plan__list {
   margin-bottom: 40px;
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -347,12 +347,8 @@
   color: var(--ui-link-hover-color);
 }
 
-.top-icon-wrapper {
+.top-icon {
   width: 20px;
-
-  .top-icon {
-    color: var(--ui-brand-color);
-  }
 }
 
 .price-wrapper {
