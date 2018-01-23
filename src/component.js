@@ -22,15 +22,21 @@ class Block extends React.Component {
         : ''
 
     return (
-      <section className={classNames(css.section, alignClass)}>
+      <section className={classNames(css.section, alignClass, this.getModifierValue('group') && css['section--group'])}>
         <div className={css.section__inner}>
           <section className={css.wrapper}>
+
             {this.getModifierValue('text') && (
               <p className={css.text}>
                 <Text bind="text" />
               </p>
             )}
           </section>
+          {this.getModifierValue('titleBlock') && (
+            <h1 className={classNames(css.text, css['text--title'])}>
+              <Text bind="titleBlock" />
+            </h1>
+          )}
           {this.getModifierValue('subheading') && (
             <h2 className={css.subheading}>
               <Text bind="subheading" />
@@ -93,6 +99,7 @@ Block.defaultContent = {
   subheading:
     'Join 13000 clients who already worked with us. Request a quote to get best solutions in your area.',
   subheading2: 'Закликаємо об’єднуватися всіх небайдужих, які ставлять перед собою такі самі цілі.',
+  titleBlock: 'Ініціативна група',
   text:
     'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain of events that resounded all over Europe; the old regime became, in their imaginary, a paradise lost. This explains why some romantic poets born in the higher classes were keen on seeing themselves as faded aristocrats, expelled from their comfortable milieu by a reverse of fortune or a design of destiny. Byron and Shelley are the prime instances of this vital pose. In The Giaour he writes on a vampiric character: “The common crowd but see the gloom/ Of wayward deeds and fitting doom;/ The close observer can espy/A noble soul, and lineage high.”',
   list1: '1.Незалежний аудит НАБУ.',
@@ -119,6 +126,12 @@ Block.modifierScheme = [
     id: 'subtitle',
     type: 'checkbox',
     label: 'Description',
+    defaultValue: true,
+  },
+  {
+    id: 'titleBlock',
+    type: 'checkbox',
+    label: 'Ініціативна група',
     defaultValue: true,
   },
   {
@@ -180,6 +193,12 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'List 2',
     defaultValue: true,
+  },
+  {
+    id: 'group',
+    type: 'checkbox',
+    label: 'Group',
+    defaultValue: false,
   },
   {
     id: 'list3',
