@@ -175,10 +175,10 @@ Block.defaultContent = {
       border: 'circle',
       innerFill: true,
       preset: 'preset001',
-      marginRight: 20,
-      color: '',
+      marginRight: 15,
+      color: '#9B9B9B',
       sizes: [10, 20, 30, 40],
-      size: '40px',
+      size: '30px',
     },
   },
 }
