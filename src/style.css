@@ -2,11 +2,11 @@
 
 /* start here */
 .section {
-  padding: var(--ui-btn-primary-shadow-x);
+  padding: 0;
 
   &__inner {
-    max-width: var(--ui-alt-btn-secondary-shadow-color);
-    padding: var(--ui-btn-primary-shadow-x);
+    max-width: none;
+    padding: 0;
   }
 
 }
@@ -14,12 +14,15 @@
 .article {
   &__title {
     position: relative;
-    font-family: var(--ui-sub-heading-font-family);
     font-weight: 600;
-    font-size: var(--ui-block-title-size);
     margin-bottom: 45px;
+    font-family: var(--ui-block-title-font-family);
 
-    &:after {
+    @media (min-width: 992px) {
+      font-size: var(--ui-block-title-size);
+    }
+
+    &::after {
       position: absolute;
       content: "";
       display: block;
@@ -32,41 +35,26 @@
   }
 
   &__subtitle {
-    font-family: var(--ui-caption-font-family);
+    font-family: var(--ui-text-font-family);
     font-size: var(--ui-subtitle-size);
     font-weight: var(--ui-text-font-weight);
     margin-bottom: 40px;
   }
 
   &__text {
-    font-family: var(--ui-caption-font-family);
+    font-family: var(--ui-text-font-family);
     font-size: var(--ui-subtitle-size);
     font-weight: var(--ui-text-font-weight);
     line-height: var(--ui-subtitle-line-height);
-    mrgin-bottom: 40px;
+    margin-bottom: 40px;
   }
 
   &__content {
 
-    @media (--ui-tablet-devices) {
+    @media (min-width: 768px) {
       max-width: 45.8%;
     }
   }
 }
 
-.button {
-  font-family: var(--ui-caption-font-family);
-  font-weight: 600;
-  font-size: var(--ui-quote-size);
-
-  &--primary {
-    background-color: var(--ui-btn-primary-color);
-    color: var(--ui-alt-btn-primary-bg);
-    border: var(--ui-btn-primary-border-width) var(--ui-btn-primary-border-style) var(--ui-btn-primary-bg);
-  }
-
-  &--size-md {
-    border-radius: var(--ui-btn-primary-shadow-x);
-  }
-
-}
+.button { font-weight: 600; }
