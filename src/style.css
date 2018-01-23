@@ -247,6 +247,7 @@
 .media {
   display: block;
   min-height: 300px;
+  height: 100%;
   padding-top: 30%;
   background-color: var(--ui-media-bg);
 }
