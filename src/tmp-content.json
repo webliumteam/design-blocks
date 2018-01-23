@@ -1,3 +1,16 @@
 {
-  "title": "Design title"
+  "title": "Do all things with love",
+  "subtitle": "His many legs, pitifully thin compared",
+  "cta-1": {
+    "textValue": "Try now"
+  },
+  "theme": "dark",
+  "background": {
+   "type": "image",
+   "position": {
+     "type": "cover",
+     "cover": "50% 50%"
+    },
+   "src": "cover-bg.jpg"
+  }
 }
