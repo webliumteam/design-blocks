@@ -2,17 +2,12 @@
 
 /* start here */
 
-/* .wf-montserrat-n1-active { */
-
-/* height: 100%; */
-
-/* } */
 .footer {
   padding: 85px 0 0;
   background: var(--ui-dark-shade-color);
 }
 
-.footer__inner .logo a {
+a {
   text-decoration: none;
 }
 
@@ -24,13 +19,15 @@
   color: var(--ui-light-shade-color);
   display: flex;
 
-  &:after {
+  &::after {
     content: "hose";
     display: block;
     color: var(--ui-light-accent-color);
   }
+}
 
-  @media (max-width: 991px) {
+@media (max-width: 991px) {
+  .logo__title {
     align-items: center;
     justify-content: center;
   }
@@ -42,19 +39,20 @@
   text-transform: uppercase;
 }
 
-.footer__inner .nav .nav-list {
+.nav-list {
   font-size: var(--ui-text-size);
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
   color: var(--ui-light-shade-color);
 }
 
-.footer .footer__inner .footer__bottom {
+.footer__bottom {
   margin-top: 38px;
   border-top: 1px solid #4d4d4d;
   padding: 84px 0 46px;
 }
 
-.footer .footer__inner .footer__meta {
-  color: var(--ui-small-color);
+.footer__meta {
+  color: var(--ui-text-color);
 }
+

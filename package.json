@@ -12,7 +12,7 @@
             "git add"
         ],
         "src/**/*.css": [
-            "stylelint --fix",
+            "stylelint",
             "git add"
         ]
     },
