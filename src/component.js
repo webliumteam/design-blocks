@@ -53,11 +53,9 @@ class Block extends React.Component {
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          {this.getModifierValue('title') && (
-            <h1 className={style.title}>
-              <Text bind="title" />
-            </h1>
-          )}
+          <h1 className={style.title}>
+            <Text bind="title" />
+          </h1>
           {this.getModifierValue('subtitle') && (
             <p className={style.subtitle}>
               <Text bind="subtitle" />
@@ -302,12 +300,6 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
   {
     id: 'subtitle',
     type: 'checkbox',
