@@ -195,6 +195,14 @@
   }
 }
 
+@media (max-height: 970px) {
+  .section {
+    height: auto;
+    padding-bottom: 44px;
+  }
+}
+
+
 .section--column .article {
   flex-direction: column;
 }
@@ -280,6 +288,7 @@
     height: auto;
   }
 }
+
 
 .article__picture img {
   position: absolute;
