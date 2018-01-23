@@ -301,10 +301,6 @@
   }
 }
 
-.top-icon-wrapper {
+.top-icon {
   width: 20px;
-
-  .top-icon {
-    color: #f00;
-  }
 }
