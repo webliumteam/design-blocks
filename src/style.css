@@ -1,3 +1,23 @@
 @import "wireframe-zapdos-cta/src/style.css";
 
 /* start here */
+.section {
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-family: var(--ui-hero-title-font-family);
+  font-size: var(--ui-block-title-size);
+  font-weight: normal;
+  color: var(--ui-light-accent-color);
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+}
+
+.button {
+  text-transform: uppercase;
+  font-weight: 600;
+}
