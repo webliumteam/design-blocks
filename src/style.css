@@ -310,12 +310,13 @@
     &--custom {
       position: relative;
       overflow: hidden;
-      z-index: 1;
+      
 
       &:hover,
       &:active,
       &:focus {
         color: #fff;
+        background-color: var(--ui-btn-primary-bg);
 
         &::after {
           opacity: 0.3;
