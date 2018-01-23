@@ -190,6 +190,7 @@
   .article__picture {
     display: block;
     min-height: 200px;
+    height: 100%;
     padding-top: 70%;
     order: -1;
     background-color: var(--ui-media-bg);
