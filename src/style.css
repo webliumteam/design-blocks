@@ -385,40 +385,6 @@
   text-decoration: none;
 }
 
-.socials {
-  display: flex;
-  justify-content: center;
-}
-
-.socials__item {
-  margin-right: 15px;
-}
-
-.socials__item:last-child {
-  margin-right: 0;
-}
-
-.socials__link {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  padding: 7px;
-  border-radius: 50%;
-  background-color: var(--ui-icon-color);
-}
-
-.socials__link:hover,
-.socials__link:active,
-.socials__link:focus {
-  background-color: var(--ui-link-hover-color);
-}
-
-.socials__icon {
-  max-width: 100%;
-  max-height: 100%;
-  fill: var(--ui-light-shade-color);
-}
-
 @media (min-width: 480px) {
   .button {
     width: auto;
