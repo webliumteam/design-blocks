@@ -2,16 +2,30 @@
 
 /* start here */
 .section {
-  padding: 0;
 
-  &__inner {
-    max-width: none;
+  @media (min-width: 768px) {
     padding: 0;
   }
 
+  &__inner {
+
+    @media (min-width: 768px) {
+      max-width: none;
+      padding: 0;
+    }
+  }
 }
 
 .article {
+
+  @media (min-width: 768px) {
+    &__tilte,
+    &__subtitle,
+    &__text {
+      max-width: 535px;
+    }
+  }
+
   &__title {
     position: relative;
     font-weight: 600;
@@ -57,4 +71,6 @@
   }
 }
 
-.button { font-weight: 600; }
+.button {
+  font-weight: 600;
+}
