@@ -9,18 +9,22 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className, itemDesc}) => {
+  collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Icon}, style} = this.props
     return (
       <article className={classNames(style.item, className)}>
         {children}
-        <div className={style.item__icon}>
-          <Icon bind={`articles[${index}].icon`} />
-        </div>
-        <h2 className={style.item__title}>
-          <Text bind={`articles[${index}].title`} />
-        </h2>
-        {itemDesc && (
+        {_.get('item-icon')(modifier) && (
+          <div className={style.item__icon}>
+            <Icon bind={`articles[${index}].icon`} />
+          </div>
+        )}
+        {_.get('item-heading')(modifier) && (
+          <h2 className={style.item__title}>
+            <Text bind={`articles[${index}].title`} />
+          </h2>
+        )}
+        {_.get('item-description')(modifier) && (
           <p className={style.item__desc}>
             <Text bind={`articles[${index}].description`} />
           </p>
@@ -30,7 +34,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -49,31 +53,33 @@ class Block extends React.Component {
             bind="articles"
             Item={this.collectionItem}
             itemProps={{
-              itemDesc: this.getModifierValue('item-description'),
+              modifier: $block.modifier,
             }}
           />
-          <div className={style['btns-group']}>
-            {this.getModifierValue('button-secondary') && (
-              <Button
-                className={classNames(
-                  style.button,
-                  style['button--secondary'],
-                  style['button--size-md'],
-                )}
-                bind="button-1"
-              />
-            )}
-            {this.getModifierValue('button-primary') && (
-              <Button
-                className={classNames(
-                  style.button,
-                  style['button--primary'],
-                  style['button--size-md'],
-                )}
-                bind="button-2"
-              />
-            )}
-          </div>
+          {(this.getModifierValue('button-secondary') || this.getModifierValue('button-primary')) && (
+            <div className={style['btns-group']}>
+              {this.getModifierValue('button-secondary') && (
+                <Button
+                  className={classNames(
+                    style.button,
+                    style['button--secondary'],
+                    style['button--size-md'],
+                  )}
+                  bind="button-1"
+                />
+              )}
+              {this.getModifierValue('button-primary') && (
+                <Button
+                  className={classNames(
+                    style.button,
+                    style['button--primary'],
+                    style['button--size-md'],
+                  )}
+                  bind="button-2"
+                />
+              )}
+            </div>
+          )}
         </div>
       </section>
     )
@@ -150,19 +156,31 @@ Block.modifierScheme = [
   {
     id: 'title',
     type: 'checkbox',
-    label: 'Advantages title',
+    label: 'Block title',
     defaultValue: true,
   },
   {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Advantages description',
+    label: 'Block description',
     defaultValue: false,
+  },
+  {
+    id: 'item-icon',
+    type: 'checkbox',
+    label: 'Advantages icon',
+    defaultValue: true,
+  },
+  {
+    id: 'item-heading',
+    type: 'checkbox',
+    label: 'Advantages title',
+    defaultValue: true,
   },
   {
     id: 'item-description',
     type: 'checkbox',
-    label: 'Advantages item description',
+    label: 'Advantages description',
     defaultValue: true,
   },
   {
