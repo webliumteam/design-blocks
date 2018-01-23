@@ -10,7 +10,7 @@
   &__picture {
     padding-top: 0;
     max-height: 200px;
-    background-color: var(--ui-block-bg);
+    background-color: transparent;
 
     &-wrapper {
       background-color: var(--ui-block-bg);
