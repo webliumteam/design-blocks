@@ -330,12 +330,8 @@
   }
 }
 
-.top-icon-wrapper {
+.top-icon {
   width: 20px;
-
-  .top-icon {
-    color: var(--ui-brand-color);
-  }
 }
 
 .article__header {
