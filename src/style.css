@@ -10,11 +10,11 @@
   &__picture {
     padding-top: 0;
     max-height: 200px;
-    background-color: #fff;
+    background-color: var(--ui-block-bg);
 
     &-wrapper {
-      background-color: #fff;
-      border: 2px solid #f7f7f7;
+      background-color: var(--ui-block-bg);
+      border: 2px solid var(--ui-border-color);
       text-align: center;
       display: flex;
       align-items: center;
@@ -22,7 +22,7 @@
       padding: 30px 0;
 
       &:hover {
-        border-color: #f9b91e;
+        border-color: var(--ui-link-hover-color);
       }
     }
   }
