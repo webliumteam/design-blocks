@@ -2,8 +2,8 @@
   "background": {
     "type": "image",
     "position": {
-      "type": "tile",
-      "tile": "no-repeat"
+      "type": "cover",
+      "cover": "0% 100%"
       },
     "src": "img_bg_ruler.png"
   },
