@@ -12,8 +12,9 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   theme: 'dark',
   logo: {
-    text: {
-      value: 'GreatHouse',
+    image: {
+      resourceRef: 'logo.png',
+      alt: 'Great House',
     },
   },
   subtitle: 'CompanySlogan',
@@ -97,5 +98,20 @@ ExtendedWireframe.defaultContent = {
     },
   ],
 }
+
+ExtendedWireframe.modifierScheme = [
+  {
+    id: 'title',
+    type: 'checkbox',
+    label: 'Company name',
+    defaultValue: true,
+  },
+  {
+    id: 'subtitle',
+    type: 'checkbox',
+    label: 'Company slogan',
+    defaultValue: false,
+  },
+]
 
 export default ExtendedWireframe
