@@ -20,18 +20,18 @@
 
   &-list {
     &__link {
-      letter-spacing: 1.4px;
       position: relative;
+      font-weight: 500;
+      letter-spacing: 1.4px;
       font-size: var(--ui-text-size);
       color: var(--ui-light-shade-color);
-      font-weight: 500;
       font-family: var(--ui-heading-font-family);
 
       @media(min-width: 992px) {
-        color: var(--ui-link-color);
+        color: var(--ui-heading-color);
       }
 
-      &:after {
+      &::after {
         content: "";
         position: absolute;
         width: 100%;
@@ -45,17 +45,17 @@
 
       @media(min-width: 992px) {
         &:hover {
-          color: var(--ui-link-color);
+          color: var(--ui-heading-color);
 
-          &:after {
+          &::after {
             opacity: 1;
           }
         }
 
         &:focus {
-          color: var(--ui-link-color);
+          color: var(--ui-heading-color);
 
-          &:after {
+          &::after {
             opacity: 1;
           }
         }
@@ -83,7 +83,7 @@
   max-width: 170px;
 
   &__title {
-    color: var(--ui-link-color);
+    color: var(--ui-heading-color);
   }
 }
 
