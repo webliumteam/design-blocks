@@ -359,12 +359,13 @@ button {
     align-items: center;
     font-family: "Rubik", sans-serif;
     font-size: 13px;
+    cursor: pointer;
     font-weight: 500;
     line-height: 1.69;
     background-color: transparent;
     text-align: center;
     border: 0;
-    color: #fae27c;
+    color: var(--ui-brand-color);
     text-decoration: underline;
 
     &:hover,
@@ -432,5 +433,9 @@ button {
       display: inline-block;
       margin-right: 17px;
     }
+  }
+
+  &--right {
+    text-align: right;
   }
 }
