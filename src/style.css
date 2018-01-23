@@ -34,6 +34,7 @@
   font-weight: bold;
   font-size: calc(var(--ui-subtitle-font-size) * 0.8);
   letter-spacing: 4.8px;
+  color: var(--ui-light-accent-color);
 }
 
 .button {
