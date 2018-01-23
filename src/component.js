@@ -53,8 +53,11 @@ class Block extends React.Component {
             <div className={css.nav__right}>
               {usersTotal !== null && (
                 <div className={css.flex}>
-                  <Text bind="text1" className={classNames(css.text, css['text--right'])} />
-                  <span className={classNames(css.text, css['text--value'])}>
+                  <Text
+                    bind="text1"
+                    className={classNames(css.text, css['text--right'], css['text--nowrap'])}
+                  />
+                  <span className={classNames(css.text, css['text--value'], css['text--nowrap'])}>
                     &nbsp;{usersTotal} людей
                   </span>
                 </div>
