@@ -35,6 +35,12 @@
   justify-content: center;
 }
 
+.section--state-8 .contacts:first-child .contacts-list__item {
+  &:only-child {
+    padding-right: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .section--state-8 .contacts:first-child .socials {
     margin-top: 40px;
@@ -58,9 +64,13 @@
   align-items: center;
 }
 
-.section--column .map {
+.section--column .map-wrapper {
   width: 100%;
-  min-height: 532px;
+  margin-bottom: 0;
+}
+
+.section--column .map {
+  position: relative;
   margin-bottom: 50px;
   flex: auto;
 }
@@ -75,6 +85,7 @@
 
 .section--column .socials {
   text-align: center;
+  margin-top: 0;
 }
 
 .section__inner {
@@ -83,14 +94,10 @@
   padding: var(--ui-content-gutter);
 }
 
-.section__main {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-
 @media (min-width: 768px) {
   .section__main {
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
   }
 }
@@ -176,7 +183,7 @@
 @media (min-width: 768px) {
   .contacts-list__item {
     margin-bottom: 30px;
-    flex: 1;
+    flex: 1 1 auto;
   }
 }
 
@@ -225,36 +232,32 @@
   }
 
   .contacts:first-child .logo-wrapper {
-    margin-right: 4%;
+    margin-right: 40px;
   }
 
   .contacts:first-child .logo {
-    max-width: 170px;
+    width: 170px;
     min-height: 75px;
     margin-bottom: 0;
   }
 
   .contacts:first-child .contacts-list {
     display: flex;
-    max-width: 883px;
+    max-width: calc(100% - 180px);
     margin-top: 0;
     align-items: flex-start;
     justify-content: center;
   }
 
   .contacts:first-child .contacts-list__item {
-    flex-basis: 33.3333%;
-    margin-right: 4%;
+    padding-right: 40px;
     margin-bottom: 0;
-  }
-
-  .contacts:first-child .contacts-list__item:last-child {
-    margin-right: 0;
+    flex: 1 1 auto;
+    width: 265px;
   }
 
   .contacts:first-child .contacts-list__item:nth-last-child(2):first-child,
   .contacts:first-child .contacts-list__item:nth-last-child(2):first-child ~ .contacts-list__item {
-    min-width: 265px;
     flex-basis: auto;
   }
 
@@ -263,7 +266,6 @@
   }
 
   .contacts:first-child .socials {
-    margin-left: 4%;
     margin-top: 0;
   }
 
@@ -299,6 +301,10 @@
   .logo-wrapper {
     display: flex;
   }
+
+  .contacts:first-child .contacts-list {
+    max-width: calc(100% - 390px);
+  }
 }
 
 .logo__pic {
@@ -312,12 +318,14 @@
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
-  max-weight: 100%;
+  max-width: 100%;
 }
 
 .socials {
+  flex-shrink: 0;
   margin-top: 30px;
   font-size: 0;
+  max-width: 120px;
 }
 
 .socials__item {

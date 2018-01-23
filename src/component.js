@@ -19,6 +19,20 @@ class Block extends React.Component {
       !this.getModifierValue('map')
     ) && (this.getModifierValue('address') && this.getModifierValue('social'))
 
+    const emailWithSocials = (
+      !this.getModifierValue('logo') &&
+      !this.getModifierValue('phone') &&
+      !this.getModifierValue('address') &&
+      !this.getModifierValue('map')
+    ) && (this.getModifierValue('email') && this.getModifierValue('social'))
+
+    const phoneWithSocials = (
+      !this.getModifierValue('logo') &&
+      !this.getModifierValue('email') &&
+      !this.getModifierValue('address') &&
+      !this.getModifierValue('map')
+    ) && (this.getModifierValue('phone') && this.getModifierValue('social'))
+
     const mapWithSocials = (
       !this.getModifierValue('logo') &&
       !this.getModifierValue('phone') &&
@@ -28,7 +42,7 @@ class Block extends React.Component {
 
     return (
       <section className={classNames(style.section, {
-        [style['section--state-8']]: textWithSocials,
+        [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
         [style['section--column']]: mapWithSocials})}
       >
         <div className={style.section__inner}>
