@@ -104,7 +104,7 @@ Block.defaultContent = {
       title: 'Project 1',
       subtitle: 'UX DESIGN',
       text:
-        'A side-project with the goal to create a product that does one job incredibly well and learn a new programming language along the way.',
+        'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 1',
@@ -128,7 +128,7 @@ Block.defaultContent = {
       title: 'Project 2',
       subtitle: 'BRANDING',
       text:
-        'A side-project with the goal to create a product that does one job incredibly well and learn a new programming language along the way.',
+        'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 2',
