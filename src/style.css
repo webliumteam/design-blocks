@@ -173,12 +173,17 @@ button {
 
 .nav-list {
   display: flex;
-  flex: 1;
   flex-wrap: wrap;
   position: relative;
   max-height: 100%;
   align-items: center;
   list-style: none;
+  width: 100%;
+
+  @media (min-width: 981px) {
+    width: initial;
+    flex: 1;
+  }
 }
 
 .nav-list__item {
@@ -186,7 +191,7 @@ button {
   margin-bottom: 22px;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: 981px) {
     text-align: left;
     margin-bottom: 0;
     width: initial;
@@ -194,14 +199,14 @@ button {
 
   &::after {
 
-    @media (min-width: 768px) {
+    @media (min-width: 981px) {
       content: "|";
       margin-left: 10px;
       margin-right: 10px;
       color: #8c8c8c;
     }
 
-    @media (min-width: 991) {
+    @media (min-width: 981) {
       content: "|";
       margin-left: 25px;
       margin-right: 25px;
@@ -247,13 +252,13 @@ button {
     justify-content: flex-end;
     flex-direction: column;
 
-    @media (min-width: 768px) {
+    @media (min-width: 981px) {
       flex-direction: row;
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 981px) {
   .nav {
     flex-wrap: nowrap;
   }
@@ -273,21 +278,18 @@ button {
   transition: color 0.2s ease-out, border-color 0.2s ease-out;
   position: relative;
 
-  @media (min-width: 768px) {
+  @media (min-width: 981px) {
     margin-left: 10px;
     margin-top: 0;
   }
 
-  @media (min-width: 991px) {
+  @media (min-width: 1024px) {
     margin-left: 91px;
   }
 
   &:hover {
     border-color: var(--ui-brand-color);
     color: var(--ui-text-color);
-
-    .button__icon {
-    }
   }
 
 
