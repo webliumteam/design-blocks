@@ -45,9 +45,7 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <div className={style['top-icon-wrapper']}>
-              <Icon className={style['top-icon']} bind="topIcon" />
-            </div>
+            <Icon className={style['top-icon']} bind="topIcon" />
           )}
           <header className={style.section__header}>
             <h1 className={style.title}>
@@ -110,7 +108,7 @@ Block.defaultContent = {
       id: '900aa334-14f2-4c05-b078-78099a5725e5',
       title: 'Service 1',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Multipurpose assistance for online stores and offline retail businesses.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -133,7 +131,7 @@ Block.defaultContent = {
       id: 'cfb2c56d-7708-4459-bdf2-6780f4ba62b9',
       title: 'Service 2',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Developing marketing and business strategy to help company grow fast.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -156,7 +154,7 @@ Block.defaultContent = {
       id: 'eea21546-b56e-406b-8cba-18a5a5ec1820',
       title: 'Service 3',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Building brand awareness for micro and small businesses. ',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -179,7 +177,7 @@ Block.defaultContent = {
       id: 'aa5d3a04-43b7-4bb3-9c7a-00e1986f359e',
       title: 'Service 4',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt',
+        'Aftersales support in marketing, sales, and staff training.',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -202,10 +200,11 @@ Block.defaultContent = {
   topIcon: {
     svg:
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    fill: 'red',
   },
   title: 'Services We Provide',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    'We deliver all kind of services that support small and micro businesses. Here are some of them:',
   'button-1': {
     actionConfig: {
       action: 'link',
