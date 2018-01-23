@@ -1,3 +1,8 @@
 {
-  "title": "Design title"
+  "logo": {
+    "text": {
+      "value": "asam.",
+      "tagName": "h2"
+    }
+  }
 }
