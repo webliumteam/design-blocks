@@ -41,8 +41,7 @@ class Block extends React.Component {
             <div className={style['content-wrapper']}>{this.getContent()}</div> :
             this.getContent()
           }
-        </div>
-        {this.getModifierValue('picture') && (
+          {this.getModifierValue('picture') && (
           <div className={style['section__picture-wrapper']}>
             <Image
               pictureClassName={style.section__picture}
@@ -51,6 +50,7 @@ class Block extends React.Component {
             />
           </div>
         )}
+        </div>
       </section>
     )
   }
