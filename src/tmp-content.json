@@ -1,3 +1,39 @@
 {
-  "title": "Design title"
+  "title": "The Ace Up Your Sleeve",
+  "subtitle":
+    "Envy Labs is a nimble app design and development agency here to help you solve your toughest problems.",
+  "background": {
+    "type": "image",
+    "position": {
+      "type": "cover",
+      "cover": "50% 50%"
+    },
+    "src": "cover-bg.jpg"
+  },
+  "cta-1": {
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "Get it now"
+  },
+  "cta-2": {
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "Watch Video"
+  }
 }

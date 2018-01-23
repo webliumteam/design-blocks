@@ -1,3 +1,15 @@
 @import "wireframe-zapdos-cover/src/style.css";
 
 /* start here */
+.title {
+  color: var(--ui-light-shade-color);
+  letter-spacing: 2.6px;
+}
+
+.subtitle {
+  color: #f0f4f7;
+  max-width: 773px;
+  line-height: 1.75;
+  letter-spacing: 1.3px;
+  opacity: .8;
+}
