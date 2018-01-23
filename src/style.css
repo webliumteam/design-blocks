@@ -117,6 +117,10 @@
 
 .section {
   padding: 121px 0;
+
+  @media (max-height: 970px) {
+    margin-bottom: -270px;
+  }
 }
 
 .section__header {
