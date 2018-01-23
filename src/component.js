@@ -74,6 +74,19 @@ Block.defaultContent = {
   telTitle: 'бесплатная консультация по тел:',
   phone: '+38 067 325 81 46',
   orForme: 'или ЗАПОЛНИТЕ ФОРМУ',
+  button: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: '',
+  },
   contactForm: {
     fields: [
       {
