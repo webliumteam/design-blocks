@@ -43,9 +43,7 @@ class Block extends React.Component {
       >
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <div className={style['top-icon-wrapper']}>
-              <Icon className={style['top-icon']} bind="topIcon" />
-            </div>
+            <Icon className={style['top-icon']} bind="topIcon" />
           )}
           {this.getModifierValue('title') && (
             <h1 className={style.title}>
@@ -87,29 +85,30 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.comp
 Block.defaultContent = {
   numbers: [
     {
-      title: '…send more than',
-      label: 'Billion messages',
-      value: '180',
+      title: 'Increase profits by',
+      label: 'for our customers',
+      value: '75%',
       id: '554d7318-3c82-4dd4-87e9-b0b92299199f',
     },
     {
-      title: '…to more than',
-      label: 'Billion connected devices',
-      value: '6.5',
+      title: 'Expand market reach for',
+      label: 'of our clients',
+      value: '30%',
       id: 'aa002eee-2755-4850-b18a-c990cfa03e37',
     },
     {
-      title: '…with',
-      label: 'Uptime in the last 6 months',
-      value: '99.98%',
+      title: 'Improve customer satisfaction for',
+      label: 'of our users',
+      value: '89%',
       id: '84957801-e554-42e1-ab7b-323f483e3f81',
     },
   ],
   topIcon: {
     svg:
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    fill: 'red',
   },
-  title: 'Each month we…',
+  title: 'Our Results in Numbers',
   cta: {
     actionConfig: {
       action: 'link',
@@ -127,15 +126,15 @@ Block.defaultContent = {
 
 Block.modifierScheme = [
   {
-    id: 'number-title',
-    type: 'checkbox',
-    label: 'Additional information on numbers',
-    defaultValue: true,
-  },
-  {
     id: 'title',
     type: 'checkbox',
     label: 'Block title',
+    defaultValue: true,
+  },
+  {
+    id: 'number-title',
+    type: 'checkbox',
+    label: 'Additional information on numbers',
     defaultValue: true,
   },
   {

@@ -244,7 +244,7 @@
 @media (min-width: 768px) {
   .item__content {
     justify-content: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 
   .item__content br {
@@ -259,7 +259,7 @@
 }
 
 .item__number {
-  max-width: 50%;
+  max-width: 100%;
   margin-right: 10px;
   font-family: var(--ui-block-title-font-family);
   font-size: var(--ui-block-title-size);
@@ -301,10 +301,6 @@
   }
 }
 
-.top-icon-wrapper {
+.top-icon {
   width: 20px;
-
-  .top-icon {
-    color: #f00;
-  }
 }
