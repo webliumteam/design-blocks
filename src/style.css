@@ -1,3 +1,170 @@
 @import "wireframe-zapdos-careers/src/style.css";
 
 /* start here */
+.section {
+  position: relative;
+  z-index: 99;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(290deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 7%, rgba(255, 255, 255, 0.7) 20%, rgba(255, 255, 255, 1) 36%, rgba(255, 255, 255, 1) 100%);
+  }
+}
+
+.title {
+  position: relative;
+  margin-top: 20px;
+  font-weight: 600;
+  letter-spacing: -1px;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 2px;
+    background-color: var(--ui-brand-color);
+  }
+}
+
+.subtitle {
+  font-family: var(--ui-text-font-family);
+}
+
+.content {
+  position: relative;
+
+  &__text {
+    font-size: var(--ui-subtitle-size);
+    line-height: var(--ui-subtitle-line-height);
+  }
+}
+
+.media {
+  background-color: transparent;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 86%;
+    height: 90%;
+    background-color: transparent;
+    box-shadow: 10px 10px 40px 5px rgba(36, 36, 36, 0.1);
+  }
+}
+
+.list {
+  max-width: 85%;
+  margin: 0 auto;
+
+  &__item {
+    position: relative;
+    min-height: 32px;
+    margin-top: 30px;
+    margin-left: 0;
+    margin-right: 0;
+
+    &::before {
+      counter-increment: list;
+      content: counter(list);
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 1px;
+      width: 30px;
+      height: 30px;
+      border: 3px solid var(--ui-brand-color);
+      border-radius: 50%;
+      font-weight: 900;
+      color: var(--ui-brand-color);
+      text-align: center;
+    }
+
+    &-text {
+      padding-left: 45px;
+      font-size: var(--ui-subtitle-size);
+      line-height: var(--ui-subtitle-line-height);
+      font-family: var(--ui-text-font-family);
+      font-weight: var(--ui-text-font-weight);
+      text-align: left;
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  top: -150px;
+  left: 51.3%;
+  padding: 12.5px 40px;
+  border: 2px solid var(--ui-brand-color);
+  border-radius: 0;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    max-width: 590px;
+    margin-top: 30px;
+  }
+
+  .content {
+    max-width: 100%;
+    padding-top: 55px;
+
+    &__main {
+      justify-content: start;
+    }
+
+    &__text {
+      margin-top: -5px;
+    }
+  }
+
+  .media {
+    min-height: 427px;
+  }
+
+  .list {
+    &__item {
+      min-height: 70px;
+      margin-top: -10px;
+
+      &:first-child {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .media {
+    &-wrap {
+      margin-right: 52px;
+      max-width: 46.8%;
+    }
+  }
+
+  .list {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .btns-group {
+    position: relative;
+  }
+}
