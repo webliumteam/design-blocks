@@ -1,3 +1,30 @@
 {
-  "title": "Design title"
+  "title": "Design title",
+  "subtitle": "We can execute even the most unpredictable ideas! ",
+  "cta-1": {
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "Main button (L)"
+  },
+  "cta-2": {
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "Additional button (L)"
+  }
 }
