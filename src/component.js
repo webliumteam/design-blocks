@@ -7,7 +7,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Text, ContactForm, Icon}, style: css} = this.props
+    const {components: {Text, ContactForm, Icon, Button}, style: css} = this.props
     return (
       <section className={css.section}>
         <h1 className={css.title}>
@@ -16,9 +16,15 @@ class Block extends React.Component {
         <div className={css.section__inner}>
           <header className={css.section__header}>
             <p className={css.text}>
-              <span className={css.text__inner}><Text bind="telTitle" /></span>
-              <a href="tel:+380673258146" className={css.text__phone}><Text bind="phone" /></a>
-              <span className={css.text__inner}><Text bind="orForme" /></span>
+              <span className={css.text__inner}>
+                <Text bind="telTitle" />
+              </span>
+              <a href="tel:+380673258146" className={css.text__phone}>
+                <Text bind="phone" />
+              </a>
+              <span className={css.text__inner}>
+                <Text bind="orForme" />
+              </span>
             </p>
           </header>
           <div className={css.section__icon}>
@@ -38,12 +44,19 @@ class Block extends React.Component {
             )}
           />
         </div>
+        <div className={css['button-wrapper']}>
+          <Button className={css['button-icon']} bind="button">
+            <svg viewBox="0 0 490.656 490.656">
+              <path d="M487.536 120.445c-4.16-4.16-10.923-4.16-15.083 0L245.339 347.581 18.203 120.467c-4.16-4.16-10.923-4.16-15.083 0s-4.16 10.923 0 15.083l234.667 234.667c2.091 2.069 4.821 3.115 7.552 3.115s5.461-1.045 7.531-3.136l234.667-234.667c4.159-4.161 4.159-10.924-.001-15.084z" />
+            </svg>
+          </Button>
+        </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'ContactForm', 'Icon'])($editor.components)
+Block.components = _.pick(['Text', 'ContactForm', 'Icon', 'Button'])($editor.components)
 
 Block.options = {
   invert: true,
