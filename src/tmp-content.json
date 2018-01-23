@@ -2,10 +2,10 @@
   "background": {
     "type": "image",
     "position": {
-      "type": "cover",
-      "cover": "0% 100%"
-      },
-    "src": "img_bg_ruler.png"
+      "type": "tile",
+      "cover": "50% 50%"
+    },
+    "src": "bg-pattern.jpg"
   },
 
   "numbers": [
