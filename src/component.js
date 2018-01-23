@@ -42,7 +42,9 @@ class Block extends React.Component {
               <Button className={style.item__email} bind={`team[${index}].email`} />
             </div>
           )}
-          <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
+          {_.get('member-social')(modifier) && (
+            <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
+          )}
         </div>
       </article>
     )
@@ -330,6 +332,13 @@ Block.modifierScheme = [
     label: 'Team member email',
     defaultValue: true,
   },
+  {
+    id: 'member-social',
+    type: 'checkbox',
+    label: 'Team social buttons',
+    defaultValue: true,
+  },
+
 ]
 
 export default Block
