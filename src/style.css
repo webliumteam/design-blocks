@@ -188,17 +188,17 @@
   }
 }
 
-@media (max-height: 876px) {
+@media (max-height: 890px) {
   .section {
     height: auto;
-    padding-bottom: 44px;
+    padding-bottom: 0;
   }
 }
 
-@media (max-height: 876px) {
+@media (max-height: 890px) {
   .section {
     height: auto;
-    padding-bottom: 44px;
+    padding-bottom: 0;
   }
 }
 
