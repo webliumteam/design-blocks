@@ -60,6 +60,13 @@ class Block extends React.Component {
                 </div>
               )}
               <button className={classNames(css.button)} onClick={this.login}>
+                <svg
+                  className={css.button__icon}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 96.124 96.123"
+                >
+                  <path d="M72.089.02L59.624 0C45.62 0 36.57 9.285 36.57 23.656v10.907H24.037a1.96 1.96 0 0 0-1.96 1.961v15.803a1.96 1.96 0 0 0 1.96 1.96H36.57v39.876a1.96 1.96 0 0 0 1.96 1.96h16.352a1.96 1.96 0 0 0 1.96-1.96V54.287h14.654a1.96 1.96 0 0 0 1.96-1.96l.006-15.803a1.963 1.963 0 0 0-1.961-1.961H56.842v-9.246c0-4.444 1.059-6.7 6.848-6.7l8.397-.003a1.96 1.96 0 0 0 1.959-1.96V1.98A1.96 1.96 0 0 0 72.089.02z" />
+                </svg>
                 Долучитись
               </button>
             </div>
@@ -67,7 +74,7 @@ class Block extends React.Component {
         </div>
         <div className={css.footer__privacy}>
           <div className={classNames(css.footer__inner, css['footer__inner--privacy'])}>
-            <div className="text">Privacy Policy</div>
+            <div className="text" />
             <a href="https://www.weblium.com" className={css.text__link}>
               <svg width="20px" height="13px" viewBox="0 0 25 16" id="icon-logo-ico">
                 <path d="M22.48 1.054L5.808 12.977 3.245 4.833l3.055 2.1c.437.297 1.02.262 1.416-.083l4.803-4.186 2.45 2.072 1.93-1.374L13.256.274A1.162 1.162 0 0 0 11.75.28l-4.88 4.255-5.06-3.475a1.162 1.162 0 0 0-1.34.014c-.396.29-.563.801-.417 1.271l4.026 12.828a1.161 1.161 0 0 0 1.777.594L21.231 4.771l-2.103 8.179-3.415-2.356-1.986 1.423 5.456 3.758c.306.214.701.262 1.056.131.354-.13.617-.428.715-.787L24.25 2.284c.118-.463-.07-.96-.465-1.23a1.18 1.18 0 0 0-1.305 0z" />
