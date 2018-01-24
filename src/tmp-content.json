@@ -1,3 +1,45 @@
 {
-  "title": "Design title"
+  "title": "- Careers -",
+  "subtitle": "The languages only differ in their grammar, their pronunciation and their most common words.",
+  "text": "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc.",
+  "careers": [
+    {
+      "title": "Everyone realizes why",
+      "id": "dc11a56a-3863-477a-8a53-fb64c7bb71e6",
+      "icon": {
+        "svg": "<svg></svg>"
+      }
+    },
+    {
+      "title": "If several languages coalesce",
+      "id": "80c3446a-8a89-4652-89bb-b861e55f3f7d",
+      "icon": {
+        "svg": "<svg></svg>"
+      }
+    },
+    {
+      "title": "It will be as simple as Occidental",
+      "id": "83cc85d7-1543-44f3-9926-6c8b20909dcd",
+      "icon": {
+        "svg": "<svg></svg>"
+      }
+    }
+  ],
+  "picture": {
+    "src": "andrew-neel-288047.jpg",
+    "alt": "Illustration"
+  },
+  "button-1": {
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "all projects"
+  }
 }
