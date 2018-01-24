@@ -8,6 +8,9 @@ class Block extends React.Component {
 
   getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   getImageSize = (fullWidth) =>
     fullWidth
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
@@ -36,9 +39,11 @@ class Block extends React.Component {
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
           <article className={css.article}>
-            <div className={css['article__picture-wrapper']}>
-              <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            </div>
+            {!this.getOptionValue('disable-image') && (
+              <div className={css['article__picture-wrapper']}>
+                <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
+              </div>
+            )}
             {!onlyImage && (
               <div className={css.article__content}>
                 {this.getModifierValue('title') && (
