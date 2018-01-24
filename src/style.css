@@ -41,6 +41,11 @@
 
 .list__item-icon {
   margin-right: 0;
+  background: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .list__item-text {
@@ -80,6 +85,10 @@
 
 .button::before {
   left: 0;
+}
+
+.filterWrapper {
+  display: none;
 }
 
 @media (min-width: 768px) {
