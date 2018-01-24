@@ -41,5 +41,10 @@
       }
     },
     "textValue": "all projects"
+  },
+
+  "background": {
+    "type": "color",
+    "color": "transparent"
   }
 }

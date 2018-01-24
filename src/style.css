@@ -87,10 +87,6 @@
   left: 0;
 }
 
-.filterWrapper {
-  display: none;
-}
-
 @media (min-width: 768px) {
   .list__item-icon {
     margin-right: 40px;
