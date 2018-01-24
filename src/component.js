@@ -105,7 +105,7 @@ Block.defaultContent = {
         type: 'phone',
         id: 'contactForm_phoneNumber2 ',
         title: ' ',
-        placeholder: 'Намер телефона',
+        placeholder: 'Номер телефона',
         required: true,
       },
       {
