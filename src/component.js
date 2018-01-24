@@ -64,10 +64,10 @@ class Block extends React.Component {
                 )}
                 {showButtonGroups && (
                   <div className={css['btns-group']}>
-                    {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
+                    {this.getModifierValue('link') && <Text className={css.link} bind="link" />}
                     {this.getModifierValue('button') && (
                       <Button
-                        className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+                        className={css.button}
                         bind="button"
                       />
                     )}
@@ -106,20 +106,10 @@ Block.defaultContent = {
       },
     },
     textValue: 'Contact us',
+    type: 'primary',
+    size: 'md',
   },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
+  link: '<a href="/">More about us</a>',
   socialIcons: {
     networks: [
       {
