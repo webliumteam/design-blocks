@@ -12,7 +12,8 @@
     height: 2px;
     position: absolute;
     bottom: -15px;
-    right: calc(50% - 23px);
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--ui-light-accent-color);
   }
 }
