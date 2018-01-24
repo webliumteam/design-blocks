@@ -76,6 +76,7 @@
 }
 
 .section--column .contacts {
+  width: auto;
   padding-left: 0;
 }
 
@@ -117,6 +118,10 @@
   position: relative;
   width: 100%;
   margin-bottom: 30px;
+
+  &:last-child {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {

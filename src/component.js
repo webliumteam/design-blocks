@@ -40,6 +40,14 @@ class Block extends React.Component {
       !this.getModifierValue('address')
     ) && (this.getModifierValue('map') && this.getModifierValue('social'))
 
+    const onlyMap = !(
+      this.getModifierValue('logo') ||
+      this.getModifierValue('phone') ||
+      this.getModifierValue('email') ||
+      this.getModifierValue('address') ||
+      this.getModifierValue('social')
+    ) && this.getModifierValue('map')
+
     return (
       <section className={classNames(style.section, {
         [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
@@ -57,48 +65,50 @@ class Block extends React.Component {
                 </div>
               </div>
             )}
-            <div className={style.contacts}>
-              {this.getModifierValue('logo') && (
-                <div className={style['logo-wrapper']}>
-                  <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
-                </div>
-              )}
-              <ul className={style['contacts-list']}>
-                {this.getModifierValue('address') && (
-                  <li className={style['contacts-list__item']}>
-                    <h3 className={style.contacts__title}>
-                      <Text bind="address-title" />
-                    </h3>
-                    <p className={style.contacts__desc}>
-                      <Text bind="address-content" />
-                    </p>
-                  </li>
+            {!onlyMap && (
+              <div className={style.contacts}>
+                {this.getModifierValue('logo') && (
+                  <div className={style['logo-wrapper']}>
+                    <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
+                  </div>
                 )}
-                {this.getModifierValue('phone') && (
-                  <li className={style['contacts-list__item']}>
-                    <h3 className={style.contacts__title}>
-                      <Text bind="phone-title" />
-                    </h3>
-                    <p className={style.contacts__desc}>
-                      <Button bind="phone-link" />
-                    </p>
-                  </li>
+                <ul className={style['contacts-list']}>
+                  {this.getModifierValue('address') && (
+                    <li className={style['contacts-list__item']}>
+                      <h3 className={style.contacts__title}>
+                        <Text bind="address-title" />
+                      </h3>
+                      <p className={style.contacts__desc}>
+                        <Text bind="address-content" />
+                      </p>
+                    </li>
+                  )}
+                  {this.getModifierValue('phone') && (
+                    <li className={style['contacts-list__item']}>
+                      <h3 className={style.contacts__title}>
+                        <Text bind="phone-title" />
+                      </h3>
+                      <p className={style.contacts__desc}>
+                        <Button bind="phone-link" />
+                      </p>
+                    </li>
+                  )}
+                  {this.getModifierValue('email') && (
+                    <li className={style['contacts-list__item']}>
+                      <h3 className={style.contacts__title}>
+                        <Text bind="email-title" />
+                      </h3>
+                      <p className={style.contacts__desc}>
+                        <Button bind="email-link" />
+                      </p>
+                    </li>
+                  )}
+                </ul>
+                {this.getModifierValue('social') && (
+                  <SocialIcons className={style.socials} bind="socialIcons" />
                 )}
-                {this.getModifierValue('email') && (
-                  <li className={style['contacts-list__item']}>
-                    <h3 className={style.contacts__title}>
-                      <Text bind="email-title" />
-                    </h3>
-                    <p className={style.contacts__desc}>
-                      <Button bind="email-link" />
-                    </p>
-                  </li>
-                )}
-              </ul>
-              {this.getModifierValue('social') && (
-                <SocialIcons className={style.socials} bind="socialIcons" />
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
