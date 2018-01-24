@@ -171,7 +171,6 @@
 .item {
   display: flex;
   padding: 0 5px;
-  margin-bottom: 40px;
   outline: none;
 }
 
@@ -446,4 +445,8 @@
   .button {
     width: auto;
   }
+}
+
+.btns-group {
+  padding-top: 40px;
 }
