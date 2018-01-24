@@ -1,3 +1,18 @@
 @import "wireframe-zapdos-text/src/style.css";
 
 /* start here */
+.title {
+  letter-spacing: 3.6px;
+}
+
+.subtitle {
+  max-width: 770px;
+  font-size: calc(var(--ui-subtitle-size) * 0.8);
+  line-height: 1.75;
+  letter-spacing: 1.2px;
+}
+
+.heading {
+  text-transform: uppercase;
+  letter-spacing: 3.2px;
+}
