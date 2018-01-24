@@ -364,3 +364,7 @@
   max-height: 100%;
   fill: var(--ui-light-shade-color);
 }
+
+.top-icon {
+  width: 20px;
+}
