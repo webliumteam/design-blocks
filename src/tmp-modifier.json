@@ -1,3 +1,5 @@
 {
-  "some-modifier": true
+  "title": false,
+  "block-button": false,
+  "project-category": false
 }
