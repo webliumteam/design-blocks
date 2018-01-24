@@ -15,7 +15,7 @@ ExtendedWireframe.defaultContent = {
       id: '8130928a-e7c6-4e26-a3ca-a820fa36380e',
       title: "America's Most Admired Corporations",
       picture: {
-        src: 'stars.jpg',
+        resourceRef: 'stars.jpg',
         alt: 'Award illustration photo',
       },
     },
@@ -23,7 +23,7 @@ ExtendedWireframe.defaultContent = {
       id: '057c27bf-4977-4b28-bf35-f4a6db60d5aa',
       title: '100 Best Companies',
       picture: {
-        src: 'golden-award.jpg',
+        resourceRef: 'golden-award.jpg',
         alt: 'Award illustration photo',
       },
     },
@@ -31,7 +31,7 @@ ExtendedWireframe.defaultContent = {
       id: 'c8e93041-896b-4b78-b8d0-37e21a79070f',
       title: 'Best Places to Work for LGBT Equality',
       picture: {
-        src: 'best-choise.jpg',
+        resourceRef: 'best-choise.jpg',
         alt: 'Award illustration photo',
       },
     },
@@ -39,7 +39,7 @@ ExtendedWireframe.defaultContent = {
       id: '3ea9fdda-c0e6-418e-9bfe-7bf1b06a534d',
       title: '2017 Employer Support Freedom Award',
       picture: {
-        src: 'best-award.jpg',
+        resourceRef: 'best-award.jpg',
         alt: 'Award illustration photo',
       },
     },
