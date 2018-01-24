@@ -40,7 +40,7 @@ class Block extends React.Component {
       const callMeForm = forms && forms[0]
       const sendRequestForm = forms && forms[1]
       // а ниже из якорей
-      const leaveRequest = anchors && Array.from(anchors).map(button => (button.innerText).startsWith('ОСТАВИТЬ ЗАЯВКУ'))[0]
+      const leaveRequest = anchors && Array.from(anchors).filter(button => (button.innerText).startsWith('ОСТАВИТЬ ЗАЯВКУ'))[0]
       
       
       // навешиваем функционал на клик
