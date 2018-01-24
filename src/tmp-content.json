@@ -1,6 +1,12 @@
 {
   "title": "-  Our Projects  -",
   "subtitle": "Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.",
+
+"background": {
+  "type": "color",
+  "color": "black"
+},
+
   "projects": [
     {
       "cta": {
@@ -22,8 +28,8 @@
         "resourceRef": "iphone.jpg"
       },
       "subtitle": "Design",
-      "text": "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc.",
-      "title": "Beauty Pageants Should You Let Your Teen Enter Them"
+      "title": "Beauty Pageants Should You Let Your Teen Enter Them",
+      "text": "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc."
     },
     {
       "cta": {
@@ -45,8 +51,8 @@
         "resourceRef": "iphone.jpg"
       },
       "subtitle": "Adversting",
-      "text": "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc.",
-      "title": "Adwords Keyword Research For Beginners"
+      "title": "Adwords Keyword Research For Beginners",
+      "text": "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc."
     }
   ]
 }
