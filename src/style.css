@@ -1,3 +1,59 @@
 @import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
+
+.title {
+  font-size: var(--ui-block-title-size);
+  line-height: var(--ui-block-title-line-height);
+  font-family: var(--ui-block-title-font-family);
+  font-weight: var(--ui-block-title-font-weight);
+  color: var(--ui-dark-shade-color);
+}
+
+.subtitle {
+  font-size: var(--ui-subtitle-size);
+  line-height: var(--ui-subtitle-line-height);
+  font-family: var(--ui-subtitle-font-family);
+  font-weight: var(--ui-subtitle-font-weight);
+  max-width: 880px;
+}
+
+.plan {
+  color: var(--ui-light-shade-color);
+  font-size: var(--ui-text-size);
+  line-height: var(--ui-text-line-height);
+  font-family: var(--ui-text-font-family);
+
+  &:nth-child(1) {
+    background: var(--ui-dark-shade-color);
+  }
+
+  &:nth-child(2) {
+    background: var(--ui-light-accent-color);
+  }
+
+  &:nth-child(3) {
+    background: var(--ui-dark-accent-color);
+  }
+
+  &__title {
+    font-size: var(--ui-heading-size);
+    line-height: var(--ui-heading-line-height);
+    font-family: var(--ui-heading-font-family);
+    font-weight: var(--ui-heading-font-weight);
+    color: var(--ui-light-shade-color);
+  }
+
+  &__price-count {
+    color: var(--ui-light-shade-color);
+    font-size: var(--ui-hero-title-size);
+    font-family: var(--ui-hero-title-font-family);
+    font-weight: var(--ui-hero-title-font-weight);
+  }
+
+  &__list-item {
+    max-width: 220px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+}

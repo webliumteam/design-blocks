@@ -1,3 +1,5 @@
 {
-  "some-modifier": true
+  "some-modifier": true,
+  "subtitle": true,
+  "plan-additional-info": false
 }

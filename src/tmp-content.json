@@ -1,3 +1,65 @@
 {
-  "title": "Design title"
+  "title": "Packages",
+  "plan-title-1": "Family Session",
+  "plan-title-2": "Headshots",
+  "plan-title-3": "Bridal Portraits",
+  "description": "The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain of",
+  "plan-price-count-1": "$249",
+  "plan-price-count-2": "$149",
+  "plan-price-count-3": "$399",
+
+  "plan-list-1": [
+    {
+      "id": "f94f2f82-0727-4237-9f19-97a34f210e55",
+      "text": "Pre-shoot phone consultation"
+    },
+    {
+      "id": "51b10491-1f3f-4a36-ac3f-e295f010589a",
+      "text": "1.5 hours on location or in the studio"
+    },
+    {
+      "id": "0e123e72-fccb-48d7-ba4f-5107126f7fd3",
+      "text": "Online gallery of your images"
+    },
+    {
+      "id": "0e123e72-fccb-48d7-ba4f-5107126f7fd1",
+      "text": "10-15 lightly enhanced images"
+    }
+  ],
+  "plan-list-2": [
+    {
+      "id": "8dc2c1fe-f6ef-455d-bf2f-4ecd45772afb",
+      "text": "Hour photoshoot in studio or on location"
+    },
+    {
+      "id": "5adbf7f8-9c0e-4032-9d2d-297344657843",
+      "text": "1 wardrobe change"
+    },
+    {
+      "id": "5ee6b361-c602-410f-afe9-4fdc7f86c6bf",
+      "text": "Online gallery of your images"
+    },
+    {
+      "id": "5ee6b361-c602-410f-afe9-4fdc7f86c6b2",
+      "text": "4 lightly enhanced images of your choice"
+    }
+  ],
+  "plan-list-3": [
+    {
+      "id": "78417aad-0f0a-49ca-8c58-a50f1d837dfe",
+      "text": "2 hour photoshoot in studio or on location"
+    },
+    {
+      "id": "f7da9246-3adc-485e-ab25-5c792af0b036",
+      "text": "1 wardrobe change"
+    },
+    {
+      "id": "b30486fc-e1a1-401a-b98c-ca5da7c2fffb",
+      "text": "Online gallery of your images"
+    },
+    {
+      "id": "b30486fc-e1a1-401a-b98c-ca5da7c2fff3",
+      "text": "6 lightly enhanced images of your choice"
+    }
+  ]
 }
