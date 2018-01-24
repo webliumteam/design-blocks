@@ -1,3 +1,60 @@
 @import "wireframe-zapdos-awards/src/style.css";
 
 /* start here */
+
+.section {
+  padding: 20px 0;
+}
+
+.top-icon {
+  margin: 122px auto 51px;
+  position: relative;
+}
+
+.top-icon:before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--ui-media-bg);
+  display: block;
+  position: absolute;
+  z-index: 0;
+  top: -20px;
+  left: -20px;
+}
+
+.top-icon svg {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  letter-spacing: 1.8px;
+}
+
+.title:after {
+  content: ".";
+  color: var(--ui-brand-color);
+}
+
+.subtitle {
+  letter-spacing: 1.8px;
+  margin-top: 24px;
+  margin-bottom: 70px;
+}
+
+.item {
+  &__picture {
+    padding-top: 72%;
+  }
+}
+
+.button--primary {
+  color: var(--ui-brand-color);
+  background-color: var(--ui-light-shade-color);
+  border: 0;
+  letter-spacing: 1.2px;
+  font-weight: var(--ui-heading-large-font-weight);
+  font-size: calc(var(--ui-text-size)-1);
+}
