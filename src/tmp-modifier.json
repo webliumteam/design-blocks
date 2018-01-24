@@ -1,3 +1,6 @@
 {
-  "some-modifier": true
+  "some-modifier": true,
+  "subtitle": true,
+  "plan-icon": true,
+  "additional-btn": true
 }

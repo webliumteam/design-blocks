@@ -1,3 +1,67 @@
 @import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
+.section {
+  background-color: var(--ui-brand-color);
+}
+
+.title {
+  letter-spacing: -0.84px;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, .4);
+  max-width: 864px;
+}
+
+.plan {
+  background-color: var(--ui-brand-color);
+
+  &__title {
+    font-size: var(--ui-block-title-size);
+    font-weight: var(--ui-block-title-font-weight);
+  }
+
+  &__icon {
+    &-wrapper {
+      padding: 0;
+      height: 70px;
+    }
+  }
+
+  &__price {
+    color: rgba(255, 255, 255, .4);
+    margin-bottom: 10px;
+
+    &-count {
+      font-size: calc(var(--ui-heading-large-size) * 3.5);
+      font-weight: var(--ui-heading-large-font-weight);
+    }
+  }
+
+  &__list {
+    margin-bottom: 30px;
+
+    &-item {
+      margin-bottom: 10px;
+    }
+  }
+
+  &--main {
+    box-shadow: none;
+    margin: initial;
+
+    .plan__list {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.plans-wrapper {
+  margin-top: 0;
+}
+
+.btns-group {
+  margin-top: 30px;
+}
