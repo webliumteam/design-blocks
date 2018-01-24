@@ -2,6 +2,33 @@
 
 /* start here */
 
+.section {
+  &--left {
+    .title {
+      &::before {
+        right: auto;
+        left: 10px;
+      }
+    }
+  }
+
+  &--right {
+    .title {
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  &--center {
+    .title {
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
+
 .title {
   position: relative;
   letter-spacing: -1.6px;
