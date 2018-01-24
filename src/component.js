@@ -147,18 +147,6 @@ Block.modifierScheme = [
     label: 'Reviewer job position',
     defaultValue: true,
   },
-  // {
-  //   id: 'socialButtons',
-  //   type: 'checkbox',
-  //   label: 'Social Buttons',
-  //   defaultValue: false,
-  // },
-  // {
-  //   id: 'rating',
-  //   type: 'checkbox',
-  //   label: 'Star rating',
-  //   defaultValue: false,
-  // },
   {
     id: 'publishDate',
     type: 'checkbox',
