@@ -16,7 +16,6 @@
     font-weight: var(---ui-sub-heading-font-weight);
     text-transform: uppercase;
   }
-
 }
 
 .logo a {
@@ -45,6 +44,10 @@
 }
 
 .footer {
+  &__main {
+    display: flex;
+  }
+
   &__meta {
     font-size: calc(var(--ui-small-text-size) * 0.92);
     font-family: var(--ui-heading-font-family);
