@@ -1,1 +1,31 @@
-{}
+{
+  "title": "Design title",
+  "theme": "dark",
+  "background": {
+    "type": "image",
+    "position": {
+      "type": "tile",
+      "cover": "50% 50%"
+    },
+    "src": "header-bg.jpg"
+  },
+  "logo": {
+    "image": {
+      "resourceRef": "logo.png",
+      "alt": "logo"
+    }
+  },
+  "cta": {
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "Request a Quote"
+  }
+}
