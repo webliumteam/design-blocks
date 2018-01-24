@@ -189,7 +189,7 @@
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
-  
+
   @media (min-width: 768px) {
     padding: 60px 0 50px;
   }
@@ -212,7 +212,7 @@
   line-height: var(--ui-block-title-line-height);
   font-family: var(--ui-block-title-font-family);
   font-weight: var(--ui-block-title-font-weight);
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -288,7 +288,7 @@
   width: 100px;
   margin: 0 auto 23px;
   color: var(--ui-icon-color);
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -301,7 +301,7 @@
   line-height: var(--ui-heading-line-height);
   font-family: var(--ui-heading-font-family);
   font-weight: var(--ui-heading-font-weight);
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -338,4 +338,8 @@
 .link:focus,
 .link:active {
   color: var(--ui-link-hover-color);
+}
+
+.item__icon-text {
+  color: var(--ui-brand-color);
 }
