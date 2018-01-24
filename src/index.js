@@ -17,7 +17,6 @@ ExtendedWireframe.defaultContent = {
       alt: 'Great House',
     },
   },
-  subtitle: 'CompanySlogan',
   copyright: 'Produced by Weblium.com. All rights Reserved',
   additional: 'Demo preview for {Template name} {Concept name}',
   menu: [
@@ -107,11 +106,18 @@ ExtendedWireframe.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'subtitle',
+    id: 'text-left',
     type: 'checkbox',
-    label: 'Company slogan',
-    defaultValue: false,
+    label: 'Left text',
+    defaultValue: true,
+  },
+  {
+    id: 'text-right',
+    type: 'checkbox',
+    label: 'Right text',
+    defaultValue: true,
   },
 ]
+
 
 export default ExtendedWireframe
