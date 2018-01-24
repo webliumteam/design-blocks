@@ -1,5 +1,11 @@
 import $editor from 'weblium/editor'
 
+const setStyleProperties = properties => node =>
+  properties.map(([propertyName, value]) => node.style.setProperty(propertyName, value))
+
+const resetStyleProperties = properties => node =>
+  properties.map(propertyName => node.style.removeProperty(propertyName))
+
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
@@ -21,7 +27,7 @@ class Block extends React.Component {
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-111402702-1', 'auto');
+    ga('create', 'UA-‎110145245-1', 'auto');
     ga('send', 'pageview');
     <!-- End Google Analytics -->
 
@@ -53,15 +59,12 @@ class Block extends React.Component {
 
   setStylesForBody = () => {
     const {opened} = this.state
-    const html = document.getElementsByTagName('html')[0]
-    const body = document.getElementsByTagName('html')[0]
+    const nodes = [document.getElementsByTagName('html')[0], document.body]
 
     if (opened) {
-      html.classList.add('header-w1__nav--open')
-      body.classList.add('header-w1__nav--open')
+      nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
     } else {
-      html.classList.remove('header-w1__nav--open')
-      body.classList.add('header-w1__nav--open')
+      nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
     }
   }
 
