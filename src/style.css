@@ -219,6 +219,7 @@
 .contacts__desc a {
   color: inherit;
   text-decoration: none;
+  max-width: 100%;
 }
 
 .contacts__desc a:hover,
@@ -272,6 +273,7 @@
 
   .contacts:first-child .socials {
     margin-top: 0;
+    max-width: 120px;
   }
 
   .contacts:first-child .socials__item {
@@ -330,7 +332,6 @@
   flex-shrink: 0;
   margin-top: 30px;
   font-size: 0;
-  max-width: 120px;
 }
 
 .socials__item {
