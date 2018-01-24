@@ -46,11 +46,11 @@
   &__link {
     position: relative;
     padding-right: 22px;
+    font-size: calc( var(--ui-small-text-size) * (11/12) );
+    font-weight: var(--ui-hero-title-font-weight);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 3.6px;
-    font-size: calc( var(--ui-small-text-size) * (11/12) );
-    font-weight: var(--ui-hero-title-font-weight);
 
     &::after {
       content: "";

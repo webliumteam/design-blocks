@@ -1,12 +1,7 @@
 {
   "title": "-  Our Projects  -",
   "subtitle": "Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.",
-
-"background": {
-  "type": "color",
-  "color": "black"
-},
-
+  "theme": "light",
   "projects": [
     {
       "cta": {
