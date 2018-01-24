@@ -8,8 +8,9 @@
 
 .item {
   &__picture {
+    width: auto;
+    max-width: 100%;
     padding-top: 0;
-    max-height: 200px;
     background-color: transparent;
 
     &-wrapper {
@@ -18,8 +19,8 @@
       text-align: center;
       display: flex;
       align-items: center;
+      justify-content: center;
       min-height: 260px;
-      padding: 30px 0;
 
       &:hover {
         border-color: var(--ui-link-hover-color);
@@ -29,7 +30,6 @@
 
   &__image {
     position: relative;
-    max-height: 200px;
     width: auto;
   }
 }
