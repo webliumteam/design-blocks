@@ -1,3 +1,85 @@
 {
-  "title": "Design title"
+  "title": "Blog",
+  "subtitle": "I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.",
+  "background": {
+    "type": "color",
+    "color": "#ffffff"
+  },
+  "blog": [
+    {
+      "id": "21a46d6e-0354-4a96-9af0-928ddae32095",
+      "title": "The Amazing Hubble",
+      "description":
+        "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.",
+      "category": "News",
+      "date": "December 16, 2017",
+      "picture": {
+        "src": "img-1.jpg",
+        "alt": "Article illustration photo"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Read more"
+      }
+    },
+    {
+      "id": "41db0c4f-46b3-4835-8e77-062de63d018a",
+      "title": "Decorate For Less With Art Posters",
+      "description":
+        "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.",
+      "category": "News",
+      "date": "December 16, 2017",
+      "picture": {
+        "src": "img-2.jpg",
+        "alt": "Article illustration photo"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Read more"
+      }
+    },
+    {
+      "id": "fff4b459-6e4f-4645-901e-4c1b1aa94e51",
+      "title": "Where To Look For Cheap Brochure Printing Services",
+      "description":
+        "To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is.",
+      "category": "News",
+      "date": "December 16, 2017",
+      "picture": {
+        "src": "img-3.jpg",
+        "alt": "Article illustration photo"
+      },
+      "cta": {
+        "actionConfig": {
+          "action": "link",
+          "actions": {
+            "link": {
+              "type": "",
+              "innerPage": "",
+              "url": ""
+            }
+          }
+        },
+        "textValue": "Read more"
+      }
+    }
+  ]
 }
