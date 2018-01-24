@@ -89,7 +89,7 @@ ExtendedWireframe.modifierScheme = [
     id: 'subtitle',
     type: 'checkbox',
     label: 'Block description',
-    defaultValue: false,
+    defaultValue: true,
   },
   {
     id: 'heading',
