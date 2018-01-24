@@ -1,3 +1,39 @@
 {
-  "title": "Design title"
+  "logo": {
+    "text": {
+      "value": "forks"
+    }
+  },
+  "background": {
+    "type": "color",
+    "color": "#1f1e1d"
+  },
+  "copyright": "Reproduced by Weblium.com. All rights Reserved",
+  "additional": "Demo preview for Asam.",
+  "menu": [
+    {
+      "id": "a24bbd34-4a84-451d-82bf-929f35264e2d1",
+      "metadata": {
+        "displayName": "About us"
+      }
+    },
+    {
+      "id": "a24bbd34-4a84-451d-82bf-929f35264e2d2",
+      "metadata": {
+        "displayName":"Services"
+      }
+    },
+    {
+      "id": "a24bbd34-4a84-451d-82bf-929f35264e2d3",
+      "metadata": {
+        "displayName": "Projects"
+      }
+    },
+    {
+      "id": "a24bbd34-4a84-451d-82bf-929f35264e2d4",
+      "metadata": {
+        "displayName": "Testimonials"
+      }
+    }
+  ]
 }
