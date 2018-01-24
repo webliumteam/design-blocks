@@ -1,3 +1,4 @@
 {
-    "disable-image": false
+    "disable-image": false,
+    "top-icon": false
 }
