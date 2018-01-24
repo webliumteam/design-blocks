@@ -194,7 +194,7 @@ Block.modifierScheme = [
     id: 'top-icon',
     type: 'hidden',
     label: 'Top icon decorator',
-    defaultValue: true,
+    defaultValue: false,
   },
 ]
 
