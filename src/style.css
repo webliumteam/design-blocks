@@ -367,3 +367,7 @@
   left: 0;
   object-fit: cover;
 }
+
+.top-icon {
+  width: 20px;
+}
