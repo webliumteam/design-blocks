@@ -88,15 +88,27 @@ ExtendedWireframe.defaultContent = {
       },
     },
   ],
+  topIcon: {
+    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    fill: 'red',
+  },
+  subtitle: 'Subtitle here',
+  cta: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'All blog posts',
+  },
 }
 
 ExtendedWireframe.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
   {
     id: 'post-publish-date',
     type: 'checkbox',
@@ -125,6 +137,18 @@ ExtendedWireframe.modifierScheme = [
     id: 'block-button',
     type: 'checkbox',
     label: 'Block button',
+    defaultValue: false,
+  },
+  {
+    id: 'subtitle',
+    type: 'hidden',
+    label: 'Subtitle',
+    defaultValue: false,
+  },
+  {
+    id: 'top-icon',
+    type: 'hidden',
+    label: 'Top icon decorator',
     defaultValue: false,
   },
 ]
