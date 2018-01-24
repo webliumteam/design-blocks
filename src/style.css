@@ -252,23 +252,18 @@
   }
 }
 
-.nav:first-child {
+@media (min-width: 992px) {
+  .nav:first-child .nav-list:only-child {
+    width: 100%;
+    justify-content: flex-start;
+  }
 
-  @media (min-width: 992px) {
-    .nav-list {
-      &:first-child:last-child {
-        width: 100%;
-        justify-content: flex-start;
-      }
+  .nav:first-child .nav-list:only-child .nav-list__item {
+    margin-right: 34px;
+    margin-left: 0;
 
-      &__item {
-        margin-right: 34px;
-        margin-left: 0;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
