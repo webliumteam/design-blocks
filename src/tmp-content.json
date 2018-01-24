@@ -1,3 +1,10 @@
 {
-  "title": "Design title"
+  "title": "Design title",
+
+  "background": {
+    "type": "color",
+    "color": "#1f2020"
+  },
+  "copyright": "Produced by Weblium.com. All rights Reserved",
+  "additional": "Demo preview for {Template name} {Concept name}"
 }
