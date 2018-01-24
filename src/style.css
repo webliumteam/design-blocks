@@ -1,32 +1,28 @@
 @import "wireframe-zapdos-blog/src/style.css";
 
 /* start here */
-.section {
-  &__inner {
-    > p {
-      position: relative;
-      width: 100%;
-      margin-bottom: 40px;
-      padding: 0 15px;
-      font-family: var(--ui-subtitle-font-family);
-      font-weight: var(--ui-subtitle-font-weight);
-      font-size: var(--ui-subtitle-size);
-      line-height: var(--ui-subtitle-line-height);
-      letter-spacing: 1.8px;
-      text-align: center;
+.subtitle {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 0 15px;
+  font-family: var(--ui-subtitle-font-family);
+  font-weight: var(--ui-subtitle-font-weight);
+  font-size: var(--ui-subtitle-size);
+  line-height: var(--ui-subtitle-line-height);
+  letter-spacing: 1.8px;
+  text-align: center;
 
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 87px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 2px;
-        background-color: var(--ui-brand-color);
-      }
-    }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 87px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: var(--ui-brand-color);
   }
 }
 
@@ -68,7 +64,7 @@
   &__meta {
     margin-bottom: 5px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.67px;
   }
 
   &__title {
