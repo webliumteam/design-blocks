@@ -36,9 +36,12 @@
   }
 
   &__number {
-    margin-bottom: -12px;
     font-size: var(--ui-hero-title-size);
     letter-spacing: -2px;
+
+    @media (min-width: 768px) {
+      margin-bottom: -12px;
+    }
   }
 
   &__text {
@@ -55,6 +58,10 @@
 @media (min-width: 992px) {
   .section {
     padding: 88px 0 100px;
+  }
+
+  .items-wrapper {
+    align-item: center;
   }
 
   .item {
