@@ -343,3 +343,27 @@
 .item__icon-text {
   color: var(--ui-brand-color);
 }
+
+.item__icon-picture-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.item__icon-picture {
+  display: block;
+  min-height: 200px;
+  height: 100%;
+  padding-top: 70%;
+  order: -1;
+  background-color: var(--ui-media-bg);
+}
+
+.item__icon-picture img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
