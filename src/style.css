@@ -1,3 +1,124 @@
 @import "wireframe-zapdos-blog/src/style.css";
 
 /* start here */
+.section {
+  &__inner {
+    > p {
+      position: relative;
+      width: 100%;
+      margin-bottom: 40px;
+      padding: 0 15px;
+      font-family: var(--ui-subtitle-font-family);
+      font-weight: var(--ui-subtitle-font-weight);
+      font-size: var(--ui-subtitle-size);
+      line-height: var(--ui-subtitle-line-height);
+      letter-spacing: 1.8px;
+      text-align: center;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 87px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 2px;
+        background-color: var(--ui-brand-color);
+      }
+    }
+  }
+}
+
+.top-icon {
+  position: relative;
+  margin: 88px auto 40px;
+  z-index: 9;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d9e8ff;
+    opacity: 0.4;
+    z-index: -1;
+  }
+}
+
+.title {
+  margin-bottom: 25px;
+  letter-spacing: 1.8px;
+
+  > span {
+    > span {
+      color: var(--ui-brand-color);
+    }
+  }
+}
+
+.article {
+  margin-bottom: 27px;
+  padding-left: 35px;
+  
+  &__meta {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__title {
+    position: relative;
+    min-height: 62px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 13px;
+      left: -20px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: var(--ui-brand-color);
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+}
+
+.button {
+  padding: 18px 65px;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 1.2px;
+  color: var(--ui-brand-color);
+  background-color: transparent;
+  border-radius: 3px;
+  border: solid 2px #f0f4f7;
+}
+
+@media (min-width: 992px) {
+  .section {
+    &__inner {
+      > p {
+        width: 770px;
+        margin-bottom: 90px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+      }
+    }
+  }
+}
