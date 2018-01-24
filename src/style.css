@@ -1,3 +1,114 @@
 @import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
+
+.plan {
+  background: #f7f7f7;
+}
+
+.plan--main {
+  background: var(--ui-light-accent-color);
+  color: white;
+  box-shadow: none;
+}
+
+.plan .plan__price-count {
+  font-size: var(--ui-hero-title-size);
+}
+
+.plan__title {
+  font-size: calc(var(--ui-heading-size)*0.769);
+  margin-bottom: 40px;
+  margin-top: 25px;
+}
+
+.plan--main .plan__title {
+  color: white;
+  margin-bottom: 35px;
+  margin-top: 45px;
+}
+
+.plan--main .plan__price-count {
+  color: white;
+}
+
+.plan--main .plan__price {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.plan .plan__icon-wrapper {
+  padding: 0;
+  margin-bottom: 35px;
+}
+
+.plan--main .plan__icon-wrapper {
+  padding: 15px;
+}
+
+.plan .plan__icon-wrapper span {
+  color: var(--ui-light-accent-color);
+}
+
+.plan--main .plan__icon-wrapper span {
+  color: white;
+}
+
+.plan__button {
+  background: transparent;
+  text-transform: uppercase;
+  font-size: var(--ui-small-text-size);
+  padding: var(--ui-btn-md-padding);
+  color: var(--ui-btn-secondary-color);
+  border: var(--ui-btn-secondary-border-width) var(--ui-btn-secondary-border-style) var(--ui-btn-secondary-border-color);
+}
+
+.plan--main .plan__button.button--primary {
+  color: var(--ui-dark-shade-color);
+  margin-top: 0;
+  background: white;
+  border: 1px solid white;
+}
+
+.plan__price > span {
+  text-transform: uppercase;
+}
+
+.plan__icon-wrapper {
+  position: relative;
+}
+
+.plan__icon-wrapper:after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background: var(--ui-brand-color);
+  position: absolute;
+  left: 25px;
+  right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  bottom: -37px;
+}
+
+.plan--main .plan__icon-wrapper:after {
+  background: white;
+  left: 30px;
+}
+
+.title {
+  margin-bottom: 45px;
+}
+
+.plan__price {
+  margin-bottom: 19px;
+}
+
+.plan__list-item {
+  margin-bottom: 10px;
+}
+
+.button--secondary {
+  text-transform: uppercase;
+  font-size: var(--ui-small-text-size);
+}
