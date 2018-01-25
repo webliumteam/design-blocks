@@ -1,3 +1,9 @@
 {
-  "title": "Design title"
+  "title": "Type Something",
+  "subtitle": "Type something",
+  "theme": "dark",
+  "background": {
+    "type": "image",
+    "src": "mountains.png"
+  }
 }
