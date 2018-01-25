@@ -5,6 +5,19 @@
 .plan {
   background-color: var(--ui-media-bg);
 
+  &__icon-wrapper::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: var(--ui-brand-color);
+    position: absolute;
+    left: 25px;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    bottom: -37px;
+  }
+
   &__title {
     font-size: calc(var(--ui-heading-size)*0.769);
     margin-bottom: 40px;
@@ -32,28 +45,16 @@
     text-transform: uppercase;
   }
 
-  &_icon-wrapper {
+  &__icon-wrapper {
     position: relative;
     padding: 0;
     margin-bottom: 35px;
     color: var(--ui-light-accent-color);
-
-    &::after {
-      content: "";
-      width: 30px;
-      height: 3px;
-      background: var(--ui-brand-color);
-      position: absolute;
-      left: 25px;
-      right: 0;
-      margin-left: 0;
-      margin-right: 0;
-      bottom: -37px;
-    }
   }
 
   .plan__price-count {
     font-size: var(--ui-hero-title-size);
+    font-family: var(--ui-hero-title-font-family);
   }
 
   &--main {
@@ -91,7 +92,7 @@
       border: 1px solid white;
     }
 
-    .plan__icon-wrapper:after {
+    .plan__icon-wrapper::after {
       background: white;
       left: 30px;
     }
