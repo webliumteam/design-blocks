@@ -41,11 +41,12 @@
 }
 
 .logo-wrapper {
-  background-color: var(--ui-light-shade-color);
+  background-color: transparent;
   margin-bottom: 0;
 }
 
 .logo {
+  background-color: transparent;
   padding-left: 0;
   padding-right: 0;
 
