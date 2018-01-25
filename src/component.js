@@ -9,7 +9,7 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index}) => {
+  collectionItem = ({index, modifier}) => {
     const {components: {Text, Button}, style} = this.props
     return (
       <article className={style.item}>
@@ -17,22 +17,26 @@ class Block extends React.Component {
           <h2 className={style.item__title}>
             <Text bind={`cover[${index}].title`} />
           </h2>
-          <p className={style.subtitle}>
-            <Text bind={`cover[${index}].subtitle`} />
-          </p>
-          <div className={style['btns-group']}>
-            <Button
-              className={classNames(style.button, style['button--size-lg'], style['button--primary'])}
-              bind={`cover[${index}].cta`}
-            />
-          </div>
+          {_.get('subtitle')(modifier) && (
+            <p className={style.subtitle}>
+              <Text bind={`cover[${index}].subtitle`} />
+            </p>
+          )}
+          {_.get('primary-button')(modifier) && (
+            <div className={style['btns-group']}>
+              <Button
+                className={classNames(style.button, style['button--size-lg'], style['button--primary'])}
+                bind={`cover[${index}].cta`}
+              />
+            </div>
+          )}
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Slider}, style} = this.props
+    const {components: {Slider}, style, $block} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -41,15 +45,19 @@ class Block extends React.Component {
             bind="cover"
             Item={this.collectionItem}
             settings={{
-              dots: true,
+              dots: this.getModifierValue('dots'),
+              arrows: this.getModifierValue('arrows'),
               responsive: [
                 {
-                  breakpoint: 1200,
+                  breakpoint: 992,
                   settings: {
                     arrows: false,
                   },
                 },
               ],
+            }}
+            itemProps={{
+              modifier: $block.modifier,
             }}
           />
         </div>
@@ -63,7 +71,7 @@ Block.components = _.pick(['Slider', 'Text', 'Button'])($editor.components)
 Block.defaultContent = {
   background: {
     type: 'color',
-    color: '#d8d8d8',
+    color: 'light-accent-color',
   },
   cover: [
     {
@@ -125,39 +133,27 @@ Block.defaultContent = {
 
 Block.modifierScheme = [
   {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
+    label: 'Title description',
+    defaultValue: true,
   },
   {
-    id: 'title',
+    id: 'primary-button',
     type: 'checkbox',
-    label: 'Block title',
+    label: 'Primary button',
+    defaultValue: true,
+  },
+  {
+    id: 'arrows',
+    type: 'checkbox',
+    label: 'Navigation arrows',
+    defaultValue: true,
+  },
+  {
+    id: 'dots',
+    type: 'checkbox',
+    label: 'Navigation indicators',
     defaultValue: true,
   },
 ]

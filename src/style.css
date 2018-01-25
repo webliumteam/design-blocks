@@ -9,6 +9,7 @@
   word-wrap: break-word;
   width: 100%;
   margin-top: 60px;
+  color: green;
 }
 
 .button--primary {
@@ -119,8 +120,7 @@
 
 .section {
   min-width: 320px;
-  min-height: 700px;
-  padding: 30px 0;
+  padding: 30px 0 50px;
   text-align: center;
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
@@ -132,13 +132,13 @@
 
 @media (min-width: 768px) {
   .section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 }
 
 @media (min-width: 992px) {
   .section {
-    padding: 70px 0;
+    padding: 55px 0;
   }
 }
 
@@ -149,6 +149,7 @@
 }
 
 .subtitle {
+  width: 100%;
   max-width: 770px;
   margin: 15px auto 0;
   font-size: var(--ui-subtitle-size);
@@ -166,12 +167,8 @@
 }
 
 .items-wrapper {
-  display: flex;
   position: relative;
   max-width: 1200px;
-  margin-bottom: 40px;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 @media (min-width: 768px) {
@@ -181,7 +178,6 @@
 }
 
 .item {
-  display: flex;
   margin: 0;
   padding: 0 5px;
   outline: none;
@@ -190,15 +186,14 @@
 @media (min-width: 768px) {
   .item {
     padding: 0 15px;
-    margin-bottom: 20px;
   }
 }
 
 .item__inner {
   display: flex;
-  max-width: 860px;
-  min-height: 440px;
-  margin: 0 auto 20px;
+  max-width: 100%;
+  min-height: 310px;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
 }
@@ -212,7 +207,8 @@
 
 @media (min-width: 992px) {
   .item__inner {
-    padding: 0 31.5px;
+    max-width: 860px;
+    padding: 0 32px;
   }
 }
 
@@ -302,6 +298,7 @@
   .slick-dots {
     position: static;
     margin-top: auto;
+    font-size: 0;
   }
 
   .slick-dots li {
