@@ -3,7 +3,7 @@
 /* start here */
 
 .plan {
-  background: #f7f7f7;
+  background-color: var(--ui-media-bg);
 
   &__title {
     font-size: calc(var(--ui-heading-size)*0.769);
@@ -34,18 +34,11 @@
 
   &_icon-wrapper {
     position: relative;
-  }
-
-  .plan__price-count {
-    font-size: var(--ui-hero-title-size);
-  }
-
-  .plan__icon-wrapper {
-    position: relative;
     padding: 0;
     margin-bottom: 35px;
+    color: var(--ui-light-accent-color);
 
-    &:after {
+    &::after {
       content: "";
       width: 30px;
       height: 3px;
@@ -57,10 +50,10 @@
       margin-right: 0;
       bottom: -37px;
     }
+  }
 
-    span {
-      color: var(--ui-light-accent-color);
-    }
+  .plan__price-count {
+    font-size: var(--ui-hero-title-size);
   }
 
   &--main {
@@ -109,7 +102,3 @@
   margin-bottom: 45px;
 }
 
-.button--secondary {
-  text-transform: uppercase;
-  font-size: var(--ui-small-text-size);
-}
