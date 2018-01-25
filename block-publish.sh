@@ -19,7 +19,7 @@ done
 
 wm-cli login -u $USERNAME -h $HOST && (
   for block in "${array[@]}"; do
-    BRANCH="w/{NAMESPACE}/${block}/${ENV}"
+    BRANCH="w/${NAMESPACE}/${block}/${ENV}"
     git checkout $BRANCH && (
       git pull origin $BRANCH
       REPLACED=${HOST//:/.}
