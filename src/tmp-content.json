@@ -4,7 +4,7 @@
     "type": "image",
     "position": {
       "type": "cover",
-      "cover": "100% 100%"
+      "cover": "70% 100%"
     },
     "src": "img/paint-bg.jpg"
   },

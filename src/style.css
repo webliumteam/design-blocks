@@ -2,8 +2,12 @@
 
 /* start here */
 
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 .title {
-  margin-top: 80px;
   font-weight: var(--ui-block-title-font-weight);
 }
 
@@ -18,7 +22,6 @@
 
 .plans-wrapper {
   margin-top: 110px;
-  margin-bottom: 20px;
 }
 
 .price-wrapper {
@@ -32,6 +35,7 @@
   padding: 0;
   background-color: var(--ui-light-shade-color);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+  padding-bottom: 60px;
 
   &__price-count {
     display: inline-block;
@@ -88,26 +92,25 @@
   background-color: var(--ui-border-color);
 }
 
-.plan__button {
-  border-radius: 0;
-  background-color: var(--ui-border-color);
-  border: 2px solid var(--ui-media-bg);
-  color: var(--ui-media-bg);
-  margin-bottom: 0;
-}
-
 .plan--main .plan__list {
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
-.plan--main .plan__button {
-  background-color: var(--ui-brand-color);
-  border-color: var(--ui-brand-color);
-  color: var(--ui-light-shade-color);
-  margin-top: 40px;
+@media screen and (min-width:768px) {
+  .plan {
+    max-width: 29.9145%;
+    flex-basis: 29.9145%;
+  }
+
+  .plan.plan--main {
+    max-width: 31.6239%;
+    flex-basis: 31.6239%;
+  }
 }
 
-.button--size-sm,
-.button--size-md {
-  padding: 12px 32px;
+@media screen and (max-width:767px) {
+  .plan--main {
+    margin-top: 40px;
+    margin-bottom: 0;
+  }
 }
