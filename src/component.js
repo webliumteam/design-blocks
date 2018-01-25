@@ -9,32 +9,40 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
+  iconReplace = (id, {index, className}) => {
+    const {components: {Text, Icon, Image}, style} = this.props
+    switch (id) {
+      case 'image': {
+        return (
+          <div className={style['item__icon-picture-wrapper']}>
+            <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />
+          </div>
+      )}
+      case 'text': {
+        return (
+          <p className={style['item__icon-text']}>
+            <Text bind={`articles[${index}].iconText`} />
+          </p>
+        )
+      }
+      case false: {
+        return null
+      }
+      default: {
+        return (
+          <div className={style.item__icon}>
+            <Icon bind={`articles[${index}].icon`} />
+          </div>
+      )}
+    }
+  }
 
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Icon, Image}, style} = this.props
     return (
       <article className={classNames(style.item, className)}>
         {children}
-        {
-          this.getOptionValue('disable-icons') ?
-          _.get('icon-replacer-text')(modifier) && (
-            <div className={style['item__icon-text']}>
-              <Text bind={`articles[${index}].iconText`} />
-            </div>
-          ) ||
-          _.get('icon-replacer-image')(modifier) && (
-            <div className={style['item__icon-picture-wrapper']}>
-              <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />
-            </div>
-          ) :
-          _.get('item-icon')(modifier) && (
-            <div className={style.item__icon}>
-              <Icon bind={`articles[${index}].icon`} />
-            </div>
-          )
-        }
+        {this.iconReplace(_.get('icon-replacer')(modifier), {index})}
         {_.get('item-heading')(modifier) && (
           <h2 className={style.item__title}>
             <Text bind={`articles[${index}].title`} />
@@ -53,7 +61,6 @@ class Block extends React.Component {
     const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
     return (
       <section className={style.section}>
-        {console.log(this.getOptionValue('disable-icons'))}
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
@@ -235,16 +242,23 @@ Block.modifierScheme = [
     defaultValue: false,
   },
   {
-    id: 'icon-replacer-text',
-    type: 'hidden',
-    label: 'Text decorator',
-    defaultValue: false,
-  },
-  {
-    id: 'icon-replacer-image',
-    type: 'hidden',
-    label: 'Image placeholder',
-    defaultValue: false,
+    id: 'icon-replacer',
+    type: 'select',
+    options: [{
+      id: 'icon',
+      label: 'Show icon'
+    },
+    {
+      id: 'image',
+      label: 'Show image'
+    },
+    {
+      id: 'text',
+      label: 'Show text'
+    },
+  ],
+    label: 'Image replacer',
+    defaultValue: 'icon',
   },
   {
     id: 'top-icon',
