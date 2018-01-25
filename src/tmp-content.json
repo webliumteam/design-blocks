@@ -1,15 +1,1 @@
-{
-  "title": "Want to work with us?",
-
-  "background": {
-    "type": "image",
-    "position": {
-        "type": "cover",
-        "cover": "50% 50%"
-     },
-     "src": "33.jpg"
-   },
-
-   "description":
-    "Join 13000 clients who already worked with us. <br><br> Request a quote to get best solutions in your area."
-}
+{}
