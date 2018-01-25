@@ -8,9 +8,6 @@ class Block extends React.Component {
 
   getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
   getImageSize = (fullWidth) =>
     fullWidth
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
@@ -42,7 +39,7 @@ class Block extends React.Component {
             <Icon className={css['top-icon']} bind="topIcon" />
           )}
           <article className={css.article}>
-            {!this.getOptionValue('disable-image') && (
+            {this.getModifierValue('article-picture') && (
               <div className={css['article__picture-wrapper']}>
                 <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
               </div>
@@ -195,6 +192,12 @@ Block.modifierScheme = [
     type: 'hidden',
     label: 'Top icon decorator',
     defaultValue: false,
+  },
+  {
+    id: 'article-picture',
+    type: 'hidden',
+    label: 'Article picture',
+    defaultValue: true,
   },
 ]
 
