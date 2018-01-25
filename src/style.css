@@ -9,6 +9,7 @@
 }
 
 .title {
+  font-weight: var(--ui-heading-large-font-weight);
   text-transform: uppercase;
   letter-spacing: 3.6px;
 }
