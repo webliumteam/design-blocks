@@ -9,98 +9,128 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+  collectionItem = ({index, children, className, modifier, openLightbox}) => {
+    const {components: {Text, Image}, style} = this.props
+    return (
+      <div className={classNames(style.item, className)}>
+        {children}
+        <div className={style['item__picture-wrapper']} onClick={openLightbox}>
+          <Image
+            pictureClassName={style.item__picture}
+            imgClassName={style.item__image}
+            bind={`gallery[${index}].picture`}
+          />
+        </div>
+        {_.get('body-text')(modifier) && (
+          <p className={style.item__text}>
+            <Text bind={`gallery[${index}].title`} />
+          </p>
+        )}
+      </div>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <header className={style.section__header}>
+            <h1 className={style.title}>
+              <Text bind="title" />
+            </h1>
+            {this.getModifierValue('subtitle') && (
+              <p className={style.subtitle}>
+                <Text bind="subtitle" />
+              </p>
+            )}
+          </header>
+          <Collection
+            className={style['items-wrapper']}
+            bind="gallery"
+            galleryId="gallery"
+            Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
+          />
+          {this.getModifierValue('secondary-button') && (
+            <div className={style['btns-group']}>
+              <Button
+                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+                bind="cta"
+              />
             </div>
-          </article>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
+  gallery: [
+    {
+      title: 'Alice was beginning to get very tired',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Picture description',
+        galleryId: 'gallery',
+      },
+      id: 'ce744570-02be-4080-b3f2-740d628ccb52',
+    },
+    {
+      title: 'Alice was beginning to get very tired',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Picture description',
+        galleryId: 'gallery',
+      },
+      id: 'a980742f-2b78-40b0-9fed-247e71056797',
+    },
+    {
+      title: 'Alice was beginning to get very tired',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Picture description',
+        galleryId: 'gallery',
+      },
+      id: 'cb6bbbcc-1980-4575-af5c-0f46e33d6d1e',
+    },
+    {
+      title: 'Alice was beginning to get very tired',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Picture description',
+        galleryId: 'gallery',
+      },
+      id: '3e7b03a6-54fb-4d5c-8735-ddfd27f0c8fa',
+    },
+    {
+      title: 'Alice was beginning to get very tired',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Picture description',
+        galleryId: 'gallery',
+      },
+      id: 'd6741c92-36d7-4495-93cc-ba77ce79f2bb',
+    },
+    {
+      title: 'Alice was beginning to get very tired',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Picture description',
+        galleryId: 'gallery',
+      },
+      id: '529f880a-60f0-4c8f-9fc3-8c9f482051bb',
+    },
+  ],
+  title: 'Gallery',
   subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+    'Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do once or twice she had',
+  cta: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -111,88 +141,28 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Medium button',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
+    label: 'Gallery description',
     defaultValue: false,
   },
   {
-    id: 'title',
+    id: 'body-text',
     type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
+    label: 'Image description',
+    defaultValue: false,
+  },
+  {
+    id: 'secondary-button',
+    type: 'checkbox',
+    label: 'Secondary button',
+    defaultValue: false,
   },
 ]
 
