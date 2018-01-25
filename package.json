@@ -2,6 +2,7 @@
     "name": "wireframe-lucario-cover",
     "version": "0.0.1",
     "description": "",
+    "category": "cover",
     "main": "src/index.js",
     "scripts": {
         "precommit": "lint-staged"
