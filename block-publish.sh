@@ -1,6 +1,6 @@
 #!/bin/bash
 LOCALHOST=http://localhost:3000
-while getopts u:h:b:e:n option
+while getopts u:h:b:e:n: option
 do
  case "${option}"
  in
