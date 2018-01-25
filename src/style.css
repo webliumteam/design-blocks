@@ -41,7 +41,10 @@
   &__item {
     &-icon {
       background-color: transparent;
-      margin-right: 25px;
+
+      @media (min-width: 768px) {
+        margin-right: 25px;
+      }
     }
 
     &-text {
