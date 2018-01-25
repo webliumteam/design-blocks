@@ -22,11 +22,15 @@
   }
 
   &__content {
-    display: block;
-    padding-left: 60px;
-    padding-top: 45px;
-    padding-bottom: 100px;
     background-color: var(--ui-dark-shade-color);
+    padding: 30px;
+
+    @media (min-width: 992px) {
+      padding-left: 115px;
+      padding-top: 130px;
+      padding-bottom: 130px;
+      padding-right: 115px;
+    }
   }
 
   &__title {
@@ -53,8 +57,9 @@
   }
 
   &__text {
-    padding-right: 45px;
+    padding-right: 0;
     margin-bottom: 40px;
+    max-width: 684px;
     font-family: var(--ui-text-font-family);
     font-weight: var(--ui-text-font-weight);
     color: var(--ui-text-color);
@@ -89,11 +94,12 @@
       }
 
       &__content {
-        padding-bottom: 100px;
+        padding-bottom: 30px;
         background-color: var(--ui-light-shade-color);
 
         @media (min-width: 992px) {
           order: 2;
+          padding-bottom: 130px;
         }
       }
 
