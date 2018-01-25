@@ -1,3 +1,47 @@
 @import "wireframe-zapdos-cta/src/style.css";
 
 /* start here */
+.section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  background-color: var(--ui-light-accent-color);
+  opacity: 0.91;
+}
+
+.title {
+  font-family: var(--ui-hero-title-font-family );
+  font-size: var(--ui-hero-title-size);
+  font-weight: var(--ui-hero-title-font-weight);
+  color: var(--ui-light-shade-color );
+  letter-spacing: 2.6px;
+}
+
+.description {
+  font-family: var(--ui-subtitle-font-family);
+  font-size: var(--ui-subtitle-size);
+  font-weight: var(--ui-subtitle-font-weight);
+  line-height: var(--ui-subtitle-line-height);
+  color: var(--ui-light-shade-color );
+  letter-spacing: 1.3px;
+  text-align: center;
+  max-width: 70%;
+  margin: 0 auto 20px;
+  opacity: 0.8;
+}
+
+.button {
+  padding: 15px 60px;
+  font-family: var(--ui-caption-font-family);
+  font-size: var(--ui-caption-size)*1.25);
+  font-weight: var(--ui-caption-font-weight);
+  background-color: var(--ui-alt-btn-primary-bg);
+  color: var(--ui-btn-primary-color);
+  letter-spacing: 1.2px;
+  text-align: center;
+}
+
+.button:hover {
+  text-decoration: none;
+}
