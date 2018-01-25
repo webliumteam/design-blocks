@@ -1,3 +1,44 @@
 @import "wireframe-zapdos-header/src/style.css";
 
 /* start here */
+.header {
+  background-color: var(--ui-expanded-menu-bg);
+}
+
+.logo__title {
+  font-size: calc(var(--ui-heading-large-size)*0.88);
+  font-family: var(--ui-heading-large-font-family);
+  color: var(--ui-light-accent-color);
+  font-weight: var(--ui-heading-large-font-weight);
+  letter-spacing: 1.3px;
+  text-align: left;
+}
+
+.logo__title:hover {
+  text-decoration: none;
+}
+
+.nav-list__link {
+  color: var(--ui-light-accent-color);
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+.header__button {
+  border: solid 2px var(--ui-light-accent-color);
+  color: var(--ui-light-accent-color);
+  font-family: var(--ui-heading-large-font-family);
+  font-size: var(--ui-caption-size);
+  text-transform: uppercase;
+  background-color: var(--ui-btn-primary-border-color);
+}
+
+.header__button:hover {
+  border: solid 2px var(--ui-btn-primary-hover-border-color);
+  text-decoration: none;
+  background-color: var(--ui-btn-primary-hover-bg);
+}

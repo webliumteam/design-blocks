@@ -1,3 +1,10 @@
 {
-  "title": "Design title"
+  "logo": {
+    "text" : {
+      "value": "forks"
+    }
+  },
+  "cta": {
+    "textValue":"Try now"
+  }
 }
