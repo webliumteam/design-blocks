@@ -386,7 +386,7 @@
   position: absolute;
   width: 23px;
   height: 40px;
-  bottom: 0;
+  top: 100%;
   padding: 0;
   z-index: 1;
   border: 0;
