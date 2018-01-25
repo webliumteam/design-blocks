@@ -1,9 +1,6 @@
 @import "wireframe-zapdos-numbers/src/style.css";
 
 /* start here */
-.section {
-  background-color: var(--ui-media-bg);
-}
 
 .title {
   font-size: var(--ui-block-title-size);
