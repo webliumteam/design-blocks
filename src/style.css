@@ -4,6 +4,13 @@
 
 .top-icon {
   margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(217, 232, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
 }
 
 .title {
@@ -11,6 +18,21 @@
   line-height: var(--ui-block-title-line-height);
   font-family: var(--ui-block-title-font-family);
   color: var(--ui-hero-title-color);
+
+  span {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      right: -10px;
+      background-color: var(--ui-brand-color);
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+    }
+  }
 }
 
 .subtitle {
@@ -21,15 +43,31 @@
 }
 
 .article {
-  &__article-title {
+  &__image {
+    height: 105%;
+  }
+
+  &__picture-wrapper {
+    margin-bottom: 42px;
+  }
+
+  &__title {
     font-size: var(--ui-heading-size);
     font-family: var(--ui-heading-font-family);
     color: var(--ui-hero-title-color);
   }
 
-  &__article__text {
+  &__text {
     font-size: calc(var(--ui-text-size) * 0.875);
     font-family: var(--ui-subtitle-font-family);
     color: var(--ui-text-color);
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    font-size: calc(var(--ui-text-size) * 0.9375);
+    font-family: var(--ui-hero-title-font-family);
+    color: var(--ui-brand-color);
+    text-decoration: none;
   }
 }
