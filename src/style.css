@@ -237,8 +237,7 @@
   }
 }
 
-.link,
-.link a {
+.link {
   color: var(--ui-link-color);
 }
 
