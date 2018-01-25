@@ -1,3 +1,113 @@
 @import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
+
+.title {
+  margin-top: 80px;
+  font-weight: var(--ui-block-title-font-weight);
+}
+
+.title:after {
+  content: "";
+  display: block;
+  margin: 16px auto;
+  background-color: var(--ui-brand-color);
+  height: 2px;
+  width: 45px;
+}
+
+.plans-wrapper {
+  margin-top: 110px;
+  margin-bottom: 20px;
+}
+
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 45px 0 10px;
+  background-color: var(--ui-block-title-color);
+}
+
+.plan {
+  padding: 0;
+  background-color: var(--ui-light-shade-color);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+
+  &__price-count {
+    display: inline-block;
+    font-size: calc(var(--ui-heading-size)*1.5);
+    font-weight: var(--ui-heading-font-weight);
+    margin-right: 8px;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    margin-bottom: 40px;
+  }
+
+  &__list-item {
+    height: 60px;
+    line-height: calc(var(--ui-sub-heading-size)*3);
+    margin-bottom: 0;
+  }
+
+  &__price {
+    order: 1;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    order: 2;
+    color: var(--ui-light-shade-color);
+    text-transform: uppercase;
+    font-size: calc(var(--ui-heading-size)-6);
+  }
+}
+
+.plan__price>span:before {
+  content: "/";
+  margin-right: 3px;
+}
+
+.plan__price span {
+  color: var(--ui-light-shade-color);
+}
+
+.plan--main {
+  margin-top: -60px;
+  z-index: 2;
+  padding-bottom: 34px;
+  margin-bottom: -60px;
+}
+
+.plan--main .price-wrapper {
+  background-color: var(--ui-brand-color);
+}
+
+.plan__list-item:nth-child(2n) {
+  background-color: var(--ui-border-color);
+}
+
+.plan__button {
+  border-radius: 0;
+  background-color: var(--ui-border-color);
+  border: 2px solid var(--ui-media-bg);
+  color: var(--ui-media-bg);
+  margin-bottom: 0;
+}
+
+.plan--main .plan__list {
+  margin-bottom: 0;
+}
+
+.plan--main .plan__button {
+  background-color: var(--ui-brand-color);
+  border-color: var(--ui-brand-color);
+  color: var(--ui-light-shade-color);
+  margin-top: 40px;
+}
+
+.button--size-sm,
+.button--size-md {
+  padding: 12px 32px;
+}
