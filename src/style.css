@@ -1,9 +1,9 @@
 @import "wireframe-zapdos-text/src/style.css";
 
-/* start here */
 .title {
   text-transform: uppercase;
   letter-spacing: 3.6px;
+  font-weight: var(--ui-heading-font-weight);
 }
 
 .subtitle {
@@ -16,6 +16,7 @@
 .heading {
   text-transform: uppercase;
   letter-spacing: 3.2px;
+  font-weight: calc(var(--ui-heading-font-weight) + 100);
 }
 
 .subheading {
