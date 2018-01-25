@@ -1,3 +1,31 @@
 @import "wireframe-zapdos-about/src/style.css";
 
 /* start here */
+.section {
+  position: relative;
+  height: 100vh;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.article {
+  &__picture {
+    display: none;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    letter-spacing: -1.8px;
+  }
+
+  &__text {
+    margin-bottom: 35px;
+    padding-right: 80px;
+  }
+}
+
+.button {
+  text-transform: uppercase;
+}
