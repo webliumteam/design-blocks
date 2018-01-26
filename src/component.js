@@ -11,24 +11,31 @@ class Block extends React.Component {
 
   iconReplace = (id, {index, className}) => {
     const {components: {Text, Icon, Image}, style} = this.props
-    switch (id) {
-      case 'image': {
-        return (
-          <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />
-      )}
-      case 'text': {
-        return (
-          <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} />
-        )
-      }
-      case false: {
-        return null
-      }
-      default: {
-        return (
-          <Icon bind={`articles[${index}].icon`} />
-      )}
+    const cases = {
+      image: () => <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />,
+      text: () => <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} />,
+      icon: () => <Icon bind={`articles[${index}].icon`} />,
+      empty: () => null,
     }
+    const result = this.getModifierValue('icon-replacer') ? cases[`${this.getModifierValue('icon-replacer')}`] : null
+    // switch (id) {
+    //   case 'image': {
+    //     return (
+    //       <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />
+    //   )}
+    //   case 'text': {
+    //     return (
+    //       <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} />
+    //     )
+    //   }
+    //   case false: {
+    //     return null
+    //   }
+    //   default: {
+    //     return (
+    //       <Icon bind={`articles[${index}].icon`} />
+    //   )}
+    // }
   }
 
   collectionItem = ({index, children, className, modifier}) => {
