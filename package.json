@@ -2,6 +2,7 @@
     "name": "wireframe-zapdos-faq",
     "version": "0.0.1",
     "description": "",
+    "category": "faq",
     "main": "src/index.js",
     "scripts": {
         "precommit": "lint-staged"
