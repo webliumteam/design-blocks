@@ -15,11 +15,10 @@
 
   &__picture {
     background-color: transparent;
+    padding-top: 20%;
 
     &-wrapper {
       margin-bottom: 50px;
-      height: 55px;
-      overflow: hidden;
     }
   }
 
@@ -33,18 +32,6 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-  }
-
-  &:nth-child(2n) {
-    .item__picture img {
-      padding: 10px 0;
-    }
-  }
-
-  &:nth-child(4n) {
-    .item__picture img {
-      padding: 5px 0 3px;
-    }
   }
 
   &:first-of-type {
@@ -74,5 +61,4 @@
       margin-top: 70px;
     }
   }
-
 }
