@@ -219,6 +219,12 @@
   flex-grow: 0;
   flex-basis: 100%;
   width: 100%;
+  text-align: center;
+  font-size: var(--ui-text-size);
+  color: var(--ui-text-color);
+  line-height: var(--ui-text-line-height);
+  font-family: var(--ui-text-font-family);
+  font-weight: var(--ui-text-font-weight);
 }
 
 @media (min-width: 768px) {
