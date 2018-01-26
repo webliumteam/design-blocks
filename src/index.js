@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
     position: {
       type: 'cover',
     },
-    src: 'cover_bg.jpg',
+    resourceRef: 'cover_bg.jpg',
   },
   subtitle: 'Type something',
   'cta-1': {
@@ -63,7 +63,7 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'secondary-btn',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Secondary button',
     defaultValue: false,
   },
