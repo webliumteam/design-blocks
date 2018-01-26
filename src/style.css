@@ -13,6 +13,7 @@
     max-width: 95px;
     margin-bottom: 35px;
     position: relative;
+    color: var(--ui-brand-color);
 
     &::after {
       display: block;
@@ -27,8 +28,9 @@
       margin-top: 9px;
     }
 
-    svg {
-      color: var(--ui-brand-color);
+    > svg {
+
+      /* color: var(--ui-brand-color); */
       min-height: 65px;
     }
   }
