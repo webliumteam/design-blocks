@@ -6,7 +6,7 @@
   font-size: var(--ui-subtitle-size);
   font-weight: var(--ui-subtitle-font-weight);
   font-family: var(--ui-subtitle-font-family);
-  color: #838587;
+  color: var(--ui-subtitle-color);
   line-height: var(--ui-subtitle-line-height);
 }
 
