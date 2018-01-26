@@ -237,8 +237,7 @@
   }
 }
 
-.link,
-.link a {
+.link {
   color: var(--ui-link-color);
 }
 
@@ -265,4 +264,8 @@
     color: var(--ui-link-hover-color);
     text-decoration: none;
   }
+}
+
+.top-icon {
+  width: 20px;
 }
