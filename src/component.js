@@ -9,44 +9,23 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  iconReplace = (id, {index, className}) => {
+  collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Icon, Image}, style} = this.props
+    const topElement = this.getModifierValue('icon-replacer')
     const cases = {
       image: () => <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />,
       text: () => <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} />,
       icon: () => <Icon bind={`articles[${index}].icon`} />,
       empty: () => null,
     }
-    const result = this.getModifierValue('icon-replacer') ? cases[`${this.getModifierValue('icon-replacer')}`] : null
-    // switch (id) {
-    //   case 'image': {
-    //     return (
-    //       <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />
-    //   )}
-    //   case 'text': {
-    //     return (
-    //       <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} />
-    //     )
-    //   }
-    //   case false: {
-    //     return null
-    //   }
-    //   default: {
-    //     return (
-    //       <Icon bind={`articles[${index}].icon`} />
-    //   )}
-    // }
-  }
-
-  collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Icon, Image}, style} = this.props
-    const imageWrapperClass = this.getModifierValue('icon-replacer') === 'image' ?
+    const selectedElement = cases[topElement] ? topElement : 'empty'
+    const imageWrapperClass = selectedElement === 'image' ?
       style['image-wrapper'] : ''
     return (
       <article className={classNames(style.item, className)}>
         {children}
         <div className={classNames(style['item__top-element'], imageWrapperClass)}>
-          {this.iconReplace(_.get('icon-replacer')(modifier), {index})}
+          {cases[selectedElement]()}
         </div>
         {_.get('item-heading')(modifier) && (
           <h2 className={style.item__title}>
@@ -251,17 +230,14 @@ Block.modifierScheme = [
     type: 'select',
     options: [{
       id: 'icon',
-      label: 'Show icon'
-    },
-    {
+      label: 'Show icon',
+    }, {
       id: 'image',
-      label: 'Show image'
-    },
-    {
+      label: 'Show image',
+    }, {
       id: 'text',
-      label: 'Show text'
-    },
-  ],
+      label: 'Show text',
+    }],
     label: 'Image replacer',
     defaultValue: 'icon',
   },
