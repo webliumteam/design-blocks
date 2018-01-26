@@ -1,3 +1,9 @@
 {
-  "title": "Design title"
+  "title": "Contacts",
+  "logo": {
+    "image": {
+      "resourceRef": "logo.png",
+      "alt": "Company logo"
+    }
+  }
 }
