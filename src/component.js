@@ -9,6 +9,9 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   render() {
     const {components: {Logo, Text, Map, SocialIcons, Button, Icon}, style} = this.props
 
@@ -48,6 +51,11 @@ class Block extends React.Component {
       this.getModifierValue('social')
     ) && this.getModifierValue('map')
 
+    const title =
+      <h1 className={style.title}>
+        <Text bind="title" />
+      </h1>
+
     return (
       <section className={classNames(style.section, {
         [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
@@ -57,9 +65,7 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
+          {!this.getOptionValue('title-in-contacts') && title}
           <div className={style.section__main}>
             {this.getModifierValue('map') && (
               <div className={style['map-wrapper']}>
@@ -70,6 +76,7 @@ class Block extends React.Component {
             )}
             {!onlyMap && (
               <div className={style.contacts}>
+                {this.getOptionValue('title-in-contacts') && title}
                 {this.getModifierValue('logo') && (
                   <div className={style['logo-wrapper']}>
                     <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
