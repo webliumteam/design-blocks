@@ -31,7 +31,7 @@
 
     &__title {
       font-size: var(--ui-hero-title-size);
-      color: white;
+      color: var(--ui-light-shade-color);
     }
 
     &__text {
@@ -42,7 +42,7 @@
 
     &__link {
       font-size: calc(var(--ui-text-size) * 0.675);
-      color: white;
+      color: var(--ui-light-shade-color);
       text-decoration: none;
       text-transform: uppercase;
       padding-left: 7px;
