@@ -1,4 +1,5 @@
 {
   "some-modifier": true,
-  "top-icon": true
+  "top-icon": true,
+  "icon": true
 }
