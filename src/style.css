@@ -297,6 +297,11 @@
 
 .item__text {
   margin-top: 10px;
+  font-size: var(--ui-text-size);
+  font-family: var(--ui-text-font-family);
+  color: var(--ui-text-color);
+  line-height: var(--ui-text-line-height);
+  font-weight: var(--ui-text-font-weight);
   
   @media (min-width: 992px) {
     margin-top: 15px;
