@@ -14,15 +14,11 @@ class Block extends React.Component {
     switch (id) {
       case 'image': {
         return (
-          <div className={style['item__icon-picture-wrapper']}>
-            <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />
-          </div>
+          <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />
       )}
       case 'text': {
         return (
-          <p className={style['item__icon-text']}>
-            <Text bind={`articles[${index}].iconText`} />
-          </p>
+          <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} />
         )
       }
       case false: {
@@ -30,19 +26,21 @@ class Block extends React.Component {
       }
       default: {
         return (
-          <div className={style.item__icon}>
-            <Icon bind={`articles[${index}].icon`} />
-          </div>
+          <Icon bind={`articles[${index}].icon`} />
       )}
     }
   }
 
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Icon, Image}, style} = this.props
+    const imageWrapperClass = this.getModifierValue('icon-replacer') === 'image' ?
+      style['image-wrapper'] : ''
     return (
       <article className={classNames(style.item, className)}>
         {children}
-        {this.iconReplace(_.get('icon-replacer')(modifier), {index})}
+        <div className={classNames(style['item__top-element'], imageWrapperClass)}>
+          {this.iconReplace(_.get('icon-replacer')(modifier), {index})}
+        </div>
         {_.get('item-heading')(modifier) && (
           <h2 className={style.item__title}>
             <Text bind={`articles[${index}].title`} />

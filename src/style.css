@@ -284,7 +284,7 @@
   }
 }
 
-.item__icon {
+.item__top-element {
   width: 100px;
   margin: 0 auto 23px;
   color: var(--ui-icon-color);
@@ -344,7 +344,7 @@
   color: var(--ui-brand-color);
 }
 
-.item__icon-picture-wrapper {
+.image-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
