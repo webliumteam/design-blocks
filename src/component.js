@@ -73,55 +73,55 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.com
 Block.defaultContent = {
   gallery: [
     {
-      title: 'Alice was beginning to get very tired',
+      title: 'Quantum CEO & our partners',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture description',
+        alt: 'Quantum CEO & our partners',
         galleryId: 'gallery',
       },
       id: 'ce744570-02be-4080-b3f2-740d628ccb52',
     },
     {
-      title: 'Alice was beginning to get very tired',
+      title: 'Digital Marketing workshop lecturer',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture description',
+        alt: 'Digital Marketing workshop lecturer',
         galleryId: 'gallery',
       },
       id: 'a980742f-2b78-40b0-9fed-247e71056797',
     },
     {
-      title: 'Alice was beginning to get very tired',
+      title: 'Quantum Company at WebSummit',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture description',
+        alt: 'Quantum Company at WebSummit',
         galleryId: 'gallery',
       },
       id: 'cb6bbbcc-1980-4575-af5c-0f46e33d6d1e',
     },
     {
-      title: 'Alice was beginning to get very tired',
+      title: 'UX workshop attendees',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture description',
+        alt: 'UX workshop attendees',
         galleryId: 'gallery',
       },
       id: '3e7b03a6-54fb-4d5c-8735-ddfd27f0c8fa',
     },
     {
-      title: 'Alice was beginning to get very tired',
+      title: 'UX workshop lecturer',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture description',
+        alt: 'UX workshop lecturer',
         galleryId: 'gallery',
       },
       id: 'd6741c92-36d7-4495-93cc-ba77ce79f2bb',
     },
     {
-      title: 'Alice was beginning to get very tired',
+      title: 'Quantum team',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture description',
+        alt: 'Quantum team',
         galleryId: 'gallery',
       },
       id: '529f880a-60f0-4c8f-9fc3-8c9f482051bb',
@@ -129,7 +129,7 @@ Block.defaultContent = {
   ],
   title: 'Gallery',
   subtitle:
-    'Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do once or twice she had',
+    'Browse through our photos to see who we are, how we work, and what inspires us',
   cta: {
     actionConfig: {
       action: 'link',
