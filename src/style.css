@@ -1,3 +1,101 @@
 @import "wireframe-zapdos-contacts/src/style.css";
 
 /* start here */
+.title {
+  letter-spacing: -1.65px;
+}
+
+.logo {
+  background: none;
+
+  &__title {
+    font-size: var(--ui-heading-size);
+    line-height: var(--ui-heading-line-height);
+    font-weight: var(--ui-heading-font-weight);
+    letter-spacing: -0.8px;
+    color: var(--ui-heading-color);
+  }
+}
+
+.contacts {
+  &-list {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: var(--ui-subtitle-size);
+    line-height: var(--ui-subtitle-line-height);
+    font-weight: 600;
+  }
+
+  &__desc {
+    font-size: var(--ui-text-size);
+    line-height: var(--ui-text-line-height);
+    font-weight: var(--ui-text-font-weight);
+    color: #6e7173;
+  }
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 100px 0;
+  }
+
+  .title {
+    visibility: hidden;
+    height: 0;
+    margin-bottom: 0;
+  }
+
+  .map {
+    padding-top: 78%;
+
+    &-wrapper {
+      width: 68.38%;
+    }
+  }
+
+  .contacts {
+    width: 31.62%;
+    padding-left: 60px;
+    justify-content: start;
+
+    &-list {
+      margin-left: -40px;
+      margin-top: 0;
+
+      &__item {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__desc {
+      padding-top: 3px;
+    }
+  }
+
+  .logo {
+    &-wrapper {
+      margin-top: 47.9%;
+      margin-bottom: -8px;
+    }
+
+    &__title {
+      position: relative;
+
+      &::before {
+        content: "Contacts";
+        display: block;
+        position: absolute;
+        top: -82px;
+        left: -5px;
+        font-family: var(--ui-block-title-font-family);
+        font-size: var(--ui-block-title-size);
+        color: var(--ui-block-title-color);
+        line-height: var(--ui-block-title-line-height);
+        font-weight: var(--ui-block-title-font-weight);
+        letter-spacing: -1.65px;
+      }
+    }
+  }
+}
