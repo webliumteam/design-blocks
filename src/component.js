@@ -8,6 +8,9 @@ class Block extends React.Component {
 
   getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   getImageSize = (fullWidth) =>
     fullWidth
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
@@ -32,12 +35,18 @@ class Block extends React.Component {
       this.getModifierValue('button')
     )
 
+    const getTitle = this.getModifierValue('title') && (
+      <h1 className={css.article__title}>
+        <Text bind="title" />
+      </h1>)
+
     return (
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
           {this.getModifierValue('top-icon') && (
             <Icon className={css['top-icon']} bind="topIcon" />
           )}
+          {this.getOptionValue('title-in-top') && getTitle}
           <article className={css.article}>
             {this.getModifierValue('article-picture') && (
               <div className={css['article__picture-wrapper']}>
@@ -46,11 +55,7 @@ class Block extends React.Component {
             )}
             {!onlyImage && (
               <div className={css.article__content}>
-                {this.getModifierValue('title') && (
-                  <h1 className={css.article__title}>
-                    <Text bind="title" />
-                  </h1>
-                )}
+                {!this.getOptionValue('title-in-top') && getTitle}
                 {this.getModifierValue('subtitle') && (
                   <p className={css.article__subtitle}>
                     <Text bind="subtitle" />
