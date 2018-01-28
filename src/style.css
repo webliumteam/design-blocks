@@ -1,6 +1,10 @@
 @import "wireframe-zapdos-projects/src/style.css";
 
 /* start here */
+.section {
+  padding-bottom: 120px;
+}
+
 .title {
   letter-spacing: 1.8px;
   margin-top: 30px;
@@ -23,7 +27,7 @@
   box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
   margin: 0 auto;
   border-radius: 50%;
-  padding-left: 19px;
+  padding: 20px;
 }
 
 .article {
