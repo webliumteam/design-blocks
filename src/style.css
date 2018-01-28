@@ -2,7 +2,7 @@
 
 /* start here */
 .title {
-  letter-spacing: -1.65px;
+  letter-spacing: -2px;
 }
 
 .logo {
@@ -12,7 +12,7 @@
     font-size: var(--ui-heading-size);
     line-height: var(--ui-heading-line-height);
     font-weight: var(--ui-heading-font-weight);
-    letter-spacing: -0.8px;
+    letter-spacing: -0.5px;
     color: var(--ui-heading-color);
   }
 }
@@ -48,7 +48,7 @@
       width: 68.38%;
     }
   }
-  
+
   .title {
     margin-top: 32%;
     margin-bottom: -9px;
@@ -62,11 +62,11 @@
     justify-content: start;
 
     &-list {
+      margin-left: -16px;
       max-width: 300px;
       margin-top: 0;
 
       &__item {
-        margin-left: -16px;
         margin-bottom: 20px;
       }
     }
@@ -98,9 +98,5 @@
 
   .contacts {
     padding-left: 60px;
-
-    &__item {
-      margin-left: -8px;
-    }
   }
 }
