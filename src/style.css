@@ -1,7 +1,14 @@
 @import "wireframe-zapdos-team/src/style.css";
 
 /* start here */
+
+.subtitle {
+  max-width: 1000px;
+}
+
 .item {
+  margin-bottom: 45px;
+
   &__inner {
     background-color: var(--ui-media-bg);
   }
@@ -23,7 +30,13 @@
     text-transform: uppercase;
   }
 
+  &__desc {
+    margin-bottom: 20px;
+  }
+
   .link {
+    display: block;
+    margin-bottom: 14px;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--ui-block-title-color);
@@ -33,7 +46,18 @@
     font-weight: var(--ui-small-text-font-weight);
   }
 
-  &__email {
-    text-transform: uppercase;
+  &__email-wrapper {
+    margin-bottom: 25px;
+
+    a {
+      text-transform: uppercase;
+    }
   }
+
+  .socials>li {
+    width: 25px;
+    margin-right: 3px;
+    flex: none;
+  }
+
 }
