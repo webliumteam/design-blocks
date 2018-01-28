@@ -1,3 +1,7 @@
 {
-  "some-modifier": true
+  "some-modifier": true,
+  "top-icon": true,
+  "subtitle": true,
+  "button-secondary": true
+
 }
