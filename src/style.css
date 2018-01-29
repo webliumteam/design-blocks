@@ -14,25 +14,6 @@
   position: relative;
   width: auto;
   display: inline-block;
-
-  &::after,
-  &::before {
-    content: "";
-    position: absolute;
-    height: 3px;
-    width: 10px;
-    top: 50%;
-    background-color: var(--ui-dark-shade-color);
-    transform: translateY(-50%);
-  }
-
-  &::before {
-    left: -18px;
-  }
-
-  &::after {
-    right: -16px;
-  }
 }
 
 .subtitle {
