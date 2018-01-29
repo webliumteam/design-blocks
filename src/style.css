@@ -3,6 +3,7 @@
 /* start here */
 .title {
   position: relative;
+  margin-bottom: 57px;
 
   @media (min-width: 768px) {
     text-align: left;
@@ -66,6 +67,8 @@
 }
 
 .contacts-list__item {
+  margin-bottom: 35px;
+
   &:first-child {
 
     @media (min-width: 768px) {
@@ -76,6 +79,7 @@
 
 .contacts__title {
   font-weight: 400;
+  margin-bottom: 15px;
 }
 
 .contacts__desc {
