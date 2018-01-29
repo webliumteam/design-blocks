@@ -4,21 +4,20 @@
 
 .section {
   &__header {
-    margin-bottom: 50px;
+    margin-bottom: 54px;
   }
 }
 
 .title {
   font-weight: var(--ui-block-title-font-weight);
-  margin-bottom: 40px;
+  margin-bottom: 37px;
   letter-spacing: -1.05px;
 }
 
 .subtitle {
-  font-family: var(--ui-small-text-font-family);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
-  letter-spacing: -1.05px;
+  letter-spacing: -0.9px;
   margin-bottom: 15px;
 }
 
@@ -33,12 +32,13 @@
   &__text {
     text-align: center;
     font-size: var(--ui-subtitle-size);
-    margin-top: 25px;
+    margin-top: 20px;
     font-weight: var(--ui-subtitle-font-weight);
     padding: 0 40px;
+    color: var(--ui-dark-shade-color);
   }
 }
 
 .btns-group {
-  margin-top: 30px;
+  margin-top: 34px;
 }
