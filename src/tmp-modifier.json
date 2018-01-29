@@ -1,3 +1,6 @@
 {
-  "some-modifier": true
+  "some-modifier": true,
+  "subtitle": true,
+  "body-text": true,
+  "secondary-button": true
 }
