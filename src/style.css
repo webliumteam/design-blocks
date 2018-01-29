@@ -124,7 +124,7 @@
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
-  
+
   @media (min-width: 768px) {
     padding: 60px 0;
   }
@@ -154,7 +154,7 @@
 }
 
 .content-wrapper {
-  backgronud-color: var(--ui-brand-color);
+  background-color: var(--ui-brand-color);
 }
 
 .section__picture {

@@ -13,7 +13,7 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   getContent = () => {
-    const {components: {Text, Button}, style} = this.props
+    const {components: {Text}, style} = this.props
     return [
       this.getModifierValue('title') && (
         <h1 className={style.title}>
@@ -25,15 +25,11 @@ class Block extends React.Component {
           <Text bind="description" />
         </p>
       ),
-      (<Button
-        className={classNames(style.button, style['button--primary'], style['button--size-lg'])}
-        bind="cta"
-      />),
     ]
   }
 
   render() {
-    const {components: {Image}, style} = this.props
+    const {components: {Image, Button}, style} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -41,6 +37,10 @@ class Block extends React.Component {
             <div className={style['content-wrapper']}>{this.getContent()}</div> :
             this.getContent()
           }
+          <Button
+            className={classNames(style.button, style['button--primary'], style['button--size-lg'])}
+            bind="cta"
+          />
           {this.getModifierValue('picture') && (
           <div className={style['section__picture-wrapper']}>
             <Image
