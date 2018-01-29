@@ -2,7 +2,7 @@
 
 /* start here */
 .section {
-  
+
   @media (min-width: 992px) {
     padding: 60px 0;
   }
@@ -17,29 +17,6 @@
   letter-spacing: 3.6px;
   font-weight: 500;
   margin-bottom: 20px;
-
-  span {
-    position: relative;
-
-    &::before,
-    &::after {
-      position: absolute;
-      content: "";
-      top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 4px;
-      background: var(--ui-dark-shade-color);
-    }
-
-    &::before {
-      left: -28px;
-    }
-
-    &::after {
-      right: -28px;
-    }
-  }
 }
 
 .subtitle {
