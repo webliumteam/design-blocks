@@ -1,44 +1,84 @@
 @import "wireframe-zapdos-contacts/src/style.css";
 
 /* start here */
-.section {
-  &__inner {
-    max-width: 100%;
-    padding: 0;
-  }
-}
-
-.section__main {
-  flex-direction: row-reverse;
-}
-
 .title {
-  text-align: left;
   position: relative;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 
   &::after {
     content: "";
     display: block;
+    position: absolute;
     width: 45px;
     height: 2px;
     background-color: var(--ui-brand-color);
-    position: absolute;
-    left: 0;
+    left: 50%;
     top: 100%;
+    transform: translateX(-50%);
     margin-top: 20px;
+
+    @media (min-width: 768px) {
+      transform: translateX(0);
+      left: 0;
+    }
+  }
+}
+
+.section {
+
+  @media (min-width: 768px) {
+    padding: 0;
+
+    &__inner {
+      padding-right: 0;
+      max-width: 100%;
+      padding-left: 5%;
+    }
+  }
+
+  &__main {
+
+    @media (min-width: 768px) {
+      flex-direction: row-reverse;
+    }
+
+    @media (min-width: 768px) {
+      height: 100vh;
+    }
   }
 }
 
 .contacts {
-  padding-left: 0;
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+  }
+
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.contacts-list {
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+
+  @media (min-width: 992px) {
+    margin-top: 0;
+  }
 }
 
 .contacts-list__item {
   &:first-child {
-    max-width: 220px;
+    
+    @media (min-width: 768px) {
+      max-width: 220px;
+    }
   }
-}
-
-.map-wrapper {
-  width: 64.84%;
 }
