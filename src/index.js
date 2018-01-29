@@ -143,7 +143,7 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = [
   {
     id: 'subtitle',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Services description',
     defaultValue: false,
   },
@@ -167,7 +167,7 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'button-primary',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Primary button',
     defaultValue: false,
   },
