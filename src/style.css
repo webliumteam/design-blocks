@@ -1,3 +1,25 @@
 @import "wireframe-zapdos-gallery/src/style.css";
 
 /* start here */
+
+@media (min-width: 768px) {
+  .item {
+    padding: 0;
+  }
+
+  .section__inner {
+    max-width: 100%;
+  }
+
+  .items-wrapper {
+    display: flex;
+  }
+
+  .item__picture {
+    padding-top: 100%;
+  }
+}
+
+.title_ {
+  letter-spacing: -2px;
+}

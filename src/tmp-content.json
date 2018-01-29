@@ -1,3 +1,63 @@
 {
-  "title": "Design title"
+  "title": "Latest Instagram",
+  "background": {
+    "type": "color",
+    "color": "#ffffff"
+  },
+  "gallery": [
+    {
+      "title": "Quantum CEO & our partners",
+      "picture": {
+        "src": "/image-1.jpg",
+        "alt": "Quantum CEO & our partners",
+        "galleryId": "gallery"
+      },
+      "id": "ce744570-02be-4080-b3f2-740d628ccb52"
+    },
+    {
+      "title": "Quantum CEO & our partners",
+      "picture": {
+        "src": "/image-2.jpg",
+        "alt": "Quantum CEO & our partners",
+        "galleryId": "gallery"
+      },
+      "id": "ce744570-02be-4080-b3f2-740d628ccb521"
+    },
+    {
+      "title": "Quantum CEO & our partners",
+      "picture": {
+        "src": "/image-3.jpg",
+        "alt": "Quantum CEO & our partners",
+        "galleryId": "gallery"
+      },
+      "id": "ce744570-02be-4080-b3f2-740d628ccb522"
+    },
+    {
+      "title": "Quantum CEO & our partners",
+      "picture": {
+        "src": "/image-4.jpg",
+        "alt": "Quantum CEO & our partners",
+        "galleryId": "gallery"
+      },
+      "id": "ce744570-02be-4080-b3f2-740d628ccb523"
+    },
+    {
+      "title": "Quantum CEO & our partners",
+      "picture": {
+        "src": "/image-5.jpg",
+        "alt": "Quantum CEO & our partners",
+        "galleryId": "gallery"
+      },
+      "id": "ce744570-02be-4080-b3f2-740d628ccb524"
+    },
+    {
+      "title": "Quantum CEO & our partners",
+      "picture": {
+        "src": "/image-6.jpg",
+        "alt": "Quantum CEO & our partners",
+        "galleryId": "gallery"
+      },
+      "id": "ce744570-02be-4080-b3f2-740d628ccb525"
+    }
+  ]
 }
