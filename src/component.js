@@ -8,13 +8,16 @@ class Block extends React.Component {
 
   getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   getImageSize = (fullWidth) =>
     fullWidth
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
       : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, mods, style: css} = this.props
+    const {components: {Text, Image, Button, SocialIcons, Icon}, mods, style: css} = this.props
     const columnLayout = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
@@ -32,20 +35,27 @@ class Block extends React.Component {
       this.getModifierValue('button')
     )
 
+    const getTitle = this.getModifierValue('title') && (
+      <h1 className={css.article__title}>
+        <Text bind="title" />
+      </h1>)
+
     return (
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
+          {this.getModifierValue('top-icon') && (
+            <Icon className={css['top-icon']} bind="topIcon" />
+          )}
+          {this.getOptionValue('title-in-top') && getTitle}
           <article className={css.article}>
-            <div className={css['article__picture-wrapper']}>
-              <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-            </div>
+            {this.getModifierValue('article-picture') && (
+              <div className={css['article__picture-wrapper']}>
+                <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
+              </div>
+            )}
             {!onlyImage && (
               <div className={css.article__content}>
-                {this.getModifierValue('title') && (
-                  <h1 className={css.article__title}>
-                    <Text bind="title" />
-                  </h1>
-                )}
+                {!this.getOptionValue('title-in-top') && getTitle}
                 {this.getModifierValue('subtitle') && (
                   <p className={css.article__subtitle}>
                     <Text bind="subtitle" />
@@ -64,10 +74,10 @@ class Block extends React.Component {
                 )}
                 {showButtonGroups && (
                   <div className={css['btns-group']}>
-                    {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
+                    {this.getModifierValue('link') && <Text className={css.link} bind="link" />}
                     {this.getModifierValue('button') && (
                       <Button
-                        className={classNames(css.button, css['button--primary'], css['button--size-md'])}
+                        className={css.button}
                         bind="button"
                       />
                     )}
@@ -82,7 +92,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   title: 'About The Company',
@@ -106,20 +116,10 @@ Block.defaultContent = {
       },
     },
     textValue: 'Contact us',
+    type: 'primary',
+    size: 'md',
   },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
+  link: '<a href="/">More about us</a>',
   socialIcons: {
     networks: [
       {
@@ -148,6 +148,10 @@ Block.defaultContent = {
       sizes: [10, 20, 30, 40],
       size: '40px',
     },
+  },
+  topIcon: {
+    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    fill: 'red',
   },
 }
 
@@ -186,6 +190,18 @@ Block.modifierScheme = [
     id: 'button',
     type: 'checkbox',
     label: 'Contact us button',
+    defaultValue: true,
+  },
+  {
+    id: 'top-icon',
+    type: 'hidden',
+    label: 'Top icon decorator',
+    defaultValue: false,
+  },
+  {
+    id: 'article-picture',
+    type: 'hidden',
+    label: 'Article picture',
     defaultValue: true,
   },
 ]
