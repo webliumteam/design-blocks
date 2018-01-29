@@ -19,6 +19,11 @@ class Block extends React.Component {
     return (
       <section className={classNames(css.section, alignClass)}>
         <div className={css.section__inner}>
+          {this.getModifierValue('caption-decorator') && (
+            <div className={css['caption-decorator']}>
+              <Text bind="topCaption" />
+            </div>
+          )}
           <h1 className={css.title}>
             <Text bind="title" />
           </h1>
@@ -80,6 +85,7 @@ Block.defaultContent = {
     },
     textValue: 'Additional button (L)',
   },
+  topCaption: 'welcome',
 }
 
 Block.modifierScheme = [
@@ -123,6 +129,12 @@ Block.modifierScheme = [
         label: 'right',
       },
     ],
+  },
+  {
+    id: 'caption-decorator',
+    type: 'hidden',
+    name: 'top decorator',
+    defaultValue: false,
   },
 ]
 
