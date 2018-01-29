@@ -29,10 +29,9 @@
 }
 
 .section {
+  padding: 0;
 
   @media (min-width: 768px) {
-    padding: 0;
-
     &__inner {
       padding-right: 0;
       max-width: 100%;
@@ -41,16 +40,21 @@
 
     &__main {
       flex-direction: row-reverse;
-      height: 100vh;
+      align-items: stretch;
+      justify-content: space-between;
     }
   }
+}
+
+.logo {
+  background-color: transparent;
 }
 
 .contacts {
 
   @media (min-width: 768px) {
-    padding-left: 0;
     justify-content: center;
+    padding: 110px 0;
   }
 }
 
@@ -84,4 +88,15 @@
 
 .contacts__desc {
   font-size: var(--ui-text-size);
+}
+
+.map-wrapper {
+
+  @media (min-width: 768px) {
+    width: 62.4%;
+  }
+
+  @media (min-width: 992px) {
+    width: 73%;
+  }
 }
