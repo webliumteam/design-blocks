@@ -7,15 +7,15 @@
   }
 
   &__title {
-    font-size: calc(var(--ui-block-title-size)*0.882);
+    font-size: calc(var(--ui-block-title-size) * 0.882);
     font-weight: var(--ui-hero-title-font-weight);
     letter-spacing: 1.3px;
-    color: #fff;
+    color: var(-ui-light-accent-color);
   }
 }
 
 .footer {
-  color: #fff;
+  color: var(-ui-light-accent-color);
 
   &__bottom {
     border: 0;
