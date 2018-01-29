@@ -229,3 +229,7 @@
 .link:focus {
   color: var(--ui-link-hover-color);
 }
+
+.caption-decorator {
+  color: var(--ui-brand-color);
+}
