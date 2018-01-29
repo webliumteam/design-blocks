@@ -9,98 +9,90 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
+  collectionItem = ({index, children, className, modifier}) => {
+    const {components: {Text}, style} = this.props
+    return (
+      <article className={classNames(style.article, className)}>
+        {children}
 
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+        <div className={classNames(style.article__content, {[style['article__content--icon-none']]: !_.get('icon')(modifier)})}>
+          {_.get('heading')(modifier) && (
+            <h2 className={style.article__title}>
+              <Text bind={`steps[${index}].title`} />
+            </h2>
+          )}
+          {_.get('body')(modifier) && (
+            <p className={style.article__text}>
+              <Text bind={`steps[${index}].description`} />
+            </p>
+          )}
+        </div>
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <h1 className={style.title}>
+            <Text bind="title" />
+          </h1>
+          {this.getModifierValue('subtitle') && (
+            <p className={style.subtitle}>
+              <Text bind="description" />
+            </p>
+          )}
+          <Collection
+            className={style['articles-wrapper']}
+            bind="steps"
+            Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
+          />
+          {this.getModifierValue('button') && (
+            <div className={style['btns-group']}>
+              <Button
+                className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+                bind="cta"
+              />
             </div>
-          </article>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+  steps: [
+    {
+      id: '07a5468d-b105-4866-98a5-dcf2cf46db3a',
+      title: 'Pick a plan',
+      description:
+        'You will get complete information about each program we offer. There are several available options according to your needs.',
+    },
+    {
+      id: '12e39a62-f8f4-4bf5-b2a0-5d536eeecd27',
+      title: 'Make a payment',
+      description:
+        'We guarantee the security of all payments. You may choose the most suitable payment method.',
+    },
+    {
+      id: '5095f30d-1fbc-4809-a8c5-82bb203f3505',
+      title: 'Enjoy our products',
+      description:
+        'You will get access to all available features immediately.',
+    },
+  ],
+  title: 'Our process',
+  description:
+    'We are guided by clear and simple cooperation with clients. Here’s how you can order our online products:',
+  cta: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -111,87 +103,45 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Medium button',
   },
 }
 
 Block.modifierScheme = [
   {
-    id: 'text',
+    id: 'title',
     type: 'checkbox',
-    label: 'Company main text',
+    label: 'Block title',
     defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
   },
   {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
+    label: 'Process description',
+    defaultValue: true,
   },
   {
-    id: 'title',
+    id: 'icon',
     type: 'checkbox',
-    label: 'Block title',
+    label: 'Step icon',
+    defaultValue: true,
+  },
+  {
+    id: 'heading',
+    type: 'checkbox',
+    label: 'Step title',
+    defaultValue: true,
+  },
+  {
+    id: 'body',
+    type: 'checkbox',
+    label: 'Step main text',
+    defaultValue: true,
+  },
+  {
+    id: 'button',
+    type: 'checkbox',
+    label: 'Secondary button',
     defaultValue: true,
   },
 ]
