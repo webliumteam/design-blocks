@@ -17,10 +17,11 @@ class Block extends React.Component {
     return (
       <li className={classNames(style.list__item, className)}>
         {children}
-        {this.getModifierValue('icon') &&
-        <div className={classNames(style['list__item-icon'], {[style['list__item-icon--counter-none']]: collectionIcon})}>
+        {this.getModifierValue('icon') && (
+          <div className={classNames(style['list__item-icon'], {[style['list__item-icon--counter-none']]: collectionIcon})}>
             {collectionIcon && <Icon bind={`careers[${index}].icon`} />}
-        </div>}
+          </div>
+        )}
         <span className={style['list__item-text']}>
           <Text bind={`careers[${index}].title`} />
         </span>
@@ -61,7 +62,6 @@ class Block extends React.Component {
                   <Text bind="text" />
                 </p>
               )}
-
               <Collection
                 className={style.list}
                 TagName="ul"
@@ -71,9 +71,17 @@ class Block extends React.Component {
                   showIcon: this.getModifierValue('icon'),
                 }}
               />
+              {this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
+                <div className={style['btns-group']}>
+                  <Button
+                    className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+                    bind="button-1"
+                  />
+                </div>
+              )}
             </div>
           </div>
-          {this.getModifierValue('button') && (
+          {!this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
                 className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
