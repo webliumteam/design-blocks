@@ -1,9 +1,1 @@
-{
-  "some-modifier": true,
-  "subtitle": true,
-  "post-image": false,
-  "post-link": false,
-  "top-icon": {
-    "defaultValue": true
-  }
-}
+{}
