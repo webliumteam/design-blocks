@@ -1,3 +1,76 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-about/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+
+  &__inner {
+
+    @media (min-width: 768px) {
+      max-width: none;
+      padding: 0;
+    }
+  }
+}
+
+.article {
+
+  @media (min-width: 768px) {
+    &__tilte,
+    &__subtitle,
+    &__text {
+      max-width: 535px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 45px;
+    font-family: var(--ui-block-title-font-family);
+
+    @media (min-width: 992px) {
+      font-size: var(--ui-block-title-size);
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 45px;
+      height: 2px;
+      left: 0;
+      bottom: -20px;
+      background-color: var(--ui-dark-accent-color);
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--ui-text-font-family);
+    font-size: var(--ui-subtitle-size);
+    font-weight: var(--ui-text-font-weight);
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    font-family: var(--ui-text-font-family);
+    font-size: var(--ui-subtitle-size);
+    font-weight: var(--ui-text-font-weight);
+    line-height: var(--ui-subtitle-line-height);
+    margin-bottom: 40px;
+  }
+
+  &__content {
+
+    @media (min-width: 768px) {
+      max-width: 45.8%;
+    }
+  }
+}
+
+.button {
+  font-weight: 600;
+}
