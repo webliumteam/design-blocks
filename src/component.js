@@ -32,7 +32,10 @@ class Block extends React.Component {
         <button type="button" className={style.item__button} onClick={this.toggleItemOpening(index)}>
           <h2 className={style.item__title}>
             <Text bind={`faq[${index}].title`} />
-            <div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state.opened === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />
+            {!this.getOptionValue('different-icons') ?
+              <div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.getOptionValue('open-icon')}} /> :
+              <div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state.opened === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />
+            }
           </h2>
         </button>
         <div className={style.item__content}>
