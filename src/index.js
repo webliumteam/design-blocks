@@ -1,6 +1,7 @@
 import $editor from 'weblium/editor'
 
 import Component from 'wireframe-zapdos-about/src/component'
+
 import style from './style.css'
 
 import options from './options.json'
