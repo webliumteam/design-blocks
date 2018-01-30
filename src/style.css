@@ -420,3 +420,10 @@
 .top-icon {
   width: 20px;
 }
+
+.media__decorator {
+  position: absolute;
+  color: red;
+  width: 100%;
+  transform: translate(20px, 20px);
+}

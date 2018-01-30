@@ -54,6 +54,9 @@ class Block extends React.Component {
                   bind="picture"
                   size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
                 />
+                {this.getOptionValue('image-decorator-status') && (
+                  <div className={style.media__decorator} dangerouslySetInnerHTML={{__html: this.getOptionValue('image-decorator-content')}} />
+                )}
               </div>
             )}
             <div className={style.content__main}>
