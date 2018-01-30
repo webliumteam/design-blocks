@@ -9,98 +9,184 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Button, Image}, style} = this.props
 
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+    return (
+      <article className={classNames(style.article, className)}>
+        {children}
 
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+        <div className={style.article__badge}>
+          <Text bind={`events[${index}].badge`} />
+        </div>
+        <div className={style.article__info}>
+          <div className={style.article__top}>
+            <time className={style.article__date}>
+              <Text bind={`events[${index}].date`} />
+            </time>
+            <time className={style.article__time}>
+              <Text bind={`events[${index}].time`} />
+            </time>
+          </div>
+          <h2 className={style.article__title}>
+            <Text bind={`events[${index}].title`} />
+          </h2>
+          <div className={style.article__bottom}>
+            <p className={style.article__location}>
+              <Text bind={`events[${index}].location`} />
+            </p>
+            <Button
+              className={classNames(style.article__cta, style.link)}
+              bind={`events[${index}].cta`}
+            />
+          </div>
+        </div>
+        <Image
+          pictureClassName={style.article__picture}
+          imgClassName={style.article__image}
+          bind={`events[${index}].picture`}
+        />
+      </article>
+    )
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Collection, Text, Button}, style} = this.props
+
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
-          </article>
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <h1 className={style.title}>
+            <Text bind="title" />
+          </h1>
+          <p className={style.subtitle}>
+            <Text bind="subtitle" />
+          </p>
+          <Collection
+            className={style['articles-wrapper']}
+            bind="events"
+            Item={this.collectionItem}
+          />
+          <div className={style['btns-group']}>
+            <Button
+              className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+              bind="cta"
+            />
+          </div>
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
+  events: [
+    {
+      title: 'Yoga class with Jonas',
+      date: 'October 14, 2017',
+      badge: 'members only',
+      time: '10:30am - 1:30pm',
+      location: 'Lectorium 2',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Illustration',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Know more',
+      },
+      id: 'b1de1229-0f5f-4da8-8e5f-1d875b2bdd5e',
+    },
+    {
+      title: 'Yoga class with Jonas',
+      date: 'October 14, 2017',
+      time: '10:30am - 1:30pm',
+      location: 'Lectorium 2',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Illustration',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Know more',
+      },
+      id: 'bc24235c-0e77-42d8-8e8e-358d683da4f5',
+    },
+    {
+      title: 'Yoga class with Jonas',
+      date: 'October 14, 2017',
+      badge: 'members only',
+      time: '10:30am - 1:30pm',
+      location: 'Lectorium 2',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Illustration',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Know more',
+      },
+      id: '2a463f21-a68f-4a30-a7a7-dfbdece81edc',
+    },
+    {
+      title: 'Yoga class with Jonas',
+      date: 'October 14, 2017',
+      badge: 'members only',
+      time: '10:30am - 1:30pm',
+      location: 'Lectorium 2',
+      picture: {
+        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        alt: 'Illustration',
+      },
+      cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Know more',
+      },
+      id: 'c4480dcf-6fbd-42b0-b457-ca6a0f187b02',
+    },
+  ],
+  title: 'Events',
   subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
-  button: {
+    'We regularly host different kinds of events to satisfy the desires and demands even of all our clients. Do you want to know more about our activities? Follow the updates and never miss the workshops and seminars from our professionals.',
+  cta: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -111,49 +197,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Additional button (M)',
   },
 }
 
