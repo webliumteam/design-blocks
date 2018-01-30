@@ -26,6 +26,11 @@ class Block extends React.Component {
             <Text bind={`gallery[${index}].title`} />
           </p>
         )}
+        {_.get('caption')(modifier) && (
+          <p className={style.item__caption}>
+            <Text bind={`gallery[${index}].caption`} />
+          </p>
+        )}
       </div>
     )
   }
@@ -82,6 +87,7 @@ Block.defaultContent = {
         alt: 'Quantum CEO & our partners',
         galleryId: 'gallery',
       },
+      caption: 'Design & build',
       id: 'ce744570-02be-4080-b3f2-740d628ccb52',
     },
     {
@@ -91,6 +97,7 @@ Block.defaultContent = {
         alt: 'Digital Marketing workshop lecturer',
         galleryId: 'gallery',
       },
+      caption: 'Design & build',
       id: 'a980742f-2b78-40b0-9fed-247e71056797',
     },
     {
@@ -100,6 +107,7 @@ Block.defaultContent = {
         alt: 'Quantum Company at WebSummit',
         galleryId: 'gallery',
       },
+      caption: 'Design & build',
       id: 'cb6bbbcc-1980-4575-af5c-0f46e33d6d1e',
     },
     {
@@ -109,6 +117,7 @@ Block.defaultContent = {
         alt: 'UX workshop attendees',
         galleryId: 'gallery',
       },
+      caption: 'Design & build',
       id: '3e7b03a6-54fb-4d5c-8735-ddfd27f0c8fa',
     },
     {
@@ -118,6 +127,7 @@ Block.defaultContent = {
         alt: 'UX workshop lecturer',
         galleryId: 'gallery',
       },
+      caption: 'Design & build',
       id: 'd6741c92-36d7-4495-93cc-ba77ce79f2bb',
     },
     {
@@ -127,6 +137,7 @@ Block.defaultContent = {
         alt: 'Quantum team',
         galleryId: 'gallery',
       },
+      caption: 'Design & build',
       id: '529f880a-60f0-4c8f-9fc3-8c9f482051bb',
     },
   ],
@@ -175,6 +186,12 @@ Block.modifierScheme = [
     id: 'top-icon',
     type: 'hidden',
     label: 'Top icon decorator',
+    defaultValue: false,
+  },
+  {
+    id: 'caption',
+    type: 'hidden',
+    label: 'Caption after body',
     defaultValue: false,
   },
 ]
