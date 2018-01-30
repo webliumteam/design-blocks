@@ -84,14 +84,14 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.com
 Block.defaultContent = {
   events: [
     {
-      title: 'Yoga class with Jonas',
-      date: 'October 14, 2017',
+      title: 'Digital marketing workshop',
+      date: 'October 24, 2017',
       badge: 'members only',
       time: '10:30am - 1:30pm',
-      location: 'Lectorium 2',
+      location: 'The station',
       picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Illustration',
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Digital marketing workshop illustration',
       },
       cta: {
         actionConfig: {
@@ -109,13 +109,13 @@ Block.defaultContent = {
       id: 'b1de1229-0f5f-4da8-8e5f-1d875b2bdd5e',
     },
     {
-      title: 'Yoga class with Jonas',
-      date: 'October 14, 2017',
+      title: 'Blogging for beginners',
+      date: 'November 1, 2017',
       time: '10:30am - 1:30pm',
-      location: 'Lectorium 2',
+      location: 'The station',
       picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Illustration',
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Blogging for beginners illustration',
       },
       cta: {
         actionConfig: {
@@ -133,14 +133,14 @@ Block.defaultContent = {
       id: 'bc24235c-0e77-42d8-8e8e-358d683da4f5',
     },
     {
-      title: 'Yoga class with Jonas',
-      date: 'October 14, 2017',
+      title: 'How to find insight',
+      date: 'November 25, 2017',
       badge: 'members only',
       time: '10:30am - 1:30pm',
-      location: 'Lectorium 2',
+      location: 'The station',
       picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Illustration',
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'How to find insight illustration',
       },
       cta: {
         actionConfig: {
@@ -158,14 +158,14 @@ Block.defaultContent = {
       id: '2a463f21-a68f-4a30-a7a7-dfbdece81edc',
     },
     {
-      title: 'Yoga class with Jonas',
-      date: 'October 14, 2017',
+      title: 'UX workshop',
+      date: 'December 3, 2017',
       badge: 'members only',
       time: '10:30am - 1:30pm',
-      location: 'Lectorium 2',
+      location: 'The station',
       picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Illustration',
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'UX workshop illustration',
       },
       cta: {
         actionConfig: {

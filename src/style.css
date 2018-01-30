@@ -266,11 +266,11 @@
 }
 
 .article__date {
-  font-size: var(--ui-subheading-size);
-  color: var(--ui-subheading-color);
-  line-height: var(--ui-subheading-line-height);
-  font-family: var(--ui-subheading-font-family);
-  font-weight: var(--ui-subheading-font-weight);
+  font-size: calc(var(--ui-text-size) * 1.25);
+  color: var(--ui-text-color);
+  line-height: var(--ui-text-line-height);
+  font-family: var(--ui-text-font-family);
+  font-weight: var(--ui-text-font-weight);
 }
 
 .article__time {
