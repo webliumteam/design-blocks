@@ -2,10 +2,20 @@
 
 /* start here */
 .section {
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  display: flex;
-  align-items: center;
+  padding: 210px 0;
+  border-top: 70px solid var(--ui-light-accent-color);
+  border-botom: 70px solid var(--ui-light-accent-color);
+  border-left: 10px solid var(--ui-light-accent-color);
+  border-right: 10px solid var(--ui-light-accent-color);
+}
+
+.description {
+  max-width: 770px;
+  margin: auto;
+  font: calc(var(--ui-text-size) * 1.15) var(--ui-text-font-family);
+  letter-spacing: 1.2px;
+  line-height: calc(var(--ui-text-line-height ) \ 1.14);
+  color: var(--ui-light-accent-color);
 }
 
 .title {
@@ -20,4 +30,13 @@
 .button {
   text-transform: uppercase;
   font-weight: 600;
+  margin-top: 40px;
+  letter-spacing: 3.2px;
 }
+
+@media (max-width: 700px) {
+  .section {
+    padding: 25% 0;
+  }
+}
+

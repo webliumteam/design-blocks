@@ -1,5 +1,6 @@
 {
   "some-modifier": true,
   "description": true,
-  "textValue": true
+  "textValue": true,
+  "subtitle": true
 }
