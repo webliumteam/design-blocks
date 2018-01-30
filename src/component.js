@@ -13,6 +13,9 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   toggleItemOpening = index => () => {
     this.setState({opened: index === this.state.opened ? null : index})
   }
@@ -29,14 +32,7 @@ class Block extends React.Component {
         <button type="button" className={style.item__button} onClick={this.toggleItemOpening(index)}>
           <h2 className={style.item__title}>
             <Text bind={`faq[${index}].title`} />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={style.item__icon}
-              aria-hidden="true"
-              viewBox="0 0 14 14"
-            >
-              <path d="M14 8H8v6H6V8H0V6h6V0h2v6h6z" fillRule="nonzero" />
-            </svg>
+            <div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state.opened === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />
           </h2>
         </button>
         <div className={style.item__content}>
