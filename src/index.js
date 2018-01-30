@@ -86,7 +86,7 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'link',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'About us link',
     defaultValue: false,
   },
@@ -98,7 +98,7 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'socialIcons',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Social media buttons',
     defaultValue: false,
   },
