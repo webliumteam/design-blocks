@@ -14,13 +14,18 @@ class Block extends React.Component {
     return (
       <section className={css.section}>
         <h1 className={css.title}>
-        Спроектируем <span className={css.brend}>удобный дизайн</span> для вашего бизнеса по цене от <span className={css.brend}>$10</span> за квадратный метр
+          <Text bind="text1" />
+          <Text bind="text2" className={css.brand} />
+          <Text bind="text3" />
+          <Text bind="text4" className={css.brand} />
+          <Text bind="text5" />
         </h1>
         <div className={css.section__inner}>
           <header className={css.section__header}>
             <p className={css.text}>
               <span className={css.text__inner}>
-                <Text bind="telTitle" /><br />
+                <Text bind="telTitle" />
+                <br />
               </span>
               <p>
                 <Text bind="onTelephone" />
@@ -69,8 +74,12 @@ Block.options = {
 }
 
 Block.defaultContent = {
-  title: 'СПРОЕКТИРУЕМ УДОБНЫЙ ДИЗАЙН ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ $10 ЗА КВАДРАТНЫЙ МЕТР',
   background: {},
+  text1: 'СПРОЕКТИРУЕМ ',
+  text2: 'УДОБНЫЙ ДИЗАЙН ',
+  text3: 'ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ  ',
+  text4: '$10 ',
+  text5: 'ЗА КВАДРАТНЫЙ МЕТР ',
   theme: 'dark',
   icon: {
     svg:
