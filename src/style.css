@@ -10,7 +10,7 @@
 }
 
 .subtitle {
-  color: #909090;
+  color: var(--ui-subtitle-fcolor);
   line-height: 28px;
   letter-spacing: 1.2px;
   font-family: var(--ui-subtitle-font-family);
@@ -34,7 +34,7 @@
   font-weight: var(--ui-text-font-weight);
   line-height: 28px;
   letter-spacing: 1.4px;
-  color: #909090;
+  color: var(--ui-text-color);
   max-width: inherit;
   text-align: center;
 }
@@ -54,7 +54,7 @@
   font-weight: var(--ui-text-font-weight);
   line-height: 28px;
   letter-spacing: 1.4px;
-  color: #909090;
+  color: var(--ui-text-color);
 }
 
 .list__item {
