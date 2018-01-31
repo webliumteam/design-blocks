@@ -33,7 +33,9 @@ class Block extends React.Component {
           </p>
         )}
         {_.get('link')(modifier) && (
-          <Button className={style.article__link} bind={`services[${index}].cta`} />
+          <a href="#" className={style.article__link}>
+            <Text bind={`services[${index}].link`} />
+          </a>
         )}
       </article>
     )
@@ -74,21 +76,15 @@ class Block extends React.Component {
             <div className={style['btns-group']}>
               {this.getModifierValue('button-primary') && (
                 <Button
-                  className={classNames(
-                    style.button,
-                    style['button--primary'],
-                    style['button--size-md'],
-                  )}
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
                   bind="button-1"
                 />
               )}
               {this.getModifierValue('button-secondary') && (
                 <Button
-                  className={classNames(
-                    style.button,
-                    style['button--secondary'],
-                    style['button--size-md'],
-                  )}
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
                   bind="button-2"
                 />
               )}
@@ -113,19 +109,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-      },
+      link: 'Learn more',
     },
     {
       id: 'cfb2c56d-7708-4459-bdf2-6780f4ba62b9',
@@ -136,19 +120,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-      },
+      link: 'Learn more',
     },
     {
       id: 'eea21546-b56e-406b-8cba-18a5a5ec1820',
@@ -159,19 +131,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-      },
+      link: 'Learn more',
     },
     {
       id: 'aa5d3a04-43b7-4bb3-9c7a-00e1986f359e',
@@ -182,19 +142,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-      },
+      link: 'Learn more',
     },
   ],
   topIcon: {
@@ -217,6 +165,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Book a service',
+    type: 'primary',
   },
   'button-2': {
     actionConfig: {
@@ -230,6 +179,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'All services',
+    type: 'secondary',
   },
 }
 
