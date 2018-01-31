@@ -61,11 +61,7 @@ class Block extends React.Component {
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(
-                  style.button,
-                  style['button--primary'],
-                  style['button--size-md'],
-                )}
+                className={style.button}
                 bind="cta"
               />
             </div>
@@ -132,6 +128,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Main button',
+    type: 'primary',
   },
 }
 
