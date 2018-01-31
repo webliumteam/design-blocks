@@ -121,6 +121,7 @@ Block.defaultContent = {
           },
         },
         textValue: 'Learn more',
+        type: 'link',
       },
     },
     {
@@ -145,6 +146,7 @@ Block.defaultContent = {
           },
         },
         textValue: 'Learn more',
+        type: 'primary',
       },
     },
   ],
@@ -167,6 +169,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'All projects',
+    type: 'secondary',
   },
 }
 
