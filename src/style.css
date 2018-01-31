@@ -311,7 +311,9 @@
 }
 
 .article__cta {
+  width: auto;
   max-width: 50%;
+  padding: 0;
 }
 
 .article__cta:only-child {
