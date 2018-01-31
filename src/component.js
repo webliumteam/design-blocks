@@ -90,28 +90,30 @@ class Block extends React.Component {
                 />
               )}
             </article>
-            <article className={classNames(style.plan, style['plan--main'])}>
-              {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('2')}</div>) : this.planHeader('2')}
-              {this.getModifierValue('plan-description') && (
-                <Collection
-                  className={style.plan__list}
-                  TagName="ul"
-                  bind="plan-list-2"
-                  Item={this.collectionItem('2')}
-                />
-              )}
-              {this.getModifierValue('plan-button') && (
-                <Button
-                  className={classNames(
-                    style.button,
-                    style['button--primary'],
-                    style['button--size-md'],
-                    style.plan__button,
-                  )}
-                  bind="plan-cta-2"
-                />
-              )}
-            </article>
+            {this.getOptionValue('main-item') && (
+              <article className={classNames(style.plan, style['plan--main'])}>
+                {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('2')}</div>) : this.planHeader('2')}
+                {this.getModifierValue('plan-description') && (
+                  <Collection
+                    className={style.plan__list}
+                    TagName="ul"
+                    bind="plan-list-2"
+                    Item={this.collectionItem('2')}
+                  />
+                )}
+                {this.getModifierValue('plan-button') && (
+                  <Button
+                    className={classNames(
+                      style.button,
+                      style['button--primary'],
+                      style['button--size-md'],
+                      style.plan__button,
+                    )}
+                    bind="plan-cta-2"
+                  />
+                )}
+              </article>
+            )}
             <article className={style.plan}>
               {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('3')}</div>) : this.planHeader('3')}
               {this.getModifierValue('plan-description') && (

@@ -1,3 +1,4 @@
 {
-    "price-wrapper": false
+    "price-wrapper": false,
+    "main-item": true
 }
