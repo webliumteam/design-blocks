@@ -308,13 +308,13 @@
   display: flex;
   justify-content: space-between;
   margin-top: auto;
+  line-height: var(--ui-caption-line-height);
 }
 
 .article__location {
   max-width: 50%;
   font-size: var(--ui-caption-size);
   color: var(--ui-caption-color);
-  line-height: var(--ui-caption-line-height);
   font-family: var(--ui-caption-font-family);
   font-weight: var(--ui-caption-font-weight);
 }
