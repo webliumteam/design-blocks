@@ -50,7 +50,9 @@ class Block extends React.Component {
           </p>
         )}
         {this.getModifierValue('post-link') && (
-          <Button className={style.link} bind={`blog[${index}].cta`} />
+          <a className={style.link} href="#">
+            <Text bind={`blog[${index}].link`} />
+          </a>
         )}
       </article>
     )
@@ -84,11 +86,8 @@ class Block extends React.Component {
           {this.getModifierValue('block-button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(
-                  style.button,
-                  style['button--secondary'],
-                  style['button--size-md'],
-                )}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind="cta"
               />
             </div>
@@ -114,19 +113,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Read more',
-      },
+      link: 'Read more',
     },
     {
       id: '41db0c4f-46b3-4835-8e77-062de63d018a',
@@ -139,19 +126,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Read more',
-      },
+      link: 'Read more',
     },
     {
       id: 'fff4b459-6e4f-4645-901e-4c1b1aa94e51',
@@ -164,19 +139,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Read more',
-      },
+      link: 'Read more',
     },
   ],
   topIcon: {
@@ -197,6 +160,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'All blog posts',
+    type: 'secondary',
   },
 }
 
