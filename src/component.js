@@ -80,12 +80,9 @@ class Block extends React.Component {
               )}
               {this.getModifierValue('plan-button') && (
                 <Button
-                  className={classNames(
-                    style.button,
-                    style['button--primary'],
-                    style['button--size-sm'],
-                    style.plan__button,
-                  )}
+                  className={style.plan__button}
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
                   bind="plan-cta-1"
                 />
               )}
@@ -103,12 +100,9 @@ class Block extends React.Component {
                 )}
                 {this.getModifierValue('plan-button') && (
                   <Button
-                    className={classNames(
-                      style.button,
-                      style['button--primary'],
-                      style['button--size-md'],
-                      style.plan__button,
-                    )}
+                    className={style.plan__button}
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
                     bind="plan-cta-2"
                   />
                 )}
@@ -126,12 +120,9 @@ class Block extends React.Component {
               )}
               {this.getModifierValue('plan-button') && (
                 <Button
-                  className={classNames(
-                    style.button,
-                    style['button--primary'],
-                    style['button--size-sm'],
-                    style.plan__button,
-                  )}
+                  className={style.plan__button}
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
                   bind="plan-cta-3"
                 />
               )}
@@ -140,11 +131,8 @@ class Block extends React.Component {
           {this.getModifierValue('additional-btn') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(
-                  style.button,
-                  style['button--secondary'],
-                  style['button--size-md'],
-                )}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind="cta"
               />
             </div>
@@ -242,6 +230,8 @@ Block.defaultContent = {
       },
     },
     textValue: 'Main button (S)',
+    type: 'primary',
+    size: 'sm',
   },
   'plan-cta-2': {
     actionConfig: {
@@ -255,6 +245,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Main button (M)',
+    type: 'primary',
   },
   'plan-cta-3': {
     actionConfig: {
@@ -268,6 +259,8 @@ Block.defaultContent = {
       },
     },
     textValue: 'Main button (S)',
+    type: 'primary',
+    size: 'sm',
   },
   cta: {
     actionConfig: {
@@ -281,6 +274,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Additional button (M)',
+    type: 'secondary',
   },
 }
 
