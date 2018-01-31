@@ -42,7 +42,9 @@ class Block extends React.Component {
             </p>
           )}
           {_.get('project-button')(modifier) && (
-            <Button className={style.article__link} bind={`projects[${index}].cta`} />
+            <a className={style.article__link} href="#">
+              <Text bind={`projects[${index}].link`} />
+            </a>
           )}
         </div>
       </article>
@@ -80,11 +82,7 @@ class Block extends React.Component {
           {this.getModifierValue('block-button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(
-                  style.button,
-                  style['button--secondary'],
-                  style['button--size-md'],
-                )}
+                className={style.button}
                 bind="cta"
               />
             </div>
@@ -109,20 +107,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 1',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
-      },
+      link: 'Learn more',
     },
     {
       id: '9310272a-1fa2-4876-b1db-a879bbd4bc52',
@@ -134,20 +119,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 2',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'primary',
-      },
+      link: 'Learn more',
     },
   ],
   topIcon: {
