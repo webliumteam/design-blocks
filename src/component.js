@@ -9,34 +9,46 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
+  collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Button, Image}, style} = this.props
 
     return (
       <article className={classNames(style.article, className)}>
         {children}
 
-        <div className={style.article__badge}>
-          <Text bind={`events[${index}].badge`} />
-        </div>
-        <div className={style.article__info}>
-          <div className={style.article__top}>
-            <time className={style.article__date}>
-              <Text bind={`events[${index}].date`} />
-            </time>
-            <time className={style.article__time}>
-              <Text bind={`events[${index}].time`} />
-            </time>
+        {_.get('badge')(modifier) && (
+          <div className={style.article__badge}>
+            <Text bind={`events[${index}].badge`} />
           </div>
-          <h2 className={style.article__title}>
-            <Text bind={`events[${index}].title`} />
-          </h2>
+        )}
+        <div className={style.article__info}>
+          {(_.get('date')(modifier) || _.get('time')(modifier)) && (
+            <div className={style.article__top}>
+              {_.get('date')(modifier) && (
+                <time className={style.article__date}>
+                  <Text bind={`events[${index}].date`} />
+                </time>
+              )}
+              {_.get('time')(modifier) && (
+                <time className={style.article__time}>
+                  <Text bind={`events[${index}].time`} />
+                </time>
+              )}
+            </div>
+          )}
+          {_.get('heading')(modifier) && (
+            <h2 className={style.article__title}>
+              <Text bind={`events[${index}].title`} />
+            </h2>
+          )}
           <div className={style.article__bottom}>
-            <p className={style.article__location}>
-              <Text bind={`events[${index}].location`} />
-            </p>
+            {_.get('location')(modifier) && (
+              <p className={style.article__location}>
+                <Text bind={`events[${index}].location`} />
+              </p>
+            )}
             <Button
-              className={classNames(style.article__cta, style.link)}
+              className={classNames(style.article__cta)}
               bind={`events[${index}].cta`}
             />
           </div>
@@ -51,7 +63,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
 
     return (
       <section className={style.section}>
@@ -68,6 +80,9 @@ class Block extends React.Component {
             className={style['articles-wrapper']}
             bind="events"
             Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
           />
           <div className={style['btns-group']}>
             <Button
@@ -114,6 +129,7 @@ Block.defaultContent = {
     {
       title: 'Blogging for beginners',
       date: 'November 1, 2017',
+      badge: 'members only',
       time: '10:30am - 1:30pm',
       location: 'The station',
       picture: {
@@ -212,6 +228,36 @@ Block.modifierScheme = [
     id: 'subtitle',
     type: 'checkbox',
     label: 'Event\'s description',
+    defaultValue: false,
+  },
+  {
+    id: 'badge',
+    type: 'checkbox',
+    label: 'Event\'s type',
+    defaultValue: true,
+  },
+  {
+    id: 'location',
+    type: 'checkbox',
+    label: 'Event\'s location',
+    defaultValue: true,
+  },
+  {
+    id: 'date',
+    type: 'checkbox',
+    label: 'Date of event',
+    defaultValue: true,
+  },
+  {
+    id: 'time',
+    type: 'checkbox',
+    label: 'Event\'s time',
+    defaultValue: true,
+  },
+  {
+    id: 'heading',
+    type: 'checkbox',
+    label: 'Event\'s name',
     defaultValue: true,
   },
 ]
