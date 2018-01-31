@@ -52,7 +52,9 @@ class Block extends React.Component {
             />
             {this.getModifierValue('button') && (
               <Button
-                className={classNames(css.header__button, css.button, css['button--primary'], css['button--size-sm'])}
+                className={css.header__button}
+                buttonClassName={css.button}
+                linkClassName={css.link}
                 bind="cta"
               />
             )}
@@ -172,6 +174,8 @@ Block.defaultContent = {
       },
     },
     textValue: 'Request a quote',
+    type: 'primary',
+    size: 'sm',
   },
 }
 
