@@ -1,3 +1,7 @@
 {
-  "some-modifier": true
+  "some-modifier": true,
+  "article-picture": false,
+  "subtitle": true,
+  "socialIcons": true,
+  "link": true
 }

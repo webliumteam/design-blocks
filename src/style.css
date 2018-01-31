@@ -1,3 +1,109 @@
 @import "wireframe-zapdos-about/src/style.css";
 
 /* start here */
+.section {
+  border: 10px solid #fff;
+}
+
+.article {
+  &__title {
+    letter-spacing: 3.6px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: calc(var(--ui-subtitle-size) * 1.2);
+    font-weight: 600;
+    letter-spacing: 4.2px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    letter-spacing: 1.4px;
+  }
+}
+
+.social {
+  &-title {
+    display: none;
+  }
+
+  &_icons {
+    margin-right: 20px;
+  }
+}
+
+.link {
+  order: 1;
+  margin-left: 55px;
+  color: #fff;
+
+  > a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  > a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  > a:hover,
+  > a:focus,
+  > a:active {
+    color: red;
+
+    &::before {
+      color: red;
+    }
+  }
+}
+
+.button {
+  order: 0;
+  border-radius: 0;
+  padding: 12px 45px;
+}
+
+.link,
+.button {
+  text-transform: uppercase;
+  font-size: calc(var(--ui-btn-md-size) * 0.79);
+  font-weight: 600;
+  letter-spacing: 3.2px;
+}
+
+@media (min-width: 992px) {
+  .article {
+    &__content {
+      padding-left: 10px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      width: 770px;
+      margin-bottom: 27px;
+    }
+
+    &__socials {
+      margin-left: -2px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .section {
+    padding: 232px 0 190px;
+  }
+}
