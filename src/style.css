@@ -286,6 +286,7 @@
 
 .item__top-element {
   width: 100px;
+  height: 100px;
   margin: 0 auto 23px;
   color: var(--ui-icon-color);
 
