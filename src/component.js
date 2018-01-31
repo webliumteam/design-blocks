@@ -51,10 +51,7 @@ class Block extends React.Component {
       this.getModifierValue('social')
     ) && this.getModifierValue('map')
 
-    const title =
-      <h1 className={style.title}>
-        <Text bind="title" />
-      </h1>
+    const title = <h1 className={style.title}><Text bind="title" /></h1>
 
     return (
       <section className={classNames(style.section, {
@@ -99,7 +96,9 @@ class Block extends React.Component {
                         <Text bind="phone-title" />
                       </h3>
                       <p className={style.contacts__desc}>
-                        <Button bind="phone-link" />
+                        <a href="#">
+                          <Text bind="phone-link" />
+                        </a>
                       </p>
                     </li>
                   )}
@@ -109,7 +108,9 @@ class Block extends React.Component {
                         <Text bind="email-title" />
                       </h3>
                       <p className={style.contacts__desc}>
-                        <Button bind="email-link" />
+                        <a href="#">
+                          <Text bind="email-link" />
+                        </a>
                       </p>
                     </li>
                   )}
@@ -140,28 +141,8 @@ Block.defaultContent = {
   'phone-title': 'Phone',
   'email-title': 'E-mail',
   'address-content': 'Head office in London - 36 Regent St.',
-  'phone-link': {
-    actionConfig: {
-      action: 'external',
-      actions: {
-        external: {
-          url: 'tel:+12345678900',
-        },
-      },
-    },
-    textValue: '+1 (234) 567 89 00',
-  },
-  'email-link': {
-    actionConfig: {
-      action: 'external',
-      actions: {
-        external: {
-          url: 'mailto:mysite@weblium.com',
-        },
-      },
-    },
-    textValue: 'mysite@weblium.com',
-  },
+  'phone-link': '+1 (234) 567 89 00',
+  'email-link': 'mysite@weblium.com',
   map: {
     preset: 'silver',
     height: '100%',
