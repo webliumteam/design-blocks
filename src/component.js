@@ -87,7 +87,7 @@ Block.defaultContent = {
     id: '12345',
   },
   telTitle: 'бесплатная консультация',
-  onTelephone: 'по телефону: ',
+  onTelephone: 'по телефону:nbsp;',
   phone: '+38 067 325 81 46',
   orForme: 'или ЗАПОЛНИТЕ ФОРМУ',
   button: {
