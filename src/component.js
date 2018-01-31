@@ -61,7 +61,8 @@ class Block extends React.Component {
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
-                className={style.button}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind="cta"
               />
             </div>
