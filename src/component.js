@@ -17,10 +17,11 @@ class Block extends React.Component {
     return (
       <li className={classNames(style.list__item, className)}>
         {children}
-        {this.getModifierValue('icon') &&
-        <div className={classNames(style['list__item-icon'], {[style['list__item-icon--counter-none']]: collectionIcon})}>
+        {this.getModifierValue('icon') && (
+          <div className={classNames(style['list__item-icon'], {[style['list__item-icon--counter-none']]: collectionIcon})}>
             {collectionIcon && <Icon bind={`careers[${index}].icon`} />}
-        </div>}
+          </div>
+        )}
         <span className={style['list__item-text']}>
           <Text bind={`careers[${index}].title`} />
         </span>
@@ -36,9 +37,11 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
+          {!this.getOptionValue('title-in-content') && (
+            <h1 className={style.title}>
+              <Text bind="title" />
+            </h1>
+          )}
           {this.getModifierValue('subtitle') && (
             <p className={style.subtitle}>
               <Text bind="subtitle" />
@@ -53,15 +56,22 @@ class Block extends React.Component {
                   bind="picture"
                   size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
                 />
+                {this.getOptionValue('image-decorator-status') && (
+                  <div className={style.media__decorator} dangerouslySetInnerHTML={{__html: this.getOptionValue('image-decorator-content')}} />
+                )}
               </div>
             )}
             <div className={style.content__main}>
+              {this.getOptionValue('title-in-content') && (
+                <h1 className={style.title}>
+                  <Text bind="title" />
+                </h1>
+              )}
               {this.getModifierValue('body') && (
                 <p className={style.content__text}>
                   <Text bind="text" />
                 </p>
               )}
-
               <Collection
                 className={style.list}
                 TagName="ul"
@@ -71,9 +81,17 @@ class Block extends React.Component {
                   showIcon: this.getModifierValue('icon'),
                 }}
               />
+              {this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
+                <div className={style['btns-group']}>
+                  <Button
+                    className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+                    bind="button-1"
+                  />
+                </div>
+              )}
             </div>
           </div>
-          {this.getModifierValue('button') && (
+          {!this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
                 className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
