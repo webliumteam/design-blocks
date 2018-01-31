@@ -1,3 +1,12 @@
 {
-  "title": "Design title"
+  "title": "About the company",
+  "subtitle": "Our Company is the world’s leading manufacturer. We are also a leading financial services provider.",
+  "text": "We are in it for the long haul - for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.",
+  "picture": {
+    "src": "company-foto.png",
+    "alt": "Picture about the company"
+  },
+  "button": {
+    "textValue": "Learn more"
+  }
 }

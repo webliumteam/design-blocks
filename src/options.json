@@ -1,3 +1,5 @@
 {
-  "showSubtitle": true
+  "showSubtitle": true,
+  "title-in-top": true,
+  "subtitle": true
 }
