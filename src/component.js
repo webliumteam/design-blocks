@@ -90,7 +90,7 @@ class Block extends React.Component {
                 />
               )}
             </article>
-            {!this.getOptionValue('remove-main-item') && (
+            {this.getOptionValue('main-item') && (
               <article className={classNames(style.plan, style['plan--main'])}>
                 {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('2')}</div>) : this.planHeader('2')}
                 {this.getModifierValue('plan-description') && (
