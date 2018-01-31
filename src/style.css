@@ -157,6 +157,10 @@
   font-weight: var(--ui-subtitle-font-weight);
   line-height: var(--ui-subtitle-line-height);
   color: var(--ui-subtitle-color);
+  
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 768px) {
