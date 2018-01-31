@@ -295,3 +295,9 @@
 .link:focus {
   color: var(--ui-link-hover-color);
 }
+
+.top-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
