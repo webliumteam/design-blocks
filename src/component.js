@@ -59,9 +59,11 @@ class Block extends React.Component {
           <h1 className={style.title}>
             <Text bind="title" />
           </h1>
-          <p className={style.subtitle}>
-            <Text bind="subtitle" />
-          </p>
+          {this.getModifierValue('subtitle') && (
+            <p className={style.subtitle}>
+              <Text bind="subtitle" />
+            </p>
+          )}
           <Collection
             className={style['articles-wrapper']}
             bind="events"
@@ -207,39 +209,9 @@ Block.defaultContent = {
 
 Block.modifierScheme = [
   {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
     id: 'subtitle',
     type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
+    label: 'Event\'s description',
     defaultValue: true,
   },
 ]
