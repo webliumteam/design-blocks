@@ -26,12 +26,12 @@
 
   &__subtitle {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     letter-spacing: 0.9px;
   }
 
   &__text {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     letter-spacing: 0.8px;
   }
 
@@ -46,6 +46,14 @@
   &__picture img {
     object-fit: contain;
   }
+
+  &__socials {
+    margin-left: -20px;
+  }
+}
+
+.article .article__subtitle ~ .btns-group {
+  margin-top: 0;
 }
 
 .social {

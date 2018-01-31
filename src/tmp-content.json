@@ -45,7 +45,7 @@
       "border": "circle",
       "innerFill": true,
       "preset": "preset001",
-      "marginRight": 20,
+      "offset": 20,
       "color": "var(--ui-link-color)",
       "sizes": [10, 20, 30, 32, 40],
       "size": "32px"
