@@ -1,3 +1,61 @@
 @import "wireframe-zapdos-about/src/style.css";
 
 /* start here */
+
+.article {
+  &__title {
+    line-height: var(--ui-block-title-line-height)*0.97;
+    letter-spacing: 2px;
+    font-weight: var(--ui-subtitle-font-weight);
+
+    > span:first-child {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: inline-block;
+        width: 170px;
+        height: 2px;
+        background-color: var(--ui-brand-color);
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 0.9px;
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    letter-spacing: 0.8px;
+  }
+
+  &__picture-wrapper {
+    border-radius: 11px;
+  }
+
+  &__picture {
+    background-color: var(--ui-light-shade-color);
+  }
+
+  &__picture img {
+    object-fit: contain;
+  }
+}
+
+.social {
+  &-title {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .article {
+    min-height: 720px;
+  }
+}
