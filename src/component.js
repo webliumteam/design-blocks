@@ -75,10 +75,10 @@ Block.options = {
 
 Block.defaultContent = {
   background: {},
-  text1: 'СПРОЕКТИРУЕМ ',
-  text2: 'УДОБНЫЙ ДИЗАЙН ',
-  text3: 'ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ  ',
-  text4: '$10 ',
+  text1: 'СПРОЕКТИРУЕМ&nbsp;',
+  text2: 'УДОБНЫЙ ДИЗАЙН&nbsp;',
+  text3: 'ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ&nbsp;',
+  text4: '$10&nbsp;',
   text5: 'ЗА КВАДРАТНЫЙ МЕТР ',
   theme: 'dark',
   icon: {
