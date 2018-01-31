@@ -75,7 +75,7 @@ Block.options = {
 
 Block.defaultContent = {
   background: {},
-  text1: 'СПРОЕКТИРУЕМ&nbsp;',
+  text1: 'СПРОЕКТИРУЕМgit&nbsp;',
   text2: 'УДОБНЫЙ ДИЗАЙН&nbsp;',
   text3: 'ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ&nbsp;',
   text4: '$10&nbsp;',
@@ -87,7 +87,7 @@ Block.defaultContent = {
     id: '12345',
   },
   telTitle: 'бесплатная консультация',
-  onTelephone: 'по телефону:nbsp;',
+  onTelephone: 'по телефону:&nbsp;',
   phone: '+38 067 325 81 46',
   orForme: 'или ЗАПОЛНИТЕ ФОРМУ',
   button: {
