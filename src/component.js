@@ -38,7 +38,8 @@ class Block extends React.Component {
             this.getContent()
           }
           <Button
-            className={classNames(style.button, style['button--primary'], style['button--size-lg'])}
+            buttonClassName={style.button}
+            linkClassName={style.link}
             bind="cta"
           />
           {this.getModifierValue('picture') && (
@@ -74,6 +75,8 @@ Block.defaultContent = {
       },
     },
     textValue: 'Request a quote',
+    type: 'primary',
+    size: 'lg',
   },
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
