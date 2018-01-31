@@ -1,3 +1,110 @@
 @import "wireframe-zapdos-faq/src/style.css";
 
 /* start here */
+.title {
+  position: relative;
+  margin-bottom: 14px;
+  padding-bottom: 18px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--ui-brand-color);
+  }
+}
+
+.subtitle {
+  max-width: 570px;
+  margin: 14px auto 0;
+  padding-bottom: 4px;
+  font-family: var(--ui-text-font-family);
+  font-weight: 400;
+}
+
+.item {
+  width: 100%;
+  max-width: 970px;
+  margin: 22px auto 0;
+
+  /* need ui-kit: border-color */
+  &__title {
+    position: relative;
+    padding: 24px 46px 24px 0;
+    font-family: var(--ui-text-font-family);
+    font-weight: 400;
+    border-bottom: 2px solid #ccc;
+    transition: color 0.2s ease-in, border-color 0.2s ease-in;
+  }
+
+  /* need ui-kit: color */
+  &__icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(-45deg);
+    transform-origin: 50% 50%;
+    fill: #ccc;
+    transition: transform .2s ease-in, fill 0.2s ease-in;
+  }
+
+  &__button {
+    padding: 4px 0 0;
+    outline: none;
+  }
+
+  &__content {
+    padding: 14px 0 0 20px;
+    font-size: calc(var(--ui-text-size) * 1.125);
+    line-height: calc(var(--ui-text-line-height) * 1.185);
+
+    @media (min-width: 768px) {
+      padding-left: 60px;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+
+    .item__title {
+      color: var(--ui-brand-color);
+      border-color: var(--ui-brand-color);
+    }
+
+    .item__icon {
+      fill: var(--ui-brand-color);
+    }
+  }
+
+  &--active {
+    .item__content {
+      display: block;
+      padding-bottom: 16px;
+    }
+
+    .item__icon {
+      fill: var(--ui-brand-color);
+    }
+
+    .item__title {
+      color: var(--ui-brand-color);
+      border-color: var(--ui-brand-color);
+
+      .item__icon {
+        transform: translateY(-50%) rotate(-90deg);
+      }
+    }
+  }
+}
+
+.btns-group {
+  margin-top: 54px;
+}
