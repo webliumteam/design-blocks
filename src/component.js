@@ -36,13 +36,13 @@ class Block extends React.Component {
             <div className={css['btns-group']}>
               {this.getModifierValue('primary-btn') && (
                 <Button
-                  className={classNames(css.button, css['button--primary'], css['button--size-lg'])}
+                  className={css.button}
                   bind="cta-1"
                 />
               )}
               {this.getModifierValue('secondary-btn') && (
                 <Button
-                  className={classNames(css.button, css['button--secondary'], css['button--size-lg'])}
+                  className={css.button}
                   bind="cta-2"
                 />
               )}
@@ -71,6 +71,8 @@ Block.defaultContent = {
       },
     },
     textValue: 'Main button (L)',
+    type: 'primary',
+    size: 'lg',
   },
   'cta-2': {
     actionConfig: {
@@ -84,6 +86,8 @@ Block.defaultContent = {
       },
     },
     textValue: 'Additional button (L)',
+    type: 'secondary',
+    size: 'lg',
   },
   topCaption: 'welcome',
 }
@@ -133,7 +137,7 @@ Block.modifierScheme = [
   {
     id: 'caption-decorator',
     type: 'hidden',
-    name: 'top decorator',
+    label: 'Pretitle',
     defaultValue: false,
   },
 ]
