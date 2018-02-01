@@ -1,3 +1,30 @@
 {
-  "title": "Design title"
+
+  "theme": "dark",
+
+  "title": "Want To Work With Us?",
+
+  "description":"Join 13000 clients who already worked with us. Request a quote to get best solutions in your area.",
+
+  "cta": {
+
+    "textValue":"Get it now"
+
+  },
+
+  "background": {
+
+    "type": "image",
+
+    "position": {
+
+      "type": "cover",
+
+      "cover": "50% 50%"
+    },
+
+    "src": "cta_bg.jpg"
+
+  }
+
 }
