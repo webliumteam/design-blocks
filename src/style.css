@@ -164,7 +164,7 @@
 }
 
 .social-title {
-  margin-right: 20px;
+  margin-right: 10px;
   flex-shrink: 0;
 }
 
@@ -182,6 +182,10 @@
 
 .article .article__text + .btns-group {
   margin-top: 0;
+}
+
+.socials {
+  margin-bottom: -15px;
 }
 
 .socials__item {
