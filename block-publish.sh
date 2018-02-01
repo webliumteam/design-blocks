@@ -1,12 +1,13 @@
 #!/bin/bash
 LOCALHOST=http://localhost:3000
-while getopts u:h:b:e:n: option
+while getopts u:h:b:e:n:t: option
 do
  case "${option}"
  in
  u) USERNAME=${OPTARG};;
  e) ENV=${OPTARG};;
  n) NAMESPACE=${OPTARG};;
+ t) TYPE=${OPTARG};;
  b) IFS=','
     array=(${OPTARG});;
  h) HOST=$OPTARG;;
@@ -19,7 +20,7 @@ done
 
 wm-cli login -u $USERNAME -h $HOST && (
   for block in "${array[@]}"; do
-    BRANCH="w/${NAMESPACE}/${block}/${ENV}"
+    BRANCH="${TYPE}/${NAMESPACE}/${block}/${ENV}"
     git checkout $BRANCH && (
       git pull origin $BRANCH
       REPLACED=${HOST//:/.}
@@ -31,8 +32,13 @@ wm-cli login -u $USERNAME -h $HOST && (
         CATEGORY="$(jq '.category' ./package.json)"
         NAME="$(jq '.name' ./package.json)"
         ENTRYPOINT="./src/index.js"
+        WIREFRAME=true
 
-        wm-cli block init --name=${NAME//\"} --categories=${CATEGORY//\"} --entrypoint=./${ENTRYPOINT//\"} --wireframe
+        if [ "$TYPE" != "w" ];then
+          WIREFRAME=false
+        fi
+
+        wm-cli block init --name=${NAME//\"} --categories=${CATEGORY//\"} --entrypoint=./${ENTRYPOINT//\"} --wireframe=$WIREFRAME
         if [ $HOST != $LOCALHOST ];then
           git add -f $CONFIG_FILE
           git commit -m "init block, add ${CONFIG_FILE} file"
