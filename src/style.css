@@ -10,14 +10,14 @@
   text-transform: uppercase;
   font-size: var(--ui-block-title-size);
   letter-spacing: 3px;
-  font-weight: var(--ui-heading-large-font-weight);
+  font-weight: var(--ui-heading-lg-font-weight);
   position: relative;
   width: auto;
   display: inline-block;
 }
 
 .subtitle {
-  font-size: calc(var(--ui-heading-large-size) / 2);
+  font-size: calc(var(--ui-heading-lg-size) / 2);
   font-family: var(--ui-sub-heading-font-family);
   line-height: var(--ui-sub-heading-line-height);
 }
@@ -29,6 +29,10 @@
   .plan__title {
     font-weight: var(--ui-hero-title-font-weight);
     font-family: var(--ui-heading-font-family);
+  }
+
+  .plan__button {
+    margin-top: 0;
   }
 }
 
@@ -56,7 +60,7 @@
     &-count {
       font-weight: var(--ui-hero-title-font-weight);
       font-family: var(--ui-heading-font-family);
-      font-size: var(--ui-heading-large-size);
+      font-size: var(--ui-heading-lg-size);
       margin-bottom: 7px;
     }
   }
