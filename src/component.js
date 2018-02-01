@@ -42,6 +42,8 @@ class Block extends React.Component {
             {_.get('link')(modifier) && (
               <Button
                 className={classNames(style.article__cta)}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind={`events[${index}].cta`}
               />
             )}
@@ -80,7 +82,8 @@ class Block extends React.Component {
           />
           <div className={style['btns-group']}>
             <Button
-              className={classNames(style.button, style['button--secondary'], style['button--size-md'])}
+              buttonClassName={style.button}
+              linkClassName={style.link}
               bind="cta"
             />
           </div>
@@ -213,7 +216,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Additional button (M)',
+    textValue: 'Learn more',
+    type: 'secondary',
   },
 }
 
