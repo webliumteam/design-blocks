@@ -23,6 +23,8 @@ wm-cli login -u $USERNAME -h $HOST && (
     BRANCH="${TYPE}/${NAMESPACE}/${block}/${ENV}"
     git checkout $BRANCH && (
       git pull origin $BRANCH
+      npm i
+      git reset --hard "origin/${BRANCH}"
       REPLACED=${HOST//:/.}
       CONFIG_FILE="block.${REPLACED//\/\//}"
 
