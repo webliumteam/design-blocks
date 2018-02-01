@@ -36,13 +36,13 @@ class Block extends React.Component {
             <div className={css['btns-group']}>
               {this.getModifierValue('primary-btn') && (
                 <Button
-                  className={classNames(css.button, css['button--primary'], css['button--size-lg'])}
+                  className={css.button}
                   bind="cta-1"
                 />
               )}
               {this.getModifierValue('secondary-btn') && (
                 <Button
-                  className={classNames(css.button, css['button--secondary'], css['button--size-lg'])}
+                  className={css.button}
                   bind="cta-2"
                 />
               )}
@@ -57,6 +57,10 @@ class Block extends React.Component {
 Block.components = _.pick(['Text', 'Button'])($editor.components)
 
 Block.defaultContent = {
+  background: {
+    type: 'color',
+    color: '#d8d8d8',
+  },
   title: 'Quantum Company',
   subtitle: 'We can execute even the most unpredictable ideas! ',
   'cta-1': {
@@ -70,7 +74,9 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Main button (L)',
+    textValue: 'Request a quote',
+    type: 'primary',
+    size: 'lg',
   },
   'cta-2': {
     actionConfig: {
@@ -83,7 +89,9 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Additional button (L)',
+    textValue: 'Learn more',
+    type: 'secondary',
+    size: 'lg',
   },
   topCaption: 'welcome',
 }
@@ -98,13 +106,13 @@ Block.modifierScheme = [
   {
     id: 'primary-btn',
     type: 'checkbox',
-    label: 'Primary button',
+    label: 'Button',
     defaultValue: true,
   },
   {
     id: 'secondary-btn',
     type: 'checkbox',
-    label: 'Secondary button',
+    label: 'Additional button',
     defaultValue: true,
   },
   {
@@ -133,7 +141,7 @@ Block.modifierScheme = [
   {
     id: 'caption-decorator',
     type: 'hidden',
-    name: 'top decorator',
+    label: 'Pretitle',
     defaultValue: false,
   },
 ]
