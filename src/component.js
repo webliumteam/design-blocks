@@ -13,7 +13,7 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Logo, Text, Map, SocialIcons, Button, Icon}, style} = this.props
+    const {components: {Logo, Text, Map, SocialIcons, Icon}, style} = this.props
 
     const textWithSocials = (
       !this.getModifierValue('logo') &&
@@ -51,10 +51,7 @@ class Block extends React.Component {
       this.getModifierValue('social')
     ) && this.getModifierValue('map')
 
-    const title =
-      <h1 className={style.title}>
-        <Text bind="title" />
-      </h1>
+    const title = <h1 className={style.title}><Text bind="title" /></h1>
 
     return (
       <section className={classNames(style.section, {
@@ -99,7 +96,7 @@ class Block extends React.Component {
                         <Text bind="phone-title" />
                       </h3>
                       <p className={style.contacts__desc}>
-                        <Button bind="phone-link" />
+                        <Text bind="phone-link" />
                       </p>
                     </li>
                   )}
@@ -109,7 +106,7 @@ class Block extends React.Component {
                         <Text bind="email-title" />
                       </h3>
                       <p className={style.contacts__desc}>
-                        <Button bind="email-link" />
+                        <Text bind="email-link" />
                       </p>
                     </li>
                   )}
@@ -126,7 +123,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons', 'Button', 'Icon'])($editor.components)
+Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   title: 'Contacts',
@@ -140,28 +137,8 @@ Block.defaultContent = {
   'phone-title': 'Phone',
   'email-title': 'E-mail',
   'address-content': 'Head office in London - 36 Regent St.',
-  'phone-link': {
-    actionConfig: {
-      action: 'external',
-      actions: {
-        external: {
-          url: 'tel:+12345678900',
-        },
-      },
-    },
-    textValue: '+1 (234) 567 89 00',
-  },
-  'email-link': {
-    actionConfig: {
-      action: 'external',
-      actions: {
-        external: {
-          url: 'mailto:mysite@weblium.com',
-        },
-      },
-    },
-    textValue: 'mysite@weblium.com',
-  },
+  'phone-link': '<a href="tel:+1 (234) 567 89 00">+1 (234) 567 89 00</a>',
+  'email-link': '<a href="mailto:mysite@weblium.com">mysite@weblium.com</a>',
   map: {
     preset: 'silver',
     height: '100%',
@@ -209,8 +186,8 @@ Block.defaultContent = {
       border: 'circle',
       innerFill: true,
       preset: 'preset001',
-      marginRight: 15,
-      color: '#9B9B9B',
+      offset: 15,
+      color: '#9b9b9b',
       sizes: [10, 20, 30, 40],
       size: '30px',
     },
