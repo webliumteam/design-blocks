@@ -46,13 +46,13 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'heading',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Title',
     defaultValue: false,
   },
   {
     id: 'subheading',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Subtitle',
     defaultValue: false,
   },
