@@ -169,7 +169,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'All projects',
+    textValue: 'Learn more',
     type: 'secondary',
   },
 }
@@ -190,7 +190,7 @@ Block.modifierScheme = [
   {
     id: 'block-button',
     type: 'checkbox',
-    label: 'Block button',
+    label: 'Button',
     defaultValue: true,
   },
   {
