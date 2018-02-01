@@ -69,18 +69,18 @@ class Block extends React.Component {
           />
           {(this.getModifierValue('button-secondary') || this.getModifierValue('button-primary')) && (
             <div className={style['btns-group']}>
-              {this.getModifierValue('button-secondary') && (
-                <Button
-                  buttonClassName={style.button}
-                  linkClassName={style.link}
-                  bind="button-1"
-                />
-              )}
               {this.getModifierValue('button-primary') && (
                 <Button
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="button-2"
+                />
+              )}
+              {this.getModifierValue('button-secondary') && (
+                <Button
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind="button-1"
                 />
               )}
             </div>
@@ -155,7 +155,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Medium button',
+    textValue: 'Learn more',
     type: 'secondary',
   },
   'button-2': {
@@ -169,7 +169,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Medium button',
+    textValue: 'Request a quote',
     type: 'primary',
   },
   topIcon: {
@@ -210,15 +210,15 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'button-secondary',
+    id: 'button-primary',
     type: 'checkbox',
-    label: 'Secondary Button',
+    label: 'Button',
     defaultValue: false,
   },
   {
-    id: 'button-primary',
+    id: 'button-secondary',
     type: 'checkbox',
-    label: 'Primary Button',
+    label: 'Additional button',
     defaultValue: false,
   },
   {
