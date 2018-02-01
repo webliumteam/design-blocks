@@ -38,7 +38,8 @@ class Block extends React.Component {
             this.getContent()
           }
           <Button
-            className={classNames(style.button, style['button--primary'], style['button--size-lg'])}
+            buttonClassName={style.button}
+            linkClassName={style.link}
             bind="cta"
           />
           {this.getModifierValue('picture') && (
@@ -61,7 +62,7 @@ Block.components = _.pick(['Text', 'Button', 'Image'])($editor.components)
 Block.defaultContent = {
   title: 'Want to work with us?',
   description:
-    'Join 13000 clients who already worked with us. Request a quote to get best solutions in your area.',
+    'Get a full-scale analysis of your business and recommended solutions to increase your profits.',
   cta: {
     actionConfig: {
       action: 'link',
@@ -74,6 +75,8 @@ Block.defaultContent = {
       },
     },
     textValue: 'Request a quote',
+    type: 'primary',
+    size: 'lg',
   },
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
