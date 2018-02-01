@@ -50,9 +50,11 @@ class Block extends React.Component {
           </p>
         )}
         {this.getModifierValue('post-link') && (
-          <a className={style.link} href="#">
-            <Text bind={`blog[${index}].link`} />
-          </a>
+          <Button
+            buttonClassName={style.button}
+            linkClassName={style.link}
+            bind={`blog[${index}].link`}
+          />
         )}
       </article>
     )
@@ -113,7 +115,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      link: 'Read more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
     {
       id: '41db0c4f-46b3-4835-8e77-062de63d018a',
@@ -126,7 +141,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      link: 'Read more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
     {
       id: 'fff4b459-6e4f-4645-901e-4c1b1aa94e51',
@@ -139,7 +167,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      link: 'Read more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
   ],
   topIcon: {
