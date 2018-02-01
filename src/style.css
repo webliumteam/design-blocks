@@ -46,14 +46,10 @@
   &__picture img {
     object-fit: contain;
   }
-
-  &__socials {
-    margin-left: -20px;
-  }
 }
 
 .article .article__subtitle ~ .btns-group {
-  margin-top: 0;
+  margin-top: 20px;
 }
 
 .social {
