@@ -69,24 +69,18 @@ class Block extends React.Component {
           />
           {(this.getModifierValue('button-secondary') || this.getModifierValue('button-primary')) && (
             <div className={style['btns-group']}>
-              {this.getModifierValue('button-secondary') && (
-                <Button
-                  className={classNames(
-                    style.button,
-                    style['button--secondary'],
-                    style['button--size-md'],
-                  )}
-                  bind="button-1"
-                />
-              )}
               {this.getModifierValue('button-primary') && (
                 <Button
-                  className={classNames(
-                    style.button,
-                    style['button--primary'],
-                    style['button--size-md'],
-                  )}
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
                   bind="button-2"
+                />
+              )}
+              {this.getModifierValue('button-secondary') && (
+                <Button
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind="button-1"
                 />
               )}
             </div>
@@ -161,7 +155,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Medium button',
+    textValue: 'Learn more',
+    type: 'secondary',
   },
   'button-2': {
     actionConfig: {
@@ -174,7 +169,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Medium button',
+    textValue: 'Request a quote',
+    type: 'primary',
   },
   topIcon: {
     svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
@@ -214,15 +210,15 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'button-secondary',
+    id: 'button-primary',
     type: 'checkbox',
-    label: 'Secondary Button',
+    label: 'Button',
     defaultValue: false,
   },
   {
-    id: 'button-primary',
+    id: 'button-secondary',
     type: 'checkbox',
-    label: 'Primary Button',
+    label: 'Additional button',
     defaultValue: false,
   },
   {
