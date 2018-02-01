@@ -34,15 +34,15 @@ class Block extends React.Component {
             </p>
           )}
           {_.get('member-link')(modifier) && (
-            <a href="#" className={style.link}>
-              <Text bind={`team[${index}].more`} />
-            </a>
+            <Button
+              buttonClassName={style.button}
+              linkClassName={style.link}
+              bind={`team[${index}].more`}
+            />
           )}
           {_.get('member-email')(modifier) && (
             <div className={style['item__email-wrapper']}>
-              <a href="#" className={style.item__email}>
-                <Text bind={`team[${index}].email`} />
-              </a>
+              <Text className={style.item__email} bind={`team[${index}].email`} />
             </div>
           )}
           {_.get('member-social')(modifier) && (
@@ -107,8 +107,21 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Andrew Shimmer photo',
       },
-      more: 'Learn more',
-      email: 'shimmer@gmail.com',
+      more: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
+      email: '<a href="mailto:shimmer@gmail.com">shimmer@gmail.com</a>',
       socialIcons: {
         networks: [
           {
@@ -149,8 +162,21 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Ann Maisner photo',
       },
-      more: 'Learn more',
-      email: 'maisner@gmail.com',
+      more: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
+      email: '<a href="mailto:maisner@gmail.com">maisner@gmail.com</a>',
       socialIcons: {
         networks: [
           {
@@ -191,8 +217,21 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Tomas Abbar photo',
       },
-      more: 'Learn more',
-      email: 'abbar@gmail.com',
+      more: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
+      email: '<a href="mailto:abbar@gmail.com">abbar@gmail.com</a>',
       socialIcons: {
         networks: [
           {
