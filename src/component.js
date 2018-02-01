@@ -61,11 +61,8 @@ class Block extends React.Component {
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(
-                  style.button,
-                  style['button--primary'],
-                  style['button--size-md'],
-                )}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind="cta"
               />
             </div>
@@ -82,7 +79,7 @@ Block.defaultContent = {
   awards: [
     {
       id: '8130928a-e7c6-4e26-a3ca-a820fa36380e',
-      title: "America's Most Admired Corporations",
+      title: 'R&D Leader in Tech (2017)',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Award illustration photo',
@@ -90,7 +87,7 @@ Block.defaultContent = {
     },
     {
       id: '057c27bf-4977-4b28-bf35-f4a6db60d5aa',
-      title: '100 Best Companies',
+      title: 'Most Innovative B2B Solutions (2016)',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Award illustration photo',
@@ -98,7 +95,7 @@ Block.defaultContent = {
     },
     {
       id: 'c8e93041-896b-4b78-b8d0-37e21a79070f',
-      title: 'Best Places to Work for LGBT Equality',
+      title: 'Best Customer-Focused Approach on the World Conference (2014)',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Award illustration photo',
@@ -106,7 +103,7 @@ Block.defaultContent = {
     },
     {
       id: '3ea9fdda-c0e6-418e-9bfe-7bf1b06a534d',
-      title: '2017 Employer Support Freedom Award',
+      title: 'Leader of Innovation (2012)',
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Award illustration photo',
@@ -119,7 +116,7 @@ Block.defaultContent = {
   },
   title: 'Awards',
   subtitle:
-    'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain',
+    'The excellence of our services has been proved by the following awards:',
   cta: {
     actionConfig: {
       action: 'link',
@@ -131,7 +128,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Main button',
+    textValue: 'Learn more',
+    type: 'primary',
   },
 }
 
