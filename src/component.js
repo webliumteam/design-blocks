@@ -33,7 +33,12 @@ class Block extends React.Component {
           </p>
         )}
         {_.get('link')(modifier) && (
-          <Button className={style.article__link} bind={`services[${index}].cta`} />
+          <Button
+            className={style.article__link}
+            buttonClassName={style.button}
+            linkClassName={style.link}
+            bind={`services[${index}].link`}
+          />
         )}
       </article>
     )
@@ -74,21 +79,15 @@ class Block extends React.Component {
             <div className={style['btns-group']}>
               {this.getModifierValue('button-primary') && (
                 <Button
-                  className={classNames(
-                    style.button,
-                    style['button--primary'],
-                    style['button--size-md'],
-                  )}
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
                   bind="button-1"
                 />
               )}
               {this.getModifierValue('button-secondary') && (
                 <Button
-                  className={classNames(
-                    style.button,
-                    style['button--secondary'],
-                    style['button--size-md'],
-                  )}
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
                   bind="button-2"
                 />
               )}
@@ -113,7 +112,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -125,6 +124,7 @@ Block.defaultContent = {
           },
         },
         textValue: 'Learn more',
+        type: 'link',
       },
     },
     {
@@ -136,7 +136,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -148,6 +148,7 @@ Block.defaultContent = {
           },
         },
         textValue: 'Learn more',
+        type: 'link',
       },
     },
     {
@@ -159,7 +160,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -171,6 +172,7 @@ Block.defaultContent = {
           },
         },
         textValue: 'Learn more',
+        type: 'link',
       },
     },
     {
@@ -182,7 +184,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -194,6 +196,7 @@ Block.defaultContent = {
           },
         },
         textValue: 'Learn more',
+        type: 'link',
       },
     },
   ],
@@ -216,7 +219,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Book a service',
+    textValue: 'Request a quote',
+    type: 'primary',
   },
   'button-2': {
     actionConfig: {
@@ -229,7 +233,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'All services',
+    textValue: 'Learn more',
+    type: 'secondary',
   },
 }
 
@@ -259,16 +264,16 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'button-primary',
-    type: 'checkbox',
-    label: 'Primary button',
-    defaultValue: false,
-  },
-  {
     id: 'button-secondary',
     type: 'checkbox',
-    label: 'Secondary button',
+    label: 'Button',
     defaultValue: true,
+  },
+  {
+    id: 'button-primary',
+    type: 'checkbox',
+    label: 'Additional button',
+    defaultValue: false,
   },
   {
     id: 'top-icon',
