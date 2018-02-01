@@ -218,3 +218,7 @@
 .article__header {
   position: relative;
 }
+
+.article .article__link {
+  padding: 0;
+}
