@@ -22,35 +22,29 @@ class Block extends React.Component {
           </div>
         )}
         <div className={style.article__info}>
-          {(_.get('date')(modifier) || _.get('time')(modifier)) && (
-            <div className={style.article__top}>
-              {_.get('date')(modifier) && (
-                <time className={style.article__date}>
-                  <Text bind={`events[${index}].date`} />
-                </time>
-              )}
-              {_.get('time')(modifier) && (
-                <time className={style.article__time}>
-                  <Text bind={`events[${index}].time`} />
-                </time>
-              )}
-            </div>
-          )}
-          {_.get('heading')(modifier) && (
-            <h2 className={style.article__title}>
-              <Text bind={`events[${index}].title`} />
-            </h2>
-          )}
+          <div className={style.article__top}>
+            <time className={style.article__date}>
+              <Text bind={`events[${index}].date`} />
+            </time>
+            <time className={style.article__time}>
+              <Text bind={`events[${index}].time`} />
+            </time>
+          </div>
+          <h2 className={style.article__title}>
+            <Text bind={`events[${index}].title`} />
+          </h2>
           <div className={style.article__bottom}>
             {_.get('location')(modifier) && (
               <p className={style.article__location}>
                 <Text bind={`events[${index}].location`} />
               </p>
             )}
-            <Button
-              className={classNames(style.article__cta)}
-              bind={`events[${index}].cta`}
-            />
+            {_.get('link')(modifier) && (
+              <Button
+                className={classNames(style.article__cta)}
+                bind={`events[${index}].cta`}
+              />
+            )}
           </div>
         </div>
         <Image
@@ -243,21 +237,9 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'date',
+    id: 'link',
     type: 'checkbox',
-    label: 'Date of event',
-    defaultValue: true,
-  },
-  {
-    id: 'time',
-    type: 'checkbox',
-    label: 'Event\'s time',
-    defaultValue: true,
-  },
-  {
-    id: 'heading',
-    type: 'checkbox',
-    label: 'Event\'s name',
+    label: 'Event\'s link',
     defaultValue: true,
   },
 ]
