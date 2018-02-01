@@ -5,7 +5,11 @@
 .section {
   position: relative;
 
-  &::after {
+  &__inner {
+    position: relative;
+  }
+
+  &::before {
     content: "";
     display: block;
     width: 100%;
@@ -22,7 +26,7 @@
   text-align: center;
   font-weight: 600;
   font-size: var(--ui-block-title-size);
-  color: var(--ui-light-accent-color);
+  color: var(--ui-block-title-color);
   letter-spacing: 3.6px;
   text-transform: uppercase;
   margin-bottom: 70px;
@@ -34,19 +38,19 @@
     text-transform: uppercase;
     font-weight: 600;
     font-size: var(--ui-small-text-size);
-    color: var(--ui-light-accent-color);
+    color: var(--ui-small-text-color);
     line-height: valc(var(--ui-subtitle-line-height) * 1.14);
   }
 
   &__number {
-    color: var(--ui-light-accent-color);
+    color: var(--ui-block-title-color);
     font-weight: bold;
     letter-spacing: 4.6px;
     font-size: calc(var(--ui-block-title-size) * 1.35);
   }
 
   &__text {
-    color: var(--ui-light-accent-color);
+    color: var(--ui-small-text-color);
     text-transform: uppercase;
     letter-spacing: 1.4px;
     font-size: var(--ui-small-text-size);
