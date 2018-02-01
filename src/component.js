@@ -25,7 +25,8 @@ class Block extends React.Component {
           {_.get('primary-button')(modifier) && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(style.button, style['button--size-lg'], style['button--primary'])}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind={`cover[${index}].cta`}
               />
             </div>
@@ -71,7 +72,7 @@ Block.components = _.pick(['Slider', 'Text', 'Button'])($editor.components)
 Block.defaultContent = {
   background: {
     type: 'color',
-    color: 'light-accent-color',
+    color: '#d8d8d8',
   },
   cover: [
     {
@@ -88,7 +89,8 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Main button (L)',
+        textValue: 'Request a quote',
+        type: 'primary',
       },
       id: 'c4e3de5f-776a-405b-a034-dc2307069714',
     },
@@ -106,7 +108,7 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Main button (L)',
+        textValue: 'Request a quote',
       },
       id: '73263c9a-8d0e-41dc-85e1-66c6db9ea9d3',
     },
@@ -124,7 +126,7 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Main button (L)',
+        textValue: 'Request a quote',
       },
       id: 'b5f64fb3-d94e-4ecf-b7ff-a4a5700a2457',
     },
@@ -141,7 +143,7 @@ Block.modifierScheme = [
   {
     id: 'primary-button',
     type: 'checkbox',
-    label: 'Primary button',
+    label: 'Button',
     defaultValue: true,
   },
   {
