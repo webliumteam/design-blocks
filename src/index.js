@@ -114,6 +114,12 @@ ExtendedWireframe.modifierScheme = [
     label: 'Block title',
     defaultValue: true,
   },
+  {
+    id: 'article-picture',
+    type: 'hidden',
+    label: 'Article picture',
+    defaultValue: true,
+  },
 ]
 
 export default ExtendedWireframe
