@@ -1,8 +1,5 @@
 {
   "name": "block-publish",
   "version": "0.0.1",
-  "description": "",
-  "dependencies": {
-    "yargs": "^11.0.0"
-  }
+  "description": ""
 }
