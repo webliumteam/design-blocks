@@ -5,6 +5,8 @@
 @media (min-width: 768px) {
   .item {
     padding: 0;
+    flex-basis: 16.666%;
+    max-width: 16.666%;
   }
 
   .section__inner {
@@ -20,6 +22,6 @@
   }
 }
 
-.title_ {
+.title {
   letter-spacing: -2px;
 }
