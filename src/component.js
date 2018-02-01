@@ -13,7 +13,7 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Logo, Text, Map, SocialIcons, Button, Icon}, style} = this.props
+    const {components: {Logo, Text, Map, SocialIcons, Icon}, style} = this.props
 
     const textWithSocials = (
       !this.getModifierValue('logo') &&
@@ -123,7 +123,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons', 'Button', 'Icon'])($editor.components)
+Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   title: 'Contacts',
@@ -186,8 +186,8 @@ Block.defaultContent = {
       border: 'circle',
       innerFill: true,
       preset: 'preset001',
-      marginRight: 15,
-      color: '#9B9B9B',
+      offset: 15,
+      color: '#9b9b9b',
       sizes: [10, 20, 30, 40],
       size: '30px',
     },
