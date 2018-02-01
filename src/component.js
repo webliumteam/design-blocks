@@ -42,7 +42,12 @@ class Block extends React.Component {
             </p>
           )}
           {_.get('project-button')(modifier) && (
-            <Button className={style.article__link} bind={`projects[${index}].cta`} />
+            <Button
+              className={style.article__link}
+              buttonClassName={style.button}
+              linkClassName={style.link}
+              bind={`projects[${index}].link`}
+            />
           )}
         </div>
       </article>
@@ -80,11 +85,7 @@ class Block extends React.Component {
           {this.getModifierValue('block-button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(
-                  style.button,
-                  style['button--secondary'],
-                  style['button--size-md'],
-                )}
+                className={style.button}
                 bind="cta"
               />
             </div>
@@ -109,7 +110,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 1',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -121,6 +122,7 @@ Block.defaultContent = {
           },
         },
         textValue: 'Learn more',
+        type: 'link',
       },
     },
     {
@@ -133,7 +135,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 2',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -145,6 +147,7 @@ Block.defaultContent = {
           },
         },
         textValue: 'Learn more',
+        type: 'link',
       },
     },
   ],
@@ -166,7 +169,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'All projects',
+    textValue: 'Learn more',
+    type: 'secondary',
   },
 }
 
@@ -186,7 +190,7 @@ Block.modifierScheme = [
   {
     id: 'block-button',
     type: 'checkbox',
-    label: 'Block button',
+    label: 'Button',
     defaultValue: true,
   },
   {
