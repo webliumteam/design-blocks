@@ -238,12 +238,16 @@
   font-family: var(--ui-caption-font-family);
   font-weight: var(--ui-caption-font-weight);
   text-decoration: none;
-}
-
-.item__email:hover,
-.item__email:active,
-.item__email:focus {
-  color: var(--ui-link-hover-color);
+  
+  a {
+    color: inherit;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--ui-brand-color);
+    }
+  }
 }
 
 .item__email-wrapper {
@@ -258,11 +262,12 @@
   margin-bottom: 0;
 }
 
-.link {
+.item .link {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 30px;
   color: var(--ui-link-color);
+  padding: 0;
 }
 
 .link:hover,
