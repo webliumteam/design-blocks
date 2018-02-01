@@ -34,11 +34,15 @@ class Block extends React.Component {
             </p>
           )}
           {_.get('member-link')(modifier) && (
-            <Button className={style.link} bind={`team[${index}].more`} />
+            <Button
+              buttonClassName={style.button}
+              linkClassName={style.link}
+              bind={`team[${index}].more`}
+            />
           )}
           {_.get('member-email')(modifier) && (
             <div className={style['item__email-wrapper']}>
-              <Button className={style.item__email} bind={`team[${index}].email`} />
+              <Text className={style.item__email} bind={`team[${index}].email`} />
             </div>
           )}
           {_.get('member-social')(modifier) && (
@@ -76,7 +80,8 @@ class Block extends React.Component {
           {this.getModifierValue('block-button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(style.button, style['button--size-md'], style['button--secondary'])}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind="cta"
               />
             </div>
@@ -113,19 +118,10 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Know more',
+        textValue: 'Learn more',
+        type: 'link',
       },
-      email: {
-        actionConfig: {
-          action: 'external',
-          actions: {
-            external: {
-              url: 'mailto:shimmer@gmail.com',
-            },
-          },
-        },
-        textValue: 'shimmer@gmail.com',
-      },
+      email: '<a href="mailto:shimmer@gmail.com">shimmer@gmail.com</a>',
       socialIcons: {
         networks: [
           {
@@ -149,10 +145,10 @@ Block.defaultContent = {
           border: 'circle',
           innerFill: true,
           preset: 'preset001',
-          marginRight: 15,
-          color: '',
+          offset: 15,
+          color: '#b9b9b9',
           sizes: [15, 25, 35, 45],
-          size: '25px',
+          size: '30px',
         },
       },
     },
@@ -177,19 +173,10 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Know more',
+        textValue: 'Learn more',
+        type: 'link',
       },
-      email: {
-        actionConfig: {
-          action: 'external',
-          actions: {
-            external: {
-              url: 'mailto:maisner@gmail.com',
-            },
-          },
-        },
-        textValue: 'maisner@gmail.com',
-      },
+      email: '<a href="mailto:maisner@gmail.com">maisner@gmail.com</a>',
       socialIcons: {
         networks: [
           {
@@ -213,10 +200,10 @@ Block.defaultContent = {
           border: 'circle',
           innerFill: true,
           preset: 'preset001',
-          marginRight: 15,
-          color: '',
+          offset: 15,
+          color: '#b9b9b9',
           sizes: [15, 25, 35, 45],
-          size: '25px',
+          size: '30px',
         },
       },
     },
@@ -241,19 +228,10 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Know more',
+        textValue: 'Learn more',
+        type: 'link',
       },
-      email: {
-        actionConfig: {
-          action: 'external',
-          actions: {
-            external: {
-              url: 'mailto:abbar@gmail.com',
-            },
-          },
-        },
-        textValue: 'abbar@gmail.com',
-      },
+      email: '<a href="mailto:abbar@gmail.com">abbar@gmail.com</a>',
       socialIcons: {
         networks: [
           {
@@ -277,10 +255,10 @@ Block.defaultContent = {
           border: 'circle',
           innerFill: true,
           preset: 'preset001',
-          marginRight: 15,
-          color: '',
+          offset: 15,
+          color: '#b9b9b9',
           sizes: [15, 25, 35, 45],
-          size: '25px',
+          size: '30px',
         },
       },
     },
@@ -299,7 +277,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Medium button',
+    textValue: 'Learn more',
+    type: 'secondary',
   },
   topIcon: {
     svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
@@ -317,7 +296,7 @@ Block.modifierScheme = [
   {
     id: 'block-button',
     type: 'checkbox',
-    label: 'Block button',
+    label: 'Button',
     defaultValue: true,
   },
   {
