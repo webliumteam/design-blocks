@@ -33,9 +33,12 @@ class Block extends React.Component {
           </p>
         )}
         {_.get('link')(modifier) && (
-          <a href="#" className={style.article__link}>
-            <Text bind={`services[${index}].link`} />
-          </a>
+          <Button
+            className={style.article__link}
+            buttonClassName={style.button}
+            linkClassName={style.link}
+            bind={`services[${index}].link`}
+          />
         )}
       </article>
     )
@@ -109,7 +112,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      link: 'Learn more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
     {
       id: 'cfb2c56d-7708-4459-bdf2-6780f4ba62b9',
@@ -120,7 +136,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      link: 'Learn more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
     {
       id: 'eea21546-b56e-406b-8cba-18a5a5ec1820',
@@ -131,7 +160,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      link: 'Learn more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
     {
       id: 'aa5d3a04-43b7-4bb3-9c7a-00e1986f359e',
@@ -142,7 +184,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
       },
-      link: 'Learn more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
   ],
   topIcon: {
