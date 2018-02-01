@@ -1,23 +1,10 @@
 @import "wireframe-zapdos-header/src/style.css";
 
 /* start here */
-
 .logo__title {
   font-size: calc(var(--ui-block-title-size) * 0.62);
 }
 
-.header__button {
-  border-radius: 0;
-  text-transform: uppercase;
-  font-size: calc(var(--ui-btn-sm-size) * 0.79);
-  font-weight: 400;
-}
-
 .nav-list__link {
   font-weight: 600;
-
-  @media (min-width: 992px) {
-    color: var(--ui-dark-shade-color);
-  }
-
 }
