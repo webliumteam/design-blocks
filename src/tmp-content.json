@@ -1,17 +1,7 @@
 {
   "title": "Contacts",
-  "address-content": "asddasda",
-  "phone-link": {
-    "actionConfig": {
-      "action": "external",
-      "actions": {
-        "external": {
-          "url": "tel:+10845532465"
-        }
-      }
-    },
-    "textValue": "+1 084 553 24 65"
-  },
+  "address-content": "1204 Allen Drive<br /> Grand Island, NE 68803",
+  "phone-link": "<a href=\"tel:+10845532465\">+1 084 553 24 65</a>",
   "map": {
     "preset": "color",
     "height": "100%",

@@ -1,6 +1,5 @@
 @import "wireframe-zapdos-contacts/src/style.css";
 
-/* start here */
 .title {
   letter-spacing: -2px;
 }
@@ -51,7 +50,7 @@
 
   .title {
     margin-top: 32%;
-    margin-bottom: -9px;
+    margin-bottom: 0;
     padding: 0 15px;
     text-align: left;
   }
@@ -62,7 +61,6 @@
     justify-content: start;
 
     &-list {
-      margin-left: -16px;
       max-width: 300px;
       margin-top: 0;
 
@@ -77,26 +75,31 @@
   }
 
   .logo {
+    min-height: 105px;
     justify-content: left;
 
     &-wrapper {
-      margin-top: 0;
-      margin-bottom: -8px;
+      margin-bottom: 0;
     }
   }
 
   .title,
   .logo {
-    margin-left: 20px;
+    margin-left: 25px;
   }
 }
 
 @media (min-width: 1200px) {
   .title {
-    margin-top: 35%;
+    margin-top: 33%;
+    margin-left: 35px;
+  }
+
+  .logo {
+    margin-left: 35px;
   }
 
   .contacts {
-    padding-left: 60px;
+    padding-left: 45px;
   }
 }
