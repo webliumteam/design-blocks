@@ -1,27 +1,13 @@
 @import "wireframe-zapdos-cta/src/style.css";
 
 /* start here */
-
 .section {
-  padding: 180px 0 200px;
-  height: 625px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: var(--ui-light-accent-color);
-    opacity: 0.91;
-  }
-}
-
-.section__inner {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-around;
+  background-color: var(--ui-light-accent-color);
+  opacity: 0.91;
 }
 
 .title {
@@ -40,12 +26,22 @@
   color: var(--ui-light-shade-color );
   letter-spacing: 1.3px;
   text-align: center;
-  max-width: 570px;
+  max-width: 70%;
   margin: 0 auto 20px;
   opacity: 0.8;
 }
 
 .button {
-  width: auto;
-  padding: 12px 63px;
+  padding: 15px 60px;
+  font-family: var(--ui-caption-font-family);
+  font-size: var(--ui-caption-size)*1.25);
+  font-weight: var(--ui-caption-font-weight);
+  background-color: var(--ui-alt-btn-primary-bg);
+  color: var(--ui-btn-primary-color);
+  letter-spacing: 1.2px;
+  text-align: center;
+}
+
+.button:hover {
+  text-decoration: none;
 }
