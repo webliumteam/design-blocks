@@ -117,7 +117,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Medium button',
+    textValue: 'Learn more',
     type: 'secondary',
   },
 }
