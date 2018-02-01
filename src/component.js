@@ -183,7 +183,7 @@ Block.modifierScheme = [
   {
     id: 'button',
     type: 'checkbox',
-    label: 'Contact us button',
+    label: 'Button',
     defaultValue: true,
   },
   {
