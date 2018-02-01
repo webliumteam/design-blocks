@@ -42,9 +42,12 @@ class Block extends React.Component {
             </p>
           )}
           {_.get('project-button')(modifier) && (
-            <a className={style.article__link} href="#">
-              <Text bind={`projects[${index}].link`} />
-            </a>
+            <Button
+              className={style.article__link}
+              buttonClassName={style.button}
+              linkClassName={style.link}
+              bind={`projects[${index}].link`}
+            />
           )}
         </div>
       </article>
@@ -107,7 +110,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 1',
       },
-      link: 'Learn more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
     {
       id: '9310272a-1fa2-4876-b1db-a879bbd4bc52',
@@ -119,7 +135,20 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 2',
       },
-      link: 'Learn more',
+      link: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
     },
   ],
   topIcon: {
