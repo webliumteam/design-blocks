@@ -14,6 +14,7 @@
 
 .top-icon {
   position: relative;
+  display: block;
   width: 60px;
   height: 60px;
   margin: 0 auto;
