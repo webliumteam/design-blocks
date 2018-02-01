@@ -57,6 +57,10 @@ class Block extends React.Component {
 Block.components = _.pick(['Text', 'Button'])($editor.components)
 
 Block.defaultContent = {
+  background: {
+    type: 'color',
+    color: '#d8d8d8',
+  },
   title: 'Quantum Company',
   subtitle: 'We can execute even the most unpredictable ideas! ',
   'cta-1': {
@@ -70,7 +74,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Main button (L)',
+    textValue: 'Request a quote',
     type: 'primary',
     size: 'lg',
   },
@@ -85,7 +89,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Additional button (L)',
+    textValue: 'Learn more',
     type: 'secondary',
     size: 'lg',
   },
@@ -102,13 +106,13 @@ Block.modifierScheme = [
   {
     id: 'primary-btn',
     type: 'checkbox',
-    label: 'Primary button',
+    label: 'Button',
     defaultValue: true,
   },
   {
     id: 'secondary-btn',
     type: 'checkbox',
-    label: 'Secondary button',
+    label: 'Additional button',
     defaultValue: true,
   },
   {
