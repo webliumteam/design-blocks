@@ -160,7 +160,7 @@ Block.modifierScheme = [
   {
     id: 'secondary-button',
     type: 'checkbox',
-    label: 'Secondary button',
+    label: 'Button',
     defaultValue: false,
   },
   {
