@@ -50,7 +50,12 @@ class Block extends React.Component {
           </p>
         )}
         {this.getModifierValue('post-link') && (
-          <Button className={style.link} bind={`blog[${index}].cta`} />
+          <Button
+            className={style.article__link}
+            buttonClassName={style.button}
+            linkClassName={style.link}
+            bind={`blog[${index}].link`}
+          />
         )}
       </article>
     )
@@ -84,11 +89,8 @@ class Block extends React.Component {
           {this.getModifierValue('block-button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(
-                  style.button,
-                  style['button--secondary'],
-                  style['button--size-md'],
-                )}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind="cta"
               />
             </div>
@@ -114,7 +116,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -125,7 +127,8 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Read more',
+        textValue: 'Learn more',
+        type: 'link',
       },
     },
     {
@@ -139,7 +142,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -150,7 +153,8 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Read more',
+        textValue: 'Learn more',
+        type: 'link',
       },
     },
     {
@@ -164,7 +168,7 @@ Block.defaultContent = {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
       },
-      cta: {
+      link: {
         actionConfig: {
           action: 'link',
           actions: {
@@ -175,7 +179,8 @@ Block.defaultContent = {
             },
           },
         },
-        textValue: 'Read more',
+        textValue: 'Learn more',
+        type: 'link',
       },
     },
   ],
@@ -196,7 +201,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'All blog posts',
+    textValue: 'Learn more',
+    type: 'secondary',
   },
 }
 
@@ -228,7 +234,7 @@ Block.modifierScheme = [
   {
     id: 'block-button',
     type: 'checkbox',
-    label: 'Block button',
+    label: 'Button',
     defaultValue: true,
   },
   {
