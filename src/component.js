@@ -106,7 +106,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Medium button',
+    textValue: 'Learn more',
     type: 'secondary',
   },
 }
@@ -145,7 +145,7 @@ Block.modifierScheme = [
   {
     id: 'button',
     type: 'checkbox',
-    label: 'Secondary button',
+    label: 'Button',
     defaultValue: true,
   },
 ]
