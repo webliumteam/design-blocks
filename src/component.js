@@ -51,6 +51,7 @@ class Block extends React.Component {
         )}
         {this.getModifierValue('post-link') && (
           <Button
+            className={style.article__link}
             buttonClassName={style.button}
             linkClassName={style.link}
             bind={`blog[${index}].link`}
@@ -200,7 +201,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'All blog posts',
+    textValue: 'Learn more',
     type: 'secondary',
   },
 }
@@ -233,7 +234,7 @@ Block.modifierScheme = [
   {
     id: 'block-button',
     type: 'checkbox',
-    label: 'Block button',
+    label: 'Button',
     defaultValue: true,
   },
   {
