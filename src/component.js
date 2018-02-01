@@ -62,7 +62,7 @@ Block.components = _.pick(['Text', 'Button', 'Image'])($editor.components)
 Block.defaultContent = {
   title: 'Want to work with us?',
   description:
-    'Join 13000 clients who already worked with us. Request a quote to get best solutions in your area.',
+    'Get a full-scale analysis of your business and recommended solutions to increase your profits.',
   cta: {
     actionConfig: {
       action: 'link',

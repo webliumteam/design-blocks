@@ -24,7 +24,7 @@
 }
 
 .title {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-family: var(--ui-block-title-font-family);
   font-size: var(--ui-block-title-size);
   color: var(--ui-block-title-color);
@@ -33,7 +33,11 @@
 }
 
 .description {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  
+  &:nth-child(2) {
+    margin-top: -15px;
+  }
 }
 
 .content-wrapper {
