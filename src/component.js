@@ -74,10 +74,10 @@ class Block extends React.Component {
                 )}
                 {showButtonGroups && (
                   <div className={css['btns-group']}>
-                    {this.getModifierValue('link') && <Text className={css.link} bind="link" />}
                     {this.getModifierValue('button') && (
                       <Button
-                        className={css.button}
+                        buttonClassName={css.button}
+                        linkClassName={css.link}
                         bind="button"
                       />
                     )}
@@ -115,7 +115,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
+    textValue: 'Learn more',
     type: 'primary',
     size: 'md',
   },
@@ -143,10 +143,10 @@ Block.defaultContent = {
       border: 'circle',
       innerFill: true,
       preset: 'preset001',
-      marginRight: 20,
-      color: '',
+      offset: 15,
+      color: '#9b9b9b',
       sizes: [10, 20, 30, 40],
-      size: '40px',
+      size: '30px',
     },
   },
   topIcon: {
@@ -181,15 +181,9 @@ Block.modifierScheme = [
     defaultValue: false,
   },
   {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
     id: 'button',
     type: 'checkbox',
-    label: 'Contact us button',
+    label: 'Button',
     defaultValue: true,
   },
   {
