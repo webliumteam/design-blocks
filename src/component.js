@@ -74,10 +74,10 @@ class Block extends React.Component {
                 )}
                 {showButtonGroups && (
                   <div className={css['btns-group']}>
-                    {this.getModifierValue('link') && <Text className={css.link} bind="link" />}
                     {this.getModifierValue('button') && (
                       <Button
-                        className={css.button}
+                        buttonClassName={css.button}
+                        linkClassName={css.link}
                         bind="button"
                       />
                     )}
@@ -178,12 +178,6 @@ Block.modifierScheme = [
     id: 'socialIcons',
     type: 'checkbox',
     label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
     defaultValue: false,
   },
   {
