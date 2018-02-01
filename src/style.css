@@ -3,6 +3,11 @@
 /* start here */
 
 .article {
+
+  @media (min-width: 768px) {
+    min-height: 720px;
+  }
+
   &__title {
     line-height: var(--ui-block-title-line-height)*0.97;
     letter-spacing: 2px;
@@ -55,11 +60,5 @@
 .social {
   &-title {
     display: none;
-  }
-}
-
-@media (min-width: 768px) {
-  .article {
-    min-height: 720px;
   }
 }
