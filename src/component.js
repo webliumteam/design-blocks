@@ -219,7 +219,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Book a service',
+    textValue: 'Request a quote',
     type: 'primary',
   },
   'button-2': {
@@ -233,7 +233,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'All services',
+    textValue: 'Learn more',
     type: 'secondary',
   },
 }
@@ -264,16 +264,16 @@ Block.modifierScheme = [
     defaultValue: true,
   },
   {
-    id: 'button-primary',
-    type: 'checkbox',
-    label: 'Primary button',
-    defaultValue: false,
-  },
-  {
     id: 'button-secondary',
     type: 'checkbox',
-    label: 'Secondary button',
+    label: 'Button',
     defaultValue: true,
+  },
+  {
+    id: 'button-primary',
+    type: 'checkbox',
+    label: 'Additional button',
+    defaultValue: false,
   },
   {
     id: 'top-icon',

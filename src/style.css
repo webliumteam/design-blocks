@@ -220,6 +220,10 @@
   color: var(--ui-link-hover-color);
 }
 
+.article .article__link {
+  padding: 0;
+}
+
 .article__title {
   margin-bottom: 14px;
   font-family: var(--ui-heading-font-family);
