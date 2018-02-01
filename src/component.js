@@ -96,9 +96,7 @@ class Block extends React.Component {
                         <Text bind="phone-title" />
                       </h3>
                       <p className={style.contacts__desc}>
-                        <a href="#">
-                          <Text bind="phone-link" />
-                        </a>
+                        <Text bind="phone-link" />
                       </p>
                     </li>
                   )}
@@ -108,9 +106,7 @@ class Block extends React.Component {
                         <Text bind="email-title" />
                       </h3>
                       <p className={style.contacts__desc}>
-                        <a href="#">
-                          <Text bind="email-link" />
-                        </a>
+                        <Text bind="email-link" />
                       </p>
                     </li>
                   )}
@@ -141,8 +137,8 @@ Block.defaultContent = {
   'phone-title': 'Phone',
   'email-title': 'E-mail',
   'address-content': 'Head office in London - 36 Regent St.',
-  'phone-link': '+1 (234) 567 89 00',
-  'email-link': 'mysite@weblium.com',
+  'phone-link': '<a href="tel:+1 (234) 567 89 00">+1 (234) 567 89 00</a>',
+  'email-link': '<a href="mailto:mysite@weblium.com">mysite@weblium.com</a>',
   map: {
     preset: 'silver',
     height: '100%',
