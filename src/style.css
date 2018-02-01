@@ -188,7 +188,7 @@
 .list__item-icon {
   width: 70px;
   height: 70px;
-  padding: 0 10px;
+  padding: 15px;
   flex-shrink: 0;
   margin-bottom: 20px;
   color: var(--ui-icon-color);
@@ -204,9 +204,15 @@
   }
 
   &--counter-none {
+    line-height: normal;
+
     &::before {
       content: "";
     }
+  }
+
+  > span {
+    font-size: 0;
   }
 }
 

@@ -1,5 +1,5 @@
 {
-    "collection-icons": false,
+    "collection-icons": true,
     "button-in-content": false,
     "title-in-content": false,
     "image-decorator-status": false,
