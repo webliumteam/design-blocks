@@ -37,7 +37,7 @@
   &__text {
 
     @media (min-width: 992px) {
-      span {
+      > span {
         column-count: 2;
         column-gap: 40px;
       }
