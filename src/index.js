@@ -27,7 +27,7 @@ ExtendedWireframe.defaultContent = {
     position: {
       type: 'tile',
     },
-    src: 'main-bg-pattern.jpg',
+    resourceRef: 'main-bg-pattern.jpg',
   },
 }
 
