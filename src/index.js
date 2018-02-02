@@ -16,7 +16,7 @@ ExtendedWireframe.defaultContent = {
       type: 'tile',
       cover: '50% 50%',
     },
-    src: 'bg-pattern.jpg',
+    resourceRef: 'bg-pattern.jpg',
   },
   numbers: [
     {
@@ -64,13 +64,13 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = [
   {
     id: 'title',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Block title',
     defaultValue: false,
   },
   {
     id: 'number-title',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Additional information on numbers',
     defaultValue: false,
   },
@@ -82,7 +82,7 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'button',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Button',
     defaultValue: false,
   },
