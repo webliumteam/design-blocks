@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    src: 'cover-bg.jpg',
+    resourceRef: 'cover-bg.jpg',
   },
   title: 'Quantum Company',
   subtitle: 'We can execute even the most unpredictable ideas! ',
