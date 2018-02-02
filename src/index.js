@@ -11,7 +11,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   theme: 'dark',
-  title: 'Type Something',
   background: {
     type: 'image',
     position: {
@@ -19,9 +18,9 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'cover_bg.jpg',
   },
-  subtitle: 'Type something',
+  title: 'Quantum Company',
+  subtitle: 'We can execute even the most unpredictable ideas! ',
   'cta-1': {
-    type: 'primary',
     actionConfig: {
       action: 'link',
       actions: {
@@ -32,10 +31,11 @@ ExtendedWireframe.defaultContent = {
         },
       },
     },
-    textValue: 'Main button (L)',
+    textValue: 'Request a quote',
+    type: 'primary',
+    size: 'lg',
   },
   'cta-2': {
-    type: 'primary',
     actionConfig: {
       action: 'link',
       actions: {
@@ -46,8 +46,11 @@ ExtendedWireframe.defaultContent = {
         },
       },
     },
-    textValue: 'Additional button (L)',
+    textValue: 'Learn more',
+    type: 'secondary',
+    size: 'lg',
   },
+  topCaption: 'welcome',
 }
 
 ExtendedWireframe.modifierScheme = [
@@ -91,6 +94,12 @@ ExtendedWireframe.modifierScheme = [
         label: 'right',
       },
     ],
+  },
+  {
+    id: 'caption-decorator',
+    type: 'hidden',
+    label: 'Pretitle',
+    defaultValue: false,
   },
 ]
 
