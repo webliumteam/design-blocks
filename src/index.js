@@ -16,7 +16,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    src: 'cbx-214431.jpg',
+    resourceRef: 'cbx-214431.jpg',
   },
   theme: 'dark',
   title: 'Want to work with us?',

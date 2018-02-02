@@ -5,7 +5,7 @@
   padding: 210px 0;
   border-color: var(--ui-light-accent-color);
   border-style: solid;
-  border-width: 70px 10px;
+  border-width: 0 10px;
 }
 
 .description {
@@ -27,6 +27,11 @@
 .link {
   margin-top: 40px;
   text-transform: uppercase;
+}
+
+.button:only-child,
+.link:only-child {
+  margin-top: 0;
 }
 
 @media (max-width: 700px) {
