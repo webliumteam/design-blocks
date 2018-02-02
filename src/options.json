@@ -1,5 +1,6 @@
 {
   "different-icons": true,
-  "open-icon": "+",
-  "close-icon": "-"
+  "toogle-item-controls": true,
+  "open-icon": "<svg width='22px' height='4px' viewBox='0 0 22 4' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect id='Combined-Shape' width='22' height='4'></rect></svg>",
+  "close-icon": "<svg width='22px' height='22px' viewBox='0 0 22 22' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><g id='Full-page'><g id='asam.' transform='translate(-1424.000000, -18836.000000)'><g id='FAQ' transform='translate(475.000000, 18385.000000)'><g id='02' transform='translate(0.000000, 445.000000)'><path d='M962,15 L962,6 L958,6 L958,15 L949,15 L949,19 L958,19 L958,28 L962,28 L962,19 L971,19 L971,15 L962,15 Z' id='Combined-Shape'></path></g></g></g></g></svg>"
 }
