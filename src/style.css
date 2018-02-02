@@ -260,8 +260,8 @@
   font-size: var(--ui-block-title-size);
   color: var(--ui-heading-color);
   line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-family);
-  font-weight: var(--ui-block-title-weight);
+  font-family: var(--ui-block-title-font-family);
+  font-weight: var(--ui-block-title-font-weight);
 }
 
 .btns-group {
