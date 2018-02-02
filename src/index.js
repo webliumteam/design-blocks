@@ -16,6 +16,7 @@ ExtendedWireframe.defaultContent = {
   description:
     'We are always in search of new talents. If you have experience in the construction industry, feel free to contact us and join our team.',
   cta: {
+    type: 'primary',
     actionConfig: {
       action: 'link',
       actions: {
@@ -39,6 +40,11 @@ ExtendedWireframe.defaultContent = {
       cover: '50% 50%',
     },
     src: 'block-bg.jpg',
+    overlay: {
+      type: 'color',
+      color: 'rgba(36, 36, 36)',
+      opacity: '0.9',
+    },
   },
 }
 
