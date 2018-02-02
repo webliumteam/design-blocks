@@ -101,7 +101,6 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: '',
   },
   contactForm: {
     fields: [
