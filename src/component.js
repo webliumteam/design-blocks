@@ -95,7 +95,7 @@ class Block extends React.Component {
             />
             <a
               href="tel:+380673258146"
-              className={classNames(css.header__button, css.button, css['button--primary'])}
+              className={classNames(css.header__button, css.button)}
               bind="cta"
             >
               <Text bind="phone" />
