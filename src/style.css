@@ -64,7 +64,8 @@
   color: #fff;
   border: 1px solid var(--ui-brand-color);
   border-radius: var(--ui-btn-md-border-radius);
-  padding: var(--ui-btn-md-padding);
+  padding: var(--ui-btn-sm-padding);
+  font-size: var(--ui-btn-sm-font-size);
   left: 20px;
   flex-shrink: 0;
   background: none;
