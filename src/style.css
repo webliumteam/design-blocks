@@ -1,3 +1,88 @@
 @import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
+
+.section__inner {
+  text-align: center;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: var(--ui-block-title-size);
+  letter-spacing: 3px;
+  font-weight: var(--ui-heading-lg-font-weight);
+  position: relative;
+  width: auto;
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: calc(var(--ui-heading-lg-size) / 2);
+  font-family: var(--ui-sub-heading-font-family);
+  line-height: var(--ui-sub-heading-line-height);
+}
+
+.plan--main {
+  margin: 0;
+  box-shadow: none;
+
+  .plan__title {
+    font-weight: var(--ui-hero-title-font-weight);
+    font-family: var(--ui-heading-font-family);
+  }
+
+  .plan__button {
+    margin-top: 0;
+  }
+}
+
+.plans-wrapper {
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.plan {
+  flex-basis: 31%;
+  max-width: 31%;
+
+  &__title {
+    font-weight: var(--ui-hero-title-font-weight);
+    text-transform: uppercase;
+    font-family: var(--ui-heading-font-family);
+  }
+
+  &__price {
+    font-size: var(--ui-small-text-size);
+    font-weight: var(--ui-heading-font-weight);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+
+    &-count {
+      font-weight: var(--ui-hero-title-font-weight);
+      font-family: var(--ui-heading-font-family);
+      font-size: var(--ui-heading-lg-size);
+      margin-bottom: 7px;
+    }
+  }
+
+  &__list {
+    &-item {
+      margin-bottom: 0;
+      font-size: var(--ui-text-size);
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .subtitle {
+    max-width: 697px;
+  }
+}
+
+@media (max-width: 767px) {
+  .plan {
+    flex-basis: 90%;
+    max-width: 90%;
+    margin-bottom: 25px;
+  }
+}
