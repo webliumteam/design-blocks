@@ -261,38 +261,4 @@
   word-wrap: break-word;
   position: relative;
   overflow: hidden;
-
-  &:hover,
-  &:active {
-    background-color: var(--ui-btn-primary-bg);
-  }
-
-  &--custom {
-    position: relative;
-    border-radius: 100px;
-    z-index: 1;
-    
-    &:hover,
-    &:active,
-    &:focus {
-      color: #fff;
-
-      &::after {
-        opacity: 0.3;
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: #000;
-      opacity: 0;
-      z-index: -1;
-      transition: opacity 0.2s ease-out;
-    }
-  }
 }
