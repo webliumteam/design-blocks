@@ -46,6 +46,7 @@ ExtendedWireframe.defaultContent = {
         alt: 'Project 2',
       },
       cta: {
+        type: 'link',
         actionConfig: {
           action: 'link',
           actions: {
@@ -68,6 +69,7 @@ ExtendedWireframe.defaultContent = {
   subtitle:
     'Each month, we usefully close our projects. Here is the list of our recent ones:',
   cta: {
+    type: 'link',
     actionConfig: {
       action: 'link',
       actions: {
