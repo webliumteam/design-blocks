@@ -47,6 +47,7 @@ ExtendedWireframe.defaultContent = {
   description:
     'Browse the most common questions and answers. Didn’t find what you need? Just send us a request and we will get in touch with you shortly.',
   cta: {
+    type: 'link',
     actionConfig: {
       action: 'link',
       actions: {
