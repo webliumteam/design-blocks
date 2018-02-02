@@ -21,6 +21,7 @@ ExtendedWireframe.defaultContent = {
   },
   subtitle: 'Type something',
   'cta-1': {
+    type: 'primary',
     actionConfig: {
       action: 'link',
       actions: {
@@ -34,6 +35,7 @@ ExtendedWireframe.defaultContent = {
     textValue: 'Main button (L)',
   },
   'cta-2': {
+    type: 'primary',
     actionConfig: {
       action: 'link',
       actions: {
