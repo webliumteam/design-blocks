@@ -1,3 +1,86 @@
 @import "wireframe-zapdos-why/src/style.css";
 
 /* start here */
+.title span {
+  position: relative;
+
+  &::before {
+    content: "-";
+    font-size: var(--ui-block-title-size);
+    color: var(--ui-block-title-color);
+    line-height: var(--ui-block-title-line-height);
+    font-family: var(--ui-block-title-font-family);
+    font-weight: 600;
+    position: absolute;
+    left: -29px;
+  }
+
+  &::after {
+    content: "-";
+    font-size: var(--ui-block-title-size);
+    color: var(--ui-block-title-color);
+    line-height: var(--ui-block-title-line-height);
+    font-family: var(--ui-block-title-font-family);
+    font-weight: 600;
+    position: absolute;
+    right: -29px;
+  }
+}
+
+.title {
+  font-weight: var(--ui-heading-large-font-weight);
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: calc(var(--ui-sub-heading-size) * 0.888);
+  line-height: 1.75;
+  letter-spacing: 1.2px;
+
+  /* color: #909090; in desing */
+}
+
+.item {
+  &__title {
+
+    /* font-weight: 500; in design */
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+  }
+
+  &__top-element {
+    height: 175px;
+  }
+
+  &__icon-picture {
+    clip-path: polygon(170.5px 2.175px, 233.112px 38.325px, 238.612px 47.851px, 238.612px 120.149px, 233.112px 129.675px, 170.5px 165.825px, 159.5px 165.825px, 96.888px 129.675px, 91.388px 120.149px, 91.388px 47.851px, 96.888px 38.325px, 159.5px 2.175px, 170.5px 2.175px);
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .item {
+    position: relative;
+    margin-top: 45px;
+
+    &::after {
+      content: "";
+      width: 58px;
+      height: 2px;
+      background-color: #e8e8e8;
+      position: absolute;
+      top: 85px;
+      right: -27px;
+      z-index: 2;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
