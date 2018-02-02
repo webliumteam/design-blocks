@@ -127,7 +127,6 @@
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
-  background-color: var(--ui-block-bg);
   word-wrap: break-word;
 }
 
