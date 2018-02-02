@@ -30,6 +30,6 @@
         "stylelint-selector-bem-pattern": "^2.0.0"
     },
     "dependencies": {
-        "wireframe-zapdos-numbers": "https://github.com/webliumteam/blocks#w/zapdos/numbers"
+        "wireframe-zapdos-numbers": "https://github.com/webliumteam/blocks#w/zapdos/numbers/prod"
     }
 }
