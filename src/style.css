@@ -3,35 +3,29 @@
 /* start here */
 .section {
   padding: 210px 0;
-  border-top: 70px solid var(--ui-light-accent-color);
-  border-botom: 70px solid var(--ui-light-accent-color);
-  border-left: 10px solid var(--ui-light-accent-color);
-  border-right: 10px solid var(--ui-light-accent-color);
+  border-color: var(--ui-light-accent-color);
+  border-style: solid;
+  border-width: 70px 10px;
 }
 
 .description {
   max-width: 770px;
   margin: auto;
-  font: calc(var(--ui-text-size) * 1.15) var(--ui-text-font-family);
+  font-size: calc(var(--ui-text-size) * 1.15);
   letter-spacing: 1.2px;
-  line-height: calc(var(--ui-text-line-height ) \ 1.14);
+  line-height: calc(var(--ui-text-line-height ) * 0.88);
   color: var(--ui-light-accent-color);
 }
 
 .title {
-  font-family: var(--ui-hero-title-font-family);
-  font-size: var(--ui-block-title-size);
-  font-weight: normal;
-  color: var(--ui-light-accent-color);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 3.2px;
+  letter-spacing: 3.6px;
 }
 
-.button {
-  text-transform: uppercase;
-  font-weight: 600;
+.button,
+.link {
   margin-top: 40px;
-  letter-spacing: 3.2px;
 }
 
 @media (max-width: 700px) {

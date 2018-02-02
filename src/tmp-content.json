@@ -6,21 +6,22 @@
     "position": {
       "type": "cover",
       "cover": "50% 50%"
-     },
-    "src": "cbx-214431.jpg"
-   },
-
+      },
+      "src": "cbx-214431.jpg"
+    },
+  "theme": "dark",
   "cta": {
-   "actionConfig": {
-     "action": "link",
-     "actions": {
-       "link": {
-         "type": "",
-         "innerPage": "",
-         "url": ""
-       }
-     }
-   },
-   "textValue": "Try now"
+    "actionConfig": {
+      "action": "link",
+      "actions": {
+        "link": {
+          "type": "",
+          "innerPage": "",
+          "url": ""
+        }
+      }
+    },
+    "textValue": "Try now",
+    "type": "primary"
   }
 }
