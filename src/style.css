@@ -33,16 +33,6 @@
       flex-basis: 70%;
     }
   }
-
-  &__text {
-
-    @media (min-width: 992px) {
-      > span {
-        column-count: 2;
-        column-gap: 40px;
-      }
-    }
-  }
 }
 
 .button {
