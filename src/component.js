@@ -39,8 +39,7 @@ class Block extends React.Component {
           <div className={css['btns-group']}>
             <Button
               className={classNames(
-                css.button, css['button--primary'],
-                css['button--size-md'],
+                css.button,
                 css['button--custom'],
               )}
               bind="cta"
@@ -163,6 +162,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'More about out process',
+    type: 'primary',
   },
 }
 
