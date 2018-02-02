@@ -3,18 +3,10 @@
 /* start here */
 
 .title {
-  font-size: var(--ui-block-title-size);
-  line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: var(--ui-block-title-font-weight);
   color: var(--ui-dark-shade-color);
 }
 
 .subtitle {
-  font-size: var(--ui-subtitle-size);
-  line-height: var(--ui-subtitle-line-height);
-  font-family: var(--ui-subtitle-font-family);
-  font-weight: var(--ui-subtitle-font-weight);
   max-width: 880px;
 }
 
@@ -26,10 +18,18 @@
 
   &:nth-child(1) {
     background: var(--ui-dark-shade-color);
+
+    .plan__button {
+      background: var(--ui-dark-shade-color);
+    }
   }
 
   &:nth-child(2) {
     background: var(--ui-light-accent-color);
+
+    .plan__button {
+      background: var(--ui-light-shade-color);
+    }
   }
 
   &:nth-child(3) {
