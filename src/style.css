@@ -1,4 +1,53 @@
 @import "wireframe-zapdos-faq/src/style.css";
 
 /* start here */
+.section__inner {
+  max-width: 1005px;
+}
 
+.top-icon {
+  margin: 0 auto;
+  margin-bottom: 52px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #d9e8ff;
+    position: absolute;
+    opacity: 0.4;
+    border-radius: 50%;
+  }
+
+  svg {
+    color: var(--ui-brand-color);
+    z-index: 10;
+  }
+}
+
+.title {
+  &::after {
+    content: ".";
+    color: var(--ui-brand-color);
+  }
+}
+
+.subtitle {
+  max-width: 650px;
+  margin-bottom: 53px;
+}
+
+.item__title {
+  margin-bottom: 13px;
+  padding-bottom: 0;
+}
+
+.item__content {
+  padding-top: 0;
+  max-width: 870px;
+}

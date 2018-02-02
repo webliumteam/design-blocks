@@ -1,3 +1,5 @@
 {
-  "showSubtitle": true
+  "different-icons": true,
+  "open-icon": "+",
+  "close-icon": "-"
 }
