@@ -45,7 +45,7 @@ ExtendedWireframe.defaultContent = {
         },
       },
     },
-    textValue: 'Learn more',
+    textValue: 'Show More',
     type: 'secondary',
   },
   background: {
