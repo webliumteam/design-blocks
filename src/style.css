@@ -257,11 +257,11 @@
 }
 
 .item__title {
-  font-size: var(--ui-heading-size);
+  font-size: var(--ui-block-title-size);
   color: var(--ui-heading-color);
-  line-height: 24px;
-  font-family: var(--ui-heading-font-family);
-  font-weight: var(--ui-heading-font-weight);
+  line-height: var(--ui-block-title-line-height);
+  font-family: var(--ui-block-title-family);
+  font-weight: var(--ui-block-title-weight);
 }
 
 .btns-group {
