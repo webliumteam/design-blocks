@@ -1,4 +1,4 @@
 {
     "price-wrapper": false,
-    "main-item": true
+    "hidden-main": false
 }
