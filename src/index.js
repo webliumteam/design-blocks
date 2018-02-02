@@ -52,6 +52,7 @@ ExtendedWireframe.defaultContent = {
   subtitle:
     'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain',
   cta: {
+    type: 'primary',
     actionConfig: {
       action: 'link',
       actions: {
