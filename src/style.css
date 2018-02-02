@@ -413,6 +413,7 @@
 .form {
   max-width: 550px;
   margin: 0 auto;
+  padding: 15px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
 
@@ -425,7 +426,7 @@
 
 @media (min-width: 768px) {
   .form {
-    // padding: 30px;
+    padding: 30px;
   }
 }
 
