@@ -158,9 +158,9 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'additional-btn',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Secondary button',
-    defaultValue: true,
+    defaultValue: false,
   },
   {
     id: 'plan-icon',
