@@ -21,28 +21,8 @@ ExtendedWireframe.defaultContent = {
   'phone-title': 'Phone',
   'email-title': 'E-mail',
   'address-content': '1204 Allen Drive<br> Grand Island, NE 68803',
-  'phone-link': {
-    actionConfig: {
-      action: 'external',
-      actions: {
-        external: {
-          url: 'tel:+1 084 553 24 65',
-        },
-      },
-    },
-    textValue: '+1 084 553 24 65',
-  },
-  'email-link': {
-    actionConfig: {
-      action: 'external',
-      actions: {
-        external: {
-          url: 'mailto:mysite@weblium.com',
-        },
-      },
-    },
-    textValue: 'mysite@weblium.com',
-  },
+  'phone-link': '<a href="tel:+1 084 553 24 65">+1 084 553 24 65</a>',
+  'email-link': '<a href="mailto:mysite@weblium.com">mysite@weblium.com</a>',
   map: {
     preset: 'silver',
     height: '100%',
