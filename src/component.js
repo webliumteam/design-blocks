@@ -75,7 +75,7 @@ Block.options = {
 
 Block.defaultContent = {
   background: {},
-  text1: 'СПРОЕКТИРУЕМgit&nbsp;',
+  text1: 'СПРОЕКТИРУЕМ&nbsp;',
   text2: 'УДОБНЫЙ ДИЗАЙН&nbsp;',
   text3: 'ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ&nbsp;',
   text4: '$10&nbsp;',
