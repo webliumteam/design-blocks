@@ -1,7 +1,7 @@
 @import "wireframe-zapdos-cta/src/style.css";
 
-
 /* start here */
+
 .section {
   position: relative;
 
@@ -11,17 +11,6 @@
 
   @media (min-width: 1200px) {
     padding: 94px 0;
-  }
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(36, 36, 36, 0.9);
-    z-index: 1;
   }
 
   &__inner {
@@ -39,6 +28,10 @@
   margin: 0 auto;
   font-size: calc(var(--ui-text-size) * 1.125);
   line-height: calc(var(--ui-text-line-height) * 1.185);
+
+  &:nth-child(2) {
+    margin-top: 0;
+  }
 }
 
 .button {
