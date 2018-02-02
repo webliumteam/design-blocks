@@ -12,15 +12,15 @@ class Block extends React.Component {
     return (
       <section className={css.section}>
         <div className={css.section__inner}>
-          <h1 className={css.title}>
+          <h1 className={classNames(css.title, css['title--center'])}>
             <Text bind="title" />
           </h1>
           <div className={css.section__main}>
             <div className={css['map-wrapper']}>
-              <h3 className={css.contacts__title}>
+              <h3 className={classNames(css.contacts__title, css['contacts__title--center'])}>
                 <Text bind="formTitle" />
               </h3>
-              <p className={css.contacts__desc}>
+              <p className={classNames(css.contacts__desc, css['contacts__desc--center'])}>
                 <Text bind="formDesc" />
               </p>
               <ContactForm
@@ -33,7 +33,6 @@ class Block extends React.Component {
                   css['button--size-md'],
                   css['button--primary'],
                   css.form__button,
-                  css['form__button--custom'],
                 )}
               />
             </div>
@@ -89,7 +88,8 @@ Block.defaultContent = {
   'address-content': 'Украина, г. Киев, ул. Смольная, 9Б БЦ «Глория», 3 этаж, офис 307',
   'phone-content': '+38-067-325-81-46',
   skype: 'Skype: ask@your-best.design',
-  'email-content': '* в нерабочее время отправляйте заявку и мы перезвоним Вам как только увидим ее',
+  'email-content':
+    '* в нерабочее время отправляйте заявку и мы перезвоним Вам как только увидим ее',
   formTitle: 'ОСТАЛИСЬ ВОПРОСЫ?',
   formDesc: 'Оставьте Ваши контакты и мы перезвоним в течении нескольких минут.',
   contactForm: {
