@@ -9,6 +9,8 @@
   font-weight: var(--ui-block-title-font-weight);
   color: var(--ui-dark-shade-color);
   text-transform: uppercase;
+  letter-spacing: 3.6px;
+  margin-bottom: 21px;
 
   span {
     position: relative;
@@ -16,9 +18,9 @@
     &:before {
       content: "";
       position: absolute;
-      width: 10px;
-      height: 3px;
-      left: -15px;
+      width: 12px;
+      height: 4px;
+      left: -31px;
       top: 50%;
       background: var(--ui-dark-shade-color);
     }
@@ -26,9 +28,9 @@
     &:after {
       content: "";
       position: absolute;
-      width: 10px;
-      height: 3px;
-      right: -15px;
+      width: 12px;
+      height: 4px;
+      right: -26px;
       top: 50%;
       background: var(--ui-dark-shade-color);
     }
@@ -46,21 +48,46 @@
 }
 
 .article {
-  &__content {
-    p {
-      position: relative;
+  margin-top: 170px;
 
-      &::after {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 2px;
-        left: 0;
-        bottom: -10px;
-        background-color: var(--ui-dark-shade-color);
-      }
+  &__content {
+    padding-left: 10px;
+    text-align: center;
+
+    &::before {
+      background-color: transparent;
+      font-size: calc( var(--ui-hero-title-size) * 1.38 );
+      line-height: var(--ui-hero-title-line-height);
+      font-family: var(--ui-hero-title-font-family);
+      font-weight: var(--ui-hero-title-font-weight);
+      top: -78px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.1;
     }
 
+    @media(min-width: 992px) {
+      text-align: left;
+
+      &::before {
+        left: 55px;
+        transform: translateX(0);
+      }
+
+      p {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 24px;
+          height: 2px;
+          left: 0;
+          bottom: -20px;
+          background-color: var(--ui-dark-shade-color);
+        }
+      }
+    }
   }
 
   &__title {
@@ -68,6 +95,7 @@
     font-family: var(--ui-heading-font-family);
     text-transform: uppercase;
     letter-spacing: 3.2px;
+    margin-bottom: 17px;
   }
 
   .wrap {
@@ -75,4 +103,9 @@
     line-height: var(--ui-text-line-height);
     font-family: var(--ui-text-font-family);
   }
+
+}
+
+.btns-group {
+  margin-top: 75px;
 }
