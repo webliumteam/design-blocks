@@ -1,3 +1,6 @@
 @import "wireframe-zapdos-process/src/style.css";
 
 /* start here */
+.title {
+  color: #000;
+}
