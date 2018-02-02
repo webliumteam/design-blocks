@@ -170,6 +170,12 @@
   margin-right: 30px;
   //background-color: var(--ui-brand-color);
   color: var(--ui-brand-color);
+
+  span {
+    display: flex;
+    width: 55px;
+    height: 55px;
+  }
 }
 
 .article__content {
