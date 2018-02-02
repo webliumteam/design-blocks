@@ -42,7 +42,7 @@
   }
 
   &__picture {
-    padding-top: 100.5%;
+    padding-top: 100%;
   }
 
   &__picture-wrapper {
@@ -52,12 +52,9 @@
   &__title {
     margin-bottom: 14px;
   }
-
-  /* need ui-kit: color */
+ 
   &__text {
     padding: 0 16%;
-    margin-bottom: 0;
-    color: #6e7173;
   }
 }
 
