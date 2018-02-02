@@ -22,6 +22,7 @@ ExtendedWireframe.defaultContent = {
         alt: 'Project 1',
       },
       cta: {
+        type: 'link',
         actionConfig: {
           action: 'link',
           actions: {
