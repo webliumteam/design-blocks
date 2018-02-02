@@ -3,7 +3,6 @@
 .section {
   min-width: 320px;
   padding: 40px 0;
-  background-color: var(--ui-block-bg);
   font-size: var(--ui-text-size);
   font-family: var(--ui-text-font-family);
   color: var(--ui-text-color);
