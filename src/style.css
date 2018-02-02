@@ -53,10 +53,11 @@
   }
 
   &__icon-picture {
-    clip-path: polygon(170.5px 2.175px, 233.112px 38.325px, 238.612px 47.851px, 238.612px 120.149px, 233.112px 129.675px, 170.5px 165.825px, 159.5px 165.825px, 96.888px 129.675px, 91.388px 120.149px, 91.388px 47.851px, 96.888px 38.325px, 159.5px 2.175px, 170.5px 2.175px);
+    background: transparent;
 
     img {
       object-fit: contain;
+      clip-path: polygon(170.5px 2.175px, 233.112px 38.325px, 238.612px 47.851px, 238.612px 120.149px, 233.112px 129.675px, 170.5px 165.825px, 159.5px 165.825px, 96.888px 129.675px, 91.388px 120.149px, 91.388px 47.851px, 96.888px 38.325px, 159.5px 2.175px, 170.5px 2.175px);
     }
   }
 }
