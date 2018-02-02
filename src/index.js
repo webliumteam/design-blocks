@@ -21,7 +21,7 @@ ExtendedWireframe.defaultContent = {
         resourceRef: 'iphone.jpg',
         alt: 'Project 1',
       },
-      cta: {
+      link: {
         type: 'link',
         actionConfig: {
           action: 'link',
@@ -46,7 +46,7 @@ ExtendedWireframe.defaultContent = {
         resourceRef: 'project_02.jpg',
         alt: 'Project 2',
       },
-      cta: {
+      link: {
         type: 'link',
         actionConfig: {
           action: 'link',
