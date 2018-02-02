@@ -29,9 +29,6 @@
 
   &__desc {
     font-size: var(--ui-text-size);
-    line-height: var(--ui-text-line-height);
-    font-weight: var(--ui-text-font-weight);
-    color: #6e7173;
   }
 }
 
