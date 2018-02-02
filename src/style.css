@@ -24,7 +24,7 @@
       transform: translateX(-50%);
       background-color: transparent;
       font-size: var(--ui-hero-title-size);
-      font-weight: 400;
+      font-weight: var(--ui-hero-title-font-weight);
       letter-spacing: -1.6px;
       padding: 8px;
     }
@@ -54,10 +54,6 @@
 
 .button {
   text-transform: uppercase;
-  font-size: var(--ui-small-size);
-  font-family: var(--ui-small-font-family);
-  line-height: 3.27;
-  padding: 0 18px;
 }
 
 @media (min-width: 992px) {
