@@ -11,7 +11,8 @@ a {
 
 .logo__title {
   color: #fff;
-  font: var(--ui-heading-size) var(--ui-hero-title-font-family);
+  font-size: var(--ui-heading-size);
+  font-family: var(--ui-hero-title-font-family);
   font-weight: 700;
 }
 
@@ -20,13 +21,15 @@ a {
 }
 
 .nav-list {
-  font: var(--ui-text-size) var(--ui-hero-title-font-family);
+  font: var(--ui-text-size);
+  font-family: var(--ui-hero-title-font-family);
   color: #fff;
   font-weight: 400;
 }
 
 .footer__meta {
-  font: var(--ui-small-text-size) var(--ui-hero-title-font-family);
+  font-size: var(--ui-small-text-size);
+  font-family: var(--ui-hero-title-font-family);
   color: #5e5e5e;
   text-transform: uppercase;
   font-weight: 400;
