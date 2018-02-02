@@ -9,8 +9,6 @@
   }
 
   &-list {
-    margin-top: 0;
-
     &__item {
 
       @media (min-width: 768px) {
@@ -56,6 +54,6 @@
 @media (min-width: 992px) {
   .map-wrapper {
     width: 68.4%;
-    height: 423px;
+    min-height: 423px;
   }
 }
