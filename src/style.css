@@ -1,34 +1,9 @@
 @import "wireframe-zapdos-why/src/style.css";
 
 /* start here */
-.title span {
-  position: relative;
-
-  &::before {
-    content: "-";
-    font-size: var(--ui-block-title-size);
-    color: var(--ui-block-title-color);
-    line-height: var(--ui-block-title-line-height);
-    font-family: var(--ui-block-title-font-family);
-    font-weight: 600;
-    position: absolute;
-    left: -29px;
-  }
-
-  &::after {
-    content: "-";
-    font-size: var(--ui-block-title-size);
-    color: var(--ui-block-title-color);
-    line-height: var(--ui-block-title-line-height);
-    font-family: var(--ui-block-title-font-family);
-    font-weight: 600;
-    position: absolute;
-    right: -29px;
-  }
-}
 
 .title {
-  font-weight: var(--ui-heading-large-font-weight);
+  font-weight: var(--ui-heading-lg-font-weight);
   margin-bottom: 20px;
 }
 
@@ -36,14 +11,34 @@
   font-size: calc(var(--ui-sub-heading-size) * 0.888);
   line-height: 1.75;
   letter-spacing: 1.2px;
-
-  /* color: #909090; in desing */
 }
 
 .item {
-  &__title {
 
-    /* font-weight: 500; in design */
+  @media (min-width: 992px) {
+    position: relative;
+    margin-top: 45px;
+
+    &::after {
+      content: "";
+      width: 58px;
+      height: 2px;
+      background-color: var(--ui-brand-color);
+      position: absolute;
+      top: 85px;
+      right: -27px;
+      z-index: 2;
+      opacity: 0.1;
+    }
+
+    &:last-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
     letter-spacing: 3.2px;
     text-transform: uppercase;
   }
@@ -53,7 +48,7 @@
   }
 
   &__icon-picture {
-    background: transparent;
+    background-color: transparent;
 
     img {
       object-fit: contain;
@@ -71,11 +66,12 @@
       content: "";
       width: 58px;
       height: 2px;
-      background-color: #e8e8e8;
+      background-color: var(--ui-brand-color);
       position: absolute;
       top: 85px;
       right: -27px;
       z-index: 2;
+      opacity: .1;
     }
 
     &:last-child {
