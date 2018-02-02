@@ -42,7 +42,7 @@ ExtendedWireframe.defaultContent = {
       text:
         'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
       picture: {
-        resourceRef: 'iphone.jpg',
+        resourceRef: 'project_02.jpg',
         alt: 'Project 2',
       },
       cta: {
