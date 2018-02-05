@@ -186,6 +186,10 @@
   margin-bottom: 15px;
 }
 
+.contacts-list__item:only-child {
+  padding-right: 0;
+}
+
 @media (min-width: 768px) {
   .contacts-list__item {
     margin-bottom: 30px;
