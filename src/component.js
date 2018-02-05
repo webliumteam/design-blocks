@@ -7,26 +7,32 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Icon, Image}, style} = this.props
-    const topElement = this.getModifierValue('icon-replacer')
+    const topElement = this.getOptionValue('icon-replacer') || 'icon'
     const cases = {
       image: () => <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />,
       text: () => <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} />,
       icon: () => <Icon bind={`articles[${index}].icon`} />,
-      empty: () => null,
     }
     const selectedElement = cases[topElement] ? topElement : 'empty'
     const imageWrapperClass = selectedElement === 'image' ?
       style['image-wrapper'] : ''
+    const textWrapperClass = selectedElement === 'text' ?
+      style['text-wrapper'] : ''
     return (
       <article className={classNames(style.item, className)}>
         {children}
-        <div className={classNames(style['item__top-element'], imageWrapperClass)}>
-          {cases[selectedElement]()}
-        </div>
+        {this.getModifierValue('item-icon') && (
+          <div className={classNames(style['item__top-element'], imageWrapperClass, textWrapperClass)}>
+            {cases[selectedElement]()}
+          </div>
+        )}
         {_.get('item-heading')(modifier) && (
           <h2 className={style.item__title}>
             <Text bind={`articles[${index}].title`} />
@@ -223,7 +229,9 @@ Block.modifierScheme = [
   },
   {
     id: 'icon-replacer',
-    type: 'select',
+    type: 'hidden',
+    label: 'Image replacer',
+    defaultValue: 'icon',
     options: [{
       id: 'icon',
       label: 'Show icon',
@@ -234,8 +242,6 @@ Block.modifierScheme = [
       id: 'text',
       label: 'Show text',
     }],
-    label: 'Image replacer',
-    defaultValue: 'icon',
   },
   {
     id: 'top-icon',

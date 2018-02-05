@@ -167,7 +167,12 @@
 .image-wrapper {
   position: relative;
   width: 100%;
+  height: auto;
   overflow: hidden;
+}
+
+.text-wrapper {
+  height: auto;
 }
 
 .item__icon-picture {
