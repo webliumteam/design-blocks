@@ -25,12 +25,12 @@
 
 .item {
   &__picture {
-    width: auto;
+    position: relative;
+    width: 100%;
     max-width: 100%;
     padding-top: 0;
     background-color: transparent;
-    min-height: 260px;
-    max-height: 260px;
+    height: 260px;
     overflow: hidden;
 
     &-wrapper {
