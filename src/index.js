@@ -10,6 +10,7 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
+  ...Comment.defaultContent,
   background: {
     type: 'image',
     position: {
@@ -111,6 +112,7 @@ ExtendedWireframe.defaultContent = {
   'plan-price-count-2': '$50',
   'plan-price-count-3': '$100',
   'plan-cta-1': {
+    type: 'secondary',
     actionConfig: {
       action: 'link',
       actions: {
@@ -124,6 +126,7 @@ ExtendedWireframe.defaultContent = {
     textValue: 'Select plan',
   },
   'plan-cta-2': {
+    type: 'primary',
     actionConfig: {
       action: 'link',
       actions: {
@@ -137,6 +140,7 @@ ExtendedWireframe.defaultContent = {
     textValue: 'Select plan',
   },
   'plan-cta-3': {
+    type: 'secondary',
     actionConfig: {
       action: 'link',
       actions: {

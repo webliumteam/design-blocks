@@ -4,7 +4,7 @@
 
 .section {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 180px;
 }
 
 .title {
@@ -20,8 +20,10 @@
   }
 }
 
-.plans-wrapper {
-  margin-top: 110px;
+@media (min-width: 768px) {
+  .plans-wrapper {
+    margin-top: 110px;
+  }
 }
 
 .price-wrapper {
@@ -35,7 +37,8 @@
   padding: 0;
   background-color: var(--ui-light-shade-color);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
-  padding-bottom: 60px;
+  z-index: 1;
+  padding-bottom: 0;
 
   &__price-count {
     display: inline-block;
@@ -46,16 +49,28 @@
   }
 
   &__list {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 
   &__list-item {
-    min-height: 60px;
+    padding: 18px 15px;
     line-height: calc(var(--ui-sub-heading-size) * 3);
     margin-bottom: 0;
 
-    &:nth-child(2n) {
-      background-color: var(--ui-border-color);
+    &:nth-of-type(even) {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--ui-dark-shade-color);
+        opacity: 0.05;
+        z-index: -1;
+      }
     }
   }
 
@@ -81,24 +96,43 @@
     text-transform: uppercase;
     font-size: calc(var(--ui-heading-size)-6);
   }
+
+  &__button {
+    width: calc(100% - 30px);
+
+    @media (min-width: 768px) {
+      width: auto;
+      margin-top: 40px;
+      margin-bottom: 50px;
+    }
+  }
 }
 
 .plan--main {
-  margin-top: -60px;
   z-index: 2;
-  padding-bottom: 34px;
-  margin-bottom: -60px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 
   .price-wrapper {
     background-color: var(--ui-brand-color);
   }
 
-  .plan--main .plan__list {
-    margin-bottom: 30px;
+  .plan__list {
+    margin-bottom: 0;
+  }
+
+  .plan__button {
+    margin-top: 40px;
+  }
+
+  @media (min-width: 768px) {
+    margin-top: -60px;
+    margin-bottom: -60px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .plan {
     max-width: 29.9145%;
     flex-basis: 29.9145%;
@@ -107,12 +141,5 @@
       max-width: 31.6239%;
       flex-basis: 31.6239%;
     }
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .plan--main {
-    margin-top: 40px;
-    margin-bottom: 0;
   }
 }
