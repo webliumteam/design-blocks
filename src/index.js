@@ -11,6 +11,7 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  theme: 'dark',
   steps: [
     {
       id: '07a5468d-b105-4866-98a5-dcf2cf46db3a',
@@ -55,6 +56,11 @@ ExtendedWireframe.defaultContent = {
       cover: '50% 50%',
     },
     resourceRef: 'block-bg.jpg',
+    overlay: {
+      type: 'color',
+      color: 'var(--ui-dark-shade-color)',
+      opacity: 0.9,
+    },
   },
 }
 
