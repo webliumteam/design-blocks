@@ -46,7 +46,7 @@
     color: var(--ui-light-shade-color);
 
     @media (min-width: 992px) {
-      font-size: var(--ui-heading-large-size);
+      font-size: var(--ui-heading-lg-size);
     }
 
     &::after {

@@ -21,7 +21,8 @@ ExtendedWireframe.defaultContent = {
         src: 'project_1.png',
         alt: 'Project 1',
       },
-      cta: {
+      link: {
+        type: 'link',
         actionConfig: {
           action: 'link',
           actions: {
@@ -45,7 +46,8 @@ ExtendedWireframe.defaultContent = {
         src: 'project_2.png',
         alt: 'Project 2',
       },
-      cta: {
+      link: {
+        type: 'link',
         actionConfig: {
           action: 'link',
           actions: {
@@ -91,7 +93,7 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'subtitle',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Title description',
     defaultValue: false,
   },
