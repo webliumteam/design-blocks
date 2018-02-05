@@ -1,3 +1,17 @@
 {
-  "title": "Design title"
+  "theme": "dark",
+  "logo": {
+    "text": {
+      "value": "Company Name"
+    }
+  },
+  "subtitle": "Company Slogan",
+  "background": {
+    "type": "image",
+     "position": {
+      "type": "cover",
+       "cover": "50% 50%"
+     },
+     "src": "footer_bg.jpg"
+   }
 }
