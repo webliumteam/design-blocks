@@ -19,6 +19,11 @@ ExtendedWireframe.defaultContent = {
       cover: '50% 50%',
     },
     resourceRef: 'bg.png',
+    overlay: {
+      type: 'color',
+      color: 'var(--ui-dark-shade-color)',
+      opacity: 0.8,
+    },
   },
   theme: 'dark',
   title: 'Gallery',
