@@ -345,7 +345,7 @@
   }
 
   .slick-dots li.slick-active button {
-    background-color: var(--ui-dark-accent-color);
+    background-color: var(--ui-brand-color);
   }
   /* stylelint-enable */
 }
