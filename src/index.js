@@ -10,6 +10,7 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
   theme: 'dark',
   logo: {
     image: {
@@ -17,8 +18,6 @@ ExtendedWireframe.defaultContent = {
       alt: 'Great House',
     },
   },
-  copyright: 'Produced by Weblium.com. All rights Reserved',
-  additional: 'Demo preview for {Template name} {Concept name}',
   menu: [
     {
       id: '10c06b19-6e0d-4ad1-b1d5-213501dd321c',

@@ -4,17 +4,28 @@
 
 .footer {
   padding: 85px 0 0;
-  background: var(--ui-dark-shade-color);
 
   &__main {
     display: flex;
   }
 
   &__bottom {
+    position: relative;
     margin-top: 38px;
     border-top: 1px solid var(--ui-border-color);
     opacity: 0.5;
     padding: 84px 0 46px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--ui-text-color);
+      opacity: 0.5;
+    }
   }
 
   &__meta {
