@@ -21,6 +21,7 @@ ExtendedWireframe.defaultContent = {
     alt: 'Picture about the company',
   },
   button: {
+    type: 'secondary-alt',
     actionConfig: {
       action: 'link',
       actions: {
