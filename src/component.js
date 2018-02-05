@@ -9,8 +9,11 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   render() {
-    const {components: {Logo, Text, Map, SocialIcons, Button}, style} = this.props
+    const {components: {Logo, Text, Map, SocialIcons, Icon}, style} = this.props
 
     const textWithSocials = (
       !this.getModifierValue('logo') &&
@@ -48,15 +51,18 @@ class Block extends React.Component {
       this.getModifierValue('social')
     ) && this.getModifierValue('map')
 
+    const title = <h1 className={style.title}><Text bind="title" /></h1>
+
     return (
       <section className={classNames(style.section, {
         [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
         [style['section--column']]: mapWithSocials})}
       >
         <div className={style.section__inner}>
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
+          {this.getModifierValue('top-icon') && (
+            <Icon className={style['top-icon']} bind="topIcon" />
+          )}
+          {!this.getOptionValue('title-in-contacts') && title}
           <div className={style.section__main}>
             {this.getModifierValue('map') && (
               <div className={style['map-wrapper']}>
@@ -67,6 +73,7 @@ class Block extends React.Component {
             )}
             {!onlyMap && (
               <div className={style.contacts}>
+                {this.getOptionValue('title-in-contacts') && title}
                 {this.getModifierValue('logo') && (
                   <div className={style['logo-wrapper']}>
                     <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
@@ -89,7 +96,7 @@ class Block extends React.Component {
                         <Text bind="phone-title" />
                       </h3>
                       <p className={style.contacts__desc}>
-                        <Button bind="phone-link" />
+                        <Text bind="phone-link" />
                       </p>
                     </li>
                   )}
@@ -99,7 +106,7 @@ class Block extends React.Component {
                         <Text bind="email-title" />
                       </h3>
                       <p className={style.contacts__desc}>
-                        <Button bind="email-link" />
+                        <Text bind="email-link" />
                       </p>
                     </li>
                   )}
@@ -116,7 +123,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons', 'Button'])($editor.components)
+Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   title: 'Contacts',
@@ -130,28 +137,8 @@ Block.defaultContent = {
   'phone-title': 'Phone',
   'email-title': 'E-mail',
   'address-content': 'Head office in London - 36 Regent St.',
-  'phone-link': {
-    actionConfig: {
-      action: 'external',
-      actions: {
-        external: {
-          url: 'tel:+12345678900',
-        },
-      },
-    },
-    textValue: '+1 (234) 567 89 00',
-  },
-  'email-link': {
-    actionConfig: {
-      action: 'external',
-      actions: {
-        external: {
-          url: 'mailto:mysite@weblium.com',
-        },
-      },
-    },
-    textValue: 'mysite@weblium.com',
-  },
+  'phone-link': '<a href="tel:+1 (234) 567 89 00">+1 (234) 567 89 00</a>',
+  'email-link': '<a href="mailto:mysite@weblium.com">mysite@weblium.com</a>',
   map: {
     preset: 'silver',
     height: '100%',
@@ -199,11 +186,15 @@ Block.defaultContent = {
       border: 'circle',
       innerFill: true,
       preset: 'preset001',
-      marginRight: 15,
-      color: '#9B9B9B',
+      offset: 15,
+      color: '#9b9b9b',
       sizes: [10, 20, 30, 40],
       size: '30px',
     },
+  },
+  topIcon: {
+    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    fill: 'red',
   },
 }
 
@@ -243,6 +234,12 @@ Block.modifierScheme = [
     type: 'checkbox',
     label: 'Social Media Buttons',
     defaultValue: true,
+  },
+  {
+    id: 'top-icon',
+    type: 'hidden',
+    label: 'Top icon decorator',
+    defaultValue: false,
   },
 ]
 

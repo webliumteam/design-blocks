@@ -7,7 +7,7 @@
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
-  
+
   @media (min-width: 768px) {
     padding: 60px 0;
   }
@@ -128,7 +128,7 @@
 @media (min-width: 768px) {
   .map-wrapper {
     width: 66%;
-    margin-bottom: 0;    
+    margin-bottom: 0;
   }
 }
 
@@ -299,7 +299,7 @@
   color: var(--ui-text-color);
   text-decoration: none;
   background-color: var(--ui-media-bg);
-  
+
   img {
     max-width: 100%;
   }
@@ -332,6 +332,7 @@
 .socials {
   flex-shrink: 0;
   margin-top: 30px;
+  margin-bottom: -15px;
   font-size: 0;
 }
 
@@ -363,4 +364,8 @@
   max-width: 100%;
   max-height: 100%;
   fill: var(--ui-light-shade-color);
+}
+
+.top-icon {
+  width: 20px;
 }
