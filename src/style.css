@@ -153,6 +153,13 @@
   @media (min-width: 992px) {
     padding-left: 30px;
   }
+
+  &:first-child {
+
+    @media (min-width: 992px) {
+      padding-left: 0;
+    }
+  }
 }
 
 @media (min-width: 992px) {
