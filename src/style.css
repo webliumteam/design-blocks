@@ -37,10 +37,6 @@
 }
 
 .footer {
-  &__main {
-    display: flex;
-  }
-
   &__meta {
     font-size: var(--ui-caption-size);
     font-family: var(--ui-caption-font-family);
