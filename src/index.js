@@ -140,49 +140,16 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Services description',
-    defaultValue: true,
-  },
-  {
-    id: 'heading',
-    type: 'checkbox',
-    label: 'Service title',
-    defaultValue: true,
-  },
-  {
-    id: 'body',
-    type: 'checkbox',
-    label: 'Service main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'Link',
-    defaultValue: true,
-  },
-  {
-    id: 'button-primary',
-    type: 'hidden',
-    label: 'Primary button',
-    defaultValue: false,
-  },
-  {
-    id: 'button-secondary',
-    type: 'checkbox',
-    label: 'Secondary button',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'checkbox',
-    label: 'Top icon decorator',
-    defaultValue: true,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  body: {defaultValue: true, label: 'Service main text', type: 'checkbox'},
+  'button-primary': {defaultValue: false, label: 'Primary button', type: 'hidden'},
+  'button-secondary': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Service title', type: 'checkbox'},
+  link: {defaultValue: true, label: 'Link', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Services description', type: 'checkbox'},
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
+}
+
 
 export default ExtendedWireframe
