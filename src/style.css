@@ -1,3 +1,108 @@
 @import "wireframe-zapdos-blog/src/style.css";
 
 /* start here */
+.subtitle {
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 0 15px;
+  font-family: var(--ui-subtitle-font-family);
+  font-weight: var(--ui-subtitle-font-weight);
+  font-size: var(--ui-subtitle-size);
+  line-height: var(--ui-subtitle-line-height);
+  letter-spacing: 1.8px;
+  text-align: center;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 87px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: var(--ui-brand-color);
+  }
+}
+
+.top-icon {
+  display: block;
+  position: relative;
+  margin: 0 auto 50px;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  color: var(--ui-brand-color);
+
+  > svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--ui-dark-accent-color);
+    opacity: 0.05;
+  }
+}
+
+.title {
+  margin-bottom: 25px;
+  letter-spacing: 1.8px;
+}
+
+.article {
+  margin-bottom: 27px;
+  padding-left: 35px;
+
+  &__meta {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.67px;
+  }
+
+  &__title {
+    position: relative;
+    min-height: 62px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 13px;
+      left: -20px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: var(--ui-brand-color);
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+}
+
+.button {
+  letter-spacing: 1.2px;
+}
+
+@media (min-width: 992px) {
+  .subtitle {
+    width: 770px;
+    margin-bottom: 90px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+  }
+}
