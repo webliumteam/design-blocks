@@ -108,49 +108,16 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'post-publish-date',
-    type: 'checkbox',
-    label: 'Date of publishing',
-    defaultValue: true,
-  },
-  {
-    id: 'post-image',
-    type: 'checkbox',
-    label: 'Post image',
-    defaultValue: true,
-  },
-  {
-    id: 'post-description',
-    type: 'checkbox',
-    label: 'Post main text',
-    defaultValue: true,
-  },
-  {
-    id: 'post-link',
-    type: 'checkbox',
-    label: 'Post link',
-    defaultValue: true,
-  },
-  {
-    id: 'block-button',
-    type: 'checkbox',
-    label: 'Block button',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'hidden',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'block-button': {defaultValue: false, label: 'Block button', type: 'checkbox'},
+  'post-description': {defaultValue: true, label: 'Post main text', type: 'checkbox'},
+  'post-image': {defaultValue: true, label: 'Post image', type: 'checkbox'},
+  'post-link': {defaultValue: true, label: 'Post link', type: 'checkbox'},
+  'post-publish-date': {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default ExtendedWireframe
