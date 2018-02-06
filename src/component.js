@@ -198,49 +198,15 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'map',
-    type: 'checkbox',
-    label: 'Map',
-    defaultValue: true,
-  },
-  {
-    id: 'logo',
-    type: 'checkbox',
-    label: 'Logo',
-    defaultValue: true,
-  },
-  {
-    id: 'phone',
-    type: 'checkbox',
-    label: 'Phone text block',
-    defaultValue: true,
-  },
-  {
-    id: 'email',
-    type: 'checkbox',
-    label: 'E-mail text block',
-    defaultValue: true,
-  },
-  {
-    id: 'address',
-    type: 'checkbox',
-    label: 'Address text block',
-    defaultValue: true,
-  },
-  {
-    id: 'social',
-    type: 'checkbox',
-    label: 'Social Media Buttons',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+Block.modifierScheme = {
+  address: {defaultValue: true, label: 'Address text block', type: 'checkbox'},
+  email: {defaultValue: true, label: 'E-mail text block', type: 'checkbox'},
+  logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
+  map: {defaultValue: true, label: 'Map', type: 'checkbox'},
+  phone: {defaultValue: true, label: 'Phone text block', type: 'checkbox'},
+  social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
