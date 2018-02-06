@@ -77,49 +77,16 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Title description',
-    defaultValue: true,
-  },
-  {
-    id: 'block-button',
-    type: 'checkbox',
-    label: 'Block button',
-    defaultValue: true,
-  },
-  {
-    id: 'project-category',
-    type: 'checkbox',
-    label: 'Project category',
-    defaultValue: true,
-  },
-  {
-    id: 'project-description',
-    type: 'checkbox',
-    label: 'Project description',
-    defaultValue: true,
-  },
-  {
-    id: 'project-button',
-    type: 'checkbox',
-    label: 'Project button',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'checkbox',
-    label: 'Top icon decorator',
-    defaultValue: true,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'block-button': {defaultValue: true, label: 'Block button', type: 'checkbox'},
+  'project-button': {defaultValue: true, label: 'Project button', type: 'checkbox'},
+  'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox'},
+  'project-description': {defaultValue: true, label: 'Project description', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
+}
+
 
 export default ExtendedWireframe
