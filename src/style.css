@@ -1,3 +1,37 @@
 @import "wireframe-zapdos-text/src/style.css";
 
-/* start here */
+.subtitle {
+  max-width: 875px;
+  margin-bottom: 30px;
+  font-size: var(--ui-subtitle-size);
+  font-weight: var(--ui-subtitle-font-weight);
+  font-family: var(--ui-subtitle-font-family);
+  color: var(--ui-subtitle-color);
+  line-height: var(--ui-subtitle-line-height);
+}
+
+.title {
+  margin-bottom: 35px;
+  font-size: var(--ui-block-title-size);
+  font-weight: var(--ui-block-title-font-weight);
+  font-family: var(--ui-block-title-font-family);
+  color: var(--ui-dark-shade-color);
+}
+
+.heading {
+  font-size: var(--ui-heading-size);
+  line-height: var(--ui-heading-line-height);
+  font-weight: var(--ui-heading-font-weight);
+  font-family: var(--ui-heading-font-family);
+  color: var(--ui-dark-shade-color);
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: var(--ui-text-size);
+  font-weight: var(--ui-text-font-weight);
+  font-family: var(--ui-text-font-family);
+  color: var(--ui-text-color);
+  margin-top: 0;
+  line-height: var(--ui-text-line-height);
+}
