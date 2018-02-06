@@ -97,26 +97,12 @@ ExtendedWireframe.defaultContent = {
   ],
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Company name',
-    defaultValue: true,
-  },
-  {
-    id: 'text-left',
-    type: 'checkbox',
-    label: 'Left text',
-    defaultValue: true,
-  },
-  {
-    id: 'text-right',
-    type: 'checkbox',
-    label: 'Right text',
-    defaultValue: true,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'text-left': {defaultValue: true, label: 'Left text', type: 'checkbox'},
+  'text-right': {defaultValue: true, label: 'Right text', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
+}
 
 
 export default ExtendedWireframe
