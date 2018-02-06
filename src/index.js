@@ -183,7 +183,7 @@ ExtendedWireframe.modifierScheme = [
   },
   {
     id: 'additional-btn',
-    type: 'checkbox',
+    type: 'hidden',
     label: 'Secondary button',
     defaultValue: false,
   },
