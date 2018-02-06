@@ -111,43 +111,14 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Process description',
-    defaultValue: true,
-  },
-  {
-    id: 'icon',
-    type: 'checkbox',
-    label: 'Step icon',
-    defaultValue: true,
-  },
-  {
-    id: 'heading',
-    type: 'checkbox',
-    label: 'Step title',
-    defaultValue: true,
-  },
-  {
-    id: 'body',
-    type: 'checkbox',
-    label: 'Step main text',
-    defaultValue: true,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-]
+Block.modifierScheme = {
+  body: {defaultValue: true, label: 'Step main text', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Step title', type: 'checkbox'},
+  icon: {defaultValue: true, label: 'Step icon', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Process description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+}
+
 
 export default Block
