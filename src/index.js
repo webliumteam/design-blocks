@@ -13,6 +13,8 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
 }
 
-ExtendedWireframe.modifierScheme = []
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+}
 
 export default ExtendedWireframe
