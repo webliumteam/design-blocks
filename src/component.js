@@ -156,49 +156,15 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-  {
-    id: 'article-picture',
-    type: 'hidden',
-    label: 'Article picture',
-    defaultValue: true,
-  },
-]
+Block.modifierScheme = {
+  'article-picture': {defaultValue: true, label: 'Article picture', type: 'hidden'},
+  'button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'socialIcons': {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
+  'subtitle': {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
+  'text': {defaultValue: true, label: 'Company main text', type: 'checkbox'},
+  'title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
