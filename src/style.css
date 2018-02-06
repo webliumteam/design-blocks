@@ -1,3 +1,129 @@
 @import "wireframe-zapdos-projects/src/style.css";
 
 /* start here */
+.section {
+  padding: 0;
+
+  &__header {
+    margin-bottom: 0;
+  }
+
+  &__inner {
+    max-width: none;
+    padding: 0;
+  }
+}
+
+.article {
+  &__picture {
+    &-wrapper {
+      order: 2;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--ui-dark-shade-color);
+    padding: 30px;
+
+    @media (min-width: 992px) {
+      padding-left: 115px;
+      padding-top: 130px;
+      padding-bottom: 130px;
+      padding-right: 115px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    position: relative;
+    font-family: var(--ui-block-title-font-family);
+    font-weight: var(--ui-block-title-font-weight);
+    color: var(--ui-light-shade-color);
+
+    @media (min-width: 992px) {
+      font-size: var(--ui-heading-lg-size);
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -20px;
+      left: 0;
+      height: 2px;
+      width: 45px;
+      background-color: var(--ui-brand-color);
+    }
+  }
+
+  &__text {
+    padding-right: 0;
+    margin-bottom: 40px;
+    max-width: 684px;
+    font-family: var(--ui-text-font-family);
+    font-weight: var(--ui-text-font-weight);
+    color: var(--ui-text-color);
+
+    @media (min-width: 992px) {
+      font-size: var(--ui-heading-size);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ui-light-shade-color);
+
+    @media (min-width: 992px) {
+      font-size: calc(var(--ui-text-size) * 1.125);
+    }
+  }
+
+  &:nth-child(even) {
+    .article {
+      &__picture-wrapper {
+
+        @media (min-width: 992px) {
+          order: 1;
+        }
+      }
+
+      &__content {
+        padding-bottom: 30px;
+        background-color: var(--ui-light-shade-color);
+
+        @media (min-width: 992px) {
+          order: 2;
+          padding-bottom: 130px;
+        }
+      }
+
+      &__title {
+        color: var(--ui-block-title-color);
+      }
+
+      &__text {
+        color: var(--ui-block-title-color);
+      }
+
+      &__link {
+        color: var(--ui-block-title-color);
+      }
+    }
+  }
+
+  &:last-of-type {
+    .article__content {
+      padding-bottom: 30px;
+
+      @media (min-width: 992px) {
+        padding-bottom: 130px;
+      }
+    }
+  }
+}
