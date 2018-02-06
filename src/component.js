@@ -14,10 +14,10 @@ class Block extends React.Component {
     return (
       <section className={css.section}>
         <h1 className={css.title}>
-          <Text bind="text1" />
-          <Text bind="text2" className={css.brand} />
-          <Text bind="text3" />
-          <Text bind="text4" className={css.brand} />
+          <Text bind="text1" />&nbsp;
+          <Text bind="text2" className={css.brand} />&nbsp;
+          <Text bind="text3" />&nbsp;
+          <Text bind="text4" className={css.brand} />&nbsp;
           <Text bind="text5" />
         </h1>
         <div className={css.section__inner}>
@@ -75,10 +75,10 @@ Block.options = {
 
 Block.defaultContent = {
   background: {},
-  text1: 'СПРОЕКТИРУЕМ&nbsp;',
-  text2: 'УДОБНЫЙ ДИЗАЙН&nbsp;',
-  text3: 'ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ&nbsp;',
-  text4: '$10&nbsp;',
+  text1: 'СПРОЕКТИРУЕМ',
+  text2: 'УДОБНЫЙ ДИЗАЙН',
+  text3: 'ДЛЯ ВАШЕГО БИЗНЕСА ПО ЦЕНЕ ОТ',
+  text4: '$10',
   text5: 'ЗА КВАДРАТНЫЙ МЕТР ',
   theme: 'dark',
   icon: {

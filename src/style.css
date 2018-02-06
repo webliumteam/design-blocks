@@ -343,7 +343,7 @@
   position: absolute;
   bottom: 40px;
   left: 50%;
-  padding: 0;
+  padding: 0!important;
   cursor: pointer;
   text-decoration: none;
   width: 82px;
