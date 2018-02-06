@@ -2,7 +2,6 @@
 
 .section {
   position: relative;
-  z-index: 5;
 
   &::before {
     content: "";
@@ -37,6 +36,11 @@
   color: var(--ui-media-bg);
 }
 
+.button {
+  border-color: var(--ui-light-shade-color);
+  color: var(--ui-light-shade-color);
+}
+
 @media (min-width: 768px) {
   .item__title {
     font-size: calc(var(--ui-hero-title-size) / 1.5);
@@ -47,6 +51,10 @@
   .item__title {
     font-size: var(--ui-hero-title-size);
   }
+}
+
+:global {
+  /* stylelint-disable */
 
   .slick-dots li {
     margin-right: 20px;
@@ -59,8 +67,11 @@
     opacity: 0.5;
   }
 
-  .slick-dots .slick-active button {
-    width: 20px;
-    height: 20px;
+  .slick-dots li.slick-active button {
+    width: 17px;
+    height: 17px;
+    background-color: var(--ui-light-shade-color);
+    opacity: 1;
   }
+  /* stylelint-enable */
 }

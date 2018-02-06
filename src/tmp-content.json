@@ -12,6 +12,8 @@
       "title": "<strong>Bake more</strong><br>worry less",
       "subtitle": "Enjoy the food we have spent sleepless nights thinking up, testing and <br> producing at the very highest standard possible",
       "cta": {
+        "type": "secondary",
+        "size": "sm",
         "actionConfig": {
           "action": "link",
           "actions": {
@@ -30,6 +32,8 @@
       "title": "<strong>Bake more</strong><br>worry less",
       "subtitle": "Enjoy the food we have spent sleepless nights thinking up, testing and <br> producing at the very highest standard possible",
       "cta": {
+        "type": "secondary",
+        "size": "sm",
         "actionConfig": {
           "action": "link",
           "actions": {
@@ -48,6 +52,8 @@
       "title": "<strong>Bake more</strong><br>worry less",
       "subtitle": "Enjoy the food we have spent sleepless nights thinking up, testing and <br> producing at the very highest standard possible",
       "cta": {
+        "type": "secondary",
+        "size": "sm",
         "actionConfig": {
           "action": "link",
           "actions": {
