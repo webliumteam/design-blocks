@@ -76,49 +76,16 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Block description',
-    defaultValue: true,
-  },
-  {
-    id: 'item-icon',
-    type: 'checkbox',
-    label: 'Advantages icon',
-    defaultValue: true,
-  },
-  {
-    id: 'item-heading',
-    type: 'checkbox',
-    label: 'Advantages title',
-    defaultValue: true,
-  },
-  {
-    id: 'item-description',
-    type: 'checkbox',
-    label: 'Advantages description',
-    defaultValue: true,
-  },
-  {
-    id: 'button-secondary',
-    type: 'checkbox',
-    label: 'Secondary Button',
-    defaultValue: false,
-  },
-  {
-    id: 'button-primary',
-    type: 'checkbox',
-    label: 'Primary Button',
-    defaultValue: false,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'button-primary': {defaultValue: false, label: 'Primary Button', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Secondary Button', type: 'checkbox'},
+  'item-description': {defaultValue: true, label: 'Advantages description', type: 'checkbox'},
+  'item-heading': {defaultValue: true, label: 'Advantages title', type: 'checkbox'},
+  'item-icon': {defaultValue: true, label: 'Advantages icon', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+}
+
 
 export default ExtendedWireframe
