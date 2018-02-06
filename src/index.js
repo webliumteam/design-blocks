@@ -95,71 +95,27 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Block description',
-    defaultValue: true,
-  },
-  {
-    id: 'item-icon',
-    type: 'checkbox',
-    label: 'Advantages icon',
-    defaultValue: true,
-  },
-  {
-    id: 'item-heading',
-    type: 'checkbox',
-    label: 'Advantages title',
-    defaultValue: true,
-  },
-  {
-    id: 'item-description',
-    type: 'checkbox',
-    label: 'Advantages description',
-    defaultValue: true,
-  },
-  {
-    id: 'button-primary',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-  {
-    id: 'button-secondary',
-    type: 'checkbox',
-    label: 'Additional button',
-    defaultValue: true,
-  },
-  {
-    id: 'icon-replacer',
-    type: 'select',
-    options: [{
-      id: 'icon',
-      label: 'Show icon',
-    }, {
-      id: 'image',
-      label: 'Show image',
-    }, {
-      id: 'text',
-      label: 'Show text',
-    }],
-    label: 'Image replacer',
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'button-primary': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'button-secondary': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
+  'icon-replacer': {
     defaultValue: 'image',
+    label: 'Image replacer',
+    options: [
+      {id: 'icon', label: 'Show icon'},
+      {id: 'image', label: 'Show image'},
+      {id: 'text', label: 'Show text'},
+    ],
+    type: 'select',
   },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+  'item-description': {defaultValue: true, label: 'Advantages description', type: 'checkbox'},
+  'item-heading': {defaultValue: true, label: 'Advantages title', type: 'checkbox'},
+  'item-icon': {defaultValue: true, label: 'Advantages icon', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default ExtendedWireframe
