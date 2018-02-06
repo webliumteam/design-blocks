@@ -122,37 +122,17 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
+Block.modifierScheme = {
+  body: {defaultValue: true, label: 'Numbers description', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'number-title': {
     defaultValue: true,
-  },
-  {
-    id: 'number-title',
-    type: 'checkbox',
     label: 'Additional information on numbers',
-    defaultValue: true,
-  },
-  {
-    id: 'body',
     type: 'checkbox',
-    label: 'Numbers description',
-    defaultValue: true,
   },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
