@@ -286,49 +286,15 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Team description',
-    defaultValue: true,
-  },
-  {
-    id: 'block-button',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-  {
-    id: 'member-link',
-    type: 'checkbox',
-    label: 'Team member link',
-    defaultValue: true,
-  },
-  {
-    id: 'member-desc',
-    type: 'checkbox',
-    label: 'Team member bio',
-    defaultValue: true,
-  },
-  {
-    id: 'member-email',
-    type: 'checkbox',
-    label: 'Team member email',
-    defaultValue: true,
-  },
-  {
-    id: 'member-social',
-    type: 'checkbox',
-    label: 'Team social buttons',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+Block.modifierScheme = {
+  'block-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'member-desc': {defaultValue: true, label: 'Team member bio', type: 'checkbox'},
+  'member-email': {defaultValue: true, label: 'Team member email', type: 'checkbox'},
+  'member-link': {defaultValue: true, label: 'Team member link', type: 'checkbox'},
+  'member-social': {defaultValue: true, label: 'Team social buttons', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Team description', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
