@@ -243,49 +243,15 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Services description',
-    defaultValue: false,
-  },
-  {
-    id: 'heading',
-    type: 'checkbox',
-    label: 'Service title',
-    defaultValue: true,
-  },
-  {
-    id: 'body',
-    type: 'checkbox',
-    label: 'Service main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'Link',
-    defaultValue: true,
-  },
-  {
-    id: 'button-secondary',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-  {
-    id: 'button-primary',
-    type: 'checkbox',
-    label: 'Additional button',
-    defaultValue: false,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+Block.modifierScheme = {
+  body: {defaultValue: true, label: 'Service main text', type: 'checkbox'},
+  'button-primary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
+  'button-secondary': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Service title', type: 'checkbox'},
+  link: {defaultValue: true, label: 'Link', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Services description', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
