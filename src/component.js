@@ -135,31 +135,12 @@ Block.defaultContent = {
   ],
 }
 
-Block.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Title description',
-    defaultValue: true,
-  },
-  {
-    id: 'primary-button',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-  {
-    id: 'arrows',
-    type: 'checkbox',
-    label: 'Navigation arrows',
-    defaultValue: true,
-  },
-  {
-    id: 'dots',
-    type: 'checkbox',
-    label: 'Navigation indicators',
-    defaultValue: true,
-  },
-]
+Block.modifierScheme = {
+  arrows: {defaultValue: true, label: 'Navigation arrows', type: 'checkbox'},
+  dots: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox'},
+  'primary-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+}
+
 
 export default Block
