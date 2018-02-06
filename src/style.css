@@ -59,10 +59,26 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 86%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     background-color: transparent;
     box-shadow: 10px 10px 40px 5px rgba(36, 36, 36, 0.1);
+  }
+
+  &__image {
+    z-index: 1;
+  }
+
+  &__decorator {
+    display: none;
+    transform: translate(80px, -342px);
+    z-index: 0;
+
+    > svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -106,12 +122,6 @@
 }
 
 .button {
-  position: absolute;
-  top: -150px;
-  left: 51.3%;
-  padding: 12.5px 40px;
-  border: 2px solid var(--ui-brand-color);
-  border-radius: 0;
   font-weight: 700;
   letter-spacing: -0.2px;
 }
@@ -136,7 +146,7 @@
   }
 
   .media {
-    min-height: 427px;
+    position: relative;
   }
 
   .list {
@@ -153,9 +163,17 @@
 
 @media (min-width: 992px) {
   .media {
+    padding-top: 0;
+    min-height: 0;
+    height: 392px;
+
     &-wrap {
-      margin-right: 52px;
-      max-width: 46.8%;
+      margin-right: 130px;
+      max-width: 40.1%;
+    }
+
+    &__decorator {
+      display: block;
     }
   }
 
@@ -165,6 +183,7 @@
   }
 
   .btns-group {
-    position: relative;
+    margin-top: 30px;
+    text-align: left;
   }
 }
