@@ -98,54 +98,23 @@ Block.defaultContent = {
   topCaption: 'welcome',
 }
 
-Block.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Title description',
-    defaultValue: true,
-  },
-  {
-    id: 'primary-btn',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-  {
-    id: 'secondary-btn',
-    type: 'checkbox',
-    label: 'Additional button',
-    defaultValue: true,
-  },
-  {
-    type: 'separator',
-  },
-  {
-    id: 'align',
-    type: 'radio-button-group',
-    name: 'Aligning',
-    defaultValue: 'left',
+Block.modifierScheme = {
+  align: {
     children: [
-      {
-        id: 'left',
-        label: 'left',
-      },
-      {
-        id: 'center',
-        label: 'center',
-      },
-      {
-        id: 'right',
-        label: 'right',
-      },
+      {id: 'left', label: 'left'},
+      {id: 'center', label: 'center'},
+      {id: 'right', label: 'right'},
     ],
+    defaultValue: 'left',
+    name: 'Aligning',
+    type: 'radio-button-group',
   },
-  {
-    id: 'caption-decorator',
-    type: 'hidden',
-    label: 'Pretitle',
-    defaultValue: false,
-  },
-]
+  'caption-decorator': {defaultValue: false, label: 'Pretitle', type: 'hidden'},
+  'primary-btn': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'secondary-btn': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  undefined: {type: 'separator'},
+}
+
 
 export default Block
