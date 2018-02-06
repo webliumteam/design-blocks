@@ -40,12 +40,12 @@ class Block extends React.Component {
         <Text bind="title" />
       </h1>)
 
+    const getIconDecorator = this.getModifierValue('top-icon') && <Icon className={css['top-icon']} bind="topIcon" />
+
     return (
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
-          {this.getModifierValue('top-icon') && (
-            <Icon className={css['top-icon']} bind="topIcon" />
-          )}
+          {this.getOptionValue('icon-decorator-in-top') && getIconDecorator}
           {this.getOptionValue('title-in-top') && getTitle}
           <article className={css.article}>
             {this.getModifierValue('article-picture') && (
@@ -55,6 +55,7 @@ class Block extends React.Component {
             )}
             {!onlyImage && (
               <div className={css.article__content}>
+                {!this.getOptionValue('icon-decorator-in-top') && getIconDecorator}
                 {!this.getOptionValue('title-in-top') && getTitle}
                 {this.getModifierValue('subtitle') && (
                   <p className={css.article__subtitle}>
