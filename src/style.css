@@ -1,3 +1,94 @@
 @import "wireframe-zapdos-blog/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 72px 0;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 3.6px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: calc(var(--ui-subtitle-size) * 0.8);
+  line-height: calc(var(--ui-subtitle-line-height) * 1.166);
+  letter-spacing: 1.2px;
+  max-width: 770px;
+  margin: 0 auto 40px;
+}
+
+.articles-wrapper {
+
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.article {
+
+  @media (min-width: 992px) {
+    margin-bottom: 24px;
+  }
+
+  &__picture-wrapper {
+    margin-bottom: 30px;
+  }
+
+  &__picture {
+    padding-top: 65%;
+  }
+
+  &__meta {
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    letter-spacing: 1.4px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3.2px;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    letter-spacing: 1.4px;
+  }
+}
+
+.link {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 3.2px;
+  padding-right: 27px;
+  transition: color 0.2s ease-in;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--ui-dark-accent-color);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 2px;
+    background: var(--ui-dark-shade-color);
+  }
+}
