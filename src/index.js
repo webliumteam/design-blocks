@@ -143,31 +143,13 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Event\'s description',
-    defaultValue: true,
-  },
-  {
-    id: 'badge',
-    type: 'checkbox',
-    label: 'Event\'s type',
-    defaultValue: true,
-  },
-  {
-    id: 'location',
-    type: 'checkbox',
-    label: 'Event\'s location',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'Event\'s link',
-    defaultValue: true,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  badge: {defaultValue: true, label: "Event's type", type: 'checkbox'},
+  link: {defaultValue: true, label: "Event's link", type: 'checkbox'},
+  location: {defaultValue: true, label: "Event's location", type: 'checkbox'},
+  subtitle: {defaultValue: true, label: "Event's description", type: 'checkbox'},
+}
+
 
 export default ExtendedWireframe
