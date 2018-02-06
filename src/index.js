@@ -58,7 +58,7 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'block-bg.jpg',
     overlay: {
       type: 'color',
-      color: 'var(--ui-dark-shade-color)',
+      color: 'dark-shade-color',
       opacity: 0.9,
     },
   },
