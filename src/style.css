@@ -1,6 +1,6 @@
 .section {
   min-width: 320px;
-  padding: 40px 0;
+  padding: 50px 0;
 
   /* background-color: var(--ui-block-bg); */
   font-size: var(--ui-text-size);
@@ -11,9 +11,15 @@
   word-wrap: break-word;
 }
 
+@media (min-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}
+
 @media (min-width: 992px) {
   .section {
-    padding: 80px 0;
+    padding: 75px 0;
   }
 }
 
