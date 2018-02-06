@@ -3,7 +3,7 @@
   "subtitle": "Do you want to join our company? Check the list of open vacancies or contact our HR director to get to know about open positions.",
   "text": "Our company is always looking for professional and inspired people who are ready to work, according to our principles and standards. Look through the list of our advantages to see what you get joining our team.",
   "picture": {
-    "src": "img_pic.png",
+    "resourceRef": "img_pic.jpg",
     "alt": "Illustration"
   },
   "background": {
@@ -12,7 +12,7 @@
       "type": "cover",
       "cover": "50% 50%"
     },
-    "src": "img_bg.png"
+    "resourceRef": "img_bg.png"
   },
   "careers": [
     {
