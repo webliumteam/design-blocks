@@ -116,4 +116,14 @@
       }
     }
   }
+
+  &:last-of-type {
+    .article__content {
+      padding-bottom: 30px;
+
+      @media (min-width: 992px) {
+        padding-bottom: 130px;
+      }
+    }
+  }
 }
