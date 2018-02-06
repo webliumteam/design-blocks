@@ -278,61 +278,21 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'block-title',
-    type: 'checkbox',
-    label: 'Block title',
+Block.modifierScheme = {
+  'additional-btn': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'block-title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  'plan-additional-info': {
     defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Title description',
-    defaultValue: false,
-  },
-  {
-    id: 'additional-btn',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: true,
-  },
-  {
-    id: 'plan-icon',
-    type: 'checkbox',
-    label: 'Product icon',
-    defaultValue: true,
-  },
-  {
-    id: 'plan-price',
-    type: 'checkbox',
-    label: 'Product price',
-    defaultValue: true,
-  },
-  {
-    id: 'plan-additional-info',
-    type: 'checkbox',
     label: 'Product additional information',
-    defaultValue: true,
-  },
-  {
-    id: 'plan-description',
     type: 'checkbox',
-    label: 'Product description',
-    defaultValue: true,
   },
-  {
-    id: 'plan-button',
-    type: 'checkbox',
-    label: 'Package button',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+  'plan-button': {defaultValue: true, label: 'Package button', type: 'checkbox'},
+  'plan-description': {defaultValue: true, label: 'Product description', type: 'checkbox'},
+  'plan-icon': {defaultValue: true, label: 'Product icon', type: 'checkbox'},
+  'plan-price': {defaultValue: true, label: 'Product price', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
