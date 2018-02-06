@@ -150,25 +150,11 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'FAQ description',
-    defaultValue: false,
-  },
-  {
-    id: 'secondary-button',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: false,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+Block.modifierScheme = {
+  'secondary-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'FAQ description', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
