@@ -30,6 +30,7 @@
         "stylelint-selector-bem-pattern": "^2.0.0"
     },
     "dependencies": {
-        "wireframe-zapdos-pricing": "https://github.com/webliumteam/blocks#w/zapdos/pricing/prod"
+        "wireframe-zapdos-pricing": "https://github.com/webliumteam/blocks#w/zapdos/pricing/prod",
+        "wm-cli": "^1.0.45"
     }
 }
