@@ -61,6 +61,10 @@
   &__title {
     margin-bottom: 8px;
     font-weight: 400;
+
+    &:only-child {
+      margin-bottom: 30px;
+    }
   }
 
   &__text {
