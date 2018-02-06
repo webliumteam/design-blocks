@@ -221,31 +221,12 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Event\'s description',
-    defaultValue: false,
-  },
-  {
-    id: 'badge',
-    type: 'checkbox',
-    label: 'Event\'s type',
-    defaultValue: true,
-  },
-  {
-    id: 'location',
-    type: 'checkbox',
-    label: 'Event\'s location',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'Event\'s link',
-    defaultValue: true,
-  },
-]
+Block.modifierScheme = {
+  badge: {defaultValue: true, label: "Event's type", type: 'checkbox'},
+  link: {defaultValue: true, label: "Event's link", type: 'checkbox'},
+  location: {defaultValue: true, label: "Event's location", type: 'checkbox'},
+  subtitle: {defaultValue: false, label: "Event's description", type: 'checkbox'},
+}
+
 
 export default Block
