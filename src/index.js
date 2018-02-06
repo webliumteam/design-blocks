@@ -143,61 +143,22 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'block-title',
-    type: 'checkbox',
-    label: 'Block title',
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'additional-btn': {defaultValue: false, label: 'Secondary button', type: 'hidden'},
+  'block-title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  'plan-additional-info': {
     defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Title description',
-    defaultValue: true,
-  },
-  {
-    id: 'additional-btn',
-    type: 'hidden',
-    label: 'Secondary button',
-    defaultValue: false,
-  },
-  {
-    id: 'plan-icon',
-    type: 'hidden',
-    label: 'Product icon',
-    defaultValue: false,
-  },
-  {
-    id: 'plan-price',
-    type: 'checkbox',
-    label: 'Product price',
-    defaultValue: true,
-  },
-  {
-    id: 'plan-additional-info',
-    type: 'checkbox',
     label: 'Product additional information',
-    defaultValue: true,
-  },
-  {
-    id: 'plan-description',
     type: 'checkbox',
-    label: 'Product description',
-    defaultValue: true,
   },
-  {
-    id: 'plan-button',
-    type: 'checkbox',
-    label: 'Package button',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+  'plan-button': {defaultValue: true, label: 'Package button', type: 'checkbox'},
+  'plan-description': {defaultValue: true, label: 'Product description', type: 'checkbox'},
+  'plan-icon': {defaultValue: false, label: 'Product icon', type: 'hidden'},
+  'plan-price': {defaultValue: true, label: 'Product price', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default ExtendedWireframe
