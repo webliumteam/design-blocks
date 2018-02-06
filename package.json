@@ -1,6 +1,7 @@
 {
     "name": "wireframe-series-2-cta",
     "version": "0.0.1",
+    "category": "cta",
     "description": "",
     "main": "src/index.js",
     "scripts": {
