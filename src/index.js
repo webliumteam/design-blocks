@@ -43,37 +43,14 @@ ExtendedWireframe.defaultContent = {
   ],
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'title',
-    type: 'hidden',
-    label: 'Block title',
-    defaultValue: false,
-  },
-  {
-    id: 'number-title',
-    type: 'hidden',
-    label: 'Additional information on numbers',
-    defaultValue: false,
-  },
-  {
-    id: 'body',
-    type: 'checkbox',
-    label: 'Numbers description',
-    defaultValue: true,
-  },
-  {
-    id: 'button',
-    type: 'hidden',
-    label: 'Button',
-    defaultValue: false,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  body: {defaultValue: true, label: 'Numbers description', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'hidden'},
+  'number-title': {defaultValue: false, label: 'Additional information on numbers', type: 'hidden'},
+  title: {defaultValue: false, label: 'Block title', type: 'hidden'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default ExtendedWireframe
