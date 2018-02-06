@@ -64,43 +64,15 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Careers description',
-    defaultValue: true,
-  },
-  {
-    id: 'image',
-    type: 'checkbox',
-    label: 'Сareers photo',
-    defaultValue: true,
-  },
-  {
-    id: 'body',
-    type: 'checkbox',
-    label: 'Careers main text',
-    defaultValue: true,
-  },
-  {
-    id: 'icon',
-    type: 'checkbox',
-    label: 'Careers icon',
-    defaultValue: true,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Secondary button',
-    defaultValue: true,
-  },
-  {
-    id: 'top-icon',
-    type: 'checkbox',
-    label: 'Top icon decorator',
-    defaultValue: true,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  body: {defaultValue: true, label: 'Careers main text', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  icon: {defaultValue: true, label: 'Careers icon', type: 'checkbox'},
+  image: {defaultValue: true, label: 'Сareers photo', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Careers description', type: 'checkbox'},
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
+}
+
 
 export default ExtendedWireframe
