@@ -41,26 +41,12 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Title description',
-    defaultValue: true,
-  },
-  {
-    id: 'picture',
-    type: 'hidden',
-    label: 'Picture',
-    defaultValue: false,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  picture: {defaultValue: false, label: 'Picture', type: 'hidden'},
+  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+}
 
 
 export default ExtendedWireframe
