@@ -1,3 +1,96 @@
 @import "wireframe-zapdos-faq/src/style.css";
 
 /* start here */
+.section__inner {
+  max-width: 1005px;
+}
+
+.top-icon {
+  margin: 0 auto;
+  margin-bottom: 54px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #d9e8ff;
+    position: absolute;
+    opacity: 0.4;
+    border-radius: 50%;
+  }
+
+  svg {
+    color: var(--ui-brand-color);
+    z-index: 10;
+  }
+}
+
+.title {
+  margin-bottom: 28px;
+
+  &::after {
+    content: ".";
+    color: var(--ui-brand-color);
+  }
+}
+
+.subtitle {
+  max-width: 770px;
+  letter-spacing: 1.8px;
+  margin-bottom: 53px;
+}
+
+.item {
+  margin-top: 0;
+  margin-bottom: 43px;
+
+  &__title {
+    letter-spacing: 0.8px;
+
+    @media (min-width: 992px) {
+      padding: 0;
+      padding-right: 55px;
+      font-size: calc(var(--ui-heading-size) * 0.8181);
+      margin-bottom: 17px;
+    }
+  }
+
+  &__content {
+    
+    @media (min-width: 992px) {
+      padding: 0;
+      max-width: 870px;
+      font-size: calc(var(--ui-text-size) * 0.875);
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    width: 22px;
+    height: 22px;
+
+    svg {
+      fill: var(--ui-brand-color);
+      color: var(--ui-brand-color);
+    }
+
+    @media (min-width: 992px) {
+      right: 1px;
+    }
+  }
+
+  &--active {
+    .item__icon {
+      transform: translateY(-50%) rotate(0deg);
+    }
+  }
+}
+
