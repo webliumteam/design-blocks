@@ -108,19 +108,11 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'logo',
-    type: 'checkbox',
-    label: 'Company name',
-    defaultValue: true,
-  },
-  {
-    id: 'button',
-    type: 'hidden',
-    label: 'Primary Button',
-    defaultValue: false,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  button: {defaultValue: false, label: 'Primary Button', type: 'hidden'},
+  logo: {defaultValue: true, label: 'Company name', type: 'checkbox'},
+}
+
 
 export default ExtendedWireframe
