@@ -7,6 +7,9 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
@@ -53,9 +56,11 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           <header className={style.section__header}>
-            <h1 className={style.title}>
-              <Text bind="title" />
-            </h1>
+            {!this.getOptionValue('disabled-title') &&
+              <h1 className={style.title}>
+                <Text bind="title" />
+              </h1>
+            }
             {this.getModifierValue('subtitle') && (
               <p className={style.subtitle}>
                 <Text bind="description" />
