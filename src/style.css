@@ -1,3 +1,14 @@
 @import "wireframe-zapdos-team/src/style.css";
 
-/* start here */
+.item {
+  &__pic {
+    width: 147.2px;
+    height: 166.6px;
+    border-radius: 11px;
+    background-color: transparent;
+  }
+  
+  &__img {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+}
