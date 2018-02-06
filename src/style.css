@@ -1,3 +1,118 @@
 @import "wireframe-zapdos-projects/src/style.css";
 
-/* start here */
+.article {
+  &__title {
+    line-height: var(--ui-hero-title-line-height);
+  }
+
+  &___text {
+    line-height: var(--ui-text-line-height);
+    font-weight: var(--ui-text-font-weight);
+    color: var(--ui-small-color);
+  }
+
+  &__link {
+    font-family: var(--ui-text-font-family);
+  }
+}
+
+.button {
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .article {
+    position: relative;
+    background: green;
+    margin: 0 auto;
+    overflow: visible;
+    width: 100%;
+    height: 575px;
+
+    &__title {
+      font-size: var(--ui-hero-title-size);
+      color: var(--ui-light-shade-color);
+    }
+
+    &__text {
+      padding-right: 0;
+      max-width: 85%;
+      padding-left: 7px;
+    }
+
+    &__link {
+      font-size: calc(var(--ui-text-size) * 0.675);
+      color: var(--ui-light-shade-color);
+      text-decoration: none;
+      text-transform: uppercase;
+      padding-left: 7px;
+    }
+
+    &__content {
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      max-width: inherit;
+      padding-left: calc(50% + 40px);
+      text-align: left;
+      padding-top: 175px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    &:nth-of-type(2n) .article__content {
+      padding-left: 0;
+      padding-right: calc(50% + 40px);
+      text-align: right;
+      align-items: flex-end;
+    }
+
+    &:nth-of-type(2n) .article__text,
+    &:nth-of-type(2n) .article__link {
+      padding-right: 7px;
+      padding-left: 0;
+    }
+  }
+
+  .article__picture {
+    padding-top: 0%;
+
+    &-wrapper {
+      width: 100%;
+      z-index: 1;
+      position: relative;
+      max-width: 100%;
+      flex-basis: 100%;
+      height: 575px;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      position: inherit;
+      height: 575px;
+    }
+  }
+
+  .section__inner {
+    max-width: inherit;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .article {
+    &__text {
+      max-width: 400px;
+    }
+
+    &__content {
+      padding-left: calc(50% + 100px);
+    }
+
+    &:nth-of-type(2n) .article__content {
+      padding-right: calc(50% + 100px);
+    }
+  }
+}
