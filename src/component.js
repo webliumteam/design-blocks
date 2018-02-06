@@ -165,37 +165,13 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Gallery description',
-    defaultValue: false,
-  },
-  {
-    id: 'body-text',
-    type: 'checkbox',
-    label: 'Image description',
-    defaultValue: false,
-  },
-  {
-    id: 'secondary-button',
-    type: 'checkbox',
-    label: 'Button',
-    defaultValue: false,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-  {
-    id: 'caption',
-    type: 'hidden',
-    label: 'Caption after body',
-    defaultValue: false,
-  },
-]
+Block.modifierScheme = {
+  'body-text': {defaultValue: false, label: 'Image description', type: 'checkbox'},
+  caption: {defaultValue: false, label: 'Caption after body', type: 'hidden'},
+  'secondary-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Gallery description', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
