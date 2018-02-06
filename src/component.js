@@ -47,6 +47,7 @@ class Block extends React.Component {
             Item={this.collectionItem}
             settings={{
               dots: this.getModifierValue('dots'),
+              dotsClass: classNames('slick-dots', style['slider-dots']),
               arrows: this.getModifierValue('arrows'),
               responsive: [
                 {
