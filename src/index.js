@@ -57,25 +57,12 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'FAQ description',
-    defaultValue: true,
-  },
-  {
-    id: 'secondary-button',
-    type: 'checkbox',
-    label: 'Secondary button',
-    defaultValue: false,
-  },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: true,
-  },
-]
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'FAQ description', type: 'checkbox'},
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default ExtendedWireframe
