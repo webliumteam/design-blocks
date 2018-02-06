@@ -73,63 +73,24 @@ Block.defaultContent = {
     'We always work hard to improve our goods and services to achieve higher results for our clients. We love challenging tasks that require an innovative approach. Thus, if your business needs a unique solution, we are ready to fine-tune our existing products to meet all your demands. Our company is a group of devotees sharing mutual priorities and values. We know that only those committed to their work can provide the best-quality products and services. That’s why every person that wants to join our team should undergo rigorous selection.',
 }
 
-Block.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Description',
-    defaultValue: false,
-  },
-  {
-    id: 'heading',
-    type: 'checkbox',
-    label: 'Title',
-    defaultValue: false,
-  },
-  {
-    id: 'subheading',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Main text',
-    defaultValue: true,
-  },
-  {
-    id: 'align',
-    type: 'radio-button-group',
-    name: 'Aligning',
-    defaultValue: 'center',
+Block.modifierScheme = {
+  align: {
     children: [
-      {
-        id: 'left',
-        label: 'left',
-      },
-      {
-        id: 'center',
-        label: 'center',
-      },
-      {
-        id: 'right',
-        label: 'right',
-      },
+      {id: 'left', label: 'left'},
+      {id: 'center', label: 'center'},
+      {id: 'right', label: 'right'},
     ],
+    defaultValue: 'center',
+    name: 'Aligning',
+    type: 'radio-button-group',
   },
-  {
-    id: 'top-icon',
-    type: 'hidden',
-    label: 'Top icon decorator',
-    defaultValue: false,
-  },
-]
+  heading: {defaultValue: false, label: 'Title', type: 'checkbox'},
+  subheading: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Description', type: 'checkbox'},
+  text: {defaultValue: true, label: 'Main text', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+}
+
 
 export default Block
