@@ -84,25 +84,11 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Title description',
-    defaultValue: false,
-  },
-  {
-    id: 'picture',
-    type: 'hidden',
-    label: 'Picture',
-    defaultValue: false,
-  },
-]
+Block.modifierScheme = {
+  picture: {defaultValue: false, label: 'Picture', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+}
+
 
 export default Block
