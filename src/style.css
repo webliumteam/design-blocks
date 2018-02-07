@@ -3,42 +3,38 @@
 /* start here */
 
 .section {
-  &__inner {
-    .top-icon {
-      margin: 0 auto;
-      height: 60px;
-      width: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-bottom: 30px;
-      position: relative;
-
-      &::before {
-        content: "";
-        background-color: #d9e8ff;
-        opacity: .4;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-      }
-    }
-  }
-
   &__header {
     margin-bottom: 30px;
   }
 }
 
-svg {
-  color: var(--ui-brand-color);
+.top-icon {
+  margin: 0 auto;
   width: 8px;
   height: 20px;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    background-color: #d9e8ff;
+    opacity: .4;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  svg {
+    z-index: 1;
+  }
 }
 
 .title {
