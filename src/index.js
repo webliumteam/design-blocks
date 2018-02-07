@@ -85,31 +85,32 @@ ExtendedWireframe.defaultContent = {
   ],
 }
 
-ExtendedWireframe.modifierScheme = [
-  {
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  subtitle: {
     id: 'subtitle',
     type: 'checkbox',
     label: 'Title description',
     defaultValue: true,
   },
-  {
+  'primary-button': {
     id: 'primary-button',
     type: 'checkbox',
     label: 'Button',
     defaultValue: true,
   },
-  {
+  arrows: {
     id: 'arrows',
     type: 'checkbox',
     label: 'Navigation arrows',
     defaultValue: true,
   },
-  {
+  dots: {
     id: 'dots',
     type: 'checkbox',
     label: 'Navigation indicators',
     defaultValue: true,
   },
-]
+}
 
 export default ExtendedWireframe

@@ -3,19 +3,20 @@
 /* start here */
 
 :global {
-  .slick-dots button {
+  /* stylelint-disable  */
+  .slick-dots li button {
     width: 12px;
     height: 12px;
     border: 3px solid;
-    border-color: var(--ui-brand-color);
+    border-color: var(--ui-light-shade-color);
     background: transparent;
   }
 
-  .slick-active button {
-    border-color: var(--ui-light-shade-color);
+  .slick-dots li.slick-active button {
+    border-color: var(--ui-brand-color);
     background-color: transparent;
   }
-
+/* stylelint-enable */
   .slick-arrow_2sm {
     color: var(--ui-light-shade-color);
     width: 12px;
