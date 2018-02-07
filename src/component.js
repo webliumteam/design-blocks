@@ -10,11 +10,11 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text}, style} = this.props
+    const {components: {Text}, style, $block: {id}} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <blockquote className={style.blockquote} aria-describedby="author">
+          <blockquote className={style.blockquote} aria-describedby={`${id}-author`}>
             <Text bind="blockquote" />
             <div className={style.blockquote__line}>
               <div className={style.blockquote__icon}>
@@ -29,7 +29,7 @@ class Block extends React.Component {
             </div>
           </blockquote>
           {this.getModifierValue('author') && (
-            <p id="author" className={style.author}>
+            <p id={`${id}-author`} className={style.author}>
               <Text bind="author" />
             </p>
           )}
