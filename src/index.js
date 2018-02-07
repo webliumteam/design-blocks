@@ -11,6 +11,7 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
   title: 'About the Company',
   'text-1': 'Follow us:',
   subtitle: 'We provide a wide range of services to meet even the most daring requirements',
