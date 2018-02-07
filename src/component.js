@@ -187,16 +187,6 @@ Block.defaultContent = {
 Block.modifierScheme = {
   'button-primary': {defaultValue: false, label: 'Button', type: 'checkbox'},
   'button-secondary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
-  'icon-replacer': {
-    defaultValue: 'icon',
-    label: 'Image replacer',
-    options: [
-      {id: 'icon', label: 'Show icon'},
-      {id: 'image', label: 'Show image'},
-      {id: 'text', label: 'Show text'},
-    ],
-    type: 'hidden',
-  },
   'item-description': {defaultValue: true, label: 'Advantages description', type: 'checkbox'},
   'item-heading': {defaultValue: true, label: 'Advantages title', type: 'checkbox'},
   'item-icon': {defaultValue: true, label: 'Advantages icon', type: 'checkbox'},
@@ -204,6 +194,5 @@ Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block
