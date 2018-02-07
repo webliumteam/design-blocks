@@ -3,46 +3,13 @@
 /* start here */
 
 .title {
-  font-size: var(--ui-block-title-size);
-  line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: var(--ui-block-title-font-weight);
-  color: var(--ui-dark-shade-color);
   text-transform: uppercase;
   letter-spacing: 3.6px;
   margin-bottom: 21px;
-
-  span {
-    position: relative;
-
-    &:before {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 4px;
-      left: -31px;
-      top: 50%;
-      background: var(--ui-dark-shade-color);
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      width: 12px;
-      height: 4px;
-      right: -26px;
-      top: 50%;
-      background: var(--ui-dark-shade-color);
-    }
-  }
 }
 
 .subtitle {
   font-size: calc( var(--ui-subtitle-size) * 0.8 );
-  line-height: var(--ui-subtitle-line-height);
-  font-family: var(--ui-subtitle-font-family);
-  font-weight: var(--ui-subtitle-font-weight);
-  color: var(--ui-dark-accent-color);
   max-width: 770px;
   margin: 0 auto;
 }
@@ -50,13 +17,22 @@
 .article {
   margin-top: 170px;
 
+  &:nth-of-type(-n+9) {
+    .article__content {
+      &::before {
+        content: "0"counter(steps)".";
+      }
+    }
+  }
+
   &__content {
     padding-left: 10px;
     text-align: center;
 
     &::before {
+      content: counter(steps)".";
       background-color: transparent;
-      font-size: calc( var(--ui-hero-title-size) * 1.38 );
+      font-size: calc( var(--ui-hero-title-size) * 1.38);
       line-height: var(--ui-hero-title-line-height);
       font-family: var(--ui-hero-title-font-family);
       font-weight: var(--ui-hero-title-font-weight);
@@ -70,22 +46,8 @@
       text-align: left;
 
       &::before {
-        left: 55px;
+        left: 0;
         transform: translateX(0);
-      }
-
-      p {
-        position: relative;
-
-        &::after {
-          content: "";
-          position: absolute;
-          width: 24px;
-          height: 2px;
-          left: 0;
-          bottom: -20px;
-          background-color: var(--ui-dark-shade-color);
-        }
       }
     }
   }
@@ -98,12 +60,19 @@
     margin-bottom: 17px;
   }
 
-  .wrap {
-    font-size: var(--ui-text-size);
-    line-height: var(--ui-text-line-height);
-    font-family: var(--ui-text-font-family);
-  }
+  &__text {
+    position: relative;
 
+    &::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      left: 0;
+      bottom: -20px;
+      background-color: var(--ui-dark-shade-color);
+    }
+  }
 }
 
 .btns-group {
