@@ -162,6 +162,29 @@
   font-weight: var(--ui-caption-font-weight);
 }
 
+.article__category {
+  padding-right: 10px;
+
+  &:only-child {
+    padding-right: 0;
+  }
+}
+
+.article__date {
+  position: relative;
+  padding-left: 10px;
+
+  &:only-child {
+    padding-left: 0;
+  }
+}
+
+.article__category + .article__date::after {
+  content: "|";
+  position: absolute;
+  left: 0;
+}
+
 .article__title {
   margin-bottom: 10px;
   font-family: var(--ui-heading-font-family);
@@ -222,4 +245,13 @@
 
 .article .article__link {
   padding: 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: var(--ui-subtitle-font-family);
+  font-size: var(--ui-subtitle-size);
+  font-weight: var(--ui-subtitle-font-weight);
+  line-height: var(--ui-subtitle-line-height);
+  color: var(--ui-subtitle-color);
 }
