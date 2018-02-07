@@ -22,7 +22,7 @@ ExtendedWireframe.defaultContent = {
   steps: [
     {
       id: '07a5468d-b105-4866-98a5-dcf2cf46db3a',
-      title: 'Advertise Advertise Advertise',
+      title: 'Advertise Advertise Advertise Advertise',
       description:
         'Iudico expetendis repudiandae est eu, timeam maiestatis sed no, clita eligendi instructior in quo.',
     },
