@@ -3,8 +3,8 @@
 /* start here */
 
 .title {
-  font-family: var(--ui-heading-large-font-family);
-  font-weight: var(--ui-heading-large-font-weight);
+  font-family: var(--ui-heading-lg-font-family);
+  font-weight: var(--ui-heading-lg-font-weight);
 }
 
 .subtitle {
@@ -38,15 +38,46 @@
 
   &__title {
     text-transform: uppercase;
-    font-family: var(--ui-heading-large-font-family);
+    font-family: var(--ui-heading-lg-font-family);
     font-weight: var(--ui-hero-title-font-weight);
-    font-size: var(--ui-heading-size);
     padding: 34px 20px 0;
+
+    @media (min-width: 992px) {
+      font-size: var(--ui-heading-size);
+    }
   }
 
   &__content {
     font-family: var(--ui-text-font-family);
     font-size: var(--ui-text-size);
     padding: 10px 0 20px;
+  }
+}
+
+.link {
+  position: relative;
+  text-transform: uppercase;
+  color: var(--ui-heading-color);
+  font-size: var(--ui-small-size);
+  font-weight: var(--ui-heading-font-weight);
+  letter-spacing: 3.2px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 12px;
+    height: 2px;
+    background-color: var(--ui-heading-color);
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    left: -22px;
+  }
+
+  &::after {
+    right: -22px;
   }
 }
