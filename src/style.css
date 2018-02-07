@@ -162,6 +162,29 @@
   font-weight: var(--ui-caption-font-weight);
 }
 
+.article__category {
+  padding-right: 10px;
+
+  &:only-child {
+    padding-right: 0;
+  }
+}
+
+.article__date {
+  position: relative;
+  padding-left: 10px;
+
+  &:only-child {
+    padding-left: 0;
+  }
+}
+
+.article__category + .article__date::after {
+  content: "|";
+  position: absolute;
+  left: 0;
+}
+
 .article__title {
   margin-bottom: 10px;
   font-family: var(--ui-heading-font-family);

@@ -1,3 +1,5 @@
 {
-    "picture-with-date": false
+    "picture-with-date": false,
+    "hidden-category": false,
+    "hidden-date": false
 }
