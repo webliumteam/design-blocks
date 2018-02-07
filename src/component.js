@@ -9,19 +9,16 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  // getImageSize = fullWidth =>
-  //   fullWidth
-  //     ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-  //     : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  collectionItem = ({index, children, className}) => {
+  collectionItem = ({index, children}) => {
     const {components: {Text, Image, Button}, style} = this.props
     return (
       <article className={style.item}>
         {children}
+
         <Image
-          pictureClassName={style.item__picture}
           bind={`partners[${index}].picture`}
+          pictureClassName={style.item__picture}
+          imgClassName={style.item__image}
         />
         <h2 className={style.item__title}>
           <Text bind={`partners[${index}].title`} />
@@ -38,7 +35,7 @@ class Block extends React.Component {
 
 
   render() {
-    const {components: {Collection, Text, Image, Button}, style} = this.props
+    const {components: {Collection, Text, Button}, style} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -65,7 +62,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'Collection', 'Image'])($editor.components)
 
 Block.defaultContent = {
   title: 'Partners',
@@ -73,7 +70,10 @@ Block.defaultContent = {
   partners: [
     {
       id: 'partner1',
-      picture: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+      picture: {
+        alt: 'Samsung logo',
+        size: '{"min-width: 90px": "480", min-width: 992px": "130"}',
+      },
       title: 'Samsung',
       desc: 'Back in 1995, we started cooperation with this brand. Samsung became our main supplier of high-quality tech products. Today, Samsung is our main partner who supports each initiative and actively participates in company development.',
       button: {
@@ -93,7 +93,10 @@ Block.defaultContent = {
     },
     {
       id: 'partner2',
-      picture: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+      picture: {
+        alt: 'Ford logo',
+        size: '{"min-width: 90px": "480", min-width: 992px": "130"}',
+      },
       title: 'Ford ',
       desc: 'The company that has always put reliability first. We started to work with Ford in 2002, and now this is one of the partners who’ve been with us for more than 15 years! We believe that this partnership is one of the achievements we can be proud of.',
       button: {
@@ -128,13 +131,8 @@ Block.defaultContent = {
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-]
+Block.modifierScheme = {
+  text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
+}
 
 export default Block
