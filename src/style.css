@@ -7,9 +7,19 @@
 }
 
 .header__inner {
+  position: relative;
   padding-bottom: 59px;
-  border-bottom: var(--ui-light-accent-color);
-  opacity: 0.1;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--ui-light-accent-color);
+    opacity: 0.1;
+  }
 }
 
 .logo__title {
