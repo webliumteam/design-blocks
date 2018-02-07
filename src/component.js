@@ -17,19 +17,17 @@ class Block extends React.Component {
   }
 
   componentDidMount() {
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.async = true
-    script.innerHTML = `
-    <!-- Google Analytics -->
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-‎110145245-1', 'auto');
-    ga('send', 'pageview');
-    <!-- End Google Analytics -->
+    const headScript = document.createElement('script')
+    headScript.type = 'text/javascript'
+    headScript.async = true
+    headScript.innerHTML = `
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WRTD5QJ');</script>
+    <!-- End Google Tag Manager -->
 
     if(window.location.pathname == '/') {
       // тут мы типа достаём все кнопки и якоря
@@ -44,9 +42,28 @@ class Block extends React.Component {
       
       
       // навешиваем функционал на клик
-      callMeForm.onsubmit = () => ga('send', 'event', 'Button', 'click', 'Callback_header');
-      sendRequestForm.onsubmit = () => ga('send', 'event', 'Button', 'click', 'send_request');
-      leaveRequest.onclick = () => ga('send', 'event', 'Button', 'click', 'request_advantages')
+      callMeForm.onsubmit = () => dataLayer.push({
+        'Event':'UAevent',
+        'eventCategory':'Button',
+        'eventAction':'click',
+        'eventLabel':'Callback_header'
+      });
+      sendRequestForm.onsubmit = () => dataLayer.push({
+        'Event':'UAevent',
+        'eventCategory':'Button',
+        'eventAction':'click',
+        'eventLabel':'send_request'
+      });
+
+      // google analytics code
+      //leaveRequest.onclick = () => ga('send', 'event', 'Button', 'click', 'request_advantages')
+
+      leaveRequest.onclick = () => dataLayer.push({
+        'Event':'UAevent',
+        'eventCategory':'Button',
+        'eventAction':'click',
+        'eventLabel':'request_advantages'
+      });
 
       if(window.location.pathname == '/services') {
         const forms = document.getElementsByTagName('form')
@@ -54,7 +71,18 @@ class Block extends React.Component {
         callMeFormServices.onsubmit = () => ga('send', 'event', 'Button','click', 'Callback_services');
       }
     }`
-    this.instance.appendChild(script)
+
+    const bodyScript = document.createElement('script')
+    bodyScript.type = 'text/javascript'
+    bodyScript.async = true
+    bodyScript.innerHTML = `
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRTD5QJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->`
+
+    this.instance.appendChild(headScript)
+    document.body.appendChild(bodyScript)
   }
 
   setStylesForBody = () => {
