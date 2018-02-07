@@ -120,5 +120,9 @@
     },
     "textValue": "Additional button (M)"
   },
-  "theme": "dark"
+  "theme": "dark",
+  "background": {
+    "type": "color",
+    "color": "#fe0042"
+  }
 }

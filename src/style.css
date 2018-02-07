@@ -1,9 +1,6 @@
 @import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
-.section {
-  background-color: var(--ui-brand-color);
-}
 
 .title {
   letter-spacing: -0.84px;
