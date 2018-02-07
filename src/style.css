@@ -2,7 +2,7 @@
 
 /* start here */
 .section {
-  border: 10px solid #fff;
+  border: 10px solid var(--ui-light-accent-color);
 }
 
 .article {
@@ -23,48 +23,16 @@
   }
 }
 
-.social {
-  &-title {
-    display: none;
-  }
-
-  &_icons {
-    margin-right: 20px;
-  }
+.article__socials {
+  color: var(--ui-brand-color);
 }
 
-.link {
-  order: 1;
-  margin-left: 55px;
-  color: #fff;
+.social-title {
+  display: none;
+}
 
-  > a {
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  > a::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 12px;
-    height: 2px;
-    background-color: #fff;
-    right: -25px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  > a:hover,
-  > a:focus,
-  > a:active {
-    color: red;
-
-    &::before {
-      color: red;
-    }
-  }
+.socials {
+  margin: 0;
 }
 
 .button {
@@ -76,7 +44,6 @@
 .link,
 .button {
   text-transform: uppercase;
-  font-size: calc(var(--ui-btn-md-size) * 0.79);
   font-weight: 600;
   letter-spacing: 3.2px;
 }
