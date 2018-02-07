@@ -27,9 +27,8 @@ class Block extends React.Component {
       ),
       this.getModifierValue('post-publish-date') && (
         <small className={style.article__meta}>
-          <Text bind={`blog[${itemNumber}].category`} />
-          &nbsp;|&nbsp;
-          <Text bind={`blog[${itemNumber}].date`} />
+          {!this.getOptionValue('hidden-category') && <Text bind={`blog[${itemNumber}].category`} className={style.article__category} /> }
+          {!this.getOptionValue('hidden-date') && <Text bind={`blog[${itemNumber}].date`} className={style.article__date} /> }
         </small>
       ),
     ]
