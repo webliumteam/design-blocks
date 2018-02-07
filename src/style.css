@@ -1,3 +1,67 @@
 @import "wireframe-lucario-cover/src/style.css";
 
 /* start here */
+
+:global {
+  .slick-dots button {
+    width: 12px;
+    height: 12px;
+    border: 3px solid;
+    border-color: var(--ui-brand-color);
+    background: transparent;
+  }
+
+  .slick-active button {
+    border-color: var(--ui-light-shade-color);
+    background-color: transparent;
+  }
+
+  .slick-arrow_2sm {
+    color: var(--ui-light-shade-color);
+    width: 12px;
+    top: 35%;
+  }
+
+  @media (min-width:992px) {
+    .slick-prev_1JO {
+      left: 70px;
+    }
+
+    .slick-next_3wm {
+      right: 70px;
+    }
+
+    .slick-dots {
+      bottom: -15px;
+    }
+  }
+
+  .slider_3jn .slick-track {
+    padding: 10px 0;
+  }
+}
+
+.subtitle {
+  margin: 30px auto -40px;
+  font-size: var(--ui-heading-lg-size);
+  color: var(--ui-subtitle-color);
+}
+
+.item {
+  &__title {
+    color: var(--ui-light-shade-color);
+    font-weight: var(--ui-hero-title-font-weight);
+    letter-spacing: -4px;
+  }
+}
+
+@media (min-width: 992px) {
+  .item__inner {
+    max-width: 790px;
+  }
+  
+  .items-wrapper {
+    max-width: 1030px;
+    margin: auto;
+  }
+}
