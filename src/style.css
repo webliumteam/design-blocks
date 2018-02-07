@@ -6,6 +6,12 @@
   padding-bottom: 20px;
 }
 
+.header__inner {
+  padding-bottom: 59px;
+  border-bottom: var(--ui-light-accent-color);
+  opacity: 0.1;
+}
+
 .logo__title {
   font-size: calc( var(--ui-heading-lg-size) * 0.88);
   font-family: var(--ui-heading-lg-font-family);
