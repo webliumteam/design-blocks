@@ -28,8 +28,7 @@
   display: block;
   position: relative;
   max-width: 622px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding-top: 15px;
   font-size: calc(var(--ui-quote-size) * 0.7273);
   color: var(--ui-quote-color);
