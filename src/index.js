@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '70% 100%',
     },
-    src: 'img/paint-bg.jpg',
+    resourceRef: 'paint-bg.jpg',
   },
   'plan-list-1': [
     {
