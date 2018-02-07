@@ -158,7 +158,7 @@
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: var(--ui-expanded-menu-bg);
+  background-color: var(--ui-dark-shade-color);
 }
 
 @media (min-width: 992px) {
