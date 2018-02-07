@@ -25,8 +25,7 @@
   }
 
   svg {
-    color: var(--ui-brand-color);
-    z-index: 10;
+    z-index: 1;
   }
 }
 
@@ -61,7 +60,7 @@
   }
 
   &__content {
-    
+
     @media (min-width: 992px) {
       padding: 0;
       max-width: 870px;
@@ -76,11 +75,7 @@
     top: 50%;
     width: 22px;
     height: 22px;
-
-    svg {
-      fill: var(--ui-brand-color);
-      color: var(--ui-brand-color);
-    }
+    color: var(--ui-brand-color);
 
     @media (min-width: 992px) {
       right: 1px;
