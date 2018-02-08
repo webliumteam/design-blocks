@@ -21,13 +21,11 @@ class Block extends React.Component {
     headScript.type = 'text/javascript'
     headScript.async = true
     headScript.innerHTML = `
-    <!-- Google Tag Manager -->
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WRTD5QJ');
-    <!-- End Google Tag Manager -->
 
     if(window.location.pathname == '/') {
       // тут мы типа достаём все кнопки и якоря
@@ -72,14 +70,12 @@ class Block extends React.Component {
       }
     }`
 
-    const bodyScript = document.createElement('script')
+    const bodyScript = document.createElement('noscript')
     bodyScript.type = 'text/javascript'
     bodyScript.async = true
     bodyScript.innerHTML = `
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRTD5QJ"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->`
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRTD5QJ"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>`
 
     this.instance.appendChild(headScript)
     document.body.appendChild(bodyScript)
