@@ -10,6 +10,7 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
   projects: [
     {
       id: 'e9ec34d7-3cc6-49f3-a9ad-6ea69f59409c',
@@ -18,7 +19,7 @@ ExtendedWireframe.defaultContent = {
       text:
         'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
       picture: {
-        src: 'project_1.png',
+        resourceRef: 'project_1.png',
         alt: 'Project 1',
       },
       link: {
@@ -43,7 +44,7 @@ ExtendedWireframe.defaultContent = {
       text:
         'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
       picture: {
-        src: 'project_2.png',
+        resourceRef: 'project_2.png',
         alt: 'Project 2',
       },
       link: {
