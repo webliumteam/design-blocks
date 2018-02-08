@@ -132,6 +132,7 @@
     opacity: 1;
     justify-content: flex-end;
     flex-direction: row;
+    z-index: initial;
   }
 }
 
@@ -228,7 +229,7 @@
   height: 16px;
   right: 15px;
   padding: 0;
-  z-index: 3;
+  z-index: 999999;
   background-color: transparent;
   color: var(--ui-icons-color);
   border: 0;
