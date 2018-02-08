@@ -104,12 +104,6 @@ ExtendedWireframe.defaultContent = {
       },
     },
   ],
-  logo: {
-    text: {
-      value: 'TSO',
-      tagName: 'h2',
-    },
-  },
   cta: {
     actionConfig: {
       action: 'link',
@@ -132,6 +126,12 @@ ExtendedWireframe.defaultContent = {
       cover: '50% 50%',
     },
     resourceRef: 'bg.jpg',
+  },
+  logo: {
+    image: {
+      resourceRef: 'logo.png',
+      alt: 'company logo',
+    },
   },
 }
 
