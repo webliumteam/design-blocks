@@ -5,10 +5,10 @@
 .item {
   &__title {
     letter-spacing: -5px;
-    font-size: calc(var(--ui-hero-title-size) * .6);
+    font-size: calc(var(--ui-hero-title-size) * 0.6);
 
     @media (min-width: 480px) {
-      font-size: calc(var(--ui-hero-title-size) * .8);
+      font-size: calc(var(--ui-hero-title-size) * 0.8);
     }
 
     @media (min-width: 768px) {
@@ -32,16 +32,17 @@
 }
 
 /* stylelint-disable */
-  :global {
-    .slick-dots li.slick-active button {
-      width: 20px;
-      height: 20px;
-      background-color: transparent;
-      border-width: 3px;
-      border-style: solid;
-      border-color: var(--ui-light-shade-color);
-    }
-    .slick-dots li button {
+:global {
+  .slick-dots li.slick-active button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--ui-light-shade-color);
+  }
+
+  .slick-dots li button {
     background-color: transparent;
     border-width: 3px;
     border-style: solid;
@@ -51,9 +52,9 @@
       width: 14px;
       height: 14px;
     }
-   }
   }
-  /* stylelint-enable */
+}
+/* stylelint-enable */
 
 @media (min-width: 768px) {
   .slider-dots li {
