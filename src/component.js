@@ -69,7 +69,7 @@ class Block extends React.Component {
                 )}
                 {this.getModifierValue('socialIcons') && (
                   <div className={css.article__socials}>
-                    <h2 className={css['social-title']}>Follow us: </h2>
+                    {!this.getOptionValue('hidden-social-heading') && <h2 className={css['social-title']}>Follow us: </h2>}
                     <SocialIcons bind="socialIcons" className={css.socials}/>
                   </div>
                 )}
@@ -79,7 +79,14 @@ class Block extends React.Component {
                       <Button
                         buttonClassName={css.button}
                         linkClassName={css.link}
-                        bind="button"
+                        bind="button-1"
+                      />
+                    )}
+                    {this.getModifierValue('additional-button') && (
+                      <Button
+                        buttonClassName={css.button}
+                        linkClassName={css.link}
+                        bind="button-2"
                       />
                     )}
                   </div>
@@ -105,7 +112,7 @@ Block.defaultContent = {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
     alt: 'Picture about the company',
   },
-  button: {
+  'button-1': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -119,6 +126,20 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'primary',
     size: 'md',
+  },
+  'button-2': {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'link',
   },
   link: '<a href="/">More about us</a>',
   socialIcons: {
@@ -159,6 +180,7 @@ Block.defaultContent = {
 Block.modifierScheme = {
   'article-picture': {defaultValue: true, label: 'Article picture', type: 'hidden'},
   'button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'additional-button': {defaultValue: false, label: 'Additional button', type: 'hidden'},
   'socialIcons': {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
   'subtitle': {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
   'text': {defaultValue: true, label: 'Company main text', type: 'checkbox'},

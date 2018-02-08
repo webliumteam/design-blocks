@@ -1,4 +1,5 @@
 {
     "title-in-top": false,
-    "icon-decorator-in-top": false
+    "icon-decorator-in-top": false,
+    "hidden-social-heading": false
 }
