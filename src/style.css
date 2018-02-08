@@ -1,9 +1,10 @@
 @import "wireframe-zapdos-header/src/style.css";
 
 /* start here */
+
 .nav-list__link {
   text-transform: uppercase;
-  color: var(--ui-light-shade-color);
+  color: var(--ui-subheading-color);
 
   @media (min-width: 992px) {
     font-size: calc(var(--ui-text-size) * 0.8823);

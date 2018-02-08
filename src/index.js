@@ -12,98 +12,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   theme: 'dark',
-  menu: [
-    {
-      id: 'home',
-      metadata: {
-        displayName: 'Home',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'sports',
-      metadata: {
-        displayName: 'Sports',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'concerts',
-      metadata: {
-        displayName: 'Concerts',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'theater',
-      metadata: {
-        displayName: 'Theater',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'music',
-      metadata: {
-        displayName: 'Music',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'contacts',
-      metadata: {
-        displayName: 'Contacts',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-  ],
   cta: {
     actionConfig: {
       action: 'link',
@@ -115,7 +23,7 @@ ExtendedWireframe.defaultContent = {
         },
       },
     },
-    textValue: 'Find tickets online',
+    textValue: 'Request a quote',
     type: 'secondary',
     size: 'sm',
   },
