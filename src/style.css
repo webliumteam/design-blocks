@@ -21,4 +21,8 @@
 
 .header__button {
   text-transform: uppercase;
+
+  @media (min-width: 992px) {
+    margin-left: 65px;
+  }
 }
