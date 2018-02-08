@@ -9,7 +9,7 @@
 .item {
   margin-top: 30px;
 
-  &__icon {
+  &__top-element {
     max-width: 95px;
     margin-bottom: 35px;
     position: relative;
@@ -29,8 +29,6 @@
     }
 
     > svg {
-
-      /* color: var(--ui-brand-color); */
       min-height: 65px;
     }
   }
