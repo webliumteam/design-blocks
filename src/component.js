@@ -66,6 +66,7 @@ class Block extends React.Component {
         style.section,
         {[style['section--heading-none']]: !showHeading},
         {[style['section--body-none']]: !showBody},
+        {[style['section--logo']]: onlyLogo},
         )}
       >
         <div className={style.section__inner}>
@@ -104,7 +105,6 @@ Block.defaultContent = {
   subtitle: 'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
   partners: [
     {
-      id: 'partner1',
       picture: {
         resourceRef: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
         alt: 'Samsung logo',
@@ -128,7 +128,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'partner2',
       picture: {
         src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
         alt: 'Ford logo',
@@ -152,7 +151,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'partner3',
       picture: {
         src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
         alt: 'Medical Family logo',
@@ -176,7 +174,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'partner4',
       picture: {
         src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
         alt: 'Coffee Break Now',

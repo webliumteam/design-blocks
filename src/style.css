@@ -77,9 +77,12 @@
 
     @media (min-width: 768px) {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
     }
+  }
+
+  &--logo {
+    justify-content: center;
   }
 }
 
@@ -157,6 +160,7 @@
 
   &__content {
     text-align: center;
+    font-size: 0;
     
     @media (min-width: 768px) {
       text-align: left;
@@ -201,6 +205,8 @@
     @media (min-width: 992px) {
       max-width: calc(50% - (var(--itemSideOffsets) * 2));
       padding-right: 20px;
+      margin-left: var(--itemSideOffsets);
+      margin-right: var(--itemSideOffsets);
     }
     
     &:nth-last-of-type(2):nth-child(odd) {
