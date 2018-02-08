@@ -49,6 +49,23 @@
 .items-wrapper {
   position: relative;
   max-width: 1200px;
+
+  /* stylelint-disable */
+  :global {
+    .slick-arrow:before {
+      content: none;
+    }
+
+    .slick-arrow svg {
+      fill: #f00;
+      transition: fill .2s ease-in;
+    }
+
+    .slick-arrow:hover svg {
+      fill: #00f;
+    }
+  }
+  /* stylelint-enable */
 }
 
 @media (min-width: 768px) {

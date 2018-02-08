@@ -9,6 +9,9 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   collectionItem = ({index, modifier}) => {
     const {components: {Text, Button}, style} = this.props
     return (
@@ -37,7 +40,11 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Slider}, style, $block} = this.props
+    const {components: {Slider, Icon}, style, $block} = this.props
+    const customArrows = this.getOptionValue('custom-arrows') ? {
+      nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
+      prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
+    } : {}
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -57,6 +64,7 @@ class Block extends React.Component {
                   },
                 },
               ],
+              ...customArrows,
             }}
             itemProps={{
               modifier: $block.modifier,
@@ -68,7 +76,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Slider', 'Text', 'Button'])($editor.components)
+Block.components = _.pick(['Slider', 'Text', 'Button', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   background: {
