@@ -29,7 +29,7 @@
   &__meta {
     color: var(--ui-small-color);
     text-transform: uppercase;
-    font-size: var(--ui-small-text-size);
+    font-size: var(--ui-small-size);
     margin-bottom: 16px;
   }
 }
@@ -38,7 +38,7 @@
   text-decoration: none;
   text-transform: uppercase;
   color: var(--ui-subtitle-color);
-  font-size: var(--ui-small-text-size);
-  font-family: var(--ui-small-text-font-family);
+  font-size: var(--ui-small-size);
+  font-family: var(--ui-small-font-family);
   font-weight: var(--ui-caption-font-weight);
 }
