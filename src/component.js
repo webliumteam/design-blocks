@@ -13,7 +13,7 @@ class Block extends React.Component {
 
   collectionItem = ({index, children, className}) => {
     const {components: {Text, Icon}, style} = this.props
-    const collectionIcon = this.getOptionValue('collection-icons')
+    const collectionIcon = !this.getOptionValue('hidden-collection-icons')
     return (
       <li className={classNames(style.list__item, className)}>
         {children}
