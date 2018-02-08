@@ -166,6 +166,7 @@
 .item__picture {
   display: block;
   position: relative;
+  cursor: pointer;
   padding-top: 65%;
   flex: 1;
 }
