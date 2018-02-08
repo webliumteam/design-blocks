@@ -1,15 +1,6 @@
 @import "wireframe-zapdos-header/src/style.css";
 
 /* start here */
-.logo__title {
-
-  @media (min-width: 768px) {
-    font-size: calc(var(--ui-block-title-size) * 0.9333);
-  }
-  color: var(--ui-brand-color);
-  font-weight: 700;
-}
-
 .nav-list__link {
   text-transform: uppercase;
   color: var(--ui-light-shade-color);
