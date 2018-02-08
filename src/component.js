@@ -82,30 +82,36 @@ class Block extends React.Component {
                 <ul className={style['contacts-list']}>
                   {this.getModifierValue('address') && (
                     <li className={style['contacts-list__item']}>
-                      <h3 className={style.contacts__title}>
-                        <Text bind="address-title" />
-                      </h3>
-                      <p className={style.contacts__desc}>
+                      {!this.getOptionValue('hidden-address-title') && (
+                        <h3 className={style.contacts__title}>
+                          <Text bind="address-title" />
+                        </h3>
+                      )}
+                      <p className={classNames(style.contacts__desc, style['address-content'])}>
                         <Text bind="address-content" />
                       </p>
                     </li>
                   )}
                   {this.getModifierValue('phone') && (
                     <li className={style['contacts-list__item']}>
-                      <h3 className={style.contacts__title}>
-                        <Text bind="phone-title" />
-                      </h3>
-                      <p className={style.contacts__desc}>
+                      {!this.getOptionValue('hidden-phone-title') && (
+                        <h3 className={style.contacts__title}>
+                          <Text bind="phone-title" />
+                        </h3>
+                      )}
+                      <p className={classNames(style.contacts__desc, style['phone-link'])}>
                         <Text bind="phone-link" />
                       </p>
                     </li>
                   )}
                   {this.getModifierValue('email') && (
                     <li className={style['contacts-list__item']}>
-                      <h3 className={style.contacts__title}>
-                        <Text bind="email-title" />
-                      </h3>
-                      <p className={style.contacts__desc}>
+                      {!this.getOptionValue('hidden-email-title') && (
+                        <h3 className={style.contacts__title}>
+                          <Text bind="email-title" />
+                        </h3>
+                      )}
+                      <p className={classNames(style.contacts__desc, style['email-link'])}>
                         <Text bind="email-link" />
                       </p>
                     </li>
