@@ -81,7 +81,7 @@
     }
   }
 
-  &--logo {
+  &--center {
     justify-content: center;
   }
 }
@@ -224,7 +224,7 @@
     }
   }
 
-  &--logo-and-name {
+  &--two-elements {
 
     @media (min-width: 768px) {
       max-width: 310px;

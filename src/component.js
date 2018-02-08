@@ -19,7 +19,7 @@ class Block extends React.Component {
       <article className={classNames(
         style.item,
         {[style['item--body-none']]: (!showBody && showLink)},
-        {[style['item--logo-and-name']]: (!showBody && !showLink && showHeading)},
+        {[style['item--two-elements']]: (!showBody && !showLink && showHeading) || (!showBody && showLink && !showHeading)},
         {[style['item--logo']]: (!showBody && !showLink && !showHeading)},
         )}
       >
@@ -61,12 +61,12 @@ class Block extends React.Component {
     const showHeading = this.getModifierValue('heading')
     const showBody = this.getModifierValue('body')
     const onlyLogo = (!this.getModifierValue('body') && !this.getModifierValue('link') && !this.getModifierValue('heading'))
+    const centerItems = !this.getModifierValue('body') && (this.getModifierValue('link') || this.getModifierValue('heading'))
     return (
       <section className={classNames(
         style.section,
         {[style['section--heading-none']]: !showHeading},
         {[style['section--body-none']]: !showBody},
-        {[style['section--logo']]: onlyLogo},
         )}
       >
         <div className={style.section__inner}>
@@ -81,7 +81,7 @@ class Block extends React.Component {
             )}
           </header>
           <Collection
-            className={classNames(style['items-wrapper'], {[style['items-wrapper--column']]: !showBody})}
+            className={classNames(style['items-wrapper'], {[style['items-wrapper--column']]: !showBody, [style['items-wrapper--center']]: centerItems || onlyLogo})}
             TagName="div"
             bind="partners"
             Item={this.collectionItem}
