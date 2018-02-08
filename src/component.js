@@ -80,6 +80,7 @@ class Block extends React.Component {
             {this.state.users &&
               this.state.users.map(item => (
                 <li className={css.list__item}>
+                  <span>{item.position}.&nbsp;</span>
                   <span className={css['list__item-inner']}>{item.displayName}</span>
                   <a href={item.profileUrl} className={css.list__link}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.124 96.123">
