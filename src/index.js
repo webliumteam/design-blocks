@@ -21,7 +21,7 @@ ExtendedWireframe.defaultContent = {
       category: 'Creative Process',
       date: 'September 22, 2017',
       picture: {
-        src: 'blog-pic-1.jpg',
+        resourceRef: 'blog-pic-1.jpg',
         alt: 'Article illustration photo',
       },
       link: {
@@ -47,7 +47,7 @@ ExtendedWireframe.defaultContent = {
       category: 'Creative Process',
       date: 'September 22, 2017',
       picture: {
-        src: 'blog-pic-2.jpg',
+        resourceRef: 'blog-pic-2.jpg',
         alt: 'Article illustration photo',
       },
       link: {
@@ -73,7 +73,7 @@ ExtendedWireframe.defaultContent = {
       category: 'Creative Process',
       date: 'September 22, 2017',
       picture: {
-        src: 'blog-pic-3.jpg',
+        resourceRef: 'blog-pic-3.jpg',
         alt: 'Article illustration photo',
       },
       link: {
