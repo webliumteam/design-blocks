@@ -40,14 +40,14 @@ class Block extends React.Component {
       
       
       // навешиваем функционал на клик
-      callMeForm.onsubmit = () => dataLayer.push({
-        'Event':'UAevent',
+      callMeForm && callMeForm.onsubmit = () => dataLayer.push({
+        'event':'UAevent',
         'eventCategory':'Button',
         'eventAction':'click',
         'eventLabel':'Callback_header'
       });
-      sendRequestForm.onsubmit = () => dataLayer.push({
-        'Event':'UAevent',
+      sendRequestForm && sendRequestForm.onsubmit = () => dataLayer.push({
+        'event':'UAevent',
         'eventCategory':'Button',
         'eventAction':'click',
         'eventLabel':'send_request'
@@ -56,8 +56,8 @@ class Block extends React.Component {
       // google analytics code
       //leaveRequest.onclick = () => ga('send', 'event', 'Button', 'click', 'request_advantages')
 
-      leaveRequest.onclick = () => dataLayer.push({
-        'Event':'UAevent',
+      leaveRequest && leaveRequest.onclick = () => dataLayer.push({
+        'event':'UAevent',
         'eventCategory':'Button',
         'eventAction':'click',
         'eventLabel':'request_advantages'
@@ -77,7 +77,7 @@ class Block extends React.Component {
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WRTD5QJ"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>`
 
-    this.instance.appendChild(headScript)
+    document.head.insertBefore(headScript, document.head.firstChild)
     document.body.appendChild(bodyScript)
   }
 
