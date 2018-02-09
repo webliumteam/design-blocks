@@ -30,12 +30,10 @@
 
 @media (min-width: 992px) {
   .section__inner {
-    max-width: 1700px;
+    max-width: 60%;
+    margin: 0;
+    margin-left: 12%;
   }
-}
-
-.section__inner {
-  max-width: 1700px;
 }
 
 .items-wrapper {
@@ -46,5 +44,12 @@
   .slider-dots li button {
     width: 15px;
     height: 15px;
+  }
+}
+
+@media (min-width: 480px) {
+  .button {
+    width: auto;
+    margin-top: 30px;
   }
 }
