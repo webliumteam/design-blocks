@@ -40,28 +40,34 @@ class Block extends React.Component {
       
       
       // навешиваем функционал на клик
-      callMeForm && callMeForm.onsubmit = () => dataLayer.push({
-        'event':'UAevent',
-        'eventCategory':'Button',
-        'eventAction':'click',
-        'eventLabel':'Callback_header'
-      });
-      sendRequestForm && sendRequestForm.onsubmit = () => dataLayer.push({
-        'event':'UAevent',
-        'eventCategory':'Button',
-        'eventAction':'click',
-        'eventLabel':'send_request'
-      });
+      if(callMeForm) {
+        callMeForm.onsubmit = () => dataLayer.push({
+          'event':'UAevent',
+          'eventCategory':'Button',
+          'eventAction':'click',
+          'eventLabel':'Callback_header'
+        });
+      }
+      if (sendRequestForm) {
+        sendRequestForm.onsubmit = () => dataLayer.push({
+          'event':'UAevent',
+          'eventCategory':'Button',
+          'eventAction':'click',
+          'eventLabel':'send_request'
+        });
+      }
 
       // google analytics code
       //leaveRequest.onclick = () => ga('send', 'event', 'Button', 'click', 'request_advantages')
 
-      leaveRequest && leaveRequest.onclick = () => dataLayer.push({
-        'event':'UAevent',
-        'eventCategory':'Button',
-        'eventAction':'click',
-        'eventLabel':'request_advantages'
-      });
+      if (leaveRequest) {
+        leaveRequest.onclick = () => dataLayer.push({
+          'event':'UAevent',
+          'eventCategory':'Button',
+          'eventAction':'click',
+          'eventLabel':'request_advantages'
+        });
+      }
 
       if(window.location.pathname == '/services') {
         const forms = document.getElementsByTagName('form')
