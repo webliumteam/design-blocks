@@ -18,7 +18,8 @@ class Block extends React.Component {
     return (
       <article className={classNames(
         style.item,
-        {[style['item--body-none']]: (!showBody && showLink)},
+        {[style['item--body-none']]: !showBody && (showBody || showLink || showHeading)},
+        {[style['item--heading-none']]: !showHeading},
         {[style['item--two-elements']]: (!showBody && !showLink && showHeading) || (!showBody && showLink && !showHeading)},
         {[style['item--logo']]: (!showBody && !showLink && !showHeading)},
         )}
@@ -58,14 +59,12 @@ class Block extends React.Component {
 
   render() {
     const {components: {Collection, Text, Button}, style, $block} = this.props
-    const showHeading = this.getModifierValue('heading')
     const showBody = this.getModifierValue('body')
     const onlyLogo = (!this.getModifierValue('body') && !this.getModifierValue('link') && !this.getModifierValue('heading'))
     const centerItems = !this.getModifierValue('body') && (this.getModifierValue('link') || this.getModifierValue('heading'))
     return (
       <section className={classNames(
         style.section,
-        {[style['section--heading-none']]: !showHeading},
         {[style['section--body-none']]: !showBody},
         )}
       >
