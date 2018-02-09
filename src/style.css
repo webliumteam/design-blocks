@@ -193,8 +193,7 @@
   }
 
   &__link {
-    font-size: var(--ui-text-size);
-    font-family: var(--ui-text-font-family);
+    font-size: var(--ui-btn-md-font-size);
     padding: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
