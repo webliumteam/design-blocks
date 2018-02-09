@@ -88,9 +88,11 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          <div className={classNames(style['btns-group'], {[style['btns-group--offset-sm']]: onlyLogo})}>
-            <Button buttonClassName={style.button} bind="button" />
-          </div>
+          {this.getModifierValue('button') && (
+            <div className={classNames(style['btns-group'], {[style['btns-group--offset-sm']]: onlyLogo})}>
+              <Button buttonClassName={style.button} bind="button" />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -217,6 +219,7 @@ Block.modifierScheme = {
   heading: {defaultValue: true, label: 'Partner title', type: 'checkbox'},
   body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
   link: {defaultValue: true, label: 'Partner link', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
 
 export default Block
