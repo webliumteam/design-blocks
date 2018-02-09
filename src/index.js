@@ -10,6 +10,7 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
   theme: 'dark',
   background: {
     type: 'image',
@@ -18,8 +19,6 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'cover_bg.jpg',
   },
-  title: 'Quantum Company',
-  subtitle: 'We can execute even the most unpredictable ideas! ',
   'cta-1': {
     actionConfig: {
       action: 'link',
@@ -31,26 +30,10 @@ ExtendedWireframe.defaultContent = {
         },
       },
     },
-    textValue: 'Request a quote',
+    textValue: 'Learn more',
     type: 'primary',
     size: 'lg',
   },
-  'cta-2': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Learn more',
-    type: 'secondary',
-    size: 'lg',
-  },
-  topCaption: 'welcome',
 }
 
 ExtendedWireframe.modifierScheme = {
