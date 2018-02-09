@@ -1,3 +1,50 @@
 @import "wireframe-lucario-cover/src/style.css";
 
 /* start here */
+
+.slick-arrow.slick-prev {
+  color: var(--ui-light-shade-color);
+}
+
+.slick-arrow.slick-next {
+  color: var(--ui-light-shade-color);
+}
+
+.slick-arrow:hover,
+.slick-arrow:active,
+.slick-arrow:focus {
+  color: var(--ui-light-accent-color);
+  opacity: 1;
+}
+
+.item__title {
+  color: var(--ui-light-shade-color);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: var(--ui-light-accent-color);
+  font-size: var(--ui-subheading-size);
+  text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .section__inner {
+    max-width: 1700px;
+  }
+}
+
+.section__inner {
+  max-width: 1700px;
+}
+
+.items-wrapper {
+  max-width: inherit;
+}
+
+@media (min-width: 768px) {
+  .slider-dots li button {
+    width: 15px;
+    height: 15px;
+  }
+}
