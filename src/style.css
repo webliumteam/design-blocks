@@ -74,8 +74,6 @@
 }
 
 .items-wrapper {
-  
-
   margin: 0 calc(var(--itemSideOffsets) * -1);
 
   &--column {
@@ -88,6 +86,14 @@
 
   &--center {
     justify-content: center;
+  }
+
+  &:last-child {
+    margin-bottom: -30px;
+    
+    @media (min-width: 992px) {
+      margin-bottom: -50px;
+    }
   }
 }
 
