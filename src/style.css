@@ -20,6 +20,7 @@
 .item__title {
   color: var(--ui-light-shade-color);
   text-transform: uppercase;
+  font-style: var(--ui-quote-font-style);
 }
 
 .subtitle {
@@ -33,6 +34,10 @@
     max-width: 60%;
     margin: 0;
     margin-left: 12%;
+  }
+
+  .item__inner {
+    padding: 0;
   }
 }
 
@@ -51,5 +56,6 @@
   .button {
     width: auto;
     margin-top: 30px;
+    padding: 13px 50px;
   }
 }
