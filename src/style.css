@@ -186,7 +186,6 @@
   margin-bottom: 15px;
 }
 
-
 @media (min-width: 768px) {
   .contacts-list__item {
     margin-bottom: 30px;
@@ -335,7 +334,6 @@
 
 .socials {
   margin-top: 30px;
-  margin-bottom: -15px;
   font-size: 0;
 }
 
