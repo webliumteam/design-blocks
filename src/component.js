@@ -18,7 +18,7 @@ class Block extends React.Component {
             <div className={style['picture-wrapper']}>
               <Image
                 pictureClassName={style.picture}
-                imgClassName={style.image}
+                imgClassName={style.picture__image}
                 bind="picture"
               />
             </div>
