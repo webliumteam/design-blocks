@@ -189,7 +189,7 @@ Block.defaultContent = {
       offset: 15,
       color: '#9b9b9b',
       sizes: [10, 20, 30, 40],
-      size: '30px',
+      size: 30,
     },
   },
   topIcon: {
