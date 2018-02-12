@@ -29,6 +29,10 @@
     }
   }
 
+  &__content--icon-none + &__title::after {
+    content: "";
+  }
+
   &__title {
     position: relative;
     letter-spacing: -0.3px;
