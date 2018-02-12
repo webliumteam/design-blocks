@@ -7,8 +7,11 @@
 }
 
 .subtitle {
-  color: var(--ui-text-color);
+  max-width: 570px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
+  color: var(--ui-text-color);
 }
 
 .item {
