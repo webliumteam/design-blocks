@@ -30,7 +30,7 @@ ExtendedWireframe.defaultContent = {
   'plan-cta-2': {
     ...Component.defaultContent['plan-cta-2'],
     textValue: 'Request a quote',
-    type: 'alt-primary',
+    type: 'primary',
   },
   'plan-cta-3': {
     ...Component.defaultContent['plan-cta-3'],

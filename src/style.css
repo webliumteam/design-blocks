@@ -3,7 +3,7 @@
 /* start here */
 
 .plan {
-  background-color: var(--ui-media-bg);
+  background-color: #f7f7f7;
 
   &__icon-wrapper::after {
     content: "";
@@ -50,21 +50,21 @@
 
   &--main {
     background: var(--ui-light-accent-color);
-    color: white;
+    color: var(--ui-light-shade-color);
     box-shadow: none;
 
     .plan__title {
-      color: white;
+      color: var(--ui-light-shade-color);
       margin-bottom: 35px;
       margin-top: 45px;
     }
 
     .plan__price-count {
-      color: white;
+      color: var(--ui-light-shade-color);
     }
 
     .plan__price {
-      color: white;
+      color: var(--ui-light-shade-color);
       margin-bottom: 10px;
     }
 
@@ -72,12 +72,12 @@
       padding: 15px;
 
       span {
-        color: white;
+        color: var(--ui-light-shade-color);
       }
     }
 
     .plan__icon-wrapper::after {
-      background: white;
+      background: var(--ui-light-shade-color);
       left: 30px;
     }
   }
