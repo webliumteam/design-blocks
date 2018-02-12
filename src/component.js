@@ -10,10 +10,19 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text}, style, $block: {id}} = this.props
+    const {components: {Text, Image}, style, $block: {id}} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
+          {this.getModifierValue('picture') && (
+            <div className={style['picture-wrapper']}>
+              <Image
+                pictureClassName={style.picture}
+                imgClassName={style.picture__image}
+                bind="picture"
+              />
+            </div>
+          )}
           <blockquote className={style.blockquote} aria-describedby={`${id}-author`}>
             <Text bind="blockquote" />
             <div className={style.blockquote__line}>
@@ -39,7 +48,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text'])($editor.components)
+Block.components = _.pick(['Text', 'Image'])($editor.components)
 
 Block.defaultContent = {
   background: {
@@ -49,15 +58,23 @@ Block.defaultContent = {
   blockquote:
     'There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.',
   author: 'Ray Goforth',
+  picture: {
+    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+    alt: 'Illustration photo',
+  },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'author',
+Block.modifierScheme = {
+  author: {
     type: 'checkbox',
     label: 'Quote author',
     defaultValue: true,
   },
-]
+  picture: {
+    type: 'hidden',
+    label: 'Picture',
+    defaultValue: false,
+  },
+}
 
 export default Block
