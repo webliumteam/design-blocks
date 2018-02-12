@@ -1,3 +1,72 @@
-@import "wireframe-master/src/style.css";
+@import "wireframe-zapdos-numbers/src/style.css";
 
 /* start here */
+
+.title {
+  font-size: var(--ui-block-title-size);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.item {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 3px;
+    width: 30px;
+    background-color: var(--ui-brand-color);
+  }
+
+  &__title {
+    margin-bottom: -10px;
+    font-size: var(--ui-subtitle-size);
+    text-align: center;
+  }
+
+  &__content {
+    flex-direction: column;
+  }
+
+  &__number {
+    font-size: var(--ui-hero-title-size);
+    letter-spacing: -2px;
+
+    @media (min-width: 768px) {
+      margin-bottom: -12px;
+    }
+  }
+
+  &__text {
+    font-size: var(--ui-caption-size);
+    font-family: var(--ui-caption-font-family);
+    font-weight: var(--ui-caption-font-weight);
+    line-height: 20px;
+    color: var(--ui-dark-shade-color);
+    opacity: 0.4;
+    text-transform: uppercase;
+  }
+}
+
+@media (min-width: 992px) {
+  .items-wrapper {
+    align-item: center;
+  }
+
+  .item {
+    &__number {
+      font-size: calc( var(--ui-hero-title-size) * 1.2);
+    }
+  }
+}
+
+@media (min-width: 1150px) {
+  .item__number {
+    font-size: calc( var(--ui-hero-title-size) * 1.5 );
+    letter-spacing: -5px;
+  }
+}
