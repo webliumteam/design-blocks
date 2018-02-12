@@ -30,7 +30,7 @@
 
     &--icon-none {
       .article__title::after {
-        content: "";
+        content: none;
       }
     }
   }
