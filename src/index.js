@@ -9,4 +9,122 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
+ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
+  team: [
+    {
+      ...Component.defaultContent.team[0],
+      picture: {
+        ...Component.defaultContent.team[0].picture,
+        resourceRef: 'photo1.png',
+      },
+      socialIcons: {
+        networks: [
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'https://twitter.com/',
+          },
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'https://facebook.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          color: '',
+          sizes: [15, 25, 35, 45],
+          size: 25,
+          offset: 5,
+        },
+      },
+    },
+    {
+      ...Component.defaultContent.team[1],
+      picture: {
+        ...Component.defaultContent.team[1].picture,
+        resourceRef: 'photo2.png',
+      },
+      socialIcons: {
+        networks: [
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'https://twitter.com/',
+          },
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'https://facebook.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          color: '',
+          sizes: [15, 25, 35, 45],
+          size: 25,
+          offset: 5,
+        },
+      },
+    },
+    {
+      ...Component.defaultContent.team[2],
+      picture: {
+        ...Component.defaultContent.team[2].picture,
+        resourceRef: 'photo3.png',
+      },
+      socialIcons: {
+        networks: [
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'https://twitter.com/',
+          },
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'https://facebook.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'https://www.linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          color: '',
+          sizes: [15, 25, 35, 45],
+          size: 25,
+          offset: 5,
+        },
+      },
+    },
+  ],
+}
+
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+}
+
 export default ExtendedWireframe
