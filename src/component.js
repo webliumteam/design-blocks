@@ -49,17 +49,17 @@ class Block extends React.Component {
           )}
           <div className={style.content}>
             {this.getModifierValue('image') && (
-              <div className={style['media-wrap']}>
-                <Image
-                  pictureClassName={style.media}
-                  imgClassName={style.media__image}
-                  bind="picture"
-                  size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
-                />
+              <Image
+                wrapperClassName={style.media}
+                pictureClassName={style.media__picture}
+                imgClassName={style.media__image}
+                bind="picture"
+                size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
+              >
                 {this.getOptionValue('image-decorator-status') && (
                   <div className={style.media__decorator} dangerouslySetInnerHTML={{__html: this.getOptionValue('image-decorator-content')}} />
                 )}
-              </div>
+              </Image>
             )}
             <div className={style.content__main}>
               {this.getOptionValue('title-in-content') && (
