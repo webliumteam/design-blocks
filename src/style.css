@@ -45,8 +45,8 @@
 
   &__title {
     color: var(--ui-dark-shade-color);
-    font-size: var(--ui-sub-heading-size);
-    font-weight: var(--ui-heading-large-font-weight);
+    font-size: var(--ui-subheading-size);
+    font-weight: var(--ui-heading-lg-font-weight);
     font-family: var(--ui-caption-font-family);
   }
 }
