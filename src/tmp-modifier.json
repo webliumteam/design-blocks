@@ -1,3 +1,6 @@
 {
-  "some-modifier": true
+  "image": true,
+  "position":true,
+  "subtitle":true,
+  "button":true
 }

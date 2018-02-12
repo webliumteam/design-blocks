@@ -1,3 +1,94 @@
 @import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
+.title {
+  color: var(--ui-light-shade-color);
+}
+
+.subtitle {
+  color: var(--ui-light-shade-color);
+  margin: 37px auto 0;
+  max-width: 848px;
+}
+
+.item {
+  &__title {
+    color: var(--ui-light-shade-color);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background: var(--ui-light-accent-color);
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      bottom: 35px;
+    }
+  }
+
+  &__pic {
+    width: 170px;
+    height: 170px;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  &__desc {
+    color: #9d9e9f;
+  }
+
+  &__position {
+    margin-top: 12px;
+    text-transform: uppercase;
+  }
+}
+
+.item .item .items-wrapper {
+  max-width: 610px;
+  margin: 0 auto;
+}
+
+.slick-arrow.slick-next {
+  right: 30%;
+  top: 25%;
+}
+
+.slick-arrow.slick-prev {
+  left: 30%;
+  top: 25%;
+}
+
+@media (min-width: 992px) {
+  .item__contacts {
+    margin-bottom: 0;
+    margin-top: 59px;
+  }
+
+  .slick-arrow.slick-next {
+    right: 125px;
+    top: 25%;
+  }
+
+  .slick-arrow.slick-prev {
+    left: 125px;
+    top: 25%;
+  }
+
+  .item {
+    &__title {
+      &::after {
+        bottom: 55px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .slick-arrow {
+    top: 25%;
+  }
+}
