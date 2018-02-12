@@ -87,7 +87,7 @@ class Block extends React.Component {
                           <Text bind="address-title" />
                         </h3>
                       )}
-                      <p className={classNames(style.contacts__desc, style['address-content'])}>
+                      <p className={classNames(style.contacts__desc, style['contacts__desc--adress'])}>
                         <Text bind="address-content" />
                       </p>
                     </li>
@@ -99,7 +99,7 @@ class Block extends React.Component {
                           <Text bind="phone-title" />
                         </h3>
                       )}
-                      <p className={classNames(style.contacts__desc, style['phone-link'])}>
+                      <p className={classNames(style.contacts__desc, style['contacts__desc--phone'])}>
                         <Text bind="phone-link" />
                       </p>
                     </li>
@@ -111,7 +111,7 @@ class Block extends React.Component {
                           <Text bind="email-title" />
                         </h3>
                       )}
-                      <p className={classNames(style.contacts__desc, style['email-link'])}>
+                      <p className={classNames(style.contacts__desc, style['contacts__desc--email'])}>
                         <Text bind="email-link" />
                       </p>
                     </li>
