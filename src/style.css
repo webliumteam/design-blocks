@@ -27,10 +27,12 @@
       letter-spacing: -1.6px;
       padding: 8px;
     }
-  }
 
-  &__content--icon-none + &__title::after {
-    content: "";
+    &--icon-none {
+      .article__title::after {
+        content: "";
+      }
+    }
   }
 
   &__title {
