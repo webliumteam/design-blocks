@@ -24,15 +24,6 @@
     margin-top: 25px;
   }
 
-  &__button {
-    background: transparent;
-    text-transform: uppercase;
-    font-size: var(--ui-small-text-size);
-    padding: var(--ui-btn-md-padding);
-    color: var(--ui-btn-secondary-color);
-    border: var(--ui-btn-secondary-border-width) var(--ui-btn-secondary-border-style) var(--ui-btn-secondary-border-color);
-  }
-
   &__price {
     margin-bottom: 19px;
   }
@@ -83,13 +74,6 @@
       span {
         color: white;
       }
-    }
-
-    .plan__button.button--primary {
-      color: var(--ui-dark-shade-color);
-      margin-top: 0;
-      background: white;
-      border: 1px solid white;
     }
 
     .plan__icon-wrapper::after {
