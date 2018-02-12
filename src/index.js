@@ -13,51 +13,17 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   projects: [
     {
-      id: 'e9ec34d7-3cc6-49f3-a9ad-6ea69f59409c',
-      title: 'Project 1',
-      subtitle: 'UX DESIGN',
-      text:
-        'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
+      ...Component.defaultContent.projects[0],
       picture: {
+        ...Component.defaultContent.projects[0].picutre,
         resourceRef: 'bg-1.png',
-        alt: 'Project 1',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
       },
     },
     {
-      id: '9310272a-1fa2-4876-b1db-a879bbd4bc52',
-      title: 'Project 2',
-      subtitle: 'BRANDING',
-      text:
-        'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
+      ...Component.defaultContent.projects[1],
       picture: {
+        ...Component.defaultContent.projects[1].picutre,
         resourceRef: 'bg-2.png',
-        alt: 'Project 2',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
       },
     },
   ],
