@@ -16,23 +16,13 @@ ExtendedWireframe.defaultContent = {
     type: 'image',
     position: {
       type: 'cover',
-      cover: '50% 50%',
+      cover: '50% 0%',
     },
     resourceRef: '33.jpg',
   },
   cta: {
+    ...Component.defaultContent.cta,
     type: 'secondary',
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Request a quote',
   },
 }
 
