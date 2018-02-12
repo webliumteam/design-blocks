@@ -17,12 +17,19 @@
   padding: 20px 0;
   border-bottom: 1px solid #f3f3f3;
 
+  &__title {
+    padding-right: 70px;
+  }
+
   &__icon {
     transition: none;
-    margin-top: -15px;
+    width: auto;
+    height: auto;
+    color: var(--ui-brand-color);
   }
 
   &--active .item__icon {
-    margin-top: 20px;
+    transform: translateY(-50%) rotate(-45deg);
+    color: var(--ui-dark-shade-color);
   }
 }
