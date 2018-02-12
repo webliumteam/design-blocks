@@ -270,6 +270,10 @@
   padding: 0;
 }
 
+.socials {
+  justify-content: center;
+}
+
 .link:hover,
 .link:focus,
 .link:active {
