@@ -9,5 +9,5 @@ npm-debug.log
 yarn.lock
 package-lock.json
 block.http.localhost.3000
-block.http.weblium.dev
-block.http.weblium
+block.http.weblium.co
+block.http.weblium.com
