@@ -11,6 +11,29 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  blog: [
+    {
+      ...Component.defaultContent.blog[0],
+      picture: {
+        resourceRef: 'blog-pic-1.jpg',
+        alt: 'Article illustration photo',
+      },
+    },
+    {
+      ...Component.defaultContent.blog[1],
+      picture: {
+        resourceRef: 'blog-pic-2.jpg',
+        alt: 'Article illustration photo',
+      },
+    },
+    {
+      ...Component.defaultContent.blog[2],
+      picture: {
+        resourceRef: 'blog-pic-3.jpg',
+        alt: 'Article illustration photo',
+      },
+    },
+  ],
 }
 
 ExtendedWireframe.modifierScheme = {
@@ -23,6 +46,5 @@ ExtendedWireframe.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default ExtendedWireframe
