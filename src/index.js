@@ -10,6 +10,7 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
   theme: 'dark',
   background: {
     type: 'image',
@@ -25,96 +26,9 @@ ExtendedWireframe.defaultContent = {
       tagName: 'h2',
     },
   },
-  menu: [
-    {
-      id: 'about-us',
-      metadata: {
-        displayName: 'About us',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'services',
-      metadata: {
-        displayName: 'Services',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'projects',
-      metadata: {
-        displayName: 'Projects',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'testimonials',
-      metadata: {
-        displayName: 'Testimonials',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'contact-us',
-      metadata: {
-        displayName: 'Contact us',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-  ],
   cta: {
+    ...Component.defaultContent.cta,
     type: 'secondary',
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Request a quote',
   },
 }
 

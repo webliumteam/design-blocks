@@ -3,7 +3,7 @@
 /* start here */
 .logo {
   &__title {
-    font-size: var(--ui-sub-heading-size);
+    font-size: var(--ui-subheading-size);
     font-family: var(--ui-caption-font-family);
     font-weight: var(--ui-block-title-font-weight);
     color: var(--ui-light-shade-color);
@@ -38,4 +38,3 @@
     }
   }
 }
-
