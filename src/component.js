@@ -49,9 +49,7 @@ class Block extends React.Component {
           {this.getOptionValue('title-in-top') && getTitle}
           <article className={css.article}>
             {this.getModifierValue('article-picture') && (
-              <div className={css['article__picture-wrapper']}>
-                <Image pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
-              </div>
+              <Image wrapperClassName={css['article__picture-wrapper']} pictureClassName={css.article__picture} bind="picture" size={this.getImageSize(columnLayout)} />
             )}
             {!onlyImage && (
               <div className={css.article__content}>
