@@ -17,6 +17,13 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.projects[0].picutre,
         resourceRef: 'bg-1.png',
+        size: {
+          'min-width: 320px': 450,
+          'min-width: 480px': 768,
+          'min-width: 768px': 962,
+          'min-width: 992px': 1200,
+          'min-width: 1200px': 1920,
+        },
       },
     },
     {
@@ -24,6 +31,13 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.projects[1].picutre,
         resourceRef: 'bg-2.png',
+        size: {
+          'min-width: 320px': 450,
+          'min-width: 480px': 768,
+          'min-width: 768px': 962,
+          'min-width: 992px': 1200,
+          'min-width: 1200px': 1920,
+        },
       },
     },
   ],
