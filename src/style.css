@@ -94,7 +94,7 @@
   }
 
   /* state without image */
-  &--no-image {
+  &--image-none {
     :global {
       .slick-prev-default,
       .slick-next-default {

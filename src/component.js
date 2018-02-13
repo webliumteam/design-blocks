@@ -66,7 +66,7 @@ class Block extends React.Component {
             </p>
           )}
           <Slider
-            className={classNames(style['items-wrapper'], {[style['items-wrapper--no-image']]: !this.getModifierValue('image')})}
+            className={classNames(style['items-wrapper'], {[style['items-wrapper--image-none']]: !this.getModifierValue('image')})}
             bind="testimonials"
             Item={this.collectionItem}
             settings={{
