@@ -151,6 +151,10 @@
   justify-content: center;
 }
 
+.button {
+  width: 100%;
+}
+
 @media (min-width: 480px) {
   .button {
     width: auto;
