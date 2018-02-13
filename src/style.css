@@ -55,9 +55,20 @@
       color: var(--ui-brand-color);
     }
 
+    .slick-prev-default {
+      transform: translateX(-200%);
+    }
+
+    .slick-next-default {
+      transform: translateX(200%);
+    }
+
     .slick-prev-default,
     .slick-next-default {
-      transform: translateY(-50%);
+
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
     }
 
     /* styles for custom arrows */
@@ -65,9 +76,20 @@
       color: var(--ui-brand-color);
     }
 
+    .slick-prev {
+      transform: translateX(-200%);
+    }
+
+    .slick-next {
+      transform: translateY(200%);
+    }
+
     .slick-prev,
     .slick-next {
-      transform: translateY(-50%);
+
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
     }
   }
 }
@@ -286,14 +308,12 @@
   max-height: 100%;
 }
 
-.button,
-.link {
+.button {
   width: 100%;
 }
 
 @media (min-width: 480px) {
-  .button,
-  .link {
+  .button {
     width: auto;
   }
 }

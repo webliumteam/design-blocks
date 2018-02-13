@@ -71,14 +71,6 @@ class Block extends React.Component {
             Item={this.collectionItem}
             settings={{
               arrows: true,
-              responsive: [
-                {
-                  breakpoint: 992,
-                  settings: {
-                    arrows: false,
-                  },
-                },
-              ],
               ...customArrows,
             }}
             itemProps={{
