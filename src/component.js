@@ -66,7 +66,7 @@ class Block extends React.Component {
             </p>
           )}
           <Slider
-            className={style['items-wrapper']}
+            className={classNames(style['items-wrapper'], {[style['items-wrapper--no-image']]: !this.getModifierValue('image')})}
             bind="testimonials"
             Item={this.collectionItem}
             settings={{
@@ -142,7 +142,7 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   button: {defaultValue: true, label: 'Secondary Button', type: 'checkbox'},
-  image: {defaultValue: true, label: 'Reviewer photo', type: 'checkbox'},
+  image: {defaultValue: false, label: 'Reviewer photo', type: 'checkbox'},
   position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
   publishDate: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Testimonials description', type: 'checkbox'},
