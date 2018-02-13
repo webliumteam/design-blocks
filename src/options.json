@@ -1,3 +1,6 @@
 {
-    "title-in-contacts": false
+    "title-in-contacts": false,
+    "hidden-address-title": false,
+    "hidden-phone-title": false,
+    "hidden-email-title": false
 }

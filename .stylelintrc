@@ -1,5 +1,5 @@
 {
-  "plugins": ["stylelint-scss", "stylelint-selector-bem-pattern"],
+  "plugins": ["stylelint-scss", "stylelint-selector-bem-pattern", "stylelint-order"],
   "rules": {
     "indentation": 2,
     "max-empty-lines": [
@@ -66,7 +66,30 @@
     "number-no-trailing-zeros": true,
     "declaration-block-trailing-semicolon": "always",
     "declaration-block-no-duplicate-properties": true,
-    "scss/selector-no-redundant-nesting-selector": true
+    "scss/selector-no-redundant-nesting-selector": true,
+    "order/properties-order": [
+      [
+        "content",
+        "display",
+        "position",
+        "width",
+        "height",
+        "min-width",
+        "max-width",
+        "min-height",
+        "max-height",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "margin",
+        "padding",
+        "transform"
+      ],
+      {
+        "unspecified": "bottom"
+      }
+    ]
   },
   "ignoreFiles": "**/dist/**/*.css"
 }
