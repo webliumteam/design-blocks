@@ -164,8 +164,8 @@
 
 @media (min-width: 768px) {
   .contacts {
-    padding-left: 30px;
     width: 34%;
+    padding-left: 30px;
   }
 }
 
@@ -214,13 +214,19 @@
 @media (min-width: 1200px) {
   .contacts__desc {
     font-size: calc(var(--ui-text-size) * 1.25);
+
+    &--adress,
+    &--phone,
+    &--email {
+      color: var(--ui-text-color);
+    }
   }
 }
 
 .contacts__desc a {
+  max-width: 100%;
   color: inherit;
   text-decoration: none;
-  max-width: 100%;
 }
 
 .contacts__desc a:hover,
@@ -257,11 +263,11 @@
   }
 
   .contacts:first-child .contacts-list__item {
+    width: 265px;
     padding-right: 40px;
     margin-bottom: 0;
     flex: 1 1 auto;
-    width: 265px;
-    
+
     &:only-child {
       padding-right: 0;
     }
@@ -324,12 +330,12 @@
 }
 
 .logo__title {
+  max-width: 100%;
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
-  max-width: 100%;
 }
 
 .socials {
