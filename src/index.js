@@ -23,25 +23,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.testimonials[1],
       image: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        src: 'item-1.png',
         alt: 'Amanda Peterson photo',
       },
     },
   ],
-  cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    type: 'secondary',
-    textValue: 'Additional button (M)',
-  },
   background: {
     type: 'image',
     position: {
