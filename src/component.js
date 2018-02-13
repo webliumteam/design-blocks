@@ -19,12 +19,6 @@ class Block extends React.Component {
             pictureClassName={style.article__picture}
             imgClassName={style.article__image}
             bind={`projects[${index}].picture`}
-            size={{
-              'min-width: 320px': 450,
-              'min-width: 480px': 768,
-              'min-width: 768px': 962,
-              'min-width: 992px': 586,
-            }}
           />
         </div>
         <div className={style.article__content}>
@@ -109,6 +103,12 @@ Block.defaultContent = {
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 1',
+        size: {
+          'min-width: 992px': 586,
+          'min-width: 768px': 962,
+          'min-width: 480px': 768,
+          'min-width: 320px': 450,
+        },
       },
       link: {
         actionConfig: {
@@ -134,6 +134,12 @@ Block.defaultContent = {
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 2',
+        size: {
+          'min-width: 992px': 586,
+          'min-width: 768px': 962,
+          'min-width: 480px': 768,
+          'min-width: 320px': 450,
+        },
       },
       link: {
         actionConfig: {
