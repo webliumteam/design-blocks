@@ -2,6 +2,7 @@
     "name": "wireframe-series-1-partners",
     "version": "0.0.1",
     "description": "",
+    "category": "partners",
     "main": "src/index.js",
     "scripts": {
         "precommit": "lint-staged"
