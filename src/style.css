@@ -49,7 +49,7 @@
   }
 
   &--main {
-    background: var(--ui-light-accent-color);
+    background: var(--ui-brand-color);
     color: var(--ui-light-shade-color);
     box-shadow: none;
 
@@ -79,6 +79,12 @@
     .plan__icon-wrapper::after {
       background: var(--ui-light-shade-color);
       left: 30px;
+    }
+
+    .plan__button {
+      background-image: none;
+      background-color: var(--ui-light-shade-color);
+      color: var(--ui-text-color);
     }
   }
 }
