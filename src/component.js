@@ -56,18 +56,20 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <header className={style.section__header}>
-            {this.getModifierValue('title') && (
-              <h1 className={style.title}>
-                <Text bind="title" />
-              </h1>
-            )}
-            {this.getModifierValue('subtitle') && (
-              <p className={style.subtitle}>
-                <Text bind="subtitle" />
-              </p>
-            )}
-          </header>
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+            <header className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <h1 className={style.title}>
+                  <Text bind="title" />
+                </h1>
+              )}
+              {this.getModifierValue('subtitle') && (
+                <p className={style.subtitle}>
+                  <Text bind="subtitle" />
+                </p>
+              )}
+            </header>
+          )}
           <Collection
             className={style['articles-wrapper']}
             bind="projects"
