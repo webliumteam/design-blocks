@@ -18,9 +18,9 @@
     display: block;
     width: 60px;
     height: 60px;
-    background-color: #d9e8ff;
+    background-color: var(--ui-dark-accent-color);
     position: absolute;
-    opacity: 0.4;
+    opacity: 0.05;
     border-radius: 50%;
   }
 
@@ -31,11 +31,6 @@
 
 .title {
   margin-bottom: 28px;
-
-  &::after {
-    content: ".";
-    color: var(--ui-brand-color);
-  }
 }
 
 .subtitle {
