@@ -135,7 +135,8 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Additional button (M)',
+    type: 'secondary',
+    textValue: 'Learn more',
   },
 }
 
@@ -146,6 +147,5 @@ Block.modifierScheme = {
   publishDate: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Testimonials description', type: 'checkbox'},
 }
-
 
 export default Block
