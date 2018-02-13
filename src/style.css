@@ -92,6 +92,27 @@
       }
     }
   }
+
+  /* state without image */
+  &--image-none {
+    :global {
+      .slick-prev-default,
+      .slick-next-default {
+
+        @media (min-width: 768px) {
+          transform: translateY(-50%);
+        }
+      }
+
+      .slick-prev,
+      .slick-next {
+
+        @media (min-width: 768px) {
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
