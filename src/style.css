@@ -45,6 +45,7 @@
 }
 
 .button {
+  width: auto;
   text-transform: uppercase;
 }
 
