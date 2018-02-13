@@ -1,5 +1,21 @@
 @import "wireframe-zapdos-projects/src/style.css";
 
+.section {
+  padding: 0;
+}
+
+.section__header {
+  padding-top: 50px;
+
+  @media (min-width: 768px) {
+    padding-top: 60px;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 75px;
+  }
+}
+
 .article {
   &__title {
     line-height: var(--ui-hero-title-line-height);
@@ -13,6 +29,18 @@
 
   &__link {
     font-family: var(--ui-text-font-family);
+  }
+}
+
+.btns-group {
+  padding-bottom: 50px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: 992px) {
+    padding-bottom: 75px;
   }
 }
 
