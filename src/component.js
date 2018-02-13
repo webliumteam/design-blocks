@@ -1,5 +1,6 @@
 import $editor from 'weblium/editor'
 import classNames from 'classnames'
+import {people} from './people.js'
 
 const {loadFont} = $editor
 
@@ -10,9 +11,9 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
-  };
+  }
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block);
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
     const {components: {Text}, style: css} = this.props
@@ -22,9 +23,34 @@ class Block extends React.Component {
         : ''
 
     return (
-      <section className={classNames(css.section, alignClass, this.getModifierValue('group') && css['section--group'])}>
+      <section
+        className={classNames(
+          css.section,
+          alignClass,
+          this.getModifierValue('group') && css['section--group'],
+        )}
+      >
         <div className={css.section__inner}>
           <section className={css.wrapper}>
+            {this.getModifierValue('listTitle') && (
+              <h1 className={css['list-title']}>
+                <Text bind="listTitle" />
+              </h1>
+            )}
+            {this.getModifierValue('list') && (
+              <ol className={css.list}>
+                {people.map(({link, title}) => (
+                  <li className={css.list__item}>
+                    <span className={css['list__item-inner']}>{title}</span>
+                    <a href={link} className={css.list__link} target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.124 96.123">
+                        <path d="M72.089.02L59.624 0C45.62 0 36.57 9.285 36.57 23.656v10.907H24.037a1.96 1.96 0 0 0-1.96 1.961v15.803a1.96 1.96 0 0 0 1.96 1.96H36.57v39.876a1.96 1.96 0 0 0 1.96 1.96h16.352a1.96 1.96 0 0 0 1.96-1.96V54.287h14.654a1.96 1.96 0 0 0 1.96-1.96l.006-15.803a1.963 1.963 0 0 0-1.961-1.961H56.842v-9.246c0-4.444 1.059-6.7 6.848-6.7l8.397-.003a1.96 1.96 0 0 0 1.959-1.96V1.98A1.96 1.96 0 0 0 72.089.02z" />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            )}
 
             {this.getModifierValue('text') && (
               <p className={css.text}>
@@ -94,6 +120,7 @@ Block.defaultContent = {
   title: 'Our Text Title',
   theme: 'dark',
   heading: 'Our Text Heading',
+  listTitle: 'Ініціативна група',
   subtitle:
     'Join 13000 clients who already worked with us. Request a quote to get best solutions in your area.',
   subheading:
@@ -121,93 +148,88 @@ Block.options = {
   invert: true,
 }
 
-Block.modifierScheme = [
-  {
-    id: 'subtitle',
+Block.modifierScheme = {
+  subtitle: {
     type: 'checkbox',
     label: 'Description',
     defaultValue: true,
   },
-  {
-    id: 'titleBlock',
+  titleBlock: {
     type: 'checkbox',
     label: 'Ініціативна група',
     defaultValue: true,
   },
-  {
-    id: 'heading',
+  heading: {
     type: 'checkbox',
     label: 'Title',
     defaultValue: true,
   },
-  {
-    id: 'subheading',
+  subheading: {
     type: 'checkbox',
     label: 'Subtitle',
     defaultValue: true,
   },
-  {
-    id: 'subheading2',
+  subheading2: {
     type: 'checkbox',
     label: 'Subtitle-2',
     defaultValue: true,
   },
-  {
-    id: 'text',
+  text: {
     type: 'checkbox',
     label: 'Main text',
     defaultValue: true,
   },
-  {
-    id: 'text2',
+  text2: {
     type: 'checkbox',
     label: 'Main text-2',
     defaultValue: true,
   },
-  {
-    id: 'text3',
+  text3: {
     type: 'checkbox',
     label: 'Main text-3',
     defaultValue: true,
   },
-  {
-    id: 'text4',
+  text4: {
     type: 'checkbox',
     label: 'Main text-4',
     defaultValue: true,
   },
-  {
-    id: 'text5',
+  text5: {
     type: 'checkbox',
     label: 'Main text-5',
     defaultValue: true,
   },
-  {
-    id: 'list1',
+  list: {
+    type: 'checkbox',
+    label: 'Initiators',
+    defaultValue: false,
+  },
+  listTitle: {
+    type: 'checkbox',
+    label: 'Initiators title',
+    defaultValue: false,
+  },
+  list1: {
     type: 'checkbox',
     label: 'List 1',
     defaultValue: true,
   },
-  {
-    id: 'list2',
+  list2: {
     type: 'checkbox',
     label: 'List 2',
     defaultValue: true,
   },
-  {
-    id: 'group',
+  group: {
     type: 'checkbox',
     label: 'Group',
     defaultValue: false,
   },
-  {
-    id: 'list3',
+  list3: {
     type: 'checkbox',
     label: 'List 3',
     defaultValue: true,
   },
-  {
-    id: 'align',
+  align: {
     type: 'radio-button-group',
     name: 'Aligning',
     defaultValue: 'center',
@@ -226,6 +248,6 @@ Block.modifierScheme = [
       },
     ],
   },
-]
+}
 
 export default Block
