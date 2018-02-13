@@ -83,6 +83,10 @@
       }
     }
 
+    .plan__icon-wrapper + .plan__list {
+      margin-top: 19px;
+    }
+
     .plan__icon-wrapper::after {
       background: var(--ui-light-shade-color);
       left: 30px;
