@@ -8,6 +8,15 @@
   margin-top: 35px;
 }
 
+.items-wrapper {
+  &:first-child {
+
+    @media (min-width: 992px) {
+      margin-top: -70px;
+    }
+  }
+}
+
 .item {
   display: flex;
   width: 100%;
@@ -47,6 +56,10 @@
   }
 
   &__image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    object-fit: none;
     top: 0;
     left: 0;
     right: 0;
