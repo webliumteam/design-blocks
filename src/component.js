@@ -9,12 +9,14 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Image}, style} = this.props
     return (
       <article className={classNames(style.item, className)}>
         {children}
-
         <div className={style.item__inner}>
           {_.get('image')(modifier) && (
             <Image
@@ -48,6 +50,10 @@ class Block extends React.Component {
 
   render() {
     const {components: {Slider, Text, Button}, style, $block} = this.props
+    const customArrows = this.getOptionValue('custom-arrows') ? {
+      nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
+      prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
+    } : {}
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -63,6 +69,10 @@ class Block extends React.Component {
             className={style['items-wrapper']}
             bind="testimonials"
             Item={this.collectionItem}
+            settings={{
+              arrows: true,
+              ...customArrows,
+            }}
             itemProps={{
               modifier: $block.modifier,
             }}
@@ -70,7 +80,8 @@ class Block extends React.Component {
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
-                className={classNames(style.button, style['button--size-md'], style['button--secondary'])}
+                buttonClassName={style.button}
+                linkClassName={style.link}
                 bind="cta"
               />
             </div>
