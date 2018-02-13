@@ -40,6 +40,11 @@
     margin-bottom: 20px;
   }
 
+  .link {
+    text-transform: uppercase;
+    color: var(--ui-block-title-color);
+  }
+
   &__email-wrapper {
     margin-bottom: 25px;
 
