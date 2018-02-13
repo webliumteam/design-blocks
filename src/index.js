@@ -40,6 +40,8 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  image: {defaultValue: true, label: 'Reviewer photo', type: 'checkbox'},
+  position: {defaultValue: false, label: 'Reviewer job position', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
 }
 
