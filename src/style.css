@@ -50,6 +50,10 @@
     color: var(--ui-light-accent-color);
   }
 
+  &__icon-wrapper + &__list {
+    margin-top: 55px;
+  }
+
   .plan__price-count {
     font-size: var(--ui-hero-title-size);
     font-family: var(--ui-hero-title-font-family);
@@ -81,10 +85,6 @@
       span {
         color: var(--ui-light-shade-color);
       }
-    }
-
-    .plan__icon-wrapper + .plan__list {
-      margin-top: 19px;
     }
 
     .plan__icon-wrapper::after {
