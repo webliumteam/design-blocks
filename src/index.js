@@ -16,15 +16,15 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.testimonials[0],
       image: {
-        src: 'item-1.png',
-        alt: 'Amanda Peterson photo',
+        ...Component.defaultContent.testimonials[0].picture,
+        resourceRef: 'item-1.png',
       },
     },
     {
       ...Component.defaultContent.testimonials[1],
       image: {
-        src: 'item-1.png',
-        alt: 'Amanda Peterson photo',
+        ...Component.defaultContent.testimonials[1].picture,
+        resourceRef: 'item-1.png',
       },
     },
   ],
@@ -40,6 +40,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
