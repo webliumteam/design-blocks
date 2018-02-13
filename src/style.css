@@ -2,6 +2,13 @@
 
 /* start here */
 
+.plans-wrapper {
+  &:first-child,
+  &:only-child {
+    margin-top: 0;
+  }
+}
+
 .plan {
   background-color: #f7f7f7;
 
