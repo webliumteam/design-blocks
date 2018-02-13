@@ -286,8 +286,14 @@
   max-height: 100%;
 }
 
+.button,
+.link {
+  width: 100%;
+}
+
 @media (min-width: 480px) {
-  .button {
+  .button,
+  .link {
     width: auto;
   }
 }
