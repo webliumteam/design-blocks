@@ -33,16 +33,10 @@ class Block extends React.Component {
         {children}
 
         <button type="button" className={style.item__button} onClick={this.toggleItemOpening(index)}>
-          <h2 className={style.item__title}>
-            <Text bind={`faq[${index}].title`} />
-            {this.getOptionValue('toogle-item-controls') && controlIcons}
-          </h2>
+          <Text tagName="h2" className={style.item__title} bind={`faq[${index}].title`} />
+          {this.getOptionValue('toogle-item-controls') && controlIcons}
         </button>
-        <div className={style.item__content}>
-          <p>
-            <Text bind={`faq[${index}].description`} />
-          </p>
-        </div>
+        <Text tagName="div" className={style.item__content} bind={`faq[${index}].description`} />
       </article>
     )
   }
@@ -57,13 +51,9 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
+          <Text tagName="h1" className={style.title} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <p className={style.subtitle}>
-              <Text bind="description" />
-            </p>
+            <Text tagName="p" className={style.subtitle} bind="description" />
           )}
           <Collection
             className={style.items}
@@ -91,45 +81,74 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.comp
 Block.defaultContent = {
   faq: [
     {
-      title: 'How can I make the order?',
-      description:
-        'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
-      id: '231733d3-fc14-4e74-8cb2-ba71a90aecdd',
+      title: {
+        content: 'How can I make the order?',
+        type: 'heading',
+      },
+      description: {
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        type: 'text',
+      },
     },
     {
-      title: 'What if I don’t know what plan I need?',
-      description:
-        'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
-      id: 'a2479bf5-0f0a-4bda-9f47-1d804ef11b60',
+      title: {
+        content: 'What if I don’t know what plan I need?',
+        type: 'heading',
+      },
+      description: {
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        type: 'text',
+      },
     },
     {
-      title: 'What payment options do you provide for clients? I can pay with a credit card, PayPal, or other payment systems?',
-      description:
-        'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
-      id: 'a2479bf5-0f0a-4bda-9f47-1d804ef11b61',
+      title: {
+        content: 'What payment options do you provide for clients? I can pay with a credit card, PayPal, or other payment systems?',
+        type: 'heading',
+      },
+      description: {
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        type: 'text',
+      },
     },
     {
-      title: 'Do you have a money back guarantee?',
-      description:
-        'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
-      id: 'a2479bf5-0f0a-4bda-9f47-1d804ef11b62',
+      title: {
+        content: 'Do you have a money back guarantee?',
+        type: 'heading',
+      },
+      description: {
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        type: 'text',
+      },
     },
     {
-      title: 'How can I change my plan?',
-      description:
-        'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
-      id: 'a2479bf5-0f0a-4bda-9f47-1d804ef11b63',
+      title: {
+        content: 'How can I change my plan?',
+        type: 'heading',
+      },
+      description: {
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        type: 'text',
+      },
     },
     {
-      title: 'Can I get video consultation with your specialist?',
-      description:
-        'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
-      id: 'a2479bf5-0f0a-4bda-9f47-1d804ef11b64',
+      title: {
+        content: 'Can I get video consultation with your specialist?',
+        type: 'heading',
+      },
+      description: {
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        type: 'text',
+      },
     },
   ],
-  title: 'FAQ',
-  description:
-    'Look through the answers to the most popular questions of our customers. Didn’t find what you need? Just send us a request and we will get in touch with you shortly.',
+  title: {
+    content: 'FAQ',
+    type: 'blockTitle',
+  },
+  description: {
+    content: 'Look through the answers to the most popular questions of our customers. Didn’t find what you need? Just send us a request and we will get in touch with you shortly.',
+    type: 'subtitle',
+  },
   cta: {
     actionConfig: {
       action: 'link',
@@ -155,6 +174,5 @@ Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'FAQ description', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block

@@ -1,11 +1,6 @@
 .section {
   min-width: 320px;
   padding: 50px 0;
-  font-size: var(--ui-text-size);
-  color: var(--ui-text-color);
-  line-height: var(--ui-text-line-height);
-  font-weight: var(--ui-text-font-weight);
-  font-family: var(--ui-text-font-family);
   word-wrap: break-word;
 
   @media (min-width: 768px) {
@@ -25,11 +20,6 @@
 
 .title {
   text-align: center;
-  font-size: var(--ui-block-title-size);
-  color: var(--ui-block-title-color);
-  line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: var(--ui-block-title-font-weight);
 }
 
 .subtitle {
@@ -38,10 +28,6 @@
   margin: 15px auto 0;
   text-align: center;
   font-size: calc(var(--ui-subtitle-size) * 0.9);
-  color: var(--ui-subtitle-color);
-  line-height: var(--ui-subtitle-line-height);
-  font-family: var(--ui-subtitle-font-family);
-  font-weight: var(--ui-subtitle-font-weight);
 }
 
 @media (min-width: 768px) {
@@ -55,6 +41,7 @@
 }
 
 .item__button {
+  position: relative;
   width: 100%;
   padding: 0;
   border: 0;
@@ -63,13 +50,8 @@
 }
 
 .item__title {
-  position: relative;
   padding: 5px 35px 10px 10px;
   font-size: calc(var(--ui-heading-size) * 0.6667);
-  color: var(--ui-heading-color);
-  line-height: var(--ui-heading-line-height);
-  font-family: var(--ui-heading-font-family);
-  font-weight: var(--ui-heading-font-weight);
   border-bottom: 1px solid var(--ui-border-color);
   cursor: pointer;
 }
