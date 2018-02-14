@@ -1,19 +1,19 @@
 .section {
   min-width: 320px;
   min-height: 100vh;
-  padding-top: 120;
   font-family: "Rubik", sans-serif;
   padding: 121px 0;
+  padding-top: 207px;
 
   @media (max-height: 970px) {
-    margin-bottom: -270px;
+    margin-bottom: -126px;
   }
 
   /* background-color: var(--ui-block-bg); */
+  font-family: var(--ui-text-font-family);
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
-  font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
 
@@ -206,7 +206,7 @@
 
 .list {
   position: relative;
-  list-style: none;
+  list-style: decimal;
   max-width: 300px;
   text-align: left;
   margin: 0 auto;
@@ -240,7 +240,7 @@
 
   &__spinner {
     position: fixed;
-    list-style: none;
+    list-style: decimal;
     display: flex;
     align-items: center;
     z-index: 99;
