@@ -24,13 +24,9 @@ class Block extends React.Component {
               <Text bind="topCaption" />
             </div>
           )}
-          <h1 className={css.title}>
-            <Text bind="title" />
-          </h1>
+          <Text bind="title" tagName="h1" className={css.title} />
           {this.getModifierValue('subtitle') && (
-            <p className={css.subtitle}>
-              <Text bind="subtitle" />
-            </p>
+            <Text bind="subtitle" tagName="p" className={css.subtitle} />
           )}
           {showButtonGroups && (
             <div className={css['btns-group']}>
@@ -63,8 +59,14 @@ Block.defaultContent = {
     type: 'color',
     color: '#d8d8d8',
   },
-  title: 'Quantum Company',
-  subtitle: 'We can execute even the most unpredictable ideas! ',
+  title: {
+    content: 'Quantum Company',
+    type: 'heroTitle',
+  },
+  subtitle: {
+    content: 'We can execute even the most unpredictable ideas! ',
+    type: 'subtitle',
+  },
   'cta-1': {
     actionConfig: {
       action: 'link',
