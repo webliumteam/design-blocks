@@ -3,68 +3,83 @@
 /* start here */
 
 .section {
+  padding: 50px 0;
+
   &__inner {
     max-width: 950px;
     background-color: transparent;
-    margin-bottom: 35px;
-  }
-  
-  &__header {
-    padding-left: 0;
-    padding-right: 0;
-    letter-spacing: -1.6px; 
+    padding: 0 15px;
   }
 
+  &__header {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    letter-spacing: -1.6px;
+  }
 }
 
 .title {
-  font-size: calc(var(--ui-block-title-size) * 2.35);
-  font-weight: calc(var(--ui-subtitle-font-weight));
+  font-weight: 400;
+  margin-bottom: 30px;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--ui-block-title-size) * 2.35);
+  }
 }
 
-.subtitle { 
+.subtitle {
   font-size: var(--ui-subtitle-size);
   max-width: 420px;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 18px;
 }
 
 .form {
+  padding: 0;
+
   &__field {
-    position: absolute;
-    top: -17px;
-    border-top: 0;                                      
-    border-left: 0;
-    border-right: 0;
+    /* stylelint-disable */
+    border: 0 !important;
+    /* stylelint-enable */
+    padding-top: 18px;
+    padding-bottom: 18px;
     background-color: transparent;
-    color: var(--ui-light-shade-color);
+    color: var(--ui-text-color);
     font-size: var(--ui-text-size);
     text-align: center;
 
     &::placeholder {
-      color: var(--ui-light-shade-color); 
+      color: var(--ui-text-color);
       font-size: var(--ui-text-size);
     }
   }
-  
+
   &__item {
     text-align: center;
     position: relative;
-    margin-bottom: 65px;
+    margin-bottom: 10px;
     max-width: 370px;
     margin-left: auto;
     margin-right: auto;
     font-size: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--ui-text-color);
+      opacity: 0.2;
+    }
   }
-  
-  &__button { 
-    width: 170px;
-    height: 58px;
-    border-radius: 5px;
-    font-family: var(--ui-small-font-family);
-    font-size: var(--ui-small-size );
-    text-transform: uppercase;
+
+  &__button {
     margin-top: 30px;
+    width: auto;
   }
 }
-
