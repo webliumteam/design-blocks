@@ -26,7 +26,7 @@
   }
 
   &__title {
-    font-size: calc(var(--ui-heading-size)*0.769);
+    font-size: calc(var(--ui-heading-size) * 0.769);
     margin-bottom: 40px;
     margin-top: 25px;
   }
@@ -96,6 +96,14 @@
       background-image: none;
       background-color: var(--ui-light-shade-color);
       color: var(--ui-text-color);
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-image: none;
+        background-color: var(--ui-btn-secondary-hover-bg-color);
+        color: var(--ui-text-color);
+      }
     }
   }
 }
