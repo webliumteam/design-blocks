@@ -15,16 +15,8 @@ class Block extends React.Component {
   getContent = () => {
     const {components: {Text}, style} = this.props
     return [
-      this.getModifierValue('title') && (
-        <h1 className={style.title}>
-          <Text bind="title" />
-        </h1>
-      ),
-      this.getModifierValue('subtitle') && (
-        <p className={style.description}>
-          <Text bind="description" />
-        </p>
-      ),
+      this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />,
+      this.getModifierValue('subtitle') && <Text tagName="p" className={style.description} bind="description" />,
     ]
   }
 
@@ -43,14 +35,13 @@ class Block extends React.Component {
             bind="cta"
           />
           {this.getModifierValue('picture') && (
-          <div className={style['section__picture-wrapper']}>
             <Image
+              wrapperClassName={style['section__picture-wrapper']}
               pictureClassName={style.section__picture}
               imgClassName={style.section__image}
               bind="picture"
             />
-          </div>
-        )}
+          )}
         </div>
       </section>
     )
@@ -60,9 +51,14 @@ class Block extends React.Component {
 Block.components = _.pick(['Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'Want to work with us?',
-  description:
-    'Get a full-scale analysis of your business and recommended solutions to increase your profits.',
+  title: {
+    content: 'Want to work with us?',
+    type: 'blockTitle',
+  },
+  description: {
+    content: 'Get a full-scale analysis of your business and recommended solutions to increase your profits.',
+    type: 'text',
+  },
   cta: {
     actionConfig: {
       action: 'link',
@@ -85,9 +81,9 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  picture: {defaultValue: false, label: 'Picture', type: 'hidden'},
-  subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
+  picture: {defaultValue: false, label: 'Picture', type: 'hidden'},
 }
 
 
