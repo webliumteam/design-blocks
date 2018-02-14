@@ -22,16 +22,10 @@ class Block extends React.Component {
               bind={`team[${index}].picture`}
             />
           </div>
-          <h2 className={style.item__title}>
-            <Text bind={`team[${index}].name`} />
-          </h2>
-          <p className={style.item__position}>
-            <Text bind={`team[${index}].position`} />
-          </p>
+          <Text tagName="h2" className={style.item__title} bind={`team[${index}].name`} />
+          <Text tagName="p" className={style.item__position} bind={`team[${index}].position`} />
           {_.get('member-desc')(modifier) && (
-            <p className={style.item__desc}>
-              <Text bind={`team[${index}].description`} />
-            </p>
+            <Text tagName="p" className={style.item__desc} bind={`team[${index}].description`} />
           )}
           {_.get('member-link')(modifier) && (
             <Button
@@ -42,7 +36,7 @@ class Block extends React.Component {
           )}
           {_.get('member-email')(modifier) && (
             <div className={style['item__email-wrapper']}>
-              <Text className={style.item__email} bind={`team[${index}].email`} />
+              <Text tagName="span" className={style.item__email} bind={`team[${index}].email`} />
             </div>
           )}
           {_.get('member-social')(modifier) && (
@@ -61,13 +55,9 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
+          <Text tagName="h1" className={style.title} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <p className={style.subtitle}>
-              <Text bind="subtitle" />
-            </p>
+            <Text tagName="p" className={style.subtitle} bind="subtitle" />
           )}
           <Collection
             className={style['items-wrapper']}
@@ -98,11 +88,18 @@ Block.components =
 Block.defaultContent = {
   team: [
     {
-      id: '06567442-178b-46ab-a822-661218143093',
-      name: 'Andrew Shimmer',
-      position: 'CEO',
-      description:
-        'Andrew Shimmer has a 15-year experience in IT development and marketing. He has successfully run companies specializing in innovative technologies.',
+      name: {
+        content: 'Andrew Shimmer',
+        type: 'heading',
+      },
+      position: {
+        content: 'CEO',
+        type: 'caption',
+      },
+      description: {
+        content: 'Andrew Shimmer has a 15-year experience in IT development and marketing. He has successfully run companies specializing in innovative technologies.',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Andrew Shimmer photo',
@@ -121,7 +118,10 @@ Block.defaultContent = {
         textValue: 'Learn more',
         type: 'link',
       },
-      email: '<a href="mailto:shimmer@gmail.com">shimmer@gmail.com</a>',
+      email: {
+        content: '<a href="mailto:shimmer@gmail.com">shimmer@gmail.com</a>',
+        type: 'caption',
+      },
       socialIcons: {
         networks: [
           {
@@ -153,11 +153,18 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'd7b368a3-75c8-4039-80ef-15c783140026',
-      name: 'Ann Maisner',
-      position: 'Marketing Director',
-      description:
-        'Ann is a high-skilled professional with over 10 years of experience in marketing. She has been rewarded by the Association of Marketing as one of the most successful directors. ',
+      name: {
+        content: 'Ann Maisner',
+        type: 'heading',
+      },
+      position: {
+        content: 'Marketing Director',
+        type: 'caption',
+      },
+      description: {
+        content: 'Ann is a high-skilled professional with over 10 years of experience in marketing. She has been rewarded by the Association of Marketing as one of the most successful directors. ',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Ann Maisner photo',
@@ -176,7 +183,10 @@ Block.defaultContent = {
         textValue: 'Learn more',
         type: 'link',
       },
-      email: '<a href="mailto:maisner@gmail.com">maisner@gmail.com</a>',
+      email: {
+        content: '<a href="mailto:maisner@gmail.com">maisner@gmail.com</a>',
+        type: 'caption',
+      },
       socialIcons: {
         networks: [
           {
@@ -208,11 +218,18 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'b29ef90b-8d5c-4fd9-b6e4-64e248da29db',
-      name: 'Tomas Abbar',
-      position: 'Product Manager',
-      description:
-        'For 13 years, Tomas has been taking a position of product manager at Quantum. He successfully launched several best-selling products. Now he is working on 3 new products.',
+      name: {
+        content: 'Tomas Abbar',
+        type: 'heading',
+      },
+      position: {
+        content: 'Product Manager',
+        type: 'caption',
+      },
+      description: {
+        content: 'For 13 years, Tomas has been taking a position of product manager at Quantum. He successfully launched several best-selling products. Now he is working on 3 new products.',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Tomas Abbar photo',
@@ -231,7 +248,10 @@ Block.defaultContent = {
         textValue: 'Learn more',
         type: 'link',
       },
-      email: '<a href="mailto:abbar@gmail.com">abbar@gmail.com</a>',
+      email: {
+        content: '<a href="mailto:abbar@gmail.com">abbar@gmail.com</a>',
+        type: 'caption',
+      },
       socialIcons: {
         networks: [
           {
@@ -263,9 +283,14 @@ Block.defaultContent = {
       },
     },
   ],
-  title: 'Our Team',
-  subtitle:
-    'Our team is our proud. Each of the team members is dedicated to delivering the best results to the clients. Meet some of our expert who will work on your case:',
+  title: {
+    content: 'Our Team',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Our team is our proud. Each of the team members is dedicated to delivering the best results to the clients. Meet some of our expert who will work on your case:',
+    type: 'subtitle',
+  },
   cta: {
     actionConfig: {
       action: 'link',

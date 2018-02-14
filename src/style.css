@@ -2,11 +2,6 @@
   min-width: 320px;
   padding: 50px 0;
   text-align: center;
-  font-size: var(--ui-text-size);
-  color: var(--ui-text-color);
-  line-height: var(--ui-text-line-height);
-  font-family: var(--ui-text-font-family);
-  font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
 
   @media (min-width: 768px) {
@@ -25,21 +20,12 @@
 }
 
 .title {
-  font-size: var(--ui-block-title-size);
-  color: var(--ui-block-title-color);
-  line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: var(--ui-block-title-font-weight);
+  text-align: center;
 }
 
 .subtitle {
   max-width: 620px;
   margin: 30px auto 0;
-  font-size: var(--ui-subtitle-size);
-  color: var(--ui-subtitle-color);
-  line-height: var(--ui-subtitle-line-height);
-  font-family: var(--ui-subtitle-font-family);
-  font-weight: var(--ui-subtitle-font-weight);
 }
 
 @media (min-width: 768px) {
@@ -101,11 +87,6 @@
   flex-basis: 100%;
   width: 100%;
   text-align: center;
-  font-size: var(--ui-text-size);
-  color: var(--ui-text-color);
-  line-height: var(--ui-text-line-height);
-  font-family: var(--ui-text-font-family);
-  font-weight: var(--ui-text-font-weight);
 }
 
 @media (min-width: 768px) {
@@ -197,10 +178,6 @@
 
 .item__title {
   font-size: var(--ui-heading-size);
-  color: var(--ui-heading-color);
-  line-height: var(--ui-heading-line-height);
-  font-family: var(--ui-heading-font-family);
-  font-weight: var(--ui-heading-font-weight);
 }
 
 .item__title-link {
@@ -210,11 +187,6 @@
 
 .item__position {
   margin-bottom: 20px;
-  font-size: var(--ui-caption-size);
-  color: var(--ui-caption-color);
-  line-height: var(--ui-caption-line-height);
-  font-family: var(--ui-caption-font-family);
-  font-weight: var(--ui-caption-font-weight);
 }
 
 .item__position:last-child {
@@ -232,16 +204,11 @@
 .item__email {
   display: inline-block;
   max-width: 100%;
-  font-size: var(--ui-caption-size);
-  color: var(--ui-caption-color);
-  line-height: var(--ui-caption-line-height);
-  font-family: var(--ui-caption-font-family);
-  font-weight: var(--ui-caption-font-weight);
   text-decoration: none;
-  
+
   a {
     color: inherit;
-    
+
     &:hover,
     &:active,
     &:focus {
