@@ -1,11 +1,6 @@
 .section {
   min-width: 320px;
   padding: 50px 0;
-  font-size: var(--ui-text-size);
-  font-family: var(--ui-text-font-family);
-  color: var(--ui-text-color);
-  line-height: var(--ui-text-line-height);
-  font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
 
   @media (min-width: 768px) {
@@ -37,11 +32,6 @@
 
 .title {
   margin-bottom: 41px;
-  font-family: var(--ui-block-title-font-family);
-  font-size: var(--ui-block-title-size);
-  font-weight: var(--ui-block-title-font-weight);
-  line-height: var(--ui-block-title-line-height);
-  color: var(--ui-block-title-color);
   text-align: center;
 }
 
@@ -109,10 +99,6 @@
 
 .item__title {
   font-family: var(--ui-subtitle-font-family);
-  font-size: var(--ui-subtitle-size);
-  font-weight: var(--ui-subtitle-font-weight);
-  line-height: var(--ui-subtitle-line-height);
-  color: var(--ui-subtitle-color);
 }
 
 .item__content {
@@ -142,11 +128,6 @@
 .item__number {
   max-width: 100%;
   margin-right: 10px;
-  font-family: var(--ui-block-title-font-family);
-  font-size: var(--ui-block-title-size);
-  font-weight: var(--ui-block-title-font-weight);
-  line-height: var(--ui-block-title-line-height);
-  color: var(--ui-block-title-color);
 }
 
 @media (min-width: 992px) {
@@ -158,7 +139,6 @@
 .item__text {
   max-width: 100%;
   text-align: left;
-  font-size: var(--ui-text-size);
 }
 
 .btns-group {
@@ -168,6 +148,10 @@
 
 .button:last-child {
   margin-bottom: 0;
+}
+
+.button {
+  width: 100%;
 }
 
 @media (min-width: 480px) {

@@ -14,20 +14,10 @@ class Block extends React.Component {
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        {_.get('number-title')(modifier) && (
-          <h2 className={style.item__title}>
-            <Text bind={`numbers[${index}].title`} />
-          </h2>
-        )}
+        {_.get('number-title')(modifier) && <Text tagName="h2" className={style.item__title} bind={`numbers[${index}].title`} />}
         <div className={style.item__content}>
-          <strong className={style.item__number}>
-            <Text bind={`numbers[${index}].value`} />
-          </strong>
-          {_.get('body')(modifier) && (
-            <p className={style.item__text}>
-              <Text bind={`numbers[${index}].label`} />
-            </p>
-          )}
+          <Text tagName="strong" className={style.item__number} bind={`numbers[${index}].value`} />
+          {_.get('body')(modifier) && <Text tagName="p" className={style.item__text} bind={`numbers[${index}].label`} />}
         </div>
       </div>
     )
@@ -45,11 +35,7 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          {this.getModifierValue('title') && (
-            <h1 className={style.title}>
-              <Text bind="title" />
-            </h1>
-          )}
+          {this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />}
           <Collection
             className={style['items-wrapper']}
             bind="numbers"
@@ -82,22 +68,46 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.comp
 Block.defaultContent = {
   numbers: [
     {
-      title: 'Increase profits by',
-      label: 'for our customers',
-      value: '75%',
-      id: '554d7318-3c82-4dd4-87e9-b0b92299199f',
+      title: {
+        content: 'Increase profits by',
+        type: 'subtitle',
+      },
+      label: {
+        content: 'for our customers',
+        type: 'text',
+      },
+      value: {
+        content: '75%',
+        type: 'blockTitle',
+      },
     },
     {
-      title: 'Expand market reach for',
-      label: 'of our clients',
-      value: '30%',
-      id: 'aa002eee-2755-4850-b18a-c990cfa03e37',
+      title: {
+        content: 'Expand market reach for',
+        type: 'subtitle',
+      },
+      label: {
+        content: 'of our clients',
+        type: 'text',
+      },
+      value: {
+        content: '30%',
+        type: 'blockTitle',
+      },
     },
     {
-      title: 'Improve customer satisfaction for',
-      label: 'of our users',
-      value: '89%',
-      id: '84957801-e554-42e1-ab7b-323f483e3f81',
+      title: {
+        content: 'Improve customer satisfaction for',
+        type: 'subtitle',
+      },
+      label: {
+        content: 'of our users',
+        type: 'text',
+      },
+      value: {
+        content: '89%',
+        type: 'blockTitle',
+      },
     },
   ],
   topIcon: {
@@ -105,7 +115,10 @@ Block.defaultContent = {
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
-  title: 'Our Results in Numbers',
+  title: {
+    content: 'Our Results in Numbers',
+    type: 'blockTitle',
+  },
   cta: {
     actionConfig: {
       action: 'link',
