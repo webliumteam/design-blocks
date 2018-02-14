@@ -196,7 +196,7 @@
   position: relative;
   min-height: 211px;
   order: 1;
-  background-color: var(--ui-dark-accent-color);
+  background-color: #9b9b9b;
 }
 
 @media (min-width: 768px) {
