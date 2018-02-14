@@ -17,24 +17,15 @@ class Block extends React.Component {
     return (
       <article className={classNames(style.article, className)}>
         {children}
-        <div className={style['article__picture-wrapper']}>
-          <Image
-            pictureClassName={style.article__picture}
-            imgClassName={style.article__image}
-            bind={`services[${index}].picture`}
-            size={{'min-width: 320px': 446, 'min-width: 480px': 738, 'min-width: 768px': 460}}
-          />
-        </div>
-        {_.get('heading')(modifier) && (
-          <h2 className={style.article__title}>
-            <Text bind={`services[${index}].title`} />
-          </h2>
-        )}
-        {_.get('body')(modifier) && (
-          <p className={style.article__text}>
-            <Text bind={`services[${index}].description`} />
-          </p>
-        )}
+        <Image
+          wrapperClassName={style['article__picture-wrapper']}
+          pictureClassName={style.article__picture}
+          imgClassName={style.article__image}
+          bind={`services[${index}].picture`}
+          size={{'min-width: 320px': 446, 'min-width: 480px': 738, 'min-width: 768px': 460}}
+        />
+        {_.get('heading')(modifier) && <Text tagName="h2" className={style.article__title} bind={`services[${index}].title`} />}
+        {_.get('body')(modifier) && <Text tagName="p" className={style.article__text} bind={`services[${index}].description`} />}
         {_.get('link')(modifier) && (
           <Button
             className={style.article__link}
@@ -56,16 +47,8 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           <header className={style.section__header}>
-            {!this.getOptionValue('disabled-title') &&
-              <h1 className={style.title}>
-                <Text bind="title" />
-              </h1>
-            }
-            {this.getModifierValue('subtitle') && (
-              <p className={style.subtitle}>
-                <Text bind="description" />
-              </p>
-            )}
+            {!this.getOptionValue('disabled-title') && <Text tagName="h1" className={style.title} bind="title" />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
           </header>
           <Collection
             className={style['articles-wrapper']}
@@ -109,10 +92,14 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon'])($ed
 Block.defaultContent = {
   services: [
     {
-      id: '900aa334-14f2-4c05-b078-78099a5725e5',
-      title: 'Service 1',
-      description:
-        'Multipurpose assistance for online stores and offline retail businesses.',
+      title: {
+        content: 'Service 1',
+        type: 'heading',
+      },
+      description: {
+        content: 'Multipurpose assistance for online stores and offline retail businesses.',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -133,10 +120,14 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'cfb2c56d-7708-4459-bdf2-6780f4ba62b9',
-      title: 'Service 2',
-      description:
-        'Developing marketing and business strategy to help company grow fast.',
+      title: {
+        content: 'Service 2',
+        type: 'heading',
+      },
+      description: {
+        content: 'Developing marketing and business strategy to help company grow fast.',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -157,10 +148,14 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'eea21546-b56e-406b-8cba-18a5a5ec1820',
-      title: 'Service 3',
-      description:
-        'Building brand awareness for micro and small businesses. ',
+      title: {
+        content: 'Service 3',
+        type: 'heading',
+      },
+      description: {
+        content: 'Building brand awareness for micro and small businesses. ',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -181,10 +176,14 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'aa5d3a04-43b7-4bb3-9c7a-00e1986f359e',
-      title: 'Service 4',
-      description:
-        'Aftersales support in marketing, sales, and staff training.',
+      title: {
+        content: 'Service 4',
+        type: 'heading',
+      },
+      description: {
+        content: 'Aftersales support in marketing, sales, and staff training.',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Service illustration photo',
@@ -210,9 +209,14 @@ Block.defaultContent = {
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
-  title: 'Services We Provide',
-  description:
-    'We deliver all kind of services that support small and micro businesses. Here are some of them:',
+  title: {
+    content: 'Services We Provide',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'We deliver all kind of services that support small and micro businesses. Here are some of them:',
+    type: 'subtitle',
+  },
   'button-1': {
     actionConfig: {
       action: 'link',
