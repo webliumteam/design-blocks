@@ -54,6 +54,14 @@ ExtendedWireframe.defaultContent = {
       size: '32px',
     },
   },
+  'button-1': {
+    ...Component.defaultContent['button-1'],
+    type: 'primary',
+  },
+  'button-2': {
+    ...Component.defaultContent['button-2'],
+    type: 'link',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
@@ -61,6 +69,7 @@ ExtendedWireframe.modifierScheme = {
   'article-picture': {defaultValue: false, label: 'Article picture', type: 'hidden'},
   socialIcons: {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
+  'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
