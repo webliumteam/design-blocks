@@ -41,6 +41,7 @@
     font-family: var(--ui-heading-lg-font-family);
     font-weight: var(--ui-hero-title-font-weight);
     padding: 34px 20px 0;
+    border-bottom: 0;
 
     @media (min-width: 992px) {
       font-size: var(--ui-heading-size);
