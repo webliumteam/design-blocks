@@ -25,7 +25,6 @@ class Block extends React.Component {
         )}
       >
         {children}
-
         <Image
           bind={`partners[${index}].picture`}
           pictureClassName={style.item__picture}
@@ -33,16 +32,12 @@ class Block extends React.Component {
           size={null}
         />
         {showHeading && (
-          <h2 className={style.item__title}>
-            <Text bind={`partners[${index}].title`} />
-          </h2>
+          <Text tagName="h2" className={style.item__title} bind={`partners[${index}].title`} />
         )}
         {showContent && (
           <div className={style.item__content}>
             {_.get('body')(modifier) && (
-              <p className={style.item__desc}>
-                <Text bind={`partners[${index}].desc`} />
-              </p>
+              <Text tagName="p" className={style.item__desc} bind={`partners[${index}].desc`} />
             )}
             {_.get('link')(modifier) && (
               <Button
@@ -70,13 +65,9 @@ class Block extends React.Component {
       >
         <div className={style.section__inner}>
           <header className={style.section__header}>
-            <h1 className={style.title}>
-              <Text bind="title" />
-            </h1>
+            <Text tagName="h1" className={style.title} bind="title" />
             {this.getModifierValue('subtitle') && (
-              <p className={style.subtitle}>
-                <Text bind="subtitle" />
-              </p>
+              <Text tagName="p" className={style.subtitle} bind="subtitle" />
             )}
           </header>
           <Collection
@@ -102,8 +93,14 @@ class Block extends React.Component {
 Block.components = _.pick(['Text', 'Button', 'Collection', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'Partners',
-  subtitle: 'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
+  title: {
+    content: 'Partners',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
+    type: 'subtitle',
+  },
   partners: [
     {
       picture: {
@@ -111,8 +108,14 @@ Block.defaultContent = {
         alt: 'Samsung logo',
         size: {'min-width: 320px': 90, 'min-width: 992px': 130},
       },
-      title: 'Samsung',
-      desc: 'Back in 1995, we started cooperation with this brand. Samsung became our main supplier of high-quality tech products. Today, Samsung is our main partner who supports each initiative and actively participates in company development.',
+      title: {
+        content: 'Samsung',
+        type: 'heading',
+      },
+      desc: {
+        content: 'Back in 1995, we started cooperation with this brand. Samsung became our main supplier of high-quality tech products. Today, Samsung is our main partner who supports each initiative and actively participates in company development.',
+        type: 'text',
+      },
       button: {
         actionConfig: {
           action: 'link',
@@ -134,8 +137,14 @@ Block.defaultContent = {
         alt: 'Ford logo',
         size: {'min-width: 320px': 90, 'min-width: 992px': 130},
       },
-      title: 'Ford ',
-      desc: 'The company that has always put reliability first. We started to work with Ford in 2002, and now this is one of the partners who’ve been with us for more than 15 years! We believe that this partnership is one of the achievements we can be proud of.',
+      title: {
+        content: 'Ford ',
+        type: 'heading',
+      },
+      desc: {
+        content: 'The company that has always put reliability first. We started to work with Ford in 2002, and now this is one of the partners who’ve been with us for more than 15 years! We believe that this partnership is one of the achievements we can be proud of.',
+        type: 'text',
+      },
       button: {
         actionConfig: {
           action: 'link',
@@ -157,8 +166,14 @@ Block.defaultContent = {
         alt: 'Medical Family logo',
         size: {'min-width: 320px': 90, 'min-width: 992px': 130},
       },
-      title: 'Medical Family',
-      desc: 'Health of our team members is a top priority for us. Therefore, we work with the best clinics only, like Medical Family. We entrust our health to them and we entrust our business as well.',
+      title: {
+        content: 'Medical Family',
+        type: 'heading',
+      },
+      desc: {
+        content: 'Health of our team members is a top priority for us. Therefore, we work with the best clinics only, like Medical Family. We entrust our health to them and we entrust our business as well.',
+        type: 'text',
+      },
       button: {
         actionConfig: {
           action: 'link',
@@ -180,8 +195,14 @@ Block.defaultContent = {
         alt: 'Coffee Break Now',
         size: {'min-width: 320px': 90, 'min-width: 992px': 130},
       },
-      title: 'Coffee Break Now',
-      desc: 'Coffee and cakes won’t sell themselves. Whenever we are hungry or just need to restore energy, Coffee Break Now saves us. Also, they cater all our events, starting workshops and seminars, and up to everyday meal for our team members.',
+      title: {
+        content: 'Coffee Break Now',
+        type: 'heading',
+      },
+      desc: {
+        content: 'Coffee and cakes won’t sell themselves. Whenever we are hungry or just need to restore energy, Coffee Break Now saves us. Also, they cater all our events, starting workshops and seminars, and up to everyday meal for our team members.',
+        type: 'text',
+      },
       button: {
         actionConfig: {
           action: 'link',

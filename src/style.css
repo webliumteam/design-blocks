@@ -23,7 +23,7 @@
   @media (min-width: 992px) {
     padding: 75px 0;
   }
-  
+
   &__inner {
     max-width: var(--ui-content-container);
     padding: var(--ui-content-gutter);
@@ -32,7 +32,7 @@
 
   &__header {
     margin-bottom: 40px;
-    
+
     @media (min-width: 992px) {
       margin-bottom: 50px;
     }
@@ -46,13 +46,8 @@
 
 .title {
   margin-bottom: 15px;
-  font-size: var(--ui-block-title-size);
-  color: var(--ui-block-title-color);
-  line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: var(--ui-block-title-font-weight);
   text-align: center;
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -62,12 +57,8 @@
   max-width: 1000px;
   margin: 0 auto;
   font-size: calc(var(--ui-subtitle-size) * .8);
-  color: var(--ui-subtitle-color);
-  line-height: var(--ui-subtitle-line-height);
-  font-family: var(--ui-subtitle-font-family);
-  font-weight: var(--ui-subtitle-font-weight);
   text-align: center;
-  
+
   @media (min-width: 992px) {
     font-size: var(--ui-subtitle-size);
   }
@@ -90,7 +81,7 @@
 
   &:last-child {
     margin-bottom: -30px;
-    
+
     @media (min-width: 992px) {
       margin-bottom: -50px;
     }
@@ -100,7 +91,7 @@
 .item {
   padding: 30px 20px;
   border-bottom: 1px solid rgba(151, 151, 151, .25);
-  
+
   &:first-child {
     padding-top: 0;
   }
@@ -128,7 +119,7 @@
     width: var(--logoSize);
     min-height: 42px;
     margin: 0 auto 10px;
-    
+
     @media (min-width: 768px) {
       margin: 0 var(--logoOffsetSize) 0 0;
       flex-shrink: 0;
@@ -153,11 +144,7 @@
     margin-bottom: 5px;
     text-align: center;
     font-size: calc(var(--ui-heading-size) * .833);
-    color: var(--ui-heading-color);
-    line-height: var(--ui-heading-line-height);
-    font-family: var(--ui-heading-font-family);
-    font-weight: var(--ui-heading-font-weight);
-    
+
     @media (min-width: 768px) {
       text-align: left;
       margin: 0 var(--titleOffsetSize) 0 0;
@@ -172,7 +159,7 @@
   &__content {
     text-align: center;
     font-size: 0;
-    
+
     @media (min-width: 768px) {
       text-align: left;
       max-width: calc(100% - (var(--logoSize) + var(--titleSize) + var(--logoOffsetSize) + var(--titleOffsetSize)));
@@ -180,13 +167,8 @@
   }
 
   &__desc {
-    font-size: var(--ui-text-size);
-    color: var(--ui-text-color);
-    line-height: var(--ui-text-line-height);
-    font-family: var(--ui-text-font-family);
-    font-weight: var(--ui-text-font-weight);
     margin-bottom: 15px;
-    
+
     &:last-child {
       margin-bottom: 0;
     }
