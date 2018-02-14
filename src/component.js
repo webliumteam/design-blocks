@@ -17,27 +17,17 @@ class Block extends React.Component {
         {children}
 
         {_.get('badge')(modifier) && (
-          <div className={style.article__badge}>
-            <Text bind={`events[${index}].badge`} />
-          </div>
+          <Text tagName="div" className={style.article__badge} bind={`events[${index}].badge`} />
         )}
         <div className={style.article__info}>
           <div className={style.article__top}>
-            <time className={style.article__date}>
-              <Text bind={`events[${index}].date`} />
-            </time>
-            <time className={style.article__time}>
-              <Text bind={`events[${index}].time`} />
-            </time>
+            <Text tagName="time" className={style.article__date} bind={`events[${index}].date`} />
+            <Text tagName="time" className={style.article__time} bind={`events[${index}].time`} />
           </div>
-          <h2 className={style.article__title}>
-            <Text bind={`events[${index}].title`} />
-          </h2>
+          <Text tagName="h2" className={style.article__title} bind={`events[${index}].title`} />
           <div className={style.article__bottom}>
             {_.get('location')(modifier) && (
-              <p className={style.article__location}>
-                <Text bind={`events[${index}].location`} />
-              </p>
+              <Text tagName="p" className={style.article__location} bind={`events[${index}].location`} />
             )}
             {_.get('link')(modifier) && (
               <Button
@@ -64,13 +54,9 @@ class Block extends React.Component {
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
+          <Text tagName="h1" className={style.title} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <p className={style.subtitle}>
-              <Text bind="subtitle" />
-            </p>
+            <Text tagName="p" className={style.subtitle} bind="subtitle" />
           )}
           <Collection
             className={style['articles-wrapper']}
@@ -98,11 +84,26 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.com
 Block.defaultContent = {
   events: [
     {
-      title: 'Digital marketing workshop',
-      date: 'October 24, 2017',
-      badge: 'members only',
-      time: '10:30am - 1:30pm',
-      location: 'The station',
+      title: {
+        content: 'Digital marketing workshop',
+        type: 'heading',
+      },
+      date: {
+        content: 'October 24, 2017',
+        type: 'text',
+      },
+      badge: {
+        content: 'members only',
+        type: 'caption',
+      },
+      time: {
+        content: '10:30am - 1:30pm',
+        type: 'text',
+      },
+      location: {
+        content: 'The station',
+        type: 'caption',
+      },
       picture: {
         src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
         alt: 'Digital marketing workshop illustration',
@@ -121,14 +122,28 @@ Block.defaultContent = {
         textValue: 'Know more',
         type: 'link',
       },
-      id: 'b1de1229-0f5f-4da8-8e5f-1d875b2bdd5e',
     },
     {
-      title: 'Blogging for beginners',
-      date: 'November 1, 2017',
-      badge: 'members only',
-      time: '10:30am - 1:30pm',
-      location: 'The station',
+      title: {
+        content: 'Blogging for beginners',
+        type: 'heading',
+      },
+      date: {
+        content: 'November 1, 2017',
+        type: 'text',
+      },
+      badge: {
+        content: 'members only',
+        type: 'caption',
+      },
+      time: {
+        content: '10:30am - 1:30pm',
+        type: 'text',
+      },
+      location: {
+        content: 'The station',
+        type: 'caption',
+      },
       picture: {
         src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
         alt: 'Blogging for beginners illustration',
@@ -147,14 +162,28 @@ Block.defaultContent = {
         textValue: 'Know more',
         type: 'link',
       },
-      id: 'bc24235c-0e77-42d8-8e8e-358d683da4f5',
     },
     {
-      title: 'How to find insight',
-      date: 'November 25, 2017',
-      badge: 'members only',
-      time: '10:30am - 1:30pm',
-      location: 'The station',
+      title: {
+        content: 'How to find insight',
+        type: 'heading',
+      },
+      date: {
+        content: 'November 25, 2017',
+        type: 'text',
+      },
+      badge: {
+        content: 'members only',
+        type: 'caption',
+      },
+      time: {
+        content: '10:30am - 1:30pm',
+        type: 'text',
+      },
+      location: {
+        content: 'The station',
+        type: 'caption',
+      },
       picture: {
         src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
         alt: 'How to find insight illustration',
@@ -173,14 +202,28 @@ Block.defaultContent = {
         textValue: 'Know more',
         type: 'link',
       },
-      id: '2a463f21-a68f-4a30-a7a7-dfbdece81edc',
     },
     {
-      title: 'UX workshop',
-      date: 'December 3, 2017',
-      badge: 'members only',
-      time: '10:30am - 1:30pm',
-      location: 'The station',
+      title: {
+        content: 'UX workshop',
+        type: 'heading',
+      },
+      date: {
+        content: 'December 3, 2017',
+        type: 'text',
+      },
+      badge: {
+        content: 'members only',
+        type: 'caption',
+      },
+      time: {
+        content: '10:30am - 1:30pm',
+        type: 'text',
+      },
+      location: {
+        content: 'The station',
+        type: 'caption',
+      },
       picture: {
         src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
         alt: 'UX workshop illustration',
@@ -199,12 +242,16 @@ Block.defaultContent = {
         textValue: 'Know more',
         type: 'link',
       },
-      id: 'c4480dcf-6fbd-42b0-b457-ca6a0f187b02',
     },
   ],
-  title: 'Events',
-  subtitle:
-    'We regularly host different kinds of events to satisfy the desires and demands even of all our clients. Do you want to know more about our activities? Follow the updates and never miss the workshops and seminars from our professionals.',
+  title: {
+    content: 'Events',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'We regularly host different kinds of events to satisfy the desires and demands even of all our clients. Do you want to know more about our activities? Follow the updates and never miss the workshops and seminars from our professionals.',
+    type: 'subtitle',
+  },
   cta: {
     actionConfig: {
       action: 'link',
