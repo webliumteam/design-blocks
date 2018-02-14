@@ -25,7 +25,7 @@
   }
 }
 
-.header__button {
+.header .header__button {
   position: absolute;
   width: calc(100% - 40px);
   bottom: 20px;
@@ -34,7 +34,7 @@
 }
 
 @media (min-width: 480px) {
-  .header__button {
+  .header .header__button {
     max-width: 270px;
     left: 50%;
     transform: translateX(-50%);
@@ -42,8 +42,10 @@
 }
 
 @media (min-width: 992px) {
-  .header__button {
-    position: static;
+  .header .header__button {
+    position: relative;
+    left: auto;
+    bottom: auto;
     width: auto;
     max-width: 270px;
     transform: translateX(0);
