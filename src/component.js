@@ -27,6 +27,7 @@ class Block extends React.Component {
         {children}
         <Image
           bind={`partners[${index}].picture`}
+          wrapperClassName={style['item__picture-wrapper']}
           pictureClassName={style.item__picture}
           imgClassName={style.item__image}
           size={null}
@@ -58,11 +59,7 @@ class Block extends React.Component {
     const onlyLogo = (!this.getModifierValue('body') && !this.getModifierValue('link') && !this.getModifierValue('heading'))
     const centerItems = !this.getModifierValue('body') && (this.getModifierValue('link') || this.getModifierValue('heading'))
     return (
-      <section className={classNames(
-        style.section,
-        {[style['section--body-none']]: !showBody},
-        )}
-      >
+      <section className={classNames(style.section)}>
         <div className={style.section__inner}>
           <header className={style.section__header}>
             <Text tagName="h1" className={style.title} bind="title" />
@@ -71,7 +68,7 @@ class Block extends React.Component {
             )}
           </header>
           <Collection
-            className={classNames(style['items-wrapper'], {[style['items-wrapper--column']]: !showBody, [style['items-wrapper--center']]: centerItems || onlyLogo})}
+            className={classNames(style['items-wrapper'], {[style['items-wrapper--column']]: !showBody, [style['items-wrapper--center']]: centerItems || onlyLogo, [style['items-wrapper--only-logo']]: onlyLogo})}
             TagName="div"
             bind="partners"
             Item={this.collectionItem}
