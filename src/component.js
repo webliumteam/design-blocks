@@ -20,6 +20,7 @@ class Block extends React.Component {
         <div className={style.item__inner}>
           {_.get('image')(modifier) && (
             <Image
+              wrapperClassName={style['item__pic-wrapper']}
               pictureClassName={style.item__pic}
               imgClassName={style.item__img}
               bind={`testimonials[${index}].image`}
