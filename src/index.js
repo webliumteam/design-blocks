@@ -12,7 +12,7 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   title: '- Our process -',
-  cta: {
+  'cta-1': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -26,10 +26,25 @@ ExtendedWireframe.defaultContent = {
     textValue: 'Learn more',
     type: 'primary',
   },
+  'cta-2': {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'link',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  'additional-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
