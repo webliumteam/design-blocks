@@ -190,6 +190,9 @@
 
 .article__picture {
   display: block;
+}
+
+.article__picture-wrapper {
   position: relative;
   min-height: 211px;
   order: 1;
@@ -197,14 +200,14 @@
 }
 
 @media (min-width: 768px) {
-  .article__picture {
+  .article__picture-wrapper {
     width: 50%;
     min-height: 270px;
   }
 }
 
 @media (min-width: 992px) {
-  .article__picture {
+  .article__picture-wrapper {
     width: 47.4%;
   }
 }

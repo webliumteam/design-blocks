@@ -40,6 +40,7 @@ class Block extends React.Component {
           </div>
         </div>
         <Image
+          wrapperClassName={style['article__picture-wrapper']}
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
           bind={`events[${index}].picture`}
