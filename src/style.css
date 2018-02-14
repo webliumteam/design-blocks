@@ -1,3 +1,70 @@
 @import "wireframe-series-2-cta/src/style.css";
 
 /* start here */
+
+.section {
+  &__inner {
+    max-width: 950px;
+    background-color: transparent;
+    margin-bottom: 35px;
+  }
+  
+  &__header {
+    padding-left: 0;
+    padding-right: 0;
+    letter-spacing: -1.6px; 
+  }
+
+}
+
+.title {
+  font-size: calc(var(--ui-block-title-size) * 2.35);
+  font-weight: calc(var(--ui-subtitle-font-weight));
+}
+
+.subtitle { 
+  font-size: var(--ui-subtitle-size);
+  max-width: 420px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form {
+  &__field {
+    position: absolute;
+    top: -17px;
+    border-top: 0;                                      
+    border-left: 0;
+    border-right: 0;
+    background-color: transparent;
+    color: var(--ui-light-shade-color);
+    font-size: var(--ui-text-size);
+    text-align: center;
+
+    &::placeholder {
+      color: var(--ui-light-shade-color); 
+      font-size: var(--ui-text-size);
+    }
+  }
+  
+  &__item {
+    text-align: center;
+    position: relative;
+    margin-bottom: 65px;
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0;
+  }
+  
+  &__button { 
+    width: 170px;
+    height: 58px;
+    border-radius: 5px;
+    font-family: var(--ui-small-font-family);
+    font-size: var(--ui-small-size );
+    text-transform: uppercase;
+    margin-top: 30px;
+  }
+}
+

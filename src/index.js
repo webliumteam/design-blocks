@@ -11,6 +11,48 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  theme: 'dark',
+
+  background: {
+    type: 'image',
+    position: {
+      type: 'cover',
+      cover: '50% 50%',
+    },
+    resourceRef: 'bg.jpg',
+  },
+  contactForm: {
+    fields: [
+      {
+        type: 'text',
+        id: 'contactForm_name',
+        title: ' ',
+        placeholder: 'Name *',
+        required: true,
+      },
+      {
+        type: 'phone',
+        id: 'contactForm_phoneNumber ',
+        title: ' ',
+        placeholder: 'Phone number *',
+        required: true,
+      },
+      {
+        type: 'email',
+        id: 'contactForm_email',
+        title: ' ',
+        placeholder: 'Email',
+        required: true,
+      },
+    ],
+    submitButton: {
+      title: 'Request a quote',
+      type: 'primary',
+    },
+    className: 'form',
+    buttonClassName: 'button button--size-md button--primary form__button',
+  },
+
 }
 
 ExtendedWireframe.modifierScheme = {
