@@ -3,8 +3,6 @@
 /* start here */
 
 .section {
-  padding: 50px 0;
-
   &__inner {
     max-width: 950px;
     background-color: transparent;
@@ -45,6 +43,7 @@
     /* stylelint-enable */
     padding-top: 18px;
     padding-bottom: 18px;
+    height: 49px;
     background-color: transparent;
     color: var(--ui-text-color);
     font-size: var(--ui-text-size);

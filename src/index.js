@@ -12,11 +12,12 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   theme: 'dark',
+
   background: {
     type: 'image',
     position: {
       type: 'cover',
-      cover: '50% 0%',
+      cover: '50% 50%',
     },
     resourceRef: 'bg.jpg',
   },
@@ -46,10 +47,10 @@ ExtendedWireframe.defaultContent = {
     ],
     submitButton: {
       title: 'Request a quote',
-      type: 'secondary',
+      type: 'primary',
     },
     className: 'form',
-    buttonClassName: 'button form__button',
+    buttonClassName: 'button button--size-md button--primary form__button',
   },
 
 }
