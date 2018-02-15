@@ -1,3 +1,99 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-process/src/style.css";
 
-/* start here */
+.title {
+  letter-spacing: -0.7px;
+}
+
+.subtitle {
+  line-height: calc(var(--ui-subtitle-line-height) * 1.07);
+  letter-spacing: -0.1px;
+}
+
+.article {
+  margin-top: 65px;
+
+  &__content {
+    padding-left: 0;
+    padding-top: 105px;
+    text-align: center;
+
+    &::before {
+      height: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: transparent;
+      font-size: var(--ui-hero-title-size);
+      font-weight: var(--ui-hero-title-font-weight);
+      letter-spacing: -1.6px;
+      padding: 8px;
+    }
+
+    &--icon-none {
+      padding-top: 0;
+
+      .article__title::after {
+        content: none;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    letter-spacing: -0.3px;
+    margin-bottom: 16px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 3px;
+      background-color: var(--ui-brand-color);
+    }
+  }
+
+  &__text {
+    position: relative;
+    letter-spacing: -0.2px;
+
+    &:only-child {
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 3px;
+        background-color: var(--ui-brand-color);
+      }
+    }
+  }
+}
+
+.button {
+  text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .subtitle {
+    margin-top: 38px;
+  }
+
+  .article {
+    margin-top: 50px;
+  }
+
+  .btns-group {
+    margin-top: 33px;
+  }
+}
