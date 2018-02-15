@@ -39,6 +39,24 @@
   }
 }
 
+.nav-list {
+  &:first-child {
+
+    @media (min-width: 992px) {
+      margin-left: 0;
+    }
+
+    .nav-list__item {
+      &:first-child {
+
+        @media (min-width: 992px) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
 .nav-list__link {
   font-family: var(--ui-block-title-font-family);
   letter-spacing: 2.4px;
