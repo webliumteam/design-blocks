@@ -15,6 +15,7 @@ ExtendedWireframe.defaultContent = {
     text: {
       value: 'Company Logo',
       tagName: 'h2',
+      fontSize: 25,
     },
   },
 }
