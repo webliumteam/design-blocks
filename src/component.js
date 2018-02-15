@@ -36,6 +36,8 @@ class Block extends React.Component {
 
   toggleOpened = () => this.setState({opened: !this.state.opened}, this.setStylesForBody)
 
+  closeMenu = () => this.setState({opened: false}, this.setStylesForBody)
+
   wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
 
   render() {
@@ -60,6 +62,7 @@ class Block extends React.Component {
               itemClassName={css['nav-list__item']}
               linkClassName={css['nav-list__link']}
               bind="menu"
+              onClickItem={this.closeMenu}
             />
             {this.getModifierValue('button') && (
               <Button
