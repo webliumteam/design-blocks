@@ -23,17 +23,11 @@ class Block extends React.Component {
         </div>
         <div className={style.article__content}>
           {_.get('project-category')(modifier) && (
-            <p className={style.article__caption}>
-              <Text bind={`projects[${index}].subtitle`} />
-            </p>
+            <Text bind={`projects[${index}].subtitle`} className={style.article__caption} tagName="p" />
           )}
-          <h2 className={style.article__title}>
-            <Text bind={`projects[${index}].title`} />
-          </h2>
+          <Text bind={`projects[${index}].title`} className={style.article__title} tagName="h2" />
           {_.get('project-description')(modifier) && (
-            <p className={style.article__text}>
-              <Text bind={`projects[${index}].text`} />
-            </p>
+            <Text bind={`projects[${index}].text`} className={style.article__text} tagName="p" />
           )}
           {_.get('project-button')(modifier) && (
             <Button
@@ -59,14 +53,10 @@ class Block extends React.Component {
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <h1 className={style.title}>
-                  <Text bind="title" />
-                </h1>
+                <Text bind="title" className={style.title} tagName="h1" />
               )}
               {this.getModifierValue('subtitle') && (
-                <p className={style.subtitle}>
-                  <Text bind="subtitle" />
-                </p>
+                <Text bind="subtitle" className={style.subtitle} tagName="p" />
               )}
             </header>
           )}
@@ -97,11 +87,18 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon'])($ed
 Block.defaultContent = {
   projects: [
     {
-      id: 'e9ec34d7-3cc6-49f3-a9ad-6ea69f59409c',
-      title: 'Project 1',
-      subtitle: 'UX DESIGN',
-      text:
-        'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
+      title: {
+        content: 'Project 1',
+        type: 'heading',
+      },
+      subtitle: {
+        content: 'UX design',
+        type: 'caption',
+      },
+      text: {
+        content: 'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 1',
@@ -129,10 +126,18 @@ Block.defaultContent = {
     },
     {
       id: '9310272a-1fa2-4876-b1db-a879bbd4bc52',
-      title: 'Project 2',
-      subtitle: 'BRANDING',
-      text:
-        'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
+      title: {
+        content: 'Project 2',
+        type: 'heading',
+      },
+      subtitle: {
+        content: 'Branding',
+        type: 'caption',
+      },
+      text: {
+        content: 'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Project 2',
@@ -163,9 +168,14 @@ Block.defaultContent = {
     svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
-  title: 'Our Projects',
-  subtitle:
-    'Each month, we usefully close our projects. Here is the list of our recent ones:',
+  title: {
+    content: 'Our Projects',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Each month, we usefully close our projects. Here is the list of our recent ones:',
+    type: 'subtitle',
+  },
   cta: {
     actionConfig: {
       action: 'link',
