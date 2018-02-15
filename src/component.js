@@ -94,6 +94,7 @@ Block.defaultContent = {
     text: {
       value: 'Company Logo',
       tagName: 'h2',
+      fontSize: 32,
     },
   },
   menu: [
