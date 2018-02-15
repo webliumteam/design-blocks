@@ -23,9 +23,9 @@ class Block extends React.Component {
               />
             </div>
           )}
-          <blockquote className={style.blockquote} aria-describedby={`${id}-author`}>
-            <Text bind="blockquote" />
-            <div className={style.blockquote__line}>
+          <div className={style.blockquote}>
+            <Text className={style.blockquote__inner} tagName="blockquote" bind="blockquote" />
+            <div className={style.blockquote__line} aria-hidden="true">
               <div className={style.blockquote__icon}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 18">
                   <path
@@ -36,11 +36,9 @@ class Block extends React.Component {
                 </svg>
               </div>
             </div>
-          </blockquote>
+          </div>
           {this.getModifierValue('author') && (
-            <p id={`${id}-author`} className={style.author}>
-              <Text bind="author" />
-            </p>
+            <Text tagName="p" className={style.author} bind="author" />
           )}
         </div>
       </section>
@@ -55,9 +53,14 @@ Block.defaultContent = {
     type: 'color',
     color: '#f0f0f0',
   },
-  blockquote:
-    'There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.',
-  author: 'Ray Goforth',
+  blockquote: {
+    content: 'There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.',
+    type: 'quote',
+  },
+  author: {
+    content: 'Ray Goforth',
+    type: 'text',
+  },
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
     alt: 'Illustration photo',

@@ -31,17 +31,19 @@
   max-width: 622px;
   margin: 0 auto;
   padding-top: 15px;
-  font-size: calc(var(--ui-quote-size) * 0.7273);
-  color: var(--ui-quote-color);
-  line-height: var(--ui-quote-line-height);
-  font-family: var(--ui-quote-font-family);
-  font-weight: var(--ui-quote-font-weight);
   text-align: center;
 }
 
 @media (min-width: 992px) {
   .blockquote {
     padding-top: 25px;
+  }
+}
+
+.blockquote__inner {
+  font-size: calc(var(--ui-quote-size) * 0.7273);
+
+  @media (min-width: 992px) {
     font-size: var(--ui-quote-size);
   }
 }
