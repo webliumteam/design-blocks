@@ -137,11 +137,11 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Awards title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Awards title', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
 }
 
 
