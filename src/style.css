@@ -18,7 +18,8 @@
     color: var(--ui-link-color);
     font-family: var(--ui-caption-font-family);
     font-size: var(--ui-caption-size);
-    opacity: 0.5;
+    font-weight: 400;
+    opacity: 0.8;
 
     &:hover {
       color: var(--ui-link-color);
