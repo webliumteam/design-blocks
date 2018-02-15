@@ -119,6 +119,10 @@
   margin-bottom: 0;
 }
 
+.plan__list-item-text {
+  color: inherit;
+}
+
 .plan__button {
   width: 100%;
 }

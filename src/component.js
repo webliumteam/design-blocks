@@ -17,7 +17,7 @@ class Block extends React.Component {
     return (
       <li className={classNames(style['plan__list-item'], className)}>
         {children}
-        <Text tagName="span" bind={`plan-list-${planIndex}[${index}].text`} />
+        <Text tagName="span" className={style['plan__list-item-text']} bind={`plan-list-${planIndex}[${index}].text`} />
       </li>
     )
   }
