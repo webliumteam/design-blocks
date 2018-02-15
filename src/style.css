@@ -72,6 +72,8 @@
     height: 100%;
     opacity: 0;
     transition: 0.3s linear;
+
+    display: none;
   }
 
   /* &:hover {
@@ -104,6 +106,7 @@
     font-family: var(--ui-text-font-family);
     font-style: italic;
     transition: 0.3s linear;
+    display: none;
 
     @media (min-width: 768px) {
       margin-top: 10px;
@@ -122,6 +125,7 @@
     transition: 0.3s linear;
     font-size: var(--ui-sub-heading-size);
     margin-top: 0;
+    display: none;
 
     @media (min-width: 480px) {
       font-size: var(--ui-heading-size);
