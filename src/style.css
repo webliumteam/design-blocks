@@ -28,9 +28,10 @@
     content: "";
     background-color: var(--ui-brand-color);
     bottom: -18px;
-    left: 49%;
+    left: 50%;
     width: 45px;
     height: 2px;
+    transform: translateX(-50%);
   }
 }
 
@@ -52,7 +53,7 @@
   transition: 0.3s linear;
   align-items: center;
   justify-content: center;
-  min-height: 260px;
+  min-height: 330px;
 
   @media (min-width: 992px) {
     margin-bottom: 0;
@@ -91,6 +92,8 @@
   } */
 
   &__picture {
+    padding-top: 0;
+
     &-wrapper {
       position: absolute;
       top: 0;
