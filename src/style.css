@@ -9,12 +9,12 @@
   @media (min-width: 768px) {
     padding-top: 60px;
     padding-bottom: 60px;
-  } 
+  }
 
   @media (min-width: 992px) {
     padding-top: 75px;
     padding-bottom: 75px;
-  }  
+  }
 
   &__inner {
     max-width: 950px;
