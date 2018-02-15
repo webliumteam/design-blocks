@@ -26,11 +26,6 @@
 
 .title {
   margin-bottom: 15px;
-  font-size: var(--ui-block-title-size);
-  color: var(--ui-block-title-color);
-  line-height: var(--ui-block-title-line-height);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: var(--ui-block-title-font-weight);
 
   &:last-child {
     margin-bottom: 0;
@@ -40,11 +35,6 @@
 .subtitle {
   max-width: 620px;
   margin: 0 auto;
-  font-size: var(--ui-subtitle-size);
-  color: var(--ui-subtitle-color);
-  line-height: var(--ui-subtitle-line-height);
-  font-family: var(--ui-subtitle-font-family);
-  font-weight: var(--ui-subtitle-font-weight);
 }
 
 @media (min-width: 992px) {
@@ -65,11 +55,6 @@
   flex-grow: 0;
   width: 100%;
   max-width: 100%;
-  font-size: var(--ui-text-size);
-  color: var(--ui-text-color);
-  line-height: var(--ui-text-line-height);
-  font-weight: var(--ui-text-font-weight);
-  font-family: var(--ui-text-font-family);
   text-align: center;
 }
 
@@ -116,15 +101,14 @@
 
 .item__title {
   margin-bottom: 14px;
-  font-size: var(--ui-heading-size);
-  color: var(--ui-heading-color);
-  line-height: var(--ui-heading-line-height);
-  font-family: var(--ui-heading-font-family);
-  font-weight: var(--ui-heading-font-weight);
 
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.item__desc {
+  word-wrap: break-word;
 }
 
 .btns-group {
@@ -135,29 +119,16 @@
   margin-top: 50px;
 }
 
-.button,
-.link {
+.button {
   width: 100%;
   margin: 10px;
 }
 
 @media (min-width: 480px) {
-  .button,
-  .link {
+  .button {
     width: auto;
     margin-right: 20px;
   }
-}
-
-.link {
-  font-size: 16px;
-  color: var(--ui-link-color);
-}
-
-.link:hover,
-.link:focus,
-.link:active {
-  color: var(--ui-link-hover-color);
 }
 
 .item__icon-text {
