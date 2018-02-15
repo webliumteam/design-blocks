@@ -18,7 +18,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    resourceRef: 'bg_header.jpg',
+    resourceRef: 'bg_header.jpeg',
   },
   logo: {
     text: {
