@@ -1,3 +1,114 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
+
+.plans-wrapper {
+  &:first-child,
+  &:only-child {
+    margin-top: 0;
+  }
+}
+
+.plan {
+  background-color: #f7f7f7;
+
+  &__icon-wrapper::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: var(--ui-brand-color);
+    position: absolute;
+    left: 25px;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    bottom: -37px;
+  }
+
+  &__title {
+    font-size: calc(var(--ui-heading-size) * 0.769);
+    margin-bottom: 40px;
+    margin-top: 25px;
+  }
+
+  &__price {
+    margin-bottom: 19px;
+  }
+
+  &__list-item {
+    margin-bottom: 10px;
+  }
+
+  &__price > span {
+    text-transform: uppercase;
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    padding: 0;
+    margin-bottom: 35px;
+    color: var(--ui-light-accent-color);
+  }
+
+  &__icon-wrapper + &__list {
+    margin-top: 55px;
+  }
+
+  .plan__price-count {
+    font-size: var(--ui-hero-title-size);
+    font-family: var(--ui-hero-title-font-family);
+  }
+
+  &--main {
+    background: var(--ui-brand-color);
+    color: var(--ui-light-shade-color);
+    box-shadow: none;
+
+    .plan__title {
+      color: var(--ui-light-shade-color);
+      margin-bottom: 35px;
+      margin-top: 45px;
+    }
+
+    .plan__price-count {
+      color: var(--ui-light-shade-color);
+    }
+
+    .plan__price {
+      color: var(--ui-light-shade-color);
+      margin-bottom: 10px;
+    }
+
+    .plan__icon-wrapper {
+      padding: 15px;
+
+      span {
+        color: var(--ui-light-shade-color);
+      }
+    }
+
+    .plan__icon-wrapper::after {
+      background: var(--ui-light-shade-color);
+      left: 30px;
+    }
+
+    .plan__button {
+      background-image: none;
+      background-color: var(--ui-light-shade-color);
+      color: var(--ui-text-color);
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-image: none;
+        background-color: var(--ui-btn-secondary-hover-bg-color);
+        color: var(--ui-text-color);
+      }
+    }
+  }
+}
+
+.title {
+  margin-bottom: 45px;
+}
+
