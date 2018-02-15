@@ -9,97 +9,213 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
+  collectionItem = ({index, children, modifier}) => {
+    const {components: {Text, Image, Button}, style} = this.props
+    const showContent = _.get('body')(modifier) || _.get('link')(modifier)
+    const showBody = _.get('body')(modifier)
+    const showLink = _.get('link')(modifier)
+    const showHeading = _.get('heading')(modifier)
+    return (
+      <article className={classNames(
+        style.item,
+        {[style['item--body-none']]: !showBody && (showBody || showLink || showHeading)},
+        {[style['item--heading-none']]: !showHeading},
+        {[style['item--two-elements']]: (!showBody && !showLink && showHeading) || (!showBody && showLink && !showHeading)},
+        {[style['item--logo']]: (!showBody && !showLink && !showHeading)},
+        )}
+      >
+        {children}
+        <Image
+          bind={`partners[${index}].picture`}
+          wrapperClassName={style['item__picture-wrapper']}
+          pictureClassName={style.item__picture}
+          imgClassName={style.item__image}
+          size={null}
+        />
+        {showHeading && (
+          <Text tagName="h2" className={style.item__title} bind={`partners[${index}].title`} />
+        )}
+        {showContent && (
+          <div className={style.item__content}>
+            {_.get('body')(modifier) && (
+              <Text tagName="p" className={style.item__desc} bind={`partners[${index}].desc`} />
+            )}
+            {_.get('link')(modifier) && (
+              <Button
+                className={style.item__link}
+                bind={`partners[${index}].button`}
+              />
+            )}
+          </div>
+        )}
+      </article>
+    )
+  }
 
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Collection, Text, Button}, style, $block} = this.props
+    const showBody = this.getModifierValue('body')
+    const onlyLogo = (!this.getModifierValue('body') && !this.getModifierValue('link') && !this.getModifierValue('heading'))
+    const centerItems = !this.getModifierValue('body') && (this.getModifierValue('link') || this.getModifierValue('heading'))
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+      <section className={classNames(style.section)}>
+        <div className={style.section__inner}>
+          <header className={style.section__header}>
+            <Text tagName="h1" className={style.title} bind="title" />
+            {this.getModifierValue('subtitle') && (
+              <Text tagName="p" className={style.subtitle} bind="subtitle" />
+            )}
+          </header>
+          <Collection
+            className={classNames(style['items-wrapper'], {[style['items-wrapper--column']]: !showBody, [style['items-wrapper--center']]: centerItems || onlyLogo, [style['items-wrapper--only-logo']]: onlyLogo})}
+            TagName="div"
+            bind="partners"
+            Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
+          />
+          {this.getModifierValue('button') && (
+            <div className={classNames(style['btns-group'], {[style['btns-group--offset-sm']]: onlyLogo})}>
+              <Button buttonClassName={style.button} bind="button" />
             </div>
-          </article>
+          )}
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'Collection', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
+  title: {
+    content: 'Partners',
+    type: 'blockTitle',
   },
+  subtitle: {
+    content: 'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
+    type: 'subtitle',
+  },
+  partners: [
+    {
+      picture: {
+        resourceRef: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Samsung logo',
+        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      },
+      title: {
+        content: 'Samsung',
+        type: 'heading',
+      },
+      desc: {
+        content: 'Back in 1995, we started cooperation with this brand. Samsung became our main supplier of high-quality tech products. Today, Samsung is our main partner who supports each initiative and actively participates in company development.',
+        type: 'text',
+      },
+      button: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Partner’s website',
+        type: 'link',
+      },
+    },
+    {
+      picture: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Ford logo',
+        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      },
+      title: {
+        content: 'Ford ',
+        type: 'heading',
+      },
+      desc: {
+        content: 'The company that has always put reliability first. We started to work with Ford in 2002, and now this is one of the partners who’ve been with us for more than 15 years! We believe that this partnership is one of the achievements we can be proud of.',
+        type: 'text',
+      },
+      button: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Partner’s website',
+        type: 'link',
+      },
+    },
+    {
+      picture: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Medical Family logo',
+        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      },
+      title: {
+        content: 'Medical Family',
+        type: 'heading',
+      },
+      desc: {
+        content: 'Health of our team members is a top priority for us. Therefore, we work with the best clinics only, like Medical Family. We entrust our health to them and we entrust our business as well.',
+        type: 'text',
+      },
+      button: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Partner’s website',
+        type: 'link',
+      },
+    },
+    {
+      picture: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Coffee Break Now',
+        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      },
+      title: {
+        content: 'Coffee Break Now',
+        type: 'heading',
+      },
+      desc: {
+        content: 'Coffee and cakes won’t sell themselves. Whenever we are hungry or just need to restore energy, Coffee Break Now saves us. Also, they cater all our events, starting workshops and seminars, and up to everyday meal for our team members.',
+        type: 'text',
+      },
+      button: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Partner’s website',
+        type: 'link',
+      },
+    },
+  ],
   button: {
     actionConfig: {
       action: 'link',
@@ -111,89 +227,17 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
-    },
+    textValue: 'Learn more',
+    type: 'secondary',
   },
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
+Block.modifierScheme = {
+  subtitle: {defaultValue: false, label: 'Partner description', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Partner title', type: 'checkbox'},
+  body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
+  link: {defaultValue: true, label: 'Partner link', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+}
 
 export default Block
