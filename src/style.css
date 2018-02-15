@@ -1,18 +1,19 @@
 @import "wireframe-zapdos-cover/src/style.css";
 
 /* start here */
+
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 240px;
+    padding-bottom: 250px;
+  }
+}
+
 .title {
-  color: var(--ui-light-shade-color);
-  letter-spacing: 1.05px;
-  font-weight: var(--ui-block-title-font-weight);
   margin-bottom: 30px;
 }
 
 .subtitle {
-  color: var(--ui-light-shade-color);
-  letter-spacing: 0.18px;
-}
-
-.button:hover {
-  border: 1px solid var(--ui-light-shade-color);
+  font-size: calc(var(--ui-subtitle-size) * 1.125);
 }

@@ -9,4 +9,22 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
+ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
+  theme: 'dark',
+  background: {
+    type: 'image',
+    position: {
+      type: 'cover',
+      cover: '50% 100%',
+    },
+    resourceRef: 'cover-bg.png',
+  },
+}
+
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'secondary-btn': {defaultValue: false, label: 'Additional button', type: 'hidden'},
+}
+
 export default ExtendedWireframe
