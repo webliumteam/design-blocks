@@ -10,10 +10,13 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
   theme: 'dark',
   logo: {
     text: {
       value: 'Company Name',
+      tagName: 'h2',
+      fontSize: 25,
     },
   },
   background: {
@@ -104,6 +107,10 @@ ExtendedWireframe.defaultContent = {
       },
     },
   ],
+}
+
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
 }
 
 export default ExtendedWireframe
