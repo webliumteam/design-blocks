@@ -186,6 +186,10 @@
   color: var(--ui-link-hover-color);
 }
 
+.button {
+  width: 100%;
+}
+
 @media (min-width: 480px) {
   .button {
     width: auto;
