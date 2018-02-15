@@ -213,10 +213,18 @@
   min-height: 150px;
   font-family: "Rubik", sans-serif;
   font-style: 19px;
-  margin-bottom: 135px;
+  margin-bottom: 50px;
 
   @media (min-width: 480px) {
     max-width: 383px;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 350px;
+  }
+
+  @media (max-height: 970px) {
+    margin-bottom: 50px;
   }
 
   &__item {
@@ -282,10 +290,10 @@
 }
 
 .list-title {
-  padding-top: 0;
   font-size: 36px;
   margin-bottom: 65px;
   font-weight: 500;
+  padding-top: 120px;
   font-family: "Roboto", sans-serif;
   text-align: center;
   text-transform: uppercase;
