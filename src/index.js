@@ -16,17 +16,7 @@ ExtendedWireframe.defaultContent = {
     alt: 'Picture about the company',
   },
   'button-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Learn more',
+    ...Component.defaultContent['button-1'],
     type: 'secondary',
     size: 'md',
   },
