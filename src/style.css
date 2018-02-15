@@ -4,6 +4,13 @@
   position: relative;
   background-color: transparent;
 
+  &--without-button {
+
+    @media (min-width: 992px) {
+      padding-bottom: 75px;
+    }
+  }
+
   &::before {
     content: "";
     display: block;
@@ -37,7 +44,7 @@
   }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .item:nth-child(3) .item__content,
   .item:nth-child(4) .item__content {
     margin-right: 20px;
