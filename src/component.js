@@ -9,27 +9,22 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className, modifier, openLightbox}) => {
+  collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Image}, style} = this.props
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        <div className={style['item__picture-wrapper']} onClick={openLightbox}>
-          <Image
-            pictureClassName={style.item__picture}
-            imgClassName={style.item__image}
-            bind={`gallery[${index}].picture`}
-          />
-        </div>
+        <Image
+          wrapperClassName={style['item__picture-wrapper']}
+          pictureClassName={style.item__picture}
+          imgClassName={style.item__image}
+          bind={`gallery[${index}].picture`}
+        />
         {_.get('body-text')(modifier) && (
-          <p className={style.item__text}>
-            <Text bind={`gallery[${index}].title`} />
-          </p>
+          <Text tagName="p" className={style.item__text} bind={`gallery[${index}].title`} />
         )}
         {_.get('caption')(modifier) && (
-          <p className={style.item__caption}>
-            <Text bind={`gallery[${index}].caption`} />
-          </p>
+          <Text tagName="p" className={style.item__caption} bind={`gallery[${index}].caption`} />
         )}
       </div>
     )
@@ -44,13 +39,9 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           <header className={style.section__header}>
-            <h1 className={style.title}>
-              <Text bind="title" />
-            </h1>
+            <Text tagName="h1" className={style.title} bind="title" />
             {this.getModifierValue('subtitle') && (
-              <p className={style.subtitle}>
-                <Text bind="subtitle" />
-              </p>
+              <Text tagName="p" className={style.subtitle} bind="subtitle" />
             )}
           </header>
           <Collection
@@ -82,69 +73,104 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon'])($ed
 Block.defaultContent = {
   gallery: [
     {
-      title: 'Quantum CEO & our partners',
+      title: {
+        content: 'Quantum CEO & our partners',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Quantum CEO & our partners',
         galleryId: 'gallery',
       },
-      caption: 'Design & build',
-      id: 'ce744570-02be-4080-b3f2-740d628ccb52',
+      caption: {
+        content: 'Design & build',
+        type: 'caption',
+      },
     },
     {
-      title: 'Digital Marketing workshop lecturer',
+      title: {
+        content: 'Digital Marketing workshop lecturer',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Digital Marketing workshop lecturer',
         galleryId: 'gallery',
       },
-      caption: 'Design & build',
-      id: 'a980742f-2b78-40b0-9fed-247e71056797',
+      caption: {
+        content: 'Design & build',
+        type: 'caption',
+      },
     },
     {
-      title: 'Quantum Company at WebSummit',
+      title: {
+        content: 'Quantum Company at WebSummit',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Quantum Company at WebSummit',
         galleryId: 'gallery',
       },
-      caption: 'Design & build',
-      id: 'cb6bbbcc-1980-4575-af5c-0f46e33d6d1e',
+      caption: {
+        content: 'Design & build',
+        type: 'caption',
+      },
     },
     {
-      title: 'UX workshop attendees',
+      title: {
+        content: 'UX workshop attendees',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'UX workshop attendees',
         galleryId: 'gallery',
       },
-      caption: 'Design & build',
-      id: '3e7b03a6-54fb-4d5c-8735-ddfd27f0c8fa',
+      caption: {
+        content: 'Design & build',
+        type: 'caption',
+      },
     },
     {
-      title: 'UX workshop lecturer',
+      title: {
+        content: 'UX workshop lecturer',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'UX workshop lecturer',
         galleryId: 'gallery',
       },
-      caption: 'Design & build',
-      id: 'd6741c92-36d7-4495-93cc-ba77ce79f2bb',
+      caption: {
+        content: 'Design & build',
+        type: 'caption',
+      },
     },
     {
-      title: 'Quantum team',
+      title: {
+        content: 'Quantum team',
+        type: 'text',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Quantum team',
         galleryId: 'gallery',
       },
-      caption: 'Design & build',
-      id: '529f880a-60f0-4c8f-9fc3-8c9f482051bb',
+      caption: {
+        content: 'Design & build',
+        type: 'caption',
+      },
     },
   ],
-  title: 'Gallery',
-  subtitle:
-    'Browse through our photos to see who we are, how we work, and what inspires us',
+  title: {
+    content: 'Gallery',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Browse through our photos to see who we are, how we work, and what inspires us',
+    type: 'subtitle',
+  },
   cta: {
     actionConfig: {
       action: 'link',
