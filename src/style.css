@@ -51,7 +51,7 @@
   &__content {
     font-family: var(--ui-text-font-family);
     font-size: var(--ui-text-size);
-    padding: 10px 0 20px;
+    padding: 10px 0 0;
   }
 }
 
