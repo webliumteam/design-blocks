@@ -147,7 +147,7 @@
   object-fit: cover;
 }
 
-.item__title {
+.item .item__title {
   text-align: center;
   font-size: calc(var(--ui-heading-size) * 0.8333);
 }
