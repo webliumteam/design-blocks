@@ -45,6 +45,10 @@ ExtendedWireframe.defaultContent = {
       },
     },
   ],
+  cta: {
+    ...Component.defaultContent.cta,
+    type: 'secondary',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
