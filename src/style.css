@@ -78,6 +78,7 @@
   margin: 0;
   padding: 0 5px;
   outline: none;
+  display: flex;
 }
 
 @media (min-width: 768px) {
@@ -88,7 +89,6 @@
 
 .item__inner {
   display: flex;
-  height: 0;
   max-width: 100%;
   min-height: 310px;
   margin: 0 auto;
