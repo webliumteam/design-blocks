@@ -61,6 +61,7 @@ Block.defaultContent = {
   },
   menu: [
     {
+      id: 'about-us',
       metadata: {
         displayName: 'About us',
         actionConfig: {
@@ -75,6 +76,7 @@ Block.defaultContent = {
       },
     },
     {
+      id: 'services',
       metadata: {
         displayName: 'Services',
         actionConfig: {
@@ -89,6 +91,7 @@ Block.defaultContent = {
       },
     },
     {
+      id: 'projects',
       metadata: {
         displayName: 'Projects',
         actionConfig: {
@@ -103,6 +106,7 @@ Block.defaultContent = {
       },
     },
     {
+      id: 'testimonials',
       metadata: {
         displayName: 'Testimonials',
         actionConfig: {
@@ -117,6 +121,7 @@ Block.defaultContent = {
       },
     },
     {
+      id: 'contacts-us',
       metadata: {
         displayName: 'Contact us',
         actionConfig: {
