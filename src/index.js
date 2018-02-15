@@ -47,7 +47,7 @@ ExtendedWireframe.defaultContent = {
     ],
     submitButton: {
       title: 'Request a quote',
-      type: 'primary',
+      type: 'primary-alt',
     },
     className: 'form',
     buttonClassName: 'button form__button',
