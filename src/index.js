@@ -24,6 +24,7 @@ ExtendedWireframe.defaultContent = {
     text: {
       value: 'Company Name',
       tagName: 'h2',
+      fontSize: 25,
     },
   },
   cta: {
