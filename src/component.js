@@ -16,14 +16,13 @@ class Block extends React.Component {
     const {components: {Text, Image}, style} = this.props
     return [
       this.getModifierValue('post-image') && (
-        <div className={style['article__picture-wrapper']}>
-          <Image
-            pictureClassName={style.article__picture}
-            imgClassName={style.article__image}
-            bind={`blog[${itemNumber}].picture`}
-            size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
-          />
-        </div>
+        <Image
+          wrapperClassName={style['article__picture-wrapper']}
+          pictureClassName={style.article__picture}
+          imgClassName={style.article__image}
+          bind={`blog[${itemNumber}].picture`}
+          size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
+        />
       ),
       this.getModifierValue('post-publish-date') && (
         <small className={style.article__meta}>
