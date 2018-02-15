@@ -1,3 +1,37 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-header/src/style.css";
 
 /* start here */
+.header {
+  padding: 28px 0;
+
+  &__button {
+
+    @media (min-width: 1170px) {
+      margin-left: 130px;
+    }
+  }
+}
+
+.logo {
+  margin-top: 4px;
+}
+
+.nav-list__item {
+  margin-top: 6px;
+  margin-bottom: 6px;
+
+  &:not(:first-child) {
+
+    @media (min-width: 992px) {
+      margin-left: 30px;
+    }
+  }
+}
+
+.nav {
+  align-items: flex-start;
+
+  @media (min-width: 992px) {
+    align-items: center;
+  }
+}
