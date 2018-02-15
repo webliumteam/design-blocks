@@ -59,6 +59,14 @@
   height: 100vh;
 }
 
+.header--nav-open .logo {
+  z-index: 999999;
+}
+
+.header--nav-open .logo__title {
+  color: var(--ui-light-shade-color);
+}
+
 .header--nav-open .nav-button__line:nth-child(2) {
   opacity: 0;
 }
@@ -113,7 +121,7 @@
   padding: 110px 20px 60px;
   flex-direction: column;
   align-items: center;
-  z-index: 999999;
+  z-index: 5000;
   flex: 9;
   visibility: hidden;
   opacity: 0;
