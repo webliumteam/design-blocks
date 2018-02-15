@@ -50,7 +50,7 @@ ExtendedWireframe.defaultContent = {
       type: 'primary',
     },
     className: 'form',
-    buttonClassName: 'button button--size-md button--primary form__button',
+    buttonClassName: 'button form__button',
   },
 
 }
