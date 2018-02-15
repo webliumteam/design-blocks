@@ -1,5 +1,5 @@
 {
-  "id": "5a6a027ab8f84000184f7534",
-  "entrypoint": "././src/index.js",
+  "id": "5a83082e24c2ea0018ca491c",
+  "entrypoint": "index.js",
   "style": "style.css"
 }

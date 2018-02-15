@@ -35,10 +35,7 @@ class Block extends React.Component {
       this.getModifierValue('button')
     )
 
-    const getTitle = this.getModifierValue('title') && (
-      <h1 className={css.article__title}>
-        <Text bind="title" />
-      </h1>)
+    const getTitle = this.getModifierValue('title') && <Text tagName="h1" className={css.article__title} bind="title" />
 
     const getIconDecorator = this.getModifierValue('top-icon') && <Icon className={css['top-icon']} bind="topIcon" />
 
@@ -56,18 +53,14 @@ class Block extends React.Component {
                 {!this.getOptionValue('icon-decorator-in-top') && getIconDecorator}
                 {!this.getOptionValue('title-in-top') && getTitle}
                 {this.getModifierValue('subtitle') && (
-                  <p className={css.article__subtitle}>
-                    <Text bind="subtitle" />
-                  </p>
+                  <Text tagName="p" className={css.article__subtitle} bind="subtitle" />
                 )}
                 {this.getModifierValue('text') && (
-                  <p className={css.article__text}>
-                    <Text bind="text" />
-                  </p>
+                  <Text tagName="p" className={css.article__text} bind="text" />
                 )}
                 {this.getModifierValue('socialIcons') && (
                   <div className={css.article__socials}>
-                    {!this.getOptionValue('hidden-social-heading') && <h2 className={css['social-title']}>Follow us: </h2>}
+                    {!this.getOptionValue('hidden-social-heading') && <Text tagName="h2" className={css['social-title']} bind="social-title" />}
                     <SocialIcons bind="socialIcons" className={css.socials}/>
                   </div>
                 )}
@@ -101,11 +94,22 @@ class Block extends React.Component {
 Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons', 'Icon'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle: 'We provide a wide range of services to meet even the most daring requirements. ',
-  text:
-    'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
+  title: {
+    content: 'About The Company',
+    type: 'blockTitle',
+  },
+  'social-title': {
+    content: 'Follow us:',
+    type: 'heading',
+  },
+  subtitle: {
+    content: 'We provide a wide range of services to meet even the most daring requirements. ',
+    type: 'subtitlte',
+  },
+  text: {
+    content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
+    type: 'text',
+  },
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
     alt: 'Picture about the company',
@@ -139,7 +143,6 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'link',
   },
-  link: '<a href="/">More about us</a>',
   socialIcons: {
     networks: [
       {
