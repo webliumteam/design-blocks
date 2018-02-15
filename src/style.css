@@ -248,6 +248,10 @@
   text-decoration: none;
 }
 
+.button {
+  width: 100%;
+}
+
 @media (min-width: 480px) {
   .button {
     width: auto;

@@ -15,13 +15,12 @@ class Block extends React.Component {
       <article className={classNames(style.item, className)}>
         {children}
         <div className={style.item__inner}>
-          <div title="Read more" className={style['item__pic-link']}>
-            <Image
-              pictureClassName={style.item__pic}
-              imgClassName={style.item__img}
-              bind={`team[${index}].picture`}
-            />
-          </div>
+          <Image
+            wrapperClassName={style['item__pic-link']}
+            pictureClassName={style.item__pic}
+            imgClassName={style.item__img}
+            bind={`team[${index}].picture`}
+          />
           <Text tagName="h2" className={style.item__title} bind={`team[${index}].name`} />
           <Text tagName="p" className={style.item__position} bind={`team[${index}].position`} />
           {_.get('member-desc')(modifier) && (
