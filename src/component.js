@@ -24,25 +24,20 @@ class Block extends React.Component {
               pictureClassName={style.item__pic}
               imgClassName={style.item__img}
               bind={`testimonials[${index}].image`}
+              size={{
+                'min-width: 320px': 120,
+              }}
             />
           )}
           <div className={style.item__contacts}>
-            <h2 className={style.item__title}>
-              <Text bind={`testimonials[${index}].name`} />
-            </h2>
+            <Text bind={`testimonials[${index}].name`} className={style.item__title} tagName="h2" />
           </div>
           {_.get('position')(modifier) && (
-            <p className={style.item__position}>
-              <Text bind={`testimonials[${index}].position`} />
-            </p>
+            <Text bind={`testimonials[${index}].position`} className={style.item__position} tagName="p" />
           )}
-          <p className={style.item__desc}>
-            <Text bind={`testimonials[${index}].description`} />
-          </p>
+          <Text bind={`testimonials[${index}].description`} className={style.item__desc} tagName="p" />
           {_.get('publishDate')(modifier) && (
-            <time className={style.item__time}>
-              <Text bind={`testimonials[${index}].date`} />
-            </time>
+            <Text bind={`testimonials[${index}].date`} className={style.item__time} tagName="time" />
           )}
         </div>
       </article>
@@ -58,13 +53,9 @@ class Block extends React.Component {
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
+          <Text bind="title" className={style.title} tagName="h1" />
           {this.getModifierValue('subtitle') && (
-            <p className={style.subtitle}>
-              <Text bind="subtitle" />
-            </p>
+            <Text bind="subtitle" className={style.subtitle} tagName="p" />
           )}
           <Slider
             className={classNames(style['items-wrapper'], {[style['items-wrapper--image-none']]: !this.getModifierValue('image')})}
@@ -99,11 +90,22 @@ Block.defaultContent = {
   testimonials: [
     {
       id: 'bf40db18-b817-4a19-bd5b-b72cfacce814',
-      name: 'Amanda Peterson',
-      position: 'Marketing Director at Fresh Food Co.',
-      description:
-        '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
-      date: 'December 15, 2017',
+      name: {
+        content: 'Amanda Peterson',
+        type: 'heading',
+      },
+      position: {
+        content: 'Marketing Director at Fresh Food Co.',
+        type: 'caption',
+      },
+      description: {
+        content: '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
+        type: 'text',
+      },
+      date: {
+        content: 'December 15, 2017',
+        type: 'caption',
+      },
       image: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Amanda Peterson photo',
@@ -111,20 +113,36 @@ Block.defaultContent = {
     },
     {
       id: '5ee25c3a-0026-4ab8-b291-238b72e1f6cc',
-      name: 'Amanda Peterson',
-      position: 'Marketing Director at Fresh Food Co.',
-      description:
-        '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
-      date: 'December 15, 2017',
+      name: {
+        content: 'Amanda Peterson',
+        type: 'heading',
+      },
+      position: {
+        content: 'Marketing Director at Fresh Food Co.',
+        type: 'caption',
+      },
+      description: {
+        content: '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
+        type: 'text',
+      },
+      date: {
+        content: 'December 15, 2017',
+        type: 'caption',
+      },
       image: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Amanda Peterson photo',
       },
     },
   ],
-  title: 'Testimonials',
-  subtitle:
-    'Read the success stories of our customers to find out why so many companies choose us.',
+  title: {
+    content: 'Testimonials',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Read the success stories of our customers to find out why so many companies choose us.',
+    type: 'subtitle',
+  },
   cta: {
     actionConfig: {
       action: 'link',
