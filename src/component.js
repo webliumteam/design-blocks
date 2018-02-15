@@ -51,6 +51,11 @@ class Block extends React.Component {
 Block.components = _.pick(['Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
+  theme: 'dark',
+  background: {
+    type: 'color',
+    color: '#A4A4A4',
+  },
   title: {
     content: 'Want to work with us?',
     type: 'blockTitle',
@@ -71,7 +76,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Request a quote',
-    type: 'primary',
+    type: 'primary-alt',
     size: 'lg',
   },
   picture: {
