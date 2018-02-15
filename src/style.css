@@ -1,11 +1,6 @@
 .section {
   min-width: 320px;
   padding: 50px 0;
-  font-size: var(--ui-text-size);
-  font-family: var(--ui-text-font-family);
-  color: var(--ui-text-color);
-  line-height: var(--ui-text-line-height);
-  font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
 
   @media (min-width: 768px) {
@@ -37,22 +32,12 @@
   width: 100%;
   margin-bottom: 15px;
   text-align: center;
-  font-family: var(--ui-block-title-font-family);
-  font-size: var(--ui-block-title-size);
-  font-weight: var(--ui-block-title-font-weight);
-  line-height: var(--ui-block-title-line-height);
-  color: var(--ui-block-title-color);
 }
 
 .subtitle {
   max-width: 688px;
   margin: 0 auto;
   text-align: center;
-  font-family: var(--ui-subtitle-font-family);
-  font-size: var(--ui-subtitle-size);
-  font-weight: var(--ui-subtitle-font-weight);
-  line-height: var(--ui-subtitle-line-height);
-  color: var(--ui-subtitle-color);
 }
 
 @media (min-width: 992px) {
@@ -101,11 +86,6 @@
 
 .plan__title {
   margin-bottom: 25px;
-  font-family: var(--ui-heading-font-family);
-  font-size: var(--ui-heading-size);
-  font-weight: var(--ui-heading-font-weight);
-  line-height: var(--ui-heading-line-height);
-  color: var(--ui-heading-color);
 }
 
 .plan__icon-wrapper {
@@ -116,21 +96,11 @@
 }
 
 .plan__price {
-  font-family: var(--ui-caption-font-family);
-  font-size: var(--ui-caption-size);
-  font-weight: var(--ui-caption-font-weight);
-  line-height: var(--ui-caption-line-height);
-  color: var(--ui-caption-color);
   margin-bottom: 30px;
 }
 
 .plan__price-count {
   display: block;
-  font-family: var(--ui-heading-lg-font-family);
-  font-size: var(--ui-heading-lg-size);
-  font-weight: var(--ui-heading-lg-font-weight);
-  line-height: var(--ui-heading-lg-line-height);
-  color: var(--ui-heading-lg-color);
 }
 
 .plan__list {

@@ -17,7 +17,7 @@ class Block extends React.Component {
     return (
       <li className={classNames(style['plan__list-item'], className)}>
         {children}
-        <Text bind={`plan-list-${planIndex}[${index}].text`} />
+        <Text tagName="span" bind={`plan-list-${planIndex}[${index}].text`} />
       </li>
     )
   }
@@ -25,9 +25,7 @@ class Block extends React.Component {
   planHeader = (itemNumber) => {
     const {components: {Text, Icon}, style} = this.props
     return [
-      <h2 className={style.plan__title}>
-        <Text bind={`plan-title-${itemNumber}`} />
-      </h2>,
+      <Text tagName="h2" className={style.plan__title} bind={`plan-title-${itemNumber}`} />,
       this.getModifierValue('plan-icon') && (
         <div className={style['plan__icon-wrapper']}>
           <Icon bind={`plan-icon-${itemNumber}`} />
@@ -35,13 +33,9 @@ class Block extends React.Component {
       ),
       this.getModifierValue('plan-price') && (
         <p className={style.plan__price}>
-          <strong className={style['plan__price-count']}>
-            <Text bind={`plan-price-count-${itemNumber}`} />
-          </strong>
+          <Text tagName="strong" className={style['plan__price-count']} bind={`plan-price-count-${itemNumber}`} />
           {this.getModifierValue('plan-additional-info') && (
-            <span className={style['plan__price-text']}>
-              <Text bind={`plan-price-text-${itemNumber}`} />
-            </span>
+            <Text tagName="span" className={style['plan__price-text']} bind={`plan-price-text-${itemNumber}`} />
           )}
         </p>
       ),
@@ -57,16 +51,8 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          {this.getModifierValue('block-title') && (
-            <h1 className={style.title}>
-              <Text bind="title" />
-            </h1>
-          )}
-          {this.getModifierValue('subtitle') && (
-            <p className={style.subtitle}>
-              <Text bind="description" />
-            </p>
-          )}
+          {this.getModifierValue('block-title') && <Text tagName="h1" className={style.title} bind="title" />}
+          {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="description" />}
           <div className={style['plans-wrapper']}>
             <article className={style.plan}>
               {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('1')}</div>) : this.planHeader('1')}
@@ -148,54 +134,84 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.comp
 Block.defaultContent = {
   'plan-list-1': [
     {
-      id: 'f94f2f82-0727-4237-9f19-97a34f210e55',
-      text: '100 Max Connections',
+      text: {
+        content: '100 Max Connections',
+        type: 'text',
+      },
     },
     {
-      id: '51b10491-1f3f-4a36-ac3f-e295f010589a',
-      text: '3 features',
+      text: {
+        content: '3 features',
+        type: 'text',
+      },
     },
     {
-      id: '0e123e72-fccb-48d7-ba4f-5107126f7fd3',
-      text: '10 requests per month',
+      text: {
+        content: '10 requests per month',
+        type: 'text',
+      },
     },
   ],
   'plan-list-2': [
     {
-      id: '8dc2c1fe-f6ef-455d-bf2f-4ecd45772afb',
-      text: '120 Max Connections',
+      text: {
+        content: '120 Max Connections',
+        type: 'text',
+      },
     },
     {
-      id: '5adbf7f8-9c0e-4032-9d2d-297344657843',
-      text: '15 features',
+      text: {
+        content: '15 features',
+        type: 'text',
+      },
     },
     {
-      id: '5ee6b361-c602-410f-afe9-4fdc7f86c6bf',
-      text: '200 requests per month',
+      text: {
+        content: '200 requests per month',
+        type: 'text',
+      },
     },
   ],
   'plan-list-3': [
     {
-      id: '78417aad-0f0a-49ca-8c58-a50f1d837dfe',
-      text: '150 Max Connections',
+      text: {
+        content: '150 Max Connections',
+        type: 'text',
+      },
     },
     {
-      id: 'f7da9246-3adc-485e-ab25-5c792af0b036',
-      text: '30 features',
+      text: {
+        content: '30 features',
+        type: 'text',
+      },
     },
     {
-      id: 'b30486fc-e1a1-401a-b98c-ca5da7c2fffb',
-      text: 'Unlimited requests',
+      text: {
+        content: 'Unlimited requests',
+        type: 'text',
+      },
     },
   ],
   topIcon: {
     svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
-  title: 'Pricing',
-  'plan-title-1': 'Basic',
-  'plan-title-2': 'Premium',
-  'plan-title-3': 'Pro',
+  title: {
+    content: 'Pricing',
+    type: 'blockTitle',
+  },
+  'plan-title-1': {
+    content: 'Basic',
+    type: 'heading',
+  },
+  'plan-title-2': {
+    content: 'Premium',
+    type: 'heading',
+  },
+  'plan-title-3': {
+    content: 'Pro',
+    type: 'heading',
+  },
   'plan-icon-1': {
     id: '12346',
     svg:
@@ -211,13 +227,34 @@ Block.defaultContent = {
     svg:
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M506.13 221.96l-87.2-98.66a10 10 0 0 0-7.49-3.38H100.56a10 10 0 0 0-7.5 3.38l-87.2 98.66a10 10 0 0 0 .96 14.19l.06.07 241.64 272.42a10 10 0 0 0 14.96 0l241.64-272.42.06-.07a10 10 0 0 0 .95-14.19zm-112.42-82.04l-44.44 71.64-71.22-71.64h115.66zm-65.66 78.67h-144.1L256 146.1l72.05 72.49zm-94.1-78.67l-71.22 71.64-44.44-71.64h115.66zM99 146.77l44.55 71.81h-108L99 146.79zm-63.3 91.81H153.9l81.63 225.27L35.71 238.58zm241.15 224.85l57.04-154.37a10 10 0 0 0-18.76-6.94L256.09 461.9 175.16 238.6h301.13L276.85 463.43zm91.6-244.84L413 146.77l63.46 71.81h-108zM256 0a10 10 0 0 0-10 10v51.51a10 10 0 0 0 20 0V10a10 10 0 0 0-10-10zM347.06 39.52a10 10 0 0 0-14.14 0l-36.43 36.43a10 10 0 0 0 14.15 14.14l36.42-36.42a10 10 0 0 0 0-14.15zM213.56 75.95l-36.43-36.43A10 10 0 0 0 163 53.67l36.43 36.42a9.97 9.97 0 0 0 14.14 0 10 10 0 0 0 0-14.14z"/><circle cx="337.43" cy="268.36" r="10"/></svg>',
   },
-  description: '100% money back guarantee. Cancel if you are not satisfied',
-  'plan-price-text-1': 'For all period',
-  'plan-price-text-2': 'per month',
-  'plan-price-text-3': 'per month',
-  'plan-price-count-1': 'Free',
-  'plan-price-count-2': '$50',
-  'plan-price-count-3': '$100',
+  description: {
+    content: '100% money back guarantee. Cancel if you are not satisfied',
+    type: 'subtitle',
+  },
+  'plan-price-text-1': {
+    content: 'For all period',
+    type: 'caption',
+  },
+  'plan-price-text-2': {
+    content: 'per month',
+    type: 'caption',
+  },
+  'plan-price-text-3': {
+    content: 'per month',
+    type: 'caption',
+  },
+  'plan-price-count-1': {
+    content: 'Free',
+    type: 'headingLg',
+  },
+  'plan-price-count-2': {
+    content: '$50',
+    type: 'headingLg',
+  },
+  'plan-price-count-3': {
+    content: '$100',
+    type: 'headingLg',
+  },
   'plan-cta-1': {
     actionConfig: {
       action: 'link',
