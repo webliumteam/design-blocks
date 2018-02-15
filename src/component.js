@@ -14,13 +14,12 @@ class Block extends React.Component {
     return (
       <article className={classNames(style.article, className)}>
         {children}
-        <div className={style['article__picture-wrapper']}>
-          <Image
-            pictureClassName={style.article__picture}
-            imgClassName={style.article__image}
-            bind={`projects[${index}].picture`}
-          />
-        </div>
+        <Image
+          wrapperClassName={style['article__picture-wrapper']}
+          pictureClassName={style.article__picture}
+          imgClassName={style.article__image}
+          bind={`projects[${index}].picture`}
+        />
         <div className={style.article__content}>
           {_.get('project-category')(modifier) && (
             <Text bind={`projects[${index}].subtitle`} className={style.article__caption} tagName="p" />
