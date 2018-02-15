@@ -94,15 +94,10 @@
 }
 
 .logo__title {
-  font-size: calc(var(--ui-block-title-size) * 0.5);
   color: var(--ui-block-title-color);
   line-height: var(--ui-block-title-line-height);
   font-family: var(--ui-block-title-font-family);
   font-weight: var(--ui-block-title-font-weight);
-
-  @media (min-width: 768px) {
-    font-size: var(--ui-block-title-size);
-  }
 }
 
 .logo__subtitle {
