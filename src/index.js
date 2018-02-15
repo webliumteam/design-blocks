@@ -19,6 +19,10 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'paint-bg.jpg',
   },
+  'plan-list-2': [
+    ...Component.defaultContent['plan-list-2'],
+    ...Component.defaultContent['plan-list-2'],
+  ],
   'plan-cta-1': {
     ...Component.defaultContent['plan-cta-1'],
     type: 'secondary',
