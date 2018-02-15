@@ -51,7 +51,7 @@ class Block extends React.Component {
       this.getModifierValue('social')
     ) && this.getModifierValue('map')
 
-    const title = <h1 className={style.title}><Text bind="title" /></h1>
+    const title = <Text bind="title" className={style.title} tagName="h1" />
 
     return (
       <section className={classNames(style.section, {
@@ -83,37 +83,25 @@ class Block extends React.Component {
                   {this.getModifierValue('address') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-address-title') && (
-                        <h3 className={style.contacts__title}>
-                          <Text bind="address-title" />
-                        </h3>
+                        <Text bind="address-title" className={style.contacts__title} tagName="h3" />
                       )}
-                      <p className={classNames(style.contacts__desc, style['contacts__desc--adress'])}>
-                        <Text bind="address-content" />
-                      </p>
+                      <Text bind="address-content" className={classNames(style.contacts__desc, style['contacts__desc--adress'])} tagName="p" />
                     </li>
                   )}
                   {this.getModifierValue('phone') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-phone-title') && (
-                        <h3 className={style.contacts__title}>
-                          <Text bind="phone-title" />
-                        </h3>
+                        <Text bind="phone-title" className={style.contacts__title} tagName="h3" />
                       )}
-                      <p className={classNames(style.contacts__desc, style['contacts__desc--phone'])}>
-                        <Text bind="phone-link" />
-                      </p>
+                      <Text bind="phone-link" className={classNames(style.contacts__desc, style['contacts__desc--phone'])} tagName="p" />
                     </li>
                   )}
                   {this.getModifierValue('email') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-email-title') && (
-                        <h3 className={style.contacts__title}>
-                          <Text bind="email-title" />
-                        </h3>
+                        <Text bind="email-title" className={style.contacts__title} tagName="h3" />
                       )}
-                      <p className={classNames(style.contacts__desc, style['contacts__desc--email'])}>
-                        <Text bind="email-link" />
-                      </p>
+                      <Text bind="email-link" className={classNames(style.contacts__desc, style['contacts__desc--email'])} tagName="p" />
                     </li>
                   )}
                 </ul>
@@ -132,19 +120,41 @@ class Block extends React.Component {
 Block.components = _.pick(['Logo', 'Text', 'Map', 'SocialIcons', 'Icon'])($editor.components)
 
 Block.defaultContent = {
-  title: 'Contacts',
+  title: {
+    content: 'Contacts',
+    type: 'blockTitle',
+  },
   logo: {
     text: {
       value: 'Company Logo',
       tagName: 'h2',
+      fontSize: 24,
     },
   },
-  'address-title': 'Address',
-  'phone-title': 'Phone',
-  'email-title': 'E-mail',
-  'address-content': 'Head office in London - 36 Regent St.',
-  'phone-link': '<a href="tel:+1 (234) 567 89 00">+1 (234) 567 89 00</a>',
-  'email-link': '<a href="mailto:mysite@weblium.com">mysite@weblium.com</a>',
+  'address-title': {
+    content: 'Address',
+    type: 'heading',
+  },
+  'phone-title': {
+    content: 'Phone',
+    type: 'heading',
+  },
+  'email-title': {
+    content: 'E-mail',
+    type: 'heading',
+  },
+  'address-content': {
+    content: 'Head office in London - 36 Regent St.',
+    type: 'text',
+  },
+  'phone-link': {
+    content: '<a href="tel:+1 (234) 567 89 00">+1 (234) 567 89 00</a>',
+    type: 'text',
+  },
+  'email-link': {
+    content: '<a href="mailto:mysite@weblium.com">mysite@weblium.com</a>',
+    type: 'text',
+  },
   map: {
     preset: 'silver',
     height: '100%',
