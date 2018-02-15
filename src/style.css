@@ -15,9 +15,9 @@
 
 .button--primary {
   background-color: var(--ui-btn-primary-bg);
-  color: var(--ui-btn-primary-color);
-  border: var(--ui-btn-primary-border-width) var(--ui-btn-primary-border-style)
-    var(--ui-btn-primary-border-color);
+  //color: var(--ui-btn-primary-color);
+  //border: var(--ui-btn-primary-border-width) var(--ui-btn-primary-border-style)
+  //  #fff;
   box-shadow: var(--ui-btn-primary-shadow-x) var(--ui-btn-primary-shadow-y)
     var(--ui-btn-primary-shadow-blur) var(--ui-btn-primary-shadow-spread)
     var(--ui-btn-primary-shadow-color);
@@ -25,20 +25,21 @@
 
 .button--primary:hover,
 .button--primary:focus {
-  background-color: var(--ui-btn-primary-hover-bg);
-  color: var(--ui-btn-primary-hover-color);
-  border: var(--ui-btn-primary-hover-border-width) var(--ui-btn-primary-hover-border-style)
-    var(--ui-btn-primary-hover-border-color);
+  //background-color: var(--ui-btn-primary-hover-bg);
+  //color: var(--ui-btn-primary-hover-color);
+  //border: var(--ui-btn-primary-hover-border-width) var(--ui-btn-primary-hover-border-style)
+  // var(--ui-brand-color);
+
   box-shadow: var(--ui-btn-primary-hover-shadow-x) var(--ui-btn-primary-hover-shadow-y)
     var(--ui-btn-primary-hover-shadow-blur) var(--ui-btn-primary-hover-shadow-spread)
     var(--ui-btn-primary-hover-shadow-color);
 }
 
 .button--primary:active {
-  background-color: var(--ui-btn-primary-active-bg);
-  color: var(--ui-btn-primary-active-color);
-  border: var(--ui-btn-primary-active-border-width) var(--ui-btn-primary-active-border-style)
-    var(--ui-btn-primary-active-border-color);
+  ///background-color: var(--ui-btn-primary-active-bg);
+  //color: var(--ui-btn-primary-active-color);
+  //border: var(--ui-btn-primary-active-border-width) var(--ui-btn-primary-active-border-style)
+  // var(--ui-brand-color);
   box-shadow: var(--ui-btn-primary-active-shadow-x) var(--ui-btn-primary-active-shadow-y)
     var(--ui-btn-primary-active-shadow-blur) var(--ui-btn-primary-active-shadow-spread)
     var(--ui-btn-primary-active-shadow-color);
@@ -190,7 +191,6 @@
 @media (max-height: 880px) {
   .section {
     // height: auto;
-    
   }
 }
 
@@ -200,7 +200,6 @@
     //padding-bottom: 0;
   }
 }
-
 
 .section--column .article {
   flex-direction: column;
@@ -230,7 +229,6 @@
   max-width: var(--ui-content-container);
   margin: 0 auto;
   padding: var(--ui-content-gutter);
-
 }
 
 .article {
@@ -287,7 +285,6 @@
     height: auto;
   }
 }
-
 
 .article__picture img {
   position: absolute;
@@ -451,13 +448,11 @@
   text-decoration: none;
 }
 
-
-
 .header {
   position: relative;
   color: #fff;
 }
-  
+
 .nav {
   width: 100%;
   padding: 50px 0;
@@ -472,7 +467,7 @@
     padding-bottom: 60px;
   }
 }
-  
+
 .logo {
   display: inline-flex;
   align-items: center;
@@ -483,12 +478,11 @@
   font-weight: bold;
   width: 100%;
   height: 70px;
-  
+
   @media (min-width: 480px) {
     width: 330px;
   }
-  
-  
+
   svg {
     width: 330px;
     height: 70px;
@@ -496,5 +490,24 @@
     fill: currentColor;
   }
 }
-  
-  
+
+:global {
+  .dark {
+    :local {
+      .button,
+      .button--primary {
+        text-transform: uppercase;
+        background-color: transparent;
+        color: var(--ui-brand-color);
+        border-color: #fff;
+
+        &:hover,
+        &:focus {
+          color: #fff;
+          border-color: var(--ui-brand-color);
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
