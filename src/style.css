@@ -68,13 +68,6 @@
     }
   }
 
-  &__subtitle {
-    font-family: var(--ui-text-font-family);
-    font-size: var(--ui-subtitle-size);
-    font-weight: var(--ui-text-font-weight);
-    margin-bottom: 40px;
-  }
-
   &__text {
     font-family: var(--ui-text-font-family);
     font-size: var(--ui-subtitle-size);
@@ -98,8 +91,4 @@
       padding-bottom: 75px;
     }
   }
-}
-
-.button {
-  font-weight: 600;
 }
