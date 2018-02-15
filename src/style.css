@@ -3,8 +3,18 @@
 /* start here */
 
 .section {
-  padding-top: 100px;
-  padding-bottom: 180px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 110px;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 75px;
+    padding-bottom: 125px;
+  }
 }
 
 .title {
@@ -97,6 +107,8 @@
 
   &__button {
     width: calc(100% - 30px);
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     @media (min-width: 768px) {
       width: auto;
@@ -120,7 +132,12 @@
   }
 
   .plan__button {
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      margin-top: 40px;
+    }
   }
 
   @media (min-width: 768px) {
