@@ -33,11 +33,7 @@ class Block extends React.Component {
               bind={`team[${index}].more`}
             />
           )}
-          {_.get('member-email')(modifier) && (
-            <div className={style['item__email-wrapper']}>
-              <Text tagName="span" className={style.item__email} bind={`team[${index}].email`} />
-            </div>
-          )}
+          {_.get('member-email')(modifier) && <Text tagName="div" className={style.item__email} bind={`team[${index}].email`} />}
           {_.get('member-social')(modifier) && (
             <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
           )}
