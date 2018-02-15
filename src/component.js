@@ -26,8 +26,8 @@ class Block extends React.Component {
       ),
       this.getModifierValue('post-publish-date') && (
         <small className={style.article__meta}>
-          {!this.getOptionValue('hidden-category') && <Text bind={`blog[${itemNumber}].category`} className={style.article__category} /> }
-          {!this.getOptionValue('hidden-date') && <Text bind={`blog[${itemNumber}].date`} className={style.article__date} /> }
+          {!this.getOptionValue('hidden-category') && <Text tagName="span" bind={`blog[${itemNumber}].category`} className={style.article__category} /> }
+          {!this.getOptionValue('hidden-date') && <Text tagName="span" bind={`blog[${itemNumber}].date`} className={style.article__date} /> }
         </small>
       ),
     ]
@@ -39,13 +39,9 @@ class Block extends React.Component {
       <article className={classNames(style.article, className)}>
         {children}
         {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(index)}</div> : this.itemHeader(index)}
-        <h2 className={style.article__title}>
-          <Text bind={`blog[${index}].title`} />
-        </h2>
+        <Text tagName="h2" className={style.article__title} bind={`blog[${index}].title`} />
         {this.getModifierValue('post-description') && (
-          <p className={style.article__text}>
-            <Text bind={`blog[${index}].description`} />
-          </p>
+        <Text tagName="p" className={style.article__text} bind={`blog[${index}].description`} />
         )}
         {this.getModifierValue('post-link') && (
           <Button
@@ -67,14 +63,8 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <h1 className={style.title}>
-            <Text bind="title" />
-          </h1>
-          {this.getModifierValue('subtitle') && (
-            <p className={style.subtitle}>
-              <Text bind="subtitle" />
-            </p>
-          )}
+          <Text tagName="h1" className={style.title} bind="title" />
+          {this.getModifierValue('subtitle') && <Text bind="subtitle" />}
           <Collection
             className={style['articles-wrapper']}
             bind="blog"
@@ -104,12 +94,22 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon'])($ed
 Block.defaultContent = {
   blog: [
     {
-      id: '21a46d6e-0354-4a96-9af0-928ddae32095',
-      title: 'How to Hire Only Professional and Dedicated Employees? Useful Tips from Our HR Director.',
-      description:
-        'Our HR Director shares his experience how to fill positions with the best candidates, where to find talents, and how to attract professionals to your business. ',
-      category: 'Creative Process',
-      date: 'September 22, 2017',
+      title: {
+        content: 'How to Hire Only Professional and Dedicated Employees? Useful Tips from Our HR Director.',
+        type: 'heading',
+      },
+      description: {
+        content: 'Our HR Director shares his experience how to fill positions with the best candidates, where to find talents, and how to attract professionals to your business. ',
+        type: 'text',
+      },
+      category: {
+        content: 'Creative Process',
+        type: 'caption',
+      },
+      date: {
+        content: 'September 22, 2017',
+        type: 'caption',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
@@ -130,12 +130,22 @@ Block.defaultContent = {
       },
     },
     {
-      id: '41db0c4f-46b3-4835-8e77-062de63d018a',
-      title: 'How to Achieve Higher Profits in Retail with Our New Product?',
-      description:
-        'Do you want to achieve higher profits this year? Our new product will help you get what you want. In this article, you will find out how to use it to get more benefits.',
-      category: 'Creative Process',
-      date: 'September 22, 2017',
+      title: {
+        content: 'How to Achieve Higher Profits in Retail with Our New Product?',
+        type: 'heading',
+      },
+      description: {
+        content: 'Do you want to achieve higher profits this year? Our new product will help you get what you want. In this article, you will find out how to use it to get more benefits.',
+        type: 'text',
+      },
+      category: {
+        content: 'Creative Process',
+        type: 'caption',
+      },
+      date: {
+        content: 'September 22, 2017',
+        type: 'caption',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
@@ -156,12 +166,22 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'fff4b459-6e4f-4645-901e-4c1b1aa94e51',
-      title: 'Top 5 Tips to Improve Your Engineering Department.',
-      description:
-        'You engineers can bring you better results! Get to know how to improve engineering department to make a new step for your company growth. ',
-      category: 'Creative Process',
-      date: 'September 22, 2017',
+      title: {
+        content: 'Top 5 Tips to Improve Your Engineering Department.',
+        type: 'heading',
+      },
+      description: {
+        content: 'You engineers can bring you better results! Get to know how to improve engineering department to make a new step for your company growth. ',
+        type: 'text',
+      },
+      category: {
+        content: 'Creative Process',
+        type: 'caption',
+      },
+      date: {
+        content: 'September 22, 2017',
+        type: 'caption',
+      },
       picture: {
         src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
         alt: 'Article illustration photo',
@@ -186,8 +206,14 @@ Block.defaultContent = {
     svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
-  title: 'Blog',
-  subtitle: 'Subtitle here',
+  title: {
+    content: 'Blog',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Subtitle here',
+    type: 'subtitle',
+  },
   cta: {
     actionConfig: {
       action: 'link',
