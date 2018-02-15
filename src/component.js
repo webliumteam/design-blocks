@@ -32,16 +32,8 @@ class Block extends React.Component {
           </div>
           {(this.getModifierValue('text-left') || this.getModifierValue('text-right')) && (
             <section className={css.footer__bottom}>
-              {this.getModifierValue('text-left') && (
-                <small className={css.footer__meta}>
-                  <Text bind="copyright" />
-                </small>
-              )}
-              {this.getModifierValue('text-right') && (
-                <small className={css.footer__meta}>
-                  <Text bind="additional" />
-                </small>
-              )}
+              {this.getModifierValue('text-left') && <Text tagName="small" className={css.footer__meta} bind="copyright" />}
+              {this.getModifierValue('text-right') && <Text tagName="small" className={css.footer__meta} bind="additional" />}
             </section>
           )}
         </div>
@@ -55,14 +47,20 @@ Block.components = _.pick(['Text', 'Menu', 'Logo'])($editor.components)
 Block.defaultContent = {
   logo: {
     text: {
-      value: 'CompanyLogo',
+      value: 'Company Logo',
+      fontSize: 24,
     },
   },
-  copyright: 'Produced by Weblium.com.',
-  additional: 'All rights Reserved',
+  copyright: {
+    content: 'Produced by Weblium.com.',
+    type: 'caption',
+  },
+  additional: {
+    content: 'All rights Reserved',
+    type: 'caption',
+  },
   menu: [
     {
-      id: '10c06b19-6e0d-4ad1-b1d5-213501dd321c',
       metadata: {
         displayName: 'About us',
         actionConfig: {
@@ -77,7 +75,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: '29f03a3e-117d-490e-963c-ace78d85258f',
       metadata: {
         displayName: 'Services',
         actionConfig: {
@@ -92,7 +89,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: '8914ae89-ca69-4b81-8d70-68fefdb22f49',
       metadata: {
         displayName: 'Projects',
         actionConfig: {
@@ -107,7 +103,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: '2bf3b2aa-061b-42af-afd2-48301733a536',
       metadata: {
         displayName: 'Testimonials',
         actionConfig: {
@@ -122,7 +117,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'a24bbd34-4a84-451d-82bf-929f35264e2d',
       metadata: {
         displayName: 'Contact us',
         actionConfig: {
