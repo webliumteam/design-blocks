@@ -1,5 +1,21 @@
 @import "wireframe-zapdos-projects/src/style.css";
 
+.section {
+  padding: 0;
+}
+
+.section__header {
+  padding-top: 50px;
+
+  @media (min-width: 768px) {
+    padding-top: 60px;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 75px;
+  }
+}
+
 .article {
   &__title {
     line-height: var(--ui-hero-title-line-height);
@@ -13,21 +29,29 @@
 
   &__link {
     font-family: var(--ui-text-font-family);
+    width: auto;
   }
 }
 
-.button {
-  text-transform: uppercase;
+.btns-group {
+  padding-bottom: 50px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: 992px) {
+    padding-bottom: 75px;
+  }
 }
 
 @media (min-width: 768px) {
   .article {
     position: relative;
-    background: green;
     margin: 0 auto;
     overflow: visible;
     width: 100%;
-    height: 575px;
+    min-height: 575px;
 
     &__title {
       font-size: var(--ui-hero-title-size);
@@ -49,20 +73,32 @@
     }
 
     &__content {
-      position: absolute;
+      position: relative;
       z-index: 2;
-      width: 100%;
+      width: 50%;
       max-width: inherit;
-      padding-left: calc(50% + 40px);
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+      left: 50%;
       text-align: left;
-      padding-top: 175px;
+      margin-top: 175px;
+      margin-bottom: 175px;
       display: flex;
       align-items: flex-start;
     }
 
+    &:last-of-type {
+      .article__content {
+        padding-bottom: 0;
+      }
+    }
+
     &:nth-of-type(2n) .article__content {
       padding-left: 0;
-      padding-right: calc(50% + 40px);
+      padding-right: 0;
+      transform: translateX(-100%);
       text-align: right;
       align-items: flex-end;
     }
@@ -76,21 +112,27 @@
 
   .article__picture {
     padding-top: 0%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 
     &-wrapper {
       width: 100%;
-      z-index: 1;
-      position: relative;
+      height: 100%;
       max-width: 100%;
       flex-basis: 100%;
-      height: 575px;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     img {
       width: 100%;
       object-fit: cover;
       position: inherit;
-      height: 575px;
     }
   }
 
@@ -108,11 +150,14 @@
     }
 
     &__content {
-      padding-left: calc(50% + 100px);
+      padding-left: 115px;
+      padding-right: 0;
     }
 
     &:nth-of-type(2n) .article__content {
-      padding-right: calc(50% + 100px);
+      padding-left: 0;
+      padding-right: 115px;
+      transform: translateX(-100%);
     }
   }
 }
