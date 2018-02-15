@@ -1,3 +1,6 @@
 {
-  "showSubtitle": true
+  "showSubtitle": true,
+  "toogle-item-controls": true,
+  "different-icons": false,
+  "open-icon": "<svg xmlns='http://www.w3.org/2000/svg' width='54' height='54' viewBox='0 0 54 54'><path fill='currentColor' d='M25 0v25H0v4h25v25h4V29h25v-4H29V0h-4z'/></svg>"
 }

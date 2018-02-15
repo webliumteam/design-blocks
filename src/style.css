@@ -1,3 +1,39 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-faq/src/style.css";
 
 /* start here */
+
+.title {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  max-width: 570px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  color: var(--ui-text-color);
+}
+
+.item {
+  max-width: 810px;
+  margin: auto;
+  padding: 20px 0;
+  border-bottom: 1px solid #f3f3f3;
+
+  &__title {
+    padding-right: 70px;
+    border-bottom: 0;
+  }
+
+  &__icon {
+    transition: none;
+    width: auto;
+    height: auto;
+    color: var(--ui-brand-color);
+  }
+
+  &--active .item__icon {
+    transform: translateY(-50%) rotate(-45deg);
+    color: var(--ui-dark-shade-color);
+  }
+}
