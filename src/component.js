@@ -17,14 +17,8 @@ class Block extends React.Component {
     return (
       <article className={style.item}>
         <div className={style.item__inner}>
-          <h2 className={style.item__title}>
-            <Text bind={`cover[${index}].title`} />
-          </h2>
-          {_.get('subtitle')(modifier) && (
-            <p className={style.subtitle}>
-              <Text bind={`cover[${index}].subtitle`} />
-            </p>
-          )}
+          <Text tagName="h2" className={style.item__title} bind={`cover[${index}].title`} />
+          {_.get('subtitle')(modifier) && <Text tagName="p" className={style.subtitle} bind={`cover[${index}].subtitle`} />}
           {_.get('primary-button')(modifier) && (
             <div className={style['btns-group']}>
               <Button
@@ -85,8 +79,14 @@ Block.defaultContent = {
   },
   cover: [
     {
-      title: 'Quantum Company',
-      subtitle: 'We implement Innovative Projects',
+      title: {
+        content: 'Quantum Company',
+        type: 'heroTitle',
+      },
+      subtitle: {
+        content: 'We implement Innovative Projects',
+        type: 'subtitle',
+      },
       cta: {
         actionConfig: {
           action: 'link',
@@ -101,11 +101,16 @@ Block.defaultContent = {
         textValue: 'Request a quote',
         type: 'primary',
       },
-      id: 'c4e3de5f-776a-405b-a034-dc2307069714',
     },
     {
-      title: 'Quantum Company',
-      subtitle: 'We implement Innovative Projects',
+      title: {
+        content: 'Quantum Company',
+        type: 'heroTitle',
+      },
+      subtitle: {
+        content: 'We implement Innovative Projects',
+        type: 'subtitle',
+      },
       cta: {
         actionConfig: {
           action: 'link',
@@ -120,11 +125,16 @@ Block.defaultContent = {
         textValue: 'Request a quote',
         type: 'primary',
       },
-      id: '73263c9a-8d0e-41dc-85e1-66c6db9ea9d3',
     },
     {
-      title: 'Quantum Company',
-      subtitle: 'We implement Innovative Projects',
+      title: {
+        content: 'Quantum Company',
+        type: 'heroTitle',
+      },
+      subtitle: {
+        content: 'We implement Innovative Projects',
+        type: 'subtitle',
+      },
       cta: {
         actionConfig: {
           action: 'link',
@@ -139,7 +149,6 @@ Block.defaultContent = {
         textValue: 'Request a quote',
         type: 'primary',
       },
-      id: 'b5f64fb3-d94e-4ecf-b7ff-a4a5700a2457',
     },
   ],
 }
