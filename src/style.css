@@ -11,7 +11,7 @@
 
   &__top-element {
     display: block;
-    max-width: 95px;
+    max-width: 75px;
     margin-bottom: 35px;
     position: relative;
     color: var(--ui-brand-color);
