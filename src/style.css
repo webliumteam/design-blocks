@@ -24,7 +24,7 @@
 .section__header {
   padding: 40px 20px 0;
   margin-bottom: 25px;
-  
+
   &:empty {
     margin-bottom: 0;
   }
@@ -98,20 +98,11 @@
 
 .title {
   margin-bottom: 15px;
-  font-family: var(--ui-block-title-font-family);
-  font-size: var(--ui-block-title-size);
-  color: var(--ui-block-title-color);
-  line-height: var(--ui-block-title-line-height);
-  font-weight: var(--ui-block-title-font-weight);
 }
 
 .subtitle {
   margin-bottom: 10px;
-  font-family: var(--ui-subtitle-font-family);
   font-size: calc(var(--ui-subtitle-size) * .8);
-  color: var(--ui-subtitle-color);
-  line-height: var(--ui-subtitle-line-height);
-  font-weight: var(--ui-subtitle-font-weight);
 }
 
 .message {

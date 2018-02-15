@@ -15,16 +15,8 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <header className={style.section__header}>
-            {this.getModifierValue('title') && (
-              <h1 className={style.title}>
-                <Text bind="title" />
-              </h1>
-            )}
-            {this.getModifierValue('subtitle') && (
-              <p className={style.subtitle}>
-                <Text bind="subtitle" />
-              </p>
-            )}
+            {this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
           </header>
           <ContactForm
             bind="contactForm"
@@ -46,8 +38,14 @@ Block.defaultContent = {
     type: 'color',
     color: '#d8d8d8',
   },
-  title: 'Want to increase profits?',
-  subtitle: 'Complete the form below and receive a full analysis of your business within 2 days!',
+  title: {
+    content: 'Want to increase profits?',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Complete the form below and receive a full analysis of your business within 2 days!',
+    type: 'subtitle',
+  },
   contactForm: {
     fields: [
       {
@@ -85,6 +83,5 @@ Block.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
 }
-
 
 export default Block
