@@ -59,6 +59,7 @@
     font-weight: var(--ui-heading-font-weight);
     margin-right: 8px;
     text-transform: uppercase;
+    color: var(--ui-light-shade-color);
   }
 
   &__list {
@@ -98,16 +99,17 @@
   &__price {
     order: 1;
     margin-bottom: 10px;
+  }
 
-    span {
-      color: var(--ui-light-shade-color);
-    }
+  &__price-count,
+  &__price-text {
+    color: var(--ui-light-shade-color);
+  }
 
-    > span {
-      &::before {
-        content: "/";
-        margin-right: 3px;
-      }
+  &__price-text {
+    &::before {
+      content: "/";
+      margin-right: 3px;
     }
   }
 

@@ -19,9 +19,27 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'paint-bg.jpg',
   },
+  'plan-list-1': [
+    ...Component.defaultContent['plan-list-1'],
+    {
+      text: {
+        content: '100 Max Connections',
+        type: 'text',
+      },
+    },
+  ],
   'plan-list-2': [
     ...Component.defaultContent['plan-list-2'],
     ...Component.defaultContent['plan-list-2'],
+  ],
+  'plan-list-3': [
+    ...Component.defaultContent['plan-list-3'],
+    {
+      text: {
+        content: '150 Max Connections',
+        type: 'text',
+      },
+    },
   ],
   'plan-cta-1': {
     ...Component.defaultContent['plan-cta-1'],
