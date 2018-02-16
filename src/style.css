@@ -18,7 +18,7 @@
 }
 
 .items-wrapper {
-  margin-top: 70px;
+  margin-top: 60px;
 }
 
 .item {
@@ -41,8 +41,7 @@
       width: 30px;
       height: 3px;
       background-color: var(--ui-brand-color);
-      left: calc(50% - 15px);
-      
+      left: calc(50% - 15px); 
     }
   }
 }
