@@ -29,7 +29,7 @@ ExtendedWireframe.defaultContent = {
   },
   cta: {
     ...Component.defaultContent.cta,
-    type: 'secondary',
+    type: 'secondary-alt',
   },
 }
 
