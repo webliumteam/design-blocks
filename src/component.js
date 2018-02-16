@@ -104,7 +104,7 @@ Block.defaultContent = {
   },
   subtitle: {
     content: 'We provide a wide range of services to meet even the most daring requirements. ',
-    type: 'subtitlte',
+    type: 'subtitle',
   },
   text: {
     content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
