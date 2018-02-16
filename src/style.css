@@ -62,4 +62,5 @@
 
 .subtitle {
   opacity: 0.5;
+  font-size: var(--ui-subtitle-size);
 }
