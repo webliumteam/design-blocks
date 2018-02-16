@@ -18,6 +18,10 @@ ExtendedWireframe.defaultContent = {
       fontSize: 25,
     },
   },
+  map: {
+    ...Component.defaultContent.map,
+    preset: 'default',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
