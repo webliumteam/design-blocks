@@ -1,13 +1,35 @@
 @import "wireframe-zapdos-footer/src/style.css";
 
 /* start here */
+.section {
+  .logo {
+    &__title {
+      font-size: var(--ui-heading-size);
+      line-height: var(--ui-heading-line-height);
+      font-family: var(--ui-caption-font-family);
+      font-weight: 700;
+    }
+  }
 
-.logo {
-  &__title {
-    font-size: var(--ui-heading-size);
-    line-height: var(--ui-heading-line-height);
-    font-family: var(--ui-caption-font-family);
-    font-weight: 700;
+  .nav-list__link {
+    font-size: var(--ui-small-size);
+    font-family: var(--ui-small-font-family);
+    font-weight: var(--ui-small-font-weight);
+    text-transform: uppercase;
+
+    &:hover {
+      border-bottom: 1px solid var(--ui-text-color);
+      color: var(--ui-text-color);
+    }
+  }
+
+  .footer {
+    &__meta {
+      font-size: var(--ui-caption-size);
+      font-family: var(--ui-caption-font-family);
+      font-weight: var(---ui-caption-font-weight);
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -19,31 +41,18 @@
   margin-top: -10px;
 
   &__link {
-    font-size: var(--ui-small-size);
-    font-family: var(--ui-small-font-family);
-    font-weight: var(--ui-small-font-weight);
-    text-transform: uppercase;
     opacity: 0.8;
     transition: all 0.3s;
     padding-bottom: 1px;
     border-bottom: 1px solid transparent;
 
     &:hover {
-      border-bottom: 1px solid var(--ui-text-color);
-      color: var(--ui-text-color);
       opacity: 1;
     }
   }
 }
 
 .footer {
-  &__meta {
-    font-size: var(--ui-caption-size);
-    font-family: var(--ui-caption-font-family);
-    font-weight: var(---ui-caption-font-weight);
-    text-transform: uppercase;
-  }
-
   &__bottom {
     position: relative;
     margin-top: 24px;
