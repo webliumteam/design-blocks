@@ -11,7 +11,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-
   articles: [
     {
       id: 'f822d787-b3e2-432d-a03e-689c58efb302',
@@ -48,7 +47,6 @@ ExtendedWireframe.defaultContent = {
         fill: 'brand-color',
       },
     },
-
     {
       id: '7986b4e0-751f-48f6-8861-5ace080e284b',
       title: {
@@ -84,7 +82,6 @@ ExtendedWireframe.defaultContent = {
     textValue: 'Main button (M)',
     type: 'primary',
   },
-
 }
 
 ExtendedWireframe.modifierScheme = {
