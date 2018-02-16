@@ -21,7 +21,7 @@
     font-weight: var(--ui-hero-title-font-weight);
 
     @media (min-width: 992px) {
-      margin-bottom: 0;
+      font-size: var(--ui-hero-title-size);
     }
   }
 
@@ -31,10 +31,6 @@
     font-family: var(--ui-subtitle-font-family);
     font-weight: var(--ui-subtitle-font-weight);
   }
-
-  @media (min-width: 992px) {
-    font-size: var(--ui-hero-title-size);
-  }
 }
 
 @media (min-width: 992px) {
@@ -43,6 +39,7 @@
     max-width: 50%;
     text-align: right;
     padding-right: 35px;
+    margin-bottom: 0;
 
     &:only-child {
       flex-basis: 100%;
