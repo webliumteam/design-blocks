@@ -1,3 +1,58 @@
 @import "wireframe-series-1-partners/src/style.css";
 
 /* start here */
+.title {
+  font-size: var(--ui-block-title-size);
+  font-weight: var(--ui-block-title-font-weight);
+}
+
+.subtitle {
+  margin-top: 50px;
+}
+
+.item {
+  border: 0;
+
+  &__desc {
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    font-size: var(--ui-text-size);
+  }
+
+  &__title {
+    position: absolute;
+    text-align: left;
+    left: 0;
+    font-size: var(--ui-heading-size);
+
+    @media (min-width: 768px) {
+      left: 133px;
+      text-align: left;
+      width: 230px;
+    }
+
+    @media (min-width: 992px) {
+      left: 215px;
+    }
+  }
+
+  &__pictute {
+    margin-right: 60px;
+  }
+
+  &__picture-wrapper {
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 30px;
+      background-color: var(--ui-brand-color);
+      position: absolute;
+      bottom: -25px;
+      left: calc(50% - 15px);
+    }
+  }
+}
