@@ -52,7 +52,7 @@
 .item__title {
   padding: 5px 35px 10px 10px;
   font-size: calc(var(--ui-heading-size) * 0.6667);
-  border-bottom: 1px solid var(--ui-border-color);
+  border-bottom: 1px solid #979797;
   cursor: pointer;
 }
 
