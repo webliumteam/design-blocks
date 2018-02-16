@@ -17,6 +17,10 @@ ExtendedWireframe.defaultContent = {
       alt: 'Company logo',
     },
   },
+  map: {
+    ...Component.defaultContent.map,
+    preset: 'default',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {

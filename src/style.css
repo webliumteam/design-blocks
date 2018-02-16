@@ -29,9 +29,10 @@
 }
 
 .section {
-  padding: 0;
 
   @media (min-width: 768px) {
+    padding: 0;
+
     &__inner {
       padding-right: 0;
       max-width: 100%;
@@ -48,6 +49,9 @@
 
 .logo {
   background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  justify-content: flex-start;
 }
 
 .contacts {
