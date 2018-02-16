@@ -1,13 +1,34 @@
 @import "wireframe-zapdos-footer/src/style.css";
 
 /* start here */
+.footer {
+  .logo {
+    &__title {
+      line-height: var(--ui-heading-line-height);
+      font-family: var(--ui-caption-font-family);
+      font-weight: 700;
+    }
+  }
 
-.logo {
-  &__title {
-    font-size: var(--ui-heading-size);
-    line-height: var(--ui-heading-line-height);
-    font-family: var(--ui-caption-font-family);
-    font-weight: 700;
+  .nav-list__link {
+    font-size: var(--ui-small-size);
+    font-family: var(--ui-small-font-family);
+    font-weight: var(--ui-small-font-weight);
+    text-transform: uppercase;
+
+    &:hover {
+      border-bottom: 1px solid var(--ui-text-color);
+      color: var(--ui-text-color);
+    }
+  }
+
+  .footer {
+    &__meta {
+      font-size: var(--ui-caption-size);
+      font-family: var(--ui-caption-font-family);
+      font-weight: var(---ui-caption-font-weight);
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -19,45 +40,30 @@
   margin-top: -10px;
 
   &__link {
-    font-size: var(--ui-small-size);
-    font-family: var(--ui-small-font-family);
-    font-weight: var(--ui-small-font-weight);
-    text-transform: uppercase;
     opacity: 0.8;
     transition: all 0.3s;
     padding-bottom: 1px;
     border-bottom: 1px solid transparent;
 
     &:hover {
-      border-bottom: 1px solid var(--ui-text-color);
-      color: var(--ui-text-color);
       opacity: 1;
     }
   }
 }
 
-.footer {
-  &__meta {
-    font-size: var(--ui-caption-size);
-    font-family: var(--ui-caption-font-family);
-    font-weight: var(---ui-caption-font-weight);
-    text-transform: uppercase;
-  }
+.footer__bottom {
+  position: relative;
+  margin-top: 24px;
+  padding: 28px 0 22px;
 
-  &__bottom {
-    position: relative;
-    margin-top: 24px;
-    padding: 28px 0 22px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: var(--ui-light-shade-color);
-      opacity: 0.6;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--ui-light-shade-color);
+    opacity: 0.6;
   }
 }
