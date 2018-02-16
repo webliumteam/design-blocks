@@ -1,10 +1,9 @@
 @import "wireframe-zapdos-footer/src/style.css";
 
 /* start here */
-.section {
+.footer {
   .logo {
     &__title {
-      font-size: var(--ui-heading-size);
       line-height: var(--ui-heading-line-height);
       font-family: var(--ui-caption-font-family);
       font-weight: 700;
@@ -52,21 +51,19 @@
   }
 }
 
-.footer {
-  &__bottom {
-    position: relative;
-    margin-top: 24px;
-    padding: 28px 0 22px;
+.footer__bottom {
+  position: relative;
+  margin-top: 24px;
+  padding: 28px 0 22px;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background-color: var(--ui-light-shade-color);
-      opacity: 0.6;
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--ui-light-shade-color);
+    opacity: 0.6;
   }
 }
