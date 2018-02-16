@@ -70,6 +70,10 @@
       text-decoration: none;
       text-transform: uppercase;
       padding-left: 7px;
+
+      &:hover {
+        color: var(--ui-light-shade-color);
+      }
     }
 
     &__content {
