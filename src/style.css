@@ -28,7 +28,7 @@
   &__desc {
     font-size: var(--ui-text-size);
     line-height: var(--ui-text-line-height);
-    font-family: var(--ui-text-line-family);
+    font-family: var(--ui-text-font-family);
     font-weight: var(--ui-text-font-weight);
   }
 }
