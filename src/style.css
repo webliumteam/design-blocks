@@ -2,6 +2,18 @@
 
 /* start here */
 
+.section {
+  padding-bottom: 0;
+
+  @media (min-width: 768px) {
+    padding-bottom: 10px;
+  }
+
+  @media (min-width: 992px) {
+    padding-bottom: 25px;
+  }
+}
+
 .title {
   margin-bottom: 45px;
 }
