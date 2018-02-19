@@ -14,8 +14,12 @@
   border: 0;
 
   &__content {
-    max-width: 75%;
+    max-width: 100%;
 
+    @media (min-width: 768px) {
+      max-width: 80%;
+    }
+    
     @media (min-width: 992px) {
       max-width: calc(100% - (90px + 165px + 30px + 30px));
     }
