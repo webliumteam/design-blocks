@@ -29,7 +29,7 @@ export const people = [
   },
   {
     title: 'Євгенія Закревська',
-    link: 'https://www.facebook.com/dima.sherembey',
+    link: 'https://www.facebook.com/eugeniyazz',
   },
   {
     title: 'Євген Шевченко',
