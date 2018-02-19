@@ -76,7 +76,13 @@ class Block extends React.Component {
                 {this.getOptionValue('title-in-contacts') && title}
                 {this.getModifierValue('logo') && (
                   <div className={style['logo-wrapper']}>
-                    <Logo bind="logo" className={style.logo} textClassName={style.logo__title} />
+                    <Logo
+                      bind="logo"
+                      className={style.logo}
+                      textClassName={style.logo__title}
+                      maxWidth={this.getOptionValue('logo-max-width')}
+                      maxHeight={this.getOptionValue('logo-max-height')}
+                    />
                   </div>
                 )}
                 <ul className={style['contacts-list']}>
