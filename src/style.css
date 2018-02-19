@@ -25,6 +25,8 @@
       top: 0;
       left: 0;
       padding-bottom: 0;
+      z-index: 99999;
+      background-color: var(--ui-light-shade-color);
       flex-direction: column;
 
       .nav {
