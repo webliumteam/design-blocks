@@ -40,7 +40,8 @@ class Block extends React.Component {
 
     return (
       <footer
-        className={classNames(css.footer, this.getModifierValue('fixed') && css['footer--fixed'],
+        className={classNames(
+css.footer, this.getModifierValue('fixed') && css['footer--fixed'],
         this.getModifierValue('home') && css['footer--home'],
       )}
       >
@@ -141,6 +142,21 @@ Block.defaultContent = {
   additional: 'Demo preview for {Template name} {Concept name}',
   menu: [
     {
+      id: '10c06b19-6e0d-4ad1-b1d5-213501dd329c',
+      metadata: {
+        displayName: 'Наголовну',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
       id: '10c06b19-6e0d-4ad1-b1d5-213501dd321c',
       metadata: {
         displayName: '«Додаток до декларації»',
@@ -159,6 +175,21 @@ Block.defaultContent = {
       id: '29f03a3e-117d-490e-963c-ace78d85258f',
       metadata: {
         displayName: 'Ініціативна група',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: '29f03a3e-117d-490e-963c-ace78d85228f',
+      metadata: {
+        displayName: 'Долучилися',
         actionConfig: {
           action: 'page',
           target: '_self',
