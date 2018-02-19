@@ -59,18 +59,20 @@ class Block extends React.Component {
           <span className={css['nav-button__line']} />
           <span className={css['nav-button__line']} />
         </button>
-        <nav className={css.nav}>
-          <Menu
-            className={css.nav__list}
-            itemClassName={css.nav__item}
-            linkClassName={css.nav__link}
-            bind="menu"
-          />
-          <div className={css['nav__body-wrapper']}>
-            {this.getModifierValue('company-slogan') && <Text tagName="div" className={css.nav__slogan} bind="slogan" />}
-            {this.getModifierValue('company-mail') && <Text tagName="div" className={css.nav__email} bind="email" />}
+        <div className={css.header__inner}>
+          <div className={css['header__company-info']}>
+            {this.getModifierValue('company-slogan') && <Text tagName="div" className={css.header__slogan} bind="slogan" />}
+            {this.getModifierValue('company-contacts') && <Text tagName="div" className={css.header__email} bind="email" />}
           </div>
-        </nav>
+          <nav className={css.nav}>
+            <Menu
+              className={css.nav__list}
+              itemClassName={css.nav__item}
+              linkClassName={css.nav__link}
+              bind="menu"
+            />
+          </nav>
+        </div>
       </header>
     )
   }
@@ -223,7 +225,7 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   'company-slogan': {defaultValue: true, label: 'Company slogan', type: 'checkbox'},
-  'company-mail': {defaultValue: true, label: 'Company mail', type: 'checkbox'},
+  'company-contacts': {defaultValue: true, label: 'Contact information', type: 'checkbox'},
 }
 
 export default Block
