@@ -46,9 +46,8 @@
       }
 
       .header__company-info {
-        display: flex;
+        display: block;
         position: relative;
-        flex-direction: column;
         order: 1;
       }
 
