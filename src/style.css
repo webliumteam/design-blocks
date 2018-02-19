@@ -8,8 +8,7 @@
   word-wrap: break-word;
 
   @media (min-width: 992px) {
-    padding-top: 40px;
-    padding-bottom: 35px;
+    padding: 40px 20px 35px;
   }
 
   @media (min-width: 992px) {
@@ -18,50 +17,53 @@
   }
 
   &--nav-open {
-    display: flex;
-    position: fixed;
-    height: 100%;
-    top: 0;
-    left: 0;
-    padding-bottom: 0;
-    flex-direction: column;
 
-    .nav {
-      display: block;
-      flex: 1;
-
-      &__item {
-        line-height: 25px;
-      }
-    }
-
-    .logo {
-      display: block;
-    }
-
-    .header__inner {
-      flex-direction: column;
-      overflow-y: auto;
-    }
-
-    .header__company-info {
+    @media (max-width: 991px) {
       display: flex;
-      position: relative;
+      position: fixed;
+      height: 100%;
+      top: 0;
+      left: 0;
+      padding-bottom: 0;
       flex-direction: column;
-      order: 1;
-    }
 
-    .nav-button__line {
-      &:first-child {
-        transform: translateY(6px) rotate(45deg);
+      .nav {
+        display: block;
+        flex: 1;
+
+        &__item {
+          line-height: 25px;
+        }
       }
 
-      &:nth-child(2) {
-        opacity: 0;
+      .logo {
+        display: block;
       }
 
-      &:last-child {
-        transform: translateY(-6px) rotate(-45deg);
+      .header__inner {
+        flex-direction: column;
+        overflow-y: auto;
+      }
+
+      .header__company-info {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        order: 1;
+      }
+
+      .nav-button__line {
+        &:first-child {
+          transform: translateY(6px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:last-child {
+          transform: translateY(-6px) rotate(-45deg);
+        }
       }
     }
   }
@@ -69,7 +71,7 @@
   &__company-info {
     display: none;
     position: relative;
-    min-height: 30px;
+    min-height: 20px;
     justify-content: space-between;
 
     @media (min-width: 992px) {
@@ -96,7 +98,7 @@
     @media (min-width: 992px) {
       position: relative;
       max-width: 270px;
-      top: -50px;
+      top: -30px;
       left: 10px;
       margin-bottom: 0;
     }
@@ -120,7 +122,7 @@
     @media (min-width: 992px) {
       position: relative;
       max-width: 270px;
-      top: -50px;
+      top: -30px;
       right: 10px;
       margin-bottom: 0;
     }
