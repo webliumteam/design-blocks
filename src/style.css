@@ -30,8 +30,12 @@
   }
 }
 
-@media (min-width: 768px) {
-  .plans-wrapper {
+.plans-wrapper {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (min-width: 768px) {
     margin-top: 110px;
   }
 }
@@ -42,6 +46,10 @@
   flex-direction: column;
   padding: 45px 0 10px;
   background-color: var(--ui-block-title-color);
+}
+
+.price-wrapper + .button {
+  margin-top: 40px;
 }
 
 .plan {
