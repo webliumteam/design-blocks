@@ -90,6 +90,7 @@ Block.defaultContent = {
     text: {
       value: 'Quantum Company',
       tagName: 'h2',
+      fontSize: 40,
     },
   },
   slogan: {

@@ -288,9 +288,5 @@
     font-weight: var(--ui-block-title-font-weight);
     color: var(--ui-block-title-color);
     font-family: var(--ui-block-title-font-family);
-
-    @media (min-width: 992px) {
-      font-size: calc(var(--ui-block-title-size) * 1.25);
-    }
   }
 }
