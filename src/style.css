@@ -50,6 +50,7 @@
       .header__company-info {
         display: block;
         position: relative;
+        min-height: auto;
         order: 1;
       }
 

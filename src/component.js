@@ -81,10 +81,6 @@ class Block extends React.Component {
 
 Block.components = _.pick(['Text', 'Logo', 'Menu', 'Button'])($editor.components)
 
-Block.options = {
-  invert: true,
-}
-
 Block.defaultContent = {
   logo: {
     text: {
