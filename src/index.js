@@ -13,7 +13,6 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   articles: [
     {
-      id: 'f822d787-b3e2-432d-a03e-689c58efb302',
       title: {
         content: 'R&D Leader in Tech (2017)',
         type: 'heading',
@@ -24,7 +23,6 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      id: '18ce5632-46d1-4c9e-b249-ca0e37f665c2',
       title: {
         content: 'Most Innovative B2B Solutions (2016)',
         type: 'heading',
@@ -36,7 +34,6 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      id: '7986b4e0-751f-48f6-8861-5ace080e284b',
       title: {
         content: 'Best Customer-Focused Approach on the World Conference (2014)',
         type: 'heading',
@@ -48,7 +45,6 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      id: '7986b4e0-751f-48f6-8861-5ace080e284b',
       title: {
         content: 'Leader of Innovation (2012) ',
         type: 'heading',
@@ -69,17 +65,7 @@ ExtendedWireframe.defaultContent = {
     type: 'subtitle',
   },
   'button-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Main button (M)',
+    ...Component.defaultContent['button-1'],
     type: 'primary',
   },
 }
@@ -88,7 +74,7 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
   'button-primary': {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'item-description': {defaultValue: false, label: 'Advantages description', type: 'checkbox'},
+  'item-description': {defaultValue: false, label: 'Advantages description', type: 'hidden'},
 }
 
 export default ExtendedWireframe
