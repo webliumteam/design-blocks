@@ -2,5 +2,7 @@
     "title-in-contacts": false,
     "hidden-address-title": false,
     "hidden-phone-title": false,
-    "hidden-email-title": false
+    "hidden-email-title": false,
+    "logo-max-width": 240,
+    "logo-max-height": 120
 }
