@@ -69,6 +69,7 @@ class Block extends React.Component {
               className={css.nav__list}
               itemClassName={css.nav__item}
               linkClassName={css.nav__link}
+              onClickItem={this.closeMenu}
               bind="menu"
             />
           </nav>
