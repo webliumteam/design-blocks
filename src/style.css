@@ -137,7 +137,8 @@
   .item {
     &__title {
       &::after {
-        bottom: 55px;
+        bottom: auto;
+        top: -25px;
       }
     }
   }
