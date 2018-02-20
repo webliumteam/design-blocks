@@ -134,8 +134,8 @@
   display: flex;
 
   @media (min-width: 992px) {
-    display: block;
     position: static;
+    flex-direction: column;
   }
 }
 
