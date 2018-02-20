@@ -17,12 +17,14 @@ class Block extends React.Component {
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        <Image
-          wrapperClassName={style['item__picture-wrapper']}
-          pictureClassName={style.item__picture}
-          imgClassName={style.item__image}
-          bind={`projects[${index}].picture`}
-        />
+        <div className={style.item__inner}>
+          <Image
+            wrapperClassName={style['item__picture-wrapper']}
+            pictureClassName={style.item__picture}
+            imgClassName={style.item__image}
+            bind={`projects[${index}].picture`}
+          />
+        </div>
       </div>
     )
   }
