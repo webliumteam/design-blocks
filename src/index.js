@@ -15,10 +15,10 @@ ExtendedWireframe.defaultContent = {
   background: {
     type: 'image',
     position: {
-      type: 'cover',
+      type: 'tile',
       cover: '50% 50%',
     },
-    resourceRef: 'bg.png',
+    resourceRef: 'bg.jpg',
   },
   testimonials: [
     {
