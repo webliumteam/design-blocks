@@ -39,6 +39,7 @@
   &__time {
     margin-top: 35px;
     color: var(--ui-text-color);
+    font-size: calc(var(--ui-caption-size)*1.14);
   }
 
   &__position {
