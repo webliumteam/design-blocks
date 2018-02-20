@@ -3,7 +3,6 @@
 /* start here */
 .section {
   position: relative;
-  z-index: 99;
 
   &::after {
     content: "";
