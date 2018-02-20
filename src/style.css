@@ -103,13 +103,13 @@
   left: 0;
 }
 
-.article:only-child {
+.article:first-child:nth-last-of-type {
   max-width: none;
   flex-basis: 100%;
 }
 
 @media (min-width: 992px) {
-  .article:only-child {
+  .article:first-child:nth-last-of-type {
     padding-left: 200px;
     padding-right: 200px;
   }
@@ -124,6 +124,7 @@
 .article__content {
   position: relative;
   text-align: center;
+  z-index: 1;
 }
 
 .article__title {
