@@ -36,16 +36,14 @@ class Block extends React.Component {
               )}
             </div>
           )}
-          {this.getModifierValue('menu') && (
-            <nav className={classNames(css.footer__part, css['footer__part--center'])}>
-              <Menu
-                className={css['nav-list']}
-                itemClassName={css['nav-list__item']}
-                linkClassName={css['nav-list__link']}
-                bind="menu"
-              />
-            </nav>
-          )}
+          <nav className={classNames(css.footer__part, css['footer__part--center'])}>
+            <Menu
+              className={css['nav-list']}
+              itemClassName={css['nav-list__item']}
+              linkClassName={css['nav-list__link']}
+              bind="menu"
+            />
+          </nav>
           {this.getModifierValue('social') && (
             <div className={classNames(css.footer__part, css['footer__part--last'])}>
               <div className={css.socials}>
@@ -311,7 +309,6 @@ Block.defaultContent = {
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
   description: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  menu: {defaultValue: true, label: 'Navigation', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social media Icons', type: 'checkbox'},
 }
 
