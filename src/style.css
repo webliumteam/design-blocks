@@ -8,7 +8,6 @@
   &__bottom {
     position: relative;
     margin-top: 38px;
-    border-top: 1px solid var(--ui-border-color);
     opacity: 0.5;
     padding: 84px 0 46px;
 
@@ -26,6 +25,12 @@
 
   &__meta {
     color: var(--ui-text-color);
+    width: 50%;
+    text-align: left;
+
+    &:last-of-type {
+      text-align: right;
+    }
   }
 }
 
