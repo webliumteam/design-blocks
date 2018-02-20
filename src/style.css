@@ -62,6 +62,7 @@
   .footer__part--center:first-child {
     max-width: 100%;
     flex: 100%;
+    padding-left: 0;
   }
 }
 

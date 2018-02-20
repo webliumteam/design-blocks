@@ -14,23 +14,28 @@ class Block extends React.Component {
 
   render() {
     const {components: {Text, Menu, Logo, SocialIcons}, style: css} = this.props
+    const withoutLeftPart = this.getModifierValue('title') || this.getModifierValue('description')
 
     return (
       <footer className={css.footer}>
         <div className={css.footer__inner}>
-          <div className={css.footer__part}>
-            {this.getModifierValue('title') && (
-              <div className={css.logo}>
-                <Logo
-                  bind="logo"
-                  textClassName={css.logo__title}
-                />
-              </div>
-            )}
-            {this.getModifierValue('description') && (
-              <Text tagName="p" className={css.footer__text} bind="description" />
-            )}
-          </div>
+          {withoutLeftPart && (
+            <div className={css.footer__part}>
+              {this.getModifierValue('title') && (
+                <div className={css.logo}>
+                  <Logo
+                    bind="logo"
+                    maxWidth={this.getOptionValue('logo-max-width')}
+                    maxHeight={this.getOptionValue('logo-max-height')}
+                    textClassName={css.logo__title}
+                  />
+                </div>
+              )}
+              {this.getModifierValue('description') && (
+                <Text tagName="p" className={css.footer__text} bind="description" />
+              )}
+            </div>
+          )}
           {this.getModifierValue('menu') && (
             <nav className={classNames(css.footer__part, css['footer__part--center'])}>
               <Menu
