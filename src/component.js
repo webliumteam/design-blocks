@@ -266,19 +266,24 @@ Block.defaultContent = {
         url: 'http://facebook.com/',
       },
       {
+        id: 'twitter',
+        name: 'Twitter',
+        url: 'http://twitter.com/',
+      },
+      {
         id: 'instagram',
         name: 'Instagram',
         url: 'http://instagram.com/',
       },
       {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
+        id: 'linkedin',
+        name: 'LinkedIn',
+        url: 'http://linkedin.com/',
       },
     ],
     target: '_blank',
     design: {
-      border: 'circle',
+      border: 'softRect',
       innerFill: true,
       preset: 'preset001',
       offset: 15,
@@ -289,11 +294,11 @@ Block.defaultContent = {
   },
   copyright: {
     type: 'caption',
-    content: 'Produced by Weblium.com. All rights Reserved',
+    content: 'Produced by Weblium.com.',
   },
   additional: {
     type: 'caption',
-    content: 'Demo preview for {Template name} {Concept name}',
+    content: 'All rights Reserved',
   },
 }
 
