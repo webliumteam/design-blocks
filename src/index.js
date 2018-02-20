@@ -24,20 +24,15 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'careers-bg.jpg',
   },
   'button-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Learn more',
+    ...Component.defaultContent['button-1'],
     type: 'secondary-alt',
-    size: 'md',
   },
 }
+
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  icon: {defaultValue: false, label: 'Careers icon', type: 'hidden'},
+}
+
 
 export default ExtendedWireframe
