@@ -70,6 +70,7 @@
   .footer__part--center:first-child {
     max-width: 75%;
     flex: 75%;
+    padding-left: 0;
   }
 }
 
