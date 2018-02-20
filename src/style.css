@@ -1,3 +1,95 @@
 @import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
+
+.title {
+  position: relative;
+  margin-bottom: 50px;
+  font-size: calc(var(--ui-block-title-size)/1.2);
+
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 45px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--ui-brand-color);
+  }
+
+  @media (min-width: 768px) {
+    font-size: var(--ui-block-title-size);
+  }
+}
+
+.subtitle {
+  max-width: 570px;
+  margin-bottom: 15px;
+  font-family: var(--ui-text-font-family);
+}
+
+.item {
+  &__inner {
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__author-wrapper {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      width: 30%;
+    }
+  }
+
+  &__pic {
+
+    @media (min-width: 768px) {
+      margin-left: 0;
+    }
+  }
+
+  &__contacts {
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__position {
+    color: var(--ui-text-color);
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__testimonials-wrapper {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 70%;
+    }
+  }
+
+  &__desc {
+    margin-top: 35px;
+    font-size: var(--ui-text-size);
+    max-width: 570px;
+
+    @media (min-width: 768px) {
+      margin-left: 50px;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    text-align: left;
+  }
+}
