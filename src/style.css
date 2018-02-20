@@ -97,6 +97,11 @@
   @media (min-width: 992px) {
     margin-right: 0;
   }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
 }
 
 .logo__title {
