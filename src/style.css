@@ -25,15 +25,18 @@
 
   &__meta {
     color: var(--ui-text-color);
-    width: 50%;
-    text-align: left;
 
-    &:last-of-type {
-      text-align: right;
-    }
+    @media (min-width: 992px) {
+      width: 50%;
+      text-align: left;
 
-    &:only-child {
-      width: 100%;
+      &:last-of-type {
+        text-align: right;
+      }
+
+      &:only-child {
+        width: 100%;
+      }
     }
   }
 }
