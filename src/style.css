@@ -1,12 +1,8 @@
 @import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
-.title {
-  color: var(--ui-light-shade-color);
-}
 
 .subtitle {
-  color: var(--ui-light-shade-color);
   margin: 37px auto 0;
   max-width: 848px;
 }
@@ -16,9 +12,9 @@
 
     /* styles for custom arrows */
     .slick-arrow {
+      color: var(--ui-light-shade-color);
       width: 25px;
       height: 25px;
-      color: var(--ui-light-shade-color);
       z-index: 1;
       transition: color .2s ease-in;
 
@@ -88,7 +84,6 @@
 
 .item {
   &__title {
-    color: var(--ui-light-shade-color);
     position: relative;
 
     &::after {
