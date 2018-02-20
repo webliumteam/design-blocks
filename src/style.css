@@ -36,6 +36,8 @@
 
       &:only-child {
         width: 100%;
+        max-width: none;
+        text-align: center;
       }
     }
   }
@@ -73,8 +75,4 @@
   font-weight: var(--ui-text-font-weight);
   color: var(--ui-link-color);
   margin-right: 0;
-
-  &:first-child {
-    margin-left: 0;
-  }
 }
