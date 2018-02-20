@@ -60,10 +60,6 @@ class Block extends React.Component {
           <span className={css['nav-button__line']} />
         </button>
         <div className={css.header__inner}>
-          <div className={css['header__company-info']}>
-            {this.getModifierValue('company-slogan') && <Text tagName="div" className={css.header__slogan} bind="slogan" />}
-            {this.getModifierValue('company-contacts') && <Text tagName="div" className={css.header__email} bind="email" />}
-          </div>
           <nav className={css.nav}>
             <Menu
               className={css.nav__list}
@@ -73,6 +69,10 @@ class Block extends React.Component {
               bind="menu"
             />
           </nav>
+          <div className={css['header__company-info']}>
+            {this.getModifierValue('company-slogan') && <Text tagName="div" className={css.header__slogan} bind="slogan" />}
+            {this.getModifierValue('company-contacts') && <Text tagName="div" className={css.header__email} bind="email" />}
+          </div>
         </div>
       </header>
     )

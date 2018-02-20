@@ -51,7 +51,6 @@
         display: block;
         position: relative;
         min-height: auto;
-        order: 1;
       }
 
       .nav-button__line {
@@ -160,6 +159,7 @@
     margin: 0 auto;
     padding-top: 0;
     padding-bottom: 0;
+    order: 1;
 
     &__list {
       display: flex;
