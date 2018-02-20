@@ -22,6 +22,11 @@
   }
 }
 
+.items-wrapper {
+  margin-top: -25px;
+  margin-bottom: -25px;
+}
+
 .item {
   &__content {
     flex-direction: column;
@@ -38,7 +43,7 @@
 
   &__text {
     font-size: calc(var(--ui-text-size)*1.125);
-    line-height: calc(var(--ui-block-title-line-height)*1.364);
+    line-height: calc(var(--ui-block-title-line-height) * 1.364);
     font-weight: 700;
     text-transform: uppercase;
   }

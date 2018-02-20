@@ -20,25 +20,20 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'bg-pattern.jpg',
   },
   numbers: [
+    ...Component.defaultContent.numbers,
     {
-      label: 'Hours of work',
-      value: '7655',
-      id: "'554d7318-3c82-4dd4-87e9-b0b92299199f6'",
-    },
-    {
-      label: 'Happy clients',
-      value: '1200',
-      id: "'554d7318-3c82-4dd4-87e9-b0b92299199f5'",
-    },
-    {
-      label: 'Repaired houses',
-      value: '360',
-      id: "'554d7318-3c82-4dd4-87e9-b0b92299199f3'",
-    },
-    {
-      label: 'Painted walls',
-      value: '4280',
-      id: "'554d7318-3c82-4dd4-87e9-b0b92299199f2'",
+      title: {
+        content: 'Improve customer satisfaction for',
+        type: 'subtitle',
+      },
+      label: {
+        content: 'of our users',
+        type: 'text',
+      },
+      value: {
+        content: '89%',
+        type: 'blockTitle',
+      },
     },
   ],
 }
