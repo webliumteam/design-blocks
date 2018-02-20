@@ -19,7 +19,7 @@
   margin-top: 0;
   flex-grow: 1;
   min-width: 0;
-  background-color: #ffc338;
+  
 
   @media (min-width: 768px) {
     max-width: none;
@@ -39,12 +39,24 @@
     }
   }
 
-  &:nth-child(2n) {
+  &:nth-child(5n+1) {
+    background-color: #ffc94d;
+  }
+
+  &:nth-child(5n+2) {
+    background-color: #ffc338;
+  }
+
+  &:nth-child(5n+3) {
     background-color: #f9b91e;
   }
 
-  &:nth-child(3n) {
+  &:nth-child(5n+4) {
     background-color: #f0ac0e;
+  }
+
+  &:nth-child(5n+5) {
+    background-color: #e3a20b;
   }
 
   &__icon {
