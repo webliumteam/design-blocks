@@ -25,6 +25,7 @@
 
     &-wrapper {
       order: 2;
+      min-height: 200px;
     }
   }
 
