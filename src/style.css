@@ -36,7 +36,7 @@
     max-width: 570px;
   }
 
-  &__item {
+  &__time {
     margin-top: 35px;
     color: var(--ui-text-color);
   }
@@ -44,4 +44,8 @@
   &__position {
     color: var(--ui-text-color);
   }
+}
+
+.btns-group {
+  padding-top: 75px;
 }
