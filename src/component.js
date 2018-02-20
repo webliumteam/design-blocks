@@ -12,33 +12,54 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, children, className, modifier}) => {
+  getPersonInfo = ({index, modifier}) => {
     const {components: {Text, Image}, style} = this.props
+    return [
+      _.get('image')(modifier) && (
+        <Image
+          wrapperClassName={style['item__pic-wrapper']}
+          pictureClassName={style.item__pic}
+          imgClassName={style.item__img}
+          bind={`testimonials[${index}].image`}
+          size={{
+            'min-width: 320px': 120,
+          }}
+        />
+      ),
+      <div className={style.item__contacts}>
+        <Text bind={`testimonials[${index}].name`} className={style.item__title} tagName="h2" />
+      </div>,
+      _.get('position')(modifier) && (
+        <Text bind={`testimonials[${index}].position`} className={style.item__position} tagName="p" />
+      ),
+    ]
+  }
+
+  getTestimonials = ({index, modifier}) => {
+    const {components: {Text}, style} = this.props
+    return [
+      <Text bind={`testimonials[${index}].description`} className={style.item__desc} tagName="p" />,
+      _.get('publishDate')(modifier) && (
+        <Text bind={`testimonials[${index}].date`} className={style.item__time} tagName="time" />
+      ),
+    ]
+  }
+
+  collectionItem = ({children, className, ...rest}) => {
+    const {style} = this.props
+    const isRow = this.getOptionValue('personal-info-wrapper') && this.getOptionValue('testimonials-wrapper')
     return (
       <article className={classNames(style.item, className)}>
         {children}
-        <div className={style.item__inner}>
-          {_.get('image')(modifier) && (
-            <Image
-              wrapperClassName={style['item__pic-wrapper']}
-              pictureClassName={style.item__pic}
-              imgClassName={style.item__img}
-              bind={`testimonials[${index}].image`}
-              size={{
-                'min-width: 320px': 120,
-              }}
-            />
-          )}
-          <div className={style.item__contacts}>
-            <Text bind={`testimonials[${index}].name`} className={style.item__title} tagName="h2" />
-          </div>
-          {_.get('position')(modifier) && (
-            <Text bind={`testimonials[${index}].position`} className={style.item__position} tagName="p" />
-          )}
-          <Text bind={`testimonials[${index}].description`} className={style.item__desc} tagName="p" />
-          {_.get('publishDate')(modifier) && (
-            <Text bind={`testimonials[${index}].date`} className={style.item__time} tagName="time" />
-          )}
+        <div className={classNames(style.item__inner, isRow && style['item__inner--row'])}>
+          {this.getOptionValue('personal-info-wrapper') ?
+            <div className={style['item__author-wrapper']}>{this.getPersonInfo(rest)}</div> :
+            this.getPersonInfo(rest)
+          }
+          {this.getOptionValue('testimonials-wrapper') ?
+            <div className={style['item__testimonials-wrapper']}>{this.getTestimonials(rest)}</div> :
+            this.getTestimonials(rest)
+          }
         </div>
       </article>
     )

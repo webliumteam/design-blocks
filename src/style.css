@@ -126,6 +126,10 @@
   @media (min-width: 992px) {
     max-width: 860px;
   }
+
+  &--row {
+    display: flex;
+  }
 }
 
 @media (min-width: 768px) {
@@ -223,4 +227,16 @@
 
 .btns-group {
   padding-top: 40px;
+}
+
+.item__author-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.item__testimonials-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
 }
