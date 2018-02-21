@@ -9,8 +9,17 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Button, Image, SocialIcons}, style} = this.props
+    const memberContacts = [
+      _.get('member-email')(modifier) && <Text tagName="div" className={style.item__email} bind={`team[${index}].email`} />,
+      _.get('member-social')(modifier) && (
+        <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
+      ),
+    ]
     return (
       <article className={classNames(style.item, className)}>
         {children}
@@ -33,10 +42,9 @@ class Block extends React.Component {
               bind={`team[${index}].more`}
             />
           )}
-          {_.get('member-email')(modifier) && <Text tagName="div" className={style.item__email} bind={`team[${index}].email`} />}
-          {_.get('member-social')(modifier) && (
-            <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
-          )}
+          {this.getOptionValue('member-contacts-wrapper') ?
+            <div className={style.item__contacts}>{memberContacts}</div> : memberContacts
+          }
         </div>
       </article>
     )
