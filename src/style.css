@@ -5,6 +5,7 @@
   position: relative;
   margin-bottom: 50px;
   font-size: calc(var(--ui-block-title-size) / 1.2);
+  font-weight: 700;
 
   &::after {
     content: "";
@@ -27,6 +28,7 @@
   max-width: 570px;
   margin-bottom: 15px;
   font-family: var(--ui-text-font-family);
+  font-size: calc(var(--ui-subtitle-size) * 0.9);
 }
 
 .item {
@@ -57,58 +59,60 @@
   padding-top: 55px;
 }
 
-:global {
-  .slick-arrow {
-    height: 40px;
-    width: 25px;
-    fill: #595959;
-    transition: fill .2s ease-in;
+.items-wrapper {
+  :global {
+    .slick-arrow {
+      height: 40px;
+      width: 40px;
+      z-index: 1;
+      fill: #595959;
+      transition: fill .2s ease-in;
 
-    &:hover {
-      fill: var(--ui-brand-color);
+      &:hover {
+        fill: var(--ui-brand-color);
+      }
+
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
     }
 
-    @media (min-width: 768px) {
-      transform: translateY(-50%);
-    }
-  }
+    .slick-arrow.slick-prev {
+      transform: translateX(-200%);
+      top: 100%;
+      left: 50%;
 
-  .slick-arrow.slick-prev {
-    transform: translateX(-200%);
-    top: 100%;
-    left: 50%;
+      @media (min-width: 768px) {
+        left: 0;
+        top: 50%;
+      }
 
-    @media (min-width: 768px) {
-      left: 0;
-      top: 50%;
-    }
-
-    &::before {
-      display: none;
+      &::before {
+        display: none;
+      }
     }
 
-  }
+    .slick-arrow.slick-next {
+      transform: translateX(200%);
+      top: 100%;
+      right: 50%;
 
-  .slick-arrow.slick-next {
-    transform: translateX(200%);
-    top: 100%;
-    right: 50%;
+      @media (min-width: 768px) {
+        right: 0;
+        top: 50%;
+      }
 
-    @media (min-width: 768px) {
-      right: 0;
-      top: 50%;
+      &::before {
+        display: none;
+      }
     }
 
-    &::before {
-      display: none;
-    }
-  }
+    .slick-arrow.slick-prev,
+    .slick-arrow.slick-next {
 
-  .slick-arrow.slick-prev,
-  .slick-arrow.slick-next {
-
-    @media (min-width: 768px) {
-      transform: translateY(-50%);
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
     }
   }
 }
