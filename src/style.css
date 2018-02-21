@@ -15,7 +15,7 @@
     content: "";
     display: block;
     position: absolute;
-    bottom: -18px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
     width: 45px;
@@ -103,6 +103,10 @@
 }
 
 @media (min-width: 768px) {
+  .title::after {
+    bottom: -18px;
+  }
+
   .subtitle {
     max-width: 590px;
     margin-top: 30px;
@@ -180,5 +184,9 @@
   .btns-group {
     margin-top: 30px;
     text-align: left;
+  }
+
+  .content__main:nth-last-child(1):first-child .btns-group {
+    text-align: center;
   }
 }
