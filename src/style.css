@@ -5,6 +5,7 @@
   background-color: transparent;
 
   &--without-button {
+    padding-bottom: 50px;
 
     @media (min-width: 768px) {
       padding-bottom: 60px;
@@ -27,8 +28,12 @@
 }
 
 .items-wrapper {
-  margin-top: -25px;
-  margin-bottom: -25px;
+  margin-bottom: -40px;
+
+  @media (min-width: 768px) {
+    margin-top: -25px;
+    margin-bottom: -25px;
+  }
 }
 
 .item {
