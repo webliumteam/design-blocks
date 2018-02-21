@@ -131,11 +131,16 @@
 
   .list {
     &__item {
-      min-height: 70px;
+      min-height: none;
       margin-top: -10px;
+      margin-bottom: 30px;
 
       &:first-child {
         margin-top: 30px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
