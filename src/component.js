@@ -22,41 +22,37 @@ class Block extends React.Component {
       <section className={classNames(style.section, alignClass)}>
         <div className={style.section__inner}>
           <article className={style.article}>
-            <div className={style.article__content}>
-              <Text bind="title" className={style.article__title} tagName="h1" />
-              {this.getModifierValue('heading') && (
-                <Text bind="heading" className={style.article__heading} tagName="h2" />
-              )}
-              {this.getModifierValue('subheading') && (
-                <Text bind="subheading" className={style.article__subtitle} tagName="p" />
-              )}
-              {this.getModifierValue('text') && (
-                <Text bind="text" className={style.article__text} tagName="p" />
-              )}
-              {this.getModifierValue('social-icons') && (
-                <div className={style.article__socials}>
-                  <SocialIcons bind="social-icons" className={style.socials} />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={style['btns-group']}>
-                  {this.getModifierValue('button') && (
-                    <Button
-                      buttonClassName={style.button}
-                      linkClassName={style.link}
-                      bind="button-1"
-                    />
-                  )}
-                  {this.getModifierValue('additional-button') && (
-                    <Button
-                      buttonClassName={style.button}
-                      linkClassName={style.link}
-                      bind="button-2"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
+            <Text bind="title" className={style.article__title} tagName="h1" />
+            {this.getModifierValue('heading') && (
+              <Text bind="heading" className={style.article__heading} tagName="h2" />
+            )}
+            {this.getModifierValue('subheading') && (
+              <Text bind="subheading" className={style.article__subheading} tagName="p" />
+            )}
+            {this.getModifierValue('text') && (
+              <Text bind="text" className={style.article__text} tagName="p" />
+            )}
+            {this.getModifierValue('social-icons') && (
+              <SocialIcons bind="social-icons" className={style.socials} />
+            )}
+            {showButtonGroups && (
+              <div className={style['btns-group']}>
+                {this.getModifierValue('button') && (
+                  <Button
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind="button-1"
+                  />
+                )}
+                {this.getModifierValue('additional-button') && (
+                  <Button
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind="button-2"
+                  />
+                )}
+              </div>
+            )}
           </article>
         </div>
       </section>
@@ -84,7 +80,7 @@ Block.defaultContent = {
     type: 'subheading',
   },
   text: {
-    content: 'We provide a whole bulk of services to ensure stable growth of the company. The profound expertise of our team, deep understanding of all business aspects, ideal knowledge of processes will help to deal with various issues. We create unique and innovative solutions for our customers along with the high-quality support services and personal approach to any case. Feel free to entrust your business to our experts, and you’ll see the difference! ',
+    content: 'We provide a whole bulk of services to ensure stable growth of the company. The profound expertise of our team, deep understanding of all business aspects, ideal knowledge of processes will help to deal with various issues.<br><br> We create unique and innovative solutions for our customers along with the high-quality support services and personal approach to any case. Feel free to entrust your business to our experts, and you’ll see the difference! ',
     type: 'text',
   },
   'button-1': {
