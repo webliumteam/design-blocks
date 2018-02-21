@@ -5,7 +5,7 @@
 .title {
   position: relative;
   margin-bottom: 50px;
-  font-size: calc(var(--ui-block-title-size)/1.2);
+  font-size: calc(var(--ui-block-title-size) / 1.2);
 
   &::after {
     content: "";
@@ -28,6 +28,7 @@
   max-width: 570px;
   margin-bottom: 15px;
   font-family: var(--ui-text-font-family);
+  font-size: calc(var(--ui-subtitle-size) * 0.9);
 }
 
 .item {
@@ -85,7 +86,7 @@
     max-width: 570px;
 
     @media (min-width: 768px) {
-      margin-left: 50px;
+      margin-left: 30px;
       text-align: left;
     }
   }
