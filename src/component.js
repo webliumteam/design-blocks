@@ -85,6 +85,7 @@ Block.defaultContent = {
         type: 'text',
       },
       picture: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Quantum E-commerce illustration',
       },
       cta: {
@@ -112,6 +113,7 @@ Block.defaultContent = {
         type: 'text',
       },
       picture: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Quantum Aftersales illustration',
       },
       cta: {
