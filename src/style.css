@@ -221,6 +221,10 @@
   }
 }
 
+.item__contacts {
+  display: flex;
+}
+
 .item .link:last-child {
   margin-bottom: 0;
 }
