@@ -13,21 +13,14 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   background: {
     type: 'color',
-    color: '#ffffff',
+    color: 'light-accent-color',
   },
-  title: '- FAQ -',
+  title: {
+    content: '- FAQ -',
+    type: 'blockTitle',
+  },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Learn more',
+    ...Component.defaultContent.cta,
     type: 'link',
   },
 }
