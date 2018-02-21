@@ -1,3 +1,19 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-cover/src/style.css";
 
 /* start here */
+
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 240px;
+    padding-bottom: 250px;
+  }
+}
+
+.title {
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: calc(var(--ui-subtitle-size) * 1.125);
+}
