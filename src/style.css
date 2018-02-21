@@ -5,6 +5,11 @@
   background-color: transparent;
 
   &--without-button {
+    padding-bottom: 50px;
+
+    @media (min-width: 768px) {
+      padding-bottom: 60px;
+    }
 
     @media (min-width: 992px) {
       padding-bottom: 75px;
@@ -19,6 +24,15 @@
     left: 0;
     width: 100%;
     height: 100%;
+  }
+}
+
+.items-wrapper {
+  margin-bottom: -40px;
+
+  @media (min-width: 768px) {
+    margin-top: -25px;
+    margin-bottom: -25px;
   }
 }
 
@@ -38,9 +52,10 @@
 
   &__text {
     font-size: calc(var(--ui-text-size)*1.125);
-    line-height: calc(var(--ui-block-title-line-height)*1.364);
+    line-height: calc(var(--ui-block-title-line-height) * 1.364);
     font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
   }
 }
 
