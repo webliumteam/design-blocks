@@ -5,11 +5,18 @@
 .footer {
   padding: 85px 0 0;
 
+  &__main {
+    &:only-child {
+      padding-bottom: 85px;
+    }
+  }
+
   &__bottom {
     position: relative;
     margin-top: 38px;
     opacity: 0.5;
     padding: 84px 0 46px;
+    display: flex;
 
     &::before {
       content: "";
@@ -28,16 +35,18 @@
 
     @media (min-width: 992px) {
       width: 50%;
-      text-align: left;
 
-      &:last-of-type {
+      &--copyright {
+        text-align: left;
+      }
+
+      &--additional {
         text-align: right;
       }
 
       &:only-child {
         width: 100%;
         max-width: none;
-        text-align: center;
       }
     }
   }
