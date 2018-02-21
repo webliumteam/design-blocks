@@ -53,13 +53,18 @@ ExtendedWireframe.defaultContent = {
       },
     },
   ],
+  cta: {
+    ...Component.defaultContent.cta,
+    textValue: 'Learn more',
+    type: 'secondary',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   'body-text': {defaultValue: false, label: 'Image description', type: 'hidden'},
   caption: {defaultValue: false, label: 'Caption after body', type: 'hidden'},
-  'secondary-button': {defaultValue: false, label: 'Button', type: 'hidden'},
+  'secondary-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Gallery description', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
