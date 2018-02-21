@@ -2,8 +2,7 @@
 
 /* start here */
 .title {
-  padding-bottom: 18px;
-
+  padding-bottom: 20px;
   position: relative;
 
   &::after {
@@ -23,7 +22,7 @@
   font-weight: var(--ui-text-font-weight);
 
   @media (min-width: 992px) {
-    margin-top: 13px;
+    margin-top: 15px;
     padding-left: 95px;
     padding-right: 95px;
   }
@@ -53,7 +52,7 @@
     border-width: 2px;
     position: relative;
     border-color: transparent;
-    transition: border 0.25s ease;
+    transition: border 0.25s ease-in;
 
     &::before {
       content: "";
@@ -71,9 +70,11 @@
     &:focus,
     &--active {
       border: 2px solid var(--ui-brand-color);
+      transition: border 0.25s ease-in;
 
       .item__title {
         color: var(--ui-brand-color);
+        transition: color 0.25s ease-in;
       }
     }
   }
@@ -89,11 +90,7 @@
 
   &__title {
     text-align: center;
-    transition: color 0.25s ease;
-
-    &--active {
-      color: var(--ui-brand-color);
-    }
+    transition: color 0.25s ease-in;
   }
 
   &__position {
@@ -136,13 +133,17 @@
       display: inline-flex;
     }
   }
+
+  &__contacts {
+    justify-content: space-between;
+  }
 }
 
 .item .link {
   margin-bottom: 42px;
   color: var(--ui-brand-color);
   width: 100%;
-
+  font-weight: bold;
 }
 
 .socials {
@@ -153,11 +154,3 @@
     right: 10px;
   }
 }
-
-.social__icons {
-
-  @media (min-width: 992px) {
-    vertical-align: middle;
-  }
-}
-
