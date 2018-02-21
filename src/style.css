@@ -3,8 +3,12 @@
 /* start here */
 .section {
   position: relative;
-  padding: 412px 0 272px;
   border: 10px solid var(--ui-light-accent-color);
+  min-height: 100vh;
+
+  @media (min-width: 992px) {
+    padding: 412px 0 272px;
+  }
 
   &::after {
     display: block;
