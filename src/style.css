@@ -33,8 +33,8 @@
     margin-bottom: 10px;
 
     &-count {
-      font-size: calc(var(--ui-heading-large-size) * 3.5);
-      font-weight: var(--ui-heading-large-font-weight);
+      font-size: calc(var(--ui-heading-lg-size) * 3.5);
+      font-weight: var(--ui-headin-lg-font-weight);
     }
   }
 
@@ -43,6 +43,10 @@
 
     &-item {
       margin-bottom: 10px;
+
+      &-text {
+        color: var(--ui-text-color);
+      }
     }
   }
 
