@@ -1,6 +1,10 @@
+
+
 .section {
   min-width: 320px;
   padding: 30px 0;
+
+  /* background-color: var(--ui-block-bg); */
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
@@ -18,22 +22,24 @@
 .section--column .article {
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
-.section--column .article__picture {
-  max-width: none;
+.section--column .article__title,
+.section--column .article__heading {
+  text-align: center;
 }
 
 .section--column .article__content {
-  max-width: none;
   margin-bottom: 40px;
 }
 
-.section--column .article__picture + .article__content {
-  margin-top: 30px;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+.section--column .article__text {
+  text-align: left;
+}
+
+.section--column .article__socials {
+  margin: 0 auto;
 }
 
 .section--column .btns-group {
@@ -60,34 +66,9 @@
   }
 }
 
-.article__picture {
-  position: relative;
-  width: 100%;
-  min-height: 200px;
-  padding-top: 35.56%;
-  order: -1;
-  background-color: var(--ui-media-bg);
-}
-
-@media (min-width: 768px) {
-  .article__picture {
-    max-width: 48.7%;
-    flex-basis: 50%;
-    order: unset;
-  }
-}
-
-.article__picture img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-}
-
 .article__content {
   display: flex;
+  max-width: 100%;
   padding: 30px 0 0;
   flex-direction: column;
   justify-content: center;
@@ -95,26 +76,56 @@
 
 @media (min-width: 768px) {
   .article__content {
+    padding: 0 100px;
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .article__content {
     max-width: 48.8%;
-    padding-top: 0;
-    flex-basis: 50%;
+    padding: 0;
   }
 }
 
 .article__title {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-family: var(--ui-block-title-font-family);
   font-size: var(--ui-block-title-size);
   font-weight: var(--ui-block-title-font-weight);
   line-height: var(--ui-block-title-line-height);
   color: var(--ui-block-title-color);
-  text-align: left;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .article__title {
+    text-align: left;
+  }
 }
 
 @media (min-width: 992px) {
   .article__title {
     margin-top: 0;
+  }
+}
+
+.article__heading {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-family: var(--ui-heading-font-family);
+  font-size: var(--ui-heading-size);
+  font-weight: var(--ui-heading-font-weight);
+  line-height: var(--ui-heading-line-height);
+  color: var(--ui-heading-color);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .article__heading {
+    text-align: left;
   }
 }
 
@@ -141,11 +152,15 @@
 .article__socials {
   display: flex;
   max-width: 237px;
-  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
 }
 
-.social-title {
-  margin-right: 20px;
+@media (min-width: 768px) {
+  .article__socials {
+    margin: 0;
+    justify-content: flex-start;
+  }
 }
 
 .article .article__title + .article__socials {
@@ -181,7 +196,7 @@
   width: 30px;
   height: 30px;
   padding: 7px;
-  border-radius: 50%;
+  border-radius: 20%;
   background-color: var(--ui-icon-color);
 }
 
@@ -198,10 +213,21 @@
 }
 
 .btns-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   margin-top: 30px;
+}
+
+@media (min-width: 480px) {
+  .btns-group {
+    margin: 0 -10px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .btns-group {
+    margin: 30px -15px 0;
+    text-align: left;
+  }
 }
 
 .btns-group:only-child {
@@ -211,33 +237,43 @@
 @media (min-width: 480px) {
   .button {
     width: auto;
-    margin-right: 20px;
+    margin: 0 10px 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .button {
+    margin: 0 15px;
   }
 }
 
 .button:last-child {
-  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .link {
   display: inline-block;
   width: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
+  vertical-align: middle;
   text-align: center;
   color: var(--ui-link-color);
-  word-wrap: break-word;
 }
 
 @media (min-width: 480px) {
   .link {
     width: auto;
-    margin-right: 20px;
+    margin: 0 10px;
   }
 }
 
-.link:last-child {
-  margin-right: 0;
+@media (min-width: 768px) {
+  .link {
+    margin: 0 15px;
+  }
+}
+
+.link:only-child {
+  padding: 0;
 }
 
 .link:hover,
