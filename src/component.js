@@ -9,12 +9,34 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   collectionItem = ({index, children, modifier}) => {
     const {components: {Text, Image, Button}, style} = this.props
     const showContent = _.get('body')(modifier) || _.get('link')(modifier)
     const showBody = _.get('body')(modifier)
     const showLink = _.get('link')(modifier)
     const showHeading = _.get('heading')(modifier)
+    const itemContent = [
+      showHeading && (
+        <Text tagName="h2" className={style.item__title} bind={`partners[${index}].title`} />
+      ),
+      showContent && (
+        <div className={style.item__content}>
+          {_.get('body')(modifier) && (
+            <Text tagName="p" className={style.item__desc} bind={`partners[${index}].desc`} />
+          )}
+          {_.get('link')(modifier) && (
+            <Button
+              className={style.item__link}
+              bind={`partners[${index}].button`}
+            />
+          )}
+        </div>
+      ),
+    ]
+
     return (
       <article className={classNames(
         style.item,
@@ -32,26 +54,10 @@ class Block extends React.Component {
           imgClassName={style.item__image}
           size={null}
         />
-        {showHeading && (
-          <Text tagName="h2" className={style.item__title} bind={`partners[${index}].title`} />
-        )}
-        {showContent && (
-          <div className={style.item__content}>
-            {_.get('body')(modifier) && (
-              <Text tagName="p" className={style.item__desc} bind={`partners[${index}].desc`} />
-            )}
-            {_.get('link')(modifier) && (
-              <Button
-                className={style.item__link}
-                bind={`partners[${index}].button`}
-              />
-            )}
-          </div>
-        )}
+        {this.getOptionValue('content-wrapper') ? <div className={style['item__content-wrapper']}>{itemContent}</div> : itemContent}
       </article>
     )
   }
-
 
   render() {
     const {components: {Collection, Text, Button}, style, $block} = this.props
