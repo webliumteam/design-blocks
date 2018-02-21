@@ -39,8 +39,28 @@ class Block extends React.Component {
           </div>
           {(this.getModifierValue('text-left') || this.getModifierValue('text-right')) && (
             <section className={css.footer__bottom}>
-              {this.getModifierValue('text-left') && <Text tagName="small" className={css.footer__meta} bind="copyright" />}
-              {this.getModifierValue('text-right') && <Text tagName="small" className={css.footer__meta} bind="additional" />}
+              {this.getModifierValue('text-left') &&
+              <Text
+                tagName="small"
+                className={
+                    classNames(
+                      css.footer__meta,
+                      css['footer__meta--copyright'],
+                    )
+                  }
+                bind="copyright"
+              />}
+              {this.getModifierValue('text-right') &&
+              <Text
+                tagName="small"
+                className={
+                  classNames(
+                    css.footer__meta,
+                    css['footer__meta--additional'],
+                  )
+                }
+                bind="additional"
+              />}
             </section>
           )}
         </div>
