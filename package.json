@@ -6,16 +6,7 @@
     "scripts": {
         "precommit": "lint-staged"
     },
-    "lint-staged": {
-        "src/**/*.js": [
-            "eslint --fix",
-            "git add"
-        ],
-        "src/**/*.css": [
-            "stylelint",
-            "git add"
-        ]
-    },
+    "lint-staged": {},
     "devDependencies": {
         "babel-eslint": "^8.2.1",
         "eslint": "^4.15.0",

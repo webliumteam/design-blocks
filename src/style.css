@@ -3,8 +3,18 @@
 /* start here */
 
 .section {
-  padding-top: 100px;
-  padding-bottom: 180px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 110px;
+  }
+
+  @media (min-width: 992px) {
+    padding-top: 75px;
+    padding-bottom: 125px;
+  }
 }
 
 .title {
@@ -20,20 +30,32 @@
   }
 }
 
-@media (min-width: 768px) {
-  .plans-wrapper {
+.plans-wrapper {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media (min-width: 768px) {
     margin-top: 110px;
   }
 }
 
 .price-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 45px 0 10px;
   background-color: var(--ui-block-title-color);
 }
 
+.price-wrapper + .button {
+  margin-top: 40px;
+}
+
 .plan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0;
   background-color: var(--ui-light-shade-color);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
@@ -45,10 +67,20 @@
     font-weight: var(--ui-heading-font-weight);
     margin-right: 8px;
     text-transform: uppercase;
+    color: var(--ui-light-shade-color);
   }
 
   &__list {
+    width: 100%;
     margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__list-item {
@@ -75,16 +107,17 @@
   &__price {
     order: 1;
     margin-bottom: 10px;
+  }
 
-    span {
-      color: var(--ui-light-shade-color);
-    }
+  &__price-count,
+  &__price-text {
+    color: var(--ui-light-shade-color);
+  }
 
-    > span {
-      &::before {
-        content: "/";
-        margin-right: 3px;
-      }
+  &__price-text {
+    &::before {
+      content: "/";
+      margin-right: 3px;
     }
   }
 
@@ -97,11 +130,21 @@
 
   &__button {
     width: calc(100% - 30px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: 480px) {
+      width: auto;
+    }
 
     @media (min-width: 768px) {
-      width: auto;
-      margin-top: 40px;
+      width: 75%;
+      margin-top: auto;
       margin-bottom: 50px;
+    }
+
+    @media (min-width: 992px) {
+      width: 60%;
     }
   }
 }
@@ -117,10 +160,24 @@
 
   .plan__list {
     margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   .plan__button {
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      margin-top: auto;
+      margin-bottom: 50px;
+    }
   }
 
   @media (min-width: 768px) {
