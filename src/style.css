@@ -23,7 +23,7 @@
       }
     }
 
-    .socials {
+    .socials-wrapper {
       justify-content: center;
     }
   }
@@ -40,7 +40,7 @@
       }
     }
 
-    .socials {
+    .socials-wrapper {
       justify-content: flex-end;
     }
   }
@@ -118,6 +118,10 @@
 
 .article__title + .socials {
   margin-top: 20px;
+}
+
+.socials-wrapper {
+  display: flex;
 }
 
 .socials {
