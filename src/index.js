@@ -39,7 +39,14 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  'button-primary': {defaultValue: false, label: 'Button', type: 'hidden'},
+  'button-secondary': {defaultValue: false, label: 'Additional button', type: 'hidden'},
+  'item-description': {defaultValue: true, label: 'Advantages description', type: 'checkbox'},
+  'item-heading': {defaultValue: true, label: 'Advantages title', type: 'checkbox'},
+  'item-icon': {defaultValue: true, label: 'Advantages icon', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'hidden'},
   title: {defaultValue: false, label: 'Block title', type: 'hidden'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
 
