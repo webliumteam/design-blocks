@@ -78,7 +78,19 @@
   &__text {
 
     @media (min-width: 992px) {
-      margin-bottom: 18px;
+      margin-bottom: 23px;
+    }
+  }
+
+  &__link {
+    text-transform: uppercase;
+    padding: 0;
+    font-weight: 700;
+    font-size: calc(var(--ui-text-size) * 0.875);
+    color: var(--ui-text-color);
+
+    &:hover {
+      text-decoration: none;
     }
   }
 }
