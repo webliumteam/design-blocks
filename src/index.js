@@ -11,33 +11,16 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  title: '- Our process -',
+  title: {
+    content: '- Our process -',
+    type: 'blockTitle',
+  },
   'cta-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Learn more',
+    ...Component.defaultContent['cta-1'],
     type: 'primary',
   },
   'cta-2': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Learn more',
+    ...Component.defaultContent['cta-2'],
     type: 'link',
   },
 }

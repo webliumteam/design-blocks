@@ -94,6 +94,8 @@
 
 .link {
   position: relative;
+  margin-left: 25px;
+  color: var(--ui-dark-shade-color);
 
   &::after {
     content: "";
