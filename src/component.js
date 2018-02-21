@@ -14,18 +14,27 @@ class Block extends React.Component {
 
     const showButtonGroups = this.getModifierValue('button') || this.getModifierValue('additional-button')
 
+    const alignClass = this.getModifierValue('align') !== 'left'
+      ? style[`section--${this.getModifierValue('align')}`]
+      : ''
+
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, alignClass)}>
         <div className={style.section__inner}>
           <article className={style.article}>
             <div className={style.article__content}>
               <Text bind="title" className={style.article__title} tagName="h1" />
-              <Text bind="heading" className={style.article__heading} tagName="h2" />
-              <Text bind="subheading" className={style.article__subtitle} tagName="p" />
-              <Text bind="text" className={style.article__text} tagName="p" />
+              {this.getModifierValue('heading') && (
+                <Text bind="heading" className={style.article__heading} tagName="h2" />
+              )}
+              {this.getModifierValue('subheading') && (
+                <Text bind="subheading" className={style.article__subtitle} tagName="p" />
+              )}
+              {this.getModifierValue('text') && (
+                <Text bind="text" className={style.article__text} tagName="p" />
+              )}
               {this.getModifierValue('social-icons') && (
                 <div className={style.article__socials}>
-                  {!this.getOptionValue('hidden-social-heading') && <Text tagName="h2" className={style['social-title']} bind="social-title" />}
                   <SocialIcons bind="social-icons" className={style.socials} />
                 </div>
               )}
@@ -138,6 +147,16 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  align: {
+    children: [
+      {id: 'left', label: 'Left'},
+      {id: 'center', label: 'Center'},
+      {id: 'right', label: 'Right'},
+    ],
+    defaultValue: 'left',
+    name: 'Aligning',
+    type: 'radio-button-group',
+  },
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   heading: {defaultValue: false, label: 'Company title', type: 'checkbox'},
   subheading: {defaultValue: false, label: 'Company description', type: 'checkbox'},
