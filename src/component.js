@@ -20,23 +20,25 @@ class Block extends React.Component {
 
   getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  setStylesForBody = () => {
+  setStylesForBody = (reset = false) => {
     const {opened} = this.state
     const nodes = [document.getElementsByTagName('html')[0], document.body]
 
-    if (opened) {
+    if (!reset && opened) {
       nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
     } else {
       nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
     }
   }
 
-
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   toggleOpened = () => this.setState({opened: !this.state.opened}, this.setStylesForBody)
 
-  closeMenu = () => this.setState({opened: false}, this.setStylesForBody)
+  closeMenu = () => {
+    this.setStylesForBody(true)
+    this.setState({opened: false})
+  }
 
   wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
 
