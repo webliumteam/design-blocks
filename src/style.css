@@ -62,6 +62,10 @@
     margin-top: 55px;
   }
 
+  &__icon-wrapper + &__button {
+    margin-top: 25px;
+  }
+
   .plan__price-count {
     font-size: var(--ui-hero-title-size);
     font-family: var(--ui-hero-title-font-family);
