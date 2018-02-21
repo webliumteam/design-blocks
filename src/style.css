@@ -125,7 +125,7 @@
     &-wrapper {
       width: var(--logoSize);
       margin: 0 auto 10px;
-      
+
       @media (min-width: 768px) {
         margin: 0 var(--logoOffsetSize) 0 0;
         flex-shrink: 0;
@@ -141,6 +141,11 @@
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
