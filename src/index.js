@@ -31,7 +31,6 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.events[0].picture,
         resourceRef: 'event1.jpg',
-        alt: 'Digital marketing workshop illustration',
       },
       cta: {
         ...Component.defaultContent.events[0].cta,
@@ -44,11 +43,9 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.events[1].picture,
         resourceRef: 'event2.jpg',
-        alt: 'Blogging for beginners illustration',
       },
       cta: {
         ...Component.defaultContent.events[1].cta,
-        textValue: 'Know more',
         type: 'link',
       },
     },
@@ -57,11 +54,9 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.events[2].picture,
         resourceRef: 'event3.jpg',
-        alt: 'How to find insight illustration',
       },
       cta: {
         ...Component.defaultContent.events[2].cta,
-        textValue: 'Know more',
         type: 'link',
       },
     },
@@ -70,11 +65,9 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.events[3].picture,
         resourceRef: 'event4.jpg',
-        alt: 'UX workshop illustration',
       },
       cta: {
         ...Component.defaultContent.events[3].cta,
-        textValue: 'Know more',
         type: 'link',
       },
     },

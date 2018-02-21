@@ -34,6 +34,14 @@
 .article {
   background-color: transparent;
 
+  &__picture {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
   &__badge {
     padding: 10px 14px;
     max-width: 120px;
