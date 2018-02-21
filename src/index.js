@@ -14,11 +14,11 @@ ExtendedWireframe.defaultContent = {
   blog: [
     {
       title: {
-        content: 'How to Hire Professional and Dedicated Employees? Useful Tips from Our HR Director.',
+        content: 'Interserve\'s £200m Haymarket Edinburgh scheme hit by delays',
         type: 'heading',
       },
       description: {
-        content: 'Our HR Director shares his experience how to fill positions with the best candidates, where to find talents, how to attract experts to your business.',
+        content: 'Lorem ipsum dolor sit amet, consectetuer adipis cing elit. Aenean commodo ligula eget dolor. Aenean massa.',
         type: 'text',
       },
       category: {
@@ -30,7 +30,7 @@ ExtendedWireframe.defaultContent = {
         type: 'caption',
       },
       picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        src: 'img1.jpg',
         alt: 'Article illustration photo',
       },
       link: {
@@ -50,11 +50,11 @@ ExtendedWireframe.defaultContent = {
     },
     {
       title: {
-        content: 'How to Achieve Higher Profits in Retail with Our New Product?',
+        content: 'How to install or repair drywall for a kitchen backsplash ?',
         type: 'heading',
       },
       description: {
-        content: 'Do you want to achieve higher profits this year? Our new product will help you get what you want. In this article, you will find how to get more benefits from it.',
+        content: 'Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.',
         type: 'text',
       },
       category: {
@@ -66,7 +66,7 @@ ExtendedWireframe.defaultContent = {
         type: 'caption',
       },
       picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        src: 'img2.jpg',
         alt: 'Article illustration photo',
       },
       link: {
@@ -86,11 +86,11 @@ ExtendedWireframe.defaultContent = {
     },
     {
       title: {
-        content: 'Explore Top 5 Tips How to Improve Your Engineering Department.',
+        content: 'Spurs reveal rival plans for Lendlease\'s High Road West site',
         type: 'heading',
       },
       description: {
-        content: 'You engineers can bring you better results! Get to know how to improve engineering department to make a new step for your company growth.',
+        content: 'Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.',
         type: 'text',
       },
       category: {
@@ -102,7 +102,7 @@ ExtendedWireframe.defaultContent = {
         type: 'caption',
       },
       picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        src: 'img3.jpg',
         alt: 'Article illustration photo',
       },
       link: {
