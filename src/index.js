@@ -10,6 +10,8 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
+  theme: 'dark',
   background: {
     type: 'image',
     position: {
@@ -17,128 +19,68 @@ ExtendedWireframe.defaultContent = {
       cover: '50% 50%',
     },
     resourceRef: 'events-bg.jpg',
+    overlay: {
+      type: 'color',
+      color: 'dark-shade-color',
+      opacity: 0.95,
+    },
   },
   events: [
     {
-      title: 'Digital marketing workshop',
-      date: 'October 10, 2017',
-      badge: 'members only',
-      time: '10:30am - 1:30pm',
-      location: 'North America',
+      ...Component.defaultContent.events[0],
       picture: {
+        ...Component.defaultContent.events[0].picture,
         resourceRef: 'event1.jpg',
         alt: 'Digital marketing workshop illustration',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
+        ...Component.defaultContent.events[0].cta,
         textValue: 'Know more',
         type: 'link',
       },
-      id: 'b1de1229-0f5f-4da8-8e5f-1d875b2bdd5e',
     },
     {
-      title: 'Blogging for beginners',
-      date: 'October 14, 2017',
-      badge: 'members only',
-      time: '10:30am - 1:30pm',
-      location: 'North America',
+      ...Component.defaultContent.events[1],
       picture: {
+        ...Component.defaultContent.events[1].picture,
         resourceRef: 'event2.jpg',
         alt: 'Blogging for beginners illustration',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
+        ...Component.defaultContent.events[1].cta,
         textValue: 'Know more',
         type: 'link',
       },
-      id: 'bc24235c-0e77-42d8-8e8e-358d683da4f5',
     },
     {
-      title: 'How to find insight',
-      date: 'October 18, 2017',
-      badge: 'members only',
-      time: '10:30am - 1:30pm',
-      location: 'North America',
+      ...Component.defaultContent.events[2],
       picture: {
+        ...Component.defaultContent.events[2].picture,
         resourceRef: 'event3.jpg',
         alt: 'How to find insight illustration',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
+        ...Component.defaultContent.events[2].cta,
         textValue: 'Know more',
         type: 'link',
       },
-      id: '2a463f21-a68f-4a30-a7a7-dfbdece81edc',
     },
     {
-      title: 'UX workshop',
-      date: 'October 20, 2017',
-      badge: 'members only',
-      time: '10:30am - 1:30pm',
-      location: 'North America',
+      ...Component.defaultContent.events[3],
       picture: {
+        ...Component.defaultContent.events[3].picture,
         resourceRef: 'event4.jpg',
         alt: 'UX workshop illustration',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
+        ...Component.defaultContent.events[3].cta,
         textValue: 'Know more',
         type: 'link',
       },
-      id: 'c4480dcf-6fbd-42b0-b457-ca6a0f187b02',
     },
   ],
-  title: 'Events',
-  subtitle:
-    'We regularly host different kinds of events to satisfy the needs of all our clients. Follow the updates and workshops rom our professionals.',
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Learn more',
+    ...Component.defaultContent.cta,
     type: 'secondary',
   },
 }
@@ -150,6 +92,5 @@ ExtendedWireframe.modifierScheme = {
   location: {defaultValue: true, label: "Event's location", type: 'checkbox'},
   subtitle: {defaultValue: true, label: "Event's description", type: 'checkbox'},
 }
-
 
 export default ExtendedWireframe
