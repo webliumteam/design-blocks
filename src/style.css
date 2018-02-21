@@ -89,4 +89,12 @@
       text-decoration: none;
     }
   }
+
+  &:last-of-type {
+    margin-bottom: 0;
+
+    @media (min-width: 992px) {
+      margin-bottom: 50px;
+    }
+  }
 }
