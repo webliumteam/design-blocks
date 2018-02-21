@@ -3,56 +3,79 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  collectionItem = ({index, children, className}) => {
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Image}, style} = this.props
     return (
       <article className={classNames(style.article, className)}>
         {children}
 
-        <Text bind={`contacts[${index}].title`} className={style.article__title} tagName="h2" />
-        <Image
-          pictureClassName={style.article__picture}
-          imgClassName={style.article__image}
-          bind={`contacts[${index}].picture`}
-        />
+        {_.get('heading')(modifier) && (
+          <Text bind={`contacts[${index}].title`} className={style.article__title} tagName="h2" />
+        )}
+        {_.get('image')(modifier) && (
+          <Image
+            pictureClassName={style.article__picture}
+            imgClassName={style.article__image}
+            bind={`contacts[${index}].picture`}
+          />
+        )}
         <div className={style.article__text}>
           <Text bind={`contacts[${index}].address`} tagName="p" />
-          <Text bind={`contacts[${index}].phone`} tagName="p" />
-          <Text bind={`contacts[${index}].email`} tagName="p" />
+          {_.get('phone')(modifier) && (
+            <Text bind={`contacts[${index}].phone`} tagName="p" />
+          )}
+          {_.get('email')(modifier) && (
+            <Text bind={`contacts[${index}].email`} tagName="p" />
+          )}
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
           <header className={style.section__header}>
             <Text bind="title" className={style.title} tagName="h1" />
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            {this.getModifierValue('subtitle') && (
+              <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            )}
           </header>
           <Collection
             className={style['articles-wrapper']}
             bind="contacts"
             Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
           />
-          <div className={style['btns-group']}>
-            <Button
-              linkClassName={style.link}
-              buttonClassName={style.button}
-              bind="button-1"
-            />
-            <Button
-              linkClassName={style.link}
-              buttonClassName={style.button}
-              bind="button-2"
-            />
-          </div>
+          {(this.getModifierValue('button') ||
+            this.getModifierValue('button-secondary')) && (
+            <div className={style['btns-group']}>
+              {this.getModifierValue('button') && (
+                <Button
+                  linkClassName={style.link}
+                  buttonClassName={style.button}
+                  bind="button-1"
+                />
+              )}
+              {this.getModifierValue('button-secondary') && (
+                <Button
+                  linkClassName={style.link}
+                  buttonClassName={style.button}
+                  bind="button-2"
+                />
+              )}
+            </div>
+          )}
         </div>
       </section>
     )
@@ -163,6 +186,16 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+}
+
+Block.modifierScheme = {
+  subtitle: {defaultValue: false, label: 'Contacts description', type: 'checkbox'},
+  image: {defaultValue: true, label: 'Location photo', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Location title', type: 'checkbox'},
+  phone: {defaultValue: true, label: 'Phone', type: 'checkbox'},
+  email: {defaultValue: true, label: 'E-mail', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
 }
 
 export default Block
