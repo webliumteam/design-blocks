@@ -29,9 +29,9 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      ...Component.defaultContent.testimonials[0],
+      ...Component.defaultContent.testimonials[1],
       image: {
-        ...Component.defaultContent.testimonials[0].image,
+        ...Component.defaultContent.testimonials[1].image,
         resourceRef: 'testimonials_image.png',
       },
     },

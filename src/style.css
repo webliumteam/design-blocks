@@ -62,6 +62,7 @@
     height: 40px;
     width: 25px;
     fill: #595959;
+    transition: fill .2s ease-in;
 
     &:hover {
       fill: var(--ui-brand-color);
