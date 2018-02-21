@@ -6,6 +6,10 @@
 
   &--without-button {
 
+    @media (min-width: 768px) {
+      padding-bottom: 60px;
+    }
+
     @media (min-width: 992px) {
       padding-bottom: 75px;
     }
