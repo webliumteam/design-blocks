@@ -55,6 +55,7 @@
     line-height: calc(var(--ui-block-title-line-height) * 1.364);
     font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
   }
 }
 
