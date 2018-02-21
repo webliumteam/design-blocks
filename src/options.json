@@ -1,3 +1,5 @@
 {
-  "showSubtitle": true
+  "title-in-contacts": true,
+  "logo-max-width": 248,
+  "logo-max-height": 54
 }
