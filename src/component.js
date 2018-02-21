@@ -21,11 +21,11 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  setStylesForBody = () => {
+  setStylesForBody = (reset = false) => {
     const {opened} = this.state
     const nodes = [document.getElementsByTagName('html')[0], document.body]
 
-    if (opened) {
+    if (!reset && opened) {
       nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
     } else {
       nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
@@ -34,7 +34,10 @@ class Block extends React.Component {
 
   toggleOpened = () => this.setState({opened: !this.state.opened}, this.setStylesForBody)
 
-  closeMenu = () => this.setState({opened: false}, this.setStylesForBody)
+  closeMenu = () => {
+    this.setStylesForBody(true)
+    this.setState({opened: false})
+  }
 
   render() {
     const {components: {Logo, Text, Menu}, style: css} = this.props
