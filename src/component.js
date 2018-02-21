@@ -3,83 +3,58 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
-    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
-
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Text, Button, SocialIcons}, style} = this.props
+
+    const showButtonGroups = this.getModifierValue('button') || this.getModifierValue('additional-button')
+
+    const alignClass = this.getModifierValue('align') !== 'left'
+      ? style[`section--${this.getModifierValue('align')}`]
+      : ''
+
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
-            </div>
+      <section className={classNames(style.section, alignClass)}>
+        <div className={style.section__inner}>
+          <article className={style.article}>
+            <Text bind="title" className={style.article__title} tagName="h1" />
+            {this.getModifierValue('heading') && (
+              <Text bind="heading" className={style.article__heading} tagName="h2" />
+            )}
+            {this.getModifierValue('subheading') && (
+              <Text bind="subheading" className={style.article__subheading} tagName="p" />
+            )}
+            {this.getModifierValue('text') && (
+              <Text bind="text" className={style.article__text} tagName="p" />
+            )}
+            {this.getModifierValue('social-icons') && (
+              <div className={style['socials-wrapper']}>
+                <SocialIcons bind="social-icons" className={style.socials} />
+              </div>
+            )}
+            {showButtonGroups && (
+              <div className={style['btns-group']}>
+                {this.getModifierValue('button') && (
+                  <Button
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind="button-1"
+                  />
+                )}
+                {this.getModifierValue('additional-button') && (
+                  <Button
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind="button-2"
+                  />
+                )}
+              </div>
+            )}
           </article>
         </div>
       </section>
@@ -87,20 +62,30 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
+  background: {
+    type: 'color',
+    color: '#d8d8d8',
   },
-  button: {
+  title: {
+    content: 'About Us',
+    type: 'blockTitle',
+  },
+  heading: {
+    content: 'A whole bulk of services',
+    type: 'heading',
+  },
+  subheading: {
+    content: 'We provide a whole bulk of services to ensure stable growth of the company',
+    type: 'subheading',
+  },
+  text: {
+    content: 'We provide a whole bulk of services to ensure stable growth of the company. The profound expertise of our team, deep understanding of all business aspects, ideal knowledge of processes will help to deal with various issues.<br><br> We create unique and innovative solutions for our customers along with the high-quality support services and personal approach to any case. Feel free to entrust your business to our experts, and you’ll see the difference! ',
+    type: 'text',
+  },
+  'button-1': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -111,9 +96,10 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
+    textValue: 'Request a quote',
+    type: 'primary',
   },
-  link: {
+  'button-2': {
     actionConfig: {
       action: 'link',
       actions: {
@@ -124,9 +110,10 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'More about us',
+    textValue: 'Learn more',
+    type: 'secondary',
   },
-  socialIcons: {
+  'social-icons': {
     networks: [
       {
         id: 'facebook',
@@ -146,25 +133,35 @@ Block.defaultContent = {
     ],
     target: '_blank',
     design: {
-      border: 'circle',
+      border: 'softRect',
       innerFill: true,
       preset: 'preset001',
-      padding: 20,
-      color: '',
+      offset: 15,
+      color: '#9b9b9b',
       sizes: [10, 20, 30, 40],
-      size: '40px',
+      size: 30,
     },
   },
 }
 
 Block.modifierScheme = {
-  button: {defaultValue: true, label: 'Contact us button', type: 'checkbox'},
-  link: {defaultValue: false, label: 'About us link', type: 'checkbox'},
-  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
-  text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
+  align: {
+    children: [
+      {id: 'left', label: 'Left'},
+      {id: 'center', label: 'Center'},
+      {id: 'right', label: 'Right'},
+    ],
+    defaultValue: 'left',
+    name: 'Aligning',
+    type: 'radio-button-group',
+  },
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  heading: {defaultValue: false, label: 'Company title', type: 'checkbox'},
+  subheading: {defaultValue: false, label: 'Company description', type: 'checkbox'},
+  text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
+  'social-icons': {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
+  'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
 }
-
 
 export default Block
