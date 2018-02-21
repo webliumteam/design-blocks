@@ -37,9 +37,6 @@
       background-color: var(--ui-block-bg);
       border: 2px solid transparent;
       text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
       &:hover {
         border-color: var(--ui-brand-color);
