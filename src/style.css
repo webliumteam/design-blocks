@@ -1,3 +1,110 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-process/src/style.css";
 
 /* start here */
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 3.6px;
+  margin-bottom: 21px;
+}
+
+.subtitle {
+  font-size: calc(var(--ui-subtitle-size) * 0.8);
+  max-width: 770px;
+  margin: 0 auto;
+}
+
+.article {
+  margin-top: 0;
+
+  &:nth-of-type(-n+9) {
+    .article__content {
+      &::before {
+        content: "0"counter(steps)".";
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 170px;
+    padding-left: 10px;
+    text-align: center;
+
+    &::before {
+      content: counter(steps)".";
+      background-color: transparent;
+      font-size: calc(var(--ui-hero-title-size) * 1.38);
+      line-height: var(--ui-hero-title-line-height);
+      font-family: var(--ui-hero-title-font-family);
+      font-weight: var(--ui-hero-title-font-weight);
+      top: -78px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0.1;
+    }
+
+    @media (min-width: 992px) {
+      text-align: left;
+
+      &::before {
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+
+    &--icon {
+      &-none {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: var(--ui-heading-size);
+    font-family: var(--ui-heading-font-family);
+    text-transform: uppercase;
+    letter-spacing: 3.2px;
+    margin-bottom: 17px;
+  }
+
+  &__text {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 2px;
+      left: 50%;
+      bottom: -20px;
+      background-color: var(--ui-dark-shade-color);
+      transform: translateX(-50%);
+
+      @media (min-width: 992px) {
+        left: 0;
+        transform: none;
+      }
+    }
+  }
+}
+
+.btns-group {
+  margin-top: 75px;
+}
+
+.link {
+  position: relative;
+  margin-left: 25px;
+  color: var(--ui-dark-shade-color);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    display: block;
+    width: 12px;
+    height: 2px;
+    background-color: var(--ui-dark-shade-color);
+  }
+}
