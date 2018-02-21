@@ -9,4 +9,23 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
+ExtendedWireframe.defaultContent = {
+  ...Component.defaultContent,
+  background: {
+    type: 'image',
+    position: {
+      type: 'cover',
+      cover: '50% 50%',
+    },
+    src: 'woman3.jpg',
+  },
+}
+
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+  'article-picture': {defaultValue: false, label: 'Article picture', type: 'hidden'},
+  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
+}
+
 export default ExtendedWireframe
