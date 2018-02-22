@@ -5,17 +5,6 @@
   width: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
-.logo__title {
-  color: #fff;
-  font-size: var(--ui-heading-size);
-  font-family: var(--ui-hero-title-font-family);
-  font-weight: 700;
-}
-
 .footer__main {
   display: flex;
 }
