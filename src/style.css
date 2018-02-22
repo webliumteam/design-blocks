@@ -22,13 +22,7 @@
     border: 0;
     letter-spacing: 1.4px;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
+    &::before {
       background-color: var(--ui-text-color);
       opacity: 0.1;
     }
@@ -36,6 +30,7 @@
 
   &__meta {
     font-size: var(--ui-text-size);
+    color: var(--ui-dark-accent-color);
   }
 }
 
@@ -59,9 +54,10 @@
 
 .nav-list__link {
   font-family: var(--ui-block-title-font-family);
-  letter-spacing: 2.4px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   font-size: var(--ui-small-text-size);
+  font-weight: 600;
   color: var(--ui-link-color);
 }
 
@@ -69,7 +65,7 @@
   .nav-list__item {
     margin-left: 50px;
     margin-right: 15px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .footer__bottom {
