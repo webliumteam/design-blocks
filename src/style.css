@@ -1,7 +1,7 @@
 @import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
-.section_2tI {
+.section {
 
   @media (min-width: 992px) {
     padding: 100px 0;
@@ -49,19 +49,48 @@
     margin-top: 30px;
 
     :global {
+      .slick-prev,
+      .slick-next {
+        transform: translateY(-50%);
+        top: 100%;
 
-      @media (min-width: 768px) {
-        .slick-arrow-default {
+        @media (min-width: 480px) {
           top: 31%;
         }
       }
 
-      @media (min-width: 992px) {
-        .slick-arrow-default.slick-prev-default {
-          left: 36%;
+      .slick-prev {
+        &:before {
+          content: " ";
         }
 
-        .slick-arrow-default.slick-next-default {
+        @media (min-width: 480px) {
+          left: 80px;
+        }
+
+        @media (min-width: 768px) {
+          left: 20px;
+        }
+
+        @media (min-width: 992px) {
+          left: 36%;
+        }
+      }
+
+      .slick-next {
+        &:before {
+          content: " ";
+        }
+
+        @media (min-width: 480px) {
+          right: 80px;
+        }
+
+        @media (min-width: 768px) {
+          right: 20px;
+        }
+
+        @media (min-width: 992px) {
           right: 36%;
         }
       }

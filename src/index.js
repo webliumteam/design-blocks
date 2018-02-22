@@ -91,9 +91,6 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  button: {defaultValue: true, label: 'Secondary Button', type: 'checkbox'},
-  image: {defaultValue: true, label: 'Reviewer photo', type: 'checkbox'},
-  position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
   publishDate: {defaultValue: false, label: 'Date of publishing', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
 }
