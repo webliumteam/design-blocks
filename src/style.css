@@ -1,3 +1,80 @@
 @import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
+.section_2tI {
+
+  @media (min-width: 992px) {
+    padding: 100px 0;
+  }
+}
+
+.title {
+  color: var(--ui-dark-shade-color);
+}
+
+.subtitle {
+  margin-top: 45px;
+  max-width: 903px;
+  font-weight: 600;
+}
+
+.item {
+  &__pic {
+    width: 209px;
+    height: 209px;
+
+    &-wrapper {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 20px;
+  }
+
+  &__position {
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  &__desc {
+    margin-top: 30px;
+    font-size: var(--ui-text-size);
+    max-width: 590px;
+  }
+}
+
+.items {
+  &-wrapper {
+    margin-top: 30px;
+
+    :global {
+
+      @media (min-width: 768px) {
+        .slick-arrow-default {
+          top: 31%;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .slick-arrow-default.slick-prev-default {
+          left: 36%;
+        }
+
+        .slick-arrow-default.slick-next-default {
+          right: 36%;
+        }
+      }
+    }
+  }
+}
+
+.btns {
+  &-group {
+    padding-top: 30px;
+  }
+}
+
+.button {
+  font-weight: 400;
+}
