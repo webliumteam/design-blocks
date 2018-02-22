@@ -1,30 +1,28 @@
 @import "wireframe-zapdos-services/src/style.css";
 
 /* start here */
-.section__header {
-  font-family: var(--ui-block-title-font-family);
-  font-size: var(--ui-block-title-size);
+.title {
   position: relative;
-}
 
-.section__header::before {
-  content: "";
-  display: block;
-  width: 45px;
-  height: 2px;
-  background-color: var(--ui-brand-color);
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
+  &::before {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: var(--ui-brand-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .article__link {
   text-transform: uppercase;
-  font-size: calc(var(--ui-text-size)*0.875);
+  font-size: calc(var(--ui-text-size) * 0.875);
 
-  &::hover,
-  &::active {
+  &:hover,
+  &:active {
     text-decoration: none;
     color: var(--ui-link-hover-color);
   }
