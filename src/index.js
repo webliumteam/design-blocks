@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    src: 'woman3.jpg',
+    resourceRef: 'woman3.jpg',
   },
 }
 
