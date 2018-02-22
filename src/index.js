@@ -14,7 +14,7 @@ ExtendedWireframe.defaultContent = {
   theme: 'dark',
   background: {
     type: 'image',
-    src: 'mountains.png',
+    resourceRef: 'mountains.png',
   },
 }
 
