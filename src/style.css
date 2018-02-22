@@ -15,6 +15,10 @@
 .subtitle {
   max-width: 835px;
   margin-top: 52px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .items-wrapper {
