@@ -1,6 +1,10 @@
 @import "wireframe-series-1-partners/src/style.css";
 
 /* start here */
+.section__header {
+  margin-bottom: 40px;
+}
+
 .title {
   font-size: var(--ui-block-title-size);
   font-weight: var(--ui-block-title-font-weight);
@@ -8,60 +12,50 @@
 
 .subtitle {
   margin-top: 50px;
+  color: var(--ui-text-color);
 }
 
 .item {
   border: 0;
+  padding-bottom: 20px;
+  padding-left: 25px;
 
   &__content {
     max-width: 100%;
+    padding-left: 0;
 
     @media (min-width: 768px) {
-      max-width: 80%;
-    }
-    
-    @media (min-width: 992px) {
-      max-width: calc(100% - (90px + 165px + 30px + 30px));
+      max-width: 70%;
     }
   }
 
   &__desc {
     position: relative;
     width: 100%;
-    margin-top: 100px;
     font-size: var(--ui-text-size);
-    
-    @media (min-width: 768px) {
-      margin-top: 50px;
-    }
   }
 
   &__title {
-    position: absolute;
-    left: 0;
     font-size: var(--ui-heading-size);
     width: 100%;
     text-align: center;
     margin-top: 35px;
+    padding-bottom: 20px;
 
     @media (min-width: 768px) {
-      left: 133px;
+      width: 70%;
       text-align: left;
-      width: 230px;
       margin: 0;
     }
-
-    @media (min-width: 992px) {
-      left: 215px;
-    }
-  }
-
-  &__pictute {
-    margin-right: 60px;
   }
 
   &__picture-wrapper {
     position: relative;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      margin-right: 60px;
+    }
 
     &::after {
       content: "";
@@ -71,11 +65,17 @@
       background-color: var(--ui-brand-color);
       position: absolute;
       bottom: -25px;
-      left: calc(50% - 15px);
+      left: 50%;
+      transform: translateX(-50%);
     }
+  }
+
+  &__image {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .btns-group {
-  padding-top: 45px;
+  padding-top: 40px;
 }
