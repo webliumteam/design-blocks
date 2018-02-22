@@ -18,7 +18,7 @@
 .item {
   border: 0;
   padding-bottom: 20px;
-  padding-left: 25px;
+  padding-left: 60px;
 
   &__content {
     max-width: 100%;
@@ -51,7 +51,6 @@
 
   &__picture-wrapper {
     position: relative;
-    margin-bottom: 40px;
 
     @media (min-width: 768px) {
       margin-right: 60px;
@@ -73,6 +72,10 @@
   &__image {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  &--two-elements {
+    padding-left: 20px;
   }
 }
 
