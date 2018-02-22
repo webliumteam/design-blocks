@@ -131,21 +131,29 @@
     overflow: hidden;
   }
 
+  &__contacts {
+    flex-wrap: wrap;
+  }
+
   &__email {
     margin-right: auto;
 
     &:only-child {
-      margin-right: 0;
-    }
-
-    a {
-      text-decoration: none;
-      transition: color .2s ease-in;
+      margin-right: auto;
+      margin-left: auto;
     }
   }
 
-  &__contacts {
-    justify-content: center;
+  &__socials {
+    &:only-child {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    transition: color .2s ease-in;
   }
 }
 
