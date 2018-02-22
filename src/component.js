@@ -4,52 +4,65 @@ class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
   }
 
-  collectionItem = ({index, children, className}) => {
-    const {components: {Text, Image}, style} = this.props
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  collectionItem = ({index, children, className, modifier}) => {
+    const {components: {Text}, style} = this.props
     return (
       <article className={classNames(style.item, className)}>
         {children}
 
         <div className={style.item__inner}>
-          <Image
-            pictureClassName={style.item__pic}
-            imgClassName={style.item__img}
-            bind={`testimonials[${index}].picture`}
-          />
-          <div className={style.item__content}>
-            <Text bind={`testimonials[${index}].description`} className={style.item__desc} tagName="p" />
+          <Text bind={`testimonials[${index}].description`} className={style.item__desc} tagName="p" />
+          {_.get('date')(modifier) && (
             <Text bind={`testimonials[${index}].date`} className={style.item__time} tagName="time" />
+          )}
+          {_.get('heading')(modifier) && (
             <Text bind={`testimonials[${index}].title`} className={style.item__title} tagName="h2" />
+          )}
+          {_.get('position')(modifier) && (
             <Text bind={`testimonials[${index}].position`} className={style.item__position} tagName="p" />
-          </div>
+          )}
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <Text bind="title" className={style.title} tagName="h1" />
-          <p >
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
-          </p>
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+            <header className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text bind="title" className={style.title} tagName="h1" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text bind="subtitle" className={style.subtitle} tagName="p" />
+              )}
+            </header>
+          )}
           <Collection
             className={style['items-wrapper']}
             bind="testimonials"
             Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
           />
-          <div className={style['btns-group']}>
-            <Button
-              linkClassName={style.link}
-              buttonClassName={style.button}
-              bind="button"
-            />
-          </div>
+          {this.getModifierValue('button') && (
+            <div className={style['btns-group']}>
+              <Button
+                linkClassName={style.link}
+                buttonClassName={style.button}
+                bind="button"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -146,6 +159,15 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+}
+
+Block.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Testimonials description', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Reviewer name', type: 'checkbox'},
+  position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
+  date: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
 
 export default Block
