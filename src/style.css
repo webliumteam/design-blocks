@@ -68,7 +68,6 @@
 
   &__position {
     color: var(--ui-text-color);
-    font-size: var(--ui-text-size);
 
     @media (min-width: 768px) {
       text-align: left;
