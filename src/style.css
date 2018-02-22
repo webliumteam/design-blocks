@@ -19,10 +19,23 @@
 
 .items-wrapper {
   margin-top: 60px;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .item {
   margin-top: 0;
+  margin-bottom: 40px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 40px;
+  }
 
   &__title {
     font-size: var(--ui-subtitle-size);
