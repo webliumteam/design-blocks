@@ -17,7 +17,9 @@ class Block extends React.Component {
     const memberContacts = [
       _.get('member-email')(modifier) && <Text tagName="div" className={style.item__email} bind={`team[${index}].email`} />,
       _.get('member-social')(modifier) && (
-        <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
+        <div className={style.item__socials}>
+          <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
+        </div>
       ),
     ]
     return (
