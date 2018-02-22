@@ -2,12 +2,32 @@
 
 /* start here */
 
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+
 .title {
   color: var(--ui-dark-shade-color);
 }
 
 .subtitle {
   max-width: 880px;
+}
+
+.plans-wrapper {
+
+  @media (min-width: 768px) {
+    margin-top: 80px;
+    margin-bottom: 30px;
+
+    &:first-child {
+      margin-top: 30px;
+    }
+  }
 }
 
 .plan {
@@ -56,5 +76,11 @@
     max-width: 220px;
     margin: 0 auto;
     margin-bottom: 25px;
+  }
+
+  &--main {
+    .plan__title {
+      font-weight: var(--ui-heading-font-weight);
+    }
   }
 }
