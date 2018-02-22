@@ -15,32 +15,33 @@
   font-size: var(--ui-text-size);
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
+  background: var(--ui-dark-shade-color);
 
-  &:nth-child(1) {
-    background: var(--ui-dark-shade-color);
-
-    .plan__button {
-      background: var(--ui-dark-shade-color);
-    }
-  }
-
-  &:nth-child(2) {
+  &:nth-child(2n) {
     background: var(--ui-light-accent-color);
 
     .plan__button {
-      background: var(--ui-light-shade-color);
+      background-color: var(--ui-light-shade-color);
+      color: var(--ui-dark-shade-color);
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: var(--ui-light-shade-color);
+        color: var(--ui-dark-shade-color);
+      }
     }
   }
 
-  &:nth-child(3) {
+  &:nth-child(3n) {
     background: var(--ui-dark-accent-color);
+
+    .plan__button {
+      color: var(--ui-light-shade-color);
+    }
   }
 
   &__title {
-    font-size: var(--ui-heading-size);
-    line-height: var(--ui-heading-line-height);
-    font-family: var(--ui-heading-font-family);
-    font-weight: var(--ui-heading-font-weight);
     color: var(--ui-light-shade-color);
   }
 
