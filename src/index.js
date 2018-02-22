@@ -51,6 +51,7 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   'button-primary': {defaultValue: false, label: 'Additional button', type: 'hidden'},
   link: {defaultValue: false, label: 'Link', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Services description', type: 'hidden'},
 }
 
 export default ExtendedWireframe
