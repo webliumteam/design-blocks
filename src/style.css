@@ -5,11 +5,6 @@
   margin-bottom: 40px;
 }
 
-.title {
-  font-size: var(--ui-block-title-size);
-  font-weight: var(--ui-block-title-font-weight);
-}
-
 .subtitle {
   margin-top: 50px;
   color: var(--ui-text-color);
