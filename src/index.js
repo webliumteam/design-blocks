@@ -24,32 +24,22 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.testimonials[0],
       image: {
+        ...Component.defaultContent.testimonials[0].image,
         resourceRef: 'photo.png',
-        alt: 'Amanda Peterson photo',
       },
     },
     {
       ...Component.defaultContent.testimonials[1],
       image: {
+        ...Component.defaultContent.testimonials[1].image,
         resourceRef: 'photo.png',
-        alt: 'Amanda Peterson photo',
       },
     },
   ],
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
+    ...Component.defaultContent.cta,
     type: 'secondary-alt',
     size: 'lg',
-    textValue: 'Learn more',
   },
 }
 
