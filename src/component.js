@@ -1,4 +1,5 @@
 import $editor from 'weblium/editor'
+import css from './style.css'
 
 const {loadFont} = $editor
 
@@ -16,11 +17,21 @@ class Block extends React.Component {
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
       : {'min-widt0-h: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
+  collectionItem = ({index, children, className, modifier}) => {
+    const {components: {Text, Icon}} = this.props
+    return (
+      <div className={classNames(css.list__item, className)}>
+        <Icon className={css.list__icon} bind={`steps[${index}].icon`} />
+        <Text bind={`steps[${index}].text`} className={css.list__text} tagName="p" />
+        {children}
+      </div>
+    )
+  }
+
   render() {
     const {
-      components: {Text, Image, Button, SocialIcons},
+      components: {Text, Button, Collection},
       $block: {options},
-      style: css,
     } = this.props
 
     const columnLayout = !(
@@ -65,25 +76,13 @@ class Block extends React.Component {
                   <Text bind="title" />
                 </h1>
               )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
               {this.getModifierValue('text') && (
                 <p className={css.article__text}>
                   <Text bind="text" />
                 </p>
               )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
               {showButtonGroups && (
                 <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
                   {this.getModifierValue('button') && (
                     <Button
                       className={classNames(
@@ -98,26 +97,25 @@ class Block extends React.Component {
               )}
             </div>
           </article>
+          <Collection
+            className={css.list}
+            bind="steps"
+            Item={this.collectionItem}
+          />
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'SocialIcons', 'Icon', 'Collection'])($editor.components)
 
 Block.defaultContent = {
   theme: 'dark',
   title: 'Декларація небайдужих',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
   text:
     'Ми переконані, що корупція є найбільшою внутрішньою загрозою для нашої держави та її майбутнього, так само як російська агресія – зовнішньою. Починаючи з 2014 року новій владі, за активної допомоги активістів та Заходу вдалося зробити перші кроки у боротьбі з корупцією. Такого в нашій країні ще не було з часів проголошення Незалежності. ',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
-  },
+
   button: {
     actionConfig: {
       action: 'link',
@@ -131,91 +129,42 @@ Block.defaultContent = {
     },
     textValue: 'Детальніше',
   },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
+  steps: [
+    {
+      text: '1. Підписуй декларацію та долучайся до ініціативи',
+      icon: {
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 16"><path d="M22.48 1.054L5.808 12.977 3.245 4.833l3.055 2.1c.437.297 1.02.262 1.416-.083l4.803-4.186 2.45 2.072 1.93-1.374L13.256.274A1.162 1.162 0 0 0 11.75.28l-4.88 4.255-5.06-3.475a1.162 1.162 0 0 0-1.34.014c-.396.29-.563.801-.417 1.271l4.026 12.828a1.161 1.161 0 0 0 1.777.594L21.231 4.771l-2.103 8.179-3.415-2.356-1.986 1.423 5.456 3.758c.306.214.701.262 1.056.131.354-.13.617-.428.715-.787L24.25 2.284c.118-.463-.07-.96-.465-1.23a1.18 1.18 0 0 0-1.305 0z"></path></svg>',
+        fill: 'red',
       },
     },
-    textValue: 'More about us',
-  },
-  socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
+    {
+      text: '2. Приєднуйся до групи небайдужих в <a href="facebook.com">facebook</a>: для підписантів – запрошення прийде на твою пошту, що вказана при реєстрації твого facebook-профілю для тих, хто долучиться – вступ в групу відбудеться автоматично',
+      icon: {
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 16"><path d="M22.48 1.054L5.808 12.977 3.245 4.833l3.055 2.1c.437.297 1.02.262 1.416-.083l4.803-4.186 2.45 2.072 1.93-1.374L13.256.274A1.162 1.162 0 0 0 11.75.28l-4.88 4.255-5.06-3.475a1.162 1.162 0 0 0-1.34.014c-.396.29-.563.801-.417 1.271l4.026 12.828a1.161 1.161 0 0 0 1.777.594L21.231 4.771l-2.103 8.179-3.415-2.356-1.986 1.423 5.456 3.758c.306.214.701.262 1.056.131.354-.13.617-.428.715-.787L24.25 2.284c.118-.463-.07-.96-.465-1.23a1.18 1.18 0 0 0-1.305 0z"></path></svg>',
+        fill: 'red',
       },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
-    ],
-    target: '_blank',
-    design: {
-      border: 'circle',
-      innerFill: true,
-      preset: 'preset001',
-      padding: 20,
-      color: '',
-      sizes: [10, 20, 30, 40],
-      size: '40px',
     },
-  },
+    {
+      text: '3. Ознайомся із інструкціями щодо взаємодії в групі',
+      icon: {
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 16"><path d="M22.48 1.054L5.808 12.977 3.245 4.833l3.055 2.1c.437.297 1.02.262 1.416-.083l4.803-4.186 2.45 2.072 1.93-1.374L13.256.274A1.162 1.162 0 0 0 11.75.28l-4.88 4.255-5.06-3.475a1.162 1.162 0 0 0-1.34.014c-.396.29-.563.801-.417 1.271l4.026 12.828a1.161 1.161 0 0 0 1.777.594L21.231 4.771l-2.103 8.179-3.415-2.356-1.986 1.423 5.456 3.758c.306.214.701.262 1.056.131.354-.13.617-.428.715-.787L24.25 2.284c.118-.463-.07-.96-.465-1.23a1.18 1.18 0 0 0-1.305 0z"></path></svg>',
+        fill: 'red',
+      },
+    },
+    {
+      text: '4. Долучайся до активностей ініціативи небайдужих та ініціюй власні',
+      icon: {
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 16"><path d="M22.48 1.054L5.808 12.977 3.245 4.833l3.055 2.1c.437.297 1.02.262 1.416-.083l4.803-4.186 2.45 2.072 1.93-1.374L13.256.274A1.162 1.162 0 0 0 11.75.28l-4.88 4.255-5.06-3.475a1.162 1.162 0 0 0-1.34.014c-.396.29-.563.801-.417 1.271l4.026 12.828a1.161 1.161 0 0 0 1.777.594L21.231 4.771l-2.103 8.179-3.415-2.356-1.986 1.423 5.456 3.758c.306.214.701.262 1.056.131.354-.13.617-.428.715-.787L24.25 2.284c.118-.463-.07-.96-.465-1.23a1.18 1.18 0 0 0-1.305 0z"></path></svg>',
+        fill: 'red',
+      },
+    },
+  ],
 }
 
 Block.options = {
   invert: true,
 }
 
-Block.modifierScheme = [
-  {
-    id: 'text',
-    type: 'checkbox',
-    label: 'Company main text',
-    defaultValue: true,
-  },
-  {
-    id: 'link',
-    type: 'checkbox',
-    label: 'About us link',
-    defaultValue: false,
-  },
-  {
-    id: 'button',
-    type: 'checkbox',
-    label: 'Contact us button',
-    defaultValue: true,
-  },
-  {
-    id: 'socialIcons',
-    type: 'checkbox',
-    label: 'Social media buttons',
-    defaultValue: false,
-  },
-  {
-    id: 'subtitle',
-    type: 'checkbox',
-    label: 'Subtitle',
-    defaultValue: false,
-  },
-  {
-    id: 'title',
-    type: 'checkbox',
-    label: 'Block title',
-    defaultValue: true,
-  },
-]
+Block.modifierScheme = []
 
 export default Block
