@@ -19,6 +19,10 @@
     margin-bottom: 60px;
     font-size: var(--ui-block-title-size);
     font-weight: var(--ui-block-title-font-weight);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__icon {
@@ -66,11 +70,6 @@
     }
   }
 
-  &__button {
-    background-color: var(--ui-light-shade-color);
-    color: var(--ui-dark-shade-color);
-  }
-
   &--main {
     box-shadow: none;
     margin: 0;
@@ -97,6 +96,10 @@
 
 .plans-wrapper {
   margin-top: 0;
+
+  &:last-child {
+    margin-bottom: -50px;
+  }
 }
 
 .btns-group {
