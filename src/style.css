@@ -1,3 +1,92 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
+
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+
+.title {
+  color: var(--ui-dark-shade-color);
+}
+
+.subtitle {
+  max-width: 880px;
+}
+
+.plans-wrapper {
+
+  @media (min-width: 768px) {
+    margin-top: 80px;
+    margin-bottom: 30px;
+
+    &:first-child {
+      margin-top: 30px;
+    }
+  }
+}
+
+.plan {
+  color: var(--ui-light-shade-color);
+  font-size: var(--ui-text-size);
+  line-height: var(--ui-text-line-height);
+  font-family: var(--ui-text-font-family);
+  background: var(--ui-dark-shade-color);
+
+  &:nth-child(2n) {
+    background: var(--ui-light-accent-color);
+
+    .plan__button {
+      background-color: var(--ui-light-shade-color);
+      color: var(--ui-dark-shade-color);
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: var(--ui-light-shade-color);
+        color: var(--ui-dark-shade-color);
+      }
+    }
+  }
+
+  &:nth-child(3n) {
+    background: var(--ui-dark-accent-color);
+
+    .plan__button {
+      color: var(--ui-light-shade-color);
+    }
+  }
+
+  &__title {
+    color: var(--ui-light-shade-color);
+  }
+
+  &__price-count {
+    color: var(--ui-light-shade-color);
+    font-size: var(--ui-hero-title-size);
+    font-family: var(--ui-hero-title-font-family);
+    font-weight: var(--ui-hero-title-font-weight);
+  }
+
+  &__list-item {
+    max-width: 220px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  &--main {
+    padding-top: 70px;
+
+    .plan__title {
+      font-weight: var(--ui-heading-font-weight);
+    }
+
+    .plan__button {
+      margin-top: 0;
+    }
+  }
+}
