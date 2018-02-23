@@ -12,7 +12,7 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, children, modifier}) => {
+  collectionItem = ({index, children, modifier, className}) => {
     const {components: {Text, Image, Button}, style} = this.props
     const showContent = _.get('body')(modifier) || _.get('link')(modifier)
     const showBody = _.get('body')(modifier)
@@ -46,6 +46,7 @@ class Block extends React.Component {
         {[style['item--heading-none']]: !showHeading},
         {[style['item--two-elements']]: (!showBody && !showLink && showHeading) || (!showBody && showLink && !showHeading)},
         {[style['item--logo']]: (!showBody && !showLink && !showHeading)},
+        className,
         )}
       >
         {children}
