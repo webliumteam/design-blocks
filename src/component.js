@@ -29,6 +29,8 @@ class Block extends React.Component {
           )}
           {_.get('link')(modifier) && (
             <Button
+              linkClassName={style.link}
+              buttonClassName={style.button}
               className={style.item__link}
               bind={`partners[${index}].button`}
             />
@@ -84,7 +86,11 @@ class Block extends React.Component {
           />
           {this.getModifierValue('button') && (
             <div className={classNames(style['btns-group'], {[style['btns-group--offset-sm']]: onlyLogo})}>
-              <Button buttonClassName={style.button} bind="button" />
+              <Button
+                linkClassName={style.link}
+                buttonClassName={style.button}
+                bind="button"
+              />
             </div>
           )}
         </div>
