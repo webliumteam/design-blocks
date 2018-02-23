@@ -41,6 +41,31 @@
 
       .contacts-list {
         max-width: 75%;
+
+        &__item:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+
+    @media(min-width: 992px) {
+      .title {
+        max-width: 25%;
+        margin-left: 0;
+      }
+
+      .logo-wrapper {
+        max-width: 25%;
+        margin-right: 0;
+      }
+
+      .logo {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .contacts-list {
+        max-width: 50%;
       }
     }
   }
@@ -60,7 +85,6 @@
   }
 
   .title {
-    margin-top: 32%;
     margin-bottom: 15px;
     padding: 0 15px;
     text-align: left;
@@ -69,7 +93,7 @@
   .contacts {
     width: 31.62%;
     padding-left: 50px;
-    justify-content: start;
+    justify-content: center;
 
     &-list {
       max-width: 300px;
@@ -102,7 +126,6 @@
 
 @media (min-width: 1200px) {
   .title {
-    margin-top: 33%;
     margin-left: 35px;
   }
 
