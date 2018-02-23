@@ -51,15 +51,14 @@
     :global {
       .slick-prev,
       .slick-next {
-        transform: translateY(-50%);
         top: 100%;
         z-index: 1;
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         color: var(--ui-light-shade-color);
         transition: color .2s ease-in;
 
-        @media (min-width: 480px) {
+        @media (min-width: 768px) {
           top: 27%;
         }
 
@@ -71,40 +70,38 @@
       }
 
       .slick-prev {
-        transform: translateY(-50%) rotate(180deg);
+        transform: translateY(-40%) rotate(180deg);
+        left: 40%;
 
         &:before {
           content: "";
         }
 
-        @media (min-width: 480px) {
-          left: 80px;
-        }
-
         @media (min-width: 768px) {
+          transform: translateY(-50%) rotate(180deg);
           left: 20px;
         }
 
         @media (min-width: 992px) {
-          left: 36%;
+          left: 32%;
         }
       }
 
       .slick-next {
+        transform: translateY(-40%);
+        right: 40%;
+
         &:before {
           content: "";
         }
 
-        @media (min-width: 480px) {
-          right: 80px;
-        }
-
         @media (min-width: 768px) {
+          transform: translateY(-50%);
           right: 20px;
         }
 
         @media (min-width: 992px) {
-          right: 36%;
+          right: 32%;
         }
       }
     }
@@ -114,7 +111,10 @@
 .items-wrapper--image-none {
   :global {
     .slick-prev {
-      transform: translateY(-40%) rotate(180deg);
+
+      @media (min-width: 768px) {
+        left: calc(100% - 750px);
+      }
 
       @media (min-width: 992px) {
         left: calc(100% - 940px);
@@ -122,7 +122,10 @@
     }
 
     .slick-next {
-      transform: translateY(-40%);
+
+      @media (min-width: 768px) {
+        right: calc(100% - 750px);
+      }
 
       @media (min-width: 992px) {
         right: calc(100% - 940px);
