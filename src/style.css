@@ -1,3 +1,139 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-contacts/src/style.css";
 
-/* start here */
+.title {
+  letter-spacing: -2px;
+}
+
+.logo {
+  background: none;
+
+  &__title {
+    font-size: var(--ui-heading-size);
+    line-height: var(--ui-heading-line-height);
+    font-weight: var(--ui-heading-font-weight);
+    letter-spacing: -0.5px;
+    color: var(--ui-heading-color);
+  }
+}
+
+.contacts {
+  &-list {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: var(--ui-subtitle-size);
+    line-height: var(--ui-subtitle-line-height);
+    font-weight: 600;
+  }
+
+  &__desc {
+    font-size: var(--ui-text-size);
+  }
+
+  &:first-child {
+
+    @media(min-width: 768px) {
+      .title {
+        margin-top: 0;
+        max-width: 25%;
+      }
+
+      .contacts-list {
+        max-width: 75%;
+
+        &__item:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+
+    @media(min-width: 992px) {
+      .title {
+        max-width: 25%;
+        margin-left: 0;
+      }
+
+      .logo-wrapper {
+        max-width: 25%;
+        margin-right: 0;
+      }
+
+      .logo {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .contacts-list {
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 100px 0;
+  }
+
+  .map {
+    padding-top: 78%;
+
+    &-wrapper {
+      width: 68.38%;
+    }
+  }
+
+  .title {
+    margin-bottom: 15px;
+    padding: 0 15px;
+    text-align: left;
+  }
+
+  .contacts {
+    width: 31.62%;
+    padding-left: 50px;
+    justify-content: center;
+
+    &-list {
+      max-width: 300px;
+      margin-top: 0;
+
+      &__item {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__desc {
+      padding-top: 3px;
+    }
+  }
+
+  .logo {
+    min-height: 105px;
+    justify-content: left;
+
+    &-wrapper {
+      margin-bottom: 15px;
+    }
+  }
+
+  .title,
+  .logo {
+    margin-left: 25px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .title {
+    margin-left: 35px;
+  }
+
+  .logo {
+    margin-left: 35px;
+  }
+
+  .contacts {
+    padding-left: 45px;
+  }
+}
