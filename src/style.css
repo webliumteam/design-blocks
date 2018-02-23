@@ -518,6 +518,7 @@
   flex-wrap: wrap;
   font-size: 15px;
   line-height: 1.73;
+  color: #999;
 
   @media (min-width: 768px) {
     margin-top: 120px;
