@@ -92,7 +92,7 @@
 
       .slick-next {
         &:before {
-          content: " ";
+          content: "";
         }
 
         @media (min-width: 480px) {
@@ -106,6 +106,26 @@
         @media (min-width: 992px) {
           right: 36%;
         }
+      }
+    }
+  }
+}
+
+.items-wrapper--image-none {
+  :global {
+    .slick-prev {
+      transform: translateY(-40%) rotate(180deg);
+
+      @media (min-width: 992px) {
+        left: calc(100% - 940px);
+      }
+    }
+
+    .slick-next {
+      transform: translateY(-40%);
+
+      @media (min-width: 992px) {
+        right: calc(100% - 940px);
       }
     }
   }
