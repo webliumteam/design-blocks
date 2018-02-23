@@ -22,56 +22,20 @@ ExtendedWireframe.defaultContent = {
   },
   testimonials: [
     {
-      id: 'bf40db18-b817-4a19-bd5b-b72cfacce814',
-      name: {
-        content: 'Julia Banks',
-        type: 'heading',
-      },
-      position: {
-        content: 'CEO at Minor Thinking',
-        type: 'caption',
-      },
-      description: {
-        content: '“They are always accountable. I have confidence when I make a decision. I know it\'s going to get done. If they could lose money on a project just because the\'re trying to make the customer happy, they probably would do that.”',
-        type: 'text',
-      },
-      date: {
-        content: 'December 15, 2017',
-        type: 'caption',
-      },
+      ...Component.defaultContent.testimonials[0],
       image: {
         resourceRef: 'photo.png',
         alt: 'Amanda Peterson photo',
       },
     },
     {
-      id: '5ee25c3a-0026-4ab8-b291-238b72e1f6cc',
-      name: {
-        content: 'Julia Banks',
-        type: 'heading',
-      },
-      position: {
-        content: 'CEO at Minor Thinking',
-        type: 'caption',
-      },
-      description: {
-        content: '“They are always accountable. I have confidence when I make a decision. I know it\'s going to get done. If they could lose money on a project just because the\'re trying to make the customer happy, they probably would do that.”',
-        type: 'text',
-      },
-      date: {
-        content: 'December 15, 2017',
-        type: 'caption',
-      },
+      ...Component.defaultContent.testimonials[1],
       image: {
         resourceRef: 'photo.png',
         alt: 'Amanda Peterson photo',
       },
     },
   ],
-  subtitle: {
-    content: 'The French Revolution constituted for the conscience of the dominant aristocratic class a fall from innocence, and upturning of the natural chain of',
-    type: 'subtitle',
-  },
   cta: {
     actionConfig: {
       action: 'link',
@@ -85,13 +49,13 @@ ExtendedWireframe.defaultContent = {
     },
     type: 'secondary-alt',
     size: 'lg',
-    textValue: 'Additional button (L)',
+    textValue: 'Learn more',
   },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  publishDate: {defaultValue: false, label: 'Date of publishing', type: 'checkbox'},
+  publishDate: {defaultValue: false, label: 'Date of publishing', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
 }
 

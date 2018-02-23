@@ -53,15 +53,28 @@
       .slick-next {
         transform: translateY(-50%);
         top: 100%;
+        z-index: 1;
+        width: 40px;
+        height: 40px;
+        color: var(--ui-light-shade-color);
+        transition: color .2s ease-in;
 
         @media (min-width: 480px) {
-          top: 31%;
+          top: 27%;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: var(--ui-brand-color);
         }
       }
 
       .slick-prev {
+        transform: translateY(-50%) rotate(180deg);
+
         &:before {
-          content: " ";
+          content: "";
         }
 
         @media (min-width: 480px) {
