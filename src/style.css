@@ -6,10 +6,10 @@
   @media (min-width: 992px) {
     padding: 100px 0;
   }
-}
 
-.title {
-  color: var(--ui-dark-shade-color);
+  .title {
+    color: var(--ui-dark-shade-color);
+  }
 }
 
 .subtitle {
@@ -115,8 +115,4 @@
   &-group {
     padding-top: 30px;
   }
-}
-
-.button {
-  font-weight: 400;
 }
