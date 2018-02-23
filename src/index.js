@@ -13,11 +13,11 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   theme: 'dark',
   copyright: {
-    content: 'Produced by Weblium.com.',
+    ...Component.defaultContent.copyright,
     type: 'small',
   },
   additional: {
-    content: 'All rights Reserved',
+    ...Component.defaultContent.additional,
     type: 'small',
   },
 }
