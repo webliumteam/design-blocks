@@ -30,6 +30,20 @@
   &__desc {
     font-size: var(--ui-text-size);
   }
+
+  &:first-child {
+
+    @media(min-width: 768px) {
+      .title {
+        margin-top: 0;
+        max-width: 25%;
+      }
+
+      .contacts-list {
+        max-width: 75%;
+      }
+    }
+  }
 }
 
 @media (min-width: 992px) {
@@ -47,7 +61,7 @@
 
   .title {
     margin-top: 32%;
-    margin-bottom: 0;
+    margin-bottom: 15px;
     padding: 0 15px;
     text-align: left;
   }
@@ -76,7 +90,7 @@
     justify-content: left;
 
     &-wrapper {
-      margin-bottom: 0;
+      margin-bottom: 15px;
     }
   }
 
