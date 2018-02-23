@@ -15,9 +15,13 @@ ExtendedWireframe.defaultContent = {
     type: 'image',
     position: {
       type: 'cover',
-      cover: '50% 50%',
+      cover: '80% 50%',
     },
     resourceRef: 'woman3.jpg',
+  },
+  'button-1': {
+    ...Component.defaultContent['button-1'],
+    type: 'secondary',
   },
 }
 
