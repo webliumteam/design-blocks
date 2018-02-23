@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-zapdos-testimonials/src/component'
 import style from './style.css'
 
 import options from './options.json'
@@ -11,10 +11,38 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  theme: 'dark',
+  background: {
+    type: 'image',
+    position: {
+      type: 'tile',
+      cover: '50% 50%',
+    },
+    resourceRef: 'bg.jpg',
+  },
+  testimonials: [
+    {
+      ...Component.defaultContent.testimonials[0],
+      image: {
+        ...Component.defaultContent.testimonials[0].image,
+        resourceRef: 'testimonials_image.png',
+      },
+    },
+    {
+      ...Component.defaultContent.testimonials[1],
+      image: {
+        ...Component.defaultContent.testimonials[1].image,
+        resourceRef: 'testimonials_image.png',
+      },
+    },
+  ],
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Secondary Button', type: 'hidden'},
+  publishDate: {defaultValue: false, label: 'Date of publishing', type: 'hidden'},
 }
 
 export default ExtendedWireframe

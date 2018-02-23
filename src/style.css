@@ -1,3 +1,157 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
+
+.title {
+  position: relative;
+  margin-bottom: 50px;
+  font-size: calc(var(--ui-block-title-size) / 1.2);
+  font-weight: 700;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 45px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--ui-brand-color);
+  }
+
+  @media (min-width: 768px) {
+    font-size: var(--ui-block-title-size);
+  }
+}
+
+.subtitle {
+  max-width: 570px;
+  margin-bottom: 30px;
+  font-family: var(--ui-text-font-family);
+  font-size: calc(var(--ui-subtitle-size) * 0.9);
+}
+
+.item {
+  &__inner {
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__author-wrapper {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      width: 30%;
+    }
+  }
+
+  &__pic {
+    height: 80px;
+    width: 80px;
+
+    @media (min-width: 768px) {
+      margin-left: 0;
+    }
+  }
+
+  &__contacts {
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__position {
+    color: var(--ui-text-color);
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__testimonials-wrapper {
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: 70%;
+    }
+  }
+
+  &__desc {
+    margin-top: 0;
+    font-size: var(--ui-text-size);
+    max-width: 570px;
+
+    @media (min-width: 768px) {
+      margin-left: 30px;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    text-align: left;
+  }
+}
+
+.items-wrapper {
+  :global {
+    .slick-arrow {
+      height: 40px;
+      width: 40px;
+      z-index: 1;
+      fill: #595959;
+      transition: fill .2s ease-in;
+
+      &:hover {
+        fill: var(--ui-brand-color);
+      }
+
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
+    }
+
+    .slick-arrow.slick-prev {
+      transform: translateX(-200%);
+      top: 100%;
+      left: 50%;
+
+      @media (min-width: 768px) {
+        left: 0;
+        top: 50%;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .slick-arrow.slick-next {
+      transform: translateX(200%);
+      top: 100%;
+      right: 50%;
+
+      @media (min-width: 768px) {
+        right: 0;
+        top: 50%;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .slick-arrow.slick-prev,
+    .slick-arrow.slick-next {
+
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
