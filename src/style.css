@@ -9,7 +9,12 @@
 .subtitle {
   max-width: 900px;
   opacity: 0.6;
-  color: var(--ui-text-color);
+}
+
+.section {
+  .subtitle {
+    color: var(--ui-text-color);
+  }
 }
 
 .plan {
