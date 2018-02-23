@@ -1,3 +1,118 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
+.title {
+  position: relative;
+  margin-bottom: 50px;
+  font-size: calc(var(--ui-block-title-size) / 1.2);
+  font-weight: 700;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 45px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--ui-brand-color);
+  }
+
+  @media (min-width: 768px) {
+    font-size: var(--ui-block-title-size);
+  }
+}
+
+.subtitle {
+  max-width: 570px;
+  margin-bottom: 15px;
+  font-family: var(--ui-text-font-family);
+  font-size: calc(var(--ui-subtitle-size) * 0.9);
+}
+
+.item {
+  &__desc {
+    margin-top: 35px;
+    font-size: var(--ui-text-size);
+    max-width: 570px;
+  }
+
+  &__time {
+    margin-top: 35px;
+    color: var(--ui-text-color);
+    font-style: italic;
+  }
+
+  &__position {
+    color: var(--ui-text-color);
+    font-size: calc(var(--ui-caption-size) * 1.14);
+  }
+
+  &__pic {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+.btns-group {
+  padding-top: 55px;
+}
+
+.items-wrapper {
+  :global {
+    .slick-arrow {
+      height: 40px;
+      width: 40px;
+      z-index: 1;
+      fill: #595959;
+      transition: fill .2s ease-in;
+
+      &:hover {
+        fill: var(--ui-brand-color);
+      }
+
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
+    }
+
+    .slick-arrow.slick-prev {
+      transform: translateX(-200%);
+      top: 100%;
+      left: 50%;
+
+      @media (min-width: 768px) {
+        left: 0;
+        top: 50%;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .slick-arrow.slick-next {
+      transform: translateX(200%);
+      top: 100%;
+      right: 50%;
+
+      @media (min-width: 768px) {
+        right: 0;
+        top: 50%;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    .slick-arrow.slick-prev,
+    .slick-arrow.slick-next {
+
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
