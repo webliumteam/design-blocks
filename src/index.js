@@ -55,7 +55,6 @@ ExtendedWireframe.defaultContent = {
   ],
   cta: {
     ...Component.defaultContent.cta,
-    textValue: 'Learn more',
     type: 'secondary',
   },
 }
