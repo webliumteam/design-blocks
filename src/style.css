@@ -1,3 +1,30 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-cover/src/style.css";
 
 /* start here */
+
+.title {
+  margin-bottom: 20px;
+  letter-spacing: -2.8px;
+
+  @media (min-width: 480px) and (min-height: 370px) {
+    padding-left: 40px;
+  }
+}
+
+.subtitle {
+  font-size: var(--ui-subtitle-size);
+  font-weight: 700;
+  color: var(--ui-subheading-color);
+
+  @media (min-width: 480px) and (min-height: 370px) {
+    padding-left: 40px;
+  }
+}
+
+.btns-group {
+  margin-top: 15px;
+
+  @media (min-width: 480px) and (min-height: 370px) {
+    padding-left: 40px;
+  }
+}
