@@ -47,7 +47,7 @@ ExtendedWireframe.defaultContent = {
         },
       },
     },
-    type: 'secondary-alt',
+    type: 'secondary',
     size: 'lg',
     textValue: 'Learn more',
   },
