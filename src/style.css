@@ -1,3 +1,112 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-pricing/src/style.css";
 
 /* start here */
+
+.title {
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  max-width: 900px;
+  opacity: 0.6;
+}
+
+.section {
+  .subtitle {
+    color: var(--ui-text-color);
+  }
+}
+
+.plan {
+  background-color: transparent;
+
+  &__title {
+    margin-bottom: 60px;
+    font-size: var(--ui-block-title-size);
+    font-weight: var(--ui-block-title-font-weight);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      margin-bottom: 15px;
+      height: 56px;
+      color: var(--ui-text-color);
+    }
+  }
+
+  &__price {
+    margin-bottom: 36px;
+
+    &-count {
+      font-size: calc(var(--ui-heading-lg-size) * 1.76475);
+
+      @media (min-width: 992px) {
+        font-size: calc(var(--ui-heading-lg-size) * 2.353);
+      }
+
+      @media (min-width: 1200px) {
+        font-size: calc(var(--ui-heading-lg-size) * 3.5295);
+      }
+    }
+
+    &-count + span {
+      opacity: 0.6;
+      text-transform: uppercase;
+    }
+  }
+
+  &__list {
+    margin-bottom: 45px;
+
+    &-item {
+      margin-bottom: 15px;
+
+      &-text {
+        color: var(--ui-text-color);
+      }
+    }
+  }
+
+  &--main {
+    box-shadow: none;
+    margin: 0;
+
+    .plan__title {
+      font-weight: var(--ui-block-title-font-weight);
+    }
+
+    .plan__icon {
+      &-wrapper {
+        height: 56px;
+      }
+    }
+
+    .plan__list {
+      margin-bottom: 45px;
+    }
+
+    .plan__button {
+      margin-top: 0;
+    }
+  }
+}
+
+.plans-wrapper {
+  margin-top: 0;
+
+  &:last-child {
+    margin-bottom: -50px;
+  }
+}
+
+.btns-group {
+  margin-top: 30px;
+}
