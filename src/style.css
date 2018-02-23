@@ -184,10 +184,13 @@
 
   .item__link {
     font-size: var(--ui-btn-md-font-size);
-    padding-left: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+  }
+
+  .link {
+    padding-left: 0;
   }
 
   &--body-none {
@@ -198,7 +201,7 @@
     margin-bottom: 30px;
     padding-top: 0;
     padding-bottom: 30px;
-    
+
     @media (min-width: 768px) {
       align-items: center;
     }
