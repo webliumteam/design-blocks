@@ -1,3 +1,7 @@
 {
-  "showSubtitle": true
+  "custom-arrows": true,
+  "prev-arrow": "<svg viewBox='0 0 100 100' fill='currentColor'><path d='M37.53 67.52l4.95 4.95 22.4-22.46-22.4-22.49-4.95 4.95 17.53 17.54z'/></svg>",
+  "next-arrow": "<svg viewBox='0 0 100 100' fill='currentColor'><path d='M37.53 67.52l4.95 4.95 22.4-22.46-22.4-22.49-4.95 4.95 17.53 17.54z'/></svg>",
+  "personal-info-wrapper": false,
+  "testimonials-wrapper": false
 }

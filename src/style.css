@@ -1,3 +1,141 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding: 100px 0;
+  }
+
+  .title {
+    color: var(--ui-dark-shade-color);
+  }
+}
+
+.subtitle {
+  margin-top: 45px;
+  max-width: 903px;
+  font-weight: 600;
+}
+
+.item {
+  &__pic {
+    width: 209px;
+    height: 209px;
+
+    &-wrapper {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 20px;
+  }
+
+  &__position {
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  &__desc {
+    margin-top: 30px;
+    font-size: var(--ui-text-size);
+    max-width: 590px;
+  }
+}
+
+.items {
+  &-wrapper {
+    margin-top: 30px;
+
+    :global {
+      .slick-prev,
+      .slick-next {
+        top: 100%;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        color: var(--ui-light-shade-color);
+        transition: color .2s ease-in;
+
+        @media (min-width: 768px) {
+          top: 27%;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: var(--ui-brand-color);
+        }
+      }
+
+      .slick-prev {
+        transform: translateY(-40%) rotate(180deg);
+        left: 35%;
+
+        &:before {
+          content: "";
+        }
+
+        @media (min-width: 768px) {
+          transform: translateY(-50%) rotate(180deg);
+          left: 20px;
+        }
+
+        @media (min-width: 992px) {
+          left: 32%;
+        }
+      }
+
+      .slick-next {
+        transform: translateY(-40%);
+        right: 35%;
+
+        &:before {
+          content: "";
+        }
+
+        @media (min-width: 768px) {
+          transform: translateY(-50%);
+          right: 20px;
+        }
+
+        @media (min-width: 992px) {
+          right: 32%;
+        }
+      }
+    }
+  }
+}
+
+.items-wrapper--image-none {
+  :global {
+    .slick-prev {
+
+      @media (min-width: 768px) {
+        left: calc(100% - 750px);
+      }
+
+      @media (min-width: 992px) {
+        left: calc(100% - 940px);
+      }
+    }
+
+    .slick-next {
+
+      @media (min-width: 768px) {
+        right: calc(100% - 750px);
+      }
+
+      @media (min-width: 992px) {
+        right: calc(100% - 940px);
+      }
+    }
+  }
+}
+
+.btns {
+  &-group {
+    padding-top: 30px;
+  }
+}
