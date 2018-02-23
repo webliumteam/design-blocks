@@ -13,24 +13,13 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   logo: {
     text: {
-      value: 'Company Name',
+      ...Component.defaultContent.logo.text.value,
       tagName: 'h2',
       fontSize: 26,
     },
   },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Request a quote',
-    type: 'primary',
+    ...Component.defaultContent.cta,
     size: 'md',
   },
 }
