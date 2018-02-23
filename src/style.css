@@ -79,8 +79,14 @@
   }
 
   &--main {
+    padding-top: 70px;
+
     .plan__title {
       font-weight: var(--ui-heading-font-weight);
+    }
+
+    .plan__button {
+      margin-top: 0;
     }
   }
 }
