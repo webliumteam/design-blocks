@@ -514,10 +514,14 @@
 .list {
   display: flex;
   margin: 0 -15px;
-  margin-top: 120px;
+  margin-top: 60px;
   flex-wrap: wrap;
   font-size: 15px;
   line-height: 1.73;
+
+  @media (min-width: 768px) {
+    margin-top: 120px;
+  }
 
   &__item {
     display: flex;
