@@ -90,10 +90,16 @@ class Block extends React.Component {
               </svg>Produced by Weblium.com
             </a>
           </div>
-          <div className={classNames(css.modal, this.state.openModal && css['modal--active'])}>
+          <div className={classNames(css.modal, !this.state.openModal && css['modal--active'])}>
             <h3 className={css.modal__title}>
-              Ви успішно долучились <br /> до Декларації
+              Раді, що Ви згодні <br /> із положеннями Декларації
             </h3>
+            <p className={css.modal__text}>
+              Щоб втілити в життя поставлені цілі – потрібно діяти.<br />
+              Долучайтесь до нашої спільноти небайдужих – і навіть 10 хвилин Вашого часу на тижден
+              <br />
+              зроблять позитивний вклад у спільну мету.
+            </p>
             <button type="button" className={css.modal__link} onClick={this.toggleModal}>
               Повернутися на головну
             </button>

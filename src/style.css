@@ -285,12 +285,10 @@ button {
       flex-direction: row;
       flex-wrap: nowrap;
     }
-  
+
     @media (min-width: 1200px) {
       justify-content: flex-end;
     }
-
-    
   }
 }
 
@@ -344,7 +342,7 @@ button {
     fill: #fff;
     width: 45px;
     height: 45px;
-    border-left: 1px solid #334f87;;
+    border-left: 1px solid #334f87;
     transition: border-color 0.2s ease-out;
   }
 }
@@ -390,11 +388,18 @@ button {
     line-height: 1.17;
     text-align: center;
     color: #fff;
-    margin-bottom: 55px;
 
     @media (min-width: 768px) {
       font-size: 60px;
     }
+  }
+
+  &__text {
+    text-align: center;
+    padding: 42px 15px 62px;
+    font-size: 13px;
+    line-height: 1.69;
+    color: #fff;
   }
 
   &__link {
@@ -409,7 +414,7 @@ button {
     text-align: center;
     border: 0;
     color: var(--ui-brand-color);
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover,
     &:focus {
