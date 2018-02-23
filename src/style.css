@@ -69,8 +69,19 @@
     }
   }
 
+  &:first-child {
+    border-top: 0;
+  }
+
+  &:nth-child(2) {
+
+    @media (min-width: 992px) {
+      border-top: 0;
+    }
+  }
+
   &:nth-child(even),
-  &:last-child {
+  &:last-of-type {
 
     @media (min-width: 992px) {
       border-right: 0;
