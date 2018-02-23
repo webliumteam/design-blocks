@@ -3,55 +3,77 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  collectionItem = ({index, children, className}) => {
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Button, Image}, style} = this.props
+
+    const onlyLogo = !_.get('link')(modifier) && !_.get('body')(modifier)
+
     return (
-      <article className={classNames(style.item, className)}>
+      <article className={classNames(style.item, {[style['item--only-logo']]: onlyLogo}, className)}>
         {children}
 
         <div className={style.item__container}>
-          <Image
-            pictureClassName={style.item__pic}
-            imgClassName={style.item__image}
-            bind={`partners[${index}.picture`}
-          />
-          <p className={style.item__desc}>
-            <Text bind={`partners[${index}].desc`} tagName="span" />
-          </p>
-          <Button
-            linkClassName={style.link}
-            buttonClassName={style.button}
-            bind={`partners[${index}].cta`}
-          />
+          {_.get('headingInstendImage')(modifier) && (
+            <Text bind={`partners[${index}].title`} className={style.item__title} tagName="h2" />
+          )}
+          {!_.get('headingInstendImage')(modifier) && (
+            <Image
+              pictureClassName={style.item__pic}
+              imgClassName={style.item__image}
+              bind={`partners[${index}.picture`}
+            />
+          )}
+          {_.get('body')(modifier) && (
+            <p className={style.item__desc}>
+              <Text bind={`partners[${index}].desc`} tagName="span" />
+            </p>
+          )}
+          {_.get('link')(modifier) && (
+            <Button
+              linkClassName={style.link}
+              buttonClassName={style.button}
+              bind={`partners[${index}].cta`}
+            />
+          )}
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
           <header className={style.section__header}>
             <Text bind="title" className={style.title} tagName="h1" />
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            {this.getModifierValue('subtitle') && (
+              <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            )}
           </header>
           <Collection
             className={style['items-wrapper']}
             bind="partners"
             Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
           />
-          <div className={style['btns-group']}>
-            <Button
-              linkClassName={style.link}
-              buttonClassName={style.button}
-              bind="button"
-            />
-          </div>
+          {this.getModifierValue('button') && (
+            <div className={style['btns-group']}>
+              <Button
+                linkClassName={style.link}
+                buttonClassName={style.button}
+                bind="button"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -63,6 +85,10 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.com
 Block.defaultContent = {
   partners: [
     {
+      title: {
+        content: 'Samsung',
+        type: 'heading',
+      },
       desc: {
         content: '<span style="font-weight: bold">Samsung.</span> It doesn’t need a lot of words. High-quality tech products with superior design.',
         type: 'text',
@@ -86,6 +112,10 @@ Block.defaultContent = {
       },
     },
     {
+      title: {
+        content: 'Ford',
+        type: 'heading',
+      },
       desc: {
         content: '<span style="font-weight: bold">Ford.</span> This is our moving force, literally! 100% reliable and credible.',
         type: 'text',
@@ -109,6 +139,10 @@ Block.defaultContent = {
       },
     },
     {
+      title: {
+        content: 'Medical Family',
+        type: 'heading',
+      },
       desc: {
         content: '<span style="font-weight: bold">Medical Family.</span> Ensuring good health and medical care for our team for 5 years.',
         type: 'text',
@@ -132,6 +166,10 @@ Block.defaultContent = {
       },
     },
     {
+      title: {
+        content: 'Coffee Break Now',
+        type: 'heading',
+      },
       desc: {
         content: '<span style="font-weight: bold">Coffee Break Now.</span> We love their delicious coffee and flavored cakes!',
         type: 'text',
@@ -177,6 +215,14 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+}
+
+Block.modifierScheme = {
+  subtitle: {defaultValue: false, label: 'Partner description', type: 'checkbox'},
+  body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
+  headingInstendImage: {defaultValue: false, label: 'Heading insted image', type: 'checkbox'},
+  link: {defaultValue: true, label: 'Partner link', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
 
 export default Block
