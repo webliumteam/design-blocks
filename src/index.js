@@ -15,32 +15,32 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.partners[0],
       picture: {
+        ...Component.defaultContent.partners[0].picture,
         resourceRef: 'allexa.png',
-        alt: 'Samsung logo',
         size: {'min-width: 320px': 90, 'min-width: 992px': 130},
       },
     },
     {
       ...Component.defaultContent.partners[1],
       picture: {
+        ...Component.defaultContent.partners[1].picture,
         resourceRef: 'brownie.png',
-        alt: 'Ford logo',
         size: {'min-width: 320px': 90, 'min-width: 992px': 130},
       },
     },
     {
       ...Component.defaultContent.partners[2],
       picture: {
+        ...Component.defaultContent.partners[2].picture,
         resourceRef: 'nord.png',
-        alt: 'Medical Family logo',
         size: {'min-width: 320px': 90, 'min-width: 992px': 130},
       },
     },
     {
       ...Component.defaultContent.partners[3],
       picture: {
+        ...Component.defaultContent.partners[3].picture,
         resourceRef: 'johnson.png',
-        alt: 'Coffee Break Now',
         size: {'min-width: 320px': 90, 'min-width: 992px': 130},
       },
     },
