@@ -90,7 +90,7 @@ class Block extends React.Component {
               </svg>Produced by Weblium.com
             </a>
           </div>
-          <div className={classNames(css.modal, !this.state.openModal && css['modal--active'])}>
+          <div className={classNames(css.modal, this.state.openModal && css['modal--active'])}>
             <h3 className={css.modal__title}>
               Раді, що Ви згодні <br /> із положеннями Декларації
             </h3>
