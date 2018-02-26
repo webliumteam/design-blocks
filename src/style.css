@@ -210,6 +210,10 @@ button {
     flex: 1;
     margin-bottom: 0;
   }
+
+  &--modal {
+    flex: initial;
+  }
 }
 
 .nav-list__item {
@@ -217,6 +221,8 @@ button {
   margin-bottom: 22px;
   white-space: nowrap;
   text-align: center;
+  color: #8c8c8c;
+
 
   @media (min-width: 981px) {
     text-align: left;
@@ -230,14 +236,12 @@ button {
       content: "|";
       margin-left: 10px;
       margin-right: 10px;
-      color: #8c8c8c;
     }
 
     @media (min-width: 981) {
       content: "|";
       margin-left: 25px;
       margin-right: 25px;
-      color: #8c8c8c;
     }
   }
 
@@ -246,12 +250,21 @@ button {
       display: none;
     }
   }
+
+  &--modal {
+    color: var(--ui-brand-color);
+  }
 }
 
 .nav-list__link {
   color: #8c8c8c;
   text-decoration: none;
   transition: color 0.2s ease-in;
+
+  &--modal {
+    color: var(--ui-brand-color);
+    font-weight: 500;
+  }
 }
 
 .nav-list__link:focus,
@@ -259,6 +272,13 @@ button {
 .nav-list__link:hover {
   outline: none;
   color: var(--ui-text-color);
+}
+
+.nav-list__link--modal:focus,
+.nav-list__link--modal:active,
+.nav-list__link--modal:hover {
+  outline: none;
+  color: var(--ui-brand-color);
 }
 
 .footer {
@@ -351,6 +371,7 @@ button {
   color: #8c8c8c;
 
   &--value {
+    padding: 0;
     color: var(--ui-brand-color);
   }
 }

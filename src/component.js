@@ -35,7 +35,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Text, Menu, Button}, style: css} = this.props
+    const {components: {Text, Menu, Button}, style: css, Link} = this.props
     const {usersTotal} = this.state
 
     return (
@@ -61,9 +61,9 @@ class Block extends React.Component {
                     bind="text1"
                     className={classNames(css.text, css['text--right'], css['text--nowrap'])}
                   />
-                  <span className={classNames(css.text, css['text--value'], css['text--nowrap'])}>
+                  <Button className={classNames(css.text, css['text--value'], css['text--nowrap'])}>
                     &nbsp;{usersTotal} людей
-                  </span>
+                  </Button>
                 </div>
               )}
               <button className={classNames(css.button)} onClick={this.login}>
@@ -100,9 +100,21 @@ class Block extends React.Component {
               <br />
               зроблять позитивний вклад у спільну мету.
             </p>
-            <button type="button" className={css.modal__link} onClick={this.toggleModal}>
-              Повернутися на головну
-            </button>
+            <ul className={classNames(css['nav-list'], css['nav-list--modal'])}>
+              <li className={classNames(css['nav-list__item'], css['nav-list__item--modal'])}>
+                <a href="https://www.facebook.com/groups/319000365273819/"className={classNames(css['nav-list__link'], css['nav-list__link--modal'])}>
+                  Долучитись до спільноти
+                </a>
+              </li>
+              <li className={classNames(css['nav-list__item'], css['nav-list__item--modal'])}>
+                <a
+                  href="/"
+                  className={classNames(css['nav-list__link'], css['nav-list__link--modal'])}
+                >
+                  Повернутися на головну
+                </a>
+              </li>
+            </ul>
             <div className={css.gerb}>
               <svg viewBox="0 0 41 65" version="1.1">
                 <g id="Page-1" stroke="none" strokeWidth="1">
@@ -139,8 +151,20 @@ Block.defaultContent = {
     },
     textValue: 'Долучитись',
   },
+  counter: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: '',
+  },
   text1: 'Наразi долучилось: ',
-  text2: '1347 людей',
   logo: {
     text: {
       value: 'CompanyLogo',
@@ -204,6 +228,38 @@ Block.defaultContent = {
           target: '_self',
           actions: {
             page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+  ],
+  menu2: [
+    {
+      id: '10c06b19-6e0d-4ad1-b1d5-213501dd329c',
+      metadata: {
+        displayName: 'Долучитись до спільноти',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: 'https://www.facebook.com/groups/319000365273819/',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: '10c06b19-6e0d-4ad1-b1d5-213501dd321c',
+      metadata: {
+        displayName: 'Повернутися на головну',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '/',
             link: '',
             block: '',
           },
