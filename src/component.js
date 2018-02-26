@@ -90,7 +90,7 @@ Block.defaultContent = {
   items: [
     {
       icon: {
-        svg: "<svg viewBox='0 0 70 70'><circle cx='410' cy='775' r='35' fill-rule='evenodd' transform='translate(-375 -740)'/></svg>",
+        svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
         fill: '#fff',
       },
       heading: {
@@ -122,7 +122,7 @@ Block.defaultContent = {
     },
     {
       icon: {
-        svg: "<svg viewBox='0 0 70 70'><circle cx='410' cy='775' r='35' fill-rule='evenodd' transform='translate(-375 -740)'/></svg>",
+        svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
         fill: '#d8d8d8',
       },
       heading: {
@@ -154,7 +154,7 @@ Block.defaultContent = {
     },
     {
       icon: {
-        svg: "<svg viewBox='0 0 70 70'><circle cx='410' cy='775' r='35' fill-rule='evenodd' transform='translate(-375 -740)'/></svg>",
+        svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
         fill: '#fff',
       },
       heading: {
