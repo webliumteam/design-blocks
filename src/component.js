@@ -19,10 +19,10 @@ class Block extends React.Component {
         {children}
 
         <div className={style.item__container}>
-          {_.get('headingInstendImage')(modifier) && (
+          {(_.get('logo')(modifier) === 'text') && (
             <Text bind={`partners[${index}].title`} className={style.item__title} tagName="h2" />
           )}
-          {!_.get('headingInstendImage')(modifier) && (
+          {(_.get('logo')(modifier) === 'image') && (
             <Image
               pictureClassName={style.item__pic}
               imgClassName={style.item__image}
@@ -35,11 +35,13 @@ class Block extends React.Component {
             </p>
           )}
           {_.get('link')(modifier) && (
-            <Button
-              linkClassName={style.link}
-              buttonClassName={style.button}
-              bind={`partners[${index}].cta`}
-            />
+            <div className={style['item__link-wrapper']}>
+              <Button
+                linkClassName={style.link}
+                buttonClassName={style.button}
+                bind={`partners[${index}].cta`}
+              />
+            </div>
           )}
         </div>
       </article>
@@ -218,9 +220,17 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  logo: {
+    children: [
+      {id: 'image', label: 'Image'},
+      {id: 'text', label: 'Text'},
+    ],
+    defaultValue: 'image',
+    name: 'Logo',
+    type: 'radio-button-group',
+  },
   subtitle: {defaultValue: false, label: 'Partner description', type: 'checkbox'},
   body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
-  headingInstendImage: {defaultValue: false, label: 'Heading insted image', type: 'checkbox'},
   link: {defaultValue: true, label: 'Partner link', type: 'checkbox'},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
 }

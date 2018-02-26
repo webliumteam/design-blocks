@@ -115,8 +115,10 @@
   }
 
   &__container {
+    display: flex;
     width: 100%;
     padding: 40px 20px 45px;
+    flex-direction: column;
     border: 1px solid #979797;
   }
 
@@ -152,6 +154,10 @@
       color: var(--ui-heading-color);
     }
   }
+
+  &__link-wrapper {
+    margin-top: auto;
+  }
 }
 
 .btns-group {
@@ -165,7 +171,7 @@
 .button {
   width: 100%;
   
-  @media (min-width: 768px) {
+  @media (min-width: 480px) {
     width: auto;
   }
 }
