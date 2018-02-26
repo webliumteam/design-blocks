@@ -24,6 +24,7 @@ class Block extends React.Component {
           )}
           {(_.get('logo')(modifier) === 'image') && (
             <Image
+              wrapperClassName={style['item__pic-wrapper']}
               pictureClassName={style.item__pic}
               imgClassName={style.item__image}
               bind={`partners[${index}.picture`}
@@ -226,6 +227,7 @@ Block.modifierScheme = {
       {id: 'text', label: 'Text'},
     ],
     defaultValue: 'image',
+    style: 'column',
     name: 'Logo',
     type: 'radio-button-group',
   },
