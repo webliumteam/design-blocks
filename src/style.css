@@ -48,7 +48,6 @@
 
   &__title {
     position: relative;
-    font-weight: 600;
     margin-bottom: 45px;
     font-family: var(--ui-block-title-font-family);
 
