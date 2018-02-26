@@ -19,7 +19,11 @@ class Block extends React.Component {
       <article className={classNames(style.item, className)}>
         {children}
         <div className={style.item__inner}>
-          {this.getModifierValue('item-icon') && <Icon className={style.item__icon} bind={`items[${index}].icon`} />}
+          {this.getModifierValue('item-icon') && (
+            <div className={style.item__icon}>
+              <Icon bind={`items[${index}].icon`} />
+            </div>
+          )}
           <div className={style.item__content}>
             <div className={style.item__info}>
               <Text tagName="h3" className={style.item__title} bind={`items[${index}].heading`} />
@@ -90,8 +94,8 @@ Block.defaultContent = {
   items: [
     {
       icon: {
-        svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: 'currentColor',
+        svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
+        fill: '#676767',
       },
       heading: {
         content: 'Web Developer',
@@ -122,8 +126,8 @@ Block.defaultContent = {
     },
     {
       icon: {
-        svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: 'currentColor',
+        svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
+        fill: '#676767',
       },
       heading: {
         content: '3D designer',
@@ -154,8 +158,8 @@ Block.defaultContent = {
     },
     {
       icon: {
-        svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: 'currentColor',
+        svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
+        fill: '#676767',
       },
       heading: {
         content: 'Office manager',
