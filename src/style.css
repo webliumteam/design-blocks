@@ -13,11 +13,11 @@
   &__inner {
     padding: var(--ui-content-gutter);
   }
-}
 
-.header {
-  max-width: var(--ui-content-container);
-  margin: 0 auto;
+  &__header {
+    max-width: var(--ui-content-container);
+    margin: 0 auto;
+  }
 }
 
 .title {
@@ -53,7 +53,7 @@
 
 .item {
   padding: 30px 25px;
-  background-color: var(--ui-media-bg);
+  background-color: #d8d8d8;
 
   @media (min-width: 768px) {
     padding: 20px 25px;

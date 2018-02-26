@@ -12,7 +12,7 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, children, modifier, className}) => {
+  collectionItem = ({index, children, className}) => {
     const {components: {Text, Icon, Button}, style} = this.props
 
     return (
@@ -26,7 +26,7 @@ class Block extends React.Component {
           )}
           <div className={style.item__content}>
             <div className={style.item__info}>
-              <Text tagName="h3" className={style.item__title} bind={`items[${index}].heading`} />
+              <Text tagName="h2" className={style.item__title} bind={`items[${index}].heading`} />
               {this.getModifierValue('employment') && (
                 <Text tagName="p" className={style.item__text} bind={`items[${index}].employment`} />
               )}
@@ -52,7 +52,7 @@ class Block extends React.Component {
     return (
       <section className={classNames(css.section)}>
         <div className={css.section__inner}>
-          <div className={css.header}>
+          <div className={css.section__header}>
             <Text tagName="h1" className={css.title} bind="title" />
             {this.getModifierValue('subtitle') && <Text tagName="p" className={css.subtitle} bind="subtitle" />}
           </div>
