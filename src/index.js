@@ -31,7 +31,8 @@ ExtendedWireframe.defaultContent = {
       id: 'a2479bf5-0f0a-4bda-9f47-1d804ef11b61',
     },
     {
-      title: 'What payment options do you provide for clients? I can pay with a credit card, PayPal, or other payment systems?',
+      title:
+        'What payment options do you provide for clients? I can pay with a credit card, PayPal, or other payment systems?',
       description:
         'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details.',
       id: 'a2479bf5-0f0a-4bda-9f47-1d804ef11b62',
