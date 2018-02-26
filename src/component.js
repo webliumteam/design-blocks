@@ -110,6 +110,7 @@ Block.modifierScheme = {
     defaultValue: 'left',
     name: 'Aligning',
     type: 'radio-button-group',
+    style: 'buttons',
   },
   'caption-decorator': {defaultValue: false, label: 'Pretitle', type: 'hidden'},
   'primary-btn': {defaultValue: true, label: 'Button', type: 'checkbox'},
