@@ -63,8 +63,8 @@
   &:nth-of-type(even) {
     background-color: #fbfbfb;
 
-    .article__icon {
-      background-color: var(--ui-media-bg);
+    .item__icon {
+      color: var(--ui-light-accent-color);
     }
   }
 
@@ -87,6 +87,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    color: var(--ui-light-shade-color);
 
     svg {
       width: 100%;

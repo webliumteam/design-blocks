@@ -91,7 +91,7 @@ Block.defaultContent = {
     {
       icon: {
         svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: '#fff',
+        fill: 'currentColor',
       },
       heading: {
         content: 'Web Developer',
@@ -123,7 +123,7 @@ Block.defaultContent = {
     {
       icon: {
         svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: '#d8d8d8',
+        fill: 'currentColor',
       },
       heading: {
         content: '3D designer',
@@ -155,7 +155,7 @@ Block.defaultContent = {
     {
       icon: {
         svg: "<svg viewBox='0 0 70 70'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: '#fff',
+        fill: 'currentColor',
       },
       heading: {
         content: 'Office manager',
