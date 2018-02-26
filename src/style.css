@@ -82,7 +82,7 @@
     margin-bottom: 40px;
     font-family: var(--ui-text-font-family);
     font-weight: var(--ui-text-font-weight);
-    color: var(--ui-text-color);
+    color: var(--ui-light-shade-color);
 
     @media (min-width: 992px) {
       font-size: var(--ui-heading-size);
