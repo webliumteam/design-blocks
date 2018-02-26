@@ -20,8 +20,8 @@ class Block extends React.Component {
         {children}
         <div className={style.item__inner}>
           {this.getModifierValue('item-icon') && (
-            <div className={style.item__icon}>
-              <Icon bind={`items[${index}].icon`} />
+            <div className={style['item__icon-wrapper']}>
+              <Icon className={style.item__icon} bind={`items[${index}].icon`} />
             </div>
           )}
           <div className={style.item__content}>
