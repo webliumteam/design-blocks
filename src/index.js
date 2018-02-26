@@ -82,7 +82,7 @@ ExtendedWireframe.defaultContent = {
   'plan-price-text-3': 'per month',
   'plan-price-count-1': 'Free',
   'plan-price-count-2': '$50',
-  'plan-price-count-3': 'ExtendedWireframe.defaultContent = 00',
+  'plan-price-count-3': '$100',
   'plan-cta-1': {
     type: 'primary',
     size: 'sm',
