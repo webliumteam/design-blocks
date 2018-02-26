@@ -62,13 +62,15 @@ class Block extends React.Component {
             modifier: $block.modifier,
           }}
         />
-        <div className={css['btns-group']}>
-          <Button
-            linkClassName={css.link}
-            buttonClassName={css.button}
-            bind="button"
-          />
-        </div>
+        {this.getModifierValue('secondary-button') && (
+          <div className={css['btns-group']}>
+            <Button
+              linkClassName={css.link}
+              buttonClassName={css.button}
+              bind="button"
+            />
+          </div>
+        )}
       </section>
     )
   }
@@ -89,7 +91,7 @@ Block.defaultContent = {
     {
       icon: {
         svg: "<svg viewBox='0 0 70 70'><circle cx='410' cy='775' r='35' fill-rule='evenodd' transform='translate(-375 -740)'/></svg>",
-        fill: '',
+        fill: '#fff',
       },
       heading: {
         content: 'Web Developer',
@@ -121,7 +123,7 @@ Block.defaultContent = {
     {
       icon: {
         svg: "<svg viewBox='0 0 70 70'><circle cx='410' cy='775' r='35' fill-rule='evenodd' transform='translate(-375 -740)'/></svg>",
-        fill: '',
+        fill: '#d8d8d8',
       },
       heading: {
         content: '3D designer',
@@ -153,7 +155,7 @@ Block.defaultContent = {
     {
       icon: {
         svg: "<svg viewBox='0 0 70 70'><circle cx='410' cy='775' r='35' fill-rule='evenodd' transform='translate(-375 -740)'/></svg>",
-        fill: '',
+        fill: '#fff',
       },
       heading: {
         content: 'Office manager',
@@ -205,6 +207,7 @@ Block.modifierScheme = {
   'item-icon': {defaultValue: true, label: 'Vacancy icon', type: 'checkbox'},
   employment: {defaultValue: true, label: 'Type of employment (full-time/part-time)', type: 'checkbox'},
   position: {defaultValue: true, label: 'Vacancy location', type: 'checkbox'},
+  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Block
