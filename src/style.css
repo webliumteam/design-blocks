@@ -37,6 +37,7 @@
     font-family: var(--ui-text-font-family);
     font-weight: 400;
     transition: color 0.2s ease-in, border-color 0.2s ease-in;
+    border-bottom: 0;
 
     &::after {
       content: "";
@@ -46,8 +47,8 @@
       display: block;
       width: 100%;
       height: 2px;
-      background-color: var(--ui-icon-color);
-      opacity: 0.5;
+      background-color: var(--ui-text-color);
+      opacity: 0.3;
     }
   }
 
@@ -59,8 +60,8 @@
     right: 0;
     transform: translateY(-50%) rotate(-45deg);
     transform-origin: 50% 50%;
-    fill: var(--ui-icon-color);
     transition: transform .2s ease-in, fill 0.2s ease-in;
+    fill: var(--ui-text-color);
     opacity: 0.5;
   }
 
