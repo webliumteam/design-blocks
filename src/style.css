@@ -56,7 +56,10 @@
 
     &__title {
       font-size: var(--ui-hero-title-size);
+      color: var(--ui-light-shade-color);
     }
+
+    /* утяжеление селектора, пока не заработает определение темы в коллекциях */
 
     .article__title {
       color: var(--ui-light-shade-color);
@@ -74,6 +77,16 @@
       text-decoration: none;
       text-transform: uppercase;
       padding-left: 7px;
+
+      &:hover {
+        color: var(--ui-light-shade-color);
+      }
+    }
+
+    /* утяжеление селектора, пока не заработает определение темы в коллекциях */
+
+    .link {
+      color: var(--ui-light-shade-color);
 
       &:hover {
         color: var(--ui-light-shade-color);
