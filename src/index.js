@@ -11,7 +11,10 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  title: '- Our Values -',
+  title: {
+    ...Component.defaultContent.title,
+    content: '- Our Values -',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
