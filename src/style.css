@@ -18,6 +18,7 @@
 
 .article {
   &__title {
+    font-size: var(--ui-heading-size);
     line-height: var(--ui-hero-title-line-height);
   }
 
@@ -54,7 +55,6 @@
     min-height: 575px;
 
     &__title {
-      font-size: var(--ui-hero-title-size);
       color: var(--ui-light-shade-color);
     }
 
