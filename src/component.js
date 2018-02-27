@@ -43,7 +43,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, $block: {options}, style} = this.props
+    const {components: {Collection, Text, Button, Icon, Background}, $block: {options}, style} = this.props
 
     return (
       <section className={style.section}>
@@ -54,7 +54,7 @@ class Block extends React.Component {
           {this.getModifierValue('block-title') && <Text tagName="h1" className={style.title} bind="title" />}
           {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="description" />}
           <div className={style['plans-wrapper']}>
-            <article className={style.plan}>
+            <Background className={style.plan} bind="leftBackground" tagName="article">
               {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('1')}</div>) : this.planHeader('1')}
               {this.getModifierValue('plan-description') && (
                 <Collection
@@ -72,9 +72,9 @@ class Block extends React.Component {
                   bind="plan-cta-1"
                 />
               )}
-            </article>
+            </Background>
             {!this.getOptionValue('hidden-main') && (
-              <article className={classNames(style.plan, style['plan--main'])}>
+              <Background className={classNames(style.plan, style['plan--main'])} bind="centerBackground" tagName="article">
                 {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('2')}</div>) : this.planHeader('2')}
                 {this.getModifierValue('plan-description') && (
                   <Collection
@@ -92,9 +92,9 @@ class Block extends React.Component {
                     bind="plan-cta-2"
                   />
                 )}
-              </article>
+              </Background>
             )}
-            <article className={style.plan}>
+            <Background className={style.plan} bind="rightBackground" tagName="article">
               {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('3')}</div>) : this.planHeader('3')}
               {this.getModifierValue('plan-description') && (
                 <Collection
@@ -112,7 +112,7 @@ class Block extends React.Component {
                   bind="plan-cta-3"
                 />
               )}
-            </article>
+            </Background>
           </div>
           {this.getModifierValue('additional-btn') && (
             <div className={style['btns-group']}>
@@ -129,9 +129,21 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon', 'Background'])($editor.components)
 
 Block.defaultContent = {
+  leftBackground: {
+    type: 'color',
+    color: '#ebeaea',
+  },
+  centerBackground: {
+    type: 'color',
+    color: '#ebeaea',
+  },
+  rightBackground: {
+    type: 'color',
+    color: '#ebeaea',
+  },
   'plan-list-1': [
     {
       text: {
