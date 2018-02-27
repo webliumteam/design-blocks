@@ -147,10 +147,10 @@
 
 .article__link {
   max-width: 100%;
-  background-color: transparent;
-  border: 0;
+}
+
+.link {
   padding: 0;
-  text-decoration: underline;
 }
 
 .article__text {
