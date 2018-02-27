@@ -75,6 +75,7 @@ Block.modifierScheme = {
     defaultValue: 'center',
     name: 'Aligning',
     type: 'radio-button-group',
+    style: 'buttons',
   },
   heading: {defaultValue: false, label: 'Title', type: 'checkbox'},
   subheading: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
