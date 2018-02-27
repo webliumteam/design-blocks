@@ -18,8 +18,8 @@
 
 .subtitle {
   font-size: calc(var(--ui-heading-lg-size) / 2);
-  font-family: var(--ui-sub-heading-font-family);
-  line-height: var(--ui-sub-heading-line-height);
+  font-family: var(--ui-subheading-font-family);
+  line-height: var(--ui-subheading-line-height);
 }
 
 .plan--main {
