@@ -46,7 +46,7 @@
     max-width: 120px;
     top: 10px;
     left: 10px;
-    z-index: 2;
+    z-index: 3;
     background-color: transparent;
 
     &::after {
