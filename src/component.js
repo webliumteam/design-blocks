@@ -10,10 +10,10 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text, ContactForm}, style} = this.props
+    const {components: {Text, ContactForm, Background}, style} = this.props
     return (
       <section className={style.section}>
-        <div className={style.section__inner}>
+        <Background className={style.section__inner} bind="formBackground">
           <header className={style.section__header}>
             {this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />}
             {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
@@ -25,18 +25,22 @@ class Block extends React.Component {
             fieldClassName={style.form__field}
             buttonClassName={style.form__button}
           />
-        </div>
+        </Background>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'ContactForm'])($editor.components)
+Block.components = _.pick(['Text', 'ContactForm', 'Background'])($editor.components)
 
 Block.defaultContent = {
   background: {
     type: 'color',
     color: '#d8d8d8',
+  },
+  formBackground: {
+    type: 'color',
+    color: 'light-shade-color',
   },
   title: {
     content: 'Want to increase profits?',
