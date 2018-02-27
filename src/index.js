@@ -14,8 +14,12 @@ ExtendedWireframe.defaultContent = {
   projects: [
     {
       ...Component.defaultContent.projects[0],
+      title: {
+        ...Component.defaultContent.projects[0].title,
+        type: 'heroTitle',
+      },
       picture: {
-        ...Component.defaultContent.projects[0].picutre,
+        ...Component.defaultContent.projects[0].picture,
         resourceRef: 'bg-1.png',
         size: {
           'min-width: 1200px': 1920,
@@ -28,8 +32,12 @@ ExtendedWireframe.defaultContent = {
     },
     {
       ...Component.defaultContent.projects[1],
+      title: {
+        ...Component.defaultContent.projects[1].title,
+        type: 'heroTitle',
+      },
       picture: {
-        ...Component.defaultContent.projects[1].picutre,
+        ...Component.defaultContent.projects[1].picture,
         resourceRef: 'bg-2.png',
         size: {
           'min-width: 1200px': 1920,
