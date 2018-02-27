@@ -55,6 +55,7 @@
     min-height: 575px;
 
     &__title {
+      font-size: var(--ui-hero-title-size);
       color: var(--ui-light-shade-color);
     }
 
