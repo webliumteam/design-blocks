@@ -20,6 +20,10 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'bg.jpg',
   },
+  formBackground: {
+    type: 'color',
+    color: 'transparent',
+  },
   contactForm: {
     fields: [
       {
