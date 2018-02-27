@@ -69,7 +69,6 @@
   height: 100%;
   padding-top: 70%;
   order: -1;
-  background-color: var(--ui-media-bg);
 }
 
 .article__picture-wrapper {
@@ -97,6 +96,7 @@
   top: 0;
   left: 0;
   object-fit: cover;
+  background-color: var(--ui-media-bg);
 }
 
 .article__content {
