@@ -14,7 +14,7 @@ ExtendedWireframe.defaultContent = {
   theme: 'dark',
   background: {
     type: 'color',
-    color: 'brand-color',
+    color: '#1F1E1D',
   },
 }
 
