@@ -63,9 +63,9 @@
 
 @media (min-width: 992px) {
   .nav-list__item {
-    margin-left: 50px;
-    margin-right: 15px;
-    margin-top: 10px;
+    margin-left: 3.5714em;
+    margin-right: 1.0714em;
+    margin-top: 0.7142em;
   }
 
   .footer__bottom {
