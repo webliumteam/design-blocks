@@ -8,6 +8,6 @@ coverage
 npm-debug.log
 yarn.lock
 package-lock.json
-block.http.localhost.3000
-block.http.weblium.dev
-block.http.weblium
+block.https.localhost.3000
+block.https.weblium.co
+block.https.weblium.com
