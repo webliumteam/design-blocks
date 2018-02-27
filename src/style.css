@@ -56,6 +56,9 @@
 
     &__title {
       font-size: var(--ui-hero-title-size);
+    }
+
+    .article__title {
       color: var(--ui-light-shade-color);
     }
 
