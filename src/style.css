@@ -106,18 +106,19 @@
   }
 
   &__email {
-    color: var(--ui-link-color);
     text-decoration: none;
     margin-bottom: 50px;
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--ui-link-hover-color);
-    }
+    color: var(--ui-heading-color);
 
     a {
+      color: var(--ui-link-color);
       text-decoration: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--ui-link-hover-color);
+      }
     }
 
     @media (min-width: 992px) {
