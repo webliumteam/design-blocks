@@ -13,58 +13,44 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   awards: [
     {
-      id: '8130928a-e7c6-4e26-a3ca-a820fa36380e',
-      title: "America's Most Admired Corporations",
+      ...Component.defaultContent.awards[0],
       picture: {
+        ...Component.defaultContent.awards[0].picture,
         resourceRef: '1.png',
-        alt: 'Award illustration photo',
       },
     },
     {
-      id: '057c27bf-4977-4b28-bf35-f4a6db60d5aa',
-      title: '100 Best Companies',
+      ...Component.defaultContent.awards[1],
       picture: {
+        ...Component.defaultContent.awards[1].picture,
         resourceRef: '2.png',
-        alt: 'Award illustration photo',
       },
     },
     {
-      id: 'c8e93041-896b-4b78-b8d0-37e21a79070f',
-      title: 'Best Places to Work for LGBT Equality',
+      ...Component.defaultContent.awards[2],
       picture: {
+        ...Component.defaultContent.awards[2].picture,
         resourceRef: '3.png',
-        alt: 'Award illustration photo',
       },
     },
     {
-      id: '3ea9fdda-c0e6-418e-9bfe-7bf1b06a534d',
-      title: '2017 Employer Support Freedom Award',
+      ...Component.defaultContent.awards[3],
       picture: {
+        ...Component.defaultContent.awards[3].picture,
         resourceRef: '4.png',
-        alt: 'Award illustration photo',
       },
     },
   ],
   cta: {
+    ...Component.defaultContent.cta,
     type: 'secondary-alt',
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Show More',
   },
   background: {
     type: 'image',
     position: {
       type: 'tile',
     },
-    src: 'bg.jpg',
+    resourceRef: 'bg.jpg',
   },
 }
 
