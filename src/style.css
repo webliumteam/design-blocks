@@ -56,7 +56,6 @@
 
   &__title {
     margin-bottom: 50px;
-    text-transform: uppercase;
     position: relative;
     font-family: var(--ui-block-title-font-family);
     font-weight: var(--ui-block-title-font-weight);
@@ -91,7 +90,6 @@
 
   .link {
     text-decoration: none;
-    text-transform: uppercase;
     font-weight: 600;
     color: var(--ui-light-shade-color);
 
