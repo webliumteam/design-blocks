@@ -48,6 +48,18 @@ ExtendedWireframe.defaultContent = {
     ...Component.defaultContent['plan-cta-3'],
     type: 'secondary',
   },
+  'plan-price-count-1': {
+    ...Component.defaultContent['plan-price-count-1'],
+    type: 'heroTitle',
+  },
+  'plan-price-count-2': {
+    ...Component.defaultContent['plan-price-count-2'],
+    type: 'heroTitle',
+  },
+  'plan-price-count-3': {
+    ...Component.defaultContent['plan-price-count-3'],
+    type: 'heroTitle',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
