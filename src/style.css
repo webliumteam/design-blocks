@@ -30,6 +30,10 @@
 
     .article {
       align-items: center;
+      
+      &__content:first-child {
+        padding: 0;
+      }
     }
   }
 }

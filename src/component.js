@@ -36,12 +36,16 @@ class Block extends React.Component {
     return (
       <section className={classNames(style.section, {[style['section--state-5']]: withoutText})}>
         <div className={style.section__inner}>
-          <header className={style.section__header}>
-            <Text bind="title" className={style.title} tagName="h1" />
-            {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={style.subtitle} tagName="p" />
-            )}
-          </header>
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+            <header className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text bind="title" className={style.title} tagName="h1" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text bind="subtitle" className={style.subtitle} tagName="p" />
+              )}
+            </header>
+          )}
           <Collection
             className={style['articles-wrapper']}
             bind="why"
@@ -165,11 +169,12 @@ Block.defaultContent = {
       },
     },
     textValue: 'Learn more',
-    type: 'button',
+    type: 'secondary',
   },
 }
 
 Block.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
   icon: {defaultValue: true, label: 'Advantage icon', type: 'checkbox'},
   body: {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
