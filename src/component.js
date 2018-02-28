@@ -40,7 +40,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Logo, Text, SocialIcons, Menu}, style: css} = this.props
+    const {components: {Logo, Text, SocialIcons, Menu, Background}, style: css} = this.props
     const {opened} = this.state
     const menuAlignment = this.getModifierValue('menu-alignment')
     const menuModifierClass = css[`nav__list--${menuAlignment}`]
@@ -48,16 +48,16 @@ class Block extends React.Component {
 
     return (
       <header className={classNames(css.header, opened && css['header--nav-open'])} data-header="target">
-        <div className={css.header__contacts}>
-          <div className={css['header__contacts-inner']}>
-            <Text tagName="p" className={css.subtitle} bind="subtitle" />
+        <Background tagName="div" className={css['header__top-line']} bind="topLineBackground">
+          <div className={css['header__top-line-inner']}>
+            <Text tagName="p" className={css.header__text} bind="topLineText" />
             <div className={css.header__socials}>
               <SocialIcons bind="socialIcons" className={css.socials} />
             </div>
           </div>
-        </div>
-        <div className={css.header__menu}>
-          <div className={classNames(css['header__menu-inner'], logoStatus && css['header__menu-inner--logo-hidden'])}>
+        </Background>
+        <Background tagName="div" className={css.header__main} bind="mainBackground">
+          <div className={classNames(css['header__main-inner'], logoStatus && css['header__main-inner--logo-hidden'])}>
             {this.getModifierValue('logo') && (
               <Logo
                 bind="logo"
@@ -87,15 +87,23 @@ class Block extends React.Component {
               />
             </nav>
           </div>
-        </div>
+        </Background>
       </header>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Logo', 'SocialIcons', 'Menu'])($editor.components)
+Block.components = _.pick(['Text', 'Logo', 'SocialIcons', 'Menu', 'Background'])($editor.components)
 
 Block.defaultContent = {
+  topLineBackground: {
+    type: 'color',
+    color: '#d8d8d8',
+  },
+  mainBackground: {
+    type: 'color',
+    color: '#f2f2f2',
+  },
   logo: {
     text: {
       value: 'Quantum Company',
@@ -105,9 +113,9 @@ Block.defaultContent = {
       maxHeight: 80,
     },
   },
-  subtitle: {
+  topLineText: {
     content: '<a href="tel:+16877042511">+ 1-687-704-2511</a>',
-    type: 'subtitle',
+    type: 'text',
   },
   menu: [
     {
@@ -201,10 +209,6 @@ Block.defaultContent = {
       },
     },
   ],
-  email: {
-    content: '<a href="mailto:ourcompany@a.weblium.com">ourcompany@a.weblium.com</a>',
-    type: 'text',
-  },
   socialIcons: {
     networks: [
       {
@@ -246,9 +250,9 @@ Block.modifierScheme = {
       {id: 'left', label: 'Left'},
     ],
     defaultValue: 'right',
-    style: 'column',
     name: 'Menu alignment',
     type: 'radio-button-group',
+    style: 'buttons',
   },
 }
 
