@@ -225,11 +225,11 @@
 
 .nav-button {
   position: absolute;
-  width: 20px;
-  height: 14px;
-  top: 38px;
+  width: 30px;
+  height: 25px;
+  top: 33px;
   left: 20px;
-  padding: 0;
+  padding: 5px;
   cursor: pointer;
   background-color: transparent;
   color: var(--ui-text-color);
@@ -237,7 +237,7 @@
   transition: color .2s ease-in-out;
 
   @media (min-width: 768px) {
-    top: 54px;
+    top: 45px;
   }
 
   &:hover,
@@ -248,23 +248,23 @@
 
   &__line {
     position: absolute;
-    width: 100%;
+    width: 20px;
     height: 2px;
-    left: 0;
+    left: 5px;
     background-color: currentColor;
     transform-origin: 50% 50%;
     transition: transform .2s ease-in-out, opacity .2s ease-in-out;
 
     &:first-child {
-      top: 0;
+      top: 5px;
     }
 
     &:nth-child(2) {
-      top: 6px;
+      top: 11px;
     }
 
     &:last-child {
-      bottom: 0;
+      bottom: 6px;
     }
   }
 
@@ -312,7 +312,7 @@
   }
 
   a {
-    padding: 5px;
+    padding: 2.5px;
 
     /* Tech debt: need remove `position: absolute` in SocialIcons component */
     div {
