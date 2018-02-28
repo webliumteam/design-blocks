@@ -10,10 +10,6 @@
   }
 }
 
-.title {
-  color: var(--ui-dark-shade-color);
-}
-
 .subtitle {
   max-width: 880px;
 }
@@ -35,12 +31,7 @@
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
 
-  &__title {
-    color: var(--ui-light-shade-color);
-  }
-
   &__price-count {
-    color: var(--ui-light-shade-color);
     font-size: var(--ui-hero-title-size);
     font-family: var(--ui-hero-title-font-family);
     font-weight: var(--ui-hero-title-font-weight);

@@ -17,23 +17,23 @@ ExtendedWireframe.defaultContent = {
   },
   centerBackground: {
     type: 'color',
-    color: 'light-accent-color',
+    color: 'light-accent-color?darken=7',
   },
   rightBackground: {
     type: 'color',
     color: 'dark-accent-color',
   },
   'plan-cta-1': {
+    ...Component.defaultContent['plan-cta-1'],
     type: 'secondary',
-    textValue: 'Order now',
   },
   'plan-cta-2': {
-    type: 'secondary',
-    textValue: 'Order now',
+    ...Component.defaultContent['plan-cta-2'],
+    type: 'primary-alt',
   },
   'plan-cta-3': {
+    ...Component.defaultContent['plan-cta-3'],
     type: 'secondary',
-    textValue: 'Order now',
   },
 }
 
