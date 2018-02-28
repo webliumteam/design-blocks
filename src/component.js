@@ -3,52 +3,71 @@ import $editor from 'weblium/editor'
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
-  collectionItem = ({index, children, className}) => {
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Icon}, style} = this.props
     return (
       <article className={classNames(style.article, className)}>
         {children}
-
-        <div className={style.article__icon}>
-          <Icon bind={`why[${index}].icon`} />
-        </div>
+        {_.get('icon')(modifier) && (
+          <div className={style.article__icon}>
+            <Icon bind={`why[${index}].icon`} />
+          </div>
+        )}
         <div className={style.article__content}>
           <Text bind={`why[${index}].title`} className={style.article__title} tagName="h2" />
-          <Text bind={`why[${index}].description`} className={style.article__text} tagName="p" />
+          {_.get('body')(modifier) && (
+            <Text bind={`why[${index}].description`} className={style.article__text} tagName="p" />
+          )}
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
+    const withoutText = !this.getModifierValue('body')
+
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, {[style['section--state-5']]: withoutText})}>
         <div className={style.section__inner}>
           <header className={style.section__header}>
             <Text bind="title" className={style.title} tagName="h1" />
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            {this.getModifierValue('subtitle') && (
+              <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            )}
           </header>
           <Collection
             className={style['articles-wrapper']}
             bind="why"
             Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
           />
-          <div className={style['btns-group']}>
-            <Button
-              buttonClassName={style.button}
-              linkClassName={style.link}
-              bind="button"
-            />
-            <Button
-              buttonClassName={style.button}
-              linkClassName={style.link}
-              bind="button-secondary"
-            />
-          </div>
+          {(this.getModifierValue('button') || this.getModifierValue('button-secondary')) && (
+            <div className={style['btns-group']}>
+              {this.getModifierValue('button') && (
+                <Button
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind="button"
+                />
+              )}
+              {this.getModifierValue('button-secondary') && (
+                <Button
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind="button-secondary"
+                />
+              )}
+            </div>
+          )}
         </div>
       </section>
     )
@@ -146,8 +165,16 @@ Block.defaultContent = {
       },
     },
     textValue: 'Learn more',
-    type: 'secondary',
+    type: 'button',
   },
+}
+
+Block.modifierScheme = {
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
+  icon: {defaultValue: true, label: 'Advantage icon', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
 }
 
 export default Block

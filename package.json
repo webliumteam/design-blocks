@@ -2,6 +2,7 @@
     "name": "wireframe-series-2-why",
     "version": "0.0.1",
     "description": "",
+    "category": "why-us",
     "main": "src/index.js",
     "scripts": {
         "precommit": "lint-staged"
