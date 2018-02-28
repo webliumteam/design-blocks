@@ -5,8 +5,14 @@
   padding: 28px 0;
 
   &__button {
+    margin-left: auto;
+    margin-right: auto;
 
-    @media (min-width: 1170px) {
+    @media (min-width: 992px) {
+      margin-right: 0;
+    }
+
+    @media (min-width: 1200px) {
       margin-left: 130px;
     }
   }
