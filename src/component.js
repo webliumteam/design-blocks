@@ -31,9 +31,7 @@ class Block extends React.Component {
             />
           )}
           {_.get('body')(modifier) && (
-            <p className={style.item__desc}>
-              <Text bind={`partners[${index}].desc`} tagName="span" />
-            </p>
+            <Text className={style.item__desc} bind={`partners[${index}].desc`} tagName="p" />
           )}
           {_.get('link')(modifier) && (
             <div className={style['item__link-wrapper']}>
