@@ -68,7 +68,6 @@
     &__text {
       padding-right: 0;
       max-width: 85%;
-      padding-left: 7px;
     }
 
     &__link {
@@ -76,7 +75,6 @@
       color: var(--ui-light-shade-color);
       text-decoration: none;
       text-transform: uppercase;
-      padding-left: 7px;
 
       &:hover {
         color: var(--ui-light-shade-color);
@@ -122,12 +120,6 @@
       transform: translateX(-100%);
       text-align: right;
       align-items: flex-end;
-    }
-
-    &:nth-of-type(2n) .article__text,
-    &:nth-of-type(2n) .article__link {
-      padding-right: 7px;
-      padding-left: 0;
     }
   }
 
