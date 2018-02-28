@@ -31,35 +31,9 @@
 }
 
 .plan {
-  color: var(--ui-light-shade-color);
   font-size: var(--ui-text-size);
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
-  background: var(--ui-dark-shade-color);
-
-  &:nth-child(2n) {
-    background: var(--ui-light-accent-color);
-
-    .plan__button {
-      background-color: var(--ui-light-shade-color);
-      color: var(--ui-dark-shade-color);
-
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: var(--ui-light-shade-color);
-        color: var(--ui-dark-shade-color);
-      }
-    }
-  }
-
-  &:nth-child(3n) {
-    background: var(--ui-dark-accent-color);
-
-    .plan__button {
-      color: var(--ui-light-shade-color);
-    }
-  }
 
   &__title {
     color: var(--ui-light-shade-color);
