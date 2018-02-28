@@ -15,6 +15,18 @@ ExtendedWireframe.defaultContent = {
     type: 'color',
     color: 'light-accent-color',
   },
+  leftBackground: {
+    type: 'color',
+    color: '#f7f7f7',
+  },
+  centerBackground: {
+    type: 'color',
+    color: '#f7f7f7',
+  },
+  rightBackground: {
+    type: 'color',
+    color: '#f7f7f7',
+  },
   title: {
     ...Component.defaultContent.title,
     content: '- Pricing -',
