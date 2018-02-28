@@ -22,9 +22,13 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'block-bg.jpg',
     overlay: {
       type: 'color',
-      color: 'rgba(36, 36, 36)',
+      color: 'dark-shade-color',
       opacity: '0.9',
     },
+  },
+  cta: {
+    ...Component.defaultContent.cta,
+    type: 'primary',
   },
 }
 
