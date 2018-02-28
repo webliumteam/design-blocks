@@ -55,7 +55,7 @@ class Block extends React.Component {
           {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="description" />}
           <div className={style['plans-wrapper']}>
             <Background className={style.plan} bind="leftBackground" tagName="article">
-              {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('1')}</div>) : this.planHeader('1')}
+              {this.getOptionValue('price-wrapper') ? (<Background bind="leftWrapperBackground" className={style['price-wrapper']}>{this.planHeader('1')}</Background>) : this.planHeader('1')}
               {this.getModifierValue('plan-description') && (
                 <Collection
                   className={style.plan__list}
@@ -75,7 +75,7 @@ class Block extends React.Component {
             </Background>
             {!this.getOptionValue('hidden-main') && (
               <Background className={classNames(style.plan, style['plan--main'])} bind="centerBackground" tagName="article">
-                {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('2')}</div>) : this.planHeader('2')}
+                {this.getOptionValue('price-wrapper') ? (<Background bind="centerWrapperBackground" className={style['price-wrapper']}>{this.planHeader('2')}</Background>) : this.planHeader('2')}
                 {this.getModifierValue('plan-description') && (
                   <Collection
                     className={style.plan__list}
@@ -95,7 +95,7 @@ class Block extends React.Component {
               </Background>
             )}
             <Background className={style.plan} bind="rightBackground" tagName="article">
-              {this.getOptionValue('price-wrapper') ? (<div className={style['price-wrapper']}>{this.planHeader('3')}</div>) : this.planHeader('3')}
+              {this.getOptionValue('price-wrapper') ? (<Background bind="rightWrapperBackground" className={style['price-wrapper']}>{this.planHeader('3')}</Background>) : this.planHeader('3')}
               {this.getModifierValue('plan-description') && (
                 <Collection
                   className={style.plan__list}
@@ -143,6 +143,18 @@ Block.defaultContent = {
   rightBackground: {
     type: 'color',
     color: '#ebeaea',
+  },
+  leftWrapperBackground: {
+    type: 'color',
+    color: 'transparent',
+  },
+  centerWrapperBackground: {
+    type: 'color',
+    color: 'transparent',
+  },
+  rightWrapperBackground: {
+    type: 'color',
+    color: 'transparent',
   },
   'plan-list-1': [
     {
