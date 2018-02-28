@@ -4,10 +4,6 @@
   text-align: center;
   word-wrap: break-word;
 
-  @media (min-width: 992px) {
-    margin: 0 auto;
-  }
-
   &--nav-open {
 
     @media (max-width: 991px) {
@@ -233,13 +229,11 @@
   height: 14px;
   top: 38px;
   left: 20px;
-  margin: auto;
   padding: 0;
   cursor: pointer;
   background-color: transparent;
   color: var(--ui-text-color);
   border: 0;
-  outline: none;
   transition: color .2s ease-in-out;
 
   @media (min-width: 768px) {
@@ -285,12 +279,12 @@
 
 .logo {
   min-width: 160px;
-  max-width: 230px;
+  max-width: 325px;
   margin: 0 auto;
+  flex-shrink: 0;
   text-decoration: none;
 
   @media (min-width: 992px) {
-    max-width: calc(100% - 870px);
     margin: 0;
   }
 
