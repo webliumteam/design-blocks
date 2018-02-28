@@ -45,27 +45,34 @@ class Block extends React.Component {
     const menuAlignment = this.getModifierValue('menu-alignment')
     const menuModifierClass = css[`nav--${menuAlignment}`]
     const logoStatus = !this.getModifierValue('logo')
+    const topLineStatus = this.getModifierValue('text') || this.getModifierValue('social-icons')
 
     return (
       <header className={classNames(css.header, opened && css['header--nav-open'])} data-header="target">
-        <Background tagName="div" className={css['header__top-line']} bind="topLineBackground">
-          <div className={css['header__top-line-inner']}>
-            <Text tagName="p" className={css.header__text} bind="topLineText" />
-            <div className={css.header__socials}>
-              <SocialIcons bind="socialIcons" className={css.socials} />
+        {topLineStatus && (
+          <Background tagName="div" className={css['header__top-line']} bind="topLineBackground">
+            <div className={css['header__top-line-inner']}>
+              {this.getModifierValue('text') && <Text tagName="p" className={css.header__text} bind="topLineText" />}
+              {this.getModifierValue('social-icons') && (
+                <div className={css.header__socials}>
+                  <SocialIcons bind="socialIcons" className={css.socials} />
+                </div>
+              )}
             </div>
-          </div>
-        </Background>
+          </Background>
+        )}
         <Background tagName="div" className={css.header__main} bind="mainBackground">
           <div className={classNames(css['header__main-inner'], logoStatus && css['header__main-inner--logo-hidden'])}>
             {this.getModifierValue('logo') && (
-              <Logo
-                bind="logo"
-                className={css.logo}
-                textClassName={css.logo__title}
-                maxWidth={this.getOptionValue('logo-max-width')}
-                maxHeight={this.getOptionValue('logo-max-height')}
-              />
+              <div className={css['logo-wrapper']}>
+                <Logo
+                  bind="logo"
+                  className={css.logo}
+                  textClassName={css.logo__title}
+                  maxWidth={this.getOptionValue('logo-max-width')}
+                  maxHeight={this.getOptionValue('logo-max-height')}
+                />
+              </div>
             )}
             <button
               type="button"
@@ -235,12 +242,13 @@ Block.defaultContent = {
       offset: 7.5,
       color: '#303C42',
       sizes: [10, 20, 30, 40],
-      size: 20,
+      size: 30,
     },
   },
 }
 
 Block.modifierScheme = {
+  text: {defaultValue: true, label: 'Text', type: 'checkbox'},
   'social-icons': {defaultValue: true, label: 'Social icons', type: 'checkbox'},
   logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
   'menu-alignment': {
