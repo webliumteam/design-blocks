@@ -41,6 +41,8 @@
     margin-top: 30px;
     font-size: var(--ui-text-size);
     max-width: 590px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
