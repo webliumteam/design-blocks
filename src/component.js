@@ -43,7 +43,7 @@ class Block extends React.Component {
     const {components: {Logo, Text, SocialIcons, Menu, Background}, style: css} = this.props
     const {opened} = this.state
     const menuAlignment = this.getModifierValue('menu-alignment')
-    const menuModifierClass = css[`nav__list--${menuAlignment}`]
+    const menuModifierClass = css[`nav--${menuAlignment}`]
     const logoStatus = !this.getModifierValue('logo')
 
     return (
@@ -77,9 +77,9 @@ class Block extends React.Component {
               <span className={css['nav-button__line']} />
               <span className={css['nav-button__line']} />
             </button>
-            <nav className={css.nav}>
+            <nav className={classNames(css.nav, menuModifierClass)}>
               <Menu
-                className={classNames(css.nav__list, menuModifierClass)}
+                className={css.nav__list}
                 itemClassName={css.nav__item}
                 linkClassName={css.nav__link}
                 onClickItem={this.closeMenu}

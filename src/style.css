@@ -155,8 +155,6 @@
 
 .nav {
   display: none;
-  width: 100%;
-  top: 100%;
   padding: 40px 20px 50px;
 
   @media (min-width: 768px) {
@@ -164,31 +162,41 @@
   }
 
   @media (min-width: 992px) {
-    display: block;
+    display: flex;
     position: relative;
-    max-width: 870px;
-    margin: 0 auto;
     padding: 0;
-    order: 1;
+    align-items: center;
+
+    &--right {
+      margin-left: auto;
+
+      .nav__list {
+        justify-content: flex-end;
+      }
+    }
+
+    &--center {
+      margin: 0 auto;
+
+      .nav__list {
+        justify-content: center;
+      }
+    }
+
+    &--left {
+      margin-left: 30px;
+      margin-right: auto;
+
+      .nav__list {
+        justify-content: flex-start;
+      }
+    }
 
     &__list {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       margin-top: 10px;
-
-      &--right {
-        justify-content: flex-end;
-      }
-
-      &--center {
-        justify-content: center;
-      }
-
-      &--left {
-        justify-content: flex-start;
-        margin-left: 30px;
-      }
     }
   }
 
@@ -215,14 +223,7 @@
   &__link {
     font-family: var(--ui-text-font-family);
     font-size: var(--ui-text-size);
-    color: var(--ui-link-color);
     text-decoration: none;
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--ui-link-hover-color);
-    }
   }
 }
 
@@ -258,7 +259,7 @@
     left: 0;
     background-color: currentColor;
     transform-origin: 50% 50%;
-    transition: transform .2s ease-in-out, oapcity .2s ease-in-out;
+    transition: transform .2s ease-in-out, opacity .2s ease-in-out;
 
     &:first-child {
       top: 0;
@@ -284,6 +285,7 @@
 
 .logo {
   min-width: 160px;
+  max-width: 230px;
   margin: 0 auto;
   text-decoration: none;
 
