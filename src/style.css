@@ -24,7 +24,8 @@
   &--state-5 {
     .articles-wrapper {
       max-width: 880px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .article {
