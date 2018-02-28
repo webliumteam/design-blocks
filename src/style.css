@@ -93,11 +93,11 @@
     @media (min-width: 768px) {
       width: auto;
       max-width: calc(100% - 370px);
+      margin-bottom: 0;
       text-align: left;
     }
 
     @media (min-width: 992px) {
-      margin-bottom: 0;
       font-size: var(--ui-text-size);
     }
   }
