@@ -279,10 +279,11 @@
 
 .logo {
   display: inline-block;
+  max-width: 100%;
   text-decoration: none;
 
   &-wrapper {
-    min-width: 160px;
+    min-width: 200px;
     max-width: 325px;
     margin: 0 auto;
     flex: 1;
