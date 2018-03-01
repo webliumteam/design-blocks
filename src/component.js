@@ -22,6 +22,7 @@ class Block extends React.Component {
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
       this.getModifierValue('text') ||
+      this.getModifierValue('additional-text') ||
       this.getModifierValue('socialIcons')
     )
     const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
@@ -30,6 +31,7 @@ class Block extends React.Component {
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
       this.getModifierValue('text') ||
+      this.getModifierValue('additional-text') ||
       this.getModifierValue('socialIcons') ||
       this.getModifierValue('link') ||
       this.getModifierValue('button')
@@ -57,6 +59,9 @@ class Block extends React.Component {
                 )}
                 {this.getModifierValue('text') && (
                   <Text tagName="p" className={css.article__text} bind="text" />
+                )}
+                {this.getModifierValue('additional-text') && (
+                  <Text tagName="p" className={classNames(css['article__additional-text'])} bind="text-2" />
                 )}
                 {this.getModifierValue('socialIcons') && (
                   <div className={css.article__socials}>
@@ -108,6 +113,10 @@ Block.defaultContent = {
   },
   text: {
     content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
+    type: 'text',
+  },
+  'text-2': {
+    content: 'Additional text',
     type: 'text',
   },
   picture: {
@@ -187,6 +196,7 @@ Block.modifierScheme = {
   'text': {defaultValue: true, label: 'Company main text', type: 'checkbox'},
   'title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  'additional-text': {defaultValue: false, label: 'Additional text', type: 'hidden'},
 }
 
 
