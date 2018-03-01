@@ -14,25 +14,22 @@ class Block extends React.Component {
 
   render() {
     const {components: {ContactForm, Text, Menu, Logo, SocialIcons}, style: css} = this.props
-    const withoutLeftPart = this.getModifierValue('title') || this.getModifierValue('description')
 
     return (
       <footer className={css.footer}>
         <div className={css.footer__inner}>
-          {withoutLeftPart && (
-            <div className={css.footer__part}>
-              {this.getModifierValue('title') && (
-                <div className={css.logo}>
-                  <Logo
-                    bind="logo"
-                    maxWidth={this.getOptionValue('logo-max-width')}
-                    maxHeight={this.getOptionValue('logo-max-height')}
-                    textClassName={css.logo__title}
-                  />
-                </div>
-              )}
-            </div>
-          )}
+          <div className={css.footer__part}>
+            {this.getModifierValue('title') && (
+              <div className={css.logo}>
+                <Logo
+                  bind="logo"
+                  maxWidth={this.getOptionValue('logo-max-width')}
+                  maxHeight={this.getOptionValue('logo-max-height')}
+                  textClassName={css.logo__title}
+                />
+              </div>
+            )}
+          </div>
           <nav className={classNames(css.footer__part, css['footer__part--center'])}>
             <Menu
               className={css['nav-list']}
@@ -51,7 +48,7 @@ class Block extends React.Component {
           )}
           <ContactForm
             bind="contactForm"
-            className={css.form}
+            className={classNames(css.footer__part, css.form)}
             labelClassName={css.form__item}
             fieldClassName={css.form__field}
             buttonClassName={css.form__button}
@@ -301,16 +298,22 @@ Block.defaultContent = {
         type: 'email',
         id: 'contactForm_email',
         title: 'Email',
-        placeholder: '',
-        required: true,
+        placeholder: 'email',
+        required: false,
       },
     ],
     submitButton: {
-      title: '',
+      title: 'subscribe',
+      textValue: '',
       type: 'link',
+      iconEnabled: false,
+      iconAlignment: 'left',
+      icon: {
+        svg: '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" fill-rule="evenodd"/></svg>',
+      },
     },
     className: 'form',
-    buttonClassName: 'button button--size-md button--primary form__button',
+    buttonClassName: 'link',
   },
   copyright: {
     type: 'caption',
