@@ -60,13 +60,15 @@
   .item {
     &__number {
       font-size: calc( var(--ui-hero-title-size) * 1.2);
+      line-height: normal;
     }
   }
 }
 
-@media (min-width: 1150px) {
+@media (min-width: 1200px) {
   .item__number {
     font-size: calc( var(--ui-hero-title-size) * 1.5 );
+    line-height: normal;
     letter-spacing: -5px;
   }
 }
