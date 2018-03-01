@@ -10,7 +10,7 @@
   color: var(--ui-dark-shade-color);
 
   @media screen and (max-width: 992px) {
-    font-size: 3em;
+    font-size: calc(var(--ui-block-title-size) * 0.8);
   }
 }
 
@@ -22,12 +22,16 @@
 }
 
 .article {
+  display: flex;
+  flex-direction: column;
+
   &__picture-wrapper {
     height: 310px;
     border-radius: 20px;
     overflow: hidden;
     background-color: #e6e6e6;
     margin-bottom: 35px;
+    order: 1;
   }
 
   &__picture {
@@ -39,5 +43,18 @@
     font-weight: 600;
     color: var(--ui-dark-shade-color);
     margin-bottom: 25px;
+    order: 2;
+  }
+
+  &__meta {
+    order: 3;
+  }
+
+  &__category {
+    font-size: calc(var(--ui-caption-size) * 1.27);
+  }
+
+  &__text {
+    order: 4;
   }
 }

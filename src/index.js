@@ -27,7 +27,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       category: {
-        content: 'Creative Process',
+        content: 'Positive working conditions',
         type: 'caption',
       },
       date: {
@@ -63,7 +63,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       category: {
-        content: 'Creative Process',
+        content: 'Safe working place',
         type: 'caption',
       },
       date: {
@@ -99,7 +99,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       category: {
-        content: 'Creative Process',
+        content: 'Helping in productivity growth',
         type: 'caption',
       },
       date: {
@@ -157,10 +157,10 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
 
-  'block-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'block-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
   'post-description': {defaultValue: true, label: 'Post main text', type: 'checkbox'},
   'post-image': {defaultValue: true, label: 'Post image', type: 'checkbox'},
-  'post-link': {defaultValue: true, label: 'Post link', type: 'checkbox'},
+  'post-link': {defaultValue: false, label: 'Post link', type: 'checkbox'},
   'post-publish-date': {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},

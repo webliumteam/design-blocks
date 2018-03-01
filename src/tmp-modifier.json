@@ -1,8 +1,3 @@
 {
-  "some-modifier": true,
-  "post-link": false,
-  "top-icon": false,
-  "block-button": false,
-  "post-publish-date": false,
-  "subtitle": false
+  "some-modifier": true
 }
