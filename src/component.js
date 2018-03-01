@@ -1,40 +1,54 @@
 import $editor from 'weblium/editor'
-import css from './style.css'
 
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
+    style: PropTypes.object.isRequired,
+    $block: PropTypes.object.isRequired,
   }
 
-  collectionItem = ({index, children, className}) => {
-    const {components: {Text, Image}} = this.props
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  collectionItem = ({index, children, className, modifier}) => {
+    const {components: {Text, Image}, style} = this.props
     return (
-      <div className={classNames(css.item, className)}>
+      <div className={classNames(style.item, className)}>
         {children}
 
         <Image
-          pictureClassName={css.item__picture}
-          imgClassName={css.item__image}
+          pictureClassName={style.item__picture}
+          imgClassName={style.item__image}
           bind={`awards[${index}].picture`}
         />
-        <Text bind={`awards[${index}].title`} tagName="h2" className={css.item__title} />
+        {_.get('heading')(modifier) && (
+          <Text bind={`awards[${index}].title`} tagName="h2" className={style.item__title} />
+        )}
       </div>
     )
   }
 
   render() {
-    const {components: {Collection, Text}} = this.props
+    const {components: {Collection, Text}, style, $block} = this.props
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
-          <header className={css.section__header}>
-            <Text bind="title" className={css.title} tagName="h1" />
-            <Text bind="subtitle" className={css.subtitle} tagName="p" />
-          </header>
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+            <header className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text bind="title" className={style.title} tagName="h1" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text bind="subtitle" className={style.subtitle} tagName="p" />
+              )}
+            </header>
+          )}
           <Collection
-            className={css['items-wrapper']}
+            className={style['items-wrapper']}
             bind="awards"
             Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
           />
         </div>
       </section>
@@ -82,6 +96,12 @@ Block.defaultContent = {
     content: 'We’re proud of our awards! Look, what we’ve already won:',
     type: 'subtitle',
   },
+}
+
+Block.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Awards description', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Award title', type: 'checkbox'},
 }
 
 export default Block
