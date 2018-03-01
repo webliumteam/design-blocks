@@ -31,6 +31,7 @@ ExtendedWireframe.modifierScheme = {
     defaultValue: 'center',
     name: 'Aligning',
     type: 'radio-button-group',
+    style: 'buttons',
   },
   heading: {defaultValue: false, label: 'Title', type: 'hidden'},
   subheading: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
