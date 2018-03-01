@@ -35,8 +35,8 @@
 
     &__inner {
       padding-right: 0;
+      padding-left: 0;
       max-width: 100%;
-      padding-left: 5%;
     }
 
     &__main {
@@ -59,6 +59,11 @@
   @media (min-width: 768px) {
     justify-content: center;
     padding: 110px 0;
+    padding-left: 5%;
+
+    &:first-child {
+      padding-left: 5%;
+    }
   }
 }
 
