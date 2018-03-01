@@ -186,7 +186,7 @@ Block.modifierScheme = {
   'subtitle': {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
   'text': {defaultValue: true, label: 'Company main text', type: 'checkbox'},
   'title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'hidden'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
 export default Block
