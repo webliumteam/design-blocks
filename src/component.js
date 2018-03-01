@@ -22,6 +22,7 @@ class Block extends React.Component {
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
       this.getModifierValue('text') ||
+      this.getModifierValue('additional-text') ||
       this.getModifierValue('socialIcons')
     )
     const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
@@ -195,7 +196,7 @@ Block.modifierScheme = {
   'text': {defaultValue: true, label: 'Company main text', type: 'checkbox'},
   'title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
-  'additional-text': {defaultValue: true, label: 'Additional text', type: 'checkbox'},
+  'additional-text': {defaultValue: false, label: 'Additional text', type: 'hidden'},
 }
 
 
