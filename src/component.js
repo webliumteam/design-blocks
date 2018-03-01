@@ -199,5 +199,4 @@ Block.modifierScheme = {
   'additional-text': {defaultValue: false, label: 'Additional text', type: 'hidden'},
 }
 
-
 export default Block
