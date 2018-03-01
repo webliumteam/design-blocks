@@ -6,7 +6,7 @@
   margin-bottom: 20px;
   letter-spacing: -2.8px;
 
-  @media (min-width: 480px) and (min-height: 370px) {
+  @media (min-width: 480px) {
     padding-left: 40px;
   }
 }
@@ -16,7 +16,7 @@
   font-weight: 700;
   color: var(--ui-subheading-color);
 
-  @media (min-width: 480px) and (min-height: 370px) {
+  @media (min-width: 480px) {
     padding-left: 40px;
   }
 }
@@ -24,7 +24,7 @@
 .btns-group {
   margin-top: 15px;
 
-  @media (min-width: 480px) and (min-height: 370px) {
+  @media (min-width: 480px) {
     padding-left: 40px;
   }
 }
