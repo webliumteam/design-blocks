@@ -6,19 +6,6 @@
     &__title {
       font-family: var(--ui-caption-font-family);
       font-weight: var(--ui-block-title-font-weight);
-      color: var(--ui-light-shade-color);
-    }
-  }
-
-  .nav-list__link {
-    color: var(--ui-link-color);
-    font-family: var(--ui-caption-font-family);
-    font-size: var(--ui-caption-size);
-    font-weight: 400;
-
-    &:hover {
-      color: var(--ui-link-color);
-      opacity: 1;
     }
   }
 }
@@ -29,6 +16,13 @@
     display: inline-block;
     text-transform: uppercase;
     opacity: 0.8;
+    font-family: var(--ui-caption-font-family);
+    font-size: var(--ui-caption-size);
+    font-weight: 400;
+
+    &:hover {
+      opacity: 1;
+    }
 
     &:hover::after {
       content: "";
