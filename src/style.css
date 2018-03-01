@@ -7,7 +7,6 @@
 }
 
 .blockquote {
-  color: var(--ui-light-accent-color);
   font-family: var(--ui-subtitle-font-family);
   letter-spacing: 2.2px;
   max-width: 770px;
@@ -17,30 +16,32 @@
     content: none;
   }
 
+  &__line::after {
+    content: none;
+  }
+
   &__icon {
     display: none;
-  }
-
-  &__line {
-    margin-top: 12px;
-  }
-
-  &__line::after {
-    width: 1.5%;
-    left: 49.5%;
-    height: 2px;
-    background-color: var(--ui-light-accent-color);
   }
 }
 
 .author {
-  color: var(--ui-light-accent-color);
   text-transform: uppercase;
-  font-family: var(--ui-text-font-family);
   font-size: var(--ui-small-size);
   margin-top: 15px;
   letter-spacing: 1.4px;
   font-weight: var(--ui-caption-font-weight);
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1.5%;
+    left: 49.5%;
+    height: 2px;
+    bottom: 50px;
+    background-color: currentColor;
+  }
 }
 
 @media (min-width: 992px) {
