@@ -35,14 +35,8 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   align: {
-    children: [
-      {id: 'left', label: 'left'},
-      {id: 'center', label: 'center'},
-      {id: 'right', label: 'right'},
-    ],
+    ...Component.modifierScheme.align,
     defaultValue: 'center',
-    name: 'Aligning',
-    type: 'radio-button-group',
   },
   'caption-decorator': {defaultValue: false, label: 'Pretitle', type: 'hidden'},
   'primary-btn': {defaultValue: true, label: 'Button', type: 'checkbox'},
