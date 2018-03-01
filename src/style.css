@@ -186,6 +186,14 @@
       .nav__list {
         justify-content: flex-start;
       }
+
+      .nav__item {
+
+        @media (min-width: 992px) {
+          margin-left: 0;
+          margin-right: 30px;
+        }
+      }
     }
 
     &__list {
