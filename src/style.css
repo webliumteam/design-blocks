@@ -19,12 +19,12 @@
 
       .header__main {
         display: flex;
-        padding: 30px 0;
         flex-direction: column;
         flex: 1;
 
         &-inner {
           width: 100%;
+          flex: 1;
         }
       }
 
@@ -41,6 +41,10 @@
 
       .logo {
         display: block;
+
+        &-wrapper {
+          flex: 0;
+        }
       }
 
       .nav-button__line {
@@ -103,7 +107,7 @@
 
   &__main {
     position: relative;
-    padding: 30px 60px;
+    padding: 30px 0;
     background-color: #f2f2f2;
 
     @media (min-width: 992px) {
@@ -113,12 +117,14 @@
     &-inner {
       display: flex;
       margin: 0 auto;
+      padding: 0 60px;
       flex-direction: column;
-      justify-content: space-between;
 
       @media (min-width: 992px) {
         max-width: var(--ui-content-container);
+        padding: 0;
         flex-direction: row;
+        justify-content: space-between;
       }
     }
   }
@@ -236,7 +242,7 @@
   position: absolute;
   width: 30px;
   height: 25px;
-  top: 33px;
+  top: 32px;
   left: 20px;
   padding: 5px;
   cursor: pointer;
@@ -296,15 +302,15 @@
     max-width: 325px;
     margin: 0 auto;
     flex: 1;
-    text-align: left;
+    text-align: center;
 
     @media (min-width: 992px) {
       margin: 0;
+      text-align: left;
     }
   }
 
   &__title {
-    font-size: calc(var(--ui-block-title-size) * 0.62);
     color: var(--ui-block-title-color);
 
     @media (min-width: 992px) {
