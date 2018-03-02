@@ -19,6 +19,10 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'quote_bg.jpg',
   },
+  author: {
+    ...Component.defaultContent.author,
+    type: 'quote',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {

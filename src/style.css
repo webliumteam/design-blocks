@@ -29,7 +29,6 @@
   text-transform: uppercase;
   font-size: var(--ui-small-size);
   margin-top: 15px;
-  letter-spacing: 1.4px;
   font-weight: var(--ui-caption-font-weight);
 
   &::after {
