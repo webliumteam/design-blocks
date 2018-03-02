@@ -3,7 +3,7 @@
   max-width: 100%;
   text-decoration: none;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   cursor: pointer;
   transition: color 0.2s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
@@ -312,7 +312,7 @@
 .article__title {
   width: 100%;
   margin-bottom: 25px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 40px;
   text-transform: uppercase;
   font-weight: var(--ui-block-title-font-weight);
@@ -347,7 +347,7 @@
   margin-bottom: 42px;
   line-height: 1.53;
   font-size: 17px;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   color: #999;
 }
 
@@ -490,24 +490,18 @@
   }
 }
 
-:global {
-  .dark {
-    :local {
-      .button,
-      .button--primary {
-        text-transform: uppercase;
-        background-color: transparent;
-        color: var(--ui-brand-color);
-        border-color: #fff;
+.button,
+.button--primary {
+  text-transform: uppercase!important;
+  background-color: transparent!important;
+  color: var(--ui-brand-color)!important;
+  border-color: #fff;
 
-        &:hover,
-        &:focus {
-          color: #fff;
-          border-color: var(--ui-brand-color);
-          background-color: transparent;
-        }
-      }
-    }
+  &:hover,
+  &:focus {
+    color: #fff;
+    border-color: var(--ui-brand-color)!important;
+    background-color: transparent!important;
   }
 }
 
@@ -564,7 +558,6 @@
     }
   }
 }
-
 
 .iframe {
   position: absolute;
