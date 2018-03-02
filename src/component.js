@@ -71,11 +71,11 @@ Block.defaultContent = {
     },
     {
       title: {
-        content: 'Best Customer-Tailored Approach at the World Conference (2014)',
+        content: 'Best Service Provider (2014)',
         type: 'heading',
       },
       picture: {
-        alt: 'Award "Best Customer-Tailored Approach at the World Conference"',
+        alt: 'Award "Best Service Provider"',
       },
     },
     {
