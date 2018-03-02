@@ -34,21 +34,15 @@
 }
 
 .title {
-  text-transform: uppercase;
-  letter-spacing: 5.2px;
   margin-bottom: 18px;
 }
 
 .subtitle {
-  text-transform: uppercase;
   font-weight: bold;
   font-size: calc(var(--ui-subtitle-font-size) * 0.8);
-  letter-spacing: 4.8px;
   color: var(--ui-light-accent-color);
 }
 
 .button {
-  text-transform: uppercase;
-  letter-spacing: 3.2px;
   font-weight: 600;
 }
