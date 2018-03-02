@@ -18,7 +18,7 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.blog[0],
       title: {
-        content: 'HOW TO HIRE ONLY PROFESSIONAL AND DEDICATED EMPLOYEES? USEFUL TIPS FROM OUR HR DIRECTOR.',
+        content: 'HOW TO HIRE EMPLOYEES?',
         type: 'heading',
       },
       category: {
