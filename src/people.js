@@ -33,7 +33,7 @@ export const people = [
   },
   {
     title: 'Євген Шевченко',
-    link: 'https://www.facebook.com/ievgen.shevchenko',
+    link: 'https://www.facebook.com/ievgen.shevchenko.7',
   },
   {
     title: 'Іван Примаченко',
