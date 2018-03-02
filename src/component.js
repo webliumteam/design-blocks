@@ -64,7 +64,9 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           <Text tagName="h1" className={style.title} bind="title" />
-          {this.getModifierValue('subtitle') && <Text bind="subtitle" />}
+          {this.getModifierValue('subtitle') && (
+            <Text tagName="div" className={style.subtitle} bind="subtitle" />
+            )}
           <Collection
             className={style['articles-wrapper']}
             bind="blog"
