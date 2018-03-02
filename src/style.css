@@ -15,10 +15,6 @@
   color: var(--ui-light-accent-color);
 }
 
-.title {
-  font-weight: 600;
-}
-
 .button,
 .link {
   margin-top: 40px;
