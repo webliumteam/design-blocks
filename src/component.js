@@ -13,7 +13,6 @@ class Block extends React.Component {
     const {components: {Text, Icon}, style} = this.props
     return (
       <article className={classNames(style.article, className)}>
-        {children}
         {_.get('icon')(modifier) && (
           <div className={style.article__icon}>
             <Icon bind={`why[${index}].icon`} />
@@ -25,6 +24,8 @@ class Block extends React.Component {
             <Text bind={`why[${index}].description`} className={style.article__text} tagName="p" />
           )}
         </div>
+
+        {children}
       </article>
     )
   }
