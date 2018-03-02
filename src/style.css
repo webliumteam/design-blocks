@@ -2,22 +2,30 @@
 
 /* start here */
 .header {
-  padding-top: 36px;
-  padding-bottom: 20px;
+  padding: 0;
+
+  @media (min-width: 992px) {
+    padding-top: 36px;
+    padding-bottom: 20px;
+  }
 
   &__inner {
     position: relative;
-    padding-bottom: 59px;
+    padding-bottom: 30px;
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 1px;
-      background-color: var(--ui-light-accent-color);
-      opacity: 0.1;
+    @media (min-width: 992px) {
+      padding-bottom: 59px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--ui-light-accent-color);
+        opacity: 0.1;
+      }
     }
   }
 
@@ -43,9 +51,14 @@
 .nav {
 
   @media (min-width: 992px) {
-    flex-basis: 90%;
     display: flex;
     justify-content: space-between;
+
+    &:first-child {
+      .nav-list {
+        justify-content: flex-start;
+      }
+    }
   }
 }
 
