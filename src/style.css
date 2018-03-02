@@ -116,9 +116,15 @@
   }
 
   &__content {
+
+    @media (min-width: 992px) {
+      max-width: calc(100% - 130px);
+    }
+
     &:first-child {
 
       @media (min-width: 992px) {
+        max-width: 100%;
         padding-left: 60px;
         padding-right: 60px;
       }
