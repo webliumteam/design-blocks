@@ -54,7 +54,7 @@
     }
   }
 
-  &__title {
+  .article__title {
     margin-bottom: 50px;
     position: relative;
     font-family: var(--ui-block-title-font-family);
