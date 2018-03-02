@@ -1,3 +1,50 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-1-quote/src/style.css";
 
 /* start here */
+
+.blockquote::before {
+  content: none;
+}
+
+.blockquote {
+  font-family: var(--ui-subtitle-font-family);
+  letter-spacing: 2.2px;
+  max-width: 770px;
+  font-style: italic;
+
+  &__line::before {
+    content: none;
+  }
+
+  &__line::after {
+    content: none;
+  }
+
+  &__icon {
+    display: none;
+  }
+}
+
+.author {
+  text-transform: uppercase;
+  font-size: var(--ui-small-size);
+  margin-top: 15px;
+  font-weight: var(--ui-caption-font-weight);
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1.5%;
+    left: 49.5%;
+    height: 2px;
+    bottom: 50px;
+    background-color: currentColor;
+  }
+}
+
+@media (min-width: 992px) {
+  .section {
+    padding: 154px 0 176px;
+  }
+}
