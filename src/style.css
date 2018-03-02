@@ -35,7 +35,7 @@
     letter-spacing: 1.4px;
   }
 
-  &__link {
+  .link {
     position: relative;
     padding-right: 22px;
     text-decoration: none;
