@@ -136,7 +136,7 @@
 .article__content {
   position: relative;
   text-align: center;
-  z-index: 1;
+  z-index: 3;
 }
 
 .article__title {
