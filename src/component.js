@@ -91,11 +91,11 @@ Block.defaultContent = {
     },
     {
       title: {
-        content: 'Best Customer-Focused Approach on the World Conference (2014)',
+        content: 'Best Service Provider (2014)',
         type: 'heading',
       },
       picture: {
-        alt: 'Best Customer-Focused Approach on the World Conference photo',
+        alt: 'Best Service Provider',
       },
     },
     {
