@@ -29,7 +29,31 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    content: '- Pricing -',
+    content: '- PRICING -',
+  },
+  'plan-title-1': {
+    content: 'BASIC',
+    type: 'heading',
+  },
+  'plan-title-2': {
+    content: 'PREMIUM',
+    type: 'heading',
+  },
+  'plan-title-3': {
+    content: 'PRO',
+    type: 'heading',
+  },
+  'plan-price-text-1': {
+    content: 'FOR ALL PERIOD',
+    type: 'caption',
+  },
+  'plan-price-text-2': {
+    content: 'PER MONTH',
+    type: 'caption',
+  },
+  'plan-price-text-3': {
+    content: 'PER MONTH',
+    type: 'caption',
   },
   'plan-cta-1': {
     ...Component.defaultContent['plan-cta-1'],
@@ -54,7 +78,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'additional-btn': {defaultValue: false, label: 'Secondary button', type: 'hidden'},
+  'additional-btn': {defaultValue: true, label: 'Secondary button', type: 'checkout'},
   'block-title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'plan-additional-info': {
     defaultValue: true,

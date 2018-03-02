@@ -7,19 +7,13 @@
 }
 
 .title {
-  text-transform: uppercase;
-  font-size: var(--ui-block-title-size);
-  letter-spacing: 3px;
-  font-weight: var(--ui-heading-lg-font-weight);
   position: relative;
   width: auto;
   display: inline-block;
 }
 
 .subtitle {
-  font-size: calc(var(--ui-heading-lg-size) / 2);
-  font-family: var(--ui-subheading-font-family);
-  line-height: var(--ui-subheading-line-height);
+  font-size: calc(var(--ui-subtitle-size) * 0.8);
 }
 
 .plan--main {
@@ -28,7 +22,6 @@
 
   .plan__title {
     font-weight: var(--ui-hero-title-font-weight);
-    font-family: var(--ui-heading-font-family);
   }
 
   .plan__button {
@@ -47,14 +40,9 @@
 
   &__title {
     font-weight: var(--ui-hero-title-font-weight);
-    text-transform: uppercase;
-    font-family: var(--ui-heading-font-family);
   }
 
   &__price {
-    font-size: var(--ui-small-text-size);
-    font-weight: var(--ui-heading-font-weight);
-    text-transform: uppercase;
     margin-bottom: 40px;
 
     &-count {
@@ -84,5 +72,38 @@
     flex-basis: 90%;
     max-width: 90%;
     margin-bottom: 25px;
+  }
+}
+
+.btns-group .link {
+  position: relative;
+  text-decoration: none;
+  padding-right: 27px;
+  transition: color 0.2s ease-in;
+  color: var(--ui-block-title-color);
+  font-weight: 600;
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  &:only-child {
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 2px;
+      background-color: currentColor;
+    }
   }
 }
