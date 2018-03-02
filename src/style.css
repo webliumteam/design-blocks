@@ -213,7 +213,25 @@ button {
 
   &--modal {
     flex: initial;
+    margin-top: 40px;
+
+    @media (min-width: 981px) {
+      position: absolute;
+      bottom: 66px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media (max-height: 573px) {
+      position: relative;
+      top: initial;
+      left: initial;
+      transform: none;
+      bottom: initial;
+    }
+    
   }
+  
 }
 
 .nav-list__item {
@@ -365,6 +383,18 @@ button {
     border-left: 1px solid #334f87;
     transition: border-color 0.2s ease-out;
   }
+
+  &--modal {
+    margin-left: 0;
+
+    @media (min-width: 981px) {
+      margin-left: 0;
+    }
+  
+    @media (min-width: 1024px) {
+      margin-left: 0;
+    }
+  }
 }
 
 .text {
@@ -404,7 +434,7 @@ button {
 
   &__title {
     font-family: "Roboto", sans-serif;
-    font-size: 49px;
+    font-size: 27px;
     font-weight: 500;
     line-height: 1.17;
     text-align: center;
@@ -418,9 +448,14 @@ button {
   &__text {
     text-align: center;
     padding: 42px 15px 62px;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.69;
     color: #fff;
+
+    @media (min-width: 768px) {
+      font-size: 13px;
+
+    }
   }
 
   &__link {
