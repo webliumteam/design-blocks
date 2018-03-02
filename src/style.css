@@ -275,9 +275,14 @@ button {
 }
 
 .nav-list__link {
-  color: #8c8c8c;
+  color: #8c8c8c!important;
   text-decoration: none;
   transition: color 0.2s ease-in;
+
+  &:hover,
+  &:focus {
+    color: #fff!important;
+  }
 
   &--modal {
     color: var(--ui-brand-color);
@@ -289,7 +294,7 @@ button {
 .nav-list__link:active,
 .nav-list__link:hover {
   outline: none;
-  color: var(--ui-text-color);
+  color: #fff;
 }
 
 .nav-list__link--modal:focus,
@@ -401,8 +406,15 @@ button {
   color: #8c8c8c;
 
   &--value {
+    background: none!important;
     padding: 0;
-    color: var(--ui-brand-color);
+    color: var(--ui-brand-color)!important;
+
+    &:hover,
+    &:focus {
+      background: none!important;
+      color: var(--ui-brand-color)!important;
+    }
   }
 }
 

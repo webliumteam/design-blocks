@@ -61,7 +61,7 @@ class Block extends React.Component {
                     bind="text1"
                     className={classNames(css.text, css['text--right'], css['text--nowrap'])}
                   />
-                  <Button className={classNames(css.text, css['text--value'], css['text--nowrap'])}>
+                  <Button bind="counter" className={classNames(css.text, css['text--value'], css['text--nowrap'])}>
                     &nbsp;{usersTotal} людей
                   </Button>
                 </div>
@@ -169,7 +169,6 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: '',
   },
   text1: 'Наразi долучилось: ',
   logo: {
