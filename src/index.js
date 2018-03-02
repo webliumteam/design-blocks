@@ -11,6 +11,15 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  title: {
+    content: 'WANT TO WORK WITH US?',
+    type: 'blockTitle',
+  },
+  cta: {
+    ...Component.defaultContent.cta,
+    textValue: 'REQUEST A QUOTE',
+    type: 'primary',
+  },
   background: {
     type: 'image',
     position: {
@@ -20,10 +29,6 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'cbx-214431.jpg',
   },
   theme: 'dark',
-  cta: {
-    ...Component.defaultContent.cta,
-    type: 'primary',
-  },
 }
 
 ExtendedWireframe.modifierScheme = {

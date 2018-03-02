@@ -12,21 +12,16 @@
   max-width: 770px;
   margin: auto;
   font-size: calc(var(--ui-text-size) * 1.15);
-  letter-spacing: 1.2px;
-  line-height: calc(var(--ui-text-line-height ) * 0.88);
   color: var(--ui-light-accent-color);
 }
 
 .title {
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3.6px;
 }
 
 .button,
 .link {
   margin-top: 40px;
-  text-transform: uppercase;
 }
 
 .button:only-child,
@@ -39,4 +34,3 @@
     padding: 25% 0;
   }
 }
-
