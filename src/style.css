@@ -108,6 +108,10 @@
     width: 100%;
     margin-bottom: -10px;
     
+    @media (min-width: 480px) {
+      max-hegight: 125px;
+    }
+    
     @media (min-width: 992px) {
       margin-bottom: 0;
     }
@@ -117,6 +121,7 @@
     display: block;
     width: 100%;
     height: auto;
+    max-height: 100%;
     background-color: var(--ui-media-bg);
   }
 
