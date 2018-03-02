@@ -1,19 +1,12 @@
 @import "wireframe-zapdos-team/src/style.css";
 
-.section {
-  background-color: #fff;
-}
-
 .title {
-  text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 3.6px;
 }
 
 .subtitle {
   font-size: calc(var(--ui-subtitle-size) * 0.8);
-  line-height: calc(var(--ui-subtitle-line-height) * 1.167);
-  letter-spacing: 1.2px;
 }
 
 .item {
@@ -21,6 +14,7 @@
     padding-top: 40px;
     padding-left: 0;
     padding-right: 0;
+    border: 0;
   }
 
   &__pic {
@@ -30,43 +24,22 @@
     background-color: transparent;
 
     &-link {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
   }
-  
+
   &__img {
     clip-path: polygon(47.5% 0.35%, 50% 0%, 52.5% 0.35%, 97% 23%, 98.5% 25%, 99% 27%, 99% 73%, 98.5% 75%, 97% 77%, 52.5% 99.65%, 50% 100%, 47.5% 99.65%, 3% 77%, 1% 75%, 0% 73%, 0% 27%, 1% 25%, 3% 23%);
   }
 
-  &__title {
-    text-transform: uppercase;
-    letter-spacing: 2.7px;
-  }
-
-  &__position {
-    text-transform: uppercase;
-    letter-spacing: 1.4px;
-  }
-
-  &__desc {
-    letter-spacing: 1.4px;
-  }
-
-  .link {
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 3.8px;
+  .link,
+  .button {
+    margin-bottom: 20px;
   }
 
   &__email {
     font-size: calc(var(--ui-caption-size) * 1.167);
-    line-height: calc(var(--ui-caption-line-height) * 2);
-    letter-spacing: 1.2px;
-
-    &-wrapper {
-      margin-bottom: 20px;
-    }
+    margin-bottom: 20px;
 
     > a {
       text-decoration: none;
@@ -77,13 +50,6 @@
 
 .socials {
   margin-bottom: -18px;
-}
-
-.button {
-  text-transform: uppercase;
-  letter-spacing: 3.2px;
-  font-weight: 600;
-  font-size: 11px;
 }
 
 @media (min-width: 768px) {
@@ -137,12 +103,13 @@
     }
 
     &__desc {
-      margin-bottom: 5px;
-      flex-grow: 1;
+      margin-bottom: 10px;
     }
 
-    .link {
-      margin-bottom: 15px;
+    .link,
+    .button {
+      margin-top: auto;
+      margin-bottom: 20px;
     }
   }
 
