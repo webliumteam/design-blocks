@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    src: 'about.jpg',
+    resourceRef: 'about.jpg',
   },
   theme: 'dark',
   socialIcons: {
