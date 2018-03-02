@@ -13,7 +13,11 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   title: {
     ...Component.defaultContent.title,
-    content: '- Our Values -',
+    content: '- OUR VALUES -',
+  },
+  heading: {
+    ...Component.defaultContent.heading,
+    content: 'HIGH STANDARDS',
   },
 }
 
