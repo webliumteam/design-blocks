@@ -2,7 +2,7 @@
 
 /* start here */
 .section {
-  border: 10px solid var(--ui-light-accent-color);
+  border: 10px solid #fff;
 }
 
 .article {
@@ -26,7 +26,6 @@
 }
 
 .article__socials {
-  color: var(--ui-brand-color);
   margin-bottom: 20px;
 }
 
@@ -49,7 +48,7 @@
     display: block;
     width: 12px;
     height: 2px;
-    background-color: var(--ui-light-shade-color);
+    background-color: currentColor;
   }
 }
 
