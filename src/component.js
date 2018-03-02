@@ -21,7 +21,7 @@ class Block extends React.Component {
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
           bind={`blog[${itemNumber}].picture`}
-          size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
+          size={{'min-width: 768px': 570, 'min-width: 480px': 768, 'min-width: 320px': 480}}
         />
       ),
       this.getModifierValue('post-publish-date') && (
@@ -97,7 +97,7 @@ Block.defaultContent = {
   blog: [
     {
       title: {
-        content: 'How to Hire Only Professional and Dedicated Employees? Useful Tips from Our HR Director.',
+        content: 'How to Hire Employees?',
         type: 'heading',
       },
       description: {
