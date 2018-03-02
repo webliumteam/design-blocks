@@ -19,6 +19,11 @@ class Block extends React.Component {
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
           bind={`services[${index}].picture`}
+          size={{
+            'min-width: 992px': 600,
+            'min-width: 768px': 1000,
+            'min-width: 480px': 800,
+          }}
         />
         <div className={style.article__content}>
           <Text bind={`services[${index}].title`} className={style.article__title} tagName="h2" />
