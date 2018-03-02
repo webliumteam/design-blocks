@@ -12,12 +12,16 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   title: {
-    content: '- Awards -',
-    type: 'blockTitle',
+    ...Component.defaultContent.title,
+    content: '- AWARDS -',
   },
   awards: [
     {
       ...Component.defaultContent.awards[0],
+      title: {
+        ...Component.defaultContent.awards[0].title,
+        content: 'R&D LEADER IN TECH (2017)',
+      },
       picture: {
         ...Component.defaultContent.awards[0].picture,
         resourceRef: 'awards_01.jpg',
@@ -25,6 +29,10 @@ ExtendedWireframe.defaultContent = {
     },
     {
       ...Component.defaultContent.awards[1],
+      title: {
+        ...Component.defaultContent.awards[1].title,
+        content: 'MOST INNOVATIVE B2B SOLUTIONS (2016)',
+      },
       picture: {
         ...Component.defaultContent.awards[1].picture,
         resourceRef: 'awards_02.jpg',
@@ -32,6 +40,10 @@ ExtendedWireframe.defaultContent = {
     },
     {
       ...Component.defaultContent.awards[2],
+      title: {
+        ...Component.defaultContent.awards[2].title,
+        content: 'BEST SERVICE PROVIDER (2014)',
+      },
       picture: {
         ...Component.defaultContent.awards[2].picture,
         resourceRef: 'awards_03.jpg',
@@ -39,6 +51,10 @@ ExtendedWireframe.defaultContent = {
     },
     {
       ...Component.defaultContent.awards[3],
+      title: {
+        ...Component.defaultContent.awards[3].title,
+        content: 'LEADER OF INNOVATION (2012)',
+      },
       picture: {
         ...Component.defaultContent.awards[3].picture,
         resourceRef: 'awards_04.jpg',
