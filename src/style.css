@@ -1,24 +1,8 @@
 @import "wireframe-zapdos-blog/src/style.css";
 
 .title {
-  font-size: var(--ui-block-title-size);
-  font-family: var(--ui-block-title-font-family);
-  font-weight: var(--ui-block-title-font-weight);
-  letter-spacing: var(--ui-block-title-letter-spacing);
-  line-height: var(--ui-block-title-line-height);
+  letter-spacing: -1px;
   margin-bottom: 56px;
-  color: var(--ui-dark-shade-color);
-
-  @media screen and (max-width: 992px) {
-    font-size: calc(var(--ui-block-title-size) * 0.8);
-  }
-}
-
-.articles-wrapper {
-
-  @media screen and (max-width: 992px) {
-    justify-content: center;
-  }
 }
 
 .article {
@@ -27,9 +11,8 @@
 
   &__picture-wrapper {
     height: 310px;
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
-    background-color: #e6e6e6;
     margin-bottom: 35px;
     order: 1;
   }
