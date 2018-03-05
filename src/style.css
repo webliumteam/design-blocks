@@ -74,7 +74,6 @@
 .article__picture-wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
 }
 
 @media (min-width: 768px) {
