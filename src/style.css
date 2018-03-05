@@ -136,6 +136,10 @@
 
   &__link-wrapper {
     margin-top: auto;
+    
+    &:nth-child(2) {
+      margin-top: 0;
+    }
   }
 }
 
