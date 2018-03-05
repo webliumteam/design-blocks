@@ -2,6 +2,7 @@
     "name": "wireframe-series-2-numbers",
     "version": "0.0.1",
     "description": "",
+    "category": "numbers",
     "main": "src/index.js",
     "scripts": {
         "precommit": "lint-staged"
