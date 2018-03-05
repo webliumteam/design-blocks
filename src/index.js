@@ -11,8 +11,31 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  steps: [
+    {
+      ...Component.defaultContent.steps[0],
+      title: {
+        ...Component.defaultContent.steps[0].title,
+        content: 'PICK A PLAN',
+      },
+    },
+    {
+      ...Component.defaultContent.steps[1],
+      title: {
+        ...Component.defaultContent.steps[1].title,
+        content: 'MAKE A PAYMENT',
+      },
+    },
+    {
+      ...Component.defaultContent.steps[2],
+      title: {
+        ...Component.defaultContent.steps[2].title,
+        content: 'ENJOY OUR PRODUCTS',
+      },
+    },
+  ],
   title: {
-    content: '- Our process -',
+    content: '- OUR PROCESS -',
     type: 'blockTitle',
   },
   'cta-1': {
