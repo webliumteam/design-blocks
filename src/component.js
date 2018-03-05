@@ -102,6 +102,9 @@ Block.defaultContent = {
         content: '128%',
         type: 'headingLg',
       },
+      picture: {
+        alt: 'Illustration for number',
+      },
     },
     {
       body: {
@@ -112,6 +115,9 @@ Block.defaultContent = {
         content: '527%',
         type: 'headingLg',
       },
+      picture: {
+        alt: 'Illustration for number',
+      },
     },
     {
       body: {
@@ -121,6 +127,9 @@ Block.defaultContent = {
       number: {
         content: '92%',
         type: 'headingLg',
+      },
+      picture: {
+        alt: 'Illustration for number',
       },
     },
   ],
