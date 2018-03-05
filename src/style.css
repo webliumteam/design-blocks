@@ -3,14 +3,11 @@
 /* start here */
 
 .title {
-  font-weight: var(--ui-heading-lg-font-weight);
   margin-bottom: 20px;
 }
 
 .subtitle {
   font-size: calc(var(--ui-sub-heading-size) * 0.888);
-  line-height: 1.75;
-  letter-spacing: 1.2px;
 }
 
 .item {
@@ -39,8 +36,22 @@
   }
 
   &__title {
-    letter-spacing: 3.2px;
-    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 42px;
+
+    &:after {
+      width: 24px;
+      height: 2px;
+      display: block;
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: currentColor;
+      opacity: .1;
+    }
   }
 
   &__top-element {
@@ -52,7 +63,7 @@
 
     img {
       object-fit: contain;
-      clip-path: polygon(170.5px 2.175px, 233.112px 38.325px, 238.612px 47.851px, 238.612px 120.149px, 233.112px 129.675px, 170.5px 165.825px, 159.5px 165.825px, 96.888px 129.675px, 91.388px 120.149px, 91.388px 47.851px, 96.888px 38.325px, 159.5px 2.175px, 170.5px 2.175px);
+      clip-path: polygon(47.5% 0.35%, 50% 0%, 52.5% 0.35%, 97% 23%, 98.5% 25%, 99% 27%, 99% 73%, 98.5% 75%, 97% 77%, 52.5% 99.65%, 50% 100%, 47.5% 99.65%, 3% 77%, 1% 75%, 0% 73%, 0% 27%, 1% 25%, 3% 23%);
     }
   }
 }
@@ -79,5 +90,49 @@
         display: none;
       }
     }
+  }
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  padding-right: 27px;
+  transition: color 0.2s ease-in;
+  color: var(--ui-block-title-color);
+
+  @media (min-width: 768px) {
+    margin-left: 70px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 2px;
+    background-color: currentColor;
+  }
+
+  &:only-child {
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 2px;
+      background-color: currentColor;
+    }
+  }
+}
+
+.btns-group {
+  .link {
+    color: var(--ui-block-title-color);
+    font-weight: 700;
+    font-size: calc(var(--ui-text-size) * 0.78);
   }
 }
