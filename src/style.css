@@ -101,8 +101,8 @@
     margin-left: 15px;
   }
 
-  &:nth-last-child(4):first-child,
-  &:nth-last-child(4):first-child~& {
+  &:nth-last-of-type(4):first-child,
+  &:nth-last-of-type(4):first-child~& {
 
     @media (min-width: 992px) {
       width: 40%;
