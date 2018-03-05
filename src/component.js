@@ -31,6 +31,7 @@ class Block extends React.Component {
             pictureClassName={style.item__pic}
             imgClassName={style.item__img}
             bind={`team[${index}].picture`}
+            size={{'min-width: 320px': 150}}
           />
           <Text tagName="h2" className={style.item__title} bind={`team[${index}].name`} />
           <Text tagName="p" className={style.item__position} bind={`team[${index}].position`} />
