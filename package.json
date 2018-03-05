@@ -2,7 +2,7 @@
     "name": "wireframe-series-2-process",
     "version": "0.0.1",
     "description": "",
-    "category": "process",
+    "category": "steps",
     "main": "src/index.js",
     "scripts": {
         "precommit": "lint-staged"
