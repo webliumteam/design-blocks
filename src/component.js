@@ -21,7 +21,14 @@ class Block extends React.Component {
               pictureClassName={style.item__pic}
               imgClassName={style.item__img}
               bind={`numbers[${index}].picture`}
-              size={{'min-width: 320px': 446, 'min-width: 480px': 738, 'min-width: 768px': 460}}
+              size={
+                {
+                  'min-width: 992px': 320,
+                  'min-width: 768px': 420,
+                  'min-width: 480px': 710,
+                  'min-width: 320px': 420,
+                }
+              }
             />
           )}
           <div className={style['item__desc-wrapper']}>
