@@ -11,9 +11,11 @@
 
   &__inner {
     position: relative;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 
     @media (min-width: 992px) {
+      padding-top: 0;
       padding-bottom: 59px;
 
       &::after {
@@ -38,9 +40,9 @@
 }
 
 .logo__title {
+  font-size: calc(var(--ui-block-title-size) * .5);
   font-family: var(--ui-heading-lg-font-family);
   font-weight: var(--ui-heading-lg-font-weight);
-  letter-spacing: 1.2px;
   text-align: left;
 
   &:hover {
