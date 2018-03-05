@@ -7,21 +7,13 @@
 
 .article {
   &__title {
-    letter-spacing: 3.6px;
-    text-transform: uppercase;
     margin-bottom: 24px;
   }
 
   &__subtitle {
     font-size: calc(var(--ui-subtitle-size) * 1.2);
     font-weight: 600;
-    letter-spacing: 4.2px;
-    text-transform: uppercase;
     margin-bottom: 20px;
-  }
-
-  &__text {
-    letter-spacing: 1.4px;
   }
 }
 
@@ -31,24 +23,31 @@
 
 .link,
 .button {
-  text-transform: uppercase;
   font-weight: 600;
-  letter-spacing: 3.2px;
 }
 
 .link {
   position: relative;
-  margin-left: 60px;
+  margin-top: 40px;
+
+  @media (min-width: 768px) {
+    margin-top: 10px;
+    margin-left: 60px;
+  }
 
   &::after {
     content: "";
+    display: none;
     position: absolute;
     top: 50%;
     right: -22px;
-    display: block;
     width: 12px;
     height: 2px;
     background-color: currentColor;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 }
 
