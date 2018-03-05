@@ -83,6 +83,7 @@
 }
 
 .item {
+  display: flex;
   position: relative;
   padding-left: 30px;
   margin-bottom: 40px;
@@ -102,7 +103,7 @@
   }
 
   &:nth-last-of-type(4):first-child,
-  &:nth-last-of-type(4):first-child~& {
+  &:nth-last-of-type(4):first-child ~ & {
 
     @media (min-width: 992px) {
       width: 40%;
@@ -112,6 +113,7 @@
   &__inner {
     display: flex;
     position: relative;
+    width: 100%;
     min-height: 270px;
     padding: 30px 10px 30px 60px;
     flex-direction: column;
