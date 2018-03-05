@@ -9,7 +9,7 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className, modifier}) => {
+  collectionItem = ({index, children, className, modifier, openLightbox}) => {
     const {components: {Text, Image}, style} = this.props
     return (
       <div className={classNames(style.item, className)}>
@@ -19,6 +19,15 @@ class Block extends React.Component {
           pictureClassName={style.item__picture}
           imgClassName={style.item__image}
           bind={`gallery[${index}].picture`}
+          size={
+            {
+              'min-width: 320px': 480,
+              'min-width: 480px': 768,
+              'min-width: 768px': 310,
+              'min-width: 992px': 380,
+            }
+          }
+          onOpenLightbox={openLightbox}
         />
         {_.get('body-text')(modifier) && (
           <Text tagName="p" className={style.item__text} bind={`gallery[${index}].title`} />
