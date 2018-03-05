@@ -46,13 +46,21 @@ ExtendedWireframe.defaultContent = {
     target: '_blank',
     design: {
       border: 'circle',
-      innerFill: true,
+      innerFill: false,
       preset: 'preset001',
       offset: 20,
       color: '#fff',
       sizes: [10, 20, 30, 40],
       size: '32px',
     },
+  },
+  title: {
+    ...Component.defaultContent.title,
+    content: 'ABOUT THE COMPANY',
+  },
+  subtitle: {
+    ...Component.defaultContent.subtitle,
+    content: 'WE PROVIDE A WIDE RANGE OF SERVICES TO MEET EVEN THE MOST DARING REQUIREMENTS.',
   },
 }
 
