@@ -270,7 +270,7 @@ button {
   }
 
   &--modal {
-    color: var(--ui-brand-color);
+    color: var(--ui-brand-color)!important;
   }
 }
 
@@ -285,7 +285,7 @@ button {
   }
 
   &--modal {
-    color: var(--ui-brand-color);
+    color: var(--ui-brand-color)!important;
     font-weight: 500;
   }
 }
