@@ -108,7 +108,7 @@
     display: block;
     width: 12px;
     height: 2px;
-    background-color: var(--ui-block-title-color);
+    background-color: currentColor;
   }
 
   @media (min-width: 768px) {

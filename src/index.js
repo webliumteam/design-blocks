@@ -35,8 +35,8 @@ ExtendedWireframe.defaultContent = {
     },
   ],
   title: {
+    ...Component.defaultContent.title,
     content: '- OUR PROCESS -',
-    type: 'blockTitle',
   },
   'cta-1': {
     ...Component.defaultContent['cta-1'],
