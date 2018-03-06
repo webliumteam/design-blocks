@@ -1,3 +1,5 @@
 {
-    "content-wrapper": false
+  "content-wrapper": false,
+  "logo-max-width": 325,
+  "logo-max-height": 80
 }
