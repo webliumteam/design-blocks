@@ -55,7 +55,6 @@ class Block extends React.Component {
           wrapperClassName={style['item__picture-wrapper']}
           pictureClassName={style.item__picture}
           imgClassName={style.item__image}
-          size={null}
         />
         {this.getOptionValue('content-wrapper') ? <div className={style['item__content-wrapper']}>{itemContent}</div> : itemContent}
       </article>
