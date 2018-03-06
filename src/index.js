@@ -11,6 +11,10 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  background: {
+    type: 'color',
+    color: '#fff',
+  },
   title: {
     ...Component.defaultContent.title,
     content: '- TEAM -',
@@ -63,7 +67,7 @@ ExtendedWireframe.defaultContent = {
           innerFill: true,
           preset: 'preset001',
           offset: 20,
-          color: 'var(--ui-dark-accent-color)',
+          color: '#6A6A6A',
           sizes: [15, 25, 35, 45],
           size: '32px',
         },
@@ -116,7 +120,7 @@ ExtendedWireframe.defaultContent = {
           innerFill: true,
           preset: 'preset001',
           offset: 20,
-          color: 'var(--ui-dark-accent-color)',
+          color: '#6A6A6A',
           sizes: [15, 25, 35, 45],
           size: '32px',
         },
@@ -169,7 +173,7 @@ ExtendedWireframe.defaultContent = {
           innerFill: true,
           preset: 'preset001',
           offset: 20,
-          color: 'var(--ui-dark-accent-color)',
+          color: '#6A6A6A',
           sizes: [15, 25, 35, 45],
           size: '32px',
         },
