@@ -116,11 +116,7 @@
   &__picture {
     display: block;
     position: relative;
-    min-height: 42px;
-
-    @media (min-width: 992px) {
-      min-height: 62px;
-    }
+    padding-top: 60%;
 
     &-wrapper {
       width: var(--logoSize);
@@ -138,9 +134,12 @@
   }
 
   &__image {
-    display: block;
+    position: absolute;
     max-width: 100%;
-    height: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   &__content-wrapper {
