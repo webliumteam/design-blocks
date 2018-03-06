@@ -16,8 +16,8 @@ class Block extends React.Component {
       <article className={classNames(style.item, className)}>
         {children}
 
-        <div className={style['item__container-wrapper']}>
-          <div className={style.item__container}>
+        <div className={style.item__container}>
+          <div className={style['item__container-inner']}>
             <Text bind={`products[${index}].title`} className={style.item__title} tagName="h2" />
             {_.get('icon')(modifier) && (
               <Icon bind={`products[${index}.icon`} className={style.item__icon} />

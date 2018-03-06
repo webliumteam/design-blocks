@@ -99,14 +99,13 @@
     width: 100%;
     min-height: 300px;
     padding: 50px 20px 60px;
-    flex-direction: column;
-    justify-content: center;
     background-color: #ebeaea;
     
-    &-wrapper {
+    &-inner {
       display: flex;
       width: 100%;
       flex-direction: column;
+      justify-content: center;
     }
   }
 
