@@ -26,6 +26,13 @@ ExtendedWireframe.defaultContent = {
       image: {
         ...Component.defaultContent.testimonials[0].image,
         resourceRef: 'photo.png',
+        size: {
+          'min-width: 1200px': 211,
+          'min-width: 992px': 211,
+          'min-width: 768px': 211,
+          'min-width: 480px': 211,
+          'min-width: 320px': 211,
+        },
       },
     },
     {
@@ -33,6 +40,13 @@ ExtendedWireframe.defaultContent = {
       image: {
         ...Component.defaultContent.testimonials[1].image,
         resourceRef: 'photo.png',
+        size: {
+          'min-width: 1200px': 211,
+          'min-width: 992px': 211,
+          'min-width: 768px': 211,
+          'min-width: 480px': 211,
+          'min-width: 320px': 211,
+        },
       },
     },
   ],
