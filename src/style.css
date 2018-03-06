@@ -74,11 +74,15 @@
   &__item {
 
     @media (min-width: 992px) {
-      margin-left: 0;
-      margin-right: 34px;
+      margin-left: 17px;
+      margin-right: 17px;
+
+      &:first-of-type {
+        margin-left: 17px;
+      }
 
       &:last-of-type {
-        margin-right: 0;
+        margin-right: 17px;
       }
     }
   }
