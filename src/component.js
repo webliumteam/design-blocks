@@ -26,6 +26,7 @@ class Block extends React.Component {
               'min-width: 320px': 70,
             }
           }
+          resize={{disable: true}}
         />
         <div className={style.article__content}>
           <Text bind={`steps[${index}].heading`} className={style.article__title} tagName="h2" />
