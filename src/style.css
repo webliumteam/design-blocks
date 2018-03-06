@@ -13,6 +13,7 @@
     position: relative;
     padding-top: 15px;
     padding-bottom: 15px;
+    min-height: 76px;
 
     @media (min-width: 992px) {
       padding-top: 0;
@@ -41,8 +42,7 @@
 
 .logo__title {
   font-size: calc(var(--ui-block-title-size) * .5);
-  font-family: var(--ui-heading-lg-font-family);
-  font-weight: var(--ui-heading-lg-font-weight);
+  font-weight: 600;
   text-align: left;
 
   &:hover {
@@ -69,6 +69,18 @@
 
   @media (min-width: 992px) {
     justify-content: center;
+  }
+
+  &__item {
+
+    @media (min-width: 992px) {
+      margin-left: 0;
+      margin-right: 34px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
   }
 
   &__link {
