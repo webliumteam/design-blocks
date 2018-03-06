@@ -62,10 +62,6 @@
   margin-bottom: 0;
 }
 
-.article:last-of-type .article__content {
-  padding-bottom: 0;
-}
-
 @media (min-width: 992px) {
   .article {
     flex-direction: row;
@@ -75,22 +71,9 @@
 
 .article__picture {
   display: block;
-  min-height: 200px;
   padding-top: 62%;
   position: static;
   background-color: var(--ui-media-bg);
-}
-
-@media (min-width: 768px) {
-  .article__picture {
-    min-height: 360px;
-  }
-}
-
-@media (min-width: 992px) {
-  .article__picture {
-    min-height: 200px;
-  }
 }
 
 .article__content {

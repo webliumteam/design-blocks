@@ -19,6 +19,9 @@ class Block extends React.Component {
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
           bind={`projects[${index}].picture`}
+          resize={{
+            min: 41,
+          }}
         />
         <div className={style.article__content}>
           {_.get('project-category')(modifier) && (
