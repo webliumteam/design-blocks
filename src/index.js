@@ -15,22 +15,22 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.blog[0],
       picture: {
+        ...Component.defaultContent.blog[0].picture,
         resourceRef: 'img1.jpg',
-        alt: 'Article illustration photo',
       },
     },
     {
       ...Component.defaultContent.blog[1],
       picture: {
+        ...Component.defaultContent.blog[1].picture,
         resourceRef: 'img2.jpg',
-        alt: 'Article illustration photo',
       },
     },
     {
       ...Component.defaultContent.blog[2],
       picture: {
+        ...Component.defaultContent.blog[2].picture,
         resourceRef: 'img3.jpg',
-        alt: 'Article illustration photo',
       },
     },
   ],
