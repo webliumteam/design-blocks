@@ -29,6 +29,7 @@ class Block extends React.Component {
                   'min-width: 320px': 420,
                 }
               }
+              resize={{disable: true}}
             />
           )}
           <div className={style['item__desc-wrapper']}>
