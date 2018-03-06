@@ -108,8 +108,8 @@ Block.modifierScheme = {
   'form-description': {defaultValue: true, label: 'Form description', type: 'checkbox'},
   'header-alignment': {
     children: [
-      {id: 'right', label: 'Right'},
       {id: 'left', label: 'Left'},
+      {id: 'right', label: 'Right'},
     ],
     defaultValue: 'left',
     name: 'Header alignment',
