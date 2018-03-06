@@ -30,6 +30,14 @@ ExtendedWireframe.defaultContent = {
     type: 'secondary',
     size: 'lg',
   },
+  title: {
+    ...Component.defaultContent.title,
+    content: 'QUANTUM COMPANY',
+  },
+  subtitle: {
+    ...Component.defaultContent.subtitle,
+    content: 'WE CAN EXECUTE EVEN THE MOST UNPREDICTABLE IDEAS!',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {

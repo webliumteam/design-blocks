@@ -3,8 +3,9 @@
 /* start here */
 .section {
   position: relative;
-  border: 10px solid var(--ui-light-accent-color);
+  border: 10px solid currentColor;
   min-height: 100vh;
+  color: #fff;
 
   @media (min-width: 992px) {
     padding: 412px 0 272px;
@@ -15,14 +16,12 @@
     content: "";
     width: 2px;
     height: 28px;
-    background-color: var(--ui-light-accent-color);
+    background-color: currentColor;
     position: absolute;
     bottom: 18px;
     left: 50%;
     transform: translateX(-50%);
   }
-
-  text-align: left;
 
   &--center {
     text-align: center;
@@ -34,21 +33,14 @@
 }
 
 .title {
-  text-transform: uppercase;
-  letter-spacing: 5.2px;
   margin-bottom: 18px;
 }
 
 .subtitle {
-  text-transform: uppercase;
   font-weight: bold;
   font-size: calc(var(--ui-subtitle-font-size) * 0.8);
-  letter-spacing: 4.8px;
-  color: var(--ui-light-accent-color);
 }
 
 .button {
-  text-transform: uppercase;
-  letter-spacing: 3.2px;
   font-weight: 600;
 }
