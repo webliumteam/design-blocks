@@ -28,6 +28,10 @@
 .article {
   box-shadow: 0 2px 20px -6px var(--ui-link-color);
 
+  @media (min-width: 992px) {
+    border-radius: 3px;
+  }
+
   &:last-of-type {
     .article {
       &__content {
@@ -38,10 +42,6 @@
         }
       }
     }
-  }
-
-  @media (min-width: 992px) {
-    border-radius: 3px;
   }
 
   &:nth-of-type(even) {
@@ -58,18 +58,18 @@
         }
       }
 
+      &__picture-wrapper {
+
+        @media (min-width: 992px) {
+          order: 1;
+          border-bottom-left-radius: 3px;
+        }
+      }
+
       &__picture {
         img {
 
           @media (min-width: 992px) {
-            border-bottom-left-radius: 3px;
-          }
-        }
-
-        &-wrapper {
-
-          @media (min-width: 992px) {
-            order: 1;
             border-bottom-left-radius: 3px;
           }
         }
@@ -91,6 +91,15 @@
     }
   }
 
+  &__picture-wrapper {
+    min-height: 200px;
+
+    @media (min-width: 992px) {
+      order: 2;
+      border-top-right-radius: 3px;
+    }
+  }
+
   &__picture {
     position: absolute;
     left: 0;
@@ -103,49 +112,28 @@
     @media (min-width: 992px) {
       border-top-right-radius: 3px;
     }
-
-    img {
-
-      @media (min-width: 992px) {
-        border-top-right-radius: 3px;
-      }
-    }
-
-    &-wrapper {
-
-      @media (min-width: 992px) {
-        order: 2;
-        border-top-right-radius: 3px;
-      }
-    }
   }
 
-  &__caption {
-    letter-spacing: 0.5px;
-  }
+  &__image {
 
-  &__title {
-    letter-spacing: 1px;
+    @media (min-width: 992px) {
+      border-top-right-radius: 3px;
+    }
   }
 
   &__text {
     max-width: 370px;
     padding-right: 0;
-    letter-spacing: 1.5px;
     font-size: calc(var(--ui-small-text-size) * 1.167);
   }
 
-  &__link {
-    letter-spacing: 0.7px;
+  .link {
     text-decoration: none;
     font-size: calc(var(--ui-small-text-size) * 1.25);
-    font-family: var(--ui-heading-font-family);
-    font-weight: var(--ui-heading-font-weight);
     color: var(--ui-brand-color);
-  }
-}
 
-.button {
-  letter-spacing: 1.2px;
-  font-weight: 700;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
