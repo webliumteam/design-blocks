@@ -1,3 +1,4 @@
 {
-  "image_wrapper": true
+  "logo-max-width": 200,
+  "logo-max-height": 70
 }
