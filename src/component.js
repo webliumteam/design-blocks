@@ -17,32 +17,30 @@ class Block extends React.Component {
         {children}
 
         <div className={style.item__container}>
-          <div className={style['item__container-inner']}>
-            <Text bind={`products[${index}].title`} className={style.item__title} tagName="h2" />
-            {_.get('icon')(modifier) && (
-              <Icon bind={`products[${index}.icon`} className={style.item__icon} />
-            )}
-            {_.get('price')(modifier) && (
-              <div className={style.item__price}>
-                <Text bind={`products[${index}.price`} className={style['item__price-numbers']} tagName="strong" />
-                {_.get('price-info')(modifier) && (
-                  <Text bind={`products[${index}['price-info']`} className={style['item__price-info']} tagName="span" />
-                )}
-              </div>
-            )}
-            {_.get('body')(modifier) && (
-              <Text className={style.item__desc} bind={`products[${index}].body`} tagName="p" />
-            )}
-            {_.get('product-button')(modifier) && (
-              <div className={style['item__link-wrapper']}>
-                <Button
-                  linkClassName={style.link}
-                  buttonClassName={style.button}
-                  bind={`products[${index}].cta`}
-                />
-              </div>
-            )}
-          </div>
+          <Text bind={`products[${index}].title`} className={style.item__title} tagName="h2" />
+          {_.get('icon')(modifier) && (
+            <Icon bind={`products[${index}.icon`} className={style.item__icon} />
+          )}
+          {_.get('price')(modifier) && (
+            <div className={style.item__price}>
+              <Text bind={`products[${index}.price`} className={style['item__price-numbers']} tagName="strong" />
+              {_.get('price-info')(modifier) && (
+                <Text bind={`products[${index}['price-info']`} className={style['item__price-info']} tagName="span" />
+              )}
+            </div>
+          )}
+          {_.get('body')(modifier) && (
+            <Text className={style.item__desc} bind={`products[${index}].body`} tagName="p" />
+          )}
+          {_.get('product-button')(modifier) && (
+            <div className={style['item__link-wrapper']}>
+              <Button
+                linkClassName={style.link}
+                buttonClassName={style.button}
+                bind={`products[${index}].cta`}
+              />
+            </div>
+          )}
         </div>
       </article>
     )
