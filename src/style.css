@@ -2,17 +2,19 @@
 
 /* start here */
 .section {
-  padding: 210px 0;
-  border-color: var(--ui-light-accent-color);
+  border-color: #fff;
   border-style: solid;
   border-width: 0 10px;
+
+  @media (min-width: 920px) {
+    padding: 210px 0;
+  }
 }
 
 .description {
   max-width: 770px;
   margin: auto;
   font-size: calc(var(--ui-text-size) * 1.15);
-  color: var(--ui-light-accent-color);
 }
 
 .button,
@@ -23,10 +25,4 @@
 .button:only-child,
 .link:only-child {
   margin-top: 0;
-}
-
-@media (max-width: 700px) {
-  .section {
-    padding: 25% 0;
-  }
 }

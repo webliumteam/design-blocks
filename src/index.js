@@ -12,8 +12,8 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   title: {
+    ...Component.defaultContent.title,
     content: 'WANT TO WORK WITH US?',
-    type: 'blockTitle',
   },
   cta: {
     ...Component.defaultContent.cta,
