@@ -11,8 +11,6 @@
 .subtitle {
   max-width: 770px;
   font-size: calc(var(--ui-subtitle-size) * 0.8);
-  line-height: 1.75;
-  letter-spacing: 1.2px;
 }
 
 .heading {
