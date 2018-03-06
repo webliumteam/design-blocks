@@ -117,12 +117,12 @@ ExtendedWireframe.modifierScheme = {
   'icon-replacer': {
     defaultValue: 'image',
     label: 'Image replacer',
-    options: [
+    children: [
       {id: 'icon', label: 'Show icon'},
       {id: 'image', label: 'Show image'},
       {id: 'text', label: 'Show text'},
     ],
-    type: 'select',
+    type: 'radio-button-group',
   },
   'item-description': {defaultValue: true, label: 'Advantages description', type: 'checkbox'},
   'item-heading': {defaultValue: true, label: 'Advantages title', type: 'checkbox'},

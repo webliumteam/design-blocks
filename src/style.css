@@ -134,5 +134,10 @@
     color: var(--ui-block-title-color);
     font-weight: 700;
     font-size: calc(var(--ui-text-size) * 0.78);
+    margin-top: 40px;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
   }
 }
