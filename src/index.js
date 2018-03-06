@@ -78,7 +78,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'additional-btn': {defaultValue: true, label: 'Secondary button', type: 'checkout'},
+  'additional-btn': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   'block-title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'plan-additional-info': {
     defaultValue: true,
