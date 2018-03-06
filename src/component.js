@@ -24,6 +24,7 @@ class Block extends React.Component {
             'min-width: 768px': 1000,
             'min-width: 480px': 800,
           }}
+          resize={{disable: true}}
         />
         <div className={style.article__content}>
           <Text bind={`services[${index}].title`} className={style.article__title} tagName="h2" />
