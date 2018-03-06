@@ -112,7 +112,6 @@
 
 .media__picture {
   display: block;
-  min-height: 300px;
   height: 100%;
   padding-top: 30%;
   background-color: var(--ui-media-bg);
@@ -126,9 +125,6 @@
     max-width: 50%;
   }
 
-  .media__picture {
-    min-height: 480px;
-  }
 }
 
 .media__image {
