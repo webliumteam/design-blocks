@@ -23,6 +23,7 @@ class Block extends React.Component {
             pictureClassName={style.item__picture}
             imgClassName={style.item__image}
             bind={`projects[${index}].picture`}
+            resize={{disable: true}}
           />
         </div>
       </div>
