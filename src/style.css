@@ -35,18 +35,8 @@
 
 .subtitle {
   font-size: calc(var(--ui-subtitle-size) * 0.875);
-  font-family: var(--ui-subtitle-font-family);
-  font-weight: normal;
-  color: var(--ui-subtitle-color);
   margin-top: 24px;
 
-}
-
-.item__title {
-  font-weight: bold;
-  color: var(--ui-heading-color);
-  font-size: var(--ui-heading-size);
-  font-family: var(--ui-heading-font-family);
 }
 
 .item {
@@ -54,9 +44,6 @@
 
   &__desc {
     font-size: calc(var(--ui-text-size) * 0.875);
-    font-family: var(--ui-text-font-family);
-    font-weight: normal;
-    color: var(--ui-text-color);
   }
 }
 
