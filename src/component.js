@@ -50,16 +50,14 @@ class Block extends React.Component {
         )}
       >
         {children}
-        <div className={style['item__picture-wrapper']}>
-          <Logo
-            bind={`partners[${index}].logo`}
-            className={style.logo}
-            textClassName={style.logo__title}
-            imageClassName={style.logo__image}
-            maxWidth={this.getOptionValue('logo-max-width')}
-            maxHeight={this.getOptionValue('logo-max-height')}
-          />
-        </div>
+        <Logo
+          bind={`partners[${index}].logo`}
+          className={style.logo}
+          textClassName={style.logo__title}
+          imageClassName={style.logo__image}
+          maxWidth={this.getOptionValue('logo-max-width')}
+          maxHeight={this.getOptionValue('logo-max-height')}
+        />
         {this.getOptionValue('content-wrapper') ? <div className={style['item__content-wrapper']}>{itemContent}</div> : itemContent}
       </article>
     )
@@ -117,8 +115,10 @@ Block.defaultContent = {
   partners: [
     {
       logo: {
-        image: {
-          resourceRef: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        text: {
+          value: 'Samsung',
+          tagName: 'h2',
+          fontSize: 20,
         },
       },
       title: {
@@ -146,8 +146,10 @@ Block.defaultContent = {
     },
     {
       logo: {
-        image: {
-          resourceRef: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        text: {
+          value: 'Samsung',
+          tagName: 'h2',
+          fontSize: 20,
         },
       },
       title: {
@@ -175,8 +177,10 @@ Block.defaultContent = {
     },
     {
       logo: {
-        image: {
-          resourceRef: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        text: {
+          value: 'Samsung',
+          tagName: 'h2',
+          fontSize: 20,
         },
       },
       title: {
@@ -204,8 +208,10 @@ Block.defaultContent = {
     },
     {
       logo: {
-        image: {
-          resourceRef: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        text: {
+          value: 'Samsung',
+          tagName: 'h2',
+          fontSize: 20,
         },
       },
       title: {

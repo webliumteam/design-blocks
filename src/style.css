@@ -289,7 +289,7 @@
       margin-right: 25px;
     }
 
-    .item__picture-wrapper {
+    .logo {
 
       @media (min-width: 768px) {
         margin-right: 0;
@@ -319,6 +319,20 @@
   
   @media (min-width: 480px) {
     width: auto;
+  }
+}
+
+.logo {
+  width: var(--logoSize);
+  margin: 0 auto 10px;
+
+  @media (min-width: 768px) {
+    margin: 0 var(--logoOffsetSize) 0 0;
+    flex-shrink: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
