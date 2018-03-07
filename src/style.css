@@ -1,3 +1,32 @@
 @import "wireframe-series-2-about/src/style.css";
 
 /* start here */
+
+.article {
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      &:before {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 3px;
+        bottom: -12px;
+        left: 0;
+        background: var(--ui-brand-color);
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 520px;
+  }
+}
