@@ -3,6 +3,8 @@
 /* start here */
 
 .article {
+  text-align: center;
+
   &__title {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -25,5 +27,7 @@
   @media (min-width: 768px) {
     padding: 0;
     max-width: 520px;
+    text-align: left;
   }
 }
+
