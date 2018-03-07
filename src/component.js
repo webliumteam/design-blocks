@@ -24,6 +24,7 @@ class Block extends React.Component {
           size={{
             'min-width: 320px': 120,
           }}
+          resize={{disable: true}}
         />
       ),
       <div className={style.item__contacts}>
