@@ -3,13 +3,13 @@
 /* start here */
 
 .section {
-  padding: 140px 0 172px;
+  padding: 140px 0;
 }
 
 .top-icon {
   display: flex;
   position: relative;
-  margin: 0 auto 50px;
+  margin: 0 auto 30px;
   width: 60px;
   height: 60px;
   padding: 20px;
@@ -34,14 +34,6 @@
 }
 
 .title {
-  letter-spacing: 1.8px;
-
-  &::after {
-    content: ".";
-    color: var(--ui-brand-color);
-    position: absolute;
-    display: inline-block;
-  }
 
   @media (min-width: 768px) {
     text-align: center;
@@ -51,7 +43,7 @@
 .item {
   box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
   flex-direction: column;
-  padding: 77px 15px 52px;
+  padding: 52px 15px;
   margin: 0 15px 30px;
 
   @media (min-width: 768px) {
@@ -61,13 +53,10 @@
   }
 
   &__title {
-    font-family: var(--ui-sub-heading-font-family);
-    font-size: var(--ui-small-text-size);
-    font-weight: var(--ui-sub-heading-font-weight);
-    line-height: var(--ui-small-text-line-height);
-    letter-spacing: 0.5px;
     text-align: center;
     text-transform: uppercase;
+    font-family: var(--ui-caption-font-family);
+    margin-top: 25px;
   }
 
   &__content {
@@ -81,8 +70,6 @@
   }
 
   &__text {
-    line-height: var(--ui-subtitle-line-height);
-    letter-spacing: 1.8px;
     text-align: center;
   }
 }
