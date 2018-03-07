@@ -41,6 +41,7 @@
 .article {
   display: flex;
   width: 100%;
+  min-height: 340px;
   margin-bottom: 27px;
   align-items: stretch;
   flex-direction: column;
@@ -71,8 +72,8 @@
 
 .article__picture {
   display: block;
-  padding-top: 62%;
   position: static;
+  min-height: 180px;
   background-color: var(--ui-media-bg);
 }
 

@@ -10,37 +10,37 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Image}, style} = this.props
+    const {components: {Text, Button, Image, Resizer}, style} = this.props
     return (
-      <article className={classNames(style.article, className)}>
-        {children}
-        <Image
-          wrapperClassName={style['article__picture-wrapper']}
-          pictureClassName={style.article__picture}
-          imgClassName={style.article__image}
-          bind={`projects[${index}].picture`}
-          resize={{
-            min: 41,
-          }}
-        />
-        <div className={style.article__content}>
-          {_.get('project-category')(modifier) && (
-            <Text bind={`projects[${index}].subtitle`} className={style.article__caption} tagName="p" />
-          )}
-          <Text bind={`projects[${index}].title`} className={style.article__title} tagName="h2" />
-          {_.get('project-description')(modifier) && (
-            <Text bind={`projects[${index}].text`} className={style.article__text} tagName="p" />
-          )}
-          {_.get('project-button')(modifier) && (
-            <Button
-              className={style.article__link}
-              buttonClassName={style.button}
-              linkClassName={style.link}
-              bind={`projects[${index}].link`}
-            />
-          )}
-        </div>
-      </article>
+      <Resizer styleProp="min-height" bindToModifier={`resizer.projects${index}`} min="180">
+        <article className={classNames(style.article, className)}>
+          {children}
+          <Image
+            wrapperClassName={style['article__picture-wrapper']}
+            pictureClassName={style.article__picture}
+            imgClassName={style.article__image}
+            bind={`projects[${index}].picture`}
+            resize={{disable: true}}
+          />
+          <div className={style.article__content}>
+            {_.get('project-category')(modifier) && (
+              <Text bind={`projects[${index}].subtitle`} className={style.article__caption} tagName="p" />
+            )}
+            <Text bind={`projects[${index}].title`} className={style.article__title} tagName="h2" />
+            {_.get('project-description')(modifier) && (
+              <Text bind={`projects[${index}].text`} className={style.article__text} tagName="p" />
+            )}
+            {_.get('project-button')(modifier) && (
+              <Button
+                className={style.article__link}
+                buttonClassName={style.button}
+                linkClassName={style.link}
+                bind={`projects[${index}].link`}
+              />
+            )}
+          </div>
+        </article>
+      </Resizer>
     )
   }
 
@@ -85,7 +85,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon', 'Resizer'])($editor.components)
 
 Block.defaultContent = {
   projects: [
