@@ -1,3 +1,21 @@
 @import "wireframe-series-2-header/src/style.css";
 
 /* start here */
+logo__title {
+  letter-spacing: -1px;
+}
+
+.nav__item {
+
+  @media (min-width: 992px) {
+    margin-top: 20px;
+  }
+}
+
+.nav__link {
+  color: var(--ui-dark-shade-color);
+
+  &:hover {
+    color: var(--ui-link-color);
+  }
+}
