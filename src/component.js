@@ -19,6 +19,7 @@ class Block extends React.Component {
           pictureClassName={style.item__picture}
           imgClassName={style.item__image}
           bind={`awards[${index}].picture`}
+          size={{'min-width: 992px': 200, 'min-width: 320px': 480}}
         />
         {_.get('heading')(modifier) && (
           <Text bind={`awards[${index}].title`} tagName="h2" className={style.item__title} />
