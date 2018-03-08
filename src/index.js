@@ -13,7 +13,7 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   picture: {
     ...Component.defaultContent.picture,
-    alt: 'Illustration',
+    resourceRef: 'img_pic.jpg',
   },
   background: {
     type: 'image',
