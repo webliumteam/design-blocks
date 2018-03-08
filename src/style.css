@@ -48,6 +48,10 @@
     }
   }
 
+  &__picture {
+    padding-top: 68%;
+  }
+
   &__title {
     position: relative;
     margin-bottom: 45px;
