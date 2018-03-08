@@ -17,6 +17,10 @@
     }
   }
 
+  &__picture {
+    padding-top: 119%;
+  }
+
   &__title {
     margin-bottom: 50px;
   }
@@ -36,8 +40,4 @@
       flex-basis: 70%;
     }
   }
-}
-
-.button {
-  text-transform: uppercase;
 }
