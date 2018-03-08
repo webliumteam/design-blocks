@@ -7,8 +7,6 @@
 
 .title {
   position: relative;
-  font-weight: 600;
-  letter-spacing: -1px;
 
   &::after {
     content: "";
@@ -159,7 +157,7 @@
     &__picture {
       position: relative;
       min-height: auto;
-      padding-top: 0;
+      padding-top: 65%;
       margin-right: 75px;
       z-index: 1;
       border: 10px solid var(--ui-light-shade-color);
