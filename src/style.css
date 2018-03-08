@@ -39,6 +39,8 @@
 .article {
 
   @media (min-width: 768px) {
+    align-items: stretch;
+
     &__tilte,
     &__subtitle,
     &__text {
