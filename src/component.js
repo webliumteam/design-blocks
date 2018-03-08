@@ -7,10 +7,12 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
+  getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Image}, style} = this.props
+    const {components: {Text, Button, Logo}, style} = this.props
 
     const onlyLogo = !_.get('link')(modifier) && !_.get('body')(modifier)
 
@@ -19,15 +21,13 @@ class Block extends React.Component {
         {children}
 
         <div className={style.item__container}>
-          {(_.get('logo')(modifier) === 'text') && (
-            <Text bind={`partners[${index}].title`} className={style.item__title} tagName="h2" />
-          )}
-          {(_.get('logo')(modifier) === 'image') && (
-            <Image
-              wrapperClassName={style['item__pic-wrapper']}
-              pictureClassName={style.item__pic}
-              imgClassName={style.item__image}
-              bind={`partners[${index}.picture`}
+          {_.get('logo')(modifier) && (
+            <Logo
+              bind={`partners[${index}].logo`}
+              className={style.logo}
+              textClassName={style.logo__title}
+              maxWidth={this.getOptionValue('logo-max-width')}
+              maxHeight={this.getOptionValue('logo-max-height')}
             />
           )}
           {_.get('body')(modifier) && (
@@ -48,7 +48,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style, $block} = this.props
+    const {components: {Collection, Text, Button, Logo}, style, $block} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -84,7 +84,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Logo'])($editor.components)
 
 Block.defaultContent = {
   partners: [
@@ -96,6 +96,13 @@ Block.defaultContent = {
       desc: {
         content: '<span style="font-weight: bold">Samsung.</span> It doesn’t need a lot of words. High-quality tech products with superior design.',
         type: 'text',
+      },
+      logo: {
+        text: {
+          value: 'Samsung',
+          tagName: 'h2',
+          fontSize: 24,
+        },
       },
       picture: {
         alt: 'Samsung logo',
@@ -124,8 +131,12 @@ Block.defaultContent = {
         content: '<span style="font-weight: bold">Ford.</span> This is our moving force, literally! 100% reliable and credible.',
         type: 'text',
       },
-      picture: {
-        alt: 'Ford logo',
+      logo: {
+        text: {
+          value: 'Ford',
+          tagName: 'h2',
+          fontSize: 24,
+        },
       },
       cta: {
         actionConfig: {
@@ -151,8 +162,12 @@ Block.defaultContent = {
         content: '<span style="font-weight: bold">Medical Family.</span> Ensuring good health and medical care for our team for 5 years.',
         type: 'text',
       },
-      picture: {
-        alt: 'Medical Family logo',
+      logo: {
+        text: {
+          value: 'Medical Family',
+          tagName: 'h2',
+          fontSize: 24,
+        },
       },
       cta: {
         actionConfig: {
@@ -178,8 +193,12 @@ Block.defaultContent = {
         content: '<span style="font-weight: bold">Coffee Break Now.</span> We love their delicious coffee and flavored cakes!',
         type: 'text',
       },
-      picture: {
-        alt: 'Coffee Break Now logo',
+      logo: {
+        text: {
+          value: 'Coffee Break Now',
+          tagName: 'h2',
+          fontSize: 24,
+        },
       },
       cta: {
         actionConfig: {
@@ -227,14 +246,9 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   logo: {
-    children: [
-      {id: 'image', label: 'Image'},
-      {id: 'text', label: 'Text'},
-    ],
-    defaultValue: 'image',
-    style: 'column',
-    name: 'Logo',
-    type: 'radio-button-group',
+    defaultValue: true,
+    label: 'Logo',
+    type: 'checkbox',
   },
   subtitle: {defaultValue: false, label: 'Partner description', type: 'checkbox'},
   body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
