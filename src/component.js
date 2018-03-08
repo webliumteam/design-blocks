@@ -115,10 +115,10 @@ Block.defaultContent = {
   partners: [
     {
       logo: {
-        text: {
-          value: 'Samsung',
-          tagName: 'h2',
-          fontSize: 20,
+        image: {
+          resourceRef: '',
+          width: 130,
+          height: 62,
         },
       },
       title: {
@@ -146,10 +146,10 @@ Block.defaultContent = {
     },
     {
       logo: {
-        text: {
-          value: 'Samsung',
-          tagName: 'h2',
-          fontSize: 20,
+        image: {
+          resourceRef: '',
+          width: 130,
+          height: 62,
         },
       },
       title: {
@@ -177,10 +177,10 @@ Block.defaultContent = {
     },
     {
       logo: {
-        text: {
-          value: 'Samsung',
-          tagName: 'h2',
-          fontSize: 20,
+        image: {
+          resourceRef: '',
+          width: 130,
+          height: 62,
         },
       },
       title: {
@@ -208,10 +208,10 @@ Block.defaultContent = {
     },
     {
       logo: {
-        text: {
-          value: 'Samsung',
-          tagName: 'h2',
-          fontSize: 20,
+        image: {
+          resourceRef: '',
+          width: 130,
+          height: 62,
         },
       },
       title: {
