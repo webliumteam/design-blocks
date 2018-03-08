@@ -49,9 +49,6 @@
 
 .subtitle {
   position: relative;
-  font-family: var(--ui-text-font-family);
-  font-size: var(--ui-subtitle-size);
-  font-weight: var(--ui-subtitle-font-weight);
 
   @media (min-width: 992px) {
     max-width: 611px;
@@ -65,7 +62,6 @@
   transition: 0.3s linear;
   align-items: center;
   justify-content: center;
-  min-height: 330px;
 
   @media (min-width: 992px) {
     margin-bottom: 0;
@@ -104,19 +100,13 @@
   } */
 
   &__picture {
-    padding-top: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
+    padding-top: 52%;
 
     &-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
     }
   }
 
