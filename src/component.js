@@ -67,13 +67,15 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          <div className={style['btns-group']}>
-            <Button
-              buttonClassName={style.button}
-              linkClassName={style.link}
-              bind="cta"
-            />
-          </div>
+          {this.getModifierValue('button') && (
+            <div className={style['btns-group']}>
+              <Button
+                buttonClassName={style.button}
+                linkClassName={style.link}
+                bind="cta"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -270,10 +272,11 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  badge: {defaultValue: true, label: "Event's type", type: 'checkbox'},
-  link: {defaultValue: true, label: "Event's link", type: 'checkbox'},
-  location: {defaultValue: true, label: "Event's location", type: 'checkbox'},
   subtitle: {defaultValue: false, label: "Event's description", type: 'checkbox'},
+  badge: {defaultValue: true, label: "Event's type", type: 'checkbox'},
+  location: {defaultValue: true, label: "Event's location", type: 'checkbox'},
+  link: {defaultValue: true, label: "Event's link", type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
 
 
