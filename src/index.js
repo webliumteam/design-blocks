@@ -33,22 +33,12 @@ ExtendedWireframe.defaultContent = {
     },
   ],
   picture: {
+    ...Component.defaultContent.picture,
     resourceRef: 'child-img.jpg',
-    alt: 'Careers illustration',
   },
   'button-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
+    ...Component.defaultContent['button-1'],
     type: 'secondary',
-    textValue: 'Learn more',
   },
 }
 
