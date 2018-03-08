@@ -20,7 +20,6 @@
 .section--column .article__picture-wrapper {
   max-width: none;
   flex-basis: auto;
-  max-height: 410px;
 }
 
 .section--column .article__picture {
@@ -30,6 +29,7 @@
 .section--column .article__content {
   max-width: none;
   margin-bottom: 40px;
+  padding-left: 0;
 }
 
 .section--column .article__picture-wrapper + .article__content {
@@ -59,15 +59,13 @@
   .article {
     flex-direction: row;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: flex-start;
   }
 }
 
 .article__picture {
   display: block;
-  min-height: 200px;
-  height: 100%;
-  padding-top: 70%;
+  min-height: 270px;
   order: -1;
 }
 
@@ -79,7 +77,6 @@
 @media (min-width: 768px) {
   .article__picture {
     order: unset;
-    min-height: 410px;
   }
 
   .article__picture-wrapper {
