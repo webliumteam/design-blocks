@@ -13,7 +13,7 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, modifier, className}) => {
-    const {components: {Text, Image, Button}, style} = this.props
+    const {components: {Text, Button, Logo}, style} = this.props
     const showContent = _.get('body')(modifier) || _.get('link')(modifier)
     const showBody = _.get('body')(modifier)
     const showLink = _.get('link')(modifier)
@@ -50,12 +50,13 @@ class Block extends React.Component {
         )}
       >
         {children}
-        <Image
-          bind={`partners[${index}].picture`}
-          wrapperClassName={style['item__picture-wrapper']}
-          pictureClassName={style.item__picture}
-          imgClassName={style.item__image}
-          size={null}
+        <Logo
+          bind={`partners[${index}].logo`}
+          className={style.logo}
+          textClassName={style.logo__title}
+          imageClassName={style.logo__image}
+          maxWidth={this.getOptionValue('logo-max-width')}
+          maxHeight={this.getOptionValue('logo-max-height')}
         />
         {this.getOptionValue('content-wrapper') ? <div className={style['item__content-wrapper']}>{itemContent}</div> : itemContent}
       </article>
@@ -100,7 +101,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Button', 'Collection', 'Image'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'Collection', 'Logo'])($editor.components)
 
 Block.defaultContent = {
   title: {
@@ -113,10 +114,12 @@ Block.defaultContent = {
   },
   partners: [
     {
-      picture: {
-        resourceRef: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
-        alt: 'Samsung logo',
-        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      logo: {
+        image: {
+          resourceRef: '',
+          width: 130,
+          height: 62,
+        },
       },
       title: {
         content: 'Samsung',
@@ -142,10 +145,12 @@ Block.defaultContent = {
       },
     },
     {
-      picture: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
-        alt: 'Ford logo',
-        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      logo: {
+        image: {
+          resourceRef: '',
+          width: 130,
+          height: 62,
+        },
       },
       title: {
         content: 'Ford ',
@@ -171,10 +176,12 @@ Block.defaultContent = {
       },
     },
     {
-      picture: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
-        alt: 'Medical Family logo',
-        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      logo: {
+        image: {
+          resourceRef: '',
+          width: 130,
+          height: 62,
+        },
       },
       title: {
         content: 'Medical Family',
@@ -200,10 +207,12 @@ Block.defaultContent = {
       },
     },
     {
-      picture: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
-        alt: 'Coffee Break Now',
-        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      logo: {
+        image: {
+          resourceRef: '',
+          width: 130,
+          height: 62,
+        },
       },
       title: {
         content: 'Coffee Break Now',
