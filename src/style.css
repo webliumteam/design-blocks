@@ -14,7 +14,7 @@
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--ui-light-accent-color);
+    background-color: var(--ui-brand-color);
   }
 }
 
@@ -28,13 +28,11 @@
     position: relative;
     width: 100%;
     max-width: 100%;
-    padding-top: 0;
+    padding-top: 100%;
     background-color: transparent;
-    height: 260px;
-    overflow: hidden;
 
     &-wrapper {
-      background-color: var(--ui-block-bg);
+      background-color: transparent;
       border: 2px solid transparent;
       text-align: center;
 
