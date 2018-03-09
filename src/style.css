@@ -18,6 +18,10 @@
   font-family: var(--ui-hero-title-font-family);
   color: var(--ui-link-color);
   font-weight: 600;
+
+  &__link {
+    text-decoration: none;
+  }
 }
 
 .footer__meta {
