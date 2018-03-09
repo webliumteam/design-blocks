@@ -71,16 +71,6 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   'button-primary': {defaultValue: true, label: 'Button', type: 'checkbox'},
   'button-secondary': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
-  'icon-replacer': {
-    defaultValue: 'image',
-    label: 'Image replacer',
-    children: [
-      {id: 'icon', label: 'Show icon'},
-      {id: 'image', label: 'Show image'},
-      {id: 'text', label: 'Show text'},
-    ],
-    type: 'radio-button-group',
-  },
   'item-description': {defaultValue: true, label: 'Advantages description', type: 'checkbox'},
   'item-heading': {defaultValue: true, label: 'Advantages title', type: 'checkbox'},
   'item-icon': {defaultValue: true, label: 'Advantages icon', type: 'checkbox'},
