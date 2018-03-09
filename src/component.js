@@ -45,8 +45,10 @@ class Block extends React.Component {
 
   render() {
     const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const noIconClass = this.getModifierValue('item-icon') ? '' : style['section--no-icon']
+
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, noIconClass)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
