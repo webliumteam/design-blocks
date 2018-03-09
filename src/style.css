@@ -1,3 +1,21 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-why/src/style.css";
 
-/* start here */
+.title {
+  margin-bottom: 45px;
+}
+
+.item {
+  &__title {
+    font-size: calc(var(--ui-heading-size) * 0.77);
+  }
+
+  &__top-element {
+    margin-bottom: 30px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.btns-group {
+  margin-top: 50px;
+}
