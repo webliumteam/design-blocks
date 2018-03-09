@@ -39,11 +39,16 @@ class Block extends React.Component {
 
     const getIconDecorator = this.getModifierValue('top-icon') && <Icon className={css['top-icon']} bind="topIcon" />
 
+    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 46
+    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 100
+
     return (
       <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
         <div className={css.section__inner}>
           {this.getOptionValue('icon-decorator-in-top') && getIconDecorator}
           {this.getOptionValue('title-in-top') && getTitle}
+
+
           <article className={css.article}>
             {this.getModifierValue('article-picture') && (
               <Image
@@ -51,7 +56,7 @@ class Block extends React.Component {
               pictureClassName={css.article__picture}
               bind="picture"
               size={this.getImageSize(columnLayout)}
-              resize={{min: 46, max: 100}}/>
+              resize={{min: getMinResize, max: getMaxResize}}/>
             )}
             {!onlyImage && (
               <div className={css.article__content}>
