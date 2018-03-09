@@ -1,5 +1,7 @@
 {
-    "title-in-top": false,
-    "icon-decorator-in-top": false,
-    "hidden-social-heading": false
+  "title-in-top": false,
+  "icon-decorator-in-top": false,
+  "hidden-social-heading": false,
+  "min-resize": false,
+  "max-resize": false
 }
