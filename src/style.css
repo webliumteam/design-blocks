@@ -129,7 +129,7 @@
     }
 
     &__picture {
-      padding-top: 84%;
+      padding-top: 0;
     }
 
     &__content {
