@@ -155,7 +155,7 @@
       padding-top: 65%;
       margin-right: 0;
       z-index: 1;
-      border: 10px solid var(--ui-light-shade-color);
+      box-shadow: 0 0 0 10px var(--ui-light-shade-color);
     }
 
     &__decorator {
