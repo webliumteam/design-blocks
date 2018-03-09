@@ -44,6 +44,7 @@
     transition: all 0.3s;
     padding-bottom: 1px;
     border-bottom: 1px solid transparent;
+    text-decoration: none;
 
     &:hover {
       opacity: 1;
