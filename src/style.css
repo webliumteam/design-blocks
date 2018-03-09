@@ -59,6 +59,7 @@
   font-size: var(--ui-small-text-size);
   font-weight: 600;
   color: var(--ui-link-color);
+  text-decoration: none;
 }
 
 @media (min-width: 992px) {
