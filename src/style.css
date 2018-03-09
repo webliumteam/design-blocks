@@ -7,8 +7,6 @@
 
 .title {
   position: relative;
-  font-weight: 600;
-  letter-spacing: -1px;
 
   &::after {
     content: "";
@@ -76,7 +74,7 @@
       left: 1px;
       width: 30px;
       height: 30px;
-      border: 3px solid var(--ui-brand-color);
+      border: 3px solid currentColor;
       border-radius: 50%;
       color: var(--ui-brand-color);
       font-family: var(--ui-text-font-family);
@@ -94,11 +92,6 @@
       text-align: left;
     }
   }
-}
-
-.button {
-  font-weight: 700;
-  letter-spacing: -0.2px;
 }
 
 @media (min-width: 768px) {
@@ -149,7 +142,7 @@
   .media {
     padding-top: 0;
     min-height: 0;
-    height: 392px;
+    margin-right: 105px;
 
     &-wrap {
       margin-right: 130px;
@@ -159,17 +152,17 @@
     &__picture {
       position: relative;
       min-height: auto;
-      padding-top: 0;
-      margin-right: 75px;
+      padding-top: 65%;
+      margin-right: 0;
       z-index: 1;
-      border: 10px solid var(--ui-light-shade-color);
+      box-shadow: 0 0 0 10px var(--ui-light-shade-color);
     }
 
     &__decorator {
       display: block;
       height: 100%;
       bottom: -20px;
-      right: 30px;
+      right: -45px;
       color: #afafaf;
       text-align: right;
 
