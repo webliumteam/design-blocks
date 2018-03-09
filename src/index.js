@@ -89,4 +89,5 @@ ExtendedWireframe.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
 }
 
+
 export default ExtendedWireframe
