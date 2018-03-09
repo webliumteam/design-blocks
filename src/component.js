@@ -12,7 +12,7 @@ class Block extends React.Component {
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Button, Image, Resizer}, style} = this.props
     return (
-      <Resizer styleProp="min-height" bindToModifier={`resizer.projects${index}`} min="180" max="510">
+      <Resizer styleProp="minHeight" bindToModifier={`resizer.projects${index}`} min={180} max={510}>
         <article className={classNames(style.article, className)}>
           {children}
           <Image
