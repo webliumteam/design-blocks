@@ -50,8 +50,8 @@ ExtendedWireframe.defaultContent = {
     },
   ],
   picture: {
+    ...Component.defaultContent.picture,
     resourceRef: 'img-1.jpg',
-    alt: 'Illustration',
   },
   topIcon: {
     svg:
