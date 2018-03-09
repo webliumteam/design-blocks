@@ -1,9 +1,7 @@
 @import "wireframe-zapdos-why/src/style.css";
 
-/* start here */
-
 .title {
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 }
 
 .item {
@@ -12,12 +10,12 @@
   }
 
   &__top-element {
-    margin-bottom: 25px;
-    width: 80px;
-    height: 80px;
+    margin-bottom: 30px;
+    width: 56px;
+    height: 56px;
   }
 }
 
 .btns-group {
-  margin-top: 40px;
+  margin-top: 50px;
 }
