@@ -16,6 +16,10 @@
   @media (min-width: 992px) {
     padding: 75px 0 65px;
   }
+
+  &--no-icon {
+    word-wrap: break-word;
+  }
 }
 
 .section__inner {
