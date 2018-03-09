@@ -48,14 +48,25 @@
 }
 
 .item__top-element {
-  width: 110px;
-  height: 110px;
-  background: var(--ui-light-shade-color);
-  border-radius: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 60px;
+  max-height: 48px;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    top: -50%;
+    transition: translateY(50%);
+    left: -5px;
+    width: 110px;
+    height: 110px;
+    background: var(--ui-light-shade-color);
+    border-radius: 70px;
+    box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
+    z-index: -1;
+  }
 }
 
 .btns-group {
