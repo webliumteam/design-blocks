@@ -39,11 +39,17 @@
 .article {
 
   @media (min-width: 768px) {
+    align-items: stretch;
+
     &__tilte,
     &__subtitle,
     &__text {
       max-width: 535px;
     }
+  }
+
+  &__picture {
+    padding-top: 68%;
   }
 
   &__title {
