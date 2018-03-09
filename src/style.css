@@ -129,7 +129,7 @@
     }
 
     &__picture {
-      min-height: 480px;
+      padding-top: 0;
     }
 
     &__content {
