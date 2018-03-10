@@ -77,7 +77,7 @@ class Block extends React.Component {
             <button
               type="button"
               className={css['nav-button']}
-              data-header="triger"
+              data-header="trigger"
               onClick={this.toggleOpened}
             >
               <span className={css['nav-button__line']} />
@@ -253,9 +253,9 @@ Block.modifierScheme = {
   logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
   'menu-alignment': {
     children: [
-      {id: 'right', label: 'Right'},
-      {id: 'center', label: 'Center'},
       {id: 'left', label: 'Left'},
+      {id: 'center', label: 'Center'},
+      {id: 'right', label: 'Right'},
     ],
     defaultValue: 'right',
     name: 'Menu alignment',
