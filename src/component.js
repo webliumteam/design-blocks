@@ -50,7 +50,7 @@ class Block extends React.Component {
     return (
       <header className={classNames(css.header, opened && css['header--nav-open'])} data-header="target">
         {topLineStatus && (
-          <Background tagName="div" className={css['header__top-line']} bind="topLineBackground">
+          <div className={css['header__top-line']}>
             <div className={css['header__top-line-inner']}>
               {this.getModifierValue('text') && <Text tagName="p" className={css.header__text} bind="topLineText" />}
               {this.getModifierValue('social-icons') && (
@@ -59,9 +59,9 @@ class Block extends React.Component {
                 </div>
               )}
             </div>
-          </Background>
+          </div>
         )}
-        <Background tagName="div" className={css.header__main} bind="mainBackground">
+        <div className={css.header__main}>
           <div className={classNames(css['header__main-inner'], logoStatus && css['header__main-inner--logo-hidden'])}>
             {this.getModifierValue('logo') && (
               <div className={css['logo-wrapper']}>
@@ -94,7 +94,7 @@ class Block extends React.Component {
               />
             </nav>
           </div>
-        </Background>
+        </div>
       </header>
     )
   }

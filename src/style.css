@@ -87,10 +87,15 @@
     width: 100%;
     text-align: center;
     margin-bottom: 10px;
-    font-size: calc(var(--ui-text-size) * 0.62);
+    font-size: calc(var(--ui-text-size) * 0.75);
 
     a {
       text-decoration: none;
+      color: var(--ui-link-color);
+
+      &:hover {
+        color: var(--ui-link-hover-color);
+      }
     }
 
     @media (min-width: 768px) {
@@ -108,7 +113,6 @@
   &__main {
     position: relative;
     padding: 30px 0;
-    background-color: #f2f2f2;
 
     @media (min-width: 992px) {
       padding: 30px 20px;
@@ -242,7 +246,7 @@
   position: absolute;
   width: 30px;
   height: 25px;
-  top: 32px;
+  top: 33px;
   left: 20px;
   padding: 5px;
   cursor: pointer;
@@ -312,6 +316,7 @@
 
   &__title {
     color: var(--ui-block-title-color);
+    font-size: calc(var(--ui-block-title-size) * 0.625);
 
     @media (min-width: 992px) {
       text-align: left;
@@ -330,10 +335,5 @@
 
   a {
     padding: 2.5px;
-
-    /* Tech debt: need remove `position: absolute` in SocialIcons component */
-    div {
-      position: relative !important; /* stylelint-disable-line declaration-no-important */
-    }
   }
 }
