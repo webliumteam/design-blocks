@@ -39,16 +39,44 @@
 
 .items-wrapper {
   margin: 35px -15px 0;
+
+  @media(min-width: 768px) {
+    display: flex;
+    margin: 35px -8px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .item {
   display: flex;
-  position: relative;
   min-height: 400px;
   margin-bottom: 30px;
 
-  &:last-child {
-    margin-bottom: 0;
+  @media(min-width: 768px) {
+    max-width: 50%;
+    flex-basis: 50%;
+    margin-bottom: 15px;
+  }
+
+  @media(min-width: 992px) {
+    max-width: 33%;
+    flex-basis: 33%;
+
+    &:hover {
+      .item__description {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    margin: 0 8px;
+
+    @media(min-width: 992px) {
+      margin: 0 15px;
+    }
   }
 
   &__picture {
@@ -81,12 +109,35 @@
   &__heading {
     margin-bottom: 15px;
   }
+
+  &__description {
+
+    @media(min-width: 992px) {
+      opacity: 0;
+      transition: opacity .2s ease-in;
+    }
+  }
+}
+
+.item:nth-last-of-type(4n):first-of-type,
+.item:nth-last-of-type(4n):first-of-type ~ .item,
+.item:nth-last-of-type(7):first-of-type,
+.item:nth-last-of-type(7):first-of-type ~ .item {
+
+  @media(min-width: 992px) {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
 }
 
 .btns-group {
   text-align: center;
-  padding-top: 40px;
+  padding-top: 25px;
   margin-bottom: -10px;
+
+  @media(min-width: 992px) {
+    padding-top: 45px;
+  }
 
   &__button,
   &__link {

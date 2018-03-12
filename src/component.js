@@ -20,21 +20,23 @@ class Block extends React.Component {
     return (
       <article className={classNames(css.item, hiddenBodyClass, className)}>
         {children}
-        <Image
-          pictureClassName={css.item__picture}
-          imgClassName={css.item__image}
-          bind={`items[${index}].image`}
-        />
-        {!hiddenItemText && (
-          <div className={css.item__text}>
-            {this.getModifierValue('item-heading') && (
-              <Text tagName="h2" className={css.item__heading} bind={`items[${index}].heading`} />
-            )}
-            {this.getModifierValue('item-body') && (
-              <Text tagName="p" className={css.item__description} bind={`items[${index}].text`} />
-            )}
-          </div>
-        )}
+        <div className={css.item__inner}>
+          <Image
+            pictureClassName={css.item__picture}
+            imgClassName={css.item__image}
+            bind={`items[${index}].image`}
+          />
+          {!hiddenItemText && (
+            <div className={css.item__text}>
+              {this.getModifierValue('item-heading') && (
+                <Text tagName="h2" className={css.item__heading} bind={`items[${index}].heading`} />
+              )}
+              {this.getModifierValue('item-body') && (
+                <Text tagName="p" className={css.item__description} bind={`items[${index}].text`} />
+              )}
+            </div>
+          )}
+        </div>
       </article>
     )
   }
@@ -46,9 +48,7 @@ class Block extends React.Component {
     return (
       <section className={css.section}>
         <div className={css.section__inner}>
-          {this.getModifierValue('title') && (
-            <Text tagName="h1" className={css.title} bind="title" />
-          )}
+          <Text tagName="h1" className={css.title} bind="title" />
           {this.getModifierValue('subtitle') && (
             <Text tagName="p" className={css.subtitle} bind="subtitle" />
           )}
@@ -173,8 +173,8 @@ Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Why us description', type: 'checkbox'},
   'item-heading': {defaultValue: true, label: 'Advantage title', type: 'checkbox'},
   'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
-  'main-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  'additional-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'main-button': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
+  'additional-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Block
