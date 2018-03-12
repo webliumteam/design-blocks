@@ -12,16 +12,28 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, children, className, modifier}) => {
+  collectionItem = ({index, children, className}) => {
     const {components: {Text, Image}, style: css} = this.props
+    const hiddenBodyClass = !this.getModifierValue('item-body') && css['item--hidden-body']
+    const hiddenItemText = !this.getModifierValue('item-heading') && !this.getModifierValue('item-body')
 
     return (
-      <article className={classNames(css.item, className)}>
+      <article className={classNames(css.item, hiddenBodyClass, className)}>
         {children}
-        <Image pictureClassName={css.item__picture} bind={`items[${index}].image`} />
-        <Text tagName="h2" className={css.item__heading} bind={`items[${index}].heading`} />
-        {this.getModifierValue('item-body') && (
-          <Text tagName="p" className={css.item__text} bind={`items[${index}].text`} />
+        <Image
+          pictureClassName={css.item__picture}
+          imgClassName={css.item__image}
+          bind={`items[${index}].image`}
+        />
+        {!hiddenItemText && (
+          <div className={css.item__text}>
+            {this.getModifierValue('item-heading') && (
+              <Text tagName="h2" className={css.item__heading} bind={`items[${index}].heading`} />
+            )}
+            {this.getModifierValue('item-body') && (
+              <Text tagName="p" className={css.item__description} bind={`items[${index}].text`} />
+            )}
+          </div>
         )}
       </article>
     )
@@ -29,7 +41,7 @@ class Block extends React.Component {
 
   render() {
     const {components: {Text, Collection, Button}, style: css, $block} = this.props
-    const showButtonGroups = this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
+    const showButtonGroups = this.getModifierValue('main-button') || this.getModifierValue('additional-button')
 
     return (
       <section className={css.section}>
@@ -48,6 +60,24 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
+          {showButtonGroups &&
+            <div className={css['btns-group']}>
+              {this.getModifierValue('main-button') && (
+                <Button
+                  buttonClassName={css['btns-group__button']}
+                  linkClassName={css['btns-group__link']}
+                  bind="mainButton"
+                />
+              )}
+              {this.getModifierValue('additional-button') && (
+                <Button
+                  buttonClassName={css['btns-group__button']}
+                  linkClassName={css['btns-group__link']}
+                  bind="additionalButton"
+                />
+              )}
+            </div>
+          }
         </div>
       </section>
     )
@@ -73,11 +103,11 @@ Block.defaultContent = {
       },
       heading: {
         type: 'heading',
-        content: '',
+        content: 'Open-minded',
       },
       text: {
         type: 'text',
-        content: '',
+        content: 'We always look for new ideas, explore various spheres, and apply a positive approach',
       },
     },
     {
@@ -87,11 +117,11 @@ Block.defaultContent = {
       },
       heading: {
         type: 'heading',
-        content: '',
+        content: 'Long-term cooperation',
       },
       text: {
         type: 'text',
-        content: '',
+        content: 'We believe that effective cooperation should last for ages',
       },
     },
     {
@@ -101,15 +131,15 @@ Block.defaultContent = {
       },
       heading: {
         type: 'heading',
-        content: '',
+        content: 'Turnkey solutions',
       },
       text: {
         type: 'text',
-        content: '',
+        content: 'Every good or service we provide is empowered with the top-notch features to deliver the best result to our customers',
       },
     },
   ],
-  button: {
+  mainButton: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -120,9 +150,10 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Contact us',
+    type: 'primary',
+    textValue: 'Learn more',
   },
-  link: {
+  additionalButton: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -133,15 +164,17 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'More about us',
+    type: 'secondary',
+    textValue: 'Learn more',
   },
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Why us description', type: 'checkbox'},
+  'item-heading': {defaultValue: true, label: 'Advantage title', type: 'checkbox'},
   'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Contact us button', type: 'checkbox'},
+  'main-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  'additional-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Block
