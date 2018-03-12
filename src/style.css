@@ -8,6 +8,7 @@
 
   @media (min-width: 992px) {
     margin-bottom: -20px;
+    align-items: flex-start;
   }
 }
 
