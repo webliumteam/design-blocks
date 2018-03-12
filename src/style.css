@@ -31,21 +31,21 @@
 @media (min-width: 768px) {
   .footer__part {
     max-width: 33.333%;
-    flex: 33.333%;
+    flex-basis: 33.333%;
   }
 }
 
 @media (min-width: 992px) {
   .footer__part {
     max-width: 25%;
-    flex: 25%;
+    flex-basis: 25%;
   }
 }
 
 @media (min-width: 768px) {
   .footer__part--center {
     max-width: 66.666%;
-    flex: 66.666%;
+    flex-basis: 66.666%;
     padding-left: 60px;
   }
 }
@@ -53,7 +53,7 @@
 @media (min-width: 992px) {
   .footer__part--center {
     max-width: 50%;
-    flex: 50%;
+    flex-basis: 50%;
     padding-left: 100px;
   }
 }
@@ -61,7 +61,7 @@
 @media (min-width: 768px) {
   .footer__part--center:first-child {
     max-width: 100%;
-    flex: 100%;
+    flex-basis: 100%;
     padding-left: 0;
   }
 }
@@ -69,7 +69,7 @@
 @media (min-width: 992px) {
   .footer__part--center:first-child {
     max-width: 75%;
-    flex: 75%;
+    flex-basis: 75%;
     padding-left: 0;
   }
 }
@@ -90,7 +90,7 @@
 @media (min-width: 768px) {
   .footer__part--last {
     max-width: 100%;
-    flex: 100%;
+    flex-basis: 100%;
   }
 }
 
@@ -98,7 +98,7 @@
   .footer__part--last {
     max-width: 25%;
     margin-left: auto;
-    flex: 25%;
+    flex-basis: 25%;
   }
 }
 
@@ -204,7 +204,7 @@
   .nav-list__item {
     display: flex;
     max-width: 33.333%;
-    flex: 33.333%;
+    flex-basis: 33.333%;
   }
 }
 
