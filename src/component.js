@@ -13,19 +13,17 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Text, Map, SocialIcons, Button}, style: css} = this.props
+    const {components: {Background, Text, Map, SocialIcons, Button}, style: css} = this.props
 
     return (
       <section className={css.section}>
         <div className={css.section__inner}>
-          {this.getModifierValue('map') && (
-            <div className={css['map-wrapper']}>
-              <div className={css.map}>
-                <Map className={css.map__preview} bind="map" />
-              </div>
+          <div className={css['map-wrapper']}>
+            <div className={css.map}>
+              <Map className={css.map__preview} bind="map" />
             </div>
-          )}
-          <div className={css.contacts}>
+          </div>
+          <Background tagName="div" className={css.contacts} bind="contactsBackground">
             <Text tagName="h1" className={css.title} bind="title" />
             {this.getModifierValue('heading') && (
               <Text tagName="h2" className={css.heading} bind="heading" />
@@ -57,16 +55,20 @@ class Block extends React.Component {
                 bind="button"
               />
             )}
-          </div>
+          </Background>
         </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Map', 'SocialIcons', 'Button'])($editor.components)
+Block.components = _.pick(['Background', 'Text', 'Map', 'SocialIcons', 'Button'])($editor.components)
 
 Block.defaultContent = {
+  contactsBackground: {
+    type: 'color',
+    color: '#fff',
+  },
   title: {
     content: 'Contacts',
     type: 'blockTitle',
@@ -162,14 +164,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  map: {defaultValue: true, label: 'Map', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Location title', type: 'checkbox'},
-  address: {defaultValue: true, label: 'Location adress', type: 'checkbox'},
+  address: {defaultValue: true, label: 'Location address', type: 'checkbox'},
   email: {defaultValue: true, label: 'E-mail', type: 'checkbox'},
   phone: {defaultValue: true, label: 'Phone', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
-
 
 export default Block
