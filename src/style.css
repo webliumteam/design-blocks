@@ -210,17 +210,7 @@
 
 .nav-list__link {
   max-width: 100%;
-  color: var(--ui-link-color);
-  text-decoration: none;
-  transition: color .2s ease-in;
   text-align: left;
-}
-
-.nav-list__link:focus,
-.nav-list__link:active,
-.nav-list__link:hover {
-  outline: none;
-  color: var(--ui-link-hover-color);
 }
 
 .socials {
