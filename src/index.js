@@ -17,7 +17,13 @@ ExtendedWireframe.defaultContent = {
     text: {
       value: 'forks',
       tagName: 'h2',
+      fontSize: 30,
     },
+  },
+  cta: {
+    ...Component.defaultContent.cta,
+    type: 'primary',
+    size: 'sm',
   },
 }
 
