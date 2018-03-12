@@ -24,14 +24,14 @@ class Block extends React.Component {
       this.getModifierValue('text') ||
       this.getModifierValue('socialIcons')
     )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
+    const showButtonGroups = this.getModifierValue('additional-button') || this.getModifierValue('button')
 
     const onlyImage = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
       this.getModifierValue('text') ||
       this.getModifierValue('socialIcons') ||
-      this.getModifierValue('link') ||
+      this.getModifierValue('additional-button') ||
       this.getModifierValue('button')
     )
 
