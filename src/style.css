@@ -3,14 +3,11 @@
 /* start here */
 
 .title {
-  font-weight: var(--ui-heading-lg-font-weight);
   margin-bottom: 20px;
 }
 
 .subtitle {
   font-size: calc(var(--ui-sub-heading-size) * 0.888);
-  line-height: 1.75;
-  letter-spacing: 1.2px;
 }
 
 .item {
@@ -18,6 +15,43 @@
   @media (min-width: 992px) {
     position: relative;
     margin-top: 45px;
+
+    &:nth-last-of-type(4):first-child,
+    &:nth-last-of-type(4):first-child ~ .item {
+      &:nth-of-type(4n) {
+        &::after {
+          content: none;
+        }
+      }
+
+      &:nth-of-type(3n) {
+        &::after {
+          content: "";
+        }
+      }
+    }
+
+    &:nth-last-of-type(7):first-child,
+    &:nth-last-of-type(7):first-child ~ .item {
+      &:nth-of-type(3n) {
+        &::after {
+          content: "";
+        }
+      }
+
+      &:nth-of-type(4n) {
+        &::after {
+          content: none;
+        }
+      }
+    }
+
+    &:last-of-type,
+    &:nth-of-type(3n) {
+      &::after {
+        content: none;
+      }
+    }
 
     &::after {
       content: "";
@@ -30,54 +64,108 @@
       z-index: 2;
       opacity: 0.1;
     }
-
-    &:last-child {
-      &::after {
-        display: none;
-      }
-    }
   }
 
   &__title {
-    letter-spacing: 3.2px;
-    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+    margin-bottom: 42px;
+
+    &:after {
+      width: 24px;
+      height: 2px;
+      display: block;
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: currentColor;
+      opacity: .1;
+    }
   }
 
   &__top-element {
-    height: 175px;
+    width: 147.2px;
+    height: 166.6px;
   }
 
   &__icon-picture {
+    width: 100%;
+    height: 100%;
+    padding-top: 0;
+    min-height: 0;
     background-color: transparent;
 
     img {
-      object-fit: contain;
-      clip-path: polygon(170.5px 2.175px, 233.112px 38.325px, 238.612px 47.851px, 238.612px 120.149px, 233.112px 129.675px, 170.5px 165.825px, 159.5px 165.825px, 96.888px 129.675px, 91.388px 120.149px, 91.388px 47.851px, 96.888px 38.325px, 159.5px 2.175px, 170.5px 2.175px);
+      -webkit-clip-path: polygon(47.5% 0.35%, 50% 0%, 52.5% 0.35%, 97% 23%, 98.5% 25%, 99% 27%, 99% 73%, 98.5% 75%, 97% 77%, 52.5% 99.65%, 50% 100%, 47.5% 99.65%, 3% 77%, 1% 75%, 0% 73%, 0% 27%, 1% 25%, 3% 23%);
+      clip-path: polygon(47.5% 0.35%, 50% 0%, 52.5% 0.35%, 97% 23%, 98.5% 25%, 99% 27%, 99% 73%, 98.5% 75%, 97% 77%, 52.5% 99.65%, 50% 100%, 47.5% 99.65%, 3% 77%, 1% 75%, 0% 73%, 0% 27%, 1% 25%, 3% 23%);
     }
   }
 }
 
-@media (min-width: 992px) {
-  .item {
-    position: relative;
-    margin-top: 45px;
+.link {
+  position: relative;
+  text-decoration: none;
+  padding-right: 27px;
+  transition: color 0.2s ease-in;
+  color: var(--ui-block-title-color);
 
-    &::after {
-      content: "";
-      width: 58px;
-      height: 2px;
-      background-color: var(--ui-brand-color);
+  @media (min-width: 768px) {
+    margin-left: 70px;
+  }
+
+  &::after {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
       position: absolute;
-      top: 85px;
-      right: -27px;
-      z-index: 2;
-      opacity: .1;
+      content: "";
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 2px;
+      background-color: currentColor;
     }
+  }
 
-    &:last-child {
-      &::after {
-        display: none;
-      }
+  &:only-child {
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 2px;
+      background-color: currentColor;
+    }
+  }
+}
+
+.btns-group {
+  .link {
+    color: var(--ui-block-title-color);
+    font-weight: 700;
+    font-size: calc(var(--ui-text-size) * 0.78);
+    margin-top: 40px;
+    width: 100%;
+    padding-right: 0;
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+      width: auto;
+      padding-right: 27px;
+    }
+  }
+}
+
+.section--no-icon {
+  .item {
+    &::after {
+      display: none;
     }
   }
 }
