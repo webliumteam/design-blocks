@@ -24,19 +24,18 @@
 .link,
 .button {
   font-weight: 600;
+
+  @media (min-width: 768px) {
+    margin-right: 60px;
+  }
 }
 
 .link {
   position: relative;
   margin-top: 40px;
 
-  &:first-child {
-    margin-left: 0;
-  }
-
   @media (min-width: 768px) {
     margin-top: 10px;
-    margin-left: 60px;
   }
 
   &::after {
