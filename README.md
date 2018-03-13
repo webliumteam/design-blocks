@@ -1,6 +1,8 @@
-# Mods
+# modifierScheme enhancements
 
 **caption-decorator**
+
+Adds text decorator in `.article` with `bind="top-caption"`
 
 Modifier name: `top-caption`
 
