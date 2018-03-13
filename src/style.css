@@ -1,3 +1,87 @@
 @import "wireframe-series-2-testimonials/src/style.css";
 
 /* start here */
+
+.caption-decorator {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--ui-quote-font-family);
+  font-size: calc(var(--ui-text-size)*0.866665);
+  font-weight: calc(var(--ui-text-font-weight)*1.5);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: var(--ui-quote-font-family);
+  font-weight: calc(var(--ui-block-title-font-weight)*2);
+  position: relative;
+  margin-bottom: 60px;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 70px;
+    background-color: var(--ui-brand-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -25px;
+  }
+}
+
+.item {
+  &__inner {
+    border: 2px solid #dde5ed;
+    border-radius: 6px;
+    background-color: var(--ui-light-shade-color);
+    display: flex;
+
+    &:hover {
+      border-color: var(--ui-brand-color);
+
+      .item__title {
+        color: var(--ui-brand-color);
+      }
+    }
+  }
+
+  &__title {
+    order: 1;
+    font-family: var(--ui-quote-font-family);
+    font-size: var(--ui-heading-size);
+    font-weight: calc(var(--ui-heading-font-weight)*1.5);
+  }
+
+  &__position {
+    order: 2;
+    font-size: var(--ui-caption-size);
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 35px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 30px;
+      background-color: #dde5ed;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -20px;
+    }
+  }
+
+  &__desc {
+    order: 3;
+  }
+
+  &__time {
+    order: 4;
+    font-style: italic;
+    font-size: var(--ui-caption-size);
+  }
+}
