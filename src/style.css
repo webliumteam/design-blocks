@@ -211,7 +211,7 @@
       margin-left: var(--itemSideOffsets);
       margin-right: var(--itemSideOffsets);
     }
-    
+
     &:nth-last-of-type(2):nth-child(odd) {
 
       @media (min-width: 992px) {
@@ -262,7 +262,6 @@
         width: calc(var(--titleSize) + 30px);
         margin-right: 0;
       }
-      
     }
   }
 
@@ -280,7 +279,7 @@
     @media (min-width: 768px) {
       padding: 0;
       border-bottom: 0;
-      margin-bottom: 30px; 
+      margin-bottom: 30px;
     }
 
     @media (min-width: 992px) {
@@ -301,7 +300,7 @@
 .btns-group {
   padding-top: 60px;
   text-align: center;
-  
+
   &--offset-sm {
 
     @media (min-width: 768px) {
@@ -316,7 +315,7 @@
 
 .button {
   width: 100%;
-  
+
   @media (min-width: 480px) {
     width: auto;
   }
@@ -338,4 +337,9 @@
 
 .logo__image {
   max-width: 100%;
+}
+
+.top-icon {
+  width: 20px;
+  height: 20px;
 }
