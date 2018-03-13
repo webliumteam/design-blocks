@@ -1,5 +1,6 @@
 {
-  "showSubtitle": true,
   "title-in-top": true,
-  "subtitle": true
+  "subtitle": true,
+  "min-resize": 77,
+  "max-resize": 200
 }
