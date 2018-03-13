@@ -47,7 +47,7 @@
   margin: 0 15px 30px;
 
   @media (min-width: 768px) {
-    margin: 0 1%;
+    margin: 1%;
     flex-basis: 31.3333%;
     max-width: 31.3333%;
   }
@@ -76,4 +76,12 @@
 
 .items-wrapper {
   justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .item:nth-last-of-type(4):first-child,
+  .item:nth-last-of-type(4):first-child ~ .item {
+    flex-basis: 48%;
+    max-width: 50%;
+  }
 }
