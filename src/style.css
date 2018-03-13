@@ -72,10 +72,11 @@
 
   &__inner {
     position: relative;
-    width: 100%;
+    width: calc(100% - 16px);
     margin: 0 8px;
 
     @media(min-width: 992px) {
+      max-width: calc(100% - 30px);
       margin: 0 15px;
     }
   }
@@ -109,6 +110,7 @@
 
   &__heading {
     margin-bottom: 15px;
+    text-align: center;
   }
 
   &__description {
