@@ -31,7 +31,7 @@ ExtendedWireframe.defaultContent = {
           type: 'color',
         }],
         ['5n+5', {
-          color: 'brand-color?darken=8',
+          color: 'brand-color',
           type: 'color',
         }],
       ],
