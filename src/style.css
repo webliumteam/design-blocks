@@ -303,10 +303,14 @@
 
   &-wrapper {
     min-width: 200px;
-    max-width: 325px;
+    max-width: 100%;
     margin: 0 auto;
     flex: 1;
     text-align: center;
+
+    @media (min-width: 480px) {
+      max-width: 325px;
+    }
 
     @media (min-width: 992px) {
       margin: 0;

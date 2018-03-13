@@ -40,7 +40,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Logo, Text, SocialIcons, Menu, Background}, style: css} = this.props
+    const {components: {Logo, Text, SocialIcons, Menu}, style: css} = this.props
     const {opened} = this.state
     const menuAlignment = this.getModifierValue('menu-alignment')
     const menuModifierClass = css[`nav--${menuAlignment}`]
@@ -49,63 +49,61 @@ class Block extends React.Component {
 
     return (
       <header className={classNames(css.header, opened && css['header--nav-open'])} data-header="target">
-        <Background tagName="div" bind="mainBackground">
-          {topLineStatus && (
-            <div className={css['header__top-line']}>
-              <div className={css['header__top-line-inner']}>
-                {this.getModifierValue('text') && <Text tagName="p" className={css.header__text} bind="topLineText" />}
-                {this.getModifierValue('social-icons') && (
-                  <div className={css.header__socials}>
-                    <SocialIcons bind="socialIcons" className={css.socials} />
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
-          <div className={css.header__main}>
-            <div className={classNames(css['header__main-inner'], logoStatus && css['header__main-inner--logo-hidden'])}>
-              {this.getModifierValue('logo') && (
-                <div className={css['logo-wrapper']}>
-                  <Logo
-                    bind="logo"
-                    className={css.logo}
-                    textClassName={css.logo__title}
-                    maxWidth={this.getOptionValue('logo-max-width')}
-                    maxHeight={this.getOptionValue('logo-max-height')}
-                  />
+        {topLineStatus && (
+          <div className={css['header__top-line']}>
+            <div className={css['header__top-line-inner']}>
+              {this.getModifierValue('text') && <Text tagName="p" className={css.header__text} bind="topLineText" />}
+              {this.getModifierValue('social-icons') && (
+                <div className={css.header__socials}>
+                  <SocialIcons bind="socialIcons" className={css.socials} />
                 </div>
               )}
-              <button
-                type="button"
-                className={css['nav-button']}
-                data-header="trigger"
-                onClick={this.toggleOpened}
-              >
-                <span className={css['nav-button__line']} />
-                <span className={css['nav-button__line']} />
-                <span className={css['nav-button__line']} />
-              </button>
-              <nav className={classNames(css.nav, menuModifierClass)}>
-                <Menu
-                  className={css.nav__list}
-                  itemClassName={css.nav__item}
-                  linkClassName={css.nav__link}
-                  onClickItem={this.closeMenu}
-                  bind="menu"
-                />
-              </nav>
             </div>
           </div>
-        </Background>
+        )}
+        <div className={css.header__main}>
+          <div className={classNames(css['header__main-inner'], logoStatus && css['header__main-inner--logo-hidden'])}>
+            {this.getModifierValue('logo') && (
+              <div className={css['logo-wrapper']}>
+                <Logo
+                  bind="logo"
+                  className={css.logo}
+                  textClassName={css.logo__title}
+                  maxWidth={this.getOptionValue('logo-max-width')}
+                  maxHeight={this.getOptionValue('logo-max-height')}
+                />
+              </div>
+            )}
+            <button
+              type="button"
+              className={css['nav-button']}
+              data-header="trigger"
+              onClick={this.toggleOpened}
+            >
+              <span className={css['nav-button__line']} />
+              <span className={css['nav-button__line']} />
+              <span className={css['nav-button__line']} />
+            </button>
+            <nav className={classNames(css.nav, menuModifierClass)}>
+              <Menu
+                className={css.nav__list}
+                itemClassName={css.nav__item}
+                linkClassName={css.nav__link}
+                onClickItem={this.closeMenu}
+                bind="menu"
+              />
+            </nav>
+          </div>
+        </div>
       </header>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Logo', 'SocialIcons', 'Menu', 'Background'])($editor.components)
+Block.components = _.pick(['Text', 'Logo', 'SocialIcons', 'Menu'])($editor.components)
 
 Block.defaultContent = {
-  mainBackground: {
+  background: {
     type: 'color',
     color: '#f2f2f2',
   },
