@@ -1,3 +1,154 @@
 @import "wireframe-zapdos-events/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 7.29%;
+    padding-bottom: 6.25%;
+  }
+}
+
+.top-icon {
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 53px;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: var(--ui-light-shade-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  svg {
+    z-index: 10;
+    position: relative;
+  }
+
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 1.8px;
+  margin-bottom: 28px;
+
+  &::after {
+    content: ".";
+    color: var(--ui-brand-color);
+  }
+}
+
+.subtitle {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 770px;
+  letter-spacing: 1.8px;
+}
+
+.articles-wrapper {
+
+  @media (min-width: 992px) {
+    margin-top: 62px;
+  }
+}
+
+.article {
+  box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
+
+  @media (min-width: 992px) {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    overflow: hidden;
+    background-color: transparent;
+  }
+
+  &__badge {
+    background-color: var(--ui-brand-color);
+    text-transform: uppercase;
+    color: var(--ui-shade-color);
+    letter-spacing: 0.5px;
+
+    &::after {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      max-width: 125px;
+      height: 32px;
+      left: 30px;
+      top: 30px;
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 32px;
+      border-radius: 3px;
+    }
+  }
+
+  &__info {
+    background-color: var(--ui-light-shade-color);
+    border: 0;
+
+    @media (min-width: 992px) {
+      padding-top: 24px;
+      padding-bottom: 27px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  &__top {
+    margin-bottom: 0;
+  }
+
+  &__date {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    @media (min-width: 992px) {
+      font-size: calc(var(--ui-text-size) * 0.75);
+      margin-bottom: 0;
+    }
+  }
+
+  &__time {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    @media (min-width: 992px) {
+      font-size: calc(var(--ui-text-size) * 0.75);
+      margin-top: -7px;
+    }
+  }
+
+  &__title {
+    letter-spacing: 1px;
+    text-transform: capitalize;
+
+    @media (min-width: 992px) {
+      margin-top: 16px;
+      margin-bottom: 77px;
+    }
+  }
+
+  &__bottom {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.btns-group {
+
+  @media (min-width: 992px) {
+    margin-top: 37px;
+  }
+}
