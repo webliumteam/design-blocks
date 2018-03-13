@@ -1,8 +1,10 @@
-# Mods
+# modifierScheme enhancements
 
 **caption-decorator**
 
 Modifier name: `top-caption`
+
+Adds text decorator in `.section__inner` with `bind="top-caption"`
 
 Possible defaultValues: `true`, `false`
 
