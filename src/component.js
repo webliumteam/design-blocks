@@ -9,10 +9,19 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Button, Image, Resizer}, style} = this.props
     return (
-      <Resizer styleProp="minHeight" bindToModifier={`resizer.projects${index}`} min={180} max={510}>
+      <Resizer
+        styleProp="minHeight"
+        bindToModifier={`resizer.projects${index}`}
+        min={180}
+        max={510}
+        disable={this.getOptionValue('disable-resizer')}
+      >
         <article className={classNames(style.article, className)}>
           {children}
           <Image
