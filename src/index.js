@@ -19,12 +19,8 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'cover-bg.jpg',
     overlay: {
-      type: 'gradient',
-      gradient: {
-        angle: 90,
-        firstColor: 'var(--ui-dark-accent-color)',
-        secondColor: 'var(--ui-light-accent-color)',
-      },
+      type: 'color',
+      color: 'dark-accent-color',
       opacity: 0.76,
     },
   },
