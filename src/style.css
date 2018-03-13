@@ -30,6 +30,7 @@
 
 .footer__main {
   justify-content: space-between;
+  align-items: center;
 
   @media (min-width: 992px) {
     display: flex;
@@ -122,9 +123,15 @@
 
 .nav {
   display: flex;
+  min-height: 54px;
   flex-direction: column;
   align-items: center;
   font-family: var(--ui-text-font-family);
+  
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 992px) {
@@ -133,7 +140,7 @@
     max-width: 100%;
   }
 
-  .logo + .nav {
+  .logo + .nav-wrapper {
     justify-content: flex-end;
   }
 }
@@ -170,7 +177,7 @@
     margin-right: -17px;
   }
 
-  .logo + .nav .nav-list {
+  .logo + .nav-wrapper .nav-list {
     justify-content: flex-end;
   }
 }

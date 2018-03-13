@@ -20,24 +20,24 @@ class Block extends React.Component {
           <div className={css.footer__main}>
             {this.getModifierValue('title') && (
               <div className={css.logo}>
-                <div className={css.logo__inner}>
-                  <Logo
-                    bind="logo"
-                    textClassName={css.logo__title}
-                    maxWidth={this.getOptionValue('logo-max-width')}
-                    maxHeight={this.getOptionValue('logo-max-height')}
-                  />
-                </div>
+                <Logo
+                  bind="logo"
+                  textClassName={css.logo__title}
+                  maxWidth={this.getOptionValue('logo-max-width')}
+                  maxHeight={this.getOptionValue('logo-max-height')}
+                />
               </div>
             )}
-            <nav className={css.nav}>
-              <Menu
-                className={css['nav-list']}
-                itemClassName={css['nav-list__item']}
-                linkClassName={css['nav-list__link']}
-                bind="menu"
-              />
-            </nav>
+            <div className={css['nav-wrapper']}>
+              <nav className={css.nav}>
+                <Menu
+                  className={css['nav-list']}
+                  itemClassName={css['nav-list__item']}
+                  linkClassName={css['nav-list__link']}
+                  bind="menu"
+                />
+              </nav>
+            </div>
           </div>
           {(this.getModifierValue('text-left') || this.getModifierValue('text-right')) && (
             <section className={css.footer__bottom}>
