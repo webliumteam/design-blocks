@@ -2,6 +2,28 @@
 
 /* start here */
 
+.section {
+  &--center {
+    .subtitle {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  &--right {
+    .subtitle {
+      margin-left: auto;
+    }
+  }
+}
+
+.title,
+.subtitle,
+.btns-group {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .title {
   margin-bottom: 19px;
 }
@@ -11,4 +33,14 @@
   font-size: var(--ui-subtitle-font-size);
   max-width: 773px;
   opacity: .8;
+}
+
+.button {
+  margin-left: 0;
+  margin-right: 40px;
+
+  &:only-child,
+  &:last-of-type {
+    margin-right: 0;
+  }
 }

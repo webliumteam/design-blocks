@@ -38,4 +38,8 @@ ExtendedWireframe.defaultContent = {
   },
 }
 
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+}
+
 export default ExtendedWireframe
