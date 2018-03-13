@@ -53,6 +53,9 @@ class Block extends React.Component {
       <section className={classNames(css.section)}>
         <div className={css.section__inner}>
           <div className={css.section__header}>
+            {this.getModifierValue('top-caption') && (
+              <Text bind="top-caption" className={css['caption-decorator']} tagName="div" />
+            )}
             <Text tagName="h1" className={css.title} bind="title" />
             {this.getModifierValue('subtitle') && <Text tagName="p" className={css.subtitle} bind="subtitle" />}
           </div>
@@ -204,6 +207,10 @@ Block.defaultContent = {
     size: 'md',
     textValue: 'Learn more',
   },
+  'top-caption': {
+    content: 'sapien ut libero',
+    type: 'text',
+  },
 }
 
 Block.modifierScheme = {
@@ -212,6 +219,7 @@ Block.modifierScheme = {
   employment: {defaultValue: true, label: 'Type of employment (full-time/part-time)', type: 'checkbox'},
   position: {defaultValue: true, label: 'Vacancy location', type: 'checkbox'},
   'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
 export default Block
