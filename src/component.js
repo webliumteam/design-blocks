@@ -22,6 +22,9 @@ class Block extends React.Component {
       <section className={classNames(style.section, alignClass)}>
         <div className={style.section__inner}>
           <article className={style.article}>
+            {this.getModifierValue('top-caption') && (
+              <Text bind="top-caption" className={style['caption-decorator']} tagName="div" />
+            )}
             <Text bind="title" className={style.article__title} tagName="h1" />
             {this.getModifierValue('heading') && (
               <Text bind="heading" className={style.article__heading} tagName="h2" />
@@ -142,6 +145,10 @@ Block.defaultContent = {
       size: 30,
     },
   },
+  'top-caption': {
+    content: 'sed cursus feugiat',
+    type: 'text',
+  },
 }
 
 Block.modifierScheme = {
@@ -161,6 +168,7 @@ Block.modifierScheme = {
   'social-icons': {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
   button: {defaultValue: false, label: 'Button', type: 'checkbox'},
   'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
+  'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
 export default Block
