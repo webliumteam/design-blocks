@@ -13,47 +13,56 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Image}, style: css} = this.props
-    const hiddenBodyClass = !this.getModifierValue('item-body') && css['item--hidden-body']
+    const {components: {Text, Image, Resizer}, style} = this.props
+    const hiddenBodyClass = !this.getModifierValue('item-body') && style['item--hidden-body']
     const hiddenItemText = !this.getModifierValue('item-heading') && !this.getModifierValue('item-body')
 
     return (
-      <article className={classNames(css.item, hiddenBodyClass, className)}>
-        {children}
-        <div className={css.item__inner}>
-          <Image
-            pictureClassName={css.item__picture}
-            imgClassName={css.item__image}
-            bind={`items[${index}].image`}
-          />
-          {!hiddenItemText && (
-            <div className={css.item__text}>
-              {this.getModifierValue('item-heading') && (
-                <Text tagName="h2" className={css.item__heading} bind={`items[${index}].heading`} />
-              )}
-              {this.getModifierValue('item-body') && (
-                <Text tagName="p" className={css.item__description} bind={`items[${index}].text`} />
-              )}
-            </div>
-          )}
-        </div>
-      </article>
+      <Resizer
+        styleProp="minHeight"
+        bindToModifier={`resizer.items${index}`}
+        min={this.getOptionValue('min-resize')}
+        max={this.getOptionValue('max-resize')}
+        disable={this.getOptionValue('disable-resizer')}
+      >
+        <article className={classNames(style.item, hiddenBodyClass, className)}>
+          {children}
+          <div className={style.item__inner}>
+            <Image
+              pictureClassName={style.item__picture}
+              imgClassName={style.item__image}
+              bind={`items[${index}].image`}
+              resize={{disable: true}}
+            />
+            {!hiddenItemText && (
+              <div className={style.item__text}>
+                {this.getModifierValue('item-heading') && (
+                  <Text tagName="h2" className={style.item__heading} bind={`items[${index}].heading`} />
+                )}
+                {this.getModifierValue('item-body') && (
+                  <Text tagName="p" className={style.item__description} bind={`items[${index}].text`} />
+                )}
+              </div>
+            )}
+          </div>
+        </article>
+      </Resizer>
     )
   }
 
   render() {
-    const {components: {Text, Collection, Button}, style: css, $block} = this.props
+    const {components: {Text, Collection, Button}, style, $block} = this.props
     const showButtonGroups = this.getModifierValue('main-button') || this.getModifierValue('additional-button')
 
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
-          <Text tagName="h1" className={css.title} bind="title" />
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <Text tagName="h1" className={style.title} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="p" className={css.subtitle} bind="subtitle" />
+            <Text tagName="p" className={style.subtitle} bind="subtitle" />
           )}
           <Collection
-            className={css['items-wrapper']}
+            className={style['items-wrapper']}
             bind="items"
             Item={this.collectionItem}
             itemProps={{
@@ -61,18 +70,18 @@ class Block extends React.Component {
             }}
           />
           {showButtonGroups &&
-            <div className={css['btns-group']}>
+            <div className={style['btns-group']}>
               {this.getModifierValue('main-button') && (
                 <Button
-                  buttonClassName={css['btns-group__button']}
-                  linkClassName={css['btns-group__link']}
+                  buttonClassName={style['btns-group__button']}
+                  linkClassName={style['btns-group__link']}
                   bind="mainButton"
                 />
               )}
               {this.getModifierValue('additional-button') && (
                 <Button
-                  buttonClassName={css['btns-group__button']}
-                  linkClassName={css['btns-group__link']}
+                  buttonClassName={style['btns-group__button']}
+                  linkClassName={style['btns-group__link']}
                   bind="additionalButton"
                 />
               )}
@@ -84,7 +93,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'Collection'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Button', 'Collection', 'Resizer'])($editor.components)
 
 Block.defaultContent = {
   title: {
