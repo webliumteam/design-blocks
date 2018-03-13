@@ -11,13 +11,15 @@
   color: var(--ui-text-color);
 }
 
+.media {
+  &__picture {
+    padding-top: 97%;
+  }
+}
+
 @media (min-width: 992px) {
   .subtitle {
     max-width: 886px;
-  }
-
-  .media {
-    min-height: 500px;
   }
 
   &__text {
