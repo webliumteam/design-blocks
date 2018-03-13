@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-gallery": "https://github.com/webliumteam/blocks#w/zapdos/gallery/prod"
-  },
-  "category": "gallery"
+  }
 }
