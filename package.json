@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-about": "https://github.com/webliumteam/blocks#w/zapdos/about/prod"
-  },
-  "category": "about"
+  }
 }
