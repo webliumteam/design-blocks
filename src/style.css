@@ -1,3 +1,104 @@
 @import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 122px;
+    padding-bottom: 118px;
+  }
+}
+
+.top-icon {
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 34px;
+  border-radius: 50%;
+  background-color: var(--ui-light-shade-color);
+  box-shadow: 0 2px 20px -6px var(--ui-link-color);
+}
+
+.title {
+  letter-spacing: 1.8px;
+  position: relative;
+
+  &::after {
+    content: ".";
+    display: inline-block;
+    color: var(--ui-brand-color);
+  }
+}
+
+.subtitle {
+  margin-top: 28px;
+  letter-spacing: 1.8px;
+}
+
+.slider {
+  padding-top: 42px;
+}
+
+.items-wrapper {
+
+  @media (min-width: 768px) {
+    margin-top: 42px;
+  }
+
+  :global {
+    .slick-arrow-default {
+      width: 11px;
+      height: 20px;
+      color: var(--ui-quote-color);
+
+      @media (min-width: 992px) {
+        top: 76%;
+      }
+    }
+
+    .slick-prev-default {
+
+      @media (min-width: 992px) {
+        left: 100px;
+      }
+    }
+
+    .slick-next-default {
+
+      @media (min-width: 992px) {
+        right: 100px;
+      }
+    }
+  }
+}
+
+.item {
+  &__inner {
+
+    @media (min-width: 992px) {
+      max-width: 770px;
+    }
+  }
+
+  &__pic-wrapper {
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    letter-spacing: 1px;
+  }
+
+  &__position {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 11px;
+  }
+
+  &__desc {
+    font-size: calc(var(--ui-text-size) * 0.875);
+    letter-spacing: 1.5px;
+    margin-top: 64px;
+  }
+}
+
