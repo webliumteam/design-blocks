@@ -4,46 +4,39 @@
 
 .section {
   &__header {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 }
 
 .top-icon {
-  margin: 0 auto;
-  width: 8px;
-  height: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
   position: relative;
+  margin: 0 auto 30px;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  color: var(--ui-brand-color);
+
+  > svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
 
   &::before {
     content: "";
-    display: block;
-    background-color: #d9e8ff;
-    opacity: .4;
     position: absolute;
-    width: 60px;
-    height: 60px;
-    left: 50%;
-    top: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  svg {
-    z-index: 1;
+    background-color: var(--ui-dark-accent-color);
+    opacity: 0.05;
   }
 }
 
 .title {
   letter-spacing: 1.8px;
-
-  &::after {
-    content: ".";
-    color: var(--ui-brand-color);
-  }
 }
 
 .text {
@@ -51,6 +44,7 @@
   max-width: 770px;
   position: relative;
   letter-spacing: 1.5px;
+  margin-bottom: 31px;
   font-size: calc(var(--ui-text-size) * 0.875);
 
   &::after {
