@@ -16,7 +16,7 @@ class Block extends React.Component {
     const {components: {Text, Icon, Image}, style} = this.props
     const topElement = this.getOptionValue('icon-replacer') || 'icon'
     const cases = {
-      image: () => <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} />,
+      image: () => <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} resize={{disable: this.getOptionValue('disable-resizer')}} />,
       text: () => <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} tagName="span" />,
       icon: () => <Icon bind={`articles[${index}].icon`} />,
     }
