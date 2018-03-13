@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-numbers": "https://github.com/webliumteam/blocks#w/zapdos/numbers/prod"
-  },
-  "category": "numbers"
+  }
 }
