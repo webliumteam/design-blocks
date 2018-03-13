@@ -14,23 +14,35 @@ ExtendedWireframe.defaultContent = {
   blog: [
     {
       ...Component.defaultContent.blog[0],
-      picture: {
-        ...Component.defaultContent.blog[0].picture,
-        resourceRef: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+      category: {
+        ...Component.defaultContent.blog[0].category,
+        content: 'CREATIVE PROCESS',
+      },
+      date: {
+        ...Component.defaultContent.blog[0].date,
+        content: 'SEPTEMBER 22, 2017',
       },
     },
     {
       ...Component.defaultContent.blog[1],
-      picture: {
-        ...Component.defaultContent.blog[1].picture,
-        resourceRef: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+      category: {
+        ...Component.defaultContent.blog[1].category,
+        content: 'CREATIVE PROCESS',
+      },
+      date: {
+        ...Component.defaultContent.blog[1].date,
+        content: 'SEPTEMBER 22, 2017',
       },
     },
     {
       ...Component.defaultContent.blog[2],
-      picture: {
-        ...Component.defaultContent.blog[2].picture,
-        resourceRef: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+      category: {
+        ...Component.defaultContent.blog[2].category,
+        content: 'CREATIVE PROCESS',
+      },
+      date: {
+        ...Component.defaultContent.blog[2].date,
+        content: 'SEPTEMBER 22, 2017',
       },
     },
   ],
