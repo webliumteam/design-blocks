@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-events": "https://github.com/webliumteam/blocks#w/zapdos/events/prod"
-  },
-  "category": "events"
+  }
 }
