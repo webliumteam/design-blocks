@@ -43,6 +43,7 @@
         display: block;
 
         &-wrapper {
+          display: block;
           flex: 0;
         }
       }
@@ -171,7 +172,7 @@
   @media (min-width: 992px) {
     display: flex;
     position: relative;
-    max-width: calc(100% - 200px);
+    max-width: calc(100% - 325px);
     padding: 0;
     align-items: center;
 
@@ -303,13 +304,15 @@
   text-decoration: none;
 
   &-wrapper {
-    min-width: 200px;
+    display: flex;
     max-width: 100%;
     margin: 0 auto;
     flex: 1;
+    align-items: center;
     text-align: center;
 
     @media (min-width: 480px) {
+      min-width: 200px;
       max-width: 325px;
     }
 
@@ -326,6 +329,10 @@
     @media (min-width: 992px) {
       text-align: left;
     }
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
