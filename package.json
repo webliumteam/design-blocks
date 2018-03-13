@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-why": "https://github.com/webliumteam/blocks#w/zapdos/why/prod"
-  },
-  "category": "why-us"
+  }
 }
