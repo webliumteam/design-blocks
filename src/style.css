@@ -262,3 +262,8 @@
   flex-direction: column;
   width: 70%;
 }
+
+.top-icon {
+  width: 20px;
+  height: 20px;
+}
