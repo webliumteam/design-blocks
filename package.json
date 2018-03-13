@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-testimonials": "https://github.com/webliumteam/blocks#w/zapdos/testimonials/prod"
-  },
-  "category": "testimonials_2"
+  }
 }
