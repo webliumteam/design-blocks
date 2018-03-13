@@ -72,10 +72,6 @@
 .media {
   padding-top: 0;
 
-  @__picture {
-    width: 100%;
-  }
-
   @media (min-width: 992px) {
     min-height: 0;
   }
@@ -117,5 +113,6 @@
 
   &__item-text {
     font-size: calc(var(--ui-text-size) * 0.875);
+    word-break: break-word;
   }
 }
