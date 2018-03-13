@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-services": "https://github.com/webliumteam/blocks#w/zapdos/services/prod"
-  },
-  "category": "services"
+  }
 }
