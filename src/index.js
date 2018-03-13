@@ -9,7 +9,6 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
-
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   articles: [
@@ -78,6 +77,5 @@ ExtendedWireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default ExtendedWireframe
