@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-cta": "https://github.com/webliumteam/blocks#w/zapdos/cta/prod"
-  },
-  "category": "cta"
+  }
 }
