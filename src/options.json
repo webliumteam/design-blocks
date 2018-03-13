@@ -1,1 +1,4 @@
-{}
+{
+  "min-resize": 180,
+  "max-resize": 800
+}
