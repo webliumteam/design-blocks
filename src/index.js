@@ -42,7 +42,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   body: {defaultValue: true, label: 'Numbers description', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'hidden'},
   'number-title': {
     defaultValue: true,
     label: 'Additional information on numbers',
