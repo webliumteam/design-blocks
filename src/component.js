@@ -40,35 +40,35 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Logo, Text, SocialIcons, Menu}, style: css} = this.props
+    const {components: {Logo, Text, SocialIcons, Menu}, style} = this.props
     const {opened} = this.state
     const menuAlignment = this.getModifierValue('menu-alignment')
-    const menuModifierClass = css[`nav--${menuAlignment}`]
+    const menuModifierClass = style[`nav--${menuAlignment}`]
     const logoStatus = !this.getModifierValue('logo')
     const topLineStatus = this.getModifierValue('text') || this.getModifierValue('social-icons')
 
     return (
-      <header className={classNames(css.header, opened && css['header--nav-open'])} data-header="target">
+      <header className={classNames(style.header, opened && style['header--nav-open'])} data-header="target">
         {topLineStatus && (
-          <div className={css['header__top-line']}>
-            <div className={css['header__top-line-inner']}>
-              {this.getModifierValue('text') && <Text tagName="p" className={css.header__text} bind="topLineText" />}
+          <div className={style['header__top-line']}>
+            <div className={style['header__top-line-inner']}>
+              {this.getModifierValue('text') && <Text tagName="p" className={style.header__text} bind="topLineText" />}
               {this.getModifierValue('social-icons') && (
-                <div className={css.header__socials}>
-                  <SocialIcons bind="socialIcons" className={css.socials} />
+                <div className={style.header__socials}>
+                  <SocialIcons bind="socialIcons" className={style.socials} />
                 </div>
               )}
             </div>
           </div>
         )}
-        <div className={css.header__main}>
-          <div className={classNames(css['header__main-inner'], logoStatus && css['header__main-inner--logo-hidden'])}>
+        <div className={style.header__main}>
+          <div className={classNames(style['header__main-inner'], logoStatus && style['header__main-inner--logo-hidden'])}>
             {this.getModifierValue('logo') && (
-              <div className={css['logo-wrapper']}>
+              <div className={style['logo-wrapper']}>
                 <Logo
                   bind="logo"
-                  className={css.logo}
-                  textClassName={css.logo__title}
+                  className={style.logo}
+                  textClassName={style.logo__title}
                   maxWidth={this.getOptionValue('logo-max-width')}
                   maxHeight={this.getOptionValue('logo-max-height')}
                 />
@@ -76,19 +76,19 @@ class Block extends React.Component {
             )}
             <button
               type="button"
-              className={css['nav-button']}
+              className={style['nav-button']}
               data-header="trigger"
               onClick={this.toggleOpened}
             >
-              <span className={css['nav-button__line']} />
-              <span className={css['nav-button__line']} />
-              <span className={css['nav-button__line']} />
+              <span className={style['nav-button__line']} />
+              <span className={style['nav-button__line']} />
+              <span className={style['nav-button__line']} />
             </button>
-            <nav className={classNames(css.nav, menuModifierClass)}>
+            <nav className={classNames(style.nav, menuModifierClass)}>
               <Menu
-                className={css.nav__list}
-                itemClassName={css.nav__item}
-                linkClassName={css.nav__link}
+                className={style.nav__list}
+                itemClassName={style.nav__item}
+                linkClassName={style.nav__link}
                 onClickItem={this.closeMenu}
                 bind="menu"
               />
