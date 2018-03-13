@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-series-1-quote": "https://github.com/webliumteam/blocks#w/series-1/quote/prod"
-  },
-  "category": "quote"
+  }
 }
