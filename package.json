@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-zapdos-awards": "https://github.com/webliumteam/blocks#w/zapdos/awards/prod"
-  },
-  "category": "awards"
+  }
 }
