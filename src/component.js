@@ -18,8 +18,8 @@ class Block extends React.Component {
       <Resizer
         styleProp="minHeight"
         bindToModifier={`resizer.projects${index}`}
-        min={180}
-        max={510}
+        min={this.getOptionValue('min-resize')}
+        max={this.getOptionValue('max-resize')}
         disable={this.getOptionValue('disable-resizer')}
       >
         <article className={classNames(style.article, className)}>
