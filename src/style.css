@@ -57,6 +57,8 @@
 @media (min-width: 992px) {
   .article {
     &__content {
+      flex-basis: 770px;
+      max-width: 770px;
       padding-left: 10px;
     }
 
@@ -65,7 +67,7 @@
     }
 
     &__text {
-      width: 770px;
+      width: 100%;
       margin-bottom: 27px;
     }
 
