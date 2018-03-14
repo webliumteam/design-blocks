@@ -10,7 +10,7 @@
   }
 }
 
-.top-icon1 {
+.top-icon {
   width: 60px;
   height: 60px;
   margin: 0 auto;
@@ -19,11 +19,6 @@
   margin-bottom: 30px;
   color: var(--ui-brand-color);
   background-color: rgba(217, 232, 255, 0.4);
-
-  svg {
-    max-width: 100%;
-    max-height: 100%;
-  }
 }
 
 .title {

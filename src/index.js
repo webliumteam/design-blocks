@@ -11,152 +11,58 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  title: {
-    content: 'Partners.',
-    type: 'blockTitle',
-  },
-  subtitle: {
-    content: 'Case nulla deserunt ut eos. Magna persecuti ut vis, ex legimus civibus complectitur mea. Sumo vitae definitionem in nam.',
-    type: 'subtitle',
-  },
   partners: [
     {
+      ...Component.defaultContent.partners[0],
       logo: {
+        ...Component.defaultContent.partners[0].logo,
         image: {
+          ...Component.defaultContent.partners[0].logo.image,
           resourceRef: 'img1.png',
           width: 170,
           height: 80,
         },
       },
-      title: {
-        content: 'Samsung',
-        type: 'heading',
-      },
-      desc: {
-        content: 'Back in 1995, we started cooperation with this brand. Samsung became our main supplier of high-quality tech products. Today, Samsung is our main partner who supports each initiative and actively participates in company development.',
-        type: 'text',
-      },
-      button: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Partner’s website',
-        type: 'link',
-      },
     },
     {
+      ...Component.defaultContent.partners[1],
       logo: {
+        ...Component.defaultContent.partners[1].logo,
         image: {
+          ...Component.defaultContent.partners[1].logo.image,
           resourceRef: 'img2.png',
           width: 170,
           height: 80,
         },
       },
-      title: {
-        content: 'Ford ',
-        type: 'heading',
-      },
-      desc: {
-        content: 'The company that has always put reliability first. We started to work with Ford in 2002, and now this is one of the partners who’ve been with us for more than 15 years! We believe that this partnership is one of the achievements we can be proud of.',
-        type: 'text',
-      },
-      button: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Partner’s website',
-        type: 'link',
-      },
     },
     {
+      ...Component.defaultContent.partners[2],
       logo: {
+        ...Component.defaultContent.partners[2].logo,
         image: {
+          ...Component.defaultContent.partners[2].logo.image,
           resourceRef: 'img3.png',
           width: 170,
           height: 80,
         },
       },
-      title: {
-        content: 'Medical Family',
-        type: 'heading',
-      },
-      desc: {
-        content: 'Health of our team members is a top priority for us. Therefore, we work with the best clinics only, like Medical Family. We entrust our health to them and we entrust our business as well.',
-        type: 'text',
-      },
-      button: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Partner’s website',
-        type: 'link',
-      },
     },
     {
+      ...Component.defaultContent.partners[3],
       logo: {
+        ...Component.defaultContent.partners[3].logo,
         image: {
+          ...Component.defaultContent.partners[3].logo.image,
           resourceRef: 'img4.png',
           width: 170,
           height: 80,
         },
       },
-      title: {
-        content: 'Coffee Break Now',
-        type: 'heading',
-      },
-      desc: {
-        content: 'Coffee and cakes won’t sell themselves. Whenever we are hungry or just need to restore energy, Coffee Break Now saves us. Also, they cater all our events, starting workshops and seminars, and up to everyday meal for our team members.',
-        type: 'text',
-      },
-      button: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Partner’s website',
-        type: 'link',
-      },
     },
   ],
   button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'All partners',
+    ...Component.defaultContent.button,
     type: 'secondary',
     size: 'lg',
   },
@@ -169,9 +75,9 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   subtitle: {defaultValue: true, label: 'Partner description', type: 'checkbox'},
-  heading: {defaultValue: false, label: 'Partner title', type: 'checkbox'},
-  body: {defaultValue: false, label: 'About partner', type: 'checkbox'},
-  link: {defaultValue: false, label: 'Partner link', type: 'checkbox'},
+  heading: {defaultValue: false, label: 'Partner title', type: 'hidden'},
+  body: {defaultValue: false, label: 'About partner', type: 'hidden'},
+  link: {defaultValue: false, label: 'Partner link', type: 'hidden'},
   'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
 }
 
