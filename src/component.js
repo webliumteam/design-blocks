@@ -1,5 +1,5 @@
 import $editor from 'weblium/editor'
-import Media from 'react-media'
+// import MediaQuery from 'react-responsive'
 
 class Block extends React.Component {
   static propTypes = {
@@ -29,7 +29,7 @@ class Block extends React.Component {
           <Image
             pictureClassName={style['tabs-item__picture']}
             imgClassName={style['tabs-item__image']}
-            bind={`items[${this.state.active}].itemPicture`}
+            bind={`items[${index}].itemPicture`}
             size={
               {
               'min-width: 320px': 80,
@@ -37,8 +37,8 @@ class Block extends React.Component {
             }
           />
           <div className={style['tabs-item__content']}>
-            <Text bind={`items[${index}].itemTitle`} tagName="h2" className="tabs-item__title" />
-            <Text bind={`items[${index}].itemPosition`} tagName="small" className="tabs-item__position" />
+            <Text bind={`items[${index}].itemTitle`} tagName="h3" className={style['tabs-item__title']} />
+            <Text bind={`items[${index}].itemPosition`} tagName="small" className={style['tabs-item__position']} />
           </div>
         </button>
       </li>
@@ -46,16 +46,17 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Text, Image, Collection, Button}, style, $block} = this.props
+    const {components: {Text, Image, Collection, Button, SocialIcons}, style, $block} = this.props
 
     return (
       <section className={style.section}>
-        <Media query="(min-width: 992px)">
-          <article className={style.item} role="tabpanel">
+        <div className={style.section__inner}>
+          {/* <MediaQuery query="(min-width: 992px)"> */}
+          <section className={style.item} role="tabpanel">
             <Image
               wrapperClassName={style['item__picture-wrapper']}
               pictureClassName={style.item__picture}
-              imageClassName={style.item__image}
+              imgClassName={style.item__image}
               bind={`items[${this.state.active}].itemPicture`}
               size={
                 {
@@ -69,29 +70,38 @@ class Block extends React.Component {
             <Text bind={`items[${this.state.active}].itemPosition`} className={style.item__position} tagName="small" />
             <Text bind={`items[${this.state.active}].itemTitle`} className={style.item__title} tagName="h2" />
             <Text bind={`items[${this.state.active}].itemContent`} className={style.item__text} tagName="p" />
-            <Text bind={`items[${this.state.active}].itemEmail`} />
-            <Button
-              buttonClassName={style.button}
-              linkClassName={style.link}
-              bind={`items[${this.state.active}].itemLink`}
-            />
-          </article>
 
+            <footer className={style.item__bottom}>
+              <div className={style['item__email-wrapper']}>
+                <Text bind={`items[${this.state.active}].itemEmail`} className={style.item__email} />
+              </div>
+              <SocialIcons className={style.socials} bind={`items[${this.state.active}].itemSocialIcons`} />
+              <Button
+                buttonClassName={style.button}
+                linkClassName={style.link}
+                className={style.item__button}
+                bind={`items[${this.state.active}].itemLink`}
+              />
+            </footer>
+          </section>
           <Collection
             className={style.tabs}
+            tagName="ul"
+            role="tablist"
             bind="items"
             Item={this.collectionItem}
             itemProps={{
               modifier: $block.modifier,
             }}
           />
-        </Media>
+          {/* </MediaQuery> */}
+        </div>
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Collection', 'Button'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Collection', 'Button', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
   title: 'About The Company',
@@ -130,18 +140,47 @@ Block.defaultContent = {
         textValue: 'Learn more',
         type: 'link',
       },
+      itemSocialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'http://facebook.com/',
+          },
+          {
+            id: 'instagram',
+            name: 'Instagram',
+            url: 'http://instagram.com/',
+          },
+          {
+            id: 'youtube',
+            name: 'YouTube',
+            url: 'http://youtube.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          offset: 15,
+          color: '#9b9b9b',
+          sizes: [15, 25, 35, 45],
+          size: 25,
+        },
+      },
     },
     {
       itemTitle: {
-        content: 'Tomas Abbar',
+        content: 'Amanda Trainer',
         type: 'heading',
       },
       itemContent: {
-        content: '2Andrew Shimmer has a 15-year experience in IT and marketing. He’s been successfully running companies specializing in high technologies. He won a bunch of international awards due to the excellent leadership skills and prominent achievements in business.',
+        content: 'Andrew Shimmer has a 15-year experience in IT and marketing. He’s been successfully running companies specializing in high technologies. He won a bunch of international awards due to the excellent leadership skills and prominent achievements in business.',
         type: 'text',
       },
       itemPosition: {
-        content: 'Product Manager',
+        content: 'Office Manager',
         type: 'caption',
       },
       itemEmail: {
@@ -149,7 +188,7 @@ Block.defaultContent = {
         type: 'caption',
       },
       itemPicture: {
-        alt: 'Andrew Shimmer photo',
+        alt: 'Amanda Trainer  photo',
       },
       itemLink: {
         actionConfig: {
@@ -164,6 +203,163 @@ Block.defaultContent = {
         },
         textValue: 'Learn more',
         type: 'link',
+      },
+      itemSocialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'http://facebook.com/',
+          },
+          {
+            id: 'instagram',
+            name: 'Instagram',
+            url: 'http://instagram.com/',
+          },
+          {
+            id: 'youtube',
+            name: 'YouTube',
+            url: 'http://youtube.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          offset: 15,
+          color: '#9b9b9b',
+          sizes: [15, 25, 35, 45],
+          size: 25,
+        },
+      },
+    },
+    {
+      itemTitle: {
+        content: 'Tomas Abbar',
+        type: 'heading',
+      },
+      itemContent: {
+        content: 'Andrew Shimmer has a 15-year experience in IT and marketing. He’s been successfully running companies specializing in high technologies. He won a bunch of international awards due to the excellent leadership skills and prominent achievements in business.',
+        type: 'text',
+      },
+      itemPosition: {
+        content: 'Product Manager',
+        type: 'caption',
+      },
+      itemEmail: {
+        content: '<a href="mailto:mysite@weblium.com">mysite@weblium.com</a>',
+        type: 'caption',
+      },
+      itemPicture: {
+        alt: 'Tomas Abbar photo',
+      },
+      itemLink: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
+      itemSocialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'http://facebook.com/',
+          },
+          {
+            id: 'instagram',
+            name: 'Instagram',
+            url: 'http://instagram.com/',
+          },
+          {
+            id: 'youtube',
+            name: 'YouTube',
+            url: 'http://youtube.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          offset: 15,
+          color: '#9b9b9b',
+          sizes: [15, 25, 35, 45],
+          size: 25,
+        },
+      },
+    },
+    {
+      itemTitle: {
+        content: 'Jeff Bin',
+        type: 'heading',
+      },
+      itemContent: {
+        content: 'Andrew Shimmer has a 15-year experience in IT and marketing. He’s been successfully running companies specializing in high technologies. He won a bunch of international awards due to the excellent leadership skills and prominent achievements in business.',
+        type: 'text',
+      },
+      itemPosition: {
+        content: 'Accounting Officer',
+        type: 'caption',
+      },
+      itemEmail: {
+        content: '<a href="mailto:mysite@weblium.com">mysite@weblium.com</a>',
+        type: 'caption',
+      },
+      itemPicture: {
+        alt: 'Jeff Bin photo',
+      },
+      itemLink: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'link',
+      },
+      itemSocialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'http://facebook.com/',
+          },
+          {
+            id: 'instagram',
+            name: 'Instagram',
+            url: 'http://instagram.com/',
+          },
+          {
+            id: 'youtube',
+            name: 'YouTube',
+            url: 'http://youtube.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'circle',
+          innerFill: true,
+          preset: 'preset001',
+          offset: 15,
+          color: '#9b9b9b',
+          sizes: [15, 25, 35, 45],
+          size: 25,
+        },
       },
     },
   ],

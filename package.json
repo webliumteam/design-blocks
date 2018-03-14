@@ -31,6 +31,6 @@
         "stylelint-order": "^0.8.0"
     },
     "dependencies": {
-        "react-media": "^1.8.0"
+        "react-responsive": "^4.0.5"
     }
 }
