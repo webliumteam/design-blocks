@@ -31,6 +31,5 @@
   },
   "dependencies": {
     "wireframe-series-2-about": "https://github.com/webliumteam/blocks#w/series-2/about/prod"
-  },
-  "category": "about"
+  }
 }
