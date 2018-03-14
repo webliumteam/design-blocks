@@ -11,14 +11,14 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  background: {
-    type: 'image',
-    position: {
-      type: 'cover',
-      cover: '50% 50%',
-    },
-    resourceRef: 'bg_projects.jpg',
-  },
+  // background: {
+  //   type: 'image',
+  //   position: {
+  //     type: 'cover',
+  //     cover: '50% 50%',
+  //   },
+  //   resourceRef: 'bg_projects.jpg',
+  // },
   projects: [
     {
       ...Component.defaultContent.projects[0],
@@ -28,6 +28,12 @@ ExtendedWireframe.defaultContent = {
       },
       link: {
         ...Component.defaultContent.projects[0].link,
+        iconEnabled: true,
+        iconAlignment: 'right',
+        icon: {
+          svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#32bbcb" d="M6.7 12.6c.3-.3.3-.9 0-1.2L4.4 9.1c-.9-.9-2.4.5-1.4 1.4.3.3.2.5-.2.5H1c-.6 0-1 .4-1 1 0 .5.4 1 1 1h1.8c.4 0 .5.2.2.5-1 .9.5 2.4 1.4 1.4l2.3-2.3z"/></svg>',
+        },
+        iconClassName: 'link-decorator',
         type: 'link',
       },
     },
@@ -39,6 +45,11 @@ ExtendedWireframe.defaultContent = {
       },
       link: {
         ...Component.defaultContent.projects[1].link,
+        iconEnabled: true,
+        iconAlignment: 'right',
+        icon: {
+          svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#32bbcb" d="M6.7 12.6c.3-.3.3-.9 0-1.2L4.4 9.1c-.9-.9-2.4.5-1.4 1.4.3.3.2.5-.2.5H1c-.6 0-1 .4-1 1 0 .5.4 1 1 1h1.8c.4 0 .5.2.2.5-1 .9.5 2.4 1.4 1.4l2.3-2.3z"/></svg>',
+        },
         type: 'link',
       },
     },
