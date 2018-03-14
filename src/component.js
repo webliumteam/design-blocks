@@ -51,7 +51,10 @@ class Block extends React.Component {
       this.getModifierValue('social')
     ) && this.getModifierValue('map')
 
-    const title = <Text bind="title" className={style.title} tagName="h1" />
+    const blockHeader = [
+      <Text bind="title" className={style.title} tagName="h1" />,
+      this.getModifierValue('subtitle') && <Text bind="subtitle" className={style.subtitle} tagName="p" />,
+    ]
 
     return (
       <section className={classNames(style.section, {
@@ -62,7 +65,7 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          {!this.getOptionValue('title-in-contacts') && title}
+          {!this.getOptionValue('title-in-contacts') && blockHeader}
           <div className={style.section__main}>
             {this.getModifierValue('map') && (
               <div className={style['map-wrapper']}>
@@ -73,7 +76,7 @@ class Block extends React.Component {
             )}
             {!onlyMap && (
               <div className={style.contacts}>
-                {this.getOptionValue('title-in-contacts') && title}
+                {this.getOptionValue('title-in-contacts') && blockHeader}
                 {this.getModifierValue('logo') && (
                   <div className={style['logo-wrapper']}>
                     <Logo
@@ -129,6 +132,10 @@ Block.defaultContent = {
   title: {
     content: 'Contacts',
     type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Case nulla deserunt ut eos. Magna persecuti ut vis, ex legimus civibus complectitur mea. Sumo vitae definitionem in nam.',
+    type: 'subtitle',
   },
   logo: {
     text: {
@@ -221,6 +228,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
   address: {defaultValue: true, label: 'Address text block', type: 'checkbox'},
   email: {defaultValue: true, label: 'E-mail text block', type: 'checkbox'},
   logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
