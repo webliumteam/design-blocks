@@ -31,9 +31,5 @@
   },
   "dependencies": {
     "wireframe-series-2-footer": "https://github.com/webliumteam/blocks#w/series-2/footer/prod"
-  },
-  "category": "footer",
-  "roles": [
-    "footer"
-  ]
+  }
 }
