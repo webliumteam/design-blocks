@@ -25,71 +25,32 @@ ExtendedWireframe.defaultContent = {
   },
   testimonials: [
     {
-      id: 'bf40db18-b817-4a19-bd5b-b72cfacce814',
-      name: {
-        content: 'Bryan Adkins',
-        type: 'heading',
-      },
+      ...Component.defaultContent.testimonials[0],
       position: {
-        content: 'Happy Client',
-        type: 'caption',
-      },
-      description: {
-        content: 'If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental.',
-        type: 'text',
-      },
-      date: {
-        content: 'December 15, 2017',
-        type: 'caption',
+        ...Component.defaultContent.testimonials[0].position,
+        content: 'MARKETING DIRECTOR AT FRESH FOOD CO.',
       },
       image: {
-        src: 'tanja-heffner-196114.jpg',
-        alt: 'Amanda Peterson photo',
+        ...Component.defaultContent.testimonials[0].image,
+        resourceRef: 'tanja-heffner-196114.jpg',
       },
     },
     {
-      id: '5ee25c3a-0026-4ab8-b291-238b72e1f6cc',
-      name: {
-        content: 'Amanda Peterson',
-        type: 'heading',
-      },
+      ...Component.defaultContent.testimonials[1],
       position: {
-        content: 'Marketing Director at Fresh Food Co.',
-        type: 'caption',
-      },
-      description: {
-        content: '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
-        type: 'text',
-      },
-      date: {
-        content: 'December 15, 2017',
-        type: 'caption',
+        ...Component.defaultContent.testimonials[1].position,
+        content: 'MARKETING DIRECTOR AT FRESH FOOD CO.',
       },
       image: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Amanda Peterson photo',
+        ...Component.defaultContent.testimonials[1].image,
+        resourceRef: 'tanja-heffner-196114.jpg',
       },
     },
   ],
-  subtitle: {
-    content: 'Case nulla deserunt ut eos. Magna persecuti ut vis, ex legimus civibus complectitur mea. Sumo vitae definitionem in nam.',
-    type: 'subtitle',
-  },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
+    ...Component.defaultContent.cta,
     type: 'secondary',
-    textValue: 'All Testimonials',
   },
-
 }
 
 ExtendedWireframe.modifierScheme = {
@@ -97,7 +58,7 @@ ExtendedWireframe.modifierScheme = {
   button: {defaultValue: true, label: 'Secondary Button', type: 'checkbox'},
   image: {defaultValue: true, label: 'Reviewer photo', type: 'checkbox'},
   position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
-  publishDate: {defaultValue: false, label: 'Date of publishing', type: 'checkbox'},
+  publishDate: {defaultValue: false, label: 'Date of publishing', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
   'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'hidden'},
 }
