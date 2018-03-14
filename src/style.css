@@ -26,7 +26,6 @@
       left: 0;
       padding-bottom: 0;
       z-index: 99999;
-      background-color: var(--ui-light-shade-color);
       flex-direction: column;
 
       .nav {
@@ -125,6 +124,14 @@
       right: 10px;
       margin-bottom: 0;
     }
+  }
+}
+
+.header--nav-open ~ [data-node="background"] {
+
+  @media (max-width: 991px) {
+    position: fixed;
+    z-index: 1;
   }
 }
 
