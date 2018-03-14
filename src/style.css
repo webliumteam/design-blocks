@@ -105,6 +105,10 @@
     }
   }
 
+  &__item-description {
+    display: block;
+  }
+
   &__button {
     width: 100%;
     margin-top: 20px;
