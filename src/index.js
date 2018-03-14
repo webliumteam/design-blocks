@@ -18,7 +18,7 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.team[0].picture,
         resourceRef: 'photo1.png',
         size: {
-          'min-width: 320px': 170,
+          'min-width: 320px': 240,
         },
       },
       socialIcons: {
@@ -57,7 +57,7 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.team[1].picture,
         resourceRef: 'photo2.png',
         size: {
-          'min-width: 320px': 170,
+          'min-width: 320px': 240,
         },
       },
       socialIcons: {
@@ -96,7 +96,7 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.team[2].picture,
         resourceRef: 'photo3.png',
         size: {
-          'min-width: 320px': 170,
+          'min-width: 320px': 240,
         },
       },
       socialIcons: {
