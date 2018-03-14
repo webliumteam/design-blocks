@@ -23,7 +23,7 @@
   }
 
   &__slogan {
-    list-style-position: 0.3px;
+    letter-spacing: 0.3px;
   }
 
   &__email {
@@ -44,6 +44,8 @@
 
 .logo {
   &__title {
+    font-family: var(--ui-quote-font-family);
+    font-weight: 700;
     letter-spacing: 0.3px;
   }
 }
@@ -59,15 +61,15 @@
 
     @media (min-width: 992px) {
       margin-top: 15px;
-      margin-right: 30px;
     }
   }
 
   &__link {
     position: relative;
+    font-family: var(--ui-quote-font-family);
     font-size: var(--ui-text-size);
-    line-height: 26px;
-    letter-spacing: 0.5px;
+    line-height: var(--ui-text-line-height);
+    letter-spacing: 0.3px;
     text-transform: capitalize;
     transition: all 0.2s linear;
 

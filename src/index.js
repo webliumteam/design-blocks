@@ -22,7 +22,7 @@ ExtendedWireframe.defaultContent = {
     overlay: {
       type: 'color',
       color: 'var(--ui-dark-shade-color)',
-      opacity: 0.3,
+      opacity: 0.25,
     },
   },
   logo: {
