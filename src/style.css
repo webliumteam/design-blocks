@@ -2,88 +2,80 @@
 
 /* start here */
 
+.section {
+
+  @media (min-width: 920px) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
 .top-icon {
+  position: relative;
   margin: auto;
   width: 60px;
   height: 60px;
+  margin-bottom: 30px;
+  padding: 20px;
   text-align: center;
-  background: #d9e8ff;
-  border-radius: 40px;
-  opacity: 0.4;
-}
 
-.title {
-  position: relative;
-  margin-top: 30px;
-  letter-spacing: 1.8px;
-
-  span {
-    position: relative;
-
-    &::after {
-      position: absolute;
-      content: " ";
-      width: 4px;
-      height: 4px;
-      border-radius: 3px;
-      background: var(--ui-link-hover-color);
-      display: block;
-      right: -4px;
-      bottom: 4px;
-    }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--ui-dark-accent-color);
+    opacity: 0.1;
+    border-radius: 50%;
   }
 }
 
 .subtitle {
-  font-size: var(--ui-subtitle-size);
-  letter-spacing: 1.8px;
+  min-width: 770px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 24px;
 }
 
 .article {
   position: relative;
-  margin-top: 123px;
+  display: block;
+  margin-top: 73px;
 
   &::after {
-    position: absolute;
+    position: relative;
     content: "";
     display: block;
     width: 80px;
     height: 2px;
-    background-color: var(--ui-link-hover-color);
-    bottom: -22px;
-  }
-}
-
-.article__content {
-  padding-left: 0;
-
-  &::before {
-    counter-increment: steps;
-    content: counter(steps)".";
-    width: 50px;
-    height: 50px;
-    opacity: 0.4;
-    background-color: #d9e8ff;
-    top: -56px;
-    color: var(--ui-link-hover-color);
-    font-weight: calc(var(--ui-quote-font-weight )* 1.2857);
-    font-family: var(--ui-quote-font-family);
-    font-size: var(--ui-text-size);
+    background-color: var(--ui-brand-color);
+    margin-top: 22px;
   }
 
-  p {
+  &__content {
+    padding-left: 0;
 
-    font-family: var(--ui-small-font-family);
-    font-size: calc(var(--ui-small-size )*1.17);
-    font-weight: var(--ui-small-font-weight);
-    line-height: calc(var(--ui-small-line-height )*2);
-    letter-spacing: 1.5px;
-    color: #7e8a99;
+    &::before {
+      position: relative;
+      counter-increment: steps;
+      content: counter(steps)".";
+      width: 50px;
+      height: 50px;
+      background-color: #ecedfb;
+      margin-bottom: 11px;
+      font-weight: bold;
+      color: var(--ui-brand-color);
+    }
   }
-}
 
-.article__title {
-  letter-spacing: 1px;
-  margin-bottom: 15px;
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-size: calc(var(--ui-text-size) * 0.875);
+  }
 }
