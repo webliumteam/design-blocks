@@ -14,7 +14,6 @@
       top: 0;
       left: 0;
       padding-bottom: 0;
-      background-color: #f2f2f2;
       z-index: 99999;
       flex-direction: column;
 
@@ -157,6 +156,14 @@
       margin-left: auto;
       text-align: right;
     }
+  }
+}
+
+.header--nav-open ~ [data-node="background"] {
+
+  @media (max-width: 991px) {
+    position: fixed;
+    z-index: 1;
   }
 }
 
