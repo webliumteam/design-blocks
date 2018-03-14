@@ -4,8 +4,8 @@
 .section {
 
   @media (min-width: 992px) {
-    padding-top: 7.29%;
-    padding-bottom: 6.25%;
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 
@@ -32,25 +32,17 @@
     z-index: 10;
     position: relative;
   }
-
 }
 
 .title {
   text-align: center;
-  letter-spacing: 1.8px;
-  margin-bottom: 28px;
-
-  &::after {
-    content: ".";
-    color: var(--ui-brand-color);
-  }
+  margin-bottom: 24px;
 }
 
 .subtitle {
   text-align: center;
   margin: 0 auto;
   max-width: 770px;
-  letter-spacing: 1.8px;
 }
 
 .articles-wrapper {
@@ -70,25 +62,20 @@
     background-color: transparent;
   }
 
-  &__badge {
+  .article__badge {
     background-color: var(--ui-brand-color);
-    text-transform: uppercase;
-    color: var(--ui-shade-color);
-    letter-spacing: 0.5px;
+    max-width: 125px;
+    left: 30px;
+    top: 30px;
+    padding-top: 9px;
+    padding-right: 13.5px;
+    padding-bottom: 8px;
+    padding-left: 13.5px;
+    border-radius: 3px;
+    color: var(--ui-light-shade-color);
 
     &::after {
-      display: none;
-    }
-
-    @media (min-width: 992px) {
-      max-width: 125px;
-      height: 32px;
-      left: 30px;
-      top: 30px;
-      padding-top: 0;
-      padding-bottom: 0;
-      line-height: 32px;
-      border-radius: 3px;
+      content: none;
     }
   }
 
@@ -108,47 +95,31 @@
     margin-bottom: 0;
   }
 
-  &__date {
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-
-    @media (min-width: 992px) {
-      font-size: calc(var(--ui-text-size) * 0.75);
-      margin-bottom: 0;
-    }
+  .article__date {
+    color: var(--ui-brand-color);
+    font-weight: bold;
+    font-size: calc(var(--ui-text-size) * 0.75);
+    margin-bottom: 0;
   }
 
   &__time {
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-
-    @media (min-width: 992px) {
-      font-size: calc(var(--ui-text-size) * 0.75);
-      margin-top: -7px;
-    }
+    font-weight: bold;
+    font-size: calc(var(--ui-text-size) * 0.75);
+    margin-top: -7px;
   }
 
   &__title {
-    letter-spacing: 1px;
-    text-transform: capitalize;
 
     @media (min-width: 992px) {
-      margin-top: 16px;
-      margin-bottom: 77px;
+      margin-top: 19px;
+      margin-bottom: 19px;
     }
-  }
-
-  &__bottom {
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
   }
 }
 
 .btns-group {
 
   @media (min-width: 992px) {
-    margin-top: 37px;
+    margin-top: 40px;
   }
 }

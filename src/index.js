@@ -13,97 +13,54 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   events: [
     {
-      title: {
-        content: 'Improve Your Business Cards<br> And Enhance Your Sales',
-        type: 'heading',
-      },
+      ...Component.defaultContent.events[0],
       date: {
-        content: 'October 14, 2017',
-        type: 'text',
-        color: 'var(--ui-brand-color)',
+        ...Component.defaultContent.events[0].date,
+        content: 'OCTOBER 24, 2017',
       },
       badge: {
-        content: 'members only',
-        type: 'caption',
-        color: 'var(--ui-light-shade-color)',
+        ...Component.defaultContent.events[0].badge,
+        content: 'MEMBERS ONLY',
       },
       time: {
-        content: '10:30 am - 1:30 pm',
-        type: 'text',
-      },
-      location: {
-        content: 'Lectorium 2',
-        type: 'caption',
+        ...Component.defaultContent.events[0].time,
+        content: '10:30AM - 1:30PM',
       },
       picture: {
+        ...Component.defaultContent.events[0].picture,
         resourceRef: 'events1.png',
-        alt: 'Digital marketing workshop illustration',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Know more',
-        type: 'link',
+      location: {
+        ...Component.defaultContent.events[0].location,
+        content: 'THE STATION',
       },
     },
     {
-      title: {
-        content: 'Effective Advertising Pointers',
-        type: 'heading',
-      },
+      ...Component.defaultContent.events[1],
       date: {
-        content: 'October 14, 2017',
-        type: 'text',
-        color: 'var(--ui-brand-color)',
+        ...Component.defaultContent.events[1].date,
+        content: 'NOVEMBER 1, 2017',
       },
       badge: {
-        content: 'members only',
-        type: 'caption',
-        color: 'var(--ui-light-shade-color)',
+        ...Component.defaultContent.events[1].badge,
+        content: 'MEMBERS ONLY',
       },
       time: {
-        content: '10:30 am - 1:30 pm',
-        type: 'text',
-      },
-      location: {
-        content: 'Lectorium 2',
-        type: 'caption',
+        ...Component.defaultContent.events[1].time,
+        content: '10:30AM - 1:30PM',
       },
       picture: {
+        ...Component.defaultContent.events[1].picture,
         resourceRef: 'events2.png',
-        alt: 'Blogging for beginners illustration',
       },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Know more',
-        type: 'link',
+      location: {
+        ...Component.defaultContent.events[1].location,
+        content: 'THE STATION',
       },
     },
   ],
-  subtitle: {
-    ...Component.defaultContent.subtitle,
-    content: 'Case nulla deserunt ut eos. Magna persecuti ut vis, ex legimus civibus complectitur mea. Sumo vitae definitionem in nam.',
-  },
   cta: {
     ...Component.defaultContent.cta,
-    textValue: 'All Events',
     size: 'lg',
   },
   topIcon: {
@@ -119,8 +76,8 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   subtitle: {defaultValue: true, label: "Event's description", type: 'checkbox'},
-  link: {defaultValue: false, label: "Event's link", type: 'checkbox'},
-  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'hidden'},
+  link: {defaultValue: false, label: "Event's link", type: 'hidden'},
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
