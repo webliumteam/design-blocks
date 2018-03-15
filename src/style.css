@@ -27,9 +27,78 @@
 }
 
 .items-wrapper {
+  position: relative;
+  max-width: 1200px;
   margin: 0 -15px;
 
-  @media (min-width: 768px) {
+  :global {
+
+    /* styles for default arrows */
+    .slick-arrow-default {
+      position: absolute;
+      width: 23px;
+      height: 40px;
+      top: 100%;
+      padding: 0;
+      z-index: 1;
+      border: 0;
+      background-color: transparent;
+      color: var(--ui-brand-color);
+      cursor: pointer;
+      transition: opacity .2s ease-in;
+    }
+
+    .slick-prev-default {
+      left: 50%;
+      transform: translateX(-200%);
+
+      @media (min-width: 768px) {
+        left: 50px;
+      }
+    }
+
+    .slick-next-default {
+      right: 50%;
+      transform: translateX(200%);
+
+      @media (min-width: 768px) {
+        right: 50px;
+      }
+    }
+
+    .slick-prev-default,
+    .slick-next-default {
+
+      @media (min-width: 768px) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    /* styles for custom arrows */
+    .slick-arrow {
+      width: 17px;
+      color: var(--ui-brand-color);
+    }
+
+    .slick-prev {
+      transform: translateX(-200%);
+    }
+
+    .slick-next {
+      transform: translateY(200%);
+    }
+
+    .slick-prev,
+    .slick-next {
+
+      @media (min-width: 768px) {
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  /* @media (min-width: 768px) {
     margin: 0 20px;
   }
 
@@ -67,7 +136,7 @@
         right: -100px;
       }
     }
-  }
+  } */
 
   .item {
 

@@ -71,15 +71,8 @@ class Block extends React.Component {
             setRef={slider => (this.slider1 = slider)}
             settings={{
               dots: false,
-              arrows: true,
+              arrows: false,
               asNavFor: this.state.nav2,
-              responsive: [
-                {
-                  breakpoint: 767,
-                  settings: {
-                  },
-                },
-              ],
             }}
             itemProps={{
               modifier: $block.modifier,
@@ -91,12 +84,11 @@ class Block extends React.Component {
             Item={this.collectionItem}
             setRef={slider => (this.slider2 = slider)}
             settings={{
-                dots: this.getModifierValue('dots'),
-                dotsClass: classNames('slick-dots', style['slider-dots']),
+                dots: false,
                 arrows: true,
                 swipeToSlide: true,
                 focusOnSelect: true,
-                slidesToShow: 4,
+                slidesToShow: 5,
                 asNavFor: this.state.nav1,
                 responsive: [
                   {
@@ -108,7 +100,14 @@ class Block extends React.Component {
                   {
                     breakpoint: 991,
                     settings: {
-                      slidesToShow: 3,
+                      slidesToShow: 4,
+                    },
+                  },
+                  {
+                    breakpoint: 100000,
+                    settings: {
+                      slidesToShow: 5,
+                      arrows: true,
                     },
                   },
                 ],
@@ -155,6 +154,18 @@ Block.defaultContent = {
   {
     image: {
       src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+      alt: 'Gallery image',
+    },
+  },
+  {
+    image: {
+      src: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg',
+      alt: 'Gallery image',
+    },
+  },
+  {
+    image: {
+      src: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg',
       alt: 'Gallery image',
     },
   },
