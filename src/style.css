@@ -54,8 +54,15 @@
   @media (min-width: 992px) {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    overflow: hidden;
     background-color: transparent;
+  }
+
+  &__picutre {
+
+    @media (min-width: 992px) {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
   }
 
   .article__badge {
