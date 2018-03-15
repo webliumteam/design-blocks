@@ -8,6 +8,20 @@
       margin-right: auto;
       margin-left: auto;
     }
+
+    .button {
+      margin-left: 20px;
+      margin-right: 20px;
+
+      &:last-of-type {
+        margin-right: 20px;
+      }
+
+      &:only-child {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
 
   &--right {
