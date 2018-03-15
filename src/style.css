@@ -1,44 +1,39 @@
 @import "wireframe-zapdos-header/src/style.css";
 
 .header {
-  position: relative;
-  z-index: 0;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--ui-dark-accent-color);
-    opacity: 0.5;
-  }
-
-  &__inner {
-    min-height: 130px;
+  &--nav-open {
+    background-color: var(--ui-dark-shade-color);
   }
 }
 
 .logo {
-  position: relative;
-  z-index: 20;
+  min-width: 129px;
   max-width: 129px;
 
-  &__title {
-    font-family: "Poppins";
-    font-size: calc(var(--ui-block-title-size) * 0.9);
-    font-weight: var(--ui-heading-font-weight);
-    letter-spacing: normal;
+  @media (min-width: 992px) {
+    margin-right: 71px;
   }
 }
 
 .nav {
-  position: relative;
-  z-index: 5;
-  padding-top: 20px;
-  justify-content: flex-start;
-  align-self: center;
+
+  @media (min-width: 992px) {
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+}
+
+.nav-list {
+  &__item {
+
+    @media (min-width: 992px) {
+      margin-right: 45px;
+      opacity: 0.6;
+
+      &:only-child,
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }

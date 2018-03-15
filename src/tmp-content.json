@@ -1,17 +1,1 @@
-{
-  "background": {
-    "type": "image",
-    "position": {
-      "type": "cover",
-      "cover": "0% -50%"
-    },
-    "src": "bg-header.jpg"
-  },
-  "logo": {
-    "text": {
-      "value": "asam.",
-      "tagName": "h2"
-    }
-  },
-  "theme": "dark"
-}
+{}
