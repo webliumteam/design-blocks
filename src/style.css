@@ -121,7 +121,7 @@
     padding-right: 0;
     font-size: calc(var(--ui-small-text-size) * 1.167);
 
-    @media (min-width: 768px) {
+    @media (min-width: 992px) {
       max-width: 370px;
     }
   }
