@@ -10,27 +10,23 @@
 }
 
 .top-icon {
-  margin: 0 auto;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 53px;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  background-color: var(--ui-light-shade-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
 
-  &::before {
-    display: block;
-    content: "";
-    width: 60px;
-    height: 60px;
-    background-color: var(--ui-light-shade-color);
-    border-radius: 50%;
-    box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  svg {
-    z-index: 10;
-    position: relative;
+  > svg {
+    max-width: 20px;
+    max-height: 20px;
   }
 }
 
@@ -73,6 +69,7 @@
     padding-left: 13.5px;
     border-radius: 3px;
     color: var(--ui-light-shade-color);
+    z-index: 3;
 
     &::after {
       content: none;
