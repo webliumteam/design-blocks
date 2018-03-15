@@ -27,9 +27,10 @@
     "lint-staged": "^6.0.0",
     "stylelint": "^8.4.0",
     "stylelint-scss": "^2.2.0",
-    "stylelint-selector-bem-pattern": "^2.0.0"
+    "stylelint-selector-bem-pattern": "^2.0.0",
+    "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-default-master": "https://github.com/webliumteam/blocks#w/default/master"
+    "wireframe-default-master": "https://github.com/webliumteam/blocks#w/default/master/prod"
   }
 }
