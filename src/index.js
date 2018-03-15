@@ -13,7 +13,7 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   topIcon: {
-    svg: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 20' width='100%' height='100%'><path d='M5.93529094,0.31409375 C5.07232219,0.31409375 4.37279094,1.01365625 4.37279094,1.87659375 C4.37279094,2.73953125 5.07232219,3.43909375 5.93529094,3.43909375 C6.79822844,3.43909375 7.49779094,2.73953125 7.49779094,1.87659375 C7.49779094,1.01365625 6.79822844,0.31409375 5.93529094,0.31409375 Z M4.03097844,3.75159375 C2.90441594,3.80217188 1.70647844,4.35714375 0.700915937,5.12854688 L0.593478437,6.30042188 C1.54354094,5.92837188 2.51838469,5.9322625 2.81029094,6.818 C3.52107219,8.97259063 1.09254094,12.7430375 0.427478437,14.7183813 C-1.37674031,20.0775375 2.95313469,20.696725 6.04272844,18.4879125 L6.15991594,17.2183813 C4.47897844,17.7447563 3.27416594,17.098225 4.24585344,14.298475 C4.71400969,12.947975 8.63182219,6.14305938 5.92554094,4.26917188 C5.35888469,3.87673438 4.70694719,3.72124688 4.03097844,3.75159375 Z' id='Shape'></path></svg>",
+    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 20"><path d="M5.935.314a1.562 1.562 0 1 0 0 3.125 1.562 1.562 0 0 0 0-3.125zM4.031 3.752c-1.127.05-2.325.605-3.33 1.377L.593 6.3c.95-.372 1.925-.368 2.217.518.711 2.155-1.717 5.925-2.383 7.9-1.804 5.36 2.526 5.979 5.616 3.77l.117-1.27c-1.681.527-2.886-.12-1.914-2.92.468-1.35 4.386-8.155 1.68-10.029-.567-.392-1.22-.548-1.895-.517z"/></svg>',
     fill: 'brand-color',
   },
 }
@@ -21,7 +21,7 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   text: {defaultValue: true, label: 'Main text', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'hidden'},
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
