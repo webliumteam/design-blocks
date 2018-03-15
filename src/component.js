@@ -15,15 +15,16 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   toggleItemVisible = item => () => {
-    const index = item.match(/\d+$/)[0]
+    const index = +item.match(/\d+$/)[0]
     if (index !== this.state.active) this.setState({active: index})
   }
 
   collectionItem = ({index, children, className}) => {
     const {components: {Text, Image}, style} = this.props
+    const activeTab = +index.match(/\d+$/)[0]
 
     return (
-      <li className={classNames(style['tabs-item'], className)} onClick={this.toggleItemVisible(index)} role="presentation">
+      <li className={classNames(style['tabs-item'], className, {[style['tabs-item--active']]: activeTab === this.state.active})} onClick={this.toggleItemVisible(index)} role="presentation">
         {children}
 
         <button type="button" role="tab" className={style['tabs-item__button']}>
@@ -54,68 +55,69 @@ class Block extends React.Component {
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <div className={style.section__content}>
-            <Image
-              wrapperClassName={classNames(style['item__picture-wrapper'], style['item__picture-wrapper--desktop'])}
-              pictureClassName={style.item__picture}
-              imgClassName={style.item__image}
-              bind={`${bindActive}.itemPicture`}
-              size={
-                {
-                'min-width: 992px': 470,
-                'min-width: 768px': 300,
-                'min-width: 480px': 800,
-                'min-width: 320px': 480,
-                }
+          <Image
+            wrapperClassName={classNames(style['item__picture-wrapper'], style['item__picture-wrapper--desktop'])}
+            pictureClassName={style.item__picture}
+            imgClassName={style.item__image}
+            bind={`${bindActive}.itemPicture`}
+            size={
+              {
+              'min-width: 992px': 470,
+              'min-width: 768px': 300,
+              'min-width: 480px': 800,
+              'min-width: 320px': 480,
               }
-              attributes={{'aria-hidden': true}}
-            />
-            <div className={style['item-wrapper']}>
-              <div className={style.item} role="tabpanel">
-                <Image
-                  wrapperClassName={classNames(style['item__picture-wrapper'], style['item__picture-wrapper--tablet'])}
-                  pictureClassName={style.item__picture}
-                  imgClassName={style.item__image}
-                  bind={`${bindActive}.itemPicture`}
-                  size={
-                    {
-                    'min-width: 992px': 470,
-                    'min-width: 768px': 300,
-                    'min-width: 480px': 800,
-                    'min-width: 320px': 480,
-                    }
+            }
+            attributes={{'aria-hidden': true}}
+          />
+          <div className={style['item-wrapper']}>
+            <div className={style.item} role="tabpanel">
+              <Image
+                wrapperClassName={classNames(style['item__picture-wrapper'], style['item__picture-wrapper--tablet'])}
+                pictureClassName={style.item__picture}
+                imgClassName={style.item__image}
+                bind={`${bindActive}.itemPicture`}
+                size={
+                  {
+                  'min-width: 992px': 470,
+                  'min-width: 768px': 300,
+                  'min-width: 480px': 800,
+                  'min-width: 320px': 480,
                   }
-                />
+                }
+              />
+              <div className={style.item__content}>
                 <Text bind={`${bindActive}.itemPosition`} className={style.item__position} tagName="small" />
                 <Text bind={`${bindActive}.itemTitle`} className={style.item__title} tagName="h2" />
                 <Text bind={`${bindActive}.itemContent`} className={style.item__text} tagName="p" />
 
-                <footer className={style.item__bottom}>
-                  <div className={style['item__email-wrapper']}>
-                    <Text bind={`${bindActive}.itemEmail`} className={style.item__email} />
+                <div className={style.item__bottom}>
+                  <div className={style['item__bottom-side']}>
+                    <div className={style['item__email-wrapper']}>
+                      <Text bind={`${bindActive}.itemEmail`} className={style.item__email} />
+                    </div>
+                    <SocialIcons className={style.socials} bind={`${bindActive}.itemSocialIcons`} />
                   </div>
-                  <SocialIcons className={style.socials} bind={`${bindActive}.itemSocialIcons`} />
                   <Button
                     buttonClassName={style.button}
                     linkClassName={style.link}
                     className={style.item__button}
                     bind={`${bindActive}.itemLink`}
                   />
-                </footer>
+                </div>
               </div>
-              <Collection
-                className={style.tabs}
-                tagName="ul"
-                attributes={{role: 'tablist'}}
-                bind="collection"
-                Item={this.collectionItem}
-                itemProps={{
-                  modifier: $block.modifier,
-                }}
-              />
             </div>
+            <Collection
+              className={style.tabs}
+              TagName="ul"
+              attributes={{role: 'tablist'}}
+              bind="collection"
+              Item={this.collectionItem}
+              itemProps={{
+                modifier: $block.modifier,
+              }}
+            />
           </div>
-          {/* </MediaQuery> */}
         </div>
       </section>
     )
