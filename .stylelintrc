@@ -50,7 +50,7 @@
     "selector-attribute-operator-space-after": "never",
     "selector-attribute-brackets-space-inside": "never",
     "selector-pseudo-element-colon-notation": "double",
-    "selector-pseudo-class-parentheses-space-inside": "always",
+    "selector-pseudo-class-parentheses-space-inside": "never",
     "selector-no-vendor-prefix": true,
     "no-duplicate-selectors": true,
     "block-no-empty": true,
