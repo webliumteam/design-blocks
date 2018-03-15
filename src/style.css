@@ -41,21 +41,11 @@
 }
 
 .article {
-  position: relative;
   display: block;
   margin-top: 73px;
 
-  &::after {
-    position: relative;
-    content: "";
-    display: block;
-    width: 80px;
-    height: 2px;
-    background-color: var(--ui-brand-color);
-    margin-top: 22px;
-  }
-
   &__content {
+    position: relative;
     padding-left: 0;
 
     &::before {
@@ -68,6 +58,22 @@
       margin-bottom: 11px;
       font-weight: bold;
       color: var(--ui-brand-color);
+    }
+
+    &::after {
+      position: relative;
+      content: "";
+      display: block;
+      width: 80px;
+      height: 2px;
+      background-color: var(--ui-brand-color);
+      margin-top: 22px;
+    }
+
+    &:empty {
+      &::after {
+        content: none;
+      }
     }
   }
 
