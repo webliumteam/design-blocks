@@ -13,49 +13,50 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {ContactForm, Text, Menu, Logo, SocialIcons}, style: css} = this.props
+    const {components: {ContactForm, Text, Menu, Logo, SocialIcons}, style} = this.props
 
     return (
-      <footer className={css.footer}>
-        <div className={css.footer__inner}>
-          <div className={css.footer__part}>
+      <footer className={style.footer}>
+        <div className={style.footer__inner}>
+          <div className={classNames(style.footer__part, style['footer__part--first'])}>
             {this.getModifierValue('title') && (
-              <div className={css.logo}>
+              <div className={style.logo}>
                 <Logo
                   bind="logo"
                   maxWidth={this.getOptionValue('logo-max-width')}
                   maxHeight={this.getOptionValue('logo-max-height')}
-                  textClassName={css.logo__title}
+                  textClassName={style.logo__title}
                 />
               </div>
             )}
           </div>
-          <nav className={classNames(css.footer__part, css['footer__part--center'])}>
+          <nav className={classNames(style.footer__part, style['footer__part--second'])}>
             <Menu
-              className={css['nav-list']}
-              itemClassName={css['nav-list__item']}
-              linkClassName={css['nav-list__link']}
+              className={style['nav-list']}
+              itemClassName={style['nav-list__item']}
+              linkClassName={style['nav-list__link']}
               bind="menu"
             />
           </nav>
           {this.getModifierValue('social') && (
-            <div className={classNames(css.footer__part, css['footer__part--last'])}>
-              <div className={css.socials}>
-                <Text tagName="h2" className={css.socials__title} bind="follow" />
-                <SocialIcons bind="socialIcons" className={css.socials__icons} />
+            <div className={classNames(style.footer__part, style['footer__part--third'])}>
+              <div className={style.socials}>
+                <Text tagName="h2" className={style.socials__title} bind="follow" />
+                <SocialIcons bind="socialIcons" className={style.socials__icons} />
               </div>
             </div>
           )}
           <ContactForm
             bind="contactForm"
-            className={classNames(css.footer__part, css.form)}
-            labelClassName={css.form__item}
-            fieldClassName={css.form__field}
-            buttonClassName={css.form__button}
+            className={classNames(style.footer__part, style['footer__part--last'], style.form)}
+            labelClassName={style.form__item}
+            descriptionClassName={style.form__desc}
+            fieldClassName={style.form__field}
+            buttonClassName={style.form__button}
           />
-          <div className={css.footer__bottom}>
-            <Text tagName="small" className={css.footer__meta} bind="copyright" />
-            <Text tagName="small" className={css.footer__meta} bind="additional" />
+          <div className={style.footer__bottom}>
+            <Text tagName="small" className={style.footer__meta} bind="copyright" />
+            <Text tagName="small" className={style.footer__meta} bind="additional" />
           </div>
         </div>
       </footer>
@@ -68,7 +69,7 @@ Block.components = _.pick(['Text', 'Menu', 'Logo', 'SocialIcons', 'ContactForm']
 Block.defaultContent = {
   logo: {
     text: {
-      value: 'Company Logo',
+      value: 'Quantum Company',
       fontSize: 24,
     },
   },
@@ -92,51 +93,6 @@ Block.defaultContent = {
       id: 'testimonials',
       metadata: {
         displayName: 'Testimonials',
-        clickAction: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'team',
-      metadata: {
-        displayName: 'Our team',
-        clickAction: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'services',
-      metadata: {
-        displayName: 'Services',
-        clickAction: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'careers',
-      metadata: {
-        displayName: 'Careers',
         clickAction: {
           action: 'page',
           target: '_self',
@@ -179,24 +135,9 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'approach',
+      id: 'services',
       metadata: {
-        displayName: 'Our approach',
-        clickAction: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
-          },
-        },
-      },
-    },
-    {
-      id: 'industries',
-      metadata: {
-        displayName: 'Industries',
+        displayName: 'Services',
         clickAction: {
           action: 'page',
           target: '_self',
@@ -224,9 +165,9 @@ Block.defaultContent = {
       },
     },
     {
-      id: 'press',
+      id: 'development',
       metadata: {
-        displayName: 'Press',
+        displayName: 'Development',
         clickAction: {
           action: 'page',
           target: '_self',
@@ -255,7 +196,7 @@ Block.defaultContent = {
     },
   ],
   follow: {
-    type: 'heading',
+    type: 'text',
     content: 'Follow Us',
   },
   socialIcons: {
@@ -275,11 +216,6 @@ Block.defaultContent = {
         name: 'Instagram',
         url: 'http://instagram.com/',
       },
-      {
-        id: 'linkedin',
-        name: 'LinkedIn',
-        url: 'http://linkedin.com/',
-      },
     ],
     target: '_blank',
     design: {
@@ -297,23 +233,18 @@ Block.defaultContent = {
       {
         type: 'email',
         id: 'contactForm_email',
-        title: 'Email',
-        placeholder: 'email',
+        title: 'Subscribe to get the latest news from us',
+        placeholder: 'Email',
         required: false,
       },
     ],
     submitButton: {
       title: 'subscribe',
-      textValue: '',
-      type: 'link',
-      iconEnabled: false,
-      iconAlignment: 'left',
-      icon: {
-        svg: '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none" fill-rule="evenodd"/></svg>',
-      },
+      textValue: 'subscribe',
+      type: 'primary',
     },
     className: 'form',
-    buttonClassName: 'link',
+    buttonClassName: 'button',
   },
   copyright: {
     type: 'caption',
