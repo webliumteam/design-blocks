@@ -28,6 +28,8 @@ ExtendedWireframe.defaultContent = {
     image: {
       resourceRef: 'asam.png',
       alt: 'asam.',
+      width: 118,
+      height: 23,
     },
   },
   theme: 'dark',
