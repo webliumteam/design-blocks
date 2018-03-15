@@ -59,7 +59,7 @@ class Block extends React.Component {
           <div className={style.section__content}>
             <div className={style.section__placeholder}>
               <Resizer
-                bindToModifier={`resizer.${bindActive}.itemPicture`}
+                bindToModifier="resizer.picture"
                 styleProp="paddingTop"
                 unit="%"
                 state={this.state.picturePaddingTop}
@@ -75,7 +75,11 @@ class Block extends React.Component {
                   pictureClassName={style.item__picture}
                   imgClassName={style.item__image}
                   bind={`${bindActive}.itemPicture`}
-                  resize={{changeState: this.onResizePicture, state: this.state.picturePaddingTop}}
+                  resize={{
+                    changeState: this.onResizePicture,
+                    state: this.state.picturePaddingTop,
+                    bindToModifier: 'resizer.picture',
+                  }}
                   size={
                     {
                     'min-width: 992px': 470,
