@@ -11,14 +11,14 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  // background: {
-  //   type: 'image',
-  //   position: {
-  //     type: 'cover',
-  //     cover: '50% 50%',
-  //   },
-  //   resourceRef: 'bg_projects.jpg',
-  // },
+  background: {
+    type: 'image',
+    position: {
+      type: 'cover',
+      cover: '50% 50%',
+    },
+    resourceRef: 'bg_projects.jpg',
+  },
   projects: [
     {
       ...Component.defaultContent.projects[0],
@@ -70,6 +70,5 @@ ExtendedWireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
 }
-
 
 export default ExtendedWireframe
