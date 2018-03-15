@@ -1,3 +1,29 @@
 @import "wireframe-zapdos-team/src/style.css";
 
 /* start here */
+
+.item {
+  &__inner {
+    background: #fff;
+  }
+
+  &__pic {
+    width: 195px;
+    height: 195px;
+  }
+
+  &__title {
+    font-size: calc(var(--ui-heading-size) * 1.33);
+  }
+
+  &__desc {
+    font-size: calc(var(--ui-text-size) * 0.88);
+  }
+}
+
+.section {
+
+  @media (min-width: 1200px) {
+    padding: 120px 0;
+  }
+}
