@@ -16,12 +16,18 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  margin: 0 auto;
   padding: 20px;
   border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
   color: var(--ui-brand-color);
   background-color: rgba(217, 232, 255, 0.4);
+
+  > svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .title {
@@ -30,6 +36,7 @@
 
 .logo {
   width: 170px;
+  text-decoration: none;
 }
 
 @media (min-width: 480px) {
