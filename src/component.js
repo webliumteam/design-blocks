@@ -12,8 +12,6 @@ class Block extends React.Component {
     active: 0,
   }
 
-  onResizePicture = value => this.setState({picturePaddingTop: value})
-
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   toggleItemVisible = item => () => {
@@ -50,36 +48,35 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Text, Image, Collection, Button, SocialIcons, Resizer}, style, $block} = this.props
+    const {components: {Text, Image, Collection, Button, SocialIcons}, style, $block} = this.props
     const bindActive = `collection.items[${this.state.active}]`
 
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
           <div className={style.section__content}>
-            <div className={style.section__placeholder}>
-              <Resizer
-                bindToModifier="resizer.picture"
-                styleProp="paddingTop"
-                unit="%"
-                state={this.state.picturePaddingTop}
-                hidden
-              >
-                <div className={style['section__placeholder-inner']} />
-              </Resizer>
-            </div>
+            <Image
+              wrapperClassName={classNames(style['item__picture-wrapper'], style['item__picture-wrapper--desktop'])}
+              pictureClassName={style.item__picture}
+              imgClassName={style.item__image}
+              bind={`${bindActive}.itemPicture`}
+              size={
+                {
+                'min-width: 992px': 470,
+                'min-width: 768px': 300,
+                'min-width: 480px': 800,
+                'min-width: 320px': 480,
+                }
+              }
+              attributes={{'aria-hidden': true}}
+            />
             <div className={style['item-wrapper']}>
               <div className={style.item} role="tabpanel">
                 <Image
-                  wrapperClassName={style['item__picture-wrapper']}
+                  wrapperClassName={classNames(style['item__picture-wrapper'], style['item__picture-wrapper--tablet'])}
                   pictureClassName={style.item__picture}
                   imgClassName={style.item__image}
                   bind={`${bindActive}.itemPicture`}
-                  resize={{
-                    changeState: this.onResizePicture,
-                    state: this.state.picturePaddingTop,
-                    bindToModifier: 'resizer.picture',
-                  }}
                   size={
                     {
                     'min-width: 992px': 470,
@@ -109,7 +106,7 @@ class Block extends React.Component {
               <Collection
                 className={style.tabs}
                 tagName="ul"
-                role="tablist"
+                attributes={{role: 'tablist'}}
                 bind="collection"
                 Item={this.collectionItem}
                 itemProps={{
@@ -125,10 +122,9 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Collection', 'Button', 'SocialIcons', 'Resizer'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Collection', 'Button', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
   collection: {
     items: [
       {

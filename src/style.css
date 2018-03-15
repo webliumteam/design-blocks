@@ -32,14 +32,30 @@
 .item {
   &__picture {
     display: block;
+    position: relative;
     width: 100%;
     padding-top: 100%;
     
     &-wrapper {
-      position: absolute;
-      width: 40.172%;
-      top: 0;
-      left: 0;
+      flex: 0 1 40.172%;
+
+      &--desktop {
+        display: none;
+        
+        @media (min-width: 992px) {
+          display: block;
+        }
+      }
+
+      &--tablet {
+
+        @media (min-width: 992px) {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          clip: rect(0 0 0 0);
+        }
+      }
     }
   }
 
