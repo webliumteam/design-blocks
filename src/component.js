@@ -12,6 +12,8 @@ class Block extends React.Component {
     active: 0,
   }
 
+  onResizePicture = value => this.setState({picturePaddingTop: value})
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   toggleItemVisible = item => () => {
@@ -48,14 +50,23 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Text, Image, Collection, Button, SocialIcons}, style, $block} = this.props
+    const {components: {Text, Image, Collection, Button, SocialIcons, Resizer}, style, $block} = this.props
+    const bindActive = `collection.items[${this.state.active}]`
 
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
           <div className={style.section__content}>
             <div className={style.section__placeholder}>
-              <div className={style['section__placeholder-inner']} style={{paddingTop: `${$block.modifier['resizer.collection.items[0].itemPicture']}%`}} />
+              <Resizer
+                bindToModifier={`resizer.${bindActive}.itemPicture`}
+                styleProp="paddingTop"
+                unit="%"
+                state={this.state.picturePaddingTop}
+                hidden
+              >
+                <div className={style['section__placeholder-inner']} />
+              </Resizer>
             </div>
             <div className={style['item-wrapper']}>
               <div className={style.item} role="tabpanel">
@@ -63,7 +74,8 @@ class Block extends React.Component {
                   wrapperClassName={style['item__picture-wrapper']}
                   pictureClassName={style.item__picture}
                   imgClassName={style.item__image}
-                  bind={`collection.items[${this.state.active}].itemPicture`}
+                  bind={`${bindActive}.itemPicture`}
+                  resize={{changeState: this.onResizePicture, state: this.state.picturePaddingTop}}
                   size={
                     {
                     'min-width: 992px': 470,
@@ -73,20 +85,20 @@ class Block extends React.Component {
                     }
                   }
                 />
-                <Text bind={`collection.items[${this.state.active}].itemPosition`} className={style.item__position} tagName="small" />
-                <Text bind={`collection.items[${this.state.active}].itemTitle`} className={style.item__title} tagName="h2" />
-                <Text bind={`collection.items[${this.state.active}].itemContent`} className={style.item__text} tagName="p" />
+                <Text bind={`${bindActive}.itemPosition`} className={style.item__position} tagName="small" />
+                <Text bind={`${bindActive}.itemTitle`} className={style.item__title} tagName="h2" />
+                <Text bind={`${bindActive}.itemContent`} className={style.item__text} tagName="p" />
 
                 <footer className={style.item__bottom}>
                   <div className={style['item__email-wrapper']}>
-                    <Text bind={`collection.items[${this.state.active}].itemEmail`} className={style.item__email} />
+                    <Text bind={`${bindActive}.itemEmail`} className={style.item__email} />
                   </div>
-                  <SocialIcons className={style.socials} bind={`collection.items[${this.state.active}].itemSocialIcons`} />
+                  <SocialIcons className={style.socials} bind={`${bindActive}.itemSocialIcons`} />
                   <Button
                     buttonClassName={style.button}
                     linkClassName={style.link}
                     className={style.item__button}
-                    bind={`collection.items[${this.state.active}].itemLink`}
+                    bind={`${bindActive}.itemLink`}
                   />
                 </footer>
               </div>
@@ -109,7 +121,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Collection', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Collection', 'Button', 'SocialIcons', 'Resizer'])($editor.components)
 
 Block.defaultContent = {
   title: 'About The Company',
