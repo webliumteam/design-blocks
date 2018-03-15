@@ -30,7 +30,7 @@ ExtendedWireframe.defaultContent = {
   },
   'cta-2': {
     ...Component.defaultContent['cta-2'],
-    type: 'secondary',
+    type: 'link',
     iconEnabled: true,
     iconAlignment: 'left',
     icon: {
