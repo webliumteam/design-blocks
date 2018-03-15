@@ -51,8 +51,8 @@
   }
 
   &__caption {
+    margin-top: 22px;
     font-size: calc(var(--ui-caption-size) * 1.5);
     text-align: center;
-    margin-top: 22px;
   }
 }
