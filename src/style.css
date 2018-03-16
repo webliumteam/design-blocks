@@ -30,6 +30,10 @@
     font-weight: 600;
     color: var(--ui-block-title-color);
 
+    &:hover {
+      text-decoration: underline;
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -53,6 +57,10 @@
     text-transform: uppercase;
     font-weight: 600;
     color: var(--ui-block-title-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     &::after,
     &::before {
