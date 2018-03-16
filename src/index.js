@@ -36,6 +36,12 @@ ExtendedWireframe.modifierScheme = {
   picture: {defaultValue: false, label: 'Picture', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  border: {
+    defaultValue: true,
+    label: 'White border',
+    type: 'checkbox',
+    classNameOnActive: style['section--with-border'],
+  },
 }
 
 

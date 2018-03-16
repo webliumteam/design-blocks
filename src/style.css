@@ -2,9 +2,13 @@
 
 /* start here */
 .section {
-  border-color: #fff;
+  border-color: transparent;
   border-style: solid;
   border-width: 0 10px;
+
+  &--with-border {
+    border-color: #fff;
+  }
 
   @media (min-width: 920px) {
     padding: 210px 0;
