@@ -18,16 +18,16 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.blog[0],
       title: {
+        ...Component.defaultContent.blog[0].title,
         content: 'HOW TO HIRE EMPLOYEES?',
-        type: 'heading',
       },
       category: {
+        ...Component.defaultContent.blog[0].category,
         content: 'CREATIVE PROCESS',
-        type: 'caption',
       },
       date: {
+        ...Component.defaultContent.blog[0].date,
         content: 'SEPTEMBER 22, 2017',
-        type: 'caption',
       },
       picture: {
         ...Component.defaultContent.blog[0].picture,
@@ -37,16 +37,16 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.blog[1],
       title: {
+        ...Component.defaultContent.blog[1].title,
         content: 'HOW TO ACHIEVE HIGHER PROFITS IN RETAIL WITH OUR NEW PRODUCT?',
-        type: 'heading',
       },
       category: {
+        ...Component.defaultContent.blog[1].category,
         content: 'CREATIVE PROCESS',
-        type: 'caption',
       },
       date: {
+        ...Component.defaultContent.blog[1].date,
         content: 'SEPTEMBER 22, 2017',
-        type: 'caption',
       },
       picture: {
         ...Component.defaultContent.blog[1].picture,
@@ -56,16 +56,16 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.blog[2],
       title: {
+        ...Component.defaultContent.blog[2].title,
         content: 'TOP 5 TIPS TO IMPROVE YOUR ENGINEERING DEPARTMENT.',
-        type: 'heading',
       },
       category: {
+        ...Component.defaultContent.blog[2].category,
         content: 'CREATIVE PROCESS',
-        type: 'caption',
       },
       date: {
+        ...Component.defaultContent.blog[2].date,
         content: 'SEPTEMBER 22, 2017',
-        type: 'caption',
       },
       picture: {
         ...Component.defaultContent.blog[2].picture,
