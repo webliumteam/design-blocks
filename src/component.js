@@ -108,6 +108,7 @@ class Block extends React.Component {
               centerPadding: '60px',
               draggable: true,
               asNavFor: this.state.nav1,
+              adaptiveHeight: false,
               ...customArrows,
             }}
             itemProps={{

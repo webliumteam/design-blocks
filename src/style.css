@@ -144,14 +144,6 @@
 .item__inner {
   max-width: 100%;
   margin: 0 auto;
-
-  @media (min-width: 992px) {
-    max-width: 860px;
-  }
-
-  &--row {
-    display: flex;
-  }
 }
 
 @media (min-width: 768px) {
@@ -166,7 +158,7 @@
   }
 }
 
-.item__pic-wrapper {
+.item__picture-wrapper {
   margin-bottom: 20px;
 
   &:last-child {
@@ -174,7 +166,7 @@
   }
 }
 
-.item__pic {
+.item__picture {
   display: block;
   width: 120px;
   height: 120px;
@@ -184,7 +176,7 @@
   background-color: var(--ui-media-bg);
 }
 
-.item__img {
+.item__image {
   display: block;
   width: 100%;
   height: 100%;
