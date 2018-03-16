@@ -27,7 +27,8 @@
         "lint-staged": "^6.0.0",
         "stylelint": "^8.4.0",
         "stylelint-scss": "^2.2.0",
-        "stylelint-selector-bem-pattern": "^2.0.0"
+        "stylelint-selector-bem-pattern": "^2.0.0",
+        "stylelint-order": "latest"
     },
     "dependencies": {
         "wireframe-zapdos-projects": "https://github.com/webliumteam/blocks#w/zapdos/projects/prod"
