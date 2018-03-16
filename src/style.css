@@ -1,23 +1,34 @@
 @import "wireframe-series-1-quote/src/style.css";
 
-/* start here */
+.section {
+  border-width: 0 10px;
+  border-style: solid;
+  border-color: transparent;
 
-.blockquote::before {
-  content: none;
+  &--with-border {
+    .section {
+      border-color: #fff;
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding: 154px 0 176px;
+  }
 }
 
 .blockquote {
-  font-family: var(--ui-subtitle-font-family);
-  letter-spacing: 2.2px;
   max-width: 770px;
   font-style: italic;
 
-  &__line::before {
+  &::before {
     content: none;
   }
 
-  &__line::after {
-    content: none;
+  &__line {
+    &::before,
+    &::after {
+      content: none;
+    }
   }
 
   &__icon {
@@ -26,10 +37,8 @@
 }
 
 .author {
-  text-transform: uppercase;
-  font-size: var(--ui-small-size);
+  font-size: calc(var(--ui-text-size) * 0.8572);
   margin-top: 15px;
-  font-weight: var(--ui-caption-font-weight);
 
   &::after {
     content: "";
@@ -40,11 +49,5 @@
     height: 2px;
     bottom: 50px;
     background-color: currentColor;
-  }
-}
-
-@media (min-width: 992px) {
-  .section {
-    padding: 154px 0 176px;
   }
 }

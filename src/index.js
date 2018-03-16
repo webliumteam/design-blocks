@@ -21,7 +21,7 @@ ExtendedWireframe.defaultContent = {
   },
   author: {
     ...Component.defaultContent.author,
-    type: 'quote',
+    content: 'RAY GOFORTH',
   },
 }
 
@@ -32,6 +32,13 @@ ExtendedWireframe.modifierScheme = {
     type: 'checkbox',
     label: 'Quote author',
     defaultValue: true,
+  },
+  border: {
+    id: 'author',
+    type: 'checkbox',
+    label: 'White border',
+    defaultValue: true,
+    classNameOnActive: style['section--with-border'],
   },
 }
 
