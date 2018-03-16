@@ -32,7 +32,6 @@
 .title {
   position: relative;
   letter-spacing: -1.6px;
-  font-size: calc(var(--ui-hero-title-size) * 0.8);
 
   @media (min-width: 768px) {
     padding: 0 100px;
