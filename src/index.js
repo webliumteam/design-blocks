@@ -40,7 +40,7 @@ ExtendedWireframe.defaultContent = {
   },
   'cta-1': {
     ...Component.defaultContent['cta-1'],
-    type: 'primary',
+    type: 'secondary',
   },
   'cta-2': {
     ...Component.defaultContent['cta-2'],
