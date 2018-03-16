@@ -47,6 +47,11 @@
     margin-bottom: 20px;
   }
 
+  .link {
+    color: var(--ui-block-title-size);
+    font-weight: 600;
+  }
+
   &__email {
     font-size: calc(var(--ui-caption-size) * 1.167);
     margin-bottom: 20px;
