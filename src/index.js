@@ -29,6 +29,12 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  border: {
+    defaultValue: true,
+    label: 'White border',
+    type: 'checkbox',
+    classNameOnActive: style['header--with-border'],
+  },
 }
 
 export default ExtendedWireframe
