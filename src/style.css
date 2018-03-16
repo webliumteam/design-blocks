@@ -1,14 +1,7 @@
 @import "wireframe-zapdos-careers/src/style.css";
 
-.title {
-  font-weight: 600;
-  letter-spacing: 3.6px;
-  text-transform: uppercase;
-}
-
 .subtitle {
   line-height: 28px;
-  letter-spacing: 1.2px;
   font-size: calc(var(--ui-subtitle-size) * 0.8);
   margin-top: 20px;
 }
@@ -50,7 +43,6 @@
 
   &__text {
     line-height: 28px;
-    letter-spacing: 1.4px;
     max-width: inherit;
     text-align: center;
 
@@ -90,7 +82,6 @@
 
   .list__item-text {
     line-height: 28px;
-    letter-spacing: 1.4px;
     font-size: calc(var(--ui-heading-size) * 0.5834);
     font-weight: 400;
     color: var(--ui-text-color);
@@ -101,7 +92,6 @@
   .link {
     text-transform: uppercase;
     font-weight: 600;
-    letter-spacing: 3.2px;
     position: relative;
     font-size: var(--ui-small-size);
     color: var(--ui-block-title-color);
