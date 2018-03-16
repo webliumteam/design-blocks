@@ -25,20 +25,52 @@ ExtendedWireframe.defaultContent = {
       opacity: 0.6,
     },
   },
+  numbers: [
+    {
+      ...Component.defaultContent.numbers[0],
+      title: {
+        ...Component.defaultContent.numbers[0].title,
+        content: 'INCREASE PROFITS BY',
+      },
+      label: {
+        ...Component.defaultContent.numbers[0].label,
+        content: 'FOR OUR CUSTOMERS',
+      },
+    },
+    {
+      ...Component.defaultContent.numbers[1],
+      title: {
+        ...Component.defaultContent.numbers[1].title,
+        content: 'EXPAND MARKET REACH FOR',
+      },
+      label: {
+        ...Component.defaultContent.numbers[1].label,
+        content: 'OF OUR CLIENTS',
+      },
+    },
+    {
+      ...Component.defaultContent.numbers[2],
+      title: {
+        ...Component.defaultContent.numbers[2].title,
+        content: 'IMPROVE CUSTOMER SATISFACTION FOR',
+      },
+      label: {
+        ...Component.defaultContent.numbers[2].label,
+        content: 'OF OUR USERS',
+      },
+    },
+  ],
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  body: {defaultValue: true, label: 'Numbers description', type: 'checkbox'},
   button: {defaultValue: false, label: 'Button', type: 'hidden'},
-  'number-title': {
+  border: {
     defaultValue: true,
-    label: 'Additional information on numbers',
+    lable: 'White border',
     type: 'checkbox',
+    classNameOnActive: style['section--with-border'],
   },
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default ExtendedWireframe

@@ -1,6 +1,16 @@
 @import "wireframe-zapdos-numbers/src/style.css";
 
-/* start here */
+.section {
+  border-width: 0 10px;
+  border-style: solid;
+  border-color: transparent;
+
+  &--with-border {
+    .section {
+      border-color: #fff;
+    }
+  }
+}
 
 .title {
   text-align: center;
