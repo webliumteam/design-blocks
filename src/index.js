@@ -70,6 +70,12 @@ ExtendedWireframe.modifierScheme = {
   socialIcons: {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
   'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
+  border: {
+    defaultValue: true,
+    label: 'White border',
+    type: 'checkbox',
+    classNameOnActive: style['section--with-border'],
+  },
 }
 
 export default ExtendedWireframe
