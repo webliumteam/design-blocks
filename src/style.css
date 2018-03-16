@@ -1,9 +1,5 @@
 @import "wireframe-zapdos-careers/src/style.css";
 
-.title {
-  text-transform: uppercase;
-}
-
 .subtitle {
   line-height: 28px;
   font-size: calc(var(--ui-subtitle-size) * 0.8);
@@ -87,6 +83,7 @@
   .list__item-text {
     line-height: 28px;
     font-size: calc(var(--ui-heading-size) * 0.5834);
+    font-weight: 400;
     color: var(--ui-text-color);
   }
 }
