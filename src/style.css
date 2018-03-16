@@ -7,23 +7,16 @@
 }
 
 .title {
-  text-transform: uppercase;
   font-size: var(--ui-subtitle-size);
-  font-weight: 500;
 }
 
 .subtitle {
   font-size: calc( var(--ui-subtitle-size) * 0.7);
-  line-height: 1.75;
 }
 
 .article {
   &__caption {
     margin-bottom: 9px;
-  }
-
-  &__title {
-    text-transform: uppercase;
   }
 
   &__text {
@@ -34,7 +27,6 @@
     position: relative;
     padding-right: 22px;
     text-decoration: none;
-    text-transform: uppercase;
     font-weight: 600;
     color: var(--ui-block-title-color);
 
