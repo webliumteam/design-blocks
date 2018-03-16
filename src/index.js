@@ -13,11 +13,19 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   title: {
     ...Component.defaultContent.title,
-    content: '- Our Projects -',
+    content: '- OUR PROJECTS -',
   },
   projects: [
     {
       ...Component.defaultContent.projects[0],
+      title: {
+        ...Component.defaultContent.projects[0].title,
+        content: 'PROJECT 1',
+      },
+      subtitle: {
+        ...Component.defaultContent.projects[1].subtitle,
+        content: 'UX DESIGN',
+      },
       picture: {
         ...Component.defaultContent.projects[0].picture,
         resourceRef: 'iphone.jpg',
@@ -29,6 +37,14 @@ ExtendedWireframe.defaultContent = {
     },
     {
       ...Component.defaultContent.projects[1],
+      title: {
+        ...Component.defaultContent.projects[1].title,
+        content: 'PROJECT 2',
+      },
+      subtitle: {
+        ...Component.defaultContent.projects[1].subtitle,
+        content: 'BRANDING',
+      },
       picture: {
         ...Component.defaultContent.projects[1].picture,
         resourceRef: 'project_02.jpg',
