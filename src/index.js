@@ -16,13 +16,22 @@ ExtendedWireframe.defaultContent = {
     type: 'color',
     color: '#1F1E1D',
   },
+  logo: {
+    text: {
+      value: 'Company Logo',
+      fontSize: 30,
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'text-left': {defaultValue: true, label: 'Left text', type: 'checkbox'},
-  'text-right': {defaultValue: true, label: 'Right text', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
+  border: {
+    defaultValue: true,
+    label: 'White border',
+    type: 'checkbox',
+    classNameOnActive: style['footer--with-border'],
+  },
 }
 
 
