@@ -73,6 +73,10 @@
   }
 }
 
+.nav-button {
+  color: var(--ui-light-accent-color);
+}
+
 .nav-list {
   width: 100%;
 
