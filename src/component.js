@@ -62,8 +62,8 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <div className={style.section__header}>
-            <Text tagName="h1" className={style.title} bind="title" />
-            <Text tagName="p" className={style.subtitle} bind="subtitle" />
+            {this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
           </div>
           <Slider
             className={style['preview-slider']}
@@ -202,7 +202,7 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  arrows: {defaultValue: true, label: 'Navigation arrows', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Gallery description', type: 'checkbox'},
 }
 
 export default Block
