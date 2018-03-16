@@ -6,12 +6,21 @@
 }
 
 .top-icon {
-  margin: 0 auto;
+  display: flex;
   position: relative;
-  z-index: 1;
+  margin: 0 auto 30px;
   width: 60px;
   height: 60px;
   padding: 20px;
+  color: var(--ui-brand-color);
+  border-radius: 50%;
+  background-color: var(--ui-light-shade-color);
+  box-shadow: 0 2px 20px -6px var(--ui-link-color);
+
+  > svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
 
   &::before {
     position: absolute;
@@ -59,11 +68,14 @@
 }
 
 .btns-group {
-  margin-top: 0;
+  margin-top: 29px;
+
+  .button {
+    margin-right: 10px;
+  }
 
   .link {
     color: var(--ui-link-hover-color);
-    margin-top: 29px;
     font-size: calc(var(--ui-text-size) * 0.94);
 
     &:hover {
