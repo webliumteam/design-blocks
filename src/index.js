@@ -51,7 +51,12 @@ ExtendedWireframe.modifierScheme = {
   'secondary-btn': {defaultValue: false, label: 'Additional button', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
   undefined: {type: 'separator'},
+  border: {
+    defaultValue: true,
+    label: 'White border',
+    type: 'checkbox',
+    classNameOnActive: style['section--with-border'],
+  },
 }
-
 
 export default ExtendedWireframe
