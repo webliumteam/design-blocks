@@ -34,7 +34,7 @@
       font-size: calc(var(--ui-hero-title-size) * 1.38);
       line-height: var(--ui-hero-title-line-height);
       font-family: var(--ui-hero-title-font-family);
-      font-weight: var(--ui-hero-title-font-weight);
+      font-weight: 700;
       top: -78px;
       left: 50%;
       transform: translateX(-50%);
