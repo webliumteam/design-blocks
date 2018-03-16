@@ -35,6 +35,7 @@ class Block extends React.Component {
       <article className={style.item}>
         <div className={style.item__inner}>
           <Image
+            wrapperClassName={style['item__picture-wrapper']}
             pictureClassName={style.item__picture}
             imgClassName={style.item__image}
             bind={`gallery[${index}].image`}
@@ -43,7 +44,7 @@ class Block extends React.Component {
               'min-width: 768px': 1000,
               'min-width: 480px': 800,
             }}
-            resize={{disable: true}}
+            resize={{disable: false}}
           />
         </div>
       </article>
@@ -61,8 +62,8 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <div className={style.section__header}>
-            <Text tagName="h1" className="title" bind="title" />
-            <Text tagName="p" className="subtitle" bind="subtitle" />
+            <Text tagName="h1" className={style.title} bind="title" />
+            <Text tagName="p" className={style.subtitle} bind="subtitle" />
           </div>
           <Slider
             className={style['preview-slider']}
@@ -117,11 +118,13 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          <Button
-            buttonClassName={style['btns-group__button']}
-            linkClassName={style['btns-group__link']}
-            bind="button"
-          />
+          <div className={style['btns-group']}>
+            <Button
+              className={style.button}
+              buttonClassName={style['button--view-default']}
+              bind="button"
+            />
+          </div>
         </div>
       </section>
     )
@@ -141,13 +144,7 @@ Block.defaultContent = {
   },
   gallery: [{
     image: {
-      src: 'https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg',
-      alt: 'Gallery image',
-    },
-  },
-  {
-    image: {
-      src: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg',
+      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
     },
   },
@@ -159,25 +156,31 @@ Block.defaultContent = {
   },
   {
     image: {
-      src: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg',
+      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
     },
   },
   {
     image: {
-      src: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg',
+      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
     },
   },
   {
     image: {
-      src: 'https://cdn.pixabay.com/photo/2017/01/06/19/15/soap-bubble-1958650_960_720.jpg',
+      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
     },
   },
   {
     image: {
-      src: 'https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg',
+      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+      alt: 'Gallery image',
+    },
+  },
+  {
+    image: {
+      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
     },
   }],
