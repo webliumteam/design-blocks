@@ -1,7 +1,5 @@
 @import "wireframe-zapdos-pricing/src/style.css";
 
-/* start here */
-
 .section__inner {
   text-align: center;
 }
@@ -75,27 +73,30 @@
   }
 }
 
-.btns-group .link {
-  position: relative;
-  text-decoration: none;
-  padding-right: 27px;
-  transition: color 0.2s ease-in;
-  color: var(--ui-block-title-color);
-  font-weight: 600;
+.btns-group {
+  .link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.2s ease-in;
+    color: var(--ui-block-title-color);
+    font-weight: 600;
 
-  &::after {
-    position: absolute;
-    content: "";
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 2px;
-    background-color: currentColor;
-  }
+    &:hover {
+      text-decoration: underline;
+    }
 
-  &:only-child {
-    &::before {
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: -30px;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 2px;
+      background-color: currentColor;
+    }
+
+    &:only-child::before {
       position: absolute;
       content: "";
       top: 50%;
