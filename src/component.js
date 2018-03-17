@@ -36,7 +36,9 @@ class Block extends React.Component {
       <article className={style.testimonial}>
         <div className={style.testimonial__inner}>
           <Text tagName="p" className={style.testimonial__text} bind={`testimonials.content[${index}].text`} />
-          <Text tagName="p" className={style.testimonial__date} bind={`testimonials.content[${index}].date`} />
+          {_.get('item-date')(modifier) && (
+            <Text tagName="p" className={style.testimonial__date} bind={`testimonials.content[${index}].date`} />
+          )}
         </div>
       </article>
     )
@@ -44,37 +46,47 @@ class Block extends React.Component {
 
   collectionItem = ({index, modifier}) => {
     const {components: {Image, Text, SocialIcons}, style} = this.props
+
     return (
       <article className={style.item}>
         <div className={style.item__inner}>
-          <Image
-            wrapperClassName={style['item__picture-wrapper']}
-            pictureClassName={classNames(style.item__picture, 'item__picture--global')}
-            imgClassName={style.item__image}
-            bind={`testimonials.person[${index}].image`}
-            size={{
-              'min-width: 992px': 1200,
-              'min-width: 768px': 1000,
-              'min-width: 480px': 800,
-            }}
-            resize={{disable: false}}
-          />
+          {_.get('item-image')(modifier) && (
+            <Image
+              wrapperClassName={style['item__picture-wrapper']}
+              pictureClassName={classNames(style.item__picture, 'item__picture--global')}
+              imgClassName={style.item__image}
+              bind={`testimonials.person[${index}].image`}
+              size={{
+                'min-width: 992px': 1200,
+                'min-width: 768px': 1000,
+                'min-width: 480px': 800,
+              }}
+              resize={{disable: true}}
+            />
+          )}
           <div className="item__person-info--global">
             <Text tagName="h2" className={classNames(style.item__author)} bind={`testimonials.person[${index}].author`} />
-            <Text tagName="p" className={style.item__position} bind={`testimonials.person[${index}].position`} />
+            {_.get('item-position')(modifier) && (
+              <Text tagName="p" className={style.item__position} bind={`testimonials.person[${index}].position`} />
+            )}
           </div>
-          <SocialIcons bind={`testimonials.person[${index}].socialIcons`} className={classNames(style.item__socials, 'item__socials--global')} />
+          {_.get('item-socials')(modifier) && (
+            <SocialIcons bind={`testimonials.person[${index}].socialIcons`} className={classNames(style.item__socials, 'item__socials--global')} />
+          )}
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Slider, Text, Button, Icon}, style, $block} = this.props
+    const {components: {Slider, Text, Button}, style, $block} = this.props
     const customArrows = this.getOptionValue('custom-arrows') ? {
       nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
       prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
     } : {}
+    const onlyNameState = !this.getModifierValue('item-image') && !this.getModifierValue('item-position') && !this.getModifierValue('item-socials')
+    const onlyNameClass = onlyNameState && style['items-wrapper--only-name']
+
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -98,7 +110,7 @@ class Block extends React.Component {
             }}
           />
           <Slider
-            className={style['items-wrapper']}
+            className={classNames(style['items-wrapper'], onlyNameClass)}
             bind="testimonials.person"
             Item={this.collectionItem}
             setRef={slider => (this.slider2 = slider)}
@@ -412,11 +424,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  button: {defaultValue: true, label: 'Secondary Button', type: 'checkbox'},
-  image: {defaultValue: true, label: 'Reviewer photo', type: 'checkbox'},
-  position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
-  publishDate: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Testimonials description', type: 'checkbox'},
+  'item-date': {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
+  'item-image': {defaultValue: true, label: 'Reviewer photo', type: 'checkbox'},
+  'item-position': {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
+  'item-socials': {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary Buttons', type: 'checkbox'},
 }
 
 export default Block
