@@ -49,7 +49,7 @@ class Block extends React.Component {
         <div className={style.item__inner}>
           <Image
             wrapperClassName={style['item__picture-wrapper']}
-            pictureClassName={style.item__picture}
+            pictureClassName={classNames(style.item__picture, 'item__picture--global')}
             imgClassName={style.item__image}
             bind={`testimonials.person[${index}].image`}
             size={{
@@ -59,9 +59,11 @@ class Block extends React.Component {
             }}
             resize={{disable: false}}
           />
-          <Text tagName="h2" className={style.item__author} bind={`testimonials.person[${index}].author`} />
-          <Text tagName="p" className={style.item__position} bind={`testimonials.person[${index}].position`} />
-          <SocialIcons bind={`testimonials.person[${index}].socialIcons`} className={style.item__socials} />
+          <div className="item__person-info--global">
+            <Text tagName="h2" className={classNames(style.item__author)} bind={`testimonials.person[${index}].author`} />
+            <Text tagName="p" className={style.item__position} bind={`testimonials.person[${index}].position`} />
+          </div>
+          <SocialIcons bind={`testimonials.person[${index}].socialIcons`} className={classNames(style.item__socials, 'item__socials--global')} />
         </div>
       </article>
     )
@@ -89,6 +91,7 @@ class Block extends React.Component {
               dots: false,
               arrows: false,
               asNavFor: this.state.nav2,
+              adaptiveHeight: false,
             }}
             itemProps={{
               modifier: $block.modifier,
@@ -105,10 +108,19 @@ class Block extends React.Component {
               infinite: false,
               focusOnSelect: true,
               slidesToShow: 3,
-              centerPadding: '60px',
+              centerPadding: '0',
               draggable: true,
               asNavFor: this.state.nav1,
               adaptiveHeight: false,
+              responsive: [
+                {
+                  breakpoint: 767,
+                  settings: {
+                    slidesToShow: 1,
+                    arrows: true,
+                  },
+                },
+              ],
               ...customArrows,
             }}
             itemProps={{
@@ -173,6 +185,16 @@ Block.defaultContent = {
           type: 'caption',
         },
       },
+      {
+        text: {
+          content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+          type: 'heading',
+        },
+        date: {
+          content: 'October 28, 2017',
+          type: 'caption',
+        },
+      },
     ],
     person: [
       {
@@ -196,19 +218,24 @@ Block.defaultContent = {
               url: 'http://facebook.com/',
             },
             {
+              id: 'twitter',
+              name: 'Twitter',
+              url: 'http://twitter.com/',
+            },
+            {
               id: 'instagram',
               name: 'Instagram',
               url: 'http://instagram.com/',
             },
             {
-              id: 'youtube',
-              name: 'YouTube',
-              url: 'http://youtube.com/',
+              id: 'linkedin',
+              name: 'LinkedIn',
+              url: 'http://linkedin.com/',
             },
           ],
           target: '_blank',
           design: {
-            border: 'circle',
+            border: 'softRect',
             innerFill: true,
             preset: 'preset001',
             offset: 15,
@@ -239,19 +266,24 @@ Block.defaultContent = {
               url: 'http://facebook.com/',
             },
             {
+              id: 'twitter',
+              name: 'Twitter',
+              url: 'http://twitter.com/',
+            },
+            {
               id: 'instagram',
               name: 'Instagram',
               url: 'http://instagram.com/',
             },
             {
-              id: 'youtube',
-              name: 'YouTube',
-              url: 'http://youtube.com/',
+              id: 'linkedin',
+              name: 'LinkedIn',
+              url: 'http://linkedin.com/',
             },
           ],
           target: '_blank',
           design: {
-            border: 'circle',
+            border: 'softRect',
             innerFill: true,
             preset: 'preset001',
             offset: 15,
@@ -282,19 +314,72 @@ Block.defaultContent = {
               url: 'http://facebook.com/',
             },
             {
+              id: 'twitter',
+              name: 'Twitter',
+              url: 'http://twitter.com/',
+            },
+            {
               id: 'instagram',
               name: 'Instagram',
               url: 'http://instagram.com/',
             },
             {
-              id: 'youtube',
-              name: 'YouTube',
-              url: 'http://youtube.com/',
+              id: 'linkedin',
+              name: 'LinkedIn',
+              url: 'http://linkedin.com/',
             },
           ],
           target: '_blank',
           design: {
-            border: 'circle',
+            border: 'softRect',
+            innerFill: true,
+            preset: 'preset001',
+            offset: 15,
+            color: '#9b9b9b',
+            sizes: [10, 20, 30, 40],
+            size: 30,
+          },
+        },
+      },
+      {
+        image: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Gallery image',
+        },
+        author: {
+          content: 'Dr. Sam White',
+          type: 'subtitle',
+        },
+        position: {
+          content: 'Surgeon at St. Laurence Child Clinic',
+          type: 'text',
+        },
+        socialIcons: {
+          networks: [
+            {
+              id: 'facebook',
+              name: 'Facebook',
+              url: 'http://facebook.com/',
+            },
+            {
+              id: 'twitter',
+              name: 'Twitter',
+              url: 'http://twitter.com/',
+            },
+            {
+              id: 'instagram',
+              name: 'Instagram',
+              url: 'http://instagram.com/',
+            },
+            {
+              id: 'linkedin',
+              name: 'LinkedIn',
+              url: 'http://linkedin.com/',
+            },
+          ],
+          target: '_blank',
+          design: {
+            border: 'softRect',
             innerFill: true,
             preset: 'preset001',
             offset: 15,

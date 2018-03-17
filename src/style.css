@@ -28,21 +28,53 @@
   margin: 15px auto 0;
 }
 
-.items-wrapper {
-  position: relative;
-  max-width: 1200px;
-  margin-top: 20px;
-  margin-bottom: 40px;
+.preview-slider {
+
+  @media (min-width: 768px) {
+    margin-top: 40px;
+  }
 
   :global {
+    .slick-track {
+      padding: 10px 0;
+    }
+  }
+}
+
+.testimonial {
+  &__text {
+    margin-bottom: 10px;
+    font-size: calc(var(--ui-heading-size) * 0.6666);
+
+    @media (min-width: 768px) {
+      margin-bottom: 10px;
+      font-size: var(--ui-heading-size);
+    }
+  }
+}
+
+.items-wrapper {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    margin: 20px auto 0;
+  }
+
+  :global {
+    .slick-track {
+      padding: 10px 0;
+    }
 
     /* styles for default arrows */
     .slick-arrow-default {
       position: absolute;
       width: 23px;
       height: 40px;
-      top: 100%;
+      top: 40px;
       padding: 0;
+      transform: translateY(0);
       z-index: 1;
       border: 0;
       background-color: transparent;
@@ -52,30 +84,11 @@
     }
 
     .slick-prev-default {
-      left: 50%;
-      transform: translateX(-200%);
-
-      @media (min-width: 768px) {
-        left: 50px;
-      }
+      left: 0;
     }
 
     .slick-next-default {
-      right: 50%;
-      transform: translateX(200%);
-
-      @media (min-width: 768px) {
-        right: 50px;
-      }
-    }
-
-    .slick-prev-default,
-    .slick-next-default {
-
-      @media (min-width: 768px) {
-        top: 50%;
-        transform: translateY(-50%);
-      }
+      right: 0;
     }
 
     /* styles for custom arrows */
@@ -99,6 +112,49 @@
         transform: translateY(-50%);
       }
     }
+
+    /* styles for distinguish center item */
+    .slick-slide {
+      opacity: 0.6;
+      transition: opacity 0.2s ease-in;
+    }
+
+    .slick-center {
+      opacity: 1;
+    }
+
+    /* stylelint-disable */
+    .slick-center .item__picture--global {
+
+      @media (min-width: 768px) {
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .item__person-info--global {
+
+      @media (min-width: 768px) {
+        transform: translateY(-10px);
+        transition: transform 0.2s ease-in;
+      }
+    }
+
+    .slick-center .item__person-info--global {
+
+      @media (min-width: 768px) {
+        transform: translateY(0);
+      }
+    }
+
+    .item__socials--global {
+      opacity: 0;
+      transition: opacity 0.2s ease-in;
+    }
+
+    .slick-center .item__socials--global {
+      opacity: 1;
+    }
+    /* stylelint-enable */
   }
 
   /* state without image */
@@ -123,12 +179,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  .items-wrapper {
-    margin-bottom: 0;
-  }
-}
-
 .item {
   display: flex;
   padding: 0 5px;
@@ -148,7 +198,7 @@
 
 @media (min-width: 768px) {
   .item__inner {
-    padding: 0 48px;
+    padding: 0 20px;
   }
 }
 
@@ -168,12 +218,21 @@
 
 .item__picture {
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 70px;
+  height: 70px;
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
   background-color: var(--ui-media-bg);
+
+  @media (min-width: 768px) {
+    width: 120px;
+    height: 120px;
+    transform: scale(0.75) translateY(15px);
+    opacity: 0.6;
+    transition: transform 0.2s ease-in,
+      opacity 0.2s ease-in;
+  }
 }
 
 .item__image {
@@ -183,50 +242,15 @@
   object-fit: cover;
 }
 
-.item__contacts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.item__author {
   margin-bottom: 5px;
-}
-
-@media (min-width: 992px) {
-  .item__contacts {
-    margin-bottom: 0;
-  }
-}
-
-.item__title {
-  max-width: 100%;
+  font-size: var(--ui-subtitle-size);
+  line-height: var(--ui-subtitle-line-height);
+  font-weight: var(--ui-subtitle-font-weight);
 }
 
 .item__position {
-  margin-bottom: 15px;
-}
-
-.item__position:last-child {
-  margin-bottom: 0;
-}
-
-.item__desc {
-  margin-top: 20px;
-  font-size: calc(var(--ui-text-size) * 1.25);
-}
-
-.item__time {
-  display: inline-block;
-  max-width: 100%;
-  margin-top: 20px;
-}
-
-@media (min-width: 768px) {
-  .item__time {
-    margin-top: 30px;
-  }
-}
-
-.item__contacts + .rating {
-  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .button {
@@ -241,21 +265,4 @@
 
 .btns-group {
   padding-top: 40px;
-}
-
-.item__author-wrapper {
-  display: flex;
-  width: 30%;
-  flex-direction: column;
-}
-
-.item__testimonials-wrapper {
-  display: flex;
-  width: 70%;
-  flex-direction: column;
-}
-
-.top-icon {
-  width: 20px;
-  height: 20px;
 }
