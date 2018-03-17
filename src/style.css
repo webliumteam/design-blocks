@@ -4,6 +4,12 @@
   text-align: center;
   word-wrap: break-word;
 
+  &--hide-all-modifications {
+    .nav-button {
+      top: 20px;
+    }
+  }
+
   &--nav-open {
 
     @media (max-width: 991px) {

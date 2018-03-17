@@ -46,9 +46,11 @@ class Block extends React.Component {
     const menuModifierClass = style[`nav--${menuAlignment}`]
     const logoStatus = !this.getModifierValue('logo')
     const topLineStatus = this.getModifierValue('text') || this.getModifierValue('social-icons')
+    const hideAllModification = !this.getModifierValue('logo') && !this.getModifierValue('text') && !this.getModifierValue('social-icons')
+    const hideAllClass = hideAllModification && style['header--hide-all-modifications']
 
     return (
-      <header className={classNames(style.header, opened && style['header--nav-open'])} data-header="target">
+      <header className={classNames(style.header, opened && style['header--nav-open'], hideAllClass)} data-header="target">
         {topLineStatus && (
           <div className={style['header__top-line']}>
             <div className={style['header__top-line-inner']}>
