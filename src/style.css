@@ -21,6 +21,11 @@
   padding: 20px;
   color: var(--ui-brand-color);
 
+  > svg {
+    max-width: 20px;
+    max-height: 20px;
+  }
+
   &::before {
     content: "";
     position: absolute;
