@@ -1,3 +1,6 @@
 {
-  "image_wrapper": true
+  "toogle-item-controls": true,
+  "different-icons": false,
+  "open-icon": "<svg width='28' height='17'><path d='M24.71 0L14 10.507 3.29 0 0 3.235 14 17 28 3.235z' fill='currentColor' fill-rule='nonzero'/></svg>",
+  "close-icon": "<svg width='28' height='17'><path d='M24.71 0L14 10.507 3.29 0 0 3.235 14 17 28 3.235z' fill='currentColor' fill-rule='nonzero'/></svg>"
 }
