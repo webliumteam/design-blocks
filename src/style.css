@@ -82,6 +82,6 @@
   .item:nth-last-of-type(4):first-child,
   .item:nth-last-of-type(4):first-child ~ .item {
     flex-basis: 48%;
-    max-width: 50%;
+    max-width: 48%;
   }
 }
