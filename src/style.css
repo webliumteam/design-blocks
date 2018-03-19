@@ -119,6 +119,13 @@
       margin-bottom: 19px;
     }
   }
+
+  &__cta {
+    &:only-child {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
 }
 
 .btns-group {
