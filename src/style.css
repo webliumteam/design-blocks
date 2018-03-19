@@ -66,6 +66,7 @@
 
 .btns-group {
   margin-top: 29px;
+  margin-bottom: 0;
 
   .button {
     margin-right: 10px;
