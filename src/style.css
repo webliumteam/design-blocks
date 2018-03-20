@@ -1,3 +1,69 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-gallery/src/style.css";
 
 /* start here */
+
+.section {
+  &__header {
+    margin-bottom: 60px;
+  }
+}
+
+.top-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  color: var(--ui-brand-color);
+
+  > svg {
+    max-width: 20px;
+    max-height: 20px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--ui-dark-accent-color);
+    opacity: 0.05;
+  }
+}
+
+.title {
+  margin-bottom: 25px;
+}
+
+.items-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.item {
+  margin-bottom: 50px;
+
+  &__picture {
+    cursor: pointer;
+    padding-top: 75.68%;
+  }
+
+  &__caption {
+    margin-top: 22px;
+    font-size: calc(var(--ui-caption-size) * 1.5);
+    text-align: center;
+  }
+}
+
+.button {
+  margin-left: auto;
+  margin-right: auto;
+}
