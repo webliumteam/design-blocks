@@ -57,6 +57,7 @@
     font-size: calc(var(--ui-text-size) * 0.875);
     margin-bottom: 46px;
     text-align: left;
+    word-break: break-word;
   }
 }
 
