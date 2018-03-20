@@ -12,6 +12,7 @@
   border-radius: 50%;
   background-color: var(--ui-light-shade-color);
   box-shadow: 0 2px 20px -6px var(--ui-link-color);
+  padding: 20px;
 
   > svg {
     max-width: 23px;
