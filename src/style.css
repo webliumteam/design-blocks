@@ -100,7 +100,7 @@
   padding: 15px 7px 15px 6px;
   background-color: #d8d8d8;
   text-align: center;
-  z-index: 2;
+  z-index: 3;
 }
 
 .article__badge::after {
