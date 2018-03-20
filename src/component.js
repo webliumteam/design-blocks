@@ -240,8 +240,8 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'secondary-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'FAQ description', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'FAQ description', type: 'checkbox'},
+  'secondary-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
 
 export default Block
