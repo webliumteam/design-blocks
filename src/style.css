@@ -1,1 +1,166 @@
 @import "media.css";
+
+.section {
+  min-width: 320px;
+  padding: 50px 0;
+  word-wrap: break-word;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding: 75px 0;
+  }
+
+  &__inner {
+    max-width: var(--ui-content-container);
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (--ui-tablet-devices) {
+      padding: 0 75px;
+    }
+
+    @media (--ui-medium-devices) {
+      display: flex;
+      padding: 0 20px;
+    }
+  }
+}
+
+.title {
+  word-wrap: break-word;
+}
+
+.subtitle {
+  margin-top: 15px;
+}
+
+.contacts {
+
+  @media (--ui-medium-devices) {
+    flex: 1;
+  }
+
+  &-list {
+    margin-top: 50px;
+
+    &__item {
+      margin-bottom: 30px;
+
+      @media (--ui-tablet-devices) {
+        display: flex;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @media (--ui-tablet-devices) {
+      max-width: 120px;
+      margin-right: 20px;
+      flex-basis: 120px;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &--phone {
+
+      @media (--ui-tablet-devices) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.socials {
+  margin-top: 20px;
+}
+
+.form {
+  display: flex;
+  padding: 60px 20px 70px;
+  flex-direction: column;
+  border-radius: 3px;
+
+  @media (--ui-tablet-devices) {
+    padding: 60px 110px 70px;
+  }
+
+  @media (--ui-medium-devices) {
+    padding: 60px 100px 70px;
+  }
+
+  &__wrapper {
+    margin-top: 40px;
+
+    @media (--ui-tablet-devices) {
+      margin-top: 70px;
+    }
+
+    @media (--ui-medium-devices) {
+      width: 570px;
+      margin-top: 0;
+      margin-left: 75px;
+    }
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    height: 52px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0;
+    border-radius: 3px;
+    font-family: var(--ui-text-font-family);
+    font-size: inherit;
+    text-overflow: ellipsis;
+    background-color: rgba(103, 103, 103, 0.2);
+
+    @media (min-width: 992px) {
+      margin-top: 10px;
+    }
+  }
+
+  textarea {
+    min-height: 150px;
+    padding-top: 12px;
+    resize: none;
+  }
+
+  &__button {
+    margin-top: 40px;
+  }
+}
+
+.map-wrapper {
+  position: relative;
+  margin-top: 70px;
+}
+
+.map {
+  padding-top: 58%;
+}
+
+.map__preview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
