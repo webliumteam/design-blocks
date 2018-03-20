@@ -49,6 +49,11 @@
 
 .form {
   padding: 0 20px 50px;
+
+  textarea {
+    min-height: 69px;
+    resize: none;
+  }
 }
 
 @media (min-width: 480px) {
