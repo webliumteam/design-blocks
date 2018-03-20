@@ -3,7 +3,10 @@
 /* start here */
 
 .section {
-  padding: 140px 0;
+
+  @media (min-width: 992px) {
+    padding: 140px 0;
+  }
 }
 
 .top-icon {
