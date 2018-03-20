@@ -7,7 +7,7 @@
 }
 
 .logo {
-  min-width: 0;
+  min-width: unset;
   max-width: 280px;
 
   @media (min-width: 992px) {
