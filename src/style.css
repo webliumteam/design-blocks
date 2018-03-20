@@ -98,12 +98,13 @@
     width: 48px;
     height: 48px;
     padding: 0;
-    margin-bottom: 0;
     color: var(--ui-brand-color);
     background: none;
+    margin-bottom: 5px;
 
     @media (min-width: 768px) {
       margin-right: 30px;
+      margin-bottom: 0;
     }
 
     svg {
