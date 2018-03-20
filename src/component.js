@@ -41,7 +41,6 @@ class Block extends React.Component {
     )
   }
 
-
   individualCollectionItem = this.createCollectionItem('individuals')
 
   companyCollectionItem = this.createCollectionItem('companies')
@@ -59,7 +58,7 @@ class Block extends React.Component {
           )}
           <div className={style['collections-wrapper']}>
             <div className={style.items__wrapper}>
-              <Text tagName="h2" className={style.items__title} bind="individuals.heading" />
+              {this.getModifierValue('heading') && <Text tagName="h2" className={style.items__title} bind="individuals.heading" />}
               <Collection
                 className={style.items}
                 bind="individuals.faq"
@@ -68,7 +67,7 @@ class Block extends React.Component {
               />
             </div>
             <div className={style.items__wrapper}>
-              <Text tagName="h2" className={style.items__title} bind="companies.heading" />
+              {this.getModifierValue('heading') && <Text tagName="h2" className={style.items__title} bind="companies.heading" />}
               <Collection
                 className={style.items}
                 bind="companies.faq"
@@ -77,15 +76,13 @@ class Block extends React.Component {
               />
             </div>
           </div>
-          {this.getModifierValue('secondary-button') && (
-            <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
-            </div>
-          )}
+          <div className={style['btns-group']}>
+            <Button
+              buttonClassName={style.button}
+              linkClassName={style.link}
+              bind="cta"
+            />
+          </div>
         </div>
       </section>
     )
@@ -240,8 +237,8 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'FAQ description', type: 'checkbox'},
-  'secondary-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Description of FAQ', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Type/Category of questions', type: 'checkbox'},
 }
 
 export default Block
