@@ -1,3 +1,83 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-why/src/style.css";
 
 /* start here */
+
+.top-icon {
+  display: flex;
+  position: relative;
+  margin: 0 auto 30px;
+  width: 60px;
+  height: 60px;
+  color: var(--ui-brand-color);
+  border-radius: 50%;
+  background-color: var(--ui-light-shade-color);
+  box-shadow: 0 2px 20px -6px var(--ui-link-color);
+  padding: 20px;
+
+  > svg {
+    max-width: 23px;
+    max-height: 23px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--ui-light-shade-color);
+    border-radius: 40px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
+  }
+}
+
+.title {
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: calc(var(--ui-subtitle-size) * 0.875);
+  margin-top: 24px;
+}
+
+.item {
+  margin-top: 62px;
+
+  &__desc {
+    font-size: calc(var(--ui-text-size) * 0.875);
+  }
+
+  &__top-element {
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 110px;
+    height: 110px;
+    margin-bottom: 32px;
+    background-color: var(--ui-light-shade-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
+    padding: 30px;
+  }
+}
+
+.btns-group {
+  margin-top: 29px;
+  margin-bottom: 0;
+
+  .button {
+    margin-right: 10px;
+  }
+
+  .link {
+    color: var(--ui-link-hover-color);
+    font-size: calc(var(--ui-text-size) * 0.94);
+
+    &:hover {
+      color: var(--ui-link-color);
+    }
+  }
+}
