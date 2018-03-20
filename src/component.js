@@ -29,7 +29,7 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, modifier}) => {
+  collectionItem = ({index, modifier, openLightbox}) => {
     const {components: {Image}, style} = this.props
     return (
       <article className={style.item}>
@@ -45,6 +45,7 @@ class Block extends React.Component {
               'min-width: 480px': 800,
             }}
             resize={{disable: false}}
+            onOpenLightbox={openLightbox}
           />
         </div>
       </article>
@@ -78,6 +79,7 @@ class Block extends React.Component {
             itemProps={{
               modifier: $block.modifier,
             }}
+            galleryId="gallery"
           />
           <Slider
             className={style['items-wrapper']}
@@ -146,42 +148,49 @@ Block.defaultContent = {
     image: {
       src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
+      galleryId: 'gallery',
     },
   },
   {
     image: {
       src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
+      galleryId: 'gallery',
     },
   },
   {
     image: {
       src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
+      galleryId: 'gallery',
     },
   },
   {
     image: {
       src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
+      galleryId: 'gallery',
     },
   },
   {
     image: {
       src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
+      galleryId: 'gallery',
     },
   },
   {
     image: {
       src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
+      galleryId: 'gallery',
     },
   },
   {
     image: {
       src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
       alt: 'Gallery image',
+      galleryId: 'gallery',
     },
   }],
   button: {
