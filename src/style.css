@@ -109,7 +109,6 @@
   &__time {
     font-weight: bold;
     font-size: calc(var(--ui-text-size) * 0.75);
-    margin-top: -7px;
   }
 
   &__title {
@@ -121,6 +120,13 @@
   }
 
   &__cta {
+    &:only-child {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+
+  &__location {
     &:only-child {
       max-width: 100%;
       width: 100%;
