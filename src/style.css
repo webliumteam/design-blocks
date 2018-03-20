@@ -1,3 +1,42 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-header/src/style.css";
 
-/* start here */
+.header {
+  &--nav-open {
+    background-color: var(--ui-dark-shade-color);
+  }
+}
+
+.logo {
+  min-width: unset;
+  max-width: 280px;
+
+  @media (min-width: 992px) {
+    margin-right: 71px;
+  }
+}
+
+.nav {
+
+  @media (min-width: 992px) {
+    padding-left: 0;
+    justify-content: flex-start;
+  }
+}
+
+.nav-list {
+  &__item {
+
+    @media (min-width: 992px) {
+      margin-left: 22px;
+      margin-right: 22px;
+      opacity: 0.6;
+
+      &:only-child,
+      &:last-child,
+      &:first-child {
+        margin-left: 22px;
+        margin-right: 22px;
+      }
+    }
+  }
+}
