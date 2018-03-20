@@ -13,13 +13,13 @@
     padding: 75px 0;
   }
 }
-  
+
 .section__inner {
   max-width: var(--ui-content-container);
   margin: 0 auto;
   padding: var(--ui-content-gutter);
 }
-  
+
 .title {
   text-align: center;
 }
@@ -58,7 +58,7 @@
 .item {
   margin-top: 20px;
 }
-  
+
 .item__button {
   position: relative;
   width: 100%;
@@ -74,13 +74,13 @@
   border-bottom: 1px solid #979797;
   cursor: pointer;
 }
-  
+
 @media (min-width: 768px) {
   .item__title {
     padding: 30px 65px 30px 15px;
   }
 }
-  
+
 .item__icon {
   position: absolute;
   width: 18.5px;
@@ -95,7 +95,7 @@
   transition: transform 0.2s ease-in;
   cursor: pointer;
 }
-  
+
 @media (min-width: 768px) {
   .item__icon {
     right: 15px;

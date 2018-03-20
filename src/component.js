@@ -21,65 +21,30 @@ class Block extends React.Component {
     this.setState({[`${collectionName}Opened`]: index === this.state[`${collectionName}Opened`] ? null : index})
   }
 
-  // getCollectionItem = ({collectionName, index, children, className, openedItem}) => {
-  //   const {components: {Text}, style} = this.props
-  //   const controlIcons = !this.getOptionValue('different-icons') ?
-  //     (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.getOptionValue('open-icon')}} />) :
-  //     (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state[`${collectionName}Opened`] === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />)
-
-  //   return (
-  //     <article
-  //       className={classNames(style.item, openedItem === index && style['item--active'], className)}
-  //     >
-  //       {children}
-  //       <button type="button" className={style.item__button} onClick={this.toggleItemOpening(collectionName, index)}>
-  //         <Text tagName="h3" className={style.item__title} bind={`${collectionName}.faq[${index}].title`} />
-  //         {this.getOptionValue('toogle-item-controls') && controlIcons}
-  //       </button>
-  //       <Text tagName="div" className={style.item__content} bind={`${collectionName}.faq[${index}].description`} />
-  //     </article>
-  //   )
-  // }
-
-  individualCollectionItem = ({index, children, className, openedItem}) => {
+  createCollectionItem = collectionName => ({index, children, className, openedItem}) => {
     const {components: {Text}, style} = this.props
     const controlIcons = !this.getOptionValue('different-icons') ?
       (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.getOptionValue('open-icon')}} />) :
-      (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state.individualsOpened === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />)
+      (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state[`${collectionName}Opened`] === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />)
 
     return (
       <article
         className={classNames(style.item, openedItem === index && style['item--active'], className)}
       >
         {children}
-        <button type="button" className={style.item__button} onClick={this.toggleItemOpening('individuals', index)}>
-          <Text tagName="h3" className={style.item__title} bind={`individuals.faq[${index}].title`} />
+        <button type="button" className={style.item__button} onClick={this.toggleItemOpening(collectionName, index)}>
+          <Text tagName="h3" className={style.item__title} bind={`${collectionName}.faq[${index}].title`} />
           {this.getOptionValue('toogle-item-controls') && controlIcons}
         </button>
-        <Text tagName="div" className={style.item__content} bind={`individuals.faq[${index}].description`} />
+        <Text tagName="div" className={style.item__content} bind={`${collectionName}.faq[${index}].description`} />
       </article>
     )
   }
 
-  companyCollectionItem = ({index, children, className, openedItem}) => {
-    const {components: {Text}, style} = this.props
-    const controlIcons = !this.getOptionValue('different-icons') ?
-      (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.getOptionValue('open-icon')}} />) :
-      (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state.companiesOpened === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />)
 
-    return (
-      <article
-        className={classNames(style.item, openedItem === index && style['item--active'], className)}
-      >
-        {children}
-        <button type="button" className={style.item__button} onClick={this.toggleItemOpening('companies', index)}>
-          <Text tagName="h3" className={style.item__title} bind={`companies.faq[${index}].title`} />
-          {this.getOptionValue('toogle-item-controls') && controlIcons}
-        </button>
-        <Text tagName="div" className={style.item__content} bind={`companies.faq[${index}].description`} />
-      </article>
-    )
-  }
+  individualCollectionItem = this.createCollectionItem('individuals')
+
+  companyCollectionItem = this.createCollectionItem('companies')
 
   render() {
     const {components: {Collection, Text, Button, Icon}, style} = this.props
