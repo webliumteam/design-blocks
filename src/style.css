@@ -53,6 +53,7 @@
 
   &__picture {
     cursor: pointer;
+    padding-top: 75.68%;
   }
 
   &__caption {
