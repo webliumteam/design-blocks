@@ -14,11 +14,11 @@
 
 .top-icon {
   position: relative;
-  display: block;
+  display: flex;
   width: 60px;
   height: 60px;
   margin: 0 auto;
-  padding: 18px 20px;
+  padding: 20px;
   border-radius: 50%;
   margin-bottom: 30px;
   color: var(--ui-brand-color);
@@ -57,6 +57,7 @@
     font-size: calc(var(--ui-text-size) * 0.875);
     margin-bottom: 46px;
     text-align: left;
+    word-break: break-word;
   }
 }
 
@@ -84,14 +85,11 @@
   }
 
   &__item {
-    max-width: 310px;
     margin-top: 20px;
-    flex-direction: row;
     margin-left: auto;
     margin-right: auto;
 
     @media (min-width: 992px) {
-      max-width: none;
       justify-content: flex-start;
     }
   }
@@ -100,10 +98,14 @@
     width: 48px;
     height: 48px;
     padding: 0;
-    margin-bottom: 0;
-    margin-right: 30px;
     color: var(--ui-brand-color);
     background: none;
+    margin-bottom: 5px;
+
+    @media (min-width: 768px) {
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
 
     svg {
       max-width: 100%;
@@ -113,5 +115,6 @@
 
   &__item-text {
     font-size: calc(var(--ui-text-size) * 0.875);
+    word-break: break-word;
   }
 }
