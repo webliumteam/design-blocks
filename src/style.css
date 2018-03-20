@@ -8,7 +8,7 @@
 
 .logo {
   min-width: 0;
-  max-width: none;
+  max-width: 280px;
 
   @media (min-width: 992px) {
     margin-right: 71px;
