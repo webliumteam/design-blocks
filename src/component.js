@@ -14,6 +14,13 @@ class Block extends React.Component {
 
   render() {
     const {components: {Background, Text, Map, SocialIcons, Button}, style: css} = this.props
+    const onlyMap = !this.getModifierValue('title') &&
+      !this.getModifierValue('heading') &&
+      !this.getModifierValue('address') &&
+      !this.getModifierValue('phone') &&
+      !this.getModifierValue('email') &&
+      !this.getModifierValue('social') &&
+      !this.getModifierValue('button')
 
     return (
       <section className={css.section}>
@@ -23,39 +30,43 @@ class Block extends React.Component {
               <Map className={css.map__preview} bind="map" />
             </div>
           </div>
-          <Background tagName="div" className={css.contacts} bind="contactsBackground">
-            <Text tagName="h1" className={css.title} bind="title" />
-            {this.getModifierValue('heading') && (
-              <Text tagName="h2" className={css.heading} bind="heading" />
-            )}
-            <ul className={css['contacts-list']}>
-              {this.getModifierValue('address') && (
-                <li className={css['contacts-list__item']}>
-                  <Text bind="address-content" className={classNames(css.contacts__desc, css['contacts__desc--adress'])} tagName="p" />
-                </li>
+          {!onlyMap && (
+            <Background tagName="div" className={css.contacts} bind="contactsBackground">
+              {this.getModifierValue('title') && (
+                <Text tagName="h1" className={css.title} bind="title" />
               )}
-              {this.getModifierValue('phone') && (
-                <li className={css['contacts-list__item']}>
-                  <Text bind="phone-link" className={classNames(css.contacts__desc, css['contacts__desc--phone'])} tagName="p" />
-                </li>
+              {this.getModifierValue('heading') && (
+                <Text tagName="h2" className={css.heading} bind="heading" />
               )}
-              {this.getModifierValue('email') && (
-                <li className={css['contacts-list__item']}>
-                  <Text bind="email-link" className={classNames(css.contacts__desc, css['contacts__desc--email'])} tagName="p" />
-                </li>
+              <ul className={css['contacts-list']}>
+                {this.getModifierValue('address') && (
+                  <li className={css['contacts-list__item']}>
+                    <Text bind="address-content" className={classNames(css.contacts__desc, css['contacts__desc--adress'])} tagName="p" />
+                  </li>
+                )}
+                {this.getModifierValue('phone') && (
+                  <li className={css['contacts-list__item']}>
+                    <Text bind="phone-link" className={classNames(css.contacts__desc, css['contacts__desc--phone'])} tagName="p" />
+                  </li>
+                )}
+                {this.getModifierValue('email') && (
+                  <li className={css['contacts-list__item']}>
+                    <Text bind="email-link" className={classNames(css.contacts__desc, css['contacts__desc--email'])} tagName="p" />
+                  </li>
+                )}
+              </ul>
+              {this.getModifierValue('social') && (
+                <SocialIcons className={css.socials} bind="socialIcons" />
               )}
-            </ul>
-            {this.getModifierValue('social') && (
-              <SocialIcons className={css.socials} bind="socialIcons" />
-            )}
-            {this.getModifierValue('button') && (
-              <Button
-                buttonClassName={css.button}
-                linkClassName={css.link}
-                bind="button"
-              />
-            )}
-          </Background>
+              {this.getModifierValue('button') && (
+                <Button
+                  buttonClassName={css.button}
+                  linkClassName={css.link}
+                  bind="button"
+                />
+              )}
+            </Background>
+          )}
         </div>
       </section>
     )
@@ -164,6 +175,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Location title', type: 'checkbox'},
   address: {defaultValue: true, label: 'Location address', type: 'checkbox'},
   email: {defaultValue: true, label: 'E-mail', type: 'checkbox'},

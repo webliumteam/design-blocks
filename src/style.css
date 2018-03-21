@@ -17,6 +17,7 @@
     padding: var(--ui-content-gutter);
 
     @media (min-width: 992px) {
+      min-height: 700px;
       padding: 168px 15px;
     }
   }
