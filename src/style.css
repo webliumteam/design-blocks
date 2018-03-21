@@ -25,6 +25,7 @@
     @media (--ui-medium-devices) {
       display: flex;
       padding: 0 20px;
+      align-items: flex-start;
     }
   }
 }
@@ -40,6 +41,7 @@
 .contacts {
 
   @media (--ui-medium-devices) {
+    max-width: calc(100% - 645px);
     flex: 1;
   }
 
@@ -59,9 +61,10 @@
     margin-bottom: 10px;
 
     @media (--ui-tablet-devices) {
-      max-width: 120px;
+      max-width: 130px;
       margin-right: 20px;
-      flex-basis: 120px;
+      flex-basis: 130px;
+      flex-shrink: 0;
     }
   }
 
@@ -69,6 +72,15 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (--ui-medium-devices) {
+      max-width: calc(100% - 150px);
+    }
+
+    &--phone,
+    &--email {
+      max-width: 100%;
+    }
 
     &--phone {
 
