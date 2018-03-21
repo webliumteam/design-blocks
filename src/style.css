@@ -3,7 +3,7 @@
 /* start here */
 .section {
   position: relative;
-  min-height: 100vh;
+  min-height: 0;
   color: #fff;
   border: 10px solid transparent;
 
