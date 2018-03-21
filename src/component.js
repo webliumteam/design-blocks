@@ -61,11 +61,6 @@ class Wireframe extends React.Component {
             />
           </Background>
         </div>
-        {/* <div className={css['map-wrapper']}>
-          <div className={css.map}>
-            <Map className={css.map__preview} bind="map" />
-          </div>
-        </div> */}
       </section>
     )
   }
@@ -184,30 +179,6 @@ Wireframe.defaultContent = {
       type: 'primary',
     },
     className: 'form',
-  },
-  map: {
-    preset: 'silver',
-    height: '100%',
-    center: {
-      lat: 50.4589633,
-      lng: 30.5247585,
-    },
-    zoom: 18,
-    activeMarker: '2aceeb6f-623c-41f8-b0d3-6f0f085e8e48',
-    disableDefaultUI: true,
-    allowZoomOnScroll: false,
-    markers: [
-      {
-        position: {
-          lat: 50.4589633,
-          lng: 30.5247585,
-        },
-        name: 'Address',
-        description: 'This is marker description',
-        address: 'Head office in London - 36 Regent St.',
-        id: '2aceeb6f-623c-41f8-b0d3-6f0f085e8e48',
-      },
-    ],
   },
 }
 
