@@ -49,7 +49,8 @@
 
   @media (--ui-medium-devices) {
     max-width: 50%;
-    margin: 0 15px;
+    padding: 0 15px;
+    margin-bottom: 0;
     flex-basis: 50%;
   }
 }
@@ -152,6 +153,7 @@
 
 .button {
   width: 100%;
+  flex: 1 0 0%;
 
   @media (--ui-phone-devices) {
     width: auto;
