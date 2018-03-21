@@ -27,9 +27,7 @@ class Block extends React.Component {
           resize={{disable: true}}
         />
       ),
-      <div className={style.item__contacts}>
-        <Text bind={`testimonials[${index}].name`} className={style.item__title} tagName="h2" />
-      </div>,
+      <Text bind={`testimonials[${index}].name`} className={style.item__title} tagName="h2" />,
       _.get('position')(modifier) && (
         <Text bind={`testimonials[${index}].position`} className={style.item__position} tagName="p" />
       ),
