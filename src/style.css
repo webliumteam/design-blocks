@@ -153,16 +153,15 @@
   }
 }
 
-.item__title {
+/* .item__title {
   font-size: calc(var(--ui-hero-title-size) * .8);
 }
 
 @media (min-width: 768px) {
   .item__title {
     font-size: var(--ui-hero-title-size);
-    font-weight: 700;
   }
-}
+} */
 
 .slider-dots {
   position: static;
