@@ -12,119 +12,192 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
-
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {ContactForm, Text, Menu, Logo, SocialIcons}, style} = this.props
+
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
-                </div>
-              )}
+      <footer className={style.footer}>
+        <div className={style.footer__inner}>
+          <div className={classNames(style.footer__part, style['footer__part--first'])}>
+            {this.getModifierValue('title') && (
+              <div className={style.logo}>
+                <Logo
+                  bind="logo"
+                  maxWidth={this.getOptionValue('logo-max-width')}
+                  maxHeight={this.getOptionValue('logo-max-height')}
+                  textClassName={style.logo__title}
+                />
+              </div>
+            )}
+          </div>
+          <nav className={classNames(style.footer__part, style['footer__part--second'])}>
+            <Menu
+              className={style['nav-list']}
+              itemClassName={style['nav-list__item']}
+              linkClassName={style['nav-list__link']}
+              bind="menu"
+            />
+          </nav>
+          {this.getModifierValue('social') && (
+            <div className={classNames(style.footer__part, style['footer__part--third'])}>
+              <div className={style.socials}>
+                <Text tagName="h2" className={style.socials__title} bind="follow" />
+                <SocialIcons bind="socialIcons" className={style.socials__icons} />
+              </div>
             </div>
-          </article>
+          )}
+          <ContactForm
+            bind="contactForm"
+            className={classNames(style.footer__part, style['footer__part--last'], style.form)}
+            labelClassName={style.form__item}
+            descriptionClassName={style.form__desc}
+            fieldClassName={style.form__field}
+            buttonClassName={style.form__button}
+          />
+          <div className={style.footer__bottom}>
+            <Text tagName="small" className={style.footer__meta} bind="copyright" />
+            <Text tagName="small" className={style.footer__meta} bind="additional" />
+          </div>
         </div>
-      </section>
+      </footer>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Menu', 'Logo', 'SocialIcons', 'ContactForm'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
+  logo: {
+    text: {
+      value: 'Quantum Company',
+      fontSize: 24,
+    },
   },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
+  menu: [
+    {
+      id: 'about',
+      metadata: {
+        displayName: 'About',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
+    {
+      id: 'testimonials',
+      metadata: {
+        displayName: 'Testimonials',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
         },
       },
     },
-    textValue: 'More about us',
+    {
+      id: 'projects',
+      metadata: {
+        displayName: 'Projects',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'blog',
+      metadata: {
+        displayName: 'Blog',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'services',
+      metadata: {
+        displayName: 'Services',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'resources',
+      metadata: {
+        displayName: 'Resources',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'development',
+      metadata: {
+        displayName: 'Development',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'contacts-us',
+      metadata: {
+        displayName: 'Contact us',
+        clickAction: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+  ],
+  follow: {
+    type: 'text',
+    content: 'Follow Us',
   },
   socialIcons: {
     networks: [
@@ -134,36 +207,59 @@ Block.defaultContent = {
         url: 'http://facebook.com/',
       },
       {
+        id: 'twitter',
+        name: 'Twitter',
+        url: 'http://twitter.com/',
+      },
+      {
         id: 'instagram',
         name: 'Instagram',
         url: 'http://instagram.com/',
       },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
     ],
     target: '_blank',
     design: {
-      border: 'circle',
+      border: 'softRect',
       innerFill: true,
       preset: 'preset001',
-      padding: 20,
-      color: '',
+      offset: 15,
+      color: '#9b9b9b',
       sizes: [10, 20, 30, 40],
-      size: '40px',
+      size: 30,
     },
+  },
+  contactForm: {
+    fields: [
+      {
+        type: 'email',
+        id: 'contactForm_email',
+        title: 'Subscribe to get the latest news from us',
+        placeholder: 'Email',
+        required: false,
+      },
+    ],
+    submitButton: {
+      title: 'subscribe',
+      textValue: 'subscribe',
+      type: 'primary',
+    },
+    className: 'form',
+    buttonClassName: 'button',
+  },
+  copyright: {
+    type: 'caption',
+    content: 'Produced by Weblium.com.',
+  },
+  additional: {
+    type: 'caption',
+    content: 'All rights Reserved',
   },
 }
 
+
 Block.modifierScheme = {
-  button: {defaultValue: true, label: 'Contact us button', type: 'checkbox'},
-  link: {defaultValue: false, label: 'About us link', type: 'checkbox'},
-  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
-  text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
+  social: {defaultValue: true, label: 'Social media Icons', type: 'checkbox'},
 }
 
 
