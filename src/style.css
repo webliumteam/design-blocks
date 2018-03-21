@@ -38,6 +38,7 @@
         display: block;
         padding-bottom: 20px;
         flex-grow: 1;
+        flex-basis: 1px;
         overflow-y: auto;
 
         &__item {
@@ -271,7 +272,7 @@
   transition: color .2s ease-in-out;
 
   @media (min-width: 768px) {
-    top: 45px;
+    top: 30px;
   }
 
   &:hover,
