@@ -60,7 +60,7 @@ class Block extends React.Component {
                   )}
                   {this.getModifierValue('additional-button') && (
                     <Button
-                      buttonClassName={style.button}
+                      className={style.button}
                       linkClassName={style.link}
                       bind="button-2"
                     />
