@@ -12,6 +12,7 @@
   &__content {
     max-width: 80%;
     flex-basis: 80%;
+    padding-left: 0;
   }
 
   &__title {
