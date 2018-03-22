@@ -71,9 +71,12 @@
   }
 
   &__inner {
+    display: flex;
     position: relative;
     width: calc(100% - 16px);
     margin: 0 8px;
+    justify-content: center;
+    align-items: center;
 
     @media(min-width: 992px) {
       max-width: calc(100% - 30px);
@@ -99,9 +102,9 @@
   &__text {
     display: flex;
     position: relative;
-    width: calc(100% - 60px);
-    height: calc(100% - 60px);
+    min-width: 1px;
     margin: 30px;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;

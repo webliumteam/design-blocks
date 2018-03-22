@@ -7,10 +7,15 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
+  state = {}
+
+  onResizeHeight = resizeHeight => this.setState({resizeHeight})
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
+
 
   collectionItem = ({index, children, className}) => {
     const {components: {Text, Image, Resizer}, style} = this.props
@@ -20,10 +25,12 @@ class Block extends React.Component {
     return (
       <Resizer
         styleProp="minHeight"
-        bindToModifier={`resizer.items${index}`}
+        bindToModifier="resizer.items"
         min={this.getOptionValue('min-resize')}
         max={this.getOptionValue('max-resize')}
         disable={this.getOptionValue('disable-resizer')}
+        state={this.state.resizeHeight}
+        changeState={this.onResizeHeight}
       >
         <article className={classNames(style.item, hiddenBodyClass, className)}>
           {children}
