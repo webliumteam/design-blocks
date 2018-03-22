@@ -1,1 +1,87 @@
-{}
+[
+  {},
+  {
+    "background": {
+      "type": "image",
+      "position": {
+        "type": "cover",
+        "cover": "50% 50%"
+      },
+      "resourceRef": "layer-517.png",
+      "overlay": {
+        "type": "color",
+        "color": "#fff",
+        "opacity": 0.7
+      }
+    },
+    "title": {
+      "content": "Government",
+      "type": "blockTitle"
+    },
+    "subtitle": {
+      "content": "Customized solutions for Government sites",
+      "type": "subheading"
+    },
+    "text": {
+      "content": "— We work as efficiently as you do <br/>— We care about your products and processes <br />— We are flexible and able to scale our operations to match your business cycle",
+      "type": "quote"
+    },
+    "button-1": {
+      "actionConfig": {
+        "action": "link",
+        "actions": {
+          "link": {
+            "type": "",
+            "innerPage": "",
+            "url": ""
+          }
+        }
+      },
+      "textValue": "Send Us a Message",
+      "type": "secondary",
+      "size": "lg"
+    }
+  },
+  {
+    "background": {
+      "type": "image",
+      "position": {
+        "type": "cover",
+        "cover": "50% 50%"
+      },
+      "resourceRef": "layer-519.png",
+      "overlay": {
+        "type": "color",
+        "color": "#fff",
+        "opacity": 0.7
+      }
+    },
+    "title": {
+      "content": "Entertainment & Sports",
+      "type": "blockTitle"
+    },
+    "subtitle": {
+      "content": "Customized solutions for event and sports industry",
+      "type": "subheading"
+    },
+    "text": {
+      "content": "— We work as efficiently as you do <br/>— We care about your products and processes <br />— We are flexible and able to scale our operations to match your business cycle",
+      "type": "quote"
+    },
+    "button-1": {
+      "actionConfig": {
+        "action": "link",
+        "actions": {
+          "link": {
+            "type": "",
+            "innerPage": "",
+            "url": ""
+          }
+        }
+      },
+      "textValue": "Send Us a Message",
+      "type": "secondary",
+      "size": "lg"
+    }
+  }
+]
