@@ -1,3 +1,42 @@
 @import "wireframe-series-2-why/src/style.css";
 
 /* start here */
+.section {
+  &__header {
+    margin-bottom: 38px;
+  }
+
+  .article__text {
+    color: #7d7d7d;
+  }
+}
+
+.article {
+  margin-bottom: 56px;
+  text-align: center;
+
+  @media (min-width: 992px) {
+    padding: 0 44px;
+    align-items: center;
+    text-align: left;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    text-align: center;
+
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 26px;
+
+    @media (min-width: 992px) {
+      margin: 0 68px 0 0;
+    }
+  }
+}
