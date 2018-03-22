@@ -139,6 +139,7 @@
 
   @media(min-width: 992px) {
     display: flex;
+    max-width: calc(50% - 25px);
     margin-right: 25px;
     flex-basis: 50%;
     align-items: center;
@@ -153,6 +154,7 @@
 .article__body {
 
   @media(min-width: 992px) {
+    max-width: 50%;
     flex-basis: 50%;
   }
 }
@@ -163,10 +165,6 @@
 
   &:last-child {
     margin-bottom: 0;
-  }
-
-  @media(min-width: 992px) {
-    padding: 0 30px;
   }
 }
 
@@ -184,12 +182,12 @@
 .btns-group {
   text-align: center;
   padding-top: 40px;
+}
 
-  &__button {
-    width: 100%;
+.button {
+  width: 100%;
 
-    @media (min-width: 480px) {
-      width: auto;
-    }
+  @media (min-width: 480px) {
+    width: auto;
   }
 }
