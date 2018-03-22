@@ -43,9 +43,7 @@ class Block extends React.Component {
             />
             {!hiddenItemText && (
               <div className={style.item__text}>
-                {this.getModifierValue('item-heading') && (
-                  <Text tagName="h2" className={style.item__heading} bind={`items[${index}].heading`} />
-                )}
+                <Text tagName="h2" className={style.item__heading} bind={`items[${index}].heading`} />
                 {this.getModifierValue('item-body') && (
                   <Text tagName="p" className={style.item__description} bind={`items[${index}].text`} />
                 )}
@@ -187,7 +185,6 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Why us description', type: 'checkbox'},
-  'item-heading': {defaultValue: true, label: 'Advantage title', type: 'checkbox'},
   'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
   'main-button': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
   'additional-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},

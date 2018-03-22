@@ -50,7 +50,6 @@
 
 .item {
   display: flex;
-  min-height: 400px;
   margin-bottom: 30px;
 
   @media(min-width: 768px) {
@@ -74,6 +73,7 @@
     display: flex;
     position: relative;
     width: calc(100% - 16px);
+    min-height: 400px;
     margin: 0 8px;
     justify-content: center;
     align-items: center;
