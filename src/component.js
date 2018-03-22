@@ -103,7 +103,8 @@ class Block extends React.Component {
               dots: false,
               arrows: false,
               asNavFor: this.state.nav2,
-              adaptiveHeight: false,
+              adaptiveHeight: true,
+              infinite: false,
             }}
             itemProps={{
               modifier: $block.modifier,
