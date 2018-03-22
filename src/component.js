@@ -63,39 +63,37 @@ class Block extends React.Component {
             </div>
           </div>
         )}
-        <div className={style.header__main}>
-          <div className={classNames(style['header__main-inner'], logoStatus && style['header__main-inner--logo-hidden'])}>
-            {this.getModifierValue('logo') && (
-              <div className={style['logo-wrapper']}>
-                <Logo
-                  bind="logo"
-                  className={style.logo}
-                  textClassName={style.logo__title}
-                  maxWidth={this.getOptionValue('logo-max-width')}
-                  maxHeight={this.getOptionValue('logo-max-height')}
-                />
-              </div>
-            )}
-            <button
-              type="button"
-              className={style['nav-button']}
-              data-header="trigger"
-              onClick={this.toggleOpened}
-            >
-              <span className={style['nav-button__line']} />
-              <span className={style['nav-button__line']} />
-              <span className={style['nav-button__line']} />
-            </button>
-            <nav className={classNames(style.nav, menuModifierClass)}>
-              <Menu
-                className={style.nav__list}
-                itemClassName={style.nav__item}
-                linkClassName={style.nav__link}
-                onClickItem={this.closeMenu}
-                bind="menu"
+        <div className={classNames(style.header__main, logoStatus && style['header__main--logo-hidden'])}>
+          {this.getModifierValue('logo') && (
+            <div className={style['logo-wrapper']}>
+              <Logo
+                bind="logo"
+                className={style.logo}
+                textClassName={style.logo__title}
+                maxWidth={this.getOptionValue('logo-max-width')}
+                maxHeight={this.getOptionValue('logo-max-height')}
               />
-            </nav>
-          </div>
+            </div>
+          )}
+          <button
+            type="button"
+            className={style['nav-button']}
+            data-header="trigger"
+            onClick={this.toggleOpened}
+          >
+            <span className={style['nav-button__line']} />
+            <span className={style['nav-button__line']} />
+            <span className={style['nav-button__line']} />
+          </button>
+          <nav className={classNames(style.nav, menuModifierClass)}>
+            <Menu
+              className={style.nav__list}
+              itemClassName={style.nav__item}
+              linkClassName={style.nav__link}
+              onClickItem={this.closeMenu}
+              bind="menu"
+            />
+          </nav>
         </div>
       </header>
     )
