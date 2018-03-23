@@ -15,11 +15,13 @@ class Block extends React.Component {
   render() {
     const {components: {Image, Text, Button, SocialIcons}, style} = this.props
     const showButtonGroups = this.getModifierValue('button') || this.getModifierValue('additional-button')
+    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 28
+    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 42
 
     return (
       <section className={classNames(style.section)}>
         <div className={style.section__inner}>
-          <article className={style.article}>
+          <div className={style.article}>
             {this.getModifierValue('image') && (
               <Image
                 pictureClassName={style.article__picture}
@@ -30,7 +32,7 @@ class Block extends React.Component {
                   'min-width: 768px': 1000,
                   'min-width: 480px': 800,
                 }}
-                resize={{disable: true}}
+                resize={{min: getMinResize, max: getMaxResize}}
               />
             )}
             <div className={style.article__content}>
@@ -68,7 +70,7 @@ class Block extends React.Component {
                 </div>
               )}
             </div>
-          </article>
+          </div>
         </div>
       </section>
     )
