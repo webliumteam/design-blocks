@@ -19,13 +19,22 @@ class Block extends React.Component {
         <div className={style.item__inner}>
           <Text tagName="h2" className={style.item__title} bind={`cover[${index}].title`} />
           {_.get('subtitle')(modifier) && <Text tagName="p" className={style.subtitle} bind={`cover[${index}].subtitle`} />}
-          {_.get('primary-button')(modifier) && (
+          {(_.get('primary-button')(modifier) || _.get('secondary-button')(modifier)) && (
             <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind={`cover[${index}].cta`}
-              />
+              {_.get('primary-button')(modifier) && (
+                <Button
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind={`cover[${index}].cta`}
+                />
+              )}
+              {_.get('secondary-button')(modifier) && (
+                <Button
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind={`cover[${index}]cta-2]`}
+                />
+              )}
             </div>
           )}
         </div>
@@ -101,6 +110,20 @@ Block.defaultContent = {
         textValue: 'Request a quote',
         type: 'primary',
       },
+      'cta-2': {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'secondary',
+      },
     },
     {
       title: {
@@ -125,6 +148,20 @@ Block.defaultContent = {
         textValue: 'Request a quote',
         type: 'primary',
       },
+      'cta-2': {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'secondary',
+      },
     },
     {
       title: {
@@ -148,6 +185,20 @@ Block.defaultContent = {
         },
         textValue: 'Request a quote',
         type: 'primary',
+      },
+      'cta-2': {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
+        textValue: 'Learn more',
+        type: 'secondary',
       },
     },
   ],
@@ -156,9 +207,9 @@ Block.defaultContent = {
 Block.modifierScheme = {
   arrows: {defaultValue: true, label: 'Navigation arrows', type: 'checkbox'},
   dots: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox'},
-  'primary-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
 }
-
 
 export default Block
