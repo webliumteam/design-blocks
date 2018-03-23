@@ -138,12 +138,9 @@
   }
 
   @media(min-width: 992px) {
-    display: flex;
-    max-width: calc(50% - 25px);
-    margin-right: 25px;
+    max-width: 50%;
+    padding-right: 12px;
     flex-basis: 50%;
-    align-items: center;
-    justify-content: center;
 
     &:only-child {
       flex-basis: 100%;
@@ -155,6 +152,7 @@
 
   @media(min-width: 992px) {
     max-width: 50%;
+    padding-left: 12px;
     flex-basis: 50%;
   }
 }
