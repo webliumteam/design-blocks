@@ -13,53 +13,65 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Background, ContactForm, Text, Map, SocialIcons, Button}, style: css} = this.props
+    const {components: {Background, ContactForm, Text, SocialIcons}, style: css} = this.props
 
     return (
       <section className={css.section}>
         <div className={css.section__inner}>
           <div className={css.contacts}>
-            <Text tagName="h1" className={css.title} bind="title" />
+            {this.getModifierValue('title') && (
+              <Text tagName="h1" className={css.title} bind="title" />
+            )}
             {this.getModifierValue('subtitle') && (
               <Text tagName="p" className={css.subtitle} bind="subtitle" />
             )}
             <ul className={css['contacts-list']}>
-              {this.getModifierValue('address') && (
-                <li className={css['contacts-list__item']}>
+              <li className={css['contacts-list__item']}>
+                {this.getModifierValue('address-title') && (
                   <Text bind="address-title" className={css.contacts__title} tagName="h2" />
+                )}
+                {this.getModifierValue('address') && (
                   <Text bind="address-content" className={classNames(css.contacts__desc, css['contacts__desc--address'])} tagName="p" />
-                </li>
-              )}
-              {this.getModifierValue('hours') && (
-                <li className={css['contacts-list__item']}>
+                )}
+              </li>
+              <li className={css['contacts-list__item']}>
+                {this.getModifierValue('hours-title') && (
                   <Text bind="hours-title" className={css.contacts__title} tagName="h2" />
+                )}
+                {this.getModifierValue('hours') && (
                   <Text bind="hours-content" className={classNames(css.contacts__desc, css['contacts__desc--hours'])} tagName="p" />
-                </li>
-              )}
-              {this.getModifierValue('contacts') && (
-                <li className={css['contacts-list__item']}>
+                )}
+              </li>
+              <li className={css['contacts-list__item']}>
+                {this.getModifierValue('contacts-title') && (
                   <Text bind="contacts-title" className={css.contacts__title} tagName="h2" />
-                  <div className={css.contacts__desc}>
+                )}
+                <div className={css.contacts__desc}>
+                  {this.getModifierValue('phone') && (
                     <Text bind="phone-link" className={css['contacts__desc--phone']} tagName="p" />
+                  )}
+                  {this.getModifierValue('email') && (
                     <Text bind="email-link" className={css['contacts__desc--email']} tagName="p" />
-                    {this.getModifierValue('social') && (
-                      <SocialIcons className={css.socials} bind="socialIcons" />
-                    )}
-                  </div>
-                </li>
-              )}
+                  )}
+                  {this.getModifierValue('social') && (
+                    <SocialIcons className={css.socials} bind="socialIcons" />
+                  )}
+                </div>
+              </li>
             </ul>
           </div>
-          <Background className={css.form__wrapper} bind="formBackground">
-            <ContactForm
-              bind="contactForm"
-              className={css.form}
-              labelClassName={css.form__item}
-              descriptionClassName={css['form__item-description']}
-              fieldClassName={css.form__field}
-              buttonClassName={css.form__button}
-            />
-          </Background>
+          {this.getModifierValue('contact-form') && (
+            <Background className={css.form__wrapper} bind="formBackground">
+              <ContactForm
+                bind="contactForm"
+                className={css.form}
+                labelClassName={css.form__item}
+                descriptionClassName={css['form__item-description']}
+                fieldClassName={css.form__field}
+                buttonClassName={css.form__button}
+              />
+            </Background>
+          )}
         </div>
       </section>
     )
@@ -183,13 +195,17 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  heading: {defaultValue: true, label: 'Location title', type: 'checkbox'},
-  address: {defaultValue: true, label: 'Location address', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Contacts description', type: 'checkbox'},
+  'address-title': {defaultValue: true, label: 'Address title', type: 'checkbox'},
+  address: {defaultValue: true, label: 'First address', type: 'checkbox'},
+  'hours-title': {defaultValue: true, label: 'Hours title', type: 'checkbox'},
   hours: {defaultValue: true, label: 'Working hours', type: 'checkbox'},
-  contacts: {defaultValue: true, label: 'E-mail', type: 'checkbox'},
+  'contacts-title': {defaultValue: true, label: 'Contacts title', type: 'checkbox'},
   phone: {defaultValue: true, label: 'Phone', type: 'checkbox'},
+  email: {defaultValue: true, label: 'E-mail', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'contact-form': {defaultValue: true, label: 'Contact form', type: 'checkbox'},
 }
 
 export default Wireframe
