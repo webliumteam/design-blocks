@@ -1,5 +1,11 @@
 import $editor from 'weblium/editor'
 
+const setStyleProperties = properties => node =>
+  properties.map(([propertyName, value]) => node.style.setProperty(propertyName, value))
+
+const resetStyleProperties = properties => node =>
+  properties.map(propertyName => node.style.removeProperty(propertyName))
+
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
@@ -7,127 +13,212 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
+  state = {
+    opened: false,
+  }
+
+  getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
+  setStylesForBody = (reset = false) => {
+    const {opened} = this.state
+    const nodes = [document.getElementsByTagName('html')[0], document.body]
 
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+    if (!reset && opened) {
+      nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
+    } else {
+      nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
+    }
+  }
 
-  wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
+  toggleOpened = () => this.setState({opened: !this.state.opened}, this.setStylesForBody)
+
+  closeMenu = () => {
+    this.setStylesForBody(true)
+    this.setState({opened: false})
+  }
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons}, style: css} = this.props
-    const columnLayout = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text') ||
-      this.getModifierValue('socialIcons')
-    )
-    const showButtonGroups = this.getModifierValue('link') || this.getModifierValue('button')
-    const ImageComponent = (
-      <Image
-        pictureClassName={css.article__picture}
-        bind="picture"
-        size={this.getImageSize(columnLayout)}
-      />
-    )
+    const {components: {Logo, Text, SocialIcons, Menu}, style} = this.props
+    const {opened} = this.state
+    const menuAlignment = this.getModifierValue('menu-alignment')
+    const menuModifierClass = style[`nav--${menuAlignment}`]
+    const logoStatus = !this.getModifierValue('logo')
+    const topLineStatus = this.getModifierValue('text') || this.getModifierValue('social-icons')
+    const hideAllModification = !this.getModifierValue('logo') && !this.getModifierValue('text') && !this.getModifierValue('social-icons')
+    const hideAllClass = hideAllModification && style['header--hide-all-modifications']
+
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
-        <div className={css.section__inner}>
-          <article className={css.article}>
-            {this.getOptionValue('image_wrapper')
-              ? this.wrapImage(ImageComponent)
-              : ImageComponent}
-            <div className={css.article__content}>
-              {this.getModifierValue('title') && (
-                <h1 className={css.article__title}>
-                  <Text bind="title" />
-                </h1>
-              )}
-              {this.getModifierValue('subtitle') && (
-                <p className={css.article__subtitle}>
-                  <Text bind="subtitle" />
-                </p>
-              )}
-              {this.getModifierValue('text') && (
-                <p className={css.article__text}>
-                  <Text bind="text" />
-                </p>
-              )}
-              {this.getModifierValue('socialIcons') && (
-                <div className={css.article__socials}>
-                  <h2 className={css['social-title']}>Follow us: </h2>
-                  <SocialIcons bind="socialIcons" />
-                </div>
-              )}
-              {showButtonGroups && (
-                <div className={css['btns-group']}>
-                  {this.getModifierValue('link') && <Button className={css.link} bind="link" />}
-                  {this.getModifierValue('button') && (
-                    <Button
-                      className={classNames(
-                        css.button,
-                        css['button--primary'],
-                        css['button--size-md'],
-                      )}
-                      bind="button"
-                    />
-                  )}
+      <header className={classNames(style.header, opened && style['header--nav-open'], hideAllClass)} data-header="target">
+        {topLineStatus && (
+          <div className={style['header__top-line']}>
+            <div className={style['header__top-line-inner']}>
+              {this.getModifierValue('text') && <Text tagName="p" className={style.header__text} bind="topLineText" />}
+              {this.getModifierValue('social-icons') && (
+                <div className={style.header__socials}>
+                  <SocialIcons bind="socialIcons" className={style.socials} />
                 </div>
               )}
             </div>
-          </article>
+          </div>
+        )}
+        <div className={classNames(style.header__main, logoStatus && style['header__main--logo-hidden'])}>
+          {this.getModifierValue('logo') && (
+            <div className={style['logo-wrapper']}>
+              <Logo
+                bind="logo"
+                className={style.logo}
+                textClassName={style.logo__title}
+                maxWidth={this.getOptionValue('logo-max-width')}
+                maxHeight={this.getOptionValue('logo-max-height')}
+              />
+            </div>
+          )}
+          <button
+            type="button"
+            className={style['nav-button']}
+            data-header="trigger"
+            onClick={this.toggleOpened}
+          >
+            <span className={style['nav-button__line']} />
+            <span className={style['nav-button__line']} />
+            <span className={style['nav-button__line']} />
+          </button>
+          <nav className={classNames(style.nav, menuModifierClass)}>
+            <Menu
+              className={style.nav__list}
+              itemClassName={style.nav__item}
+              linkClassName={style.nav__link}
+              onClickItem={this.closeMenu}
+              bind="menu"
+            />
+          </nav>
         </div>
-      </section>
+      </header>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Logo', 'SocialIcons', 'Menu'])($editor.components)
 
 Block.defaultContent = {
-  title: 'About The Company',
-  'text-1': 'Follow us:',
-  subtitle:
-    'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-  text:
-    'We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
+  background: {
+    type: 'color',
+    color: '#f2f2f2',
   },
-  button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
+  logo: {
+    text: {
+      value: 'Quantum Company',
+      tagName: 'h2',
+      fontSize: 32,
+      maxWidth: 165,
+      maxHeight: 80,
+    },
+  },
+  topLineText: {
+    content: '<a href="tel:+16877042511">+ 1-687-704-2511</a>',
+    type: 'text',
+  },
+  menu: [
+    {
+      id: 'about-us',
+      metadata: {
+        displayName: 'About us',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
         },
       },
     },
-    textValue: 'Contact us',
-  },
-  link: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
+    {
+      id: 'services',
+      metadata: {
+        displayName: 'Services',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
         },
       },
     },
-    textValue: 'More about us',
-  },
+    {
+      id: 'projects',
+      metadata: {
+        displayName: 'Projects',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'testimonials',
+      metadata: {
+        displayName: 'Testimonials',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'development',
+      metadata: {
+        displayName: 'Development',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+    {
+      id: 'contact-us',
+      metadata: {
+        displayName: 'Contact us',
+        actionConfig: {
+          action: 'page',
+          target: '_self',
+          actions: {
+            page: '',
+            link: '',
+            block: '',
+          },
+        },
+      },
+    },
+  ],
   socialIcons: {
     networks: [
+      {
+        id: 'twitter',
+        name: 'Twitter',
+        url: 'http://twitter.com/',
+      },
       {
         id: 'facebook',
         name: 'Facebook',
@@ -138,33 +229,35 @@ Block.defaultContent = {
         name: 'Instagram',
         url: 'http://instagram.com/',
       },
-      {
-        id: 'youtube',
-        name: 'YouTube',
-        url: 'http://youtube.com/',
-      },
     ],
     target: '_blank',
     design: {
-      border: 'circle',
-      innerFill: true,
+      border: 'softRect',
+      innerFill: false,
       preset: 'preset001',
-      padding: 20,
-      color: '',
+      offset: 7.5,
+      color: '#303C42',
       sizes: [10, 20, 30, 40],
-      size: '40px',
+      size: 30,
     },
   },
 }
 
 Block.modifierScheme = {
-  button: {defaultValue: true, label: 'Contact us button', type: 'checkbox'},
-  link: {defaultValue: false, label: 'About us link', type: 'checkbox'},
-  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
-  text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  text: {defaultValue: true, label: 'Text', type: 'checkbox'},
+  'social-icons': {defaultValue: true, label: 'Social icons', type: 'checkbox'},
+  logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
+  'menu-alignment': {
+    children: [
+      {id: 'left', label: 'Left'},
+      {id: 'center', label: 'Center'},
+      {id: 'right', label: 'Right'},
+    ],
+    defaultValue: 'right',
+    name: 'Menu alignment',
+    type: 'radio-button-group',
+    style: 'buttons',
+  },
 }
-
 
 export default Block
