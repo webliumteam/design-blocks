@@ -85,7 +85,9 @@
 
   &__title {
     padding: 30px 35px 22px 15px;
-    border-bottom: 1px solid #979797;
+    border-color: transparent transparent #979797;
+    border-width: 1px;
+    border-style: solid;
     cursor: pointer;
 
     @media (--ui-tablet-devices) {
@@ -119,7 +121,7 @@
   &__content {
     display: none;
     padding: 22px 15px 25px;
-    border: 1px solid var(--ui-dark-accent-color);
+    border: 1px solid #979797;
   }
 
   &--active {
@@ -127,6 +129,10 @@
     /* .item__button {
       background-color: var(--ui-light-accent-color);
     } */
+
+    .item__title {
+      border: 1px solid #979797;
+    }
 
     .item__content {
       display: block;
