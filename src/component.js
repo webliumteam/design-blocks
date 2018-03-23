@@ -20,7 +20,6 @@ class Block extends React.Component {
   collectionItem = ({index, children, className}) => {
     const {components: {Text, Image, Resizer}, style} = this.props
     const hiddenBodyClass = !this.getModifierValue('item-body') && style['item--hidden-body']
-    const hiddenItemText = !this.getModifierValue('item-heading') && !this.getModifierValue('item-body')
 
     return (
       <Resizer
@@ -39,16 +38,17 @@ class Block extends React.Component {
               pictureClassName={style.item__picture}
               imgClassName={style.item__image}
               bind={`items[${index}].image`}
+              size={{
+                'min-width: 480px': 800,
+              }}
               resize={{disable: true}}
             />
-            {!hiddenItemText && (
-              <div className={style.item__text}>
-                <Text tagName="h2" className={style.item__heading} bind={`items[${index}].heading`} />
-                {this.getModifierValue('item-body') && (
-                  <Text tagName="p" className={style.item__description} bind={`items[${index}].text`} />
-                )}
-              </div>
-            )}
+            <div className={style.item__text}>
+              <Text tagName="h2" className={style.item__heading} bind={`items[${index}].heading`} />
+              {this.getModifierValue('item-body') && (
+                <Text tagName="p" className={style.item__description} bind={`items[${index}].text`} />
+              )}
+            </div>
           </div>
         </article>
       </Resizer>
