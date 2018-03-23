@@ -11,7 +11,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  theme: 'dark',
   background: {
     type: 'image',
     position: {
@@ -31,14 +30,6 @@ ExtendedWireframe.defaultContent = {
       tagName: 'h2',
       fontSize: 30,
     },
-  },
-  slogan: {
-    content: 'We work for your happiness',
-    type: 'text',
-  },
-  email: {
-    content: '<a href="mailto:nova@a.weblium.com">nova@a.weblium.com</a>',
-    type: 'text',
   },
 }
 

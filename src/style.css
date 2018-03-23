@@ -17,13 +17,9 @@
       display: block;
       width: 100%;
       height: 1px;
-      background-color: #fff;
+      background-color: var(--ui-light-shade-color);
       opacity: 0.3;
     }
-  }
-
-  &__slogan {
-    letter-spacing: 0.3px;
   }
 
   &__email {
@@ -52,7 +48,8 @@
 
 .nav {
   &__list {
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: nowrap;
     max-width: 892px;
     margin: 0 auto;
   }
@@ -61,6 +58,10 @@
 
     @media (min-width: 992px) {
       margin-top: 15px;
+      margin-left: 15px;
+      margin-right: 15px;
+      justify-content: center;
+      flex-wrap: nowrap;
     }
   }
 
@@ -68,9 +69,6 @@
     position: relative;
     font-family: var(--ui-quote-font-family);
     font-size: var(--ui-text-size);
-    line-height: var(--ui-text-line-height);
-    letter-spacing: 0.3px;
-    text-transform: capitalize;
     transition: all 0.2s linear;
 
     &::after {
@@ -82,11 +80,11 @@
       display: block;
       width: 0;
       height: 3px;
-      background-color: var(--ui-link-hover-color);
+      background-color: var(--ui-light-shade-color);
       transition: all 0.2s linear;
 
       @media (min-width: 992px) {
-        bottom: -41px;
+        bottom: -36px;
       }
     }
 
