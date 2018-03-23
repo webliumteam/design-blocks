@@ -85,6 +85,10 @@ class Block extends React.Component {
 Block.components = _.pick(['Text', 'Logo', 'Menu', 'Button'])($editor.components)
 
 Block.defaultContent = {
+  background: {
+    type: 'color',
+    color: '#fff',
+  },
   logo: {
     text: {
       value: 'Quantum Company',
