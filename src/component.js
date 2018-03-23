@@ -31,7 +31,7 @@ class Block extends React.Component {
         state={this.state.resizeHeight}
         changeState={this.onResizeHeight}
       >
-        <article className={classNames(style.item, hiddenBodyClass, className)}>
+        <div className={classNames(style.item, hiddenBodyClass, className)}>
           {children}
           <div className={style.item__inner}>
             <Image
@@ -50,7 +50,7 @@ class Block extends React.Component {
               )}
             </div>
           </div>
-        </article>
+        </div>
       </Resizer>
     )
   }
