@@ -68,9 +68,9 @@
   z-index: 999999;
 }
 
-.header--nav-open .logo__title {
+/* .header--nav-open .logo__title {
   color: var(--ui-light-shade-color);
-}
+} */
 
 .header--nav-open .nav-button__line:nth-child(2) {
   opacity: 0;
@@ -105,11 +105,12 @@
 }
 
 .logo__title {
-  font-size: calc(var(--ui-block-title-size) * .5);
+
+  /* font-size: calc(var(--ui-block-title-size) * .5);
   line-height: var(--ui-block-title-line-height);
   font-weight: var(--ui-block-title-font-weight);
   color: var(--ui-block-title-color);
-  font-family: var(--ui-block-title-font-family);
+  font-family: var(--ui-block-title-font-family); */
 }
 
 .nav {
