@@ -219,7 +219,6 @@
 
 .item__desc {
   margin-top: 20px;
-  font-size: calc(var(--ui-text-size) * 1.25);
 }
 
 .item__time {
