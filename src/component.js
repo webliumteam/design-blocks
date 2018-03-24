@@ -97,7 +97,7 @@ Block.defaultContent = {
   blog: [
     {
       title: {
-        content: 'How to Hire Employees?',
+        content: 'How to Hire the Best Employees to Your Company?',
         type: 'heading',
       },
       description: {
@@ -133,7 +133,7 @@ Block.defaultContent = {
     },
     {
       title: {
-        content: 'How to Achieve Higher Profits in Retail with Our New Product?',
+        content: 'How to Achieve Higher Profits in Retail with One Product?',
         type: 'heading',
       },
       description: {
