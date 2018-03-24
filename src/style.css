@@ -41,11 +41,12 @@
 }
 
 .blockquote__inner {
-  font-size: calc(var(--ui-quote-size) * 0.7273);
+
+  /* font-size: calc(var(--ui-quote-size) * 0.7273);
 
   @media (min-width: 992px) {
     font-size: var(--ui-quote-size);
-  }
+  } */
 }
 
 .blockquote::before {
@@ -152,14 +153,16 @@
 @media (min-width: 768px) {
   .author {
     margin-top: 18px;
-    font-size: calc(var(--ui-text-size) * 0.875);
+
+    /* font-size: calc(var(--ui-text-size) * 0.875); */
   }
 }
 
 @media (min-width: 992px) {
   .author {
     margin-top: 25px;
-    font-size: var(--ui-text-size);
+
+    /* font-size: var(--ui-text-size); */
   }
 }
 
