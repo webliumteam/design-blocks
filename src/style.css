@@ -27,12 +27,14 @@
 
 .subtitle {
   margin: 0 auto 25px;
-  font-size: calc(var(--ui-subtitle-size) * 0.8);
+
+  /* font-size: calc(var(--ui-subtitle-size) * 0.8); */
   text-align: center;
 
   @media (min-width: 992px) {
     max-width: 770px;
-    font-size: var(--ui-subtitle-size);
+
+    /* font-size: var(--ui-subtitle-size); */
   }
 }
 

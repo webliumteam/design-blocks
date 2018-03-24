@@ -91,7 +91,7 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'We’re always looking for experts and talents who want to grow personally and professionally in our company. Please check the open positions: ',
+    content: 'We’re always looking for talents who want to grow personally and professionally in our company. Please check the open positions: ',
     type: 'subtitle',
   },
   items: [
