@@ -44,6 +44,11 @@ class Block extends React.Component {
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
           bind={`events[${index}].picture`}
+          size={{
+            'min-width: 992px': 540,
+            'min-width: 768px': 720,
+            'min-width: 480px': 560,
+          }}
         />
       </article>
     )
@@ -96,7 +101,7 @@ Block.defaultContent = {
       },
       date: {
         content: 'October 24, 2017',
-        type: 'text',
+        type: 'subtitle',
       },
       badge: {
         content: 'members only',
@@ -136,7 +141,7 @@ Block.defaultContent = {
       },
       date: {
         content: 'November 1, 2017',
-        type: 'text',
+        type: 'subtitle',
       },
       badge: {
         content: 'members only',
@@ -176,7 +181,7 @@ Block.defaultContent = {
       },
       date: {
         content: 'November 25, 2017',
-        type: 'text',
+        type: 'subtitle',
       },
       badge: {
         content: 'members only',
@@ -216,7 +221,7 @@ Block.defaultContent = {
       },
       date: {
         content: 'December 3, 2017',
-        type: 'text',
+        type: 'subtitle',
       },
       badge: {
         content: 'members only',
