@@ -82,11 +82,11 @@ Block.defaultContent = {
   faq: [
     {
       title: {
-        content: 'How can I make the order?',
+        content: 'How can I make an order?',
         type: 'heading',
       },
       description: {
-        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
       },
     },
@@ -96,17 +96,17 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
       },
     },
     {
       title: {
-        content: 'What payment options do you provide for clients? I can pay with a credit card, PayPal, or other payment systems?',
+        content: 'What payment options do you provide for clients?',
         type: 'heading',
       },
       description: {
-        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
       },
     },
@@ -116,7 +116,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
       },
     },
@@ -126,7 +126,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
       },
     },
@@ -136,7 +136,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+        content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
       },
     },
