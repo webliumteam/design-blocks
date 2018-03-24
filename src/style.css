@@ -25,7 +25,6 @@
 .subtitle {
   margin-top: 15px;
   text-align: center;
-  font-size: calc(var(--ui-subtitle-size) * 0.9);
 
   &:first-child {
     margin-top: 0;
@@ -35,7 +34,6 @@
 @media (min-width: 768px) {
   .subtitle {
     padding: 0 60px;
-    font-size: var(--ui-subtitle-size);
   }
 }
 
