@@ -69,7 +69,7 @@ Block.defaultContent = {
   numbers: [
     {
       title: {
-        content: 'Increase profits by',
+        content: 'Increased profits by',
         type: 'subtitle',
       },
       label: {
@@ -83,11 +83,11 @@ Block.defaultContent = {
     },
     {
       title: {
-        content: 'Expand market reach for',
+        content: 'Expanded market reach by',
         type: 'subtitle',
       },
       label: {
-        content: 'of our clients',
+        content: 'for our clients',
         type: 'text',
       },
       value: {
@@ -97,11 +97,11 @@ Block.defaultContent = {
     },
     {
       title: {
-        content: 'Improve customer satisfaction for',
+        content: 'Improved customer satisfaction by',
         type: 'subtitle',
       },
       label: {
-        content: 'of our users',
+        content: 'for our users',
         type: 'text',
       },
       value: {
