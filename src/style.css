@@ -51,12 +51,13 @@
 .subtitle {
   max-width: 1000px;
   margin: 0 auto;
-  font-size: calc(var(--ui-subtitle-size) * .8);
+
+  /* font-size: calc(var(--ui-subtitle-size) * .8); */
   text-align: center;
 
-  @media (min-width: 992px) {
+  /* @media (min-width: 992px) {
     font-size: var(--ui-subtitle-size);
-  }
+  } */
 }
 
 .items-wrapper {
@@ -150,7 +151,8 @@
   &__title {
     margin-bottom: 5px;
     text-align: center;
-    font-size: calc(var(--ui-heading-size) * .833);
+
+    /* font-size: calc(var(--ui-heading-size) * 0.833); */
 
     @media (min-width: 768px) {
       text-align: left;
