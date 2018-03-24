@@ -95,7 +95,7 @@ Block.defaultContent = {
   careers: [
     {
       title: {
-        content: 'Trainee program for young talents',
+        content: 'Trainee program for young talents with big ambitions',
         type: 'heading',
       },
       icon: {
@@ -126,7 +126,7 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Do you want to join our company? Check the list of open vacancies or contact our HR director to get to know about open positions.',
+    content: 'Do you want to join our company? Check the list of open vacancies or contact our HR director to learn about open positions.',
     type: 'subtitle',
   },
   text: {
