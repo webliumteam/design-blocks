@@ -188,18 +188,18 @@
 }
 
 .contacts__title {
-  font-size: calc(var(--ui-heading-size) * 0.8334);
+  /* font-size: calc(var(--ui-heading-size) * 0.8334); */
 }
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .contacts__title {
     font-size: var(--ui-heading-size);
   }
-}
+} */
 
 @media (min-width: 1200px) {
   .contacts__desc {
-    font-size: calc(var(--ui-text-size) * 1.25);
+    /* font-size: calc(var(--ui-text-size) * 1.25); */
 
     &--adress,
     &--phone,
