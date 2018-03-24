@@ -29,6 +29,9 @@ class Block extends React.Component {
                 />
               </div>
             )}
+            {this.getModifierValue('caption') && (
+              <Text tagName="p" className={style.footer__text} bind="mainText" />
+            )}
           </div>
           <nav className={classNames(style.footer__part, style['footer__part--second'])}>
             <Menu
@@ -72,6 +75,10 @@ Block.defaultContent = {
       value: 'Quantum Company',
       fontSize: 24,
     },
+  },
+  mainText: {
+    type: 'text',
+    content: 'Our company will go the extra mile to analyze the particular project in detail, and offer a business solution that will meet your requirements.',
   },
   menu: [
     {
@@ -259,6 +266,7 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
+  caption: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social media Icons', type: 'checkbox'},
 }
 
