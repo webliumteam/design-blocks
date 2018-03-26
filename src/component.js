@@ -15,15 +15,14 @@ class Block extends React.Component {
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Button, Image}, style: css} = this.props
     const showBody = _.get('body-text')(modifier) || _.get('service-button')(modifier)
-    const contentModifierClass = css[`article__content--${_.get('content-arrangement')(modifier)}`]
-    console.log(contentModifierClass)
+    const contentModifierClass = css[`item__content--${_.get('content-arrangement')(modifier)}`]
 
     return (
-      <article className={classNames(css.article, className)}>
+      <div className={classNames(css.item, className)}>
         {children}
         <Image
-          pictureClassName={css.article__picture}
-          imgClassName={css.article__image}
+          pictureClassName={css.item__picture}
+          imgClassName={css.item__image}
           bind={`services[${index}].picture`}
           size={{
             'min-width: 992px': 600,
@@ -32,25 +31,25 @@ class Block extends React.Component {
           }}
           resize={{disable: true}}
         />
-        <div className={classNames(css.article__content, contentModifierClass)}>
-          <Text bind={`services[${index}].title`} className={css.article__title} tagName="h2" />
+        <div className={classNames(css.item__content, contentModifierClass)}>
+          <Text bind={`services[${index}].title`} className={css.item__title} tagName="h2" />
           {showBody && (
-            <div className={css.article__body}>
+            <div className={css.item__body}>
               {_.get('body-text')(modifier) && (
-                <Text bind={`services[${index}].text`} className={css.article__text} tagName="p" />
+                <Text bind={`services[${index}].text`} className={css.item__text} tagName="p" />
               )}
               {_.get('service-button')(modifier) && (
                 <Button
                   linkClassName={css.link}
                   buttonClassName={css.button}
-                  className={css.article__button}
+                  className={css.item__button}
                   bind={`services[${index}].cta`}
                 />
               )}
             </div>
           )}
         </div>
-      </article>
+      </div>
     )
   }
 
@@ -64,7 +63,7 @@ class Block extends React.Component {
             {this.getModifierValue('subtitle') && <Text bind="subtitle" className={style.subtitle} tagName="p" />}
           </header>
           <Collection
-            className={style['articles-wrapper']}
+            className={style['items-wrapper']}
             bind="services"
             Item={this.collectionItem}
             itemProps={{
