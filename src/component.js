@@ -153,7 +153,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'Building brand awareness for micro and small businesses. ',
+        content: 'Building brand awareness for micro and small businesses to increase potential reach.',
         type: 'text',
       },
       picture: {
@@ -181,7 +181,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'Aftersales support in marketing, sales, and staff training.',
+        content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
         type: 'text',
       },
       picture: {
