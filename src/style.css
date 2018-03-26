@@ -23,12 +23,12 @@
   }
 
   &__slogan {
-    color: var(--ui-text-color);
+    color: var(--ui-light-shade-color);
   }
 
-  &__email {
+  .header__email {
     a {
-      color: var(--ui-text-color);
+      color: var(--ui-light-shade-color);
       text-decoration: none;
       transition: all 0.2s ease-in;
     }
