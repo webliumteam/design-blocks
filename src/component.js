@@ -71,7 +71,7 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'With so many different ways today to find information online, it can sometimes be hard to know where to go to first. I want to look at the major and most effective ways to find information online. The biggest and most commonly used method is to use a search engine.',
+    content: 'Over more than 15 years of our practice, we have completed a number of projects for our clients and have helped them generate more than $15 million in revenues. Browse through our selected projects to get the idea of what we do on a daily basis.',
     type: 'subtitle',
   },
   projects: [
