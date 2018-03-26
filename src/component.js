@@ -81,7 +81,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'You will get complete information about each program we offer. There are several available options according to your needs.',
+        content: 'Compare all available plans to choose the one that will best meet your requirements.',
         type: 'text',
       },
     },
@@ -91,7 +91,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'We guarantee the security of all payments. You may choose the most suitable payment method.',
+        content: 'Choose the most suitable payment method. We guarantee the security of all payments.',
         type: 'text',
       },
     },
@@ -101,7 +101,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'You will get access to all available features immediately.',
+        content: 'Get access to all available features and start attracting clients straight away.',
         type: 'text',
       },
     },
