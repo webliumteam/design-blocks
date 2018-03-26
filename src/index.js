@@ -26,61 +26,25 @@ ExtendedWireframe.defaultContent = {
   },
   cover: [
     {
-      title: 'Type Something',
-      subtitle: 'Type Something',
+      ...Component.defaultContent.cover[0],
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'MAIN BUTTON (L)',
-        type: 'primary',
+        ...Component.defaultContent.cover[0].cta,
+        size: 'lg',
       },
-      id: 'c4e3de5f-776a-405b-a034-dc2307069714',
     },
     {
-      title: 'Type Something',
-      subtitle: 'Type Something',
+      ...Component.defaultContent.cover[1],
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'MAIN BUTTON (L)',
-        type: 'primary',
+        ...Component.defaultContent.cover[1].cta,
+        size: 'lg',
       },
-      id: '73263c9a-8d0e-41dc-85e1-66c6db9ea9d3',
     },
     {
-      title: 'Type Something',
-      subtitle: 'Type Something',
+      ...Component.defaultContent.cover[2],
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'MAIN BUTTON (L)',
-        type: 'primary',
+        ...Component.defaultContent.cover[2].cta,
+        size: 'lg',
       },
-      id: 'b5f64fb3-d94e-4ecf-b7ff-a4a5700a2457',
     },
   ],
 }
