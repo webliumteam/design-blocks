@@ -128,7 +128,7 @@ Block.defaultContent = {
         type: 'caption',
       },
       description: {
-        content: '“Quantum is a reliable company that applies high technology and creates exclusive programs for their clients. We highly appreciate this approach and we will continue our cooperation.”',
+        content: '“Quantum is a reliable and professional company that applies high technology and creates exclusive programs for the clients. We highly appreciate this approach and will definitely continue our fruitful cooperation with them.”',
         type: 'text',
       },
       position: {
