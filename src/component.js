@@ -159,7 +159,7 @@ Block.defaultContent = {
   'plan-list-1': [
     {
       text: {
-        content: '100 Max Connections',
+        content: '100 connections',
         type: 'text',
       },
     },
@@ -179,7 +179,7 @@ Block.defaultContent = {
   'plan-list-2': [
     {
       text: {
-        content: '120 Max Connections',
+        content: '120 connections',
         type: 'text',
       },
     },
@@ -199,7 +199,7 @@ Block.defaultContent = {
   'plan-list-3': [
     {
       text: {
-        content: '150 Max Connections',
+        content: '150 connections',
         type: 'text',
       },
     },
@@ -290,7 +290,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Request a quote',
+    textValue: 'Select plan',
     type: 'primary',
     size: 'sm',
   },
@@ -305,7 +305,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Request a quote',
+    textValue: 'Select plan',
     type: 'primary',
   },
   'plan-cta-3': {
@@ -319,7 +319,7 @@ Block.defaultContent = {
         },
       },
     },
-    textValue: 'Request a quote',
+    textValue: 'Select plan',
     type: 'primary',
     size: 'sm',
   },
