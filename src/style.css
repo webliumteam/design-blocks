@@ -108,7 +108,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
-    
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -116,7 +116,8 @@
 
   &__desc {
     margin-bottom: 40px;
-    line-height: calc(var(--ui-text-line-height) * 1.125);
+
+    /* line-height: calc(var(--ui-text-line-height) * 1.125); */
 
     &:last-child {
       margin-bottom: 0;
@@ -134,7 +135,7 @@
 
   &__link-wrapper {
     margin-top: auto;
-    
+
     &:nth-child(2) {
       margin-top: 0;
     }
@@ -143,7 +144,7 @@
 
 .btns-group {
   padding-top: 30px;
-  
+
   @media (min-width: 768px) {
     padding-top: 50px;
   }
