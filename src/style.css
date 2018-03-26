@@ -2,10 +2,6 @@
 
 /* start here */
 
-.title {
-  letter-spacing: -2px;
-}
-
 .section__inner {
 
   @media (min-width: 768px) {
@@ -40,8 +36,22 @@
   }
 
   @media (min-width: 992px) {
-    flex-basis: 16.666%;
     max-width: none;
+
+    &:nth-last-of-type(4):first-child,
+    &:nth-last-of-type(4):first-child ~ .item {
+      flex-basis: 25%;
+    }
+
+    &:nth-last-of-type(5):first-child,
+    &:nth-last-of-type(5):first-child ~ .item {
+      flex-basis: 20%;
+    }
+
+    &:nth-last-of-type(6):first-child,
+    &:nth-last-of-type(6):first-child ~ .item {
+      flex-basis: 16.6666%;
+    }
   }
 
   &__picture {
