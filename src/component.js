@@ -60,7 +60,7 @@ Block.defaultContent = {
     type: 'subheading',
   },
   text: {
-    content: 'We always work hard to improve our goods and services to achieve higher results for our clients. We love challenging tasks that require an innovative approach. Thus, if your business needs a unique solution, we are ready to fine-tune our existing products to meet all your demands. Our company is a group of devotees sharing mutual priorities and values. We know that only those committed to their work can provide the best-quality products and services. That’s why every person that wants to join our team should undergo rigorous selection.',
+    content: 'We always work hard to improve our goods and services to achieve higher results for our clients. We love challenging tasks that require an innovative approach. Thus, if your business needs a unique solution, we are ready to fine-tune our existing products to meet all your demands.<br>Our company is a group of devotees sharing mutual priorities and values. We know that only those committed to their work can provide the best-quality products and services. That’s why every person that wants to join our team should undergo rigorous selection.',
     type: 'text',
   },
 }
