@@ -216,14 +216,14 @@
 
   &__link {
     font-family: var(--ui-text-font-family);
-    color: var(--ui-link-color);
-    text-decoration: none;
+
+    /* color: var(--ui-link-color);
 
     &:hover,
     &:active,
     &:focus {
       color: var(--ui-link-hover-color);
-    }
+    } */
   }
 }
 
@@ -303,5 +303,10 @@
 
   &__title {
     max-width: 100%;
+    line-height: 70px;
+
+    @media (min-width: 992px) {
+      line-height: var(--ui-block-title-line-height);
+    }
   }
 }
