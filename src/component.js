@@ -104,7 +104,7 @@ Block.defaultContent = {
         type: 'caption',
       },
       description: {
-        content: 'Andrew Shimmer has a 15-year experience in IT development and marketing. He has successfully run companies specializing in innovative technologies.',
+        content: 'Andrew Shimmer has more than 15 years of experience in IT development and marketing. He has successfully run companies specializing in innovative technologies.',
         type: 'text',
       },
       picture: {
@@ -169,7 +169,7 @@ Block.defaultContent = {
         type: 'caption',
       },
       description: {
-        content: 'Ann is a high-skilled professional with over 10 years of experience in marketing. She has been rewarded by the Association of Marketing as one of the most successful directors. ',
+        content: 'Ann is a highly skilled professional with over 10 years of experience in marketing. She has been rewarded by the Association of Marketing as one of the most successful directors. ',
         type: 'text',
       },
       picture: {
