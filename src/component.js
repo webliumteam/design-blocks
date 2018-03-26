@@ -47,12 +47,16 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <header className={style.section__header}>
-            <Text tagName="h1" className={style.title} bind="title" />
-            {this.getModifierValue('subtitle') && (
-              <Text tagName="p" className={style.subtitle} bind="subtitle" />
-            )}
-          </header>
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+            <header className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text tagName="h1" className={style.title} bind="title" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text tagName="p" className={style.subtitle} bind="subtitle" />
+              )}
+            </header>
+          )}
           <Collection
             className={style['items-wrapper']}
             bind="gallery"
@@ -201,12 +205,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'body-text': {defaultValue: false, label: 'Image description', type: 'checkbox'},
-  caption: {defaultValue: false, label: 'Caption after body', type: 'hidden'},
-  'secondary-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Gallery description', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  title: {defaultValue: true, label: 'Gallery title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Gallery description', type: 'checkbox'},
+  'body-text': {defaultValue: false, label: 'Image description', type: 'checkbox'},
+  caption: {defaultValue: false, label: 'Image caption', type: 'hidden'},
+  'secondary-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
 }
-
 
 export default Block
