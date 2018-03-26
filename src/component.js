@@ -28,7 +28,7 @@ class Block extends React.Component {
       (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state[`${collectionName}Opened`] === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />)
 
     return (
-      <article
+      <div
         className={classNames(style.item, openedItem === index && style['item--active'], className)}
       >
         {children}
@@ -37,7 +37,7 @@ class Block extends React.Component {
           {this.getOptionValue('toogle-item-controls') && controlIcons}
         </button>
         <Text tagName="div" className={style.item__content} bind={`${collectionName}.faq[${index}].description`} />
-      </article>
+      </div>
     )
   }
 
