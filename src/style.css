@@ -22,7 +22,7 @@
     }
   }
 
-  &__slogan {
+  .header__slogan {
     color: var(--ui-light-shade-color);
   }
 
