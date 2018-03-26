@@ -22,10 +22,16 @@
     }
   }
 
+  &__slogan {
+    color: var(--ui-text-color);
+  }
+
   &__email {
-    color: var(--ui-light-shade-color);
-    text-decoration: none;
-    transition: all 0.2s ease-in;
+    a {
+      color: var(--ui-text-color);
+      text-decoration: none;
+      transition: all 0.2s ease-in;
+    }
   }
 
   &--nav-open {
