@@ -92,7 +92,7 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'We have an extensive experience and successfully completed more than 10 000 projects.',
+        content: 'We have extensive experience and can be proud of 10 000+ completed projects.',
         type: 'text',
       },
       icon: {
