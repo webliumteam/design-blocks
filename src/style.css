@@ -120,12 +120,13 @@
 }
 
 .title {
-  font-size: var(--ui-block-title-size);
+
+  /* font-size: var(--ui-block-title-size); */
   margin-bottom: 15px;
 
-  @media (min-width: 992px) {
+  /* @media (min-width: 992px) {
     font-size: var(--ui-hero-title-size);
-  }
+  } */
 }
 
 .subtitle {
