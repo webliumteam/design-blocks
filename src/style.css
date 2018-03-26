@@ -49,7 +49,7 @@
 
     .btns-group {
       padding-top: 20px;
-      
+
       @media (min-width: 768px) {
         padding-top: 60px;
       }
@@ -144,11 +144,13 @@
   }
 
   &__desc {
-    font-size: calc(var(--ui-text-size) * .875);
+    word-wrap: break-word;
 
-    @media (min-width: 768px) {
+    /* font-size: calc(var(--ui-text-size) * .875); */
+
+    /* @media (min-width: 768px) {
       font-size: var(--ui-text-size);
-    }
+    } */
 
     &-wrapper {
       position: relative;
@@ -168,7 +170,8 @@
     text-align: center;
     background-color: #4a4a4a;
     border-radius: 50%;
-    font-size: calc(var(--ui-heading-lg-size) * 0.7142);
+
+    /* font-size: calc(var(--ui-heading-lg-size) * 0.7142); */
 
     @media (min-width: 768px) {
       width: 104px;
