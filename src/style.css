@@ -2,10 +2,24 @@
 
 .item {
   &__inner {
-    max-width: 1070px;
     
     @media (min-width: 768px) {
       min-height: 536px;
+    }
+
+    @media (min-width: 992px) {
+      max-width: 1070px;
+    }
+  }
+
+  &__title {
+
+    @media (min-width: 768px) {
+      font-size: calc(var(--ui-hero-title-size) * 0.6);
+    }
+
+    @media (min-width: 1200px) {
+      font-size: var(--ui-hero-title-size);;
     }
   }
 }
@@ -33,6 +47,7 @@
     }
 
     .slick-dots {
+      bottom: -33px;
       /* stylelint-disable */
       .slick-active {
         button {
@@ -43,8 +58,8 @@
       }
 
       li {
-        margin-left: 10px;
-        margin-right: 10px;  
+        margin-left: 8px;
+        margin-right: 8px;  
       }
 
       button {
