@@ -1,3 +1,4 @@
 {
-    "content-wrapper": false
+    "content-wrapper": false,
+    "content-bg": true
 }
