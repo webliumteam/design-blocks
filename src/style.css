@@ -11,14 +11,13 @@
   }
 
   &__inner {
+    padding-top: 13.2478%;
+    padding-bottom: 14.1%;
 
     @media (min-width: 992px) {
       max-width: 653px;
-      background-color: var(--ui-dark-accent-color);
       margin-left: 0;
       padding-left: 78px;
-      padding-top: 13.2478%;
-      padding-bottom: 14.1%;
       padding-right: 50px;
       text-align: left;
     }

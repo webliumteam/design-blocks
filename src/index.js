@@ -19,6 +19,10 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'bg.jpg',
   },
+  contentBackground: {
+    type: 'color',
+    color: 'rgb(19,33,143)',
+  },
   title: {
     ...Component.defaultContent.title,
     content: 'Ask our experts<br> about your freight',
