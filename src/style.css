@@ -1,6 +1,11 @@
 @import "wireframe-lucario-cover/src/style.css";
 
 .item {
+
+  @media (min-width: 768px) {
+    margin-bottom: 50px;
+  }
+
   &__inner {
 
     @media (min-width: 768px) {

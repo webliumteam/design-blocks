@@ -20,11 +20,13 @@ ExtendedWireframe.defaultContent = {
       },
       cta: {
         ...Component.defaultContent.cover[0].cta,
+        textValue: 'Request a quote',
         type: 'secondary',
         size: 'lg',
       },
       'cta-2': {
         ...Component.defaultContent.cover[0]['cta-2'],
+        textValue: 'Learn more',
         type: 'primary',
         size: 'lg',
       },
@@ -37,11 +39,13 @@ ExtendedWireframe.defaultContent = {
       },
       cta: {
         ...Component.defaultContent.cover[1].cta,
+        textValue: 'Request a quote',
         type: 'secondary',
         size: 'lg',
       },
       'cta-2': {
         ...Component.defaultContent.cover[1]['cta-2'],
+        textValue: 'Learn more',
         type: 'primary',
         size: 'lg',
       },
@@ -54,11 +58,13 @@ ExtendedWireframe.defaultContent = {
       },
       cta: {
         ...Component.defaultContent.cover[2].cta,
+        textValue: 'Request a quote',
         type: 'secondary',
         size: 'lg',
       },
       'cta-2': {
         ...Component.defaultContent.cover[2]['cta-2'],
+        textValue: 'Learn more',
         type: 'primary',
         size: 'lg',
       },
