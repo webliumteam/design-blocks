@@ -20,7 +20,7 @@ class Block extends React.Component {
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <header className={classNames(style.section__header, headerClassModifier)}>
+          <div className={classNames(style.section__header, headerClassModifier)}>
             {this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />}
             {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
             {this.getModifierValue('header-button') && (
@@ -31,7 +31,7 @@ class Block extends React.Component {
                 bind="headerButton"
               />
             )}
-          </header>
+          </div>
           <Background className={style.form__wrapper} bind="formBackground">
             {this.getModifierValue('form-title') && <Text tagName="h2" className={style.heading} bind="formTitle" />}
             {this.getModifierValue('form-description') && <Text tagName="p" className={style.subheading} bind="formDescription" />}
