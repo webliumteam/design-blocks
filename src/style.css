@@ -29,11 +29,29 @@
     }
   }
 
+  &__inner {
+
+    @media (min-width: 992px) {
+      justify-content: center;
+    }
+  }
+
   &__header {
-    padding-right: 0;
+    margin-bottom: 40px;
+
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-right: 45px;
+    }
 
     &--right {
-      text-align: left;
+
+      @media (min-width: 992px) {
+        padding-right: 0;
+        padding-left: 45px;
+        text-align: left;
+      }
     }
   }
 }
