@@ -35,6 +35,12 @@ ExtendedWireframe.defaultContent = {
   picture: {
     ...Component.defaultContent.picture,
     resourceRef: 'child-img.jpg',
+    size: {
+      'min-width: 992px': 1152,
+      'min-width: 768px': 1152,
+      'min-width: 480px': 1152,
+      'min-width: 320px': 720,
+    },
   },
   'button-1': {
     ...Component.defaultContent['button-1'],
