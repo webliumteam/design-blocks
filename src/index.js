@@ -29,16 +29,16 @@ ExtendedWireframe.defaultContent = {
     color: 'rgb(19, 33, 143, 0.78)',
   },
   title: {
+    ...Component.defaultContent.title,
     content: 'Safe and Secure<br>Transportation',
-    type: 'heroTitle',
   },
   subtitle: {
+    ...Component.defaultContent.subtitle,
     content: 'Acrozz Logistics provides trustworthy transportation, freight, warehousing, and distribution services across over 180 countries all over the world.',
-    type: 'subtitle',
   },
   formTitle: {
+    ...Component.defaultContent.formTitle,
     content: 'Request a Quote',
-    type: 'headingLg',
   },
   contactForm: {
     ...Component.defaultContent.contactForm,
@@ -83,7 +83,7 @@ ExtendedWireframe.defaultContent = {
     iconEnabled: true,
     iconAlignment: 'right',
     icon: {
-      svg: '<svg viewBox="0 0 100 125" fill="currentColor"><path d="M50 66.14l3.2-2.7 26-22-6.4-7.7L50 53.14l-22.8-19.3-6.4 7.7 26 22 3.2 2.6z"/></svg>',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 97.8"><path d="M32.5 47.1l-2.7-3.2-22.1-26L0 24.3l19.5 22.8L.2 69.9l7.7 6.4 21.9-26c.1 0 2.7-3.2 2.7-3.2z"/></svg>',
     },
   },
 }
