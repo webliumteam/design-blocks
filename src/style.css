@@ -39,7 +39,12 @@
     resize: none;
   }
 
+  &__item {
+    margin-bottom: 0;
+  }
+
   &__field {
     background-color: #fff;
+    margin-bottom: 20px;
   }
 }
