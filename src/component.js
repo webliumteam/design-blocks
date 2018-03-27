@@ -20,41 +20,56 @@ class Block extends React.Component {
     ]
   }
 
+  getSectionInner = () => {
+    const {components: {Background, Button, Image}, style} = this.props
+    return [
+      this.getOptionValue('content-wrapper') ?
+        <div className={style['content-wrapper']}>{this.getContent()}</div> :
+        this.getContent(),
+      <Button
+        buttonClassName={style.button}
+        linkClassName={style.link}
+        bind="cta"
+      />,
+      this.getModifierValue('picture') && (
+        <Image
+          wrapperClassName={style['section__picture-wrapper']}
+          pictureClassName={style.section__picture}
+          imgClassName={style.section__image}
+          bind="picture"
+        />
+      ),
+    ]
+  }
+
   render() {
-    const {components: {Image, Button}, style} = this.props
+    const {components: {Background, Image, Button}, style} = this.props
     return (
       <section className={style.section}>
-        <div className={style.section__inner}>
-          {this.getOptionValue('content-wrapper') ?
-            <div className={style['content-wrapper']}>{this.getContent()}</div> :
-            this.getContent()
-          }
-          <Button
-            buttonClassName={style.button}
-            linkClassName={style.link}
-            bind="cta"
-          />
-          {this.getModifierValue('picture') && (
-            <Image
-              wrapperClassName={style['section__picture-wrapper']}
-              pictureClassName={style.section__picture}
-              imgClassName={style.section__image}
-              bind="picture"
-            />
-          )}
-        </div>
+        {this.getOptionValue('content-bg') ?
+          <Background className={style.section__inner} bind="contentBackground">
+            {this.getSectionInner()}
+          </Background> :
+          <div className={style.section__inner}>
+            {this.getSectionInner()}
+          </div>
+        }
       </section>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Button', 'Image'])($editor.components)
+Block.components = _.pick(['Background', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
   theme: 'dark',
   background: {
     type: 'color',
     color: '#A4A4A4',
+  },
+  contentBackground: {
+    type: 'color',
+    color: 'rgba(255,255,255,0)',
   },
   title: {
     content: 'Want to work with us?',
