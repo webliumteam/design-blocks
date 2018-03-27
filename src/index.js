@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    resourceRef: 'Depositphotos_10627386_original.jpg',
+    resourceRef: 'bg.png',
   },
   theme: 'dark',
   cover: [
