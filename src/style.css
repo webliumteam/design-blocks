@@ -1,3 +1,35 @@
 @import "wireframe-series-2-footer/src/style.css";
 
 /* start here */
+
+.nav-list__link {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: var(--ui-heading-font-family);
+  font-weight: 700;
+}
+
+.socials {
+  align-items: center;
+
+  @media (min-width: 992px) {
+    align-items: flex-start;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: var(--ui-text-size);
+  }
+}
+
+@media (min-width: 768px) {
+  .footer__part--center {
+    padding-left: 10px;
+  }
+}
+
+.footer__bottom {
+  padding: 40px 0;
+  border-top: 1px solid var(--ui-dark-shade-color);
+  margin-top: 60px;
+}
