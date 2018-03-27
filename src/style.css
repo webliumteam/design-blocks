@@ -9,8 +9,10 @@
 }
 
 .title {
-  font-size: calc(var(--ui-block-title-size) * 1.4286);
-  font-weight: 300;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--ui-block-title-size) * 1.4286);
+  }
 }
 
 .description {
