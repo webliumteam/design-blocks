@@ -77,10 +77,20 @@ ExtendedWireframe.defaultContent = {
       type: 'primary',
     },
   },
+  headerButton: {
+    ...Component.defaultContent.headerButton,
+    type: 'primary-alt',
+    iconEnabled: true,
+    iconAlignment: 'right',
+    icon: {
+      svg: '<svg viewBox="0 0 100 125" fill="currentColor"><path d="M50 66.14l3.2-2.7 26-22-6.4-7.7L50 53.14l-22.8-19.3-6.4 7.7 26 22 3.2 2.6z"/></svg>',
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  'header-button': {defaultValue: true, label: 'Header button', type: 'checkbox'},
   'form-description': {defaultValue: false, label: 'Form description', type: 'checkbox'},
   'header-alignment': {
     children: [

@@ -9,19 +9,18 @@
 
 .section__header {
   padding-right: 0;
+
+  &--right {
+    text-align: left;
+  }
 }
 
 .title {
   max-width: 100%;
-  text-align: left;
 
   @media (min-width: 768px) {
     font-size: calc(var(--ui-hero-title-size) * 0.9);
   }
-}
-
-.subtitle {
-  text-align: left;
 }
 
 .form__wrapper {
@@ -46,5 +45,13 @@
   &__field {
     background-color: #fff;
     margin-bottom: 20px;
+  }
+}
+
+.header-button {
+  margin-top: 10px;
+
+  svg {
+    transform: translateY(-2px) translateX(-4px) rotate(-90deg);
   }
 }
