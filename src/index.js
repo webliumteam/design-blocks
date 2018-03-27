@@ -91,6 +91,12 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   'header-button': {defaultValue: true, label: 'Header button', type: 'checkbox'},
+  'title-decorator': {
+    defaultValue: true,
+    label: 'Title decorator',
+    type: 'checkbox',
+    classNameOnActive: style['section--with-title-decorator'],
+  },
   'form-description': {defaultValue: false, label: 'Form description', type: 'checkbox'},
   'header-alignment': {
     children: [
