@@ -25,7 +25,7 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    content: 'Ask our experts<br> about your freight',
+    content: 'Ask our experts about your freight',
     color: 'var(--ui-light-shade-color)',
   },
   description: {
