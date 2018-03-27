@@ -3,6 +3,10 @@
 .item {
   &__inner {
     max-width: 1070px;
+    
+    @media (min-width: 768px) {
+      min-height: 536px;
+    }
   }
 }
 

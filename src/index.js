@@ -77,7 +77,7 @@ ExtendedWireframe.defaultContent = {
     overlay: {
       type: 'color',
       color: '#072747',
-      opacity: 0.6,
+      opacity: 0.4,
     },
   },
 }
