@@ -61,11 +61,11 @@ ExtendedWireframe.defaultContent = {
   },
   copyright: {
     ...Component.defaultContent.copyright,
-    brightness: 40,
+    brightness: 25,
   },
   additional: {
     ...Component.defaultContent.additional,
-    brightness: 40,
+    brightness: 25,
   },
 }
 
