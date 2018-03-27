@@ -5,3 +5,27 @@
     max-width: 1070px;
   }
 }
+
+.subtitle {
+  margin-top: 0;
+
+  @media (min-width: 768px) {
+    font-size: var(--ui-subtitle-size);
+  }
+}
+
+.btns-group {
+  margin-top: 38px;
+}
+
+.items-wrapper {
+  :global {
+    .slick-prev-default {
+      left: 0;
+    }
+
+    .slick-next-default {
+      right: 0;
+    }
+  }
+}
