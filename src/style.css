@@ -1,3 +1,45 @@
 @import "wireframe-series-3-cover/src/style.css";
 
 /* start here */
+
+.section {
+  position: relative;
+  z-index: 1;
+}
+
+.section__header {
+  padding-right: 0;
+}
+
+.title {
+  max-width: 100%;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--ui-hero-title-size) * 0.9);
+  }
+}
+
+.subtitle {
+  text-align: left;
+}
+
+.form__wrapper {
+
+  @media (min-width: 992px) {
+    max-width: 44%;
+    flex-basis: 44%;
+  }
+}
+
+.form {
+  textarea {
+    min-height: 120px;
+    padding-top: 15px;
+    resize: none;
+  }
+
+  &__field {
+    background-color: #fff;
+  }
+}

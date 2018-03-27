@@ -30,16 +30,58 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     content: 'Safe and Secure<br>Transportation',
-    type: 'blockTitle',
+    type: 'heroTitle',
   },
   subtitle: {
-    content: 'Products and services of the highest quality',
+    content: 'Acrozz Logistics provides trustworthy transportation, freight, warehousing, and distribution services across over 180 countries all over the world.',
     type: 'subtitle',
+  },
+  formTitle: {
+    content: 'Request a Quote',
+    type: 'headingLg',
+  },
+  contactForm: {
+    ...Component.defaultContent.contactForm,
+    fields: [
+      {
+        type: 'text',
+        id: 'contactForm_name',
+        title: '',
+        placeholder: 'NAME',
+        required: true,
+      },
+      {
+        type: 'email',
+        id: 'contactForm_email',
+        title: '',
+        placeholder: 'E-MAIL',
+        required: true,
+      },
+      {
+        type: 'phone',
+        id: 'contactForm_phoneNumber ',
+        title: '',
+        placeholder: 'PHONE',
+        required: true,
+      },
+      {
+        type: 'textArea',
+        id: 'contactForm_message',
+        title: '',
+        placeholder: 'MESSAGE',
+        required: false,
+      },
+    ],
+    submitButton: {
+      title: 'send',
+      type: 'primary',
+    },
   },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  'form-description': {defaultValue: false, label: 'Form description', type: 'checkbox'},
   'header-alignment': {
     children: [
       {id: 'left', label: 'Left'},
