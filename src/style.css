@@ -2,7 +2,7 @@
 
 .item {
   &__inner {
-    
+
     @media (min-width: 768px) {
       min-height: 536px;
     }
@@ -59,7 +59,7 @@
 
       li {
         margin-left: 8px;
-        margin-right: 8px;  
+        margin-right: 8px;
       }
 
       button {

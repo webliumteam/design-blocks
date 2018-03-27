@@ -17,17 +17,16 @@ ExtendedWireframe.defaultContent = {
       title: {
         ...Component.defaultContent.cover[0].title,
         content: 'QUANTUM COMPANY',
-        type: 'heroTitle',
       },
       cta: {
-        ...Component.defaultContent.cover[0].title.cta,
-        textValue: 'Learn more',
+        ...Component.defaultContent.cover[0].cta,
         type: 'secondary',
+        size: 'lg',
       },
       'cta-2': {
-        ...Component.defaultContent.cover[0].title['cta-2'],
-        textValue: 'Request a quote',
+        ...Component.defaultContent.cover[0]['cta-2'],
         type: 'primary',
+        size: 'lg',
       },
     },
     {
@@ -35,17 +34,16 @@ ExtendedWireframe.defaultContent = {
       title: {
         ...Component.defaultContent.cover[1].title,
         content: 'QUANTUM COMPANY',
-        type: 'heroTitle',
       },
       cta: {
-        ...Component.defaultContent.cover[0].title.cta,
-        textValue: 'Learn more',
+        ...Component.defaultContent.cover[1].cta,
         type: 'secondary',
+        size: 'lg',
       },
       'cta-2': {
-        ...Component.defaultContent.cover[0].title['cta-2'],
-        textValue: 'Request a quote',
+        ...Component.defaultContent.cover[1]['cta-2'],
         type: 'primary',
+        size: 'lg',
       },
     },
     {
@@ -53,17 +51,16 @@ ExtendedWireframe.defaultContent = {
       title: {
         ...Component.defaultContent.cover[2].title,
         content: 'QUANTUM COMPANY',
-        type: 'heroTitle',
       },
       cta: {
-        ...Component.defaultContent.cover[0].title.cta,
-        textValue: 'Learn more',
+        ...Component.defaultContent.cover[2].cta,
         type: 'secondary',
+        size: 'lg',
       },
       'cta-2': {
-        ...Component.defaultContent.cover[0].title['cta-2'],
-        textValue: 'Request a quote',
+        ...Component.defaultContent.cover[2]['cta-2'],
         type: 'primary',
+        size: 'lg',
       },
     },
   ],
@@ -85,7 +82,7 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   arrows: {defaultValue: false, label: 'Navigation arrows', type: 'checkbox'},
-  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'hidden'},
+  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
