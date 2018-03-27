@@ -209,3 +209,7 @@
   color: var(--ui-link-hover-color);
   text-decoration: none;
 }
+
+.header-button {
+  margin-top: 20px;
+}

@@ -13,27 +13,35 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Text, ContactForm, Background}, style: css} = this.props
+    const {components: {Text, Button, ContactForm, Background}, style} = this.props
     const headerAlignment = this.getModifierValue('header-alignment')
-    const headerClassModifier = css[`section__header--${headerAlignment}`]
+    const headerClassModifier = style[`section__header--${headerAlignment}`]
 
     return (
-      <section className={css.section}>
-        <div className={css.section__inner}>
-          <header className={classNames(css.section__header, headerClassModifier)}>
-            {this.getModifierValue('title') && <Text tagName="h1" className={css.title} bind="title" />}
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={css.subtitle} bind="subtitle" />}
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <header className={classNames(style.section__header, headerClassModifier)}>
+            {this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
+            {this.getModifierValue('header-button') && (
+              <Button
+                className={style['header-button']}
+                buttonClassName={style.button}
+                linkClassName={style.link}
+                bind="headerButton"
+              />
+            )}
           </header>
-          <Background className={css.form__wrapper} bind="formBackground">
-            {this.getModifierValue('form-title') && <Text tagName="h2" className={css.heading} bind="formTitle" />}
-            {this.getModifierValue('form-description') && <Text tagName="p" className={css.subheading} bind="formDescription" />}
+          <Background className={style.form__wrapper} bind="formBackground">
+            {this.getModifierValue('form-title') && <Text tagName="h2" className={style.heading} bind="formTitle" />}
+            {this.getModifierValue('form-description') && <Text tagName="p" className={style.subheading} bind="formDescription" />}
             <ContactForm
               bind="contactForm"
-              className={css.form}
-              labelClassName={css.form__item}
-              descriptionClassName={css['form__item-description']}
-              fieldClassName={css.form__field}
-              buttonClassName={css.form__button}
+              className={style.form}
+              labelClassName={style.form__item}
+              descriptionClassName={style['form__item-description']}
+              fieldClassName={style.form__field}
+              buttonClassName={style.form__button}
             />
           </Background>
         </div>
@@ -42,7 +50,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'ContactForm', 'Background'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'ContactForm', 'Background'])($editor.components)
 
 Block.defaultContent = {
   background: {
@@ -100,11 +108,27 @@ Block.defaultContent = {
     className: 'form',
     buttonClassName: 'button button--size-md button--primary form__button',
   },
+  headerButton: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Our services',
+    type: 'secondary',
+    size: 'md',
+  },
 }
 
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  'header-button': {defaultValue: false, label: 'Header button', type: 'hidden'},
   'form-title': {defaultValue: true, label: 'Form title', type: 'checkbox'},
   'form-description': {defaultValue: true, label: 'Form description', type: 'checkbox'},
   'header-alignment': {
