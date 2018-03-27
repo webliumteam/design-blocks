@@ -1,3 +1,7 @@
 @import "wireframe-lucario-cover/src/style.css";
 
-/* start here */
+.item {
+  &__inner {
+    max-width: 1070px;
+  }
+}
