@@ -17,10 +17,6 @@ ExtendedWireframe.defaultContent = {
       alt: 'Logo',
     },
   },
-  description: {
-    type: 'text',
-    content: 'Our company will go the extra mile to analyze the particular project in detail, and offer a business solution that will meet your requirements.',
-  },
   menu: [
     {
       id: 'about',
