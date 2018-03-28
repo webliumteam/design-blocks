@@ -268,10 +268,6 @@
   border: 0;
   transition: color .2s ease-in-out;
 
-  @media (min-width: 768px) {
-    top: 40px;
-  }
-
   &:hover,
   &:active,
   :global .focus-visible {
