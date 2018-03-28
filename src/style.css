@@ -100,7 +100,6 @@
     /* font-size: calc(var(--ui-text-size) * 0.75); */
 
     a {
-      text-decoration: none;
       color: var(--ui-link-color);
 
       &:hover {
@@ -251,7 +250,6 @@
   &__link {
     font-family: var(--ui-text-font-family);
     font-size: var(--ui-text-size);
-    text-decoration: none;
   }
 }
 
