@@ -51,6 +51,22 @@ class Block extends React.Component {
       this.getModifierValue('social')
     ) && this.getModifierValue('map')
 
+    const listWithSocials = (
+      !this.getModifierValue('map') &&
+      this.getModifierValue('social') && (
+        this.getModifierValue('phone') ||
+        this.getModifierValue('email') ||
+        this.getModifierValue('address')
+      )
+    )
+
+    const onlyList = !(
+      this.getModifierValue('map') ||
+      this.getModifierValue('phone') ||
+      this.getModifierValue('email') ||
+      this.getModifierValue('address')
+    )
+
     const blockHeader = [
       <Text bind="title" className={style.title} tagName="h1" />,
       this.getModifierValue('subtitle') && <Text bind="subtitle" className={style.subtitle} tagName="p" />,
@@ -58,8 +74,11 @@ class Block extends React.Component {
 
     return (
       <section className={classNames(style.section, {
-        [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
-        [style['section--column']]: mapWithSocials})}
+          [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
+          [style['section--column']]: mapWithSocials,
+          [style['section--state-3']]: listWithSocials,
+          [style['section--state-4']]: onlyList,
+        })}
       >
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
