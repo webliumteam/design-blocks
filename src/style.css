@@ -6,6 +6,7 @@
   picture {
     img {
       width: 100%;
+      height: 100%;
     }
   }
 }
@@ -44,11 +45,16 @@
 .socials {
   &__title {
     font-weight: var(--ui-text-font-weight);
+    margin-left: 5px;
   }
 
   @media (min-width: 992px) {
     text-align: left;
-    align-items: center;
+    align-items: flex-start;
+  }
+
+  &__icons {
+    text-align: left;
   }
 }
 
