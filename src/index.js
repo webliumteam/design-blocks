@@ -26,7 +26,7 @@ ExtendedWireframe.defaultContent = {
   },
   formBackground: {
     type: 'color',
-    color: 'rgb(19, 33, 143, 0.78)',
+    color: 'rgba(19, 33, 143, 0.78)',
   },
   title: {
     ...Component.defaultContent.title,
@@ -97,7 +97,7 @@ ExtendedWireframe.modifierScheme = {
     type: 'checkbox',
     classNameOnActive: style['section--with-title-decorator'],
   },
-  'form-description': {defaultValue: false, label: 'Form description', type: 'checkbox'},
+  'form-description': {defaultValue: false, label: 'Form description', type: 'hidden'},
   'header-alignment': {
     children: [
       {id: 'left', label: 'Left'},
