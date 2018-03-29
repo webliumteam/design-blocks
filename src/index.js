@@ -15,29 +15,57 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[0],
       picture: {
-        resourceRef: 'depositphotos-146804477-original.png',
-        alt: 'Service illustration photo',
+        ...Component.defaultContent.services[0].picture,
+        resourceRef: '1.jpg',
+        size: {
+          'min-width: 1200px': 768,
+          'min-width: 992px': 768,
+          'min-width: 768px': 768,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
     },
     {
       ...Component.defaultContent.services[1],
       picture: {
-        resourceRef: 'depositphotos-150504326-original.png',
-        alt: 'Service illustration photo',
+        ...Component.defaultContent.services[0].picture,
+        resourceRef: '2.jpg',
+        size: {
+          'min-width: 1200px': 768,
+          'min-width: 992px': 768,
+          'min-width: 768px': 768,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
     },
     {
       ...Component.defaultContent.services[2],
       picture: {
-        resourceRef: 'depositphotos-159638720-original.png',
-        alt: 'Service illustration photo',
+        ...Component.defaultContent.services[0].picture,
+        resourceRef: '3.jpg',
+        size: {
+          'min-width: 1200px': 1920,
+          'min-width: 992px': 1200,
+          'min-width: 768px': 962,
+          'min-width: 480px': 768,
+          'min-width: 320px': 450,
+        },
       },
     },
     {
       ...Component.defaultContent.services[3],
       picture: {
-        resourceRef: 'depositphotos-169507418-original.png',
-        alt: 'Service illustration photo',
+        ...Component.defaultContent.services[0].picture,
+        resourceRef: '4.jpg',
+        size: {
+          'min-width: 1200px': 768,
+          'min-width: 992px': 768,
+          'min-width: 768px': 768,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
     },
   ],
