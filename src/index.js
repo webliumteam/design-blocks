@@ -188,22 +188,22 @@ ExtendedWireframe.defaultContent = {
     },
   },
   copyright: {
-    type: 'caption',
+    type: 'text',
     content: '© Produced by Weblium. All Rights Reserved',
   },
   additional: {
-    type: 'caption',
+    type: 'text',
     content: 'Demo Preview for Plugin LLC Electrician Concept',
   },
   background: {
     type: 'color',
-    color: '#252936',
+    color: 'dark-shade-color',
   },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  description: {defaultValue: false, label: 'Company main text', type: 'checkbox'},
+  description: {defaultValue: false, label: 'Company main text', type: 'hidden'},
 }
 
 export default ExtendedWireframe

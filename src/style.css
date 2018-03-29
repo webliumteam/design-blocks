@@ -12,15 +12,9 @@
 }
 
 .footer {
-  &__part--center .nav-list__link {
-    color: var(--ui-light-shade-color);
-  }
-
   &__bottom {
     .footer__meta {
       font-size: var(--ui-small-size);
-      color: var(--ui-light-shade-color);
-      opacity: 0.5;
       font-weight: var(--ui-text-font-weight);
     }
   }
@@ -44,7 +38,7 @@
 
 .socials {
   &__title {
-    font-weight: var(--ui-text-font-weight);
+    font-weight: 300;
     margin-left: 5px;
   }
 
