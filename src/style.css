@@ -1,9 +1,6 @@
 @import "wireframe-zapdos-services/src/style.css";
 
 /* start here */
-.title {
-  letter-spacing: -0.68px;
-}
 
 .section {
   &__header {
