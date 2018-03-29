@@ -1,3 +1,45 @@
 @import "wireframe-series-2-header/src/style.css";
 
 /* start here */
+.logo {
+
+  @media (min-width: 992px) {
+    max-width: 215px;
+    min-height: 35px;
+    padding-bottom: 25px;
+  }
+}
+
+.header {
+
+  @media (min-width: 992px) {
+    padding-bottom: 55px;
+  }
+
+  &__company-info {
+    display: none;
+  }
+}
+
+.nav__link {
+  position: relative;
+  font-size: var(--ui-block-title-size);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.nav__item:first-child {
+  position: relative;
+
+  @media (min-width: 992px) {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 21px;
+      height: 3px;
+      top: 25px;
+      left: 0;
+      background-color: var(--ui-light-shade-color);
+    }
+  }
+}
