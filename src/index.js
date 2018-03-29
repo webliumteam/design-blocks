@@ -75,10 +75,10 @@ ExtendedWireframe.defaultContent = {
 
 
 ExtendedWireframe.modifierScheme = {
-  arrows: {defaultValue: false, label: 'Navigation arrows', type: 'checkbox'},
-  dots: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox'},
+  arrows: {defaultValue: false, label: 'Navigation arrows', type: 'hidden'},
+  dots: {defaultValue: true, label: 'Navigation indicators', type: 'hidden'},
   'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'hidden'},
+  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
 }
 

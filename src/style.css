@@ -3,6 +3,7 @@
 /* start here */
 
 .section {
+  color: #fff;
 
   @media (min-width: 768px) {
     padding-top: 50px;
@@ -12,11 +13,14 @@
 
 .item {
   &__inner {
-    min-height: 0;
-    padding-top: 80px;
-    padding-bottom: 165px;
-    padding-left: 0;
-    padding-right: 0;
+
+    @media (min-width: 992px) {
+      min-height: 0;
+      padding-top: 80px;
+      padding-bottom: 165px;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__title {
@@ -29,7 +33,10 @@
 
 .subtitle {
   margin-top: 15px;
-  font-size: calc(var(--ui-subtitle-size) * 0.7);
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--ui-subtitle-size) * 0.7);
+  }
 }
 
 .slider-dots {
@@ -39,15 +46,16 @@
     li button {
       width: 8px;
       height: 8px;
-      background-color: var(--ui-light-shade-color);
+      color: inherit;
+      background-color: currentColor;
       opacity: 0.5;
+      transition: opacity ease-in 0.2s, transform ease-in 0.2s;
     }
 
     li.slick-active button {
-      width: 14px;
-      height: 14px;
-      background-color: var(--ui-light-shade-color);
+      background-color: currentColor;
       opacity: 1;
+      transform: scale(1.75);
     }
   }
   /* stylelint-enable */
