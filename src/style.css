@@ -3,6 +3,8 @@
 /* start here */
 
 .logo {
+  max-width: 335px;
+
   a,
   picture {
     display: block;
