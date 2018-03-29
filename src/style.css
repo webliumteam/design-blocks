@@ -1,3 +1,30 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-3-header/src/style.css";
 
 /* start here */
+.header {
+
+  @media (min-width: 992px) {
+    padding-top: 13px;
+    padding-bottom: 40px;
+  }
+
+  .logo-wrapper img {
+    width: 270px;
+  }
+
+  &__text a {
+    font-weight: 500;
+  }
+
+  .nav__item a {
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
