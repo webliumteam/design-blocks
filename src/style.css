@@ -76,9 +76,13 @@
 
   @media (min-width: 992px) {
     padding-left: calc(12.1% + 15px);
-    max-width: 50%;
+    max-width: 60%;
     margin-right: auto;
     margin-left: 0;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 50%;
   }
 
   /* stylelint-disable */
