@@ -1,3 +1,99 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-lucario-cover/src/style.css";
 
-/* start here */
+.section {
+  &__inner {
+    max-width: 1520px;
+  }
+}
+
+.subtitle {
+  font-size: var(--ui-subtitle-size);
+}
+
+.items-wrapper {
+  max-width: inherit;
+
+  :global {
+    .slick-arrow-default {
+      width: 23px;
+      color: var(--ui-light-shade-color);
+      transition: color ease-in 0.2s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--ui-light-accent-color);
+        opacity: 1;
+      }
+    }
+
+    .slick-prev-default {
+      transform: translateX(-200%);
+    }
+
+    .slick-next-default {
+      transform: translateY(200%);
+    }
+
+    .slick-prev-default,
+    .slick-next-default {
+
+      @media (min-width: 768px) {
+        transform: none;
+      }
+    }
+  }
+}
+
+.item {
+  &__inner {
+
+    @media (min-width: 992px) {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 12.1%;
+      padding-right: 0;
+      max-width: 60%;
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 50%;
+    }
+  }
+
+  &__title {
+    font-style: italic;
+
+    @media(min-width: 748px) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.slider-dots {
+
+  @media (min-width: 992px) {
+    padding-left: calc(12.1% + 15px);
+    max-width: 50%;
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  /* stylelint-disable */
+  :global {
+    li button {
+      width: 15px;
+      height: 15px;
+    }
+  }
+  /* stylelint-enable */
+}
+
+.btns-group {
+
+  @media(min-width: 748px) {
+    margin-top: 22px;
+  }
+}
