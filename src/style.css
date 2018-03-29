@@ -72,6 +72,7 @@
     font-family: var(--ui-quote-font-family);
     font-size: var(--ui-text-size);
     transition: all 0.2s ease-in;
+    text-decoration: none;
 
     &::after {
       content: "";
