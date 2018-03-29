@@ -29,6 +29,7 @@
       width: 13px;
       height: 20px;
       top: calc(134px + var(--ui-hero-title-size) / 2);
+      z-index: 1;
 
       &::before {
         content: none;
