@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-lucario-cover/src/component'
 import style from './style.css'
 
 import options from './options.json'
@@ -11,10 +11,43 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  background: {
+    type: 'image',
+    position: {
+      type: 'cover',
+      cover: '50% 50%',
+    },
+    resourceRef: 'bg.png',
+  },
+  theme: 'dark',
+  cover: [
+    {
+      ...Component.defaultContent.cover[0],
+      cta: {
+        ...Component.defaultContent.cover[0].cta,
+        size: 'lg',
+      },
+    },
+    {
+      ...Component.defaultContent.cover[1],
+      cta: {
+        ...Component.defaultContent.cover[1].cta,
+        size: 'lg',
+      },
+    },
+    {
+      ...Component.defaultContent.cover[2],
+      cta: {
+        ...Component.defaultContent.cover[2].cta,
+        size: 'lg',
+      },
+    },
+  ],
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  arrows: {defaultValue: false, label: 'Navigation arrows', type: 'hidden'},
 }
 
 export default ExtendedWireframe

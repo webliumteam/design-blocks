@@ -1,3 +1,62 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-lucario-cover/src/style.css";
 
 /* start here */
+
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+.subtitle {
+  opacity: 0.5;
+  margin-top: 12px;
+
+  @media (min-width: 768px) {
+    font-size: var(--ui-subtitle-size);
+  }
+}
+
+.item {
+  &__inner {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: 768px) {
+      padding-top: 100px;
+      padding-bottom: 160px;
+    }
+  }
+}
+
+.btns-group {
+  margin-top: 24px;
+}
+
+/* stylelint-disable */
+:global {
+  .slider-dots li {
+    margin-right: 10px;
+  }
+
+  .slick-dots li button {
+    background-color: transparent;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--ui-brand-color);
+    width: 14px;
+    height: 14px;
+  }
+
+  .slick-dots li.slick-active button {
+    background-color: transparent;
+    width: 21px;
+    height: 21px;
+    border-color: var(--ui-light-shade-color);
+  }
+}
+/* stylelint-enable */
