@@ -10,11 +10,6 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
-  // background: {
-  //   type: 'color',
-  //   color: '#d8d8d8',
-  // },
-
   background: {
     type: 'image',
     position: {
@@ -25,117 +20,54 @@ ExtendedWireframe.defaultContent = {
   },
   cover: [
     {
-      title: {
-        content: 'Think In Motion',
-        type: 'heroTitle',
-      },
+      ...Component.defaultContent.cover[0],
       subtitle: {
-        content: 'We create. We Develop. We Inspire.',
-        type: 'subtitle',
+        ...Component.defaultContent.cover[0].subtitle,
+        content: '<span style="font-weight: bold;">WE IMPLEMENT INNOVATIVE PROJECTS</span>',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Get in Touch',
-        type: 'primary',
+        ...Component.defaultContent.cover[0].cta,
+        type: 'secondary',
+        size: 'lg',
       },
       'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Who We Are',
-        type: 'secondary',
+        ...Component.defaultContent.cover[0]['cta-2'],
+        type: 'primary-alt',
+        size: 'lg',
       },
     },
     {
-      title: {
-        content: 'Think In Motion',
-        type: 'heroTitle',
-      },
+      ...Component.defaultContent.cover[1],
       subtitle: {
-        content: 'We create. We Develop. We Inspire.',
-        type: 'subtitle',
+        ...Component.defaultContent.cover[1].subtitle,
+        content: '<span style="font-weight: bold;">WE IMPLEMENT INNOVATIVE PROJECTS</span>',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Get in Touch',
-        type: 'primary',
+        ...Component.defaultContent.cover[1].cta,
+        type: 'secondary',
+        size: 'lg',
       },
       'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Who We Are',
-        type: 'secondary',
+        ...Component.defaultContent.cover[1]['cta-2'],
+        type: 'primary-alt',
+        size: 'lg',
       },
     },
     {
-      title: {
-        content: 'Think In Motion',
-        type: 'heroTitle',
-      },
+      ...Component.defaultContent.cover[2],
       subtitle: {
-        content: 'We create. We Develop. We Inspire.',
-        type: 'subtitle',
+        ...Component.defaultContent.cover[2].subtitle,
+        content: '<span style="font-weight: bold;">WE IMPLEMENT INNOVATIVE PROJECTS</span>',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Get in Touch',
-        type: 'primary',
+        ...Component.defaultContent.cover[2].cta,
+        type: 'secondary',
+        size: 'lg',
       },
       'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Who We Are',
-        type: 'secondary',
+        ...Component.defaultContent.cover[2]['cta-2'],
+        type: 'primary-alt',
+        size: 'lg',
       },
     },
   ],
