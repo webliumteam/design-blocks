@@ -237,7 +237,7 @@ Block.defaultContent = {
       preset: 'preset001',
       offset: 7.5,
       color: '#303C42',
-      sizes: [10, 20, 30, 40],
+      sizes: [30, 40],
       size: 30,
     },
   },
