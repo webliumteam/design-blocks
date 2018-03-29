@@ -1,3 +1,95 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-lucario-cover/src/style.css";
 
-/* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 77px;
+    padding-bottom: 77px;
+  }
+}
+
+.subtitle {
+  margin-top: 24px;
+  font-size: calc(var(--ui-subtitle-size) * 1.875);
+}
+
+.items-wrapper {
+
+  @media (min-width: 992px) {
+    max-width: 1030px;
+    margin: auto;
+  }
+
+  /* stylelint-disable  */
+  :global {
+    .slick-arrow {
+      font-size: var(--ui-hero-title-size);
+      color: var(--ui-light-shade-color);
+      width: 13px;
+      height: 20px;
+      top: calc(134px + var(--ui-hero-title-size) / 2);
+
+      &::before {
+        content: none;
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .slick-prev {
+        left: 70px;
+      }
+
+      .slick-next {
+        right: 70px;
+      }
+
+      .slick-dots {
+        bottom: -15px;
+      }
+    }
+
+    .slider .slick-track {
+      padding: 10px 0;
+    }
+  }
+  /* stylelint-enable */
+}
+
+.item {
+  &__inner {
+
+    @media (min-width: 992px) {
+      max-width: 790px;
+      padding-top: 119px;
+      padding-bottom: 157px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.btns-group {
+  margin-top: 24px;
+}
+
+:global {
+  /* stylelint-disable  */
+  .slick-dots li button {
+    width: 13px;
+    height: 13px;
+    border: 3px solid;
+    border-color: var(--ui-light-shade-color);
+    background: transparent;
+  }
+
+  .slick-dots li.slick-active button {
+    border-color: var(--ui-brand-color);
+    background-color: transparent;
+  }
+  /* stylelint-enable */
+}
