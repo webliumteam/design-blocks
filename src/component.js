@@ -5,6 +5,7 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
@@ -13,10 +14,22 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {ContactForm, Text, Menu, Logo, SocialIcons}, style} = this.props
+    const {components: {ContactForm, Text, Menu, Logo, SocialIcons}, style, content} = this.props
+    const withoutSocials = !this.getModifierValue('social')
+    const withoutForm = !this.getModifierValue('subscribe-form')
+    const withoutFirstPart = !this.getModifierValue('title') && !this.getModifierValue('caption')
+    const onlyMenu = withoutSocials && withoutForm && withoutFirstPart
 
     return (
-      <footer className={style.footer}>
+      <footer className={classNames(
+        style.footer,
+        withoutSocials && [style['footer--state-1']],
+        withoutForm && [style['footer--state-2']],
+        withoutSocials && withoutForm && [style['footer--state-3']],
+        onlyMenu && [style['footer--state-4']],
+        withoutFirstPart && [style['footer--state-5']],
+      )}
+      >
         <div className={style.footer__inner}>
           <div className={classNames(style.footer__part, style['footer__part--first'])}>
             {this.getModifierValue('title') && (
@@ -49,14 +62,16 @@ class Block extends React.Component {
               </div>
             </div>
           )}
-          <ContactForm
-            bind="contactForm"
-            className={classNames(style.footer__part, style['footer__part--last'], style.form)}
-            labelClassName={style.form__item}
-            descriptionClassName={style.form__desc}
-            fieldClassName={style.form__field}
-            buttonClassName={style.form__button}
-          />
+          {this.getModifierValue('subscribe-form') && (
+            <ContactForm
+              bind="contactForm"
+              className={classNames(style.footer__part, style['footer__part--last'], style.form)}
+              labelClassName={style.form__item}
+              descriptionClassName={style.form__desc}
+              fieldClassName={style.form__field}
+              buttonClassName={style.form__button}
+            />
+          )}
           <div className={style.footer__bottom}>
             <Text tagName="small" className={style.footer__meta} bind="copyright" />
             <Text tagName="small" className={style.footer__meta} bind="additional" />
@@ -268,6 +283,7 @@ Block.modifierScheme = {
   title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
   caption: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social media Icons', type: 'checkbox'},
+  'subscribe-form': {defaultValue: true, label: 'Subscribe form', type: 'checkbox'},
 }
 
 
