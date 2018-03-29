@@ -48,6 +48,7 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   arrows: {defaultValue: false, label: 'Navigation arrows', type: 'hidden'},
+  dots: {defaultValue: true, label: 'Navigation indicators', type: 'hidden'},
 }
 
 export default ExtendedWireframe
