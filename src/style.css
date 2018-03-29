@@ -3,11 +3,9 @@
 /* start here */
 
 .logo {
+  a,
   picture {
-    img {
-      width: 100%;
-      height: auto;
-    }
+    display: block;
   }
 }
 
