@@ -172,8 +172,7 @@
 }
 
 .logo__title {
-
-  /* font-size: calc(var(--ui-block-title-size) * 0.75); */
+  font-size: inherit;
   color: var(--ui-block-title-color);
 }
 
@@ -207,15 +206,14 @@
 
 @media (min-width: 768px) {
   .nav-list__item {
-    display: flex;
     max-width: 33.333%;
     flex-basis: 33.333%;
+    text-align: left;
   }
 }
 
 .nav-list__link {
   max-width: 100%;
-  text-align: left;
 }
 
 .socials {
