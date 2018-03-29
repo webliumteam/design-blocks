@@ -1,15 +1,21 @@
 @import "wireframe-lucario-cover/src/style.css";
 
 .section {
-  padding-top: 150px;
-  padding-bottom: 47px;
   color: #fff;
+
+  @media (min-width: 992px) {
+    padding-top: 150px;
+    padding-bottom: 47px;
+  }
 }
 
 .item {
   &__inner {
-    min-height: 0;
-    padding-bottom: 115px;
+
+    @media (min-width: 992px) {
+      min-height: 0;
+      padding-bottom: 115px;
+    }
   }
 
   &__title {
@@ -20,10 +26,6 @@
 
     @media (min-width: 768px) {
       width: 540px;
-    }
-
-    strong {
-      font-weight: var(--ui-hero-title-font-weight);
     }
   }
 }
