@@ -14,18 +14,13 @@
 
   &__text a {
     font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s ease-in;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 
   .nav__item a {
     text-decoration: none;
     transition: all 0.2s ease-in;
     font-weight: 500;
+    margin-bottom: 10px;
 
     &:hover {
       text-decoration: underline;
