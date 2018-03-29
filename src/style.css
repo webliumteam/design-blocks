@@ -2,11 +2,6 @@
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
-  font-family: var(--ui-text-font-family);
-  font-size: var(--ui-text-size);
-  line-height: var(--ui-text-line-height);
-  font-weight: var(--ui-text-font-weight);
-  color: var(--ui-text-color);
 
   @media (min-width: 768px) {
     padding: 60px 0;
