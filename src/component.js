@@ -31,21 +31,23 @@ class Block extends React.Component {
       )}
       >
         <div className={style.footer__inner}>
-          <div className={classNames(style.footer__part, style['footer__part--first'])}>
-            {this.getModifierValue('title') && (
-              <div className={style.logo}>
-                <Logo
-                  bind="logo"
-                  maxWidth={this.getOptionValue('logo-max-width')}
-                  maxHeight={this.getOptionValue('logo-max-height')}
-                  textClassName={style.logo__title}
-                />
-              </div>
-            )}
-            {this.getModifierValue('caption') && (
-              <Text tagName="p" className={style.footer__text} bind="mainText" />
-            )}
-          </div>
+          {!withoutFirstPart && (
+            <div className={classNames(style.footer__part, style['footer__part--first'])}>
+              {this.getModifierValue('title') && (
+                <div className={style.logo}>
+                  <Logo
+                    bind="logo"
+                    maxWidth={this.getOptionValue('logo-max-width')}
+                    maxHeight={this.getOptionValue('logo-max-height')}
+                    textClassName={style.logo__title}
+                  />
+                </div>
+              )}
+              {this.getModifierValue('caption') && (
+                <Text tagName="p" className={style.footer__text} bind="mainText" />
+              )}
+            </div>
+          )}
           <nav className={classNames(style.footer__part, style['footer__part--second'])}>
             <Menu
               className={style['nav-list']}
