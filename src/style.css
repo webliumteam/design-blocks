@@ -143,6 +143,7 @@
 
   /* font-size: calc(var(--ui-caption-size) * 0.8571);
   line-height: calc(var(--ui-caption-line-height) * 1.4117); */
+  flex-shrink: 0;
   text-align: center;
 }
 
@@ -242,10 +243,12 @@
 }
 
 .socials__title {
+  max-width: 100%;
   margin-bottom: 14px;
 }
 
 .socials__icons {
+  max-width: 100%;
   text-align: center;
 
   @media (min-width: 992px) {
