@@ -1,3 +1,92 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-testimonials/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 122px;
+    padding-bottom: 118px;
+  }
+}
+
+.top-icon {
+  display: flex;
+  position: relative;
+  margin: 0 auto 30px;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  color: var(--ui-brand-color);
+  border-radius: 50%;
+  background-color: var(--ui-light-shade-color);
+  box-shadow: 0 2px 20px -6px var(--ui-link-color);
+
+  > svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.subtitle {
+  margin-top: 24px;
+}
+
+.slider {
+  padding-top: 42px;
+}
+
+.items-wrapper {
+
+  @media (min-width: 768px) {
+    margin-top: 42px;
+  }
+
+  :global {
+    .slick-arrow-default {
+      width: 11px;
+      height: 20px;
+      color: var(--ui-quote-color);
+
+      @media (min-width: 992px) {
+        top: 76%;
+      }
+    }
+
+    .slick-prev-default {
+
+      @media (min-width: 992px) {
+        left: 100px;
+      }
+    }
+
+    .slick-next-default {
+
+      @media (min-width: 992px) {
+        right: 100px;
+      }
+    }
+  }
+}
+
+.item {
+  &__inner {
+
+    @media (min-width: 992px) {
+      max-width: 770px;
+    }
+  }
+
+  &__pic-wrapper {
+    margin-bottom: 31px;
+  }
+
+  &__position {
+    margin-top: 10px;
+  }
+
+  &__desc {
+    font-size: calc(var(--ui-text-size) * 0.875);
+    margin-top: 30px;
+  }
+}
+
