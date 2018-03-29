@@ -1,6 +1,7 @@
 @import "wireframe-lucario-cover/src/style.css";
 
 .section {
+  color: #fff;
 
   @media (min-width: 992px) {
     padding-top: 77px;
@@ -34,6 +35,7 @@
       }
 
       svg {
+        display: block;
         width: 100%;
         height: auto;
       }
@@ -83,12 +85,14 @@
     width: 13px;
     height: 13px;
     border: 3px solid;
-    border-color: var(--ui-light-shade-color);
+    color: inherit;
+    border-color: currentColor;
     background: transparent;
+    transition: color ease-in 0.2s;
   }
 
   .slick-dots li.slick-active button {
-    border-color: var(--ui-brand-color);
+    color: var(--ui-brand-color);
     background-color: transparent;
   }
   /* stylelint-enable */
