@@ -42,18 +42,6 @@
   }
 }
 
-@media (min-width: 768px) {
-  .section {
-    padding: 60px 0;
-  }
-}
-
-@media (min-width: 992px) {
-  .section {
-    padding: 75px 0;
-  }
-}
-
 .section--column .section__main {
   flex-direction: column;
   align-items: center;
@@ -82,6 +70,23 @@
 .section--column .socials {
   text-align: center;
   margin-top: 0;
+}
+
+.section--state-11 {
+  .map-wrapper {
+
+    @media (min-width: 768px) {
+      order: 1;
+    }
+  }
+
+  .contacts {
+
+    @media (min-width: 768px) {
+      padding-left: 0;
+      padding-right: 30px;
+    }
+  }
 }
 
 .section__inner {
@@ -194,7 +199,10 @@
 
 @media (min-width: 1200px) {
   .contacts__desc {
-    /* font-size: calc(var(--ui-text-size) * 1.25); */
+
+    @media (min-width: 768px) {
+      font-size: calc(var(--ui-text-size) * 1.25);
+    }
 
     &--adress,
     &--phone,
