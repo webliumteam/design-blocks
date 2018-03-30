@@ -1,10 +1,6 @@
 @import "wireframe-series-2-header/src/style.css";
 
 /* start here */
-logo__title {
-  letter-spacing: -1px;
-}
-
 .nav__item {
 
   @media (min-width: 992px) {
@@ -13,9 +9,6 @@ logo__title {
 }
 
 .nav__link {
-  color: var(--ui-dark-shade-color);
-
-  &:hover {
-    color: var(--ui-link-color);
-  }
+  text-decoration: none;
+  transition: all 0.2s ease-in;
 }
