@@ -16,28 +16,24 @@ class Block extends React.Component {
     const {components: {Logo, Text, Map, SocialIcons, Icon}, style} = this.props
 
     const textWithSocials = (
-      !this.getModifierValue('logo') &&
       !this.getModifierValue('phone') &&
       !this.getModifierValue('email') &&
       !this.getModifierValue('map')
     ) && (this.getModifierValue('address') && this.getModifierValue('social'))
 
     const emailWithSocials = (
-      !this.getModifierValue('logo') &&
       !this.getModifierValue('phone') &&
       !this.getModifierValue('address') &&
       !this.getModifierValue('map')
     ) && (this.getModifierValue('email') && this.getModifierValue('social'))
 
     const phoneWithSocials = (
-      !this.getModifierValue('logo') &&
       !this.getModifierValue('email') &&
       !this.getModifierValue('address') &&
       !this.getModifierValue('map')
     ) && (this.getModifierValue('phone') && this.getModifierValue('social'))
 
     const mapWithSocials = (
-      !this.getModifierValue('logo') &&
       !this.getModifierValue('phone') &&
       !this.getModifierValue('email') &&
       !this.getModifierValue('address')
@@ -60,10 +56,8 @@ class Block extends React.Component {
       )
     )
 
-    const onlyList = !(
-      this.getModifierValue('map') &&
-        this.getModifierValue('social')
-    ) && (
+    const onlyList = !this.getModifierValue('map') &&
+      !this.getModifierValue('social') && (
       this.getModifierValue('phone') ||
       this.getModifierValue('email') ||
       this.getModifierValue('address')
