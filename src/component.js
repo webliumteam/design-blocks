@@ -61,7 +61,9 @@ class Block extends React.Component {
     )
 
     const onlyList = !(
-      this.getModifierValue('map') ||
+      this.getModifierValue('map') &&
+        this.getModifierValue('social')
+    ) && (
       this.getModifierValue('phone') ||
       this.getModifierValue('email') ||
       this.getModifierValue('address')
