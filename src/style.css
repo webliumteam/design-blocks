@@ -255,10 +255,6 @@
 
   &__item {
     width: 100%;
-    font-size: var(--ui-text-size);
-    line-height: var(--ui-text-line-height);
-    font-family: var(--ui-text-font-family);
-    font-weight: var(--ui-text-font-weight);
     text-align: center;
   }
 

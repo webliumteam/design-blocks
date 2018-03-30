@@ -89,7 +89,7 @@ Block.components = _.pick(['Text', 'Menu', 'Logo', 'SocialIcons', 'ContactForm']
 Block.defaultContent = {
   background: {
     type: 'color',
-    color: '#141414',
+    color: '#676767',
   },
   logo: {
     text: {
