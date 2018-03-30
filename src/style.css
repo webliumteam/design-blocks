@@ -48,28 +48,29 @@
 
 .item {
   display: flex;
-  width: 100%;
-  padding: 0 15px;
+  width: calc(100% - 30px);
+  margin-left: 15px;
+  margin-right: 15px;
   margin-bottom: 30px;
   text-align: center;
 
   @media (min-width: 768px) {
-    width: 33.4%;
+    width: calc(33.4% - 30px);
   }
 
   @media (min-width: 992px) {
-    width: 25%;
+    width: calc(25% - 30px);
   }
 
   &:nth-last-of-type(2n+3):first-of-type,
   &:nth-last-of-type(2n+3):first-of-type ~ & {
 
     @media (min-width: 768px) {
-      width: 33.333333%;
+      width: calc(33.333333% - 30px);
     }
 
     @media (min-width: 992px) {
-      width: 25%;
+      width: calc(25% - 30px);
     }
   }
 
@@ -77,7 +78,7 @@
   &:nth-last-of-type(n+5):first-of-type ~ & {
 
     @media (min-width: 992px) {
-      width: 25.1%;
+      width: calc(25.1% - 30px);
     }
   }
 
@@ -85,7 +86,7 @@
   &:nth-last-of-type(n+7):first-of-type ~ & {
 
     @media (min-width: 992px) {
-      width: 25%;
+      width: calc(25% - 30px);
     }
   }
 
@@ -93,7 +94,7 @@
   &:nth-last-of-type(9):first-of-type ~ & {
 
     @media (min-width: 992px) {
-      width: 25.1%;
+      width: calc(25.1% - 30px);
     }
   }
 
