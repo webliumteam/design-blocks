@@ -55,12 +55,9 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  button: {defaultValue: true, label: 'Secondary Button', type: 'checkbox'},
-  image: {defaultValue: true, label: 'Reviewer photo', type: 'checkbox'},
-  position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
   publishDate: {defaultValue: false, label: 'Date of publishing', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
-  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'hidden'},
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
