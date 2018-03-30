@@ -5,7 +5,7 @@
   @media (min-width: 992px) {
     max-width: 100%;
     padding-top: 51px;
-    padding-bottom: 46px;
+    padding-bottom: 10px;
     padding-left: 70px;
     padding-right: 70px;
 
@@ -54,26 +54,32 @@
     justify-content: center;
     flex-wrap: nowrap;
     margin: 0 auto;
+    max-width: 100%;
   }
 
   &__item {
+    position: relative;
 
     @media (min-width: 992px) {
       margin-top: 15px;
       margin-left: 20px;
       margin-right: 20px;
       justify-content: center;
+      align-items: stretch;
       flex-wrap: nowrap;
+      min-width: 10ch;
+      max-width: 40ch;
+      padding-bottom: 38px;
     }
   }
 
   &__link {
-    position: relative;
+    display: block;
+    height: 100%;
     font-family: var(--ui-quote-font-family);
     font-size: var(--ui-text-size);
     transition: all 0.2s ease-in;
     text-decoration: none;
-    white-space: nowrap;
 
     &::after {
       content: "";
@@ -88,19 +94,19 @@
       transition: width 0.2s ease-in;
 
       @media (min-width: 992px) {
-        bottom: -36px;
+        bottom: 0;
       }
     }
 
     &--active {
       &::after {
-        width: 125%;
+        width: calc(100% + 30px);
         background-color: currentColor;
       }
     }
 
     &:hover::after {
-      width: 125%;
+      width: calc(100% + 30px);
     }
   }
 
