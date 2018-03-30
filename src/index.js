@@ -14,34 +14,42 @@ ExtendedWireframe.defaultContent = {
   partners: [
     {
       ...Component.defaultContent.partners[0],
-      picture: {
-        ...Component.defaultContent.partners[0].picture,
-        resourceRef: 'allexa.png',
-        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      logo: {
+        image: {
+          resourceRef: 'allexa.png',
+          width: 130,
+          height: 62,
+        },
       },
     },
     {
       ...Component.defaultContent.partners[1],
-      picture: {
-        ...Component.defaultContent.partners[1].picture,
-        resourceRef: 'brownie.png',
-        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      logo: {
+        image: {
+          resourceRef: 'brownie.png',
+          width: 130,
+          height: 62,
+        },
       },
     },
     {
       ...Component.defaultContent.partners[2],
-      picture: {
-        ...Component.defaultContent.partners[2].picture,
-        resourceRef: 'nord.png',
-        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      logo: {
+        image: {
+          resourceRef: 'nord.png',
+          width: 130,
+          height: 62,
+        },
       },
     },
     {
       ...Component.defaultContent.partners[3],
-      picture: {
-        ...Component.defaultContent.partners[3].picture,
-        resourceRef: 'johnson.png',
-        size: {'min-width: 320px': 90, 'min-width: 992px': 130},
+      logo: {
+        image: {
+          resourceRef: 'johnson.png',
+          width: 130,
+          height: 62,
+        },
       },
     },
   ],

@@ -10,6 +10,15 @@
   color: var(--ui-text-color);
 }
 
+.logo {
+  display: block;
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 .item {
   border: 0;
   padding-bottom: 20px;
