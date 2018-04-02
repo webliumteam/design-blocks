@@ -8,13 +8,9 @@
     padding-bottom: 40px;
   }
 
-  .logo {
-    max-width: 292px;
-
-    a,
-    picture {
-      display: block;
-    }
+  .logo-wrapper img {
+    width: 270px;
+    height: auto;
   }
 
   &__text a {
