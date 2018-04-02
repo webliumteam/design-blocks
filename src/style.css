@@ -242,6 +242,7 @@
 
   .contacts:first-child .contacts-list {
     display: flex;
+
     /* width: 100%; */
     /* max-width: calc(100% - 180px); */
     margin-top: 0;
@@ -250,6 +251,7 @@
   }
 
   .contacts:first-child .contacts-list__item {
+
     /* width: 265px; */
     /* padding-right: 40px; */
     margin-bottom: 0;
@@ -363,7 +365,6 @@
   justify-content: center;
   color: var(--ui-text-color);
   text-decoration: none;
-  background-color: var(--ui-media-bg);
 
   img {
     max-width: 100%;
@@ -373,10 +374,12 @@
 .logo__pic {
   height: auto;
   max-width: 100%;
+  background-color: var(--ui-media-bg);
 }
 
 .logo__title {
   max-width: 100%;
+  min-width: 1px;
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
