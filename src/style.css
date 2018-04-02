@@ -1,3 +1,38 @@
 @import "wireframe-zapdos-numbers/src/style.css";
 
-/* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 138px;
+    padding-bottom: 112px;
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.item {
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__number {
+    margin-right: 0;
+    margin-bottom: 3px;
+
+    @media (min-width: 768px) {
+      font-size: calc(var(--ui-hero-title-size) * 1.1429);
+    }
+  }
+
+  &___text {
+
+    @media (min-width: 768px) {
+      font-size: calc(var(--ui-text-size) * 0.9375);
+    }
+  }
+}
+
