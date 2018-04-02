@@ -31,6 +31,6 @@
         "stylelint-order": "latest"
     },
     "dependencies": {
-        "wireframe-zapdos-about": "https://github.com/webliumteam/blocks#w/zapdos/about/prod"
+        "wireframe-series-2-about": "https://github.com/webliumteam/blocks#w/series-2/about/prod"
     }
 }

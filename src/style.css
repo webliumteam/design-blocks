@@ -1,3 +1,47 @@
-@import "wireframe-zapdos-about/src/style.css";
+@import "wireframe-series-2-about/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 97px;
+    padding-bottom: 110px;
+  }
+
+  &__inner {
+    max-width: 968px;
+  }
+}
+
+.article {
+  margin-right: auto;
+
+  @media (min-width: 768px) {
+    max-width: 347px;
+    margin-right: 0;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__title {
+    margin-bottom: 33px;
+    margin-left: -5px;
+    text-align: left;
+  }
+
+  &__text {
+    max-width: 328px;
+    margin-bottom: 34px;
+    font-size: calc(var(--ui-text-size) * 0.9375);
+  }
+}
+
+.caption-decorator {
+  font-size: calc(var(--ui-heading-size) * 1.333);
+  text-align: left;
+
+  @media (min-width: 768px) {
+    margin-bottom: -10px;
+  }
+}
