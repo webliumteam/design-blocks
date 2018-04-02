@@ -17,7 +17,8 @@ class Block extends React.Component {
     opened: false,
   }
 
-  getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
@@ -39,50 +40,91 @@ class Block extends React.Component {
     this.setState({opened: false})
   }
 
+  renderLogo = () => {
+    const {components: {Logo}, style: css} = this.props
+    return (
+      <Logo
+        bind="logo"
+        className={css.logo}
+        textClassName={css.logo__title}
+        maxWidth={this.getOptionValue('logo-max-width')}
+        maxHeight={this.getOptionValue('logo-max-height')}
+      />
+    )
+  }
+
+  renderBtn = () => {
+    const {style: css} = this.props
+    return (
+      <button
+        type="button"
+        className={css['nav-button']}
+        data-header="triger"
+        onClick={this.toggleOpened}
+      >
+        <span className={css['nav-button__line']} />
+        <span className={css['nav-button__line']} />
+        <span className={css['nav-button__line']} />
+      </button>
+    )
+  }
+
+  renderMenu = () => {
+    const {components: {Menu}, style: css} = this.props
+    return (
+      <nav className={css.nav}>
+        <Menu
+          className={css.nav__list}
+          itemClassName={css.nav__item}
+          linkClassName={css.nav__link}
+          onClickItem={this.closeMenu}
+          bind="menu"
+        />
+      </nav>
+    )
+  }
+
+  renderInfo = () => {
+    const {components: {Text}, style: css} = this.props
+    return (
+      <div className={css['header__company-info']}>
+        {this.getModifierValue('company-slogan') && (
+          <Text tagName="div" className={css.header__slogan} bind="slogan" />
+        )}
+        {this.getModifierValue('company-contacts') && (
+          <Text tagName="div" className={css.header__email} bind="email" />
+        )}
+      </div>
+    )
+  }
+
   render() {
-    const {components: {Logo, Text, Menu}, style: css} = this.props
+    const {components: {Background}, style: css} = this.props
     const {opened} = this.state
 
     return (
-      <header className={classNames(css.header, opened && css['header--nav-open'])} data-header="target">
-        <Logo
-          bind="logo"
-          className={css.logo}
-          textClassName={css.logo__title}
-          maxWidth={this.getOptionValue('logo-max-width')}
-          maxHeight={this.getOptionValue('logo-max-height')}
-        />
-        <button
-          type="button"
-          className={css['nav-button']}
-          data-header="triger"
-          onClick={this.toggleOpened}
-        >
-          <span className={css['nav-button__line']} />
-          <span className={css['nav-button__line']} />
-          <span className={css['nav-button__line']} />
-        </button>
+      <header
+        className={classNames(css.header, opened && css['header--opened'])}
+        data-header="target"
+      >
         <div className={css.header__inner}>
-          <nav className={css.nav}>
-            <Menu
-              className={css.nav__list}
-              itemClassName={css.nav__item}
-              linkClassName={css.nav__link}
-              onClickItem={this.closeMenu}
-              bind="menu"
-            />
-          </nav>
-          <div className={css['header__company-info']}>
-            {this.getModifierValue('company-slogan') && <Text tagName="div" className={css.header__slogan} bind="slogan" />}
-            {this.getModifierValue('company-contacts') && <Text tagName="div" className={css.header__email} bind="email" />}
-          </div>
+          {this.renderLogo()}
+          {this.renderBtn()}
+          {this.renderMenu()}
+          {this.renderInfo()}
         </div>
+        <Background bind="background" className={classNames(css.header__inner, css['header__inner--fixed'])}>
+          {this.renderLogo()}
+          {this.renderBtn()}
+          {this.renderMenu()}
+          {this.renderInfo()}
+        </Background>
       </header>
     )
   }
 }
 
-Block.components = _.pick(['Text', 'Logo', 'Menu', 'Button'])($editor.components)
+Block.components = _.pick(['Text', 'Logo', 'Menu', 'Button', 'Background'])($editor.components)
 
 Block.defaultContent = {
   background: {
