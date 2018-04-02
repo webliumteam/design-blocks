@@ -201,10 +201,8 @@
   }
 
   .item__link {
-    font-size: var(--ui-btn-md-font-size);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+
+    /* font-size: var(--ui-btn-md-font-size); */
   }
 
   .link {
@@ -314,6 +312,7 @@
 
     .logo {
       margin: 0 auto;
+      text-decoration: none;
     }
   }
 }
@@ -343,6 +342,7 @@
 }
 
 .logo {
+  display: block;
   width: var(--logoSize);
   margin: 0 auto 10px;
 
