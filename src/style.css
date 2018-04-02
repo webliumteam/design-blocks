@@ -73,7 +73,7 @@
 
     img {
       width: 180px;
-      height: 38px;
+      height: auto;
     }
   }
 }
