@@ -8,8 +8,13 @@
     padding-bottom: 40px;
   }
 
-  .logo-wrapper img {
-    width: 270px;
+  .logo {
+    max-width: 292px;
+
+    a,
+    picture {
+      display: block;
+    }
   }
 
   &__text a {
