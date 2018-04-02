@@ -126,12 +126,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
-  'header-button': {defaultValue: false, label: 'Header button', type: 'hidden'},
-  'form-title': {defaultValue: true, label: 'Form title', type: 'checkbox'},
-  'form-description': {defaultValue: true, label: 'Form description', type: 'checkbox'},
-  'header-alignment': {
+  'Arrange elements': {
     children: [
       {id: 'left', label: 'Left'},
       {id: 'right', label: 'Right'},
@@ -141,6 +136,11 @@ Block.modifierScheme = {
     type: 'radio-button-group',
     style: 'buttons',
   },
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  'header-button': {defaultValue: false, label: 'Header button', type: 'hidden'},
+  'form-title': {defaultValue: true, label: 'Form title', type: 'checkbox'},
+  'form-description': {defaultValue: true, label: 'Form description', type: 'checkbox'},
 }
 
 export default Block
