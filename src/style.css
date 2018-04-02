@@ -107,8 +107,6 @@
   left: 0;
   z-index: 5000;
 
-  overflow-y: auto;
-
   transition: opacity 200ms ease;
 
   .header:not(.header--opened) & {
@@ -158,6 +156,10 @@
 
   @media (min-width: 768px) {
     padding-top: 13px;
+  }
+
+  @media (max-width: 991px) {
+    overflow-y: auto;
   }
 
   @media (min-width: 992px) {
