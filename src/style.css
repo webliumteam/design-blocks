@@ -38,10 +38,10 @@
 }
 
 .caption-decorator {
-  font-size: calc(var(--ui-heading-size) * 1.333);
   text-align: left;
 
   @media (min-width: 768px) {
     margin-bottom: -10px;
+    font-size: calc(var(--ui-heading-size) * 1.333);
   }
 }
