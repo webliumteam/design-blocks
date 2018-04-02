@@ -1,3 +1,97 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-3-cover/src/style.css";
 
 /* start here */
+
+.section {
+  &--with-title-decorator .title {
+    position: relative;
+    padding-bottom: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 53px;
+      height: 5px;
+      bottom: 0;
+      left: 0;
+      transform: skewX(-25deg);
+      background: linear-gradient(
+        to right, var(--ui-brand-color) 0%,
+        var(--ui-brand-color) 60%,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0) 70%,
+        var(--ui-brand-color) 70%,
+        var(--ui-brand-color) 80%,
+        rgba(0, 0, 0, 0) 80%,
+        rgba(0, 0, 0, 0) 90%,
+        var(--ui-brand-color) 90%,
+        var(--ui-brand-color) 100%);
+    }
+  }
+
+  &__inner {
+
+    @media (min-width: 992px) {
+      justify-content: center;
+    }
+  }
+
+  &__header {
+    margin-bottom: 40px;
+
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-right: 45px;
+    }
+
+    &--right {
+
+      @media (min-width: 992px) {
+        padding-right: 0;
+        padding-left: 45px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.title {
+  max-width: 100%;
+}
+
+.subtitle {
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--ui-subtitle-size) * 1.1);
+  }
+}
+
+.form {
+  textarea {
+    min-height: 120px;
+    padding-top: 15px;
+    resize: none;
+  }
+
+  &__wrapper {
+
+    @media (min-width: 992px) {
+      max-width: 44%;
+      flex-basis: 44%;
+    }
+  }
+
+  &__item {
+    margin-bottom: 0;
+  }
+
+  &__field {
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+}
+
+.header-button {
+  margin-top: 10px;
+}
