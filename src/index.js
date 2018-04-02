@@ -83,6 +83,8 @@ ExtendedWireframe.modifierScheme = {
     defaultValue: true,
     type: 'checkbox',
   },
+  'button-primary': {defaultValue: false, label: 'Button', type: 'hidden'},
+  'button-secondary': {defaultValue: false, label: 'Additional button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
