@@ -72,8 +72,9 @@
   &__desc {
     display: block;
 
-    @media (--ui-medium-devices) {
+    @media (--ui-tablet-devices) {
       max-width: calc(100% - 150px);
+      flex: 1;
     }
 
     &--phone {
