@@ -22,9 +22,9 @@
 
 .nav-list {
   &__item {
-    font-size: var(--ui-subheading-size);
 
     @media (min-width: 992px) {
+      font-size: var(--ui-subheading-size);
       margin-left: 31px;
 
       &:first-child {

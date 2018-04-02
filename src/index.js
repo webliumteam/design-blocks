@@ -25,6 +25,9 @@ ExtendedWireframe.defaultContent = {
     },
   },
   menu: {
+    linkColor: {
+      hover: 'brand-color',
+    },
     links: [
       {
         id: 'about',
