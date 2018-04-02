@@ -116,6 +116,14 @@
       margin-top: 0;
       margin-left: 75px;
     }
+
+    &:only-child {
+
+      @media (--ui-medium-devices) {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
   }
 
   &__item {

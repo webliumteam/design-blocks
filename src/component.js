@@ -14,52 +14,70 @@ class Wireframe extends React.Component {
 
   render() {
     const {components: {Background, ContactForm, Text, SocialIcons}, style: css} = this.props
+    const addressItem = this.getModifierValue('address-title') || this.getModifierValue('address')
+    const hoursItem = this.getModifierValue('hours-title') || this.getModifierValue('hours')
+    const contactsItem = this.getModifierValue('contacts-title') ||
+      this.getModifierValue('phone') ||
+      this.getModifierValue('email') ||
+      this.getModifierValue('social')
+    const contactsList = addressItem || hoursItem || contactsItem
+    const contactsBlock = this.getModifierValue('title') || this.getModifierValue('subtitle') || contactsList
 
     return (
       <section className={css.section}>
         <div className={css.section__inner}>
-          <div className={css.contacts}>
-            {this.getModifierValue('title') && (
-              <Text tagName="h1" className={css.title} bind="title" />
-            )}
-            {this.getModifierValue('subtitle') && (
-              <Text tagName="p" className={css.subtitle} bind="subtitle" />
-            )}
-            <ul className={css['contacts-list']}>
-              <li className={css['contacts-list__item']}>
-                {this.getModifierValue('address-title') && (
-                  <Text bind="address-title" className={css.contacts__title} tagName="h2" />
-                )}
-                {this.getModifierValue('address') && (
-                  <Text bind="address-content" className={classNames(css.contacts__desc, css['contacts__desc--address'])} tagName="p" />
-                )}
-              </li>
-              <li className={css['contacts-list__item']}>
-                {this.getModifierValue('hours-title') && (
-                  <Text bind="hours-title" className={css.contacts__title} tagName="h2" />
-                )}
-                {this.getModifierValue('hours') && (
-                  <Text bind="hours-content" className={classNames(css.contacts__desc, css['contacts__desc--hours'])} tagName="p" />
-                )}
-              </li>
-              <li className={css['contacts-list__item']}>
-                {this.getModifierValue('contacts-title') && (
-                  <Text bind="contacts-title" className={css.contacts__title} tagName="h2" />
-                )}
-                <div className={css.contacts__desc}>
-                  {this.getModifierValue('phone') && (
-                    <Text bind="phone-link" className={css['contacts__desc--phone']} tagName="p" />
+          {contactsBlock && (
+            <div className={css.contacts}>
+              {this.getModifierValue('title') && (
+                <Text tagName="h1" className={css.title} bind="title" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text tagName="p" className={css.subtitle} bind="subtitle" />
+              )}
+              {contactsList && (
+                <ul className={css['contacts-list']}>
+                  {addressItem && (
+                    <li className={css['contacts-list__item']}>
+                      {this.getModifierValue('address-title') && (
+                        <Text bind="address-title" className={css.contacts__title} tagName="h2" />
+                      )}
+                      {this.getModifierValue('address') && (
+                        <Text bind="address-content" className={classNames(css.contacts__desc, css['contacts__desc--address'])} tagName="p" />
+                      )}
+                    </li>
                   )}
-                  {this.getModifierValue('email') && (
-                    <Text bind="email-link" className={css['contacts__desc--email']} tagName="p" />
+                  {hoursItem && (
+                    <li className={css['contacts-list__item']}>
+                      {this.getModifierValue('hours-title') && (
+                        <Text bind="hours-title" className={css.contacts__title} tagName="h2" />
+                      )}
+                      {this.getModifierValue('hours') && (
+                        <Text bind="hours-content" className={classNames(css.contacts__desc, css['contacts__desc--hours'])} tagName="p" />
+                      )}
+                    </li>
                   )}
-                  {this.getModifierValue('social') && (
-                    <SocialIcons className={css.socials} bind="socialIcons" />
+                  {contactsItem && (
+                    <li className={css['contacts-list__item']}>
+                      {this.getModifierValue('contacts-title') && (
+                        <Text bind="contacts-title" className={css.contacts__title} tagName="h2" />
+                      )}
+                      <div className={css.contacts__desc}>
+                        {this.getModifierValue('phone') && (
+                          <Text bind="phone-link" className={css['contacts__desc--phone']} tagName="p" />
+                        )}
+                        {this.getModifierValue('email') && (
+                          <Text bind="email-link" className={css['contacts__desc--email']} tagName="p" />
+                        )}
+                        {this.getModifierValue('social') && (
+                          <SocialIcons className={css.socials} bind="socialIcons" />
+                        )}
+                      </div>
+                    </li>
                   )}
-                </div>
-              </li>
-            </ul>
-          </div>
+                </ul>
+              )}
+            </div>
+          )}
           {this.getModifierValue('contact-form') && (
             <Background className={css.form__wrapper} bind="formBackground">
               <ContactForm
