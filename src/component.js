@@ -13,12 +13,12 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
-
   state = {
     opened: false,
   }
 
-  getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
 
   setStylesForBody = (reset = false) => {
     const {opened} = this.state
@@ -42,57 +42,88 @@ class Block extends React.Component {
 
   wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
 
+  renderLogo = () => {
+    const {components: {Logo}, style: css} = this.props
+    return (
+      this.getModifierValue('logo') && (
+        <Logo
+          bind="logo"
+          className={css.logo}
+          textClassName={css.logo__title}
+          maxWidth={this.getOptionValue('logo-max-width')}
+          maxHeight={this.getOptionValue('logo-max-height')}
+        />
+      )
+    )
+  }
+
+  renderNav = () => {
+    const {components: {Menu, Button}, style: css} = this.props
+    return (
+      <nav className={css.nav}>
+        <Menu
+          className={css['nav-list']}
+          itemClassName={css['nav-list__item']}
+          linkClassName={css['nav-list__link']}
+          bind="menu"
+          onClickItem={this.closeMenu}
+        />
+        {this.getModifierValue('button') && (
+          <Button
+            className={css.header__button}
+            buttonClassName={css.button}
+            linkClassName={css.link}
+            bind="cta"
+          />
+        )}
+      </nav>
+    )
+  }
+
+  renderBtn = () => {
+    const {style: css} = this.props
+    return (
+      <button
+        type="button"
+        className={classNames(css['nav-button'])}
+        onClick={this.toggleOpened}
+        title="Switch menu"
+      >
+        <span className={css['nav-button__line']} aria-hidden="true" />
+        <span className={css['nav-button__line']} aria-hidden="true" />
+        <span className={css['nav-button__line']} aria-hidden="true" />
+      </button>
+    )
+  }
+
   render() {
-    const {components: {Logo, Menu, Button}, style: css} = this.props
+    const {components: {Background}, style: css} = this.props
     const {opened} = this.state
 
     return (
-      <header className={classNames(css.header, opened && css['header--nav-open'])} data-header="target">
+      <header
+        className={classNames(css.header, opened && css['header--opened'])}
+        data-header="target"
+      >
         <div className={css.header__inner}>
-          {this.getModifierValue('logo') &&
-          <Logo
-            bind="logo"
-            className={css.logo}
-            textClassName={css.logo__title}
-            maxWidth={this.getOptionValue('logo-max-width')}
-            maxHeight={this.getOptionValue('logo-max-height')}
-          />
-          }
-          <nav className={css.nav}>
-            <Menu
-              className={css['nav-list']}
-              itemClassName={css['nav-list__item']}
-              linkClassName={css['nav-list__link']}
-              bind="menu"
-              onClickItem={this.closeMenu}
-            />
-            {this.getModifierValue('button') && (
-              <Button
-                className={css.header__button}
-                buttonClassName={css.button}
-                linkClassName={css.link}
-                bind="cta"
-              />
-            )}
-          </nav>
-
-          <button
-            type="button"
-            className={classNames(css['nav-button'])}
-            onClick={this.toggleOpened}
-            title="Switch menu"
-          >
-            <span className={css['nav-button__line']} aria-hidden="true" />
-            <span className={css['nav-button__line']} aria-hidden="true" />
-            <span className={css['nav-button__line']} aria-hidden="true" />
-          </button>
+          {this.renderLogo()}
+          {this.renderNav()}
+          {this.renderBtn()}
         </div>
+        <Background
+          bind="background"
+          className={classNames(css.header__inner, css['header__inner--fixed'])}
+        >
+          {this.renderLogo()}
+          {this.renderNav()}
+          {this.renderBtn()}
+        </Background>
       </header>
     )
   }
 }
 
-Block.components = _.pick(['Logo', 'Menu', 'Button'])($editor.components)
+Block.components = _.pick(['Logo', 'Menu', 'Button', 'Background'])($editor.components)
 
 Block.defaultContent = {
   background: {
@@ -204,6 +235,5 @@ Block.modifierScheme = {
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   logo: {defaultValue: true, label: 'Company name', type: 'checkbox'},
 }
-
 
 export default Block
