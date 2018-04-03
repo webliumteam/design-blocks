@@ -197,6 +197,19 @@
   }
 }
 
+.nav__submenu .nav__item {
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.nav__submenu .nav__item:last-of-type {
+
+  @media (min-width: 992px) {
+    margin-bottom: 0;
+  }
+}
+
 .nav-button {
   position: absolute;
   width: 20px;

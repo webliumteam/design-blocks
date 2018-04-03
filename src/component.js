@@ -77,6 +77,7 @@ class Block extends React.Component {
           className={css.nav__list}
           itemClassName={css.nav__item}
           linkClassName={css.nav__link}
+          submenuClassName={css.nav__submenu}
           onClickItem={this.closeMenu}
           bind="menu"
         />
