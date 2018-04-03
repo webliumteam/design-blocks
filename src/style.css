@@ -219,6 +219,7 @@
 .button {
   width: 100%;
   max-width: calc(100% - 20px);
+  min-width: 1px;
   margin: 10px;
 }
 
