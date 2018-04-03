@@ -22,6 +22,20 @@
         margin-left: 0;
         margin-right: 0;
       }
+
+      @media (min-width: 480px) {
+        margin-left: 20px;
+        margin-right: 20px;
+
+        &:last-of-type {
+          margin-right: 20px;
+        }
+
+        &:only-child {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
     }
   }
 
