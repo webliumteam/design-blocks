@@ -7,12 +7,9 @@ class Block extends React.Component {
     $block: PropTypes.object.isRequired,
   }
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      nav1: null,
-      nav2: null,
-    }
+  state = {
+    nav1: null,
+    nav2: null,
   }
 
   /* eslint-disable */
@@ -33,14 +30,14 @@ class Block extends React.Component {
     const {components: {Text}, style} = this.props
 
     return (
-      <article className={style.testimonial}>
+      <div className={style.testimonial}>
         <div className={style.testimonial__inner}>
           <Text tagName="p" className={style.testimonial__text} bind={`testimonials.content[${index}].text`} />
           {_.get('item-date')(modifier) && (
             <Text tagName="p" className={style.testimonial__date} bind={`testimonials.content[${index}].date`} />
           )}
         </div>
-      </article>
+      </div>
     )
   }
 
@@ -48,7 +45,7 @@ class Block extends React.Component {
     const {components: {Image, Text, SocialIcons}, style} = this.props
 
     return (
-      <article className={style.item}>
+      <div className={style.item}>
         <div className={style.item__inner}>
           {_.get('item-image')(modifier) && (
             <Image
@@ -74,7 +71,7 @@ class Block extends React.Component {
             <SocialIcons bind={`testimonials.person[${index}].socialIcons`} className={classNames(style.item__socials, 'item__socials--global')} />
           )}
         </div>
-      </article>
+      </div>
     )
   }
 
