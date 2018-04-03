@@ -14,8 +14,8 @@ class Block extends React.Component {
 
   render() {
     const {components: {Text, Button, ContactForm, Background}, style} = this.props
-    const headerAlignment = this.getModifierValue('header-alignment')
-    const headerClassModifier = style[`section__header--${headerAlignment}`]
+    const arrangeElements = this.getModifierValue('Arrange elements')
+    const headerClassModifier = style[`section__header--${arrangeElements}`]
 
     return (
       <section className={style.section}>
