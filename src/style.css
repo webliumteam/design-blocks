@@ -8,39 +8,41 @@
     padding-top: 87px;
     padding-bottom: 98px;
   }
+}
 
-  .contacts {
-    max-width: 427px;
+.contacts {
+  max-width: 427px;
 
-    &-list {
-      margin-top: 39px;
-    }
-
-    &__desc {
-      font-size: calc(var(--ui-text-size) * 0.9375);
-
-      > a {
-        color: var(--ui-text-color);
-        text-decoration: none;
-      }
-    }
-  }
-
-  .title {
-    margin-bottom: 9px;
-  }
-
-  .subtitle {
-    margin-top: 0;
+  &-list {
+    margin-top: 39px;
   }
 }
 
+.contacts__desc {
+  font-size: calc(var(--ui-text-size) * 0.9375);
+  text-decoration: none;
+
+  a,
+  a > span {
+    color: var(--ui-text-color);
+    text-decoration: none;
+  }
+}
+
+.title {
+  margin-bottom: 9px;
+}
+
+.subtitle {
+  margin-top: 0;
+}
+
 .form {
-  padding: 25px 0 0;
 
   @media (min-width: 992px) {
     padding: 55px 0 0;
   }
+  padding: 25px 0 0;
 
   textarea {
     min-height: 120px;
