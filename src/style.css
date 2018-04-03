@@ -4,6 +4,17 @@
 .article {
   position: relative;
 
+  &__picture {
+
+    @media (min-width: 992px) {
+      min-height: 350px;
+    }
+
+    @media (min-width: 1260px) {
+      min-height: 507px;
+    }
+  }
+
   &__picture-wrapper {
     position: absolute;
     top: 45%;
