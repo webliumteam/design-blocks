@@ -208,6 +208,7 @@
   align-items: center;
   margin-top: 20px;
   margin-left: -10px;
+  margin-right: -10px;
   margin-bottom: -10px;
 }
 
@@ -217,6 +218,7 @@
 
 .button {
   width: 100%;
+  max-width: calc(100% - 20px);
   margin: 10px;
 }
 
@@ -224,10 +226,6 @@
   .button {
     width: auto;
   }
-}
-
-.link {
-  color: var(--ui-link-color);
 }
 
 .link {
