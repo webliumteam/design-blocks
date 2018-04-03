@@ -116,6 +116,7 @@
 
 .item__number {
   max-width: 100%;
+  min-width: 1px;
   margin-right: 10px;
 }
 
