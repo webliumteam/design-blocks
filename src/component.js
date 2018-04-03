@@ -52,11 +52,12 @@ class Block extends React.Component {
           <article className={css.article}>
             {this.getModifierValue('article-picture') && (
               <Image
-              wrapperClassName={css['article__picture-wrapper']}
-              pictureClassName={css.article__picture}
-              bind="picture"
-              size={this.getImageSize(columnLayout)}
-              resize={{min: getMinResize, max: getMaxResize}}/>
+                wrapperClassName={css['article__picture-wrapper']}
+                pictureClassName={css.article__picture}
+                bind="picture"
+                size={this.getImageSize(columnLayout)}
+                resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
+              />
             )}
             {!onlyImage && (
               <div className={css.article__content}>
