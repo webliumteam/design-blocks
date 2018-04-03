@@ -98,12 +98,12 @@ ExtendedWireframe.modifierScheme = {
     classNameOnActive: style['section--with-title-decorator'],
   },
   'form-description': {defaultValue: false, label: 'Form description', type: 'hidden'},
-  'header-alignment': {
+  'Arrange elements': {
     children: [
       {id: 'left', label: 'Left'},
       {id: 'right', label: 'Right'},
     ],
-    defaultValue: 'right',
+    defaultValue: 'left',
     name: 'Header alignment',
     type: 'radio-button-group',
     style: 'buttons',
