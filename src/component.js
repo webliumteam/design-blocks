@@ -7,12 +7,9 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      nav1: null,
-      nav2: null,
-    }
+  state = {
+    nav1: null,
+    nav2: null,
   }
 
   /* eslint-disable */
@@ -102,13 +99,6 @@ class Block extends React.Component {
                     breakpoint: 991,
                     settings: {
                       slidesToShow: 4,
-                    },
-                  },
-                  {
-                    breakpoint: 100000,
-                    settings: {
-                      slidesToShow: 5,
-                      arrows: true,
                     },
                   },
                 ],
