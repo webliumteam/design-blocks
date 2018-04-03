@@ -123,7 +123,7 @@ Block.defaultContent = {
       },
       description: {
         content: '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
-        type: 'subtitle',
+        type: 'text',
       },
       date: {
         content: 'December 15, 2017',
