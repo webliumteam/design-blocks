@@ -43,7 +43,7 @@
 
   @media (--ui-medium-devices) {
     max-width: calc(100% - 645px);
-    flex: 1;
+    flex-shrink: 0;
   }
 
   &-list {
