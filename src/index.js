@@ -103,7 +103,7 @@ ExtendedWireframe.modifierScheme = {
       {id: 'left', label: 'Left'},
       {id: 'right', label: 'Right'},
     ],
-    defaultValue: 'left',
+    defaultValue: 'right',
     name: 'Header alignment',
     type: 'radio-button-group',
     style: 'buttons',
