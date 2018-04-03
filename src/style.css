@@ -1,3 +1,87 @@
 @import "wireframe-series-4-contacts/src/style.css";
 
 /* start here */
+
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 87px;
+    padding-bottom: 98px;
+  }
+
+  .contacts {
+    max-width: 427px;
+
+    &-list {
+      margin-top: 39px;
+    }
+
+    &__desc {
+      font-size: calc(var(--ui-text-size) * 0.9375);
+
+      > a {
+        color: var(--ui-text-color);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 9px;
+  }
+
+  .subtitle {
+    margin-top: 0;
+  }
+}
+
+.form {
+  padding: 25px 0 0;
+
+  @media (min-width: 992px) {
+    padding: 55px 0 0;
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: none;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__wrapper {
+
+    @media (min-width: 992px) {
+      max-width: 470px;
+      margin-left: auto;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    > span {
+      display: block;
+      height: 0;
+      font-size: 0;
+    }
+
+    > input {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__field {
+    height: 45px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border: solid 1px #e9e9e9;
+    font-size: calc(var(--ui-text-size) * 0.8125);
+    border-radius: 0;
+  }
+
+  &__button {
+    margin-top: 16px;
+  }
+}
