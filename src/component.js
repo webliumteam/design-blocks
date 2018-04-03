@@ -16,28 +16,24 @@ class Block extends React.Component {
     const {components: {Logo, Text, Map, SocialIcons, Icon}, style} = this.props
 
     const textWithSocials = (
-      !this.getModifierValue('logo') &&
       !this.getModifierValue('phone') &&
       !this.getModifierValue('email') &&
       !this.getModifierValue('map')
     ) && (this.getModifierValue('address') && this.getModifierValue('social'))
 
     const emailWithSocials = (
-      !this.getModifierValue('logo') &&
       !this.getModifierValue('phone') &&
       !this.getModifierValue('address') &&
       !this.getModifierValue('map')
     ) && (this.getModifierValue('email') && this.getModifierValue('social'))
 
     const phoneWithSocials = (
-      !this.getModifierValue('logo') &&
       !this.getModifierValue('email') &&
       !this.getModifierValue('address') &&
       !this.getModifierValue('map')
     ) && (this.getModifierValue('phone') && this.getModifierValue('social'))
 
     const mapWithSocials = (
-      !this.getModifierValue('logo') &&
       !this.getModifierValue('phone') &&
       !this.getModifierValue('email') &&
       !this.getModifierValue('address')
@@ -51,6 +47,22 @@ class Block extends React.Component {
       this.getModifierValue('social')
     ) && this.getModifierValue('map')
 
+    const listWithSocials = (
+      !this.getModifierValue('map') &&
+      this.getModifierValue('social') && (
+        this.getModifierValue('phone') ||
+        this.getModifierValue('email') ||
+        this.getModifierValue('address')
+      )
+    )
+
+    const onlyList = !this.getModifierValue('map') &&
+      !this.getModifierValue('social') && (
+      this.getModifierValue('phone') ||
+      this.getModifierValue('email') ||
+      this.getModifierValue('address')
+    )
+
     const blockHeader = [
       <Text bind="title" className={style.title} tagName="h1" />,
       this.getModifierValue('subtitle') && <Text bind="subtitle" className={style.subtitle} tagName="p" />,
@@ -58,8 +70,12 @@ class Block extends React.Component {
 
     return (
       <section className={classNames(style.section, {
-        [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
-        [style['section--column']]: mapWithSocials})}
+          [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
+          [style['section--column']]: mapWithSocials,
+          [style['section--state-3']]: listWithSocials,
+          [style['section--state-4']]: onlyList,
+          [style['section--state-11']]: this.getModifierValue('map-arrangement') === 'right',
+        })}
       >
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
@@ -236,6 +252,16 @@ Block.modifierScheme = {
   phone: {defaultValue: true, label: 'Phone text block', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  'map-arrangement': {
+    children: [
+      {id: 'left', label: 'Left'},
+      {id: 'right', label: 'Right'},
+    ],
+    defaultValue: 'left',
+    name: 'Map arrangement',
+    type: 'radio-button-group',
+    style: 'buttons',
+  },
 }
 
 
