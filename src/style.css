@@ -179,15 +179,15 @@
   &__item {
     list-style: none;
     margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   @media (min-width: 768px) {
-    margin-bottom: 30px;
-    flex: 1 1 auto;
-  }
-
-  &:last-chold {
     margin-bottom: 0;
+    flex: 1 1 auto;
   }
 }
 
