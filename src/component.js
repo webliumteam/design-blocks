@@ -29,22 +29,20 @@ class Block extends React.Component {
   collectionItem = ({index, modifier}) => {
     const {components: {Image}, style} = this.props
     return (
-      <article className={style.item}>
-        <div className={style.item__inner}>
-          <Image
-            wrapperClassName={style['item__picture-wrapper']}
-            pictureClassName={style.item__picture}
-            imgClassName={style.item__image}
-            bind={`gallery[${index}].image`}
-            size={{
-              'min-width: 992px': 1200,
-              'min-width: 768px': 1000,
-              'min-width: 480px': 800,
-            }}
-            resize={{disable: true}}
-          />
-        </div>
-      </article>
+      <div className={style.item}>
+        <Image
+          wrapperClassName={style['item__picture-wrapper']}
+          pictureClassName={style.item__picture}
+          imgClassName={style.item__image}
+          bind={`gallery[${index}].image`}
+          size={{
+            'min-width: 992px': 1200,
+            'min-width: 768px': 1000,
+            'min-width: 480px': 800,
+          }}
+          resize={{disable: true}}
+        />
+      </div>
     )
   }
 
