@@ -80,7 +80,7 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: 0.3s linear;
+    /* transition: 0.3s linear; */
 
     display: none;
   }
@@ -114,8 +114,8 @@
     z-index: 9;
     opacity: 0;
     font-family: var(--ui-text-font-family);
-    font-style: italic;
-    transition: 0.3s linear;
+    /* font-style: italic; */
+    /* transition: 0.3s linear; */
     display: none;
 
     @media (min-width: 768px) {
@@ -132,7 +132,7 @@
     opacity: 0;
     font-family: var(--ui-heading-font-family);
     font-weight: var(--ui-heading-font-weight);
-    transition: 0.3s linear;
+    /* transition: 0.3s linear; */
     font-size: var(--ui-sub-heading-size);
     margin-top: 0;
     display: none;
