@@ -148,6 +148,7 @@
   }
 
   .item {
+    cursor: pointer;
 
     @media (min-width: 768px) {
       padding: 0 12px;
