@@ -1,16 +1,16 @@
 .section {
   min-width: 320px;
-  padding: 20px 0;
+  padding: 50px 0;
   word-wrap: break-word;
 
   @media (min-width: 768px) {
-    padding: 30px 0;
+    padding: 60px 0;
   }
 }
 
 @media (min-width: 992px) {
   .section {
-    padding: 45px 0;
+    padding: 75px 0;
   }
 }
 
