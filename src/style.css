@@ -55,8 +55,11 @@
   }
 
   &__text {
-    font-size: calc(var(--ui-text-size) * 0.875);
     margin-bottom: 19px;
+
+    @media (min-width: 768px) {
+      font-size: calc(var(--ui-text-size) * 0.875);
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -73,11 +76,14 @@
 
   .link {
     text-align: left;
-    font-size: calc(var(--ui-text-size) * 0.9375);
     color: var(--ui-brand-color);
     text-decoration: none;
     padding-top: 5px;
     padding-bottom: 5px;
+
+    @media (min-width: 768px) {
+      font-size: calc(var(--ui-text-size) * 0.9375);
+    }
 
     &:hover {
       text-decoration: underline;
