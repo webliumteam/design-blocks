@@ -17,9 +17,11 @@
 }
 
 .logo {
+  &__title {
 
-  @media(min-width: 992px) {
-    flex-basis: 325px;;
+    @media(min-width: 992px) {
+      max-width: 325px;
+    }
   }
 }
 
