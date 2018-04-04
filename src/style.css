@@ -13,6 +13,14 @@
   margin-bottom: 28px;
 }
 
+.items-wrapper {
+  display: block;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
 .item {
   &__content {
     display: flex;
@@ -20,6 +28,7 @@
   }
 
   &__number {
+    display: block;
     margin-right: 0;
     margin-bottom: 3px;
 
