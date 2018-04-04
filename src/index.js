@@ -51,13 +51,11 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   align: {
-    defaultValue: 'left',
-    name: 'Aligning',
+    ...Component.modifierScheme.align,
     type: 'hidden',
   },
   heading: {defaultValue: false, label: 'Company title', type: 'hidden'},
   subheading: {defaultValue: false, label: 'Company description', type: 'hidden'},
-  text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
   'social-icons': {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   'additional-button': {defaultValue: false, label: 'Additional button', type: 'hidden'},
