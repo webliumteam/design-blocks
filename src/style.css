@@ -26,6 +26,7 @@
       width: 100%;
       height: auto;
       background-color: transparent;
+      object-fit: unset;
     }
 
     @media (min-width: 768px) {
@@ -70,7 +71,6 @@
   }
 
   &__title {
-    font-size: var(--ui-block-title-size);
     margin-bottom: 0;
 
     @media (min-width: 768px) {
