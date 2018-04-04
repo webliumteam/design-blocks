@@ -87,6 +87,7 @@
     "media-feature-name-no-vendor-prefix": true,
     "media-feature-colon-space-before": "never",
     "media-feature-colon-space-after": "always",
+    "no-eol-whitespace": true,
     "order/properties-order": [
       [
         "content",
