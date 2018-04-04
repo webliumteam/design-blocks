@@ -16,15 +16,27 @@
   }
 }
 
+.logo {
+
+  @media(min-width: 992px) {
+    flex-basis: 325px;;
+  }
+}
+
 .nav {
+  max-height: 100%;
   margin-top: 7.5px;
+
+  @media(min-width: 992px) {
+    max-height: none;
+  }
 }
 
 .nav-list {
   &__item {
+    font-size: var(--ui-subheading-size);
 
     @media (min-width: 992px) {
-      font-size: var(--ui-subheading-size);
       margin-left: 31px;
 
       &:first-child {
@@ -32,8 +44,4 @@
       }
     }
   }
-}
-
-.logo {
-  min-width: 0;
 }
