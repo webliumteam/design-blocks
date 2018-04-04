@@ -305,9 +305,6 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  text: {defaultValue: true, label: 'Text', type: 'checkbox'},
-  'social-icons': {defaultValue: true, label: 'Social icons', type: 'checkbox'},
-  logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
   'menu-alignment': {
     children: [
       {id: 'left', label: 'Left'},
@@ -319,6 +316,9 @@ Block.modifierScheme = {
     type: 'radio-button-group',
     style: 'buttons',
   },
+  text: {defaultValue: true, label: 'Text', type: 'checkbox'},
+  'social-icons': {defaultValue: true, label: 'Social icons', type: 'checkbox'},
+  logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
 }
 
 export default Block
