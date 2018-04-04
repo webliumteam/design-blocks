@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
   },
   formBackground: {
     type: 'color',
-    color: 'transpatent',
+    color: 'eff1f2',
   },
   title: {
     content: 'Contacts Us',
