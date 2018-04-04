@@ -3,7 +3,7 @@
   padding: 50px 0;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  
+
   &__inner {
     display: flex;
     max-width: var(--ui-content-container);
@@ -24,23 +24,20 @@
 
 .item {
   display: flex;
-  
+
   @media (min-width: 992px) {
     display: block;
   }
 
   &__picture {
-    display: block;
-    position: relative;
-    width: 100%;
     padding-top: 100%;
-    
+
     &-wrapper {
       flex: 0 1 40.172%;
 
       &--desktop {
         display: none;
-        
+
         @media (min-width: 992px) {
           display: block;
         }
@@ -62,19 +59,10 @@
   &__content {
     flex: 1;
     margin-left: 30px;
-    
+
     @media (min-width: 992px) {
       margin-left: 0;
     }
-  }
-
-  &__image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    object-fit: cover;
   }
 
   &__position {
@@ -87,17 +75,17 @@
 
   &__bottom {
     padding-top: 15px;
-    
+
     @media (min-width: 992px) {
       display: flex;
       align-items: center;
     }
-    
+
     &-side {
       display: flex;
       align-items: center;
       margin-right: 14px;
-      
+
       @media (min-width: 992px) {
         width: 0;
         flex: 1;
@@ -107,7 +95,7 @@
 
   &__button {
     margin-top: 15px;
-    
+
     @media (min-width: 992px) {
       max-width: 50%;
       margin-top: 0;
@@ -133,7 +121,7 @@
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
-  
+
   @media (min-width: 992px) {
     margin-top: 15px;
   }
@@ -142,7 +130,7 @@
     width: 25%;
     padding: 15px;
     flex-shrink: 0;
-    
+
     @media (min-width: 992px) {
       width: 50%;
     }
@@ -160,8 +148,7 @@
         width: 50%;
       }
     }
-    
-    
+
     &__button {
       max-width: 100%;
       padding: 0;
@@ -169,21 +156,20 @@
       background-color: transparent;
       text-align: left;
       cursor: pointer;
-      
+
       @media (min-width: 992px) {
         display: flex;
         align-items: center;
       }
     }
-    
+
     &__picture {
-      display: block;
-      position: relative;
       width: 50px;
       height: 50px;
-      flex-shrink: 0;
+      padding-top: 0;
       margin-bottom: 15px;
-      
+      flex-shrink: 0;
+
       @media (min-width: 992px) {
         width: 70px;
         height: 70px;
@@ -193,12 +179,6 @@
     }
 
     &__image {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      object-fit: cover;
       border-radius: 50%;
       background-color: var(--ui-media-bg);
     }
