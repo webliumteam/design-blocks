@@ -26,18 +26,27 @@
   left: 0;
   right: 0;
   bottom: 0;
-
   flex-direction: column;
   align-items: normal;
-
   padding-top: 15px;
   padding-bottom: 15px;
-
   transition: opacity 200ms ease;
 
   .header:not(.header--opened) & {
     opacity: 0;
     pointer-events: none;
+  }
+
+  .logo {
+    align-self: flex-start;
+  }
+
+  .nav {
+    width: 100%;
+
+    &-list {
+      min-width: 1px;
+    }
   }
 
   @media (min-width: 992px) {
@@ -47,15 +56,16 @@
 
 .header__button {
   width: 100%;
+  max-width: 100%;
   margin-top: auto;
-  flex-shrink: 0;
+  flex-grow: 0;
 
   @media (min-width: 480px) {
+    width: auto;
     max-width: 270px;
   }
 
   @media (min-width: 992px) {
-    width: auto;
     max-width: 270px;
     margin-left: 34px;
     margin-top: 0;
@@ -111,7 +121,6 @@
   @media (max-width: 991px) {
     flex-direction: column;
     margin-top: 30px;
-
     overflow-y: auto;
 
     .header__inner:not(.header__inner--fixed) & {
