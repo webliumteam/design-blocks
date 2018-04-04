@@ -31,12 +31,14 @@
 .section--state-8 .contacts:first-child .socials {
   margin-top: 10px;
   margin-left: 0;
+  padding-left: 0;
   justify-content: center;
 }
 
 .section--state-8 .contacts:first-child .contacts-list__item {
   &:only-child {
     padding-right: 0;
+    padding-left: 0;
   }
 }
 
@@ -343,6 +345,13 @@
       width: auto;
     }
   }
+}
+
+.section--state-8 .contacts .contacts-list {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
 }
 
 .logo-wrapper {
