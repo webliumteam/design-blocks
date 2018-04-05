@@ -1,3 +1,5 @@
 @import "wireframe-series-2-careers/src/style.css";
 
-/* start here */
+.item:nth-child(2) {
+  background-color: #c8c8c8;
+}
