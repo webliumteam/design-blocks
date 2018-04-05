@@ -9,8 +9,24 @@
   }
 
   &__inner {
+    position: relative;
     max-width: 968px;
   }
+}
+
+.top-icon {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#target {
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
 }
 
 .article {
@@ -32,10 +48,10 @@
 
   &__text {
     margin-bottom: 34px;
-    font-size: calc(var(--ui-text-size) * 0.9375);
 
     @medis (min-width: 768px) {
       max-width: 328px;
+      font-size: calc(var(--ui-text-size) * 0.9375);
     }
   }
 }
@@ -45,6 +61,5 @@
 
   @media (min-width: 768px) {
     margin-bottom: -10px;
-    font-size: calc(var(--ui-heading-size) * 1.333);
   }
 }
