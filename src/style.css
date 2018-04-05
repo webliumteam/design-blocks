@@ -32,6 +32,10 @@
   .title {
     font-weight: 400;
 
+    span {
+      display: block;
+    }
+
     @media (min-width: 768px) {
       font-size: calc(var(--ui-block-title-size) * 2.35);
     }
