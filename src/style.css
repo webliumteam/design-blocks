@@ -5,3 +5,7 @@
 .item__title {
   background-color: var(--ui-light-shade-color);
 }
+
+.items__title {
+  font-weight: 700;
+}
