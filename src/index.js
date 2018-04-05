@@ -13,7 +13,15 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   background: {
     type: 'color',
-    color: 'var(--ui-dark-shade-color)',
+    color: '#252525',
+  },
+  logo: {
+    text: {
+      value: 'Company Logo',
+      fontSize: 24,
+      color: 'var(--ui-brand-color)',
+      type: 'blockTitle',
+    },
   },
 }
 
