@@ -16,11 +16,6 @@ ExtendedWireframe.defaultContent = {
       image: {
         resourceRef: 'pic1.jpg',
         alt: 'Picture about the company',
-        overlay: {
-          type: 'color',
-          color: '#fff',
-          opacity: '0.5',
-        },
       },
       heading: {
         type: 'heading',
