@@ -1,3 +1,9 @@
 @import "wireframe-series-3-services/src/style.css";
 
 /* start here */
+
+.item__title {
+  display: flex;
+  align-items: center;    
+  justify-content: center;    
+}
