@@ -23,7 +23,7 @@ ExtendedWireframe.defaultContent = {
     svg: `
       <svg id="targetWapper" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050.7 768.7">
        <defs>
-        <path fill="none" stroke="#c74f9c" stroke-miterlimit="10" d="M216.3 305.6l68.1 214.2 205.1 32.5L0 647.5l39.9-107.2L468.1 321l-251.8-15.4z"/>
+        <path  id="targetPath" fill="none" stroke="#c74f9c" stroke-miterlimit="10" d="M216.3 305.6l68.1 214.2 205.1 32.5L0 647.5l39.9-107.2L468.1 321l-251.8-15.4z"/>
        </defs>
         <foreignObject id="targetObject" width="61" height="61">
           <style>
