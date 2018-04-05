@@ -11,6 +11,61 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  socialIcons: {
+    networks: [
+      {
+        id: 'facebook',
+        name: 'Facebook',
+        url: 'http://facebook.com/',
+      },
+      {
+        id: 'twitter',
+        name: 'Twitter',
+        url: 'http://twitter.com/',
+      },
+      {
+        id: 'instagram',
+        name: 'Instagram',
+        url: 'http://instagram.com/',
+      },
+      {
+        id: 'linkedin',
+        name: 'LinkedIn',
+        url: 'http://linkedin.com/',
+      },
+    ],
+    target: '_blank',
+    design: {
+      border: 'softRect',
+      innerFill: true,
+      preset: 'preset001',
+      offset: 15,
+      color: 'var(--ui-dark-accent-color)',
+      sizes: [10, 20, 30, 40],
+      size: 30,
+    },
+  },
+  background: {
+    type: 'image',
+    position: {
+      type: 'cover',
+      cover: '50% 50%',
+    },
+    resourceRef: 'andre-benz-243080-unsplash.jpg',
+    overlay: {
+      type: 'color',
+      color: '#fff',
+      opacity: 0.6,
+    },
+  },
+  logo: {
+    text: {
+      value: 'Company Logo',
+      type: 'blockTitle',
+      color: 'var(--ui-brand-color)',
+      fontSize: 24,
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
