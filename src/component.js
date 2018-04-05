@@ -10,7 +10,7 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text, Button, SocialIcons}, style} = this.props
+    const {components: {Text, Button, SocialIcons, Icon}, style} = this.props
 
     const showButtonGroups = this.getModifierValue('button') || this.getModifierValue('additional-button')
 
@@ -21,6 +21,13 @@ class Block extends React.Component {
     return (
       <section className={classNames(style.section, alignClass)}>
         <div className={style.section__inner}>
+          {this.getModifierValue('top-icon') && (
+            <Icon
+              className={style['top-icon']}
+              bind="topIcon"
+            />
+          )}
+
           <article className={style.article}>
             {this.getModifierValue('top-caption') && (
               <Text bind="top-caption" className={style['caption-decorator']} tagName="div" />
@@ -65,12 +72,17 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'SocialIcons', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   background: {
     type: 'color',
     color: '#d8d8d8',
+  },
+  topIcon: {
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    fill: 'red',
   },
   title: {
     content: 'About Us',
@@ -169,6 +181,7 @@ Block.modifierScheme = {
   button: {defaultValue: false, label: 'Button', type: 'checkbox'},
   'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
 export default Block
