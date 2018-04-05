@@ -1,3 +1,7 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-about/src/style.css";
 
 /* start here */
+
+.article__picture {
+  min-height: 420px;
+}
