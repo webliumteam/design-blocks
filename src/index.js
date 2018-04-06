@@ -44,7 +44,8 @@ ExtendedWireframe.defaultContent = {
     size: 'lg',
   },
   picture: {
-    resourceRef: 'picture.jpg',
+    ...Component.defaultContent.picture,
+    // resourceRef: 'picture.jpg',
     alt: 'Illustration photo',
   },
 }
