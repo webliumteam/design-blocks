@@ -167,6 +167,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  subtitle: {defaultValue: true, label: 'Partner description', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
