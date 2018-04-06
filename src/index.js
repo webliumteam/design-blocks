@@ -35,6 +35,7 @@ ExtendedWireframe.modifierScheme = {
   button: {defaultValue: false, label: 'Button', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
   text: {defaultValue: false, label: 'Company main text', type: 'hidden'},
+  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
 }
 
 export default ExtendedWireframe
