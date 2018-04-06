@@ -33,6 +33,7 @@
   margin-left: 0;
   padding-left: 0;
   justify-content: center;
+  max-width: 100%;
 }
 
 .section--state-8 .contacts:first-child .contacts-list__item {
