@@ -15,6 +15,9 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  heading: {defaultValue: true, label: 'Title', type: 'checkbox'},
+  subheading: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Description', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
