@@ -93,14 +93,14 @@
 
     .item--logo {
       max-width: 50%;
-      flex-basis: 50%;
+      flex-basis: 24%;
       margin: 0;
       border: 0;
       padding: 0 15px 30px;
 
       @media (min-width: 768px) {
         max-width: 25%;
-        flex-basis: 25%;
+        flex-basis: auto;
       }
     }
   }
