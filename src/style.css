@@ -9,3 +9,9 @@
 .items__title {
   font-weight: 700;
 }
+
+.item--active {
+  .item__icon {
+    transform: translateY(-50%) rotate(0) translateX(0);
+  }
+}
