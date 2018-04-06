@@ -51,7 +51,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    resourceRef: 'andre-benz-243080-unsplash.jpg',
+    resourceRef: 'picture.jpg',
     overlay: {
       type: 'color',
       color: '#fff',
