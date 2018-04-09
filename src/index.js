@@ -22,7 +22,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'khai-sze-ong-308080-unsplash.jpg',
+        src: 'joanna-kosinska-340749-unsplash.jpg',
         alt: 'Manufacturing illustration',
       },
       cta: {
@@ -50,7 +50,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'andre-benz-243080-unsplash.jpg',
+        src: 'lior-mazliah-111379-unsplash.jpg',
         alt: 'Delivery and Support illustration',
       },
       cta: {
