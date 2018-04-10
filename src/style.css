@@ -128,7 +128,6 @@
   }
 
   &:last-of-type {
-    padding-bottom: 0;
     border-bottom: 0;
   }
 
@@ -331,7 +330,7 @@
 }
 
 .btns-group {
-  padding-top: 60px;
+  padding-top: 50px;
   text-align: center;
 
   &--offset-sm {
