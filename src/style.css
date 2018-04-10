@@ -1,3 +1,14 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-contacts/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-bottom: 101px;
+    padding-top: 167px;
+  }
+
+  .title {
+    display: none;
+  }
+}
