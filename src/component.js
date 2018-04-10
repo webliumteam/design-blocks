@@ -21,9 +21,9 @@ class Wireframe extends React.Component {
     const locInfo = this.getModifierValue('location') || this.getModifierValue('time')
 
     return (
-      <div className={classNames(style.item, withoutLine && style['item--no-line'],className)}>
+      <div className={classNames(style.item, withoutLine && style['item--no-line'], className)}>
         {children}
-        <div className={style.item__main}>
+        <div className={classNames(style.item__main, (withoutType || withoutTime) && style['item__main--bottom'])}>
           <div className={classNames(style.item__desc, withoutType && style['item__desc--bottom'])}>
             <Text bind={`events[${index}].heading`} style={style.item__heading} tagName="h2" />
             {this.getModifierValue('type') && (

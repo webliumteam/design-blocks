@@ -69,8 +69,14 @@
       display: flex;
       max-width: 60%;
       margin: 0 50px;
-      align-self: flex-end;
       flex-basis: 60%;
+    }
+
+    &--bottom {
+
+      @media (--ui-medium-devices) {
+        align-self: flex-end;
+      }
     }
   }
 
@@ -149,13 +155,13 @@
   }
 
   &__day {
-    max-width: 50px;
+    max-width: 85px;
     font-size: var(--ui-hero-title-size);
   }
 
   &__text {
     display: block;
-    max-width: calc(100% - 65px);
+    max-width: calc(100% - 60px);
     text-align: left;
     margin-left: 15px;
 
