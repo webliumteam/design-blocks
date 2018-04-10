@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-zapdos-about/src/component'
 import style from './style.css'
 
 import options from './options.json'
@@ -11,10 +11,31 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  background: {
+    type: 'color',
+    color: '#dddfe8',
+  },
+  title: {
+    ...Component.defaultContent.title,
+    content: 'RAM&nbspUAV',
+  },
+  subtitle: {
+    ...Component.defaultContent.subtitle,
+    content: 'UNMANNED AERIAL SYSTEM',
+  },
+  picture: {
+    ...Component.defaultContent.picture,
+    resourceRef: 'plane1.png',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  'article-picture': {defaultValue: true, label: 'Article picture', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'hidden'},
+  subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
+  text: {defaultValue: false, label: 'Company main text', type: 'hidden'},
+  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
 }
 
 export default ExtendedWireframe
