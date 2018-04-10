@@ -297,8 +297,8 @@
 
     .contacts-list__item:nth-last-of-type(2):first-of-type,
     .contacts-list__item:nth-last-of-type(2):first-of-type ~ .contacts-list__item {
-      flex-basis: 50%;
-      max-width: 50%;
+      flex-basis: 40%;
+      max-width: 40%;
     }
 
     .contacts .socials {
