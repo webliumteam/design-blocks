@@ -155,15 +155,17 @@
   }
 
   &__day {
-    max-width: 85px;
+    max-width: 75px;
     font-size: var(--ui-hero-title-size);
   }
 
   &__text {
     display: block;
-    max-width: calc(100% - 60px);
     text-align: left;
     margin-left: 15px;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
 
     @media (--ui-tablet-devices) {
       margin-top: 5px;
@@ -186,7 +188,6 @@
 
   @media (--ui-medium-devices) {
     max-width: 40%;
-    align-self: flex-end;
     flex-basis: 40%;
   }
 
@@ -194,6 +195,7 @@
 
     @media (--ui-medium-devices) {
       display: flex;
+      align-self: flex-end;
       align-items: flex-end;
     }
   }
