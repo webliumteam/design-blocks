@@ -53,6 +53,7 @@
   margin-right: 15px;
   margin-bottom: 30px;
   text-align: center;
+  word-wrap: break-word;
 
   @media (min-width: 768px) {
     width: calc(33.4% - 30px);
