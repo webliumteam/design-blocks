@@ -55,31 +55,6 @@
   align-items: center;
 }
 
-.section--column .map-wrapper {
-  width: 100%;
-  margin-bottom: 0;
-}
-
-.section--column .map {
-  position: relative;
-  margin-bottom: 50px;
-  flex: auto;
-}
-
-.section--column .contacts {
-  width: auto;
-  padding-left: 0;
-}
-
-.section--column .socials__item {
-  margin-top: 0;
-}
-
-.section--column .socials {
-  text-align: center;
-  margin-top: 0;
-}
-
 .section--state-11 {
   .map-wrapper {
 
@@ -95,6 +70,34 @@
       padding-right: 30px;
     }
   }
+}
+
+.section--column .map-wrapper {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.section--column .map {
+  position: relative;
+  margin-bottom: 50px;
+  flex: auto;
+}
+
+.section--column .contacts {
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+  order: 2;
+}
+
+.section--column .socials__item {
+  margin-top: 0;
+}
+
+.section--column .socials {
+  display: block;
+  text-align: center;
+  margin-top: 0;
 }
 
 .section__inner {
