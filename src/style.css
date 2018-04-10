@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-right: 0;
 }
 
 .section--state-8 .contacts:first-child .logo-wrapper {
