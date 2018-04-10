@@ -40,7 +40,7 @@ ExtendedWireframe.defaultContent = {
       innerFill: true,
       preset: 'preset001',
       offset: 15,
-      color: 'var(--ui-dark-accent-color)',
+      color: 'dark-accent-color',
       sizes: [10, 20, 30, 40],
       size: 30,
     },
@@ -62,7 +62,7 @@ ExtendedWireframe.defaultContent = {
     text: {
       value: 'Company Logo',
       type: 'blockTitle',
-      color: 'var(--ui-brand-color)',
+      color: 'brand-color',
       fontSize: 24,
     },
   },
