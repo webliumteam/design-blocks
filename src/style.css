@@ -13,6 +13,10 @@
   &__top-line {
     padding: 7px 20px 30px;
 
+    @media (min-width: 992px) {
+      padding-bottom: 10px;
+    }
+
     &-inner {
       display: flex;
       margin: 0 auto;
