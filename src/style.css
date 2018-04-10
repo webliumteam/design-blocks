@@ -202,9 +202,10 @@
 }
 
 .logo {
+  max-width: 100%;
   margin: 0 auto 15px;
   text-decoration: none;
-  
+
   &:last-child {
     margin-bottom: 0;
   }

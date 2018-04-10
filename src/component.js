@@ -235,16 +235,6 @@ Block.defaultContent = {
     type: 'subtitle',
   },
   button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'secondary',
   },
