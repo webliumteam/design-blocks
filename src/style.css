@@ -77,6 +77,10 @@
   margin-bottom: 0;
 }
 
+.section--column .logo-wrapper {
+  justify-content: center;
+}
+
 .section--column .map {
   position: relative;
   margin-bottom: 50px;
