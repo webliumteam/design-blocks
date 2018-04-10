@@ -56,26 +56,6 @@
     }
   }
 
-  &:nth-child(5n+1) {
-    background-color: #ffc94d;
-  }
-
-  &:nth-child(5n+2) {
-    background-color: #ffc338;
-  }
-
-  &:nth-child(5n+3) {
-    background-color: #f9b91e;
-  }
-
-  &:nth-child(5n+4) {
-    background-color: #f0ac0e;
-  }
-
-  &:nth-child(5n+5) {
-    background-color: #e3a20b;
-  }
-
   &__icon {
     margin-bottom: 0;
   }
@@ -103,7 +83,7 @@
       transform: translateX(-50%);
       height: 2px;
       width: 30px;
-      background-color: var(--ui-heading-color);
+      background-color: var(--ui-light-shade-color);
     }
   }
 
