@@ -1,3 +1,34 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-cta/src/style.css";
 
-/* start here */
+.section {
+  color: #fff;
+
+  @media (min-width: 992px) {
+    padding-top: 156px;
+    padding-bottom: 130px;
+  }
+
+  .description {
+    color: inherit;
+  }
+}
+
+.title {
+  margin-bottom: 13px;
+}
+
+.description {
+  max-width: 507px;
+  margin-top: 0;
+  margin-bottom: 32px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--ui-text-size) * 1.1875);
+  }
+
+  &:nth-child(2) {
+    margin-top: 0;
+  }
+}
