@@ -64,7 +64,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        resourceRef: 'nicolas-ukrman-592561-unsplash.jpg',
+        resourceRef: 'noe-araujo-721-unsplash.jpg',
         alt: 'Project 2',
         size: {
           'min-width: 992px': 586,
