@@ -53,7 +53,7 @@ ExtendedWireframe.defaultContent = {
     type: 'text',
   },
   picture: {
-    src: 'bg.jpg',
+    resourceRef: 'bg.jpg',
     alt: 'Illustration',
   },
   'button-1': {
