@@ -1,1 +1,79 @@
 @import "media.css";
+
+.section {
+  min-width: 320px;
+  padding: 50px 0;
+  word-wrap: break-word;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding: 75px 0;
+  }
+
+  &__inner {
+    max-width: var(--ui-content-container);
+    margin: 0 auto;
+    padding: var(--ui-content-gutter);
+
+    @media (--ui-tablet-devices) {
+      display: flex;
+    }
+  }
+
+  &__header {
+
+    @media (--ui-tablet-devices) {
+      max-width: calc(100% - 200px);
+      padding-right: 50px;
+      flex: 1;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 15px;
+  text-align: center;
+
+  @media (--ui-tablet-devices) {
+    text-align: left;
+  }
+}
+
+.subtitle {
+  text-align: center;
+
+  @media (--ui-tablet-devices) {
+    text-align: left;
+  }
+}
+
+.btns-group {
+  margin-top: 50px;
+  text-align: center;
+
+  @media (--ui-tablet-devices) {
+    display: flex;
+    max-width: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-items: center;
+  }
+}
+
+.button {
+  width: 100%;
+
+  @media (--ui-phone-devices) {
+    width: auto;
+    margin: 0 auto;
+  }
+
+  @media (--ui-tablet-devices) {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+}
