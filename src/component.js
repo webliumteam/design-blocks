@@ -68,18 +68,23 @@ class Block extends React.Component {
     const showBody = this.getModifierValue('body')
     const onlyLogo = (!this.getModifierValue('body') && !this.getModifierValue('link') && !this.getModifierValue('heading'))
     const centerItems = !this.getModifierValue('body') && (this.getModifierValue('link') || this.getModifierValue('heading'))
+    const blockHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
     return (
       <section className={classNames(style.section)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <header className={style.section__header}>
-            <Text tagName="h1" className={style.title} bind="title" />
-            {this.getModifierValue('subtitle') && (
-              <Text tagName="p" className={style.subtitle} bind="subtitle" />
-            )}
-          </header>
+          {blockHeader && (
+            <header className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text tagName="h1" className={style.title} bind="title" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text tagName="p" className={style.subtitle} bind="subtitle" />
+              )}
+            </header>
+          )}
           <Collection
             className={classNames(style['items-wrapper'], {[style['items-wrapper--column']]: !showBody, [style['items-wrapper--center']]: centerItems || onlyLogo, [style['items-wrapper--only-logo']]: onlyLogo})}
             TagName="div"
@@ -262,6 +267,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Partner description', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Partner title', type: 'checkbox'},
   body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
