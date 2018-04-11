@@ -14,7 +14,6 @@ class Block extends React.Component {
     return (
       <article className={classNames(style.article, className)}>
         {children}
-
         <Image
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
@@ -28,6 +27,9 @@ class Block extends React.Component {
         />
         <div className={style.article__content}>
           <Text bind={`services[${index}].title`} className={style.article__title} tagName="h2" />
+          {_.get('item-desc')(modifier) && (
+            <Text bind={`services[${index}].subtitle`} className={style.article__subtitle} tagName="p" />
+          )}
           {_.get('body-text')(modifier) && (
             <Text bind={`services[${index}].text`} className={style.article__text} tagName="p" />
           )}
@@ -89,6 +91,10 @@ Block.defaultContent = {
         content: 'Quantum E-commerce',
         type: 'heading',
       },
+      subtitle: {
+        content: 'Most popular service',
+        type: 'subtitle',
+      },
       text: {
         content: 'Multipurpose program that will perfectly suit online stores and online retail business. You can add up to 2000 items with a detailed description, characteristics, and photos. Also, the shopping cart, clients’ feedback, rating, and related items option are available.',
         type: 'text',
@@ -116,6 +122,10 @@ Block.defaultContent = {
       title: {
         content: 'Quantum Aftersales',
         type: 'heading',
+      },
+      subtitle: {
+        content: 'Most popular service',
+        type: 'subtitle',
       },
       text: {
         content: 'Aftersales assistance that includes marketing campaigns, additional digital solutions, and educational courses. Our specialists will help to find out what will work for your business and decide on the steps that are to be taken immediately. ',
@@ -171,6 +181,7 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Service description', type: 'checkbox'},
+  'item-desc': {defaultValue: false, label: 'Service details', type: 'checkbox'},
   'body-text': {defaultValue: true, label: 'Service main text', type: 'checkbox'},
   'service-button': {defaultValue: true, label: 'Service button', type: 'checkbox'},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
