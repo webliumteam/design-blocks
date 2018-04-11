@@ -22,7 +22,7 @@ class Wireframe extends React.Component {
     const locInfo = this.getModifierValue('location') || this.getModifierValue('time')
 
     return (
-      <div className={classNames(style.item, withoutLine && style['item--no-line'], className)}>
+      <li className={classNames(style.item, withoutLine && style['item--no-line'], className)}>
         {children}
         <div className={classNames(style.item__main, (withoutType || withoutTime) && style['item__main--bottom'])}>
           <div className={classNames(style.item__desc, withoutType && style['item__desc--bottom'])}>
@@ -37,7 +37,7 @@ class Wireframe extends React.Component {
                 <Text bind={`events[${index}].address`} className={style.loc__address} tagName="p" />
               )}
               {this.getModifierValue('time') && (
-                <Text bind={`events[${index}].time`} className={style.loc__time} />
+                <Text bind={`events[${index}].time`} className={style.loc__time} tagName="time" />
               )}
             </div>
           )}
@@ -59,7 +59,7 @@ class Wireframe extends React.Component {
             bind={`events[${index}].cta`}
           />
         </div>
-      </div>
+      </li>
     )
   }
 
@@ -133,7 +133,7 @@ Wireframe.defaultContent = {
       },
       address: {
         type: 'text',
-        content: '<b>Central Park</b> Brooklyn, NY 10036',
+        content: '<span style="font-weight: bold;">Central Park</span> Brooklyn, NY 10036',
       },
       time: {
         type: 'caption',
@@ -168,7 +168,7 @@ Wireframe.defaultContent = {
       },
       address: {
         type: 'text',
-        content: '<b>Central Park</b> Brooklyn, NY 10036',
+        content: '<span style="font-weight: bold;">Central Park</span> Brooklyn, NY 10036',
       },
       time: {
         type: 'caption',
@@ -203,7 +203,7 @@ Wireframe.defaultContent = {
       },
       address: {
         type: 'text',
-        content: '<b>Central Park</b> Brooklyn, NY 10036',
+        content: '<span style="font-weight: bold;">Central Park</span> Brooklyn, NY 10036',
       },
       time: {
         type: 'caption',
