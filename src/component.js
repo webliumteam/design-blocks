@@ -18,6 +18,7 @@ class Wireframe extends React.Component {
     const withoutDay = !this.getModifierValue('day')
     const withoutType = !this.getModifierValue('type')
     const withoutTime = !this.getModifierValue('time')
+    const btnToBottom = !this.getModifierValue('day') || !this.getModifierValue('type') || !this.getModifierValue('time')
     const locInfo = this.getModifierValue('location') || this.getModifierValue('time')
 
     return (
@@ -25,9 +26,9 @@ class Wireframe extends React.Component {
         {children}
         <div className={classNames(style.item__main, (withoutType || withoutTime) && style['item__main--bottom'])}>
           <div className={classNames(style.item__desc, withoutType && style['item__desc--bottom'])}>
-            <Text bind={`events[${index}].heading`} style={style.item__heading} tagName="h2" />
+            <Text bind={`events[${index}].heading`} className={style.item__heading} tagName="h2" />
             {this.getModifierValue('type') && (
-              <Text bind={`events[${index}].descCaption`} style={style['item__desc-caption']} tagName="p" />
+              <Text bind={`events[${index}].descCaption`} className={style['item__desc-caption']} tagName="p" />
             )}
           </div>
           {locInfo && (
@@ -50,7 +51,7 @@ class Wireframe extends React.Component {
             )}
           </span>
         </time>
-        <div className={style['item__button-wrapper']}>
+        <div className={classNames(style['item__button-wrapper'], btnToBottom && style['item__button-wrapper--bottom'])}>
           <Button
             className={style.item__button}
             buttonClassName={style.button}
