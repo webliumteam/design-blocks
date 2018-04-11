@@ -107,7 +107,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  title: {defaultValue: false},
+  title: {defaultValue: false, label: 'Gallery title', type: 'hidden'},
 }
 
 export default ExtendedWireframe
