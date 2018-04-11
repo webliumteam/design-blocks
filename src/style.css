@@ -114,13 +114,13 @@
   left: 0;
 }
 
-.article:only-of-type:last-of-type {
+.article:only-of-type {
   max-width: 100%;
   flex-basis: 100%;
 }
 
 @media (min-width: 992px) {
-  .article:first-of-type:last-of-type {
+  .article:only-of-type {
     padding-left: 200px;
     padding-right: 200px;
   }
