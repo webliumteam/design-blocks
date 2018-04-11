@@ -22,7 +22,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'jack-kaminski-129845-unsplash.jpg',
+        resourceRef: 'jack-kaminski-129845-unsplash.jpg',
         alt: 'Quantum E-commerce illustration',
       },
       cta: {
@@ -50,7 +50,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'julien-pianetti-230463-unsplash.jpg',
+        resourceRef: 'julien-pianetti-230463-unsplash.jpg',
         alt: 'Quantum Aftersales illustration',
       },
       cta: {
