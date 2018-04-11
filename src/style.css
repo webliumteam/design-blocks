@@ -127,6 +127,7 @@
 
     &__picture {
       padding-top: 0;
+      background-color: transparent;
     }
 
     &__content {
