@@ -11,6 +11,19 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  background: {
+    type: 'image',
+    position: {
+      type: 'cover',
+      cover: '50% 50%',
+    },
+    resourceRef: 'jeshoots-com-462287-unsplash.jpg',
+    overlay: {
+      type: 'color',
+      color: 'dark-shade-color',
+      opacity: 0.3,
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
