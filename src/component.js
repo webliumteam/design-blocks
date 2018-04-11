@@ -17,22 +17,21 @@ class Wireframe extends React.Component {
     const withoutLine = !this.getModifierValue('line')
     const withoutDay = !this.getModifierValue('day')
     const withoutType = !this.getModifierValue('type')
-    const withoutTime = !this.getModifierValue('time')
-    const btnToBottom = !this.getModifierValue('day') || !this.getModifierValue('type') || !this.getModifierValue('time')
     const locInfo = this.getModifierValue('location') || this.getModifierValue('time')
+    const minimalState = withoutDay && withoutType && !locInfo
 
     return (
       <li className={classNames(style.item, withoutLine && style['item--no-line'], className)}>
         {children}
-        <div className={classNames(style.item__main, (withoutType || withoutTime) && style['item__main--bottom'])}>
-          <div className={classNames(style.item__desc, withoutType && style['item__desc--bottom'])}>
+        <div className={classNames(style.item__main, minimalState && style['item__main--center'])}>
+          <div className={classNames(style.item__desc, minimalState && (style['item__desc--center']))}>
             <Text bind={`events[${index}].heading`} className={style.item__heading} tagName="h2" />
             {this.getModifierValue('type') && (
               <Text bind={`events[${index}].descCaption`} className={style['item__desc-caption']} tagName="p" />
             )}
           </div>
           {locInfo && (
-            <div className={classNames(style.loc, withoutTime && style['loc--bottom'])}>
+            <div className={classNames(style.loc)}>
               {this.getModifierValue('location') && (
                 <Text bind={`events[${index}].address`} className={style.loc__address} tagName="p" />
               )}
@@ -42,7 +41,7 @@ class Wireframe extends React.Component {
             </div>
           )}
         </div>
-        <time className={classNames(style.date, withoutDay && style['date--bottom'])}>
+        <time className={classNames(style.date, minimalState && style['date--center'])}>
           <Text bind={`events[${index}].day`} className={style.date__day} tagName="span" />
           <span className={style.date__text}>
             <Text bind={`events[${index}].month`} className={style.date__month} tagName="span" />
@@ -51,7 +50,7 @@ class Wireframe extends React.Component {
             )}
           </span>
         </time>
-        <div className={classNames(style['item__button-wrapper'], btnToBottom && style['item__button-wrapper--bottom'])}>
+        <div className={classNames(style['item__button-wrapper'], minimalState && style['item__button-wrapper--center'])}>
           <Button
             className={style.item__button}
             buttonClassName={style.button}
