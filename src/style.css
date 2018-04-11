@@ -149,6 +149,7 @@
 
   &__heading {
     padding-left: 15px;
+    padding-right: 15px;
     margin-top: 15px;
     text-align: center;
 
@@ -160,18 +161,19 @@
 }
 
 .btns-group {
-  margin: 40px -15px 0;
+  max-width: 100%;
+  margin: 30px -15px 0;
   padding-top: 10px;
   text-align: center;
 }
 
 .button {
   width: 100%;
+  margin-right: 15px;
+  margin-left: 15px;
 
   @media (--ui-phone-devices) {
     width: auto;
     max-width: calc(100% - 30px);
-    margin-right: 15px;
-    margin-left: 15px;
   }
 }
