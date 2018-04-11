@@ -30,7 +30,7 @@ ExtendedWireframe.defaultContent = {
         type: 'caption',
       },
       picture: {
-        src: 'img-1.jpg',
+        resourceRef: 'img-1.jpg',
         alt: 'Article illustration photo',
       },
       link: {
@@ -66,7 +66,7 @@ ExtendedWireframe.defaultContent = {
         type: 'caption',
       },
       picture: {
-        src: 'img-2.jpg',
+        resourceRef: 'img-2.jpg',
         alt: 'Article illustration photo',
       },
       link: {
@@ -102,7 +102,7 @@ ExtendedWireframe.defaultContent = {
         type: 'caption',
       },
       picture: {
-        src: 'img-3.jpg',
+        resourceRef: 'img-3.jpg',
         alt: 'Article illustration photo',
       },
       link: {
