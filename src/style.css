@@ -52,6 +52,7 @@
 
 .btns-group {
   margin-top: 50px;
+  text-align: center;
 
   @media (--ui-tablet-devices) {
     display: flex;
