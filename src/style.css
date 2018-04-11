@@ -116,12 +116,9 @@
   margin: 30px -15px -10px;
 }
 
-.button {
-  width: calc(100% - 30px);
-}
-
 .button,
 .link {
+  width: calc(100% - 30px);
   margin: 10px 15px;
 }
 
