@@ -12,10 +12,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  background: {
-    type: 'color',
-    color: '#f2f2f2',
-  },
   logo: {
     image: {
       resourceRef: 'cdet-logo.png',
