@@ -22,7 +22,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'annie-spratt-76930-unsplash.jpg',
+        src: 'img_1.jpg',
         alt: 'Service illustration photo',
       },
       link: {
@@ -50,7 +50,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'federica-galli-571119-unsplash.jpg',
+        src: 'img_2.jpg',
         alt: 'Service illustration photo',
       },
       link: {
@@ -78,7 +78,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'holly-stratton-586014-unsplash.jpg',
+        src: 'img_3.jpg',
         alt: 'Service illustration photo',
       },
       link: {
@@ -106,7 +106,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'jamie-street-94242-unsplash.jpg',
+        src: 'img_4.jpg',
         alt: 'Service illustration photo',
       },
       link: {
