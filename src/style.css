@@ -82,6 +82,7 @@
   }
 
   &__heading {
+    min-width: 1px;
     max-width: 100%;
   }
 
@@ -163,6 +164,7 @@
 
     @media (--ui-medium-devices) {
       display: flex;
+      align-self: flex-end;
       align-items: flex-end;
     }
   }
@@ -228,6 +230,7 @@
 }
 
 .btns-group {
+  max-width: 100%;
   margin-top: 50px;
   text-align: center;
 }

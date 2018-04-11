@@ -82,6 +82,7 @@ class Wireframe extends React.Component {
             itemProps={{
               modifier: $block.modifier,
             }}
+            TagName="ul"
           />
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
