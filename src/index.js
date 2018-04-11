@@ -22,7 +22,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'img_1.jpg',
+        resourceRef: 'img_1.jpg',
         alt: 'Service illustration photo',
       },
       link: {
@@ -50,7 +50,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'img_2.jpg',
+        resourceRef: 'img_2.jpg',
         alt: 'Service illustration photo',
       },
       link: {
@@ -78,7 +78,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'img_3.jpg',
+        resourceRef: 'img_3.jpg',
         alt: 'Service illustration photo',
       },
       link: {
@@ -106,7 +106,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'img_4.jpg',
+        resourceRef: 'img_4.jpg',
         alt: 'Service illustration photo',
       },
       link: {
