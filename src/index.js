@@ -27,38 +27,15 @@ ExtendedWireframe.defaultContent = {
   },
   logo: {
     text: {
-      value: 'Quantum Company',
-      fontSize: 24,
-      color: 'var(--ui-brand-color)',
+      ...Component.defaultContent.logo.text,
+      color: 'ui-brand-color',
     },
   },
   socialIcons: {
-    networks: [
-      {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
-        id: 'twitter',
-        name: 'Twitter',
-        url: 'http://twitter.com/',
-      },
-      {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
-      },
-    ],
-    target: '_blank',
+    ...Component.defaultContent.socialIcons,
     design: {
-      border: 'softRect',
-      innerFill: true,
-      preset: 'preset001',
-      offset: 15,
-      color: 'var(--ui-dark-accent-color)',
-      sizes: [10, 20, 30, 40],
-      size: 30,
+      ...Component.defaultContent.socialIcons.design,
+      color: 'ui-dark-accent-color',
     },
   },
 }
