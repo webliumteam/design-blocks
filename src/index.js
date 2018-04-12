@@ -18,7 +18,6 @@ ExtendedWireframe.defaultContent = {
       cover: '50% 50%',
     },
     resourceRef: 'lior-mazliah-111379-unsplash.jpg',
-
     overlay: {
       type: 'color',
       color: '#000',
