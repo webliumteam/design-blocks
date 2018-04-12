@@ -13,45 +13,24 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   numbers: [
     {
-      body: {
-        content: 'increase in profits of our customers',
-        type: 'text',
-      },
-      number: {
-        content: '128%',
-        type: 'headingLg',
-      },
+      ...Component.defaultContent.numbers[0],
       picture: {
+        ...Component.defaultContent.numbers[0].picture,
         resourceRef: 'pic1.jpg',
-        alt: 'Illustration for number',
       },
     },
     {
-      body: {
-        content: 'higher customer satisfaction',
-        type: 'text',
-      },
-      number: {
-        content: '527%',
-        type: 'headingLg',
-      },
+      ...Component.defaultContent.numbers[1],
       picture: {
+        ...Component.defaultContent.numbers[1].picture,
         resourceRef: 'pic2.jpg',
-        alt: 'Illustration for number',
       },
     },
     {
-      body: {
-        content: 'of clients found new sales markets',
-        type: 'text',
-      },
-      number: {
-        content: '92%',
-        type: 'headingLg',
-      },
+      ...Component.defaultContent.numbers[2],
       picture: {
+        ...Component.defaultContent.numbers[2].picture,
         resourceRef: 'pic3.jpg',
-        alt: 'Illustration for number',
       },
     },
   ],
