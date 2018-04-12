@@ -11,6 +11,13 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  socialIcons: {
+    ...Component.defaultContent.socialIcons,
+    design: {
+      ...Component.defaultContent.socialIcons.design,
+      color: 'brand-color',
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
