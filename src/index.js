@@ -40,7 +40,7 @@ ExtendedWireframe.defaultContent = {
       innerFill: true,
       preset: 'preset001',
       padding: 20,
-      color: 'var(--ui-brand-color)',
+      color: 'brand-color',
       sizes: [10, 20, 30, 40],
       size: '40px',
     },
