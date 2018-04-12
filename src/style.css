@@ -1,9 +1,1 @@
 @import "wireframe-zapdos-header/src/style.css";
-
-.header {
-  .logo {
-    &__title {
-      color: var(--ui-brand-color);
-    }
-  }
-}
