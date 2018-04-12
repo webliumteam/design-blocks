@@ -31,10 +31,11 @@ ExtendedWireframe.defaultContent = {
           type: 'text',
         },
         logo: {
-          text: {
-            value: 'Samsung',
-            tagName: 'h2',
-            fontSize: 24,
+          image: {
+            resourceRef: 'cribspot.jpg',
+            alt: 'sumsung',
+            width: 220,
+            height: 122,
           },
         },
         picture: {
@@ -65,10 +66,11 @@ ExtendedWireframe.defaultContent = {
           type: 'text',
         },
         logo: {
-          text: {
-            value: 'Ford',
-            tagName: 'h2',
-            fontSize: 24,
+          image: {
+            resourceRef: 'fresh.jpg',
+            alt: 'ford',
+            width: 220,
+            height: 122,
           },
         },
         cta: {
@@ -96,10 +98,11 @@ ExtendedWireframe.defaultContent = {
           type: 'text',
         },
         logo: {
-          text: {
-            value: 'Medical Family',
-            tagName: 'h2',
-            fontSize: 24,
+          image: {
+            resourceRef: 'leap.jpg',
+            alt: 'medical',
+            width: 220,
+            height: 122,
           },
         },
         cta: {
@@ -127,10 +130,11 @@ ExtendedWireframe.defaultContent = {
           type: 'text',
         },
         logo: {
-          text: {
-            value: 'Coffee Break Now',
-            tagName: 'h2',
-            fontSize: 24,
+          image: {
+            resourceRef: 'nothingmagical.jpg',
+            alt: 'Coffee',
+            width: 220,
+            height: 122,
           },
         },
         cta: {
