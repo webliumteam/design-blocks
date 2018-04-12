@@ -24,19 +24,9 @@ ExtendedWireframe.defaultContent = {
     type: 'headingLg',
   },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
+    ...Component.defaultContent.cta,
     textValue: 'Go to homepage',
     type: 'primary',
-    size: 'lg',
   },
 }
 
