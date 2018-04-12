@@ -1,3 +1,54 @@
 @import "wireframe-zapdos-cta/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 105px;
+    padding-bottom: 140px;
+  }
+}
+
+:root {
+  --ui-brand-color: rgba(198, 36, 52);
+}
+
+.title {
+  display: inline-block;
+  position: relative;
+  line-height: 1.4;
+  margin-bottom: 50px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 53px;
+    height: 5px;
+    bottom: -5px;
+    left: 50%;
+    transform: skewX(-25deg) translateX(-50%);
+    background: linear-gradient(
+      to right,
+      var(--ui-brand-color) 0%,
+      var(--ui-brand-color) 60%,
+      rgba(0, 0, 0 0) 60%,
+      rgba(0, 0, 0, 0) 70%,
+      var(--ui-brand-color) 70%,
+      var(--ui-brand-color) 80%,
+      rgba(0, 0, 0, 0) 80%,
+      rgba(0, 0, 0, 0) 90%,
+      var(--ui-brand-color) 90%,
+      var(--ui-brand-color) 100%
+    );
+  }
+}
+
+.description {
+  max-width: 475px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 45px;
+  font-size: calc(var(--ui-heading-lg-size) * 1.125);
+  font-weight: 600;
+  line-height: calc(var(--ui-heading-lg-line-height) * 1.17);
+}

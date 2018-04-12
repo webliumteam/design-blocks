@@ -11,10 +11,38 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  background: {
+    type: 'color',
+    color: 'light-shade-color',
+  },
+  title: {
+    content: '404',
+    type: 'heroTitle',
+  },
+  description: {
+    content: 'Sorry, but the page you are looking for could not be found',
+    type: 'headingLg',
+  },
+  cta: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Go to homepage',
+    type: 'primary',
+    size: 'lg',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
