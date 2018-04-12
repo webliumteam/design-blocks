@@ -15,8 +15,8 @@ ExtendedWireframe.defaultContent = {
     text: {
       value: 'Company Logo',
       tagName: 'h2',
-      fontSize: 'var(--ui-block-title-size)',
-      color: 'var(--ui-brand-color)',
+      fontSize: 42,
+      color: 'brand-color',
     },
   },
   socialIcons: {
@@ -48,7 +48,7 @@ ExtendedWireframe.defaultContent = {
       innerFill: true,
       preset: 'preset001',
       padding: 20,
-      color: 'var(--ui-brand-color)',
+      color: 'brand-color',
       sizes: [10, 20, 30, 40],
       size: '40px',
     },
