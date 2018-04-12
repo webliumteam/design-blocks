@@ -1,9 +1,2 @@
 @import "wireframe-series-2-header/src/style.css";
 
-.header {
-  .logo {
-    &__title {
-      color: var(--ui-brand-color);
-    }
-  }
-}
