@@ -12,6 +12,7 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   background: {
+    ...Component.defaultContent.background,
     type: 'image',
     position: {
       type: 'cover',
@@ -23,18 +24,6 @@ ExtendedWireframe.defaultContent = {
       color: 'brand-color',
       opacity: 0.2,
     },
-  },
-  blockquote: {
-    content: 'There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.',
-    type: 'quote',
-  },
-  author: {
-    content: 'Ray Goforth',
-    type: 'text',
-  },
-  picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Illustration photo',
   },
 }
 
