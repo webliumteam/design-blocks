@@ -16,7 +16,8 @@
     margin-bottom: 20px;
   }
 
-  .title {
+  .title,
+  .subtitle {
     color: var(--ui-dark-shade-color);
   }
 }
