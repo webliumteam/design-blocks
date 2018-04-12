@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    resourceRef: 'lior-mazliah-111379-unsplash.jpg',
+    resourceRef: 'picture.jpg',
     overlay: {
       type: 'color',
       color: '#000',
@@ -27,14 +27,14 @@ ExtendedWireframe.defaultContent = {
   logo: {
     text: {
       ...Component.defaultContent.logo.text,
-      color: 'ui-brand-color',
+      color: 'brand-color',
     },
   },
   socialIcons: {
     ...Component.defaultContent.socialIcons,
     design: {
       ...Component.defaultContent.socialIcons.design,
-      color: 'ui-dark-accent-color',
+      color: 'dark-accent-color',
     },
   },
 }
