@@ -19,7 +19,7 @@ ExtendedWireframe.defaultContent = {
     text: {
       value: 'Company Logo',
       fontSize: 24,
-      color: 'var(--ui-brand-color)',
+      color: 'ui-brand-color',
       type: 'blockTitle',
     },
   },
