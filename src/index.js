@@ -13,7 +13,7 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   logo: {
     text: {
-      value: 'z',
+      value: 'Quantum Company',
       tagName: 'h1',
       fontSize: 32,
       color: 'brand-color',
