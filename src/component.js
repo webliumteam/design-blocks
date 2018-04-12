@@ -10,7 +10,13 @@ class Wireframe extends React.Component {
     const {components: {Text}, style} = this.props
 
     return (
-      <Text bind="title" className={style.title} tagName="h1" />
+      <section className={style.section}>
+        <div className={style.section__inner}>
+          <div className={style.section__header}>
+            <Text tagName="h1" className="title" bind="title" />
+          </div>
+        </div>
+      </section>
     )
   }
 }
