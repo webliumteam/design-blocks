@@ -17,7 +17,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    resourceRef: 'jeshoots-com-462287-unsplash.jpg',
+    resourceRef: 'image.jpg',
     overlay: {
       type: 'color',
       color: 'dark-shade-color',
