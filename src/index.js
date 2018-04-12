@@ -14,7 +14,8 @@ ExtendedWireframe.defaultContent = {
   socialIcons: {
     ...Component.defaultContent.networks,
     design: {
-      color: 'ui-dark-accent-color',
+      ...Component.defaultContent.networks.design,
+      color: 'dark-accent-color',
     },
   },
   background: {
@@ -23,7 +24,7 @@ ExtendedWireframe.defaultContent = {
       type: 'cover',
       cover: '50% 50%',
     },
-    resourceRef: 'andre-benz-243080-unsplash.jpg',
+    resourceRef: 'picture.jpg',
     overlay: {
       type: 'color',
       color: '#fff',
@@ -34,7 +35,7 @@ ExtendedWireframe.defaultContent = {
     text: {
       ...Component.defaultContent.logo.text,
       type: 'blockTitle',
-      color: 'ui-brand-color',
+      color: 'brand-color',
     },
   },
 }
