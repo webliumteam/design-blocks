@@ -32,9 +32,9 @@ class Block extends React.Component {
     return (
       <div className={style.testimonial}>
         <div className={style.testimonial__inner}>
-          <Text tagName="p" className={style.testimonial__text} bind={`testimonials.content[${index}].text`} />
+          <Text tagName="p" className={style.testimonial__text} bind={`testimonials[${index}].text`} />
           {_.get('item-date')(modifier) && (
-            <Text tagName="p" className={style.testimonial__date} bind={`testimonials.content[${index}].date`} />
+            <Text tagName="p" className={style.testimonial__date} bind={`testimonials[${index}].date`} />
           )}
         </div>
       </div>
@@ -52,7 +52,7 @@ class Block extends React.Component {
               wrapperClassName={style['item__picture-wrapper']}
               pictureClassName={classNames(style.item__picture, 'item__picture--global')}
               imgClassName={style.item__image}
-              bind={`testimonials.person[${index}].image`}
+              bind={`testimonials[${index}].image`}
               size={{
                 'min-width: 992px': 1200,
                 'min-width: 768px': 1000,
@@ -62,13 +62,13 @@ class Block extends React.Component {
             />
           )}
           <div className="item__person-info--global">
-            <Text tagName="h2" className={classNames(style.item__author)} bind={`testimonials.person[${index}].author`} />
+            <Text tagName="h2" className={classNames(style.item__author)} bind={`testimonials[${index}].author`} />
             {_.get('item-position')(modifier) && (
-              <Text tagName="p" className={style.item__position} bind={`testimonials.person[${index}].position`} />
+              <Text tagName="p" className={style.item__position} bind={`testimonials[${index}].position`} />
             )}
           </div>
           {_.get('item-socials')(modifier) && (
-            <SocialIcons bind={`testimonials.person[${index}].socialIcons`} className={classNames(style.item__socials, 'item__socials--global')} />
+            <SocialIcons bind={`testimonials[${index}].socialIcons`} className={classNames(style.item__socials, 'item__socials--global')} />
           )}
         </div>
       </div>
@@ -93,7 +93,7 @@ class Block extends React.Component {
           )}
           <Slider
             className={style['preview-slider']}
-            bind="testimonials.content"
+            bind="testimonials"
             Item={this.testimonialsItem}
             setRef={slider => (this.slider1 = slider)}
             settings={{
@@ -109,7 +109,7 @@ class Block extends React.Component {
           />
           <Slider
             className={classNames(style['items-wrapper'], onlyNameClass)}
-            bind="testimonials.person"
+            bind="testimonials"
             Item={this.collectionItem}
             setRef={slider => (this.slider2 = slider)}
             settings={{
@@ -163,244 +163,232 @@ Block.defaultContent = {
     content: 'The best praise for us is our clients’ words.  Just look what they say about us!',
     type: 'subtitle',
   },
-  testimonials: {
-    content: [
-      {
-        text: {
-          content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
-          type: 'heading',
-        },
-        date: {
-          content: 'October 28, 2017',
-          type: 'caption',
-        },
+  testimonials: [
+    {
+      text: {
+        content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+        type: 'heading',
       },
-      {
-        text: {
-          content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
-          type: 'heading',
-        },
-        date: {
-          content: 'October 28, 2017',
-          type: 'caption',
-        },
+      date: {
+        content: 'October 28, 2017',
+        type: 'caption',
       },
-      {
-        text: {
-          content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
-          type: 'heading',
-        },
-        date: {
-          content: 'October 28, 2017',
-          type: 'caption',
-        },
+      image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Gallery image',
       },
-      {
-        text: {
-          content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
-          type: 'heading',
-        },
-        date: {
-          content: 'October 28, 2017',
-          type: 'caption',
-        },
+      author: {
+        content: 'Dr. Sam White',
+        type: 'heading',
       },
-    ],
-    person: [
-      {
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Gallery image',
-        },
-        author: {
-          content: 'Dr. Sam White',
-          type: 'heading',
-        },
-        position: {
-          content: 'Surgeon at St. Laurence Child Clinic',
-          type: 'text',
-        },
-        socialIcons: {
-          networks: [
-            {
-              id: 'facebook',
-              name: 'Facebook',
-              url: 'http://facebook.com/',
-            },
-            {
-              id: 'twitter',
-              name: 'Twitter',
-              url: 'http://twitter.com/',
-            },
-            {
-              id: 'instagram',
-              name: 'Instagram',
-              url: 'http://instagram.com/',
-            },
-            {
-              id: 'linkedin',
-              name: 'LinkedIn',
-              url: 'http://linkedin.com/',
-            },
-          ],
-          target: '_blank',
-          design: {
-            border: 'softRect',
-            innerFill: true,
-            preset: 'preset001',
-            offset: 15,
-            color: '#9b9b9b',
-            sizes: [10, 20, 30, 40],
-            size: 30,
+      position: {
+        content: 'Surgeon at St. Laurence Child Clinic',
+        type: 'text',
+      },
+      socialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'http://facebook.com/',
           },
-        },
-      },
-      {
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Gallery image',
-        },
-        author: {
-          content: 'Mary Sanders',
-          type: 'heading',
-        },
-        position: {
-          content: 'Creative Director of MindSet',
-          type: 'text',
-        },
-        socialIcons: {
-          networks: [
-            {
-              id: 'facebook',
-              name: 'Facebook',
-              url: 'http://facebook.com/',
-            },
-            {
-              id: 'twitter',
-              name: 'Twitter',
-              url: 'http://twitter.com/',
-            },
-            {
-              id: 'instagram',
-              name: 'Instagram',
-              url: 'http://instagram.com/',
-            },
-            {
-              id: 'linkedin',
-              name: 'LinkedIn',
-              url: 'http://linkedin.com/',
-            },
-          ],
-          target: '_blank',
-          design: {
-            border: 'softRect',
-            innerFill: true,
-            preset: 'preset001',
-            offset: 15,
-            color: '#9b9b9b',
-            sizes: [10, 20, 30, 40],
-            size: 30,
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'http://twitter.com/',
           },
-        },
-      },
-      {
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Gallery image',
-        },
-        author: {
-          content: 'Victor Manner',
-          type: 'heading',
-        },
-        position: {
-          content: 'Recruiter at JobsDone',
-          type: 'text',
-        },
-        socialIcons: {
-          networks: [
-            {
-              id: 'facebook',
-              name: 'Facebook',
-              url: 'http://facebook.com/',
-            },
-            {
-              id: 'twitter',
-              name: 'Twitter',
-              url: 'http://twitter.com/',
-            },
-            {
-              id: 'instagram',
-              name: 'Instagram',
-              url: 'http://instagram.com/',
-            },
-            {
-              id: 'linkedin',
-              name: 'LinkedIn',
-              url: 'http://linkedin.com/',
-            },
-          ],
-          target: '_blank',
-          design: {
-            border: 'softRect',
-            innerFill: true,
-            preset: 'preset001',
-            offset: 15,
-            color: '#9b9b9b',
-            sizes: [10, 20, 30, 40],
-            size: 30,
+          {
+            id: 'instagram',
+            name: 'Instagram',
+            url: 'http://instagram.com/',
           },
-        },
-      },
-      {
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Gallery image',
-        },
-        author: {
-          content: 'Dr. Sam White',
-          type: 'subtitle',
-        },
-        position: {
-          content: 'Surgeon at St. Laurence Child Clinic',
-          type: 'text',
-        },
-        socialIcons: {
-          networks: [
-            {
-              id: 'facebook',
-              name: 'Facebook',
-              url: 'http://facebook.com/',
-            },
-            {
-              id: 'twitter',
-              name: 'Twitter',
-              url: 'http://twitter.com/',
-            },
-            {
-              id: 'instagram',
-              name: 'Instagram',
-              url: 'http://instagram.com/',
-            },
-            {
-              id: 'linkedin',
-              name: 'LinkedIn',
-              url: 'http://linkedin.com/',
-            },
-          ],
-          target: '_blank',
-          design: {
-            border: 'softRect',
-            innerFill: true,
-            preset: 'preset001',
-            offset: 15,
-            color: '#9b9b9b',
-            sizes: [10, 20, 30, 40],
-            size: 30,
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'http://linkedin.com/',
           },
+        ],
+        target: '_blank',
+        design: {
+          border: 'softRect',
+          innerFill: true,
+          preset: 'preset001',
+          offset: 15,
+          color: '#9b9b9b',
+          sizes: [10, 20, 30, 40],
+          size: 30,
         },
       },
-    ],
-  },
+    },
+    {
+      text: {
+        content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+        type: 'heading',
+      },
+      date: {
+        content: 'October 28, 2017',
+        type: 'caption',
+      },
+      image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Gallery image',
+      },
+      author: {
+        content: 'Mary Sanders',
+        type: 'heading',
+      },
+      position: {
+        content: 'Creative Director of MindSet',
+        type: 'text',
+      },
+      socialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'http://facebook.com/',
+          },
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'http://twitter.com/',
+          },
+          {
+            id: 'instagram',
+            name: 'Instagram',
+            url: 'http://instagram.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'http://linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'softRect',
+          innerFill: true,
+          preset: 'preset001',
+          offset: 15,
+          color: '#9b9b9b',
+          sizes: [10, 20, 30, 40],
+          size: 30,
+        },
+      },
+    },
+    {
+      text: {
+        content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+        type: 'heading',
+      },
+      date: {
+        content: 'October 28, 2017',
+        type: 'caption',
+      },
+      image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Gallery image',
+      },
+      author: {
+        content: 'Victor Manner',
+        type: 'heading',
+      },
+      position: {
+        content: 'Recruiter at JobsDone',
+        type: 'text',
+      },
+      socialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'http://facebook.com/',
+          },
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'http://twitter.com/',
+          },
+          {
+            id: 'instagram',
+            name: 'Instagram',
+            url: 'http://instagram.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'http://linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'softRect',
+          innerFill: true,
+          preset: 'preset001',
+          offset: 15,
+          color: '#9b9b9b',
+          sizes: [10, 20, 30, 40],
+          size: 30,
+        },
+      },
+    },
+    {
+      text: {
+        content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+        type: 'heading',
+      },
+      date: {
+        content: 'October 28, 2017',
+        type: 'caption',
+      },
+      image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Gallery image',
+      },
+      author: {
+        content: 'Dr. Sam White',
+        type: 'subtitle',
+      },
+      position: {
+        content: 'Surgeon at St. Laurence Child Clinic',
+        type: 'text',
+      },
+      socialIcons: {
+        networks: [
+          {
+            id: 'facebook',
+            name: 'Facebook',
+            url: 'http://facebook.com/',
+          },
+          {
+            id: 'twitter',
+            name: 'Twitter',
+            url: 'http://twitter.com/',
+          },
+          {
+            id: 'instagram',
+            name: 'Instagram',
+            url: 'http://instagram.com/',
+          },
+          {
+            id: 'linkedin',
+            name: 'LinkedIn',
+            url: 'http://linkedin.com/',
+          },
+        ],
+        target: '_blank',
+        design: {
+          border: 'softRect',
+          innerFill: true,
+          preset: 'preset001',
+          offset: 15,
+          color: '#9b9b9b',
+          sizes: [10, 20, 30, 40],
+          size: 30,
+        },
+      },
+    },
+  ],
   cta: {
     actionConfig: {
       action: 'link',
