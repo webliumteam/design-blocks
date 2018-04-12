@@ -13,43 +13,31 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   awards: [
     {
-      title: {
-        content: 'R&D Leader in Tech (2017)',
-        type: 'heading',
-      },
+      ...Component.defaultContent.awards[0],
       picture: {
+        ...Component.defaultContent.awards[0].picture,
         resourceRef: 'img-1.jpg',
-        alt: 'R&D Leader in Tech photo',
       },
     },
     {
-      title: {
-        content: 'Most Innovative B2B Solutions (2016)',
-        type: 'heading',
-      },
+      ...Component.defaultContent.awards[1],
       picture: {
+        ...Component.defaultContent.awards[1].picture,
         resourceRef: 'img-2.jpg',
-        alt: 'Most Innovative B2B Solutions photo',
       },
     },
     {
-      title: {
-        content: 'Best Service Provider (2014)',
-        type: 'heading',
-      },
+      ...Component.defaultContent.awards[2],
       picture: {
+        ...Component.defaultContent.awards[2].picture,
         resourceRef: 'img-3.jpg',
-        alt: 'Best Service Provider',
       },
     },
     {
-      title: {
-        content: 'Leader of Innovation (2012)',
-        type: 'heading',
-      },
+      ...Component.defaultContent.awards[3],
       picture: {
+        ...Component.defaultContent.awards[3].picture,
         resourceRef: 'img-4.jpg',
-        alt: 'Leader of Innovation photo',
       },
     },
   ],
