@@ -11,6 +11,15 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  background: {
+    type: 'color',
+    color: '#eeeeee',
+  },
+  button: {
+    type: 'primary-alt',
+    size: 'md',
+    textValue: 'Show all events',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
