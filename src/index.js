@@ -12,9 +12,9 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   socialIcons: {
-    ...Component.defaultContent.networks,
+    ...Component.defaultContent.socialIcons.networks,
     design: {
-      ...Component.defaultContent.networks.design,
+      ...Component.defaultContent.socialIcons.design,
       color: 'dark-accent-color',
     },
   },
@@ -27,7 +27,7 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'picture.jpg',
     overlay: {
       type: 'color',
-      color: '#fff',
+      color: 'light-shade-color',
       opacity: 0.6,
     },
   },
