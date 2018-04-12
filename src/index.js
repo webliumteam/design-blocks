@@ -18,6 +18,10 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.numbers[0].picture,
         resourceRef: 'pic1.jpg',
       },
+      number: {
+        ...Component.defaultContent.numbers[0].number,
+        color: '#d4d9dd',
+      },
     },
     {
       ...Component.defaultContent.numbers[1],
@@ -25,12 +29,20 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.numbers[1].picture,
         resourceRef: 'pic2.jpg',
       },
+      number: {
+        ...Component.defaultContent.numbers[2].number,
+        color: '#d4d9dd',
+      },
     },
     {
       ...Component.defaultContent.numbers[2],
       picture: {
         ...Component.defaultContent.numbers[2].picture,
         resourceRef: 'pic3.jpg',
+      },
+      number: {
+        ...Component.defaultContent.numbers[2].number,
+        color: '#d4d9dd',
       },
     },
   ],
