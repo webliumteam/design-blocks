@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-series-2-header/src/component'
 import style from './style.css'
 
 import options from './options.json'
@@ -11,6 +11,14 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  logo: {
+    text: {
+      value: 'Quantum Company',
+      tagName: 'h1',
+      fontSize: 32,
+      color: 'brand-color',
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
