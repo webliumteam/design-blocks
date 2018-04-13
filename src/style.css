@@ -23,6 +23,10 @@
     margin-bottom: 9px;
   }
 
+  &__picture {
+    background-color: transparent;
+  }
+
   &__text {
     margin-bottom: 18px;
   }
