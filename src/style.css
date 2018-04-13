@@ -1,1 +1,154 @@
 @import "media.css";
+
+.section {
+  min-width: 320px;
+  padding: 50px 0;
+  word-wrap: break-word;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding: 75px 0;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+  }
+
+  &__inner {
+    max-width: var(--ui-content-container);
+    margin: 0 auto;
+    padding: var(--ui-content-gutter);
+  }
+}
+
+.title,
+.subtitle {
+  text-align: center;
+
+  @media (--ui-tablet-devices) {
+    text-align: left;
+  }
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+
+  @media (--ui-medium-devices) {
+    max-width: 970px;
+  }
+}
+
+.items-wrapper {
+  margin: 0 -10px;
+  padding: 0 10px;
+}
+
+.item {
+  margin: 0 -10px 50px;
+  padding: 10px;
+
+  @media (--ui-medium-devices) {
+    display: flex;
+  }
+
+  &__picture {
+    margin: 0 -15px 20px;
+    padding-top: 53.33333%;
+
+    @media (--ui-tablet-devices) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    @media (--ui-medium-devices) {
+      max-width: 770px;
+      padding-top: 36%;
+      margin-right: 30px;
+      margin-bottom: 0;
+      flex-basis: 770px;
+      flex-shrink: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (--ui-medium-devices) {
+      display: block;
+    }
+  }
+
+  &__list {
+    margin-bottom: 20px;
+
+    @media (--ui-tablet-devices) {
+      max-width: 50%;
+      padding-right: 15px;
+      flex-basis: 50%;
+    }
+
+    @media (--ui-medium-devices) {
+      max-width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  &__body {
+    margin-bottom: 20px;
+
+    @media (--ui-tablet-devices) {
+      max-width: 50%;
+      padding-left: 15px;
+      flex-basis: 50%;
+    }
+
+    @media (--ui-medium-devices) {
+      max-width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  &__button {
+
+    @media (--ui-tablet-devices) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.brief {
+  display: flex;
+  max-width: 100%;
+  margin-bottom: 10px;
+
+  &__title {
+    max-width: 33%;
+    flex-basis: 33%;
+    margin-right: 15px;
+    font-size: 18px;
+  }
+
+  &__desc {
+    max-width: calc(67% - 15px);
+    font-size: 18px;
+  }
+}
+
+.btns-group {
+  text-align: center;
+}
+
+.button {
+  width: 100%;
+
+  @media (--ui-phone-devices) {
+    width: auto;
+  }
+}
