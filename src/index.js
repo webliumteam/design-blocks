@@ -17,6 +17,13 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[0].picture,
         resourceRef: 'breather-196130.jpg',
+        size: {
+          'min-width: 1200px': 992,
+          'min-width: 992px': 992,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
       caption: {
         ...Component.defaultContent.gallery[0].caption,
@@ -28,6 +35,13 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[1].picture,
         resourceRef: 'dane-deaner-272375.jpg',
+        size: {
+          'min-width: 1200px': 992,
+          'min-width: 992px': 992,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
       caption: {
         ...Component.defaultContent.gallery[1].caption,
@@ -39,6 +53,13 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[2].picture,
         resourceRef: 'jaroslaw-ceborski-250955.jpg',
+        size: {
+          'min-width: 1200px': 992,
+          'min-width: 992px': 992,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
       caption: {
         ...Component.defaultContent.gallery[2].caption,
@@ -50,6 +71,13 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[3].picture,
         resourceRef: 'elsa-noblet-341687.jpg',
+        size: {
+          'min-width: 1200px': 992,
+          'min-width: 992px': 992,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
       caption: {
         ...Component.defaultContent.gallery[3].caption,
@@ -61,6 +89,13 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[4].picture,
         resourceRef: 'nathan-fertig-249917.jpg',
+        size: {
+          'min-width: 1200px': 992,
+          'min-width: 992px': 992,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
       caption: {
         ...Component.defaultContent.gallery[4].caption,
@@ -72,6 +107,13 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[5].picture,
         resourceRef: 'stephen-di-donato-119064.jpg',
+        size: {
+          'min-width: 1200px': 992,
+          'min-width: 992px': 992,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
       caption: {
         ...Component.defaultContent.gallery[5].caption,
