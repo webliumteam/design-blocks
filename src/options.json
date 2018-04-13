@@ -1,1 +1,6 @@
-{}
+{
+  "toogle-item-controls": true,
+  "different-icons": false,
+  "open-icon": "<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 14 14' ><path d='M14 8H8v6H6V8H0V6h6V0h2v6h6z' fillRule='nonzero' /></svg>",
+  "close-icon": "<svg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 14 14' ><path fill='red' d='M14 8H8v6H6V8H0V6h6V0h2v6h6z' fillRule='nonzero' /></svg>"
+}
