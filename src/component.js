@@ -12,7 +12,7 @@ class Wireframe extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
+  collectionItem = ({index, children, className, images}) => {
     const {components: {Text, Image, Button}, style} = this.props
 
     const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 30
@@ -21,21 +21,26 @@ class Wireframe extends React.Component {
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        <Image
-          pictureClassName={style.item__picture}
-          imageClassName={style.item__image}
-          bind={`items[${index}].picture`}
-          size={{
-            'min-width: 320px': 480,
-            'min-width: 480px': 768,
-            'min-width: 768px': 570,
-          }}
-          resize={{
-            min: getMinResize,
-            max: getMaxResize,
-            disable: this.getOptionValue('disable-resizer'),
-          }}
-        />
+        <div className={style['picture-wrapper']}>
+          {_.map(n => (
+            <Image
+              pictureClassName={style.item__picture}
+              imageClassName={style.item__image}
+              bind={`items[${index}].picture[${n}]`}
+              size={{
+                'min-width: 320px': 480,
+                'min-width: 480px': 768,
+                'min-width: 768px': 570,
+              }}
+              resize={{
+                min: getMinResize,
+                max: getMaxResize,
+                disable: this.getOptionValue('disable-resizer'),
+              }}
+              key={n}
+            />
+          ), images)}
+        </div>
         <div className={style.item__content}>
           <ul className={style.item__list}>
             <li className={style.brief}>
@@ -74,6 +79,7 @@ class Wireframe extends React.Component {
   render() {
     const {components: {Text, Collection, Button}, style, $block} = this.props
     const header = this.getModifierValue('title') || this.getModifierValue('subtitle')
+    const images = _.times(Number, this.getModifierValue('imagesQuantity'))
 
     return (
       <section className={style.section}>
@@ -94,6 +100,7 @@ class Wireframe extends React.Component {
             Item={this.collectionItem}
             itemProps={{
               modifier: $block.modifier,
+              images,
             }}
           />
           <div className={style['btns-group']}>
@@ -123,10 +130,32 @@ Wireframe.defaultContent = {
   },
   items: [
     {
-      picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture about the company',
-      },
+      picture: [
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+      ],
       brief: [
         {
           title: {
@@ -189,10 +218,32 @@ Wireframe.defaultContent = {
       },
     },
     {
-      picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture about the company',
-      },
+      picture: [
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+      ],
       brief: [
         {
           title: {
@@ -255,10 +306,32 @@ Wireframe.defaultContent = {
       },
     },
     {
-      picture: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture about the company',
-      },
+      picture: [
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+        {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Picture about the company',
+        },
+      ],
       brief: [
         {
           title: {
@@ -330,6 +403,20 @@ Wireframe.defaultContent = {
 Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block tile', type: 'hidden'},
   subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox'},
+  imagesQuantity: {
+    children: [
+      {id: '1', label: '1'},
+      {id: '2', label: '2'},
+      {id: '3', label: '3'},
+      {id: '4', label: '4'},
+      {id: '5', label: '5'},
+      {id: '6', label: '6'},
+    ],
+    defaultValue: '1',
+    name: 'Images in event',
+    type: 'radio-button-group',
+    style: 'buttons',
+  },
 }
 
 export default Wireframe
