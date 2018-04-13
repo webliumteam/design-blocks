@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-zapdos-footer/src/component'
 import style from './style.css'
 
 import options from './options.json'
@@ -11,6 +11,13 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  logo: {
+    text: {
+      ...Component.defaultContent.logo.text,
+      color: 'brand-color',
+      type: 'blockTitle',
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
