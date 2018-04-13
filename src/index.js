@@ -15,7 +15,7 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.gallery[0],
       picture: {
-        ...Component.defaultContent.gallery[0].picture[0],
+        ...Component.defaultContent.gallery[0].picture,
         resourceRef: 'breather-196130.jpg',
         size: {
           'min-width: 1200px': 992,
@@ -33,7 +33,7 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.gallery[1],
       picture: {
-        ...Component.defaultContent.gallery[1].picture[1],
+        ...Component.defaultContent.gallery[1].picture,
         resourceRef: 'dane-deaner-272375.jpg',
         size: {
           'min-width: 1200px': 992,
@@ -51,7 +51,7 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.gallery[2],
       picture: {
-        ...Component.defaultContent.gallery[2].picture[2],
+        ...Component.defaultContent.gallery[2].picture,
         resourceRef: 'jaroslaw-ceborski-250955.jpg',
         size: {
           'min-width: 1200px': 992,
@@ -69,7 +69,7 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.gallery[3],
       picture: {
-        ...Component.defaultContent.gallery[3].picture[3],
+        ...Component.defaultContent.gallery[3].picture,
         resourceRef: 'elsa-noblet-341687.jpg',
         size: {
           'min-width: 1200px': 992,
@@ -87,7 +87,7 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.gallery[4],
       picture: {
-        ...Component.defaultContent.gallery[4].picture[4],
+        ...Component.defaultContent.gallery[4].picture,
         resourceRef: 'nathan-fertig-249917.jpg',
         size: {
           'min-width: 1200px': 992,
@@ -105,7 +105,7 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.gallery[5],
       picture: {
-        ...Component.defaultContent.gallery[5].picture[5],
+        ...Component.defaultContent.gallery[5].picture,
         resourceRef: 'stephen-di-donato-119064.jpg',
         size: {
           'min-width: 1200px': 992,
