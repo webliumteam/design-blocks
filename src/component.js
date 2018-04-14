@@ -70,11 +70,10 @@ Wireframe.defaultContent = {
   },
 
   subtitle: {
-    content: 'Why Us',
+    content: 'Once upon a time and a very good time it was there was a moocow coming down along the road and this moocow',
     type: 'subtitle',
   },
   collection: {
-    background: '#e6e6e6',
     items: [
       {
         icon: {
@@ -88,6 +87,10 @@ Wireframe.defaultContent = {
         subheading: {
           type: 'subheading',
           content: 'Once upon a time and a very good time it was there was a moocow',
+        },
+        background: {
+          type: 'color',
+          color: '#d8d8d8',
         },
       },
       {
