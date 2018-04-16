@@ -13,66 +13,96 @@ class Wireframe extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, images}) => {
-    const {components: {Text, Image, Button}, style} = this.props
+    const {components: {Text, Image, Button, Resizer}, style} = this.props
+    const withoutList =
+      !this.getModifierValue('name') &&
+      !this.getModifierValue('hours') &&
+      !this.getModifierValue('date') &&
+      !this.getModifierValue('location') &&
+      !this.getModifierValue('cost')
 
-    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 30
-    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 100
+    const withoutContent = withoutList && !this.getModifierValue('body')
+
+    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 400
+    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 800
 
     return (
-      <div className={classNames(style.item, className)}>
-        {children}
-        <div className={style['picture-wrapper']}>
-          {_.map(n => (
-            <Image
-              pictureClassName={style.item__picture}
-              imageClassName={style.item__image}
-              bind={`items[${index}].picture[${n}]`}
-              size={{
-                'min-width: 320px': 480,
-                'min-width: 480px': 768,
-                'min-width: 768px': 570,
-              }}
-              resize={{
-                min: getMinResize,
-                max: getMaxResize,
-                disable: this.getOptionValue('disable-resizer'),
-              }}
-              key={n}
+      <Resizer
+        styleProp="minHeight"
+        bindToModifier={`items${index}`}
+        min={getMinResize}
+        max={getMaxResize}
+        disable={this.getOptionValue('disable-resizer')}
+      >
+        <div className={classNames(style.item, withoutContent && style['item--content-hidden'], className)}>
+          {children}
+          <div
+            className={style['picture-wrapper']}
+          >
+            {_.map(n => (
+              <Image
+                pictureClassName={style.item__picture}
+                imageClassName={style.item__image}
+                bind={`items[${index}].picture[${n}]`}
+                size={{
+                  'min-width: 320px': 480,
+                  'min-width: 480px': 768,
+                  'min-width: 768px': 570,
+                }}
+                resize={{
+                  disable: true,
+                }}
+                key={n}
+              />
+            ), images)}
+          </div>
+          <div className={style.item__content}>
+            {!withoutList && (
+              <ul className={style.item__list}>
+                {this.getModifierValue('name') && (
+                  <li className={style.brief}>
+                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[0].title`} />
+                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[0].desc`} />
+                  </li>
+                )}
+                {this.getModifierValue('hours') && (
+                  <li className={style.brief}>
+                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[1].title`} />
+                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[1].desc`} />
+                  </li>
+                )}
+                {this.getModifierValue('date') && (
+                  <li className={style.brief}>
+                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[2].title`} />
+                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[2].desc`} />
+                  </li>
+                )}
+                {this.getModifierValue('location') && (
+                  <li className={style.brief}>
+                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[3].title`} />
+                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[3].desc`} />
+                  </li>
+                )}
+                {this.getModifierValue('cost') && (
+                  <li className={style.brief}>
+                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[4].title`} />
+                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[4].desc`} />
+                  </li>
+                )}
+              </ul>
+            )}
+            {this.getModifierValue('body') && (
+              <Text tagName="p" className={style.item__body} bind={`items[${index}].body`} />
+            )}
+            <Button
+              linkClassName={style.link}
+              buttonClassName={style.button}
+              className={style.item__button}
+              bind={`items[${index}].cta`}
             />
-          ), images)}
+          </div>
         </div>
-        <div className={style.item__content}>
-          <ul className={style.item__list}>
-            <li className={style.brief}>
-              <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[0].title`} />
-              <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[0].desc`} />
-            </li>
-            <li className={style.brief}>
-              <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[1].title`} />
-              <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[1].desc`} />
-            </li>
-            <li className={style.brief}>
-              <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[2].title`} />
-              <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[2].desc`} />
-            </li>
-            <li className={style.brief}>
-              <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[3].title`} />
-              <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[3].desc`} />
-            </li>
-            <li className={style.brief}>
-              <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[4].title`} />
-              <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[4].desc`} />
-            </li>
-          </ul>
-          <Text tagName="p" className={style.item__body} bind={`items[${index}].body`} />
-          <Button
-            linkClassName={style.link}
-            buttonClassName={style.button}
-            className={style.item__button}
-            bind={`items[${index}].cta`}
-          />
-        </div>
-      </div>
+      </Resizer>
     )
   }
 
@@ -117,7 +147,7 @@ class Wireframe extends React.Component {
   }
 }
 
-Wireframe.components = _.pick(['Text', 'Collection', 'Image', 'Button'])($editor.components)
+Wireframe.components = _.pick(['Text', 'Collection', 'Image', 'Button', 'Resizer'])($editor.components)
 
 Wireframe.defaultContent = {
   title: {
@@ -401,8 +431,6 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  title: {defaultValue: true, label: 'Block tile', type: 'hidden'},
-  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox'},
   imagesQuantity: {
     children: [
       {id: '1', label: '1'},
@@ -417,6 +445,14 @@ Wireframe.modifierScheme = {
     type: 'radio-button-group',
     style: 'buttons',
   },
+  title: {defaultValue: true, label: 'Block tile', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox'},
+  name: {defaultValue: true, label: "Event's name", type: 'checkbox'},
+  hours: {defaultValue: true, label: 'Hours of event', type: 'checkbox'},
+  date: {defaultValue: true, label: "Event's date", type: 'checkbox'},
+  location: {defaultValue: true, label: "Event's location", type: 'checkbox'},
+  cost: {defaultValue: true, label: "Event's cost", type: 'checkbox'},
+  body: {defaultValue: true, label: "Event's details", type: 'checkbox'},
 }
 
 export default Wireframe
