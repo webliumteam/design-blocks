@@ -3,10 +3,14 @@
 .section {
   max-width: var(--ui-content-container);
   margin: 0 auto;
-
-  /* padding: var(--ui-content-gutter); */
   padding-top: 92px;
   padding-bottom: 32px;
+
+  @media (--ui-tablet-devices) {
+    padding: var(--ui-content-gutter);
+    padding-top: 46px;
+    padding-bottom: 63px;
+  }
 }
 
 .title {
@@ -17,16 +21,74 @@
 .subtitle {
   padding: 0 20px;
   text-align: center;
+
+  @media (--ui-tablet-devices) {
+    max-width: 613px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .collection-wrapper {
   padding-top: 40px;
   padding-bottom: 60px;
+
+  @media (--ui-tablet-devices) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .item {
+  position: relative;
   padding: 42px 20px;
   text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &:nth-child(odd)::before {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  @media (--ui-tablet-devices) {
+    max-width: 50%;
+    padding: 32px 35px;
+    flex-basis: 50%;
+
+    &:nth-child(odd)::before {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &:first-child::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &:nth-child(4n)::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &:nth-child(4n) + .item::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    &:nth-child(4n) + .item:last-child::before {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    &:nth-child(3):last-child::before {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
 
   &__icon {
     display: flex;
@@ -39,6 +101,10 @@
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
+
+    @media (--ui-tablet-devices) {
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -50,11 +116,30 @@
   display: flex;
   padding: 0 20px;
   flex-direction: column;
+
+  @media (--ui-tablet-devices) {
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .button,
 .link {
   &:first-child {
     margin-bottom: 15px;
+
+    @media (--ui-tablet-devices) {
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+
+  &:only-child {
+
+    @media (--ui-tablet-devices) {
+      margin-right: 0;
+    }
   }
 }
