@@ -214,13 +214,13 @@
       @media (--ui-medium-devices) {
         max-width: 100%;
         margin-bottom: 30px;
-        margin-right: 0;
         margin-left: 0;
+        margin-right: -10px;
         flex-basis: 100%;
       }
     }
 
-    .item.picture {
+    .item__picture {
 
       @media (--ui-medium-devices) {
         margin: 0;
@@ -232,6 +232,7 @@
       @media (--ui-medium-devices) {
         max-width: 100%;
         margin: 0 auto;
+        text-align: center;
       }
     }
   }
