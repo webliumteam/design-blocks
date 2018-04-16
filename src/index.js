@@ -11,117 +11,34 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+
   services: [
     {
-      title: {
-        content: 'Service 1',
-        type: 'heading',
-      },
-      description: {
-        content: 'Multipurpose assistance for online stores and offline retail businesses.',
-        type: 'text',
-      },
+      ...Component.defaultContent.services[0],
       picture: {
+        ...Component.defaultContent.services[0].picture,
         resourceRef: 'img_1.jpg',
-        alt: 'Service illustration photo',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
       },
     },
     {
-      title: {
-        content: 'Service 2',
-        type: 'heading',
-      },
-      description: {
-        content: 'Developing marketing and business strategy to help company grow fast.',
-        type: 'text',
-      },
+      ...Component.defaultContent.services[1],
       picture: {
+        ...Component.defaultContent.services[1].picture,
         resourceRef: 'img_2.jpg',
-        alt: 'Service illustration photo',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
       },
     },
     {
-      title: {
-        content: 'Service 3',
-        type: 'heading',
-      },
-      description: {
-        content: 'Building brand awareness for micro and small businesses to increase potential reach.',
-        type: 'text',
-      },
+      ...Component.defaultContent.services[2],
       picture: {
+        ...Component.defaultContent.services[2].picture,
         resourceRef: 'img_3.jpg',
-        alt: 'Service illustration photo',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
       },
     },
     {
-      title: {
-        content: 'Service 4',
-        type: 'heading',
-      },
-      description: {
-        content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
-        type: 'text',
-      },
+      ...Component.defaultContent.services[3],
       picture: {
+        ...Component.defaultContent.services[3].picture,
         resourceRef: 'img_4.jpg',
-        alt: 'Service illustration photo',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
       },
     },
   ],
