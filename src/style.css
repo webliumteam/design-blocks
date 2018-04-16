@@ -2,10 +2,6 @@
 
 /* start here */
 
-.item__title {
-  background-color: var(--ui-light-shade-color);
-}
-
 .items__title {
   font-weight: 700;
 }
@@ -14,4 +10,8 @@
   .item__icon {
     transform: translateY(-50%) rotate(0) translateX(0);
   }
+}
+
+.item__icon {
+  fill: var(--ui-brand-color);
 }
