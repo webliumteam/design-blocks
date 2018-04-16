@@ -1,3 +1,7 @@
 @import "wireframe-series-3-testimonials/src/style.css";
 
-/* start here */
+.item {
+  &__picture {
+    opacity: 1;
+  }
+}
