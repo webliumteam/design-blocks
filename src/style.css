@@ -15,11 +15,6 @@
   &__header {
     margin-bottom: 20px;
   }
-
-  .title,
-  .subtitle {
-    color: var(--ui-dark-shade-color);
-  }
 }
 
 .form {
