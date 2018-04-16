@@ -21,7 +21,9 @@ class Wireframe extends React.Component {
       !this.getModifierValue('location') &&
       !this.getModifierValue('cost')
 
-    const withoutContent = withoutList && !this.getModifierValue('body')
+    const withoutBody = !this.getModifierValue('body')
+
+    const withoutContent = withoutList && withoutBody
 
     const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 400
     const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 800
@@ -34,7 +36,7 @@ class Wireframe extends React.Component {
         max={getMaxResize}
         disable={this.getOptionValue('disable-resizer')}
       >
-        <div className={classNames(style.item, withoutContent && style['item--content-hidden'], className)}>
+        <div className={classNames(style.item, withoutList && style['item--list-hidden'], withoutBody && style['item--body-hidden'], withoutContent && style['item--content-hidden'], className)}>
           {children}
           <div
             className={style['picture-wrapper']}
