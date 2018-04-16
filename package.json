@@ -1,6 +1,6 @@
 {
-  "name": "design-default-master",
-  "version": "0.0.1",
+  "name": "design-poliwag-numbers_w1",
+  "version": "0.0.8",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,6 +31,6 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-default-master": "https://github.com/webliumteam/blocks#w/default/master/prod"
+    "wireframe-zapdos-numbers": "https://github.com/webliumteam/blocks#w/zapdos/numbers/prod"
   }
 }

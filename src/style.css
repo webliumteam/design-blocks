@@ -1,3 +1,13 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-numbers/src/style.css";
 
 /* start here */
+
+.item {
+  &__title {
+    font-weight: 700;
+  }
+
+  &__text {
+    font-weight: 700;
+  }
+}
