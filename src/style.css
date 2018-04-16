@@ -1,3 +1,17 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-3-faq/src/style.css";
 
 /* start here */
+
+.items__title {
+  font-weight: 700;
+}
+
+.item--active {
+  .item__icon {
+    transform: translateY(-50%) rotate(0) translateX(0);
+  }
+}
+
+.item__icon {
+  fill: var(--ui-brand-color);
+}
