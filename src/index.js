@@ -24,45 +24,6 @@ ExtendedWireframe.defaultContent = {
       opacity: 0.5,
     },
   },
-  title: {
-    content: 'Quantum Company',
-    type: 'heroTitle',
-  },
-  subtitle: {
-    content: 'We can execute even the most unpredictable ideas! ',
-    type: 'subtitle',
-  },
-  'cta-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Request a quote',
-    type: 'primary',
-    size: 'lg',
-  },
-  'cta-2': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Learn more',
-    type: 'secondary',
-    size: 'lg',
-  },
-  topCaption: 'welcome',
 }
 
 ExtendedWireframe.modifierScheme = {
