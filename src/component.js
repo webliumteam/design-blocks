@@ -25,25 +25,25 @@ class Wireframe extends React.Component {
     const withoutContent = withoutList && withoutBody
     const twoRows = parseInt(this.getModifierValue('imagesQuantity'), 10) > 3
 
-    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 400
+    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 300
     const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 800
 
     return (
-      <Resizer
-        styleProp="minHeight"
-        bindToModifier={`items${index}`}
-        min={getMinResize}
-        max={getMaxResize}
-        disable={this.getOptionValue('disable-resizer')}
+      <div className={classNames(style.item, className, {
+        [style['item--two-rows']]: twoRows,
+        [style['item--list-hidden']]: withoutList,
+        [style['item--body-hidden']]: withoutBody,
+        [style['item--content-hidden']]: withoutContent,
+      })}
       >
-        <div className={classNames(style.item, className, {
-          [style['item--two-rows']]: twoRows,
-          [style['item--list-hidden']]: withoutList,
-          [style['item--body-hidden']]: withoutBody,
-          [style['item--content-hidden']]: withoutContent,
-        })}
+        {children}
+        <Resizer
+          styleProp="minHeight"
+          bindToModifier={`items${index}`}
+          min={getMinResize}
+          max={getMaxResize}
+          disable={this.getOptionValue('disable-resizer')}
         >
-          {children}
           <div
             className={style['picture-wrapper']}
           >
@@ -65,53 +65,53 @@ class Wireframe extends React.Component {
               />
             ), images)}
           </div>
-          <div className={style.item__content}>
-            {!withoutList && (
-              <ul className={style.item__list}>
-                {this.getModifierValue('name') && (
-                  <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[0].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[0].desc`} />
-                  </li>
-                )}
-                {this.getModifierValue('hours') && (
-                  <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[1].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[1].desc`} />
-                  </li>
-                )}
-                {this.getModifierValue('date') && (
-                  <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[2].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[2].desc`} />
-                  </li>
-                )}
-                {this.getModifierValue('location') && (
-                  <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[3].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[3].desc`} />
-                  </li>
-                )}
-                {this.getModifierValue('cost') && (
-                  <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[4].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[4].desc`} />
-                  </li>
-                )}
-              </ul>
-            )}
-            {this.getModifierValue('body') && (
-              <Text tagName="p" className={style.item__body} bind={`items[${index}].body`} />
-            )}
-            <Button
-              linkClassName={style.link}
-              buttonClassName={style.button}
-              className={style.item__button}
-              bind={`items[${index}].cta`}
-            />
-          </div>
+        </Resizer>
+        <div className={style.item__content}>
+          {!withoutList && (
+            <ul className={style.item__list}>
+              {this.getModifierValue('name') && (
+                <li className={style.brief}>
+                  <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[0].title`} />
+                  <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[0].desc`} />
+                </li>
+              )}
+              {this.getModifierValue('hours') && (
+                <li className={style.brief}>
+                  <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[1].title`} />
+                  <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[1].desc`} />
+                </li>
+              )}
+              {this.getModifierValue('date') && (
+                <li className={style.brief}>
+                  <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[2].title`} />
+                  <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[2].desc`} />
+                </li>
+              )}
+              {this.getModifierValue('location') && (
+                <li className={style.brief}>
+                  <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[3].title`} />
+                  <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[3].desc`} />
+                </li>
+              )}
+              {this.getModifierValue('cost') && (
+                <li className={style.brief}>
+                  <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[4].title`} />
+                  <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[4].desc`} />
+                </li>
+              )}
+            </ul>
+          )}
+          {this.getModifierValue('body') && (
+            <Text tagName="p" className={style.item__body} bind={`items[${index}].body`} />
+          )}
+          <Button
+            linkClassName={style.link}
+            buttonClassName={style.button}
+            className={style.item__button}
+            bind={`items[${index}].cta`}
+          />
         </div>
-      </Resizer>
+      </div>
     )
   }
 
