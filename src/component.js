@@ -22,8 +22,8 @@ class Wireframe extends React.Component {
       !this.getModifierValue('cost')
 
     const withoutBody = !this.getModifierValue('body')
-
     const withoutContent = withoutList && withoutBody
+    const twoRows = parseInt(this.getModifierValue('imagesQuantity'), 10) > 3
 
     const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 400
     const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 800
@@ -36,7 +36,13 @@ class Wireframe extends React.Component {
         max={getMaxResize}
         disable={this.getOptionValue('disable-resizer')}
       >
-        <div className={classNames(style.item, withoutList && style['item--list-hidden'], withoutBody && style['item--body-hidden'], withoutContent && style['item--content-hidden'], className)}>
+        <div className={classNames(style.item, className, {
+          [style['item--two-rows']]: twoRows,
+          [style['item--list-hidden']]: withoutList,
+          [style['item--body-hidden']]: withoutBody,
+          [style['item--content-hidden']]: withoutContent,
+        })}
+        >
           {children}
           <div
             className={style['picture-wrapper']}
