@@ -1,3 +1,24 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-3-cover/src/style.css";
 
 /* start here */
+.section {
+  padding: 50px 0;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding: 118px 0;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+  }
+}
+
+.form {
+  &__button {
+    border: 0;
+  }
+}
