@@ -10,15 +10,7 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
-
-  background: {
-    type: 'image',
-    position: {
-      type: 'cover',
-      cover: '50% 50%',
-    },
-    resourceRef: 'bg.jpg',
-  },
+  ...Component.defaultContent,
   testimonials: [
     {
       title: {
@@ -113,12 +105,8 @@ ExtendedWireframe.defaultContent = {
 }
 
 ExtendedWireframe.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  ...Component.modifierScheme,
   subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Reviewer name', type: 'checkbox'},
-  position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
-  date: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   'top-caption': {defaultValue: true, label: 'Top caption', type: 'hidden'},
 }
 

@@ -6,14 +6,14 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   font-family: var(--ui-quote-font-family);
-  font-size: calc(var(--ui-text-size)*0.866665);
-  font-weight: calc(var(--ui-text-font-weight)*1.5);
+  font-size: calc(var(--ui-text-size) * 0.866665);
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
 .title {
   font-family: var(--ui-quote-font-family);
-  font-weight: calc(var(--ui-block-title-font-weight)*2);
+  font-weight: 700;
   position: relative;
   margin-bottom: 60px;
 
@@ -49,8 +49,7 @@
   &__title {
     order: 1;
     font-family: var(--ui-quote-font-family);
-    font-size: var(--ui-heading-size);
-    font-weight: calc(var(--ui-heading-font-weight)*1.5);
+    font-weight: 600;
   }
 
   &__position {
@@ -67,7 +66,8 @@
       display: block;
       height: 3px;
       width: 30px;
-      background-color: #dde5ed;
+      background-color: var(--ui-dark-shade-color);
+      opacity: 0.3;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
