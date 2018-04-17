@@ -18,16 +18,16 @@ class Wireframe extends React.Component {
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        <Text tagName="h2" className={style.item__title} bind={`items[${index}].title`} />
+        <Text tagName="h2" className={style.item__title} bind={`collection[${index}].title`} />
         {this.getModifierValue('body') && (
-          <Text tagName="p" className={style.item__descv} bind={`items[${index}].desc`} />
+          <Text tagName="p" className={style.item__descv} bind={`collection[${index}].desc`} />
         )}
         {this.getModifierValue('item-button') && (
           <Button
             linkClassName={style.link}
             buttonClassName={style.button}
             className={style.item__button}
-            bind={`items[${index}].cta`}
+            bind={`collection[${index}].cta`}
           />
         )}
       </div>
@@ -42,7 +42,7 @@ class Wireframe extends React.Component {
         <div className={style.section__inner}>
           <Collection
             className={style['items-wrapper']}
-            bind="items"
+            bind="collection"
             Item={this.collectionItem}
             itemProps={{
               modifier: $block.modifier,
@@ -75,77 +75,65 @@ Wireframe.defaultContent = {
     content: 'Hello world',
     type: 'blockTitle',
   },
-  items: [
-    {
-      background: {
-        type: 'image',
-        position: {
-          type: 'cover',
-          cover: '50% 50%',
-        },
-        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5ad5a3826678f100250985e4.jpeg',
-        imageColor: '#fafafa',
-      },
-      title: {
-        type: 'heading',
-        content: 'Spring flowers',
-      },
-      desc: {
-        type: 'text',
-        content: 'Take a look at our best collection of beautiful flowers',
-      },
-      cta: {
-        textValue: 'Order spring flowers',
-        type: 'primary',
-      },
+  collection: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5ad5a3826678f100250985e4.jpeg',
+          imageColor: [250, 250, 250],
+        }],
+      ],
     },
-    {
-      background: {
-        type: 'image',
-        position: {
-          type: 'cover',
-          cover: '50% 50%',
+    items: [
+      {
+        title: {
+          type: 'heading',
+          content: 'Spring flowers',
         },
-        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5ad5a3826678f100250985e4.jpeg',
-        imageColor: '#fafafa',
-      },
-      title: {
-        type: 'heading',
-        content: 'Summer flowers',
-      },
-      desc: {
-        type: 'text',
-        content: 'Take a look at our best collection of beautiful flowers',
-      },
-      cta: {
-        textValue: 'Order summer flowers',
-        type: 'primary',
-      },
-    },
-    {
-      background: {
-        type: 'image',
-        position: {
-          type: 'cover',
-          cover: '50% 50%',
+        desc: {
+          type: 'text',
+          content: 'Take a look at our best collection of beautiful flowers',
         },
-        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5ad5a3826678f100250985e4.jpeg',
-        imageColor: '#fafafa',
+        cta: {
+          textValue: 'Order spring flowers',
+          type: 'primary',
+        },
       },
-      title: {
-        type: 'heading',
-        content: 'Autumn flowers',
+      {
+        title: {
+          type: 'heading',
+          content: 'Summer flowers',
+        },
+        desc: {
+          type: 'text',
+          content: 'Take a look at our best collection of beautiful flowers',
+        },
+        cta: {
+          textValue: 'Order summer flowers',
+          type: 'primary',
+        },
       },
-      desc: {
-        type: 'text',
-        content: 'Take a look at our best collection of beautiful flowers',
+      {
+        title: {
+          type: 'heading',
+          content: 'Autumn flowers',
+        },
+        desc: {
+          type: 'text',
+          content: 'Take a look at our best collection of beautiful flowers',
+        },
+        cta: {
+          textValue: 'Order autumn flowers',
+          type: 'primary',
+        },
       },
-      cta: {
-        textValue: 'Order autumn flowers',
-        type: 'primary',
-      },
-    },
-  ],
+    ],
+  },
   cta: {
     textValue: 'More about our flowers',
     type: 'secondary',
