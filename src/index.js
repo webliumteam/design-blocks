@@ -12,48 +12,15 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   partners: {
-    background: {
-      'nth-child': [
-        ['n', {
-          color: 'light-shade-color',
-          type: 'color',
-        }],
-      ],
-    },
     items: [
       {
-        title: {
-          content: 'Samsung',
-          type: 'heading',
-        },
-        desc: {
-          content: '<span style="font-weight: bold">Samsung.</span> It doesn’t need a lot of words. High-quality tech products with superior design.',
-          type: 'text',
-        },
+        ...Component.defaultContent.partners[0],
         logo: {
-          image: {
-            resourceRef: 'cribspot.jpg',
-            alt: 'sumsung',
-            width: 220,
-            height: 122,
-          },
-        },
-        picture: {
-          alt: 'Samsung logo',
-        },
-        cta: {
-          actionConfig: {
-            action: 'link',
-            actions: {
-              link: {
-                type: '',
-                innerPage: '',
-                url: '',
-              },
-            },
-          },
-          textValue: 'Learn more',
-          type: 'link',
+          ...Component.defaultContent.partners[0].logo,
+          resourceRef: 'cribspot.jpg',
+          alt: 'sumsung',
+          width: 220,
+          height: 122,
         },
       },
       {
