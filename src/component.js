@@ -13,20 +13,20 @@ class Wireframe extends React.Component {
     const {components: {Icon, Text}, style} = this.props
     return (
       <div className={classNames(style.item, className)}>
-        <Icon
+        {this.getModifierValue('icon') && (<Icon
           bind={`collection[${index}].icon`}
           className={classNames(style.icon, style.item__icon)}
-        />
-        <Text
+        />)}
+        {this.getModifierValue('heading') && (<Text
           tagName="h3"
           className={classNames(style.heading, style.item__heading)}
           bind={`collection[${index}].heading`}
-        />
-        <Text
+        />)}
+        {this.getModifierValue('subheading') && (<Text
           tagName="p"
           className={classNames(style.subheading, style.item__subheading)}
           bind={`collection[${index}].subheading`}
-        />
+        />)}
         {children}
       </div>
     )
@@ -38,23 +38,26 @@ class Wireframe extends React.Component {
     return (
       <section className={style.section}>
         <Text tagName="h1" className={style.title} bind="title" />
-        <Text tagName="p" className={style.subtitle} bind="subtitle" />
+        {this.getModifierValue('subtitle') && (<Text tagName="p" className={style.subtitle} bind="subtitle" />)}
         <Collection
           className={style['collection-wrapper']}
           bind="collection"
           Item={this.collectionItem}
+          itemProps={{
+            modifier: $block.modifier,
+          }}
         />
         <div className={style['btn-group']}>
-          <Button
+          {_.get(['modifier', 'primaryButton'], $block) && (<Button
             buttonClassName={style.button}
             linkClassName={style.link}
             bind="button"
-          />
-          <Button
+          />) }
+          {_.get(['modifier', 'secondaryButton'], $block) && (<Button
             buttonClassName={style.button}
             linkClassName={style.link}
             bind="secondaryButton"
-          />
+          />)}
         </div>
       </section>
     )
@@ -167,6 +170,16 @@ Wireframe.defaultContent = {
     textValue: 'Medium button',
     type: 'secondary',
   },
+}
+
+
+Wireframe.modifierScheme = {
+  primaryButton: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  secondaryButton: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Block subtitle', type: 'checkbox'},
+  icon: {defaultValue: true, label: 'Icon item', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Heading Item', type: 'checkbox'},
+  subheading: {defaultValue: true, label: 'Subheading item', type: 'checkbox'},
 }
 
 export default Wireframe
