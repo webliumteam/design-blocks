@@ -43,6 +43,7 @@ class Wireframe extends React.Component {
           >
             {_.map(n => (
               <Image
+                wrapperClassName={style['item__picture-wrapper']}
                 pictureClassName={style.item__picture}
                 imageClassName={style.item__image}
                 bind={`items[${index}].picture[${n}]`}
@@ -447,7 +448,7 @@ Wireframe.modifierScheme = {
     type: 'radio-button-group',
     style: 'buttons',
   },
-  title: {defaultValue: true, label: 'Block tile', type: 'hidden'},
+  title: {defaultValue: true, label: 'Block tile', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox'},
   name: {defaultValue: true, label: "Event's name", type: 'checkbox'},
   hours: {defaultValue: true, label: 'Hours of event', type: 'checkbox'},
