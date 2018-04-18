@@ -16,8 +16,28 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.items[0],
       picture: [
         {
+          ...Component.defaultContent.items[0].picture[0],
           resourceRef: 'pic1.jpg',
-          alt: 'Picture about the company',
+        },
+        {
+          ...Component.defaultContent.items[0].picture[1],
+          resourceRef: 'pic1.jpg',
+        },
+        {
+          ...Component.defaultContent.items[0].picture[2],
+          resourceRef: 'pic1.jpg',
+        },
+        {
+          ...Component.defaultContent.items[0].picture[3],
+          resourceRef: 'pic1.jpg',
+        },
+        {
+          ...Component.defaultContent.items[0].picture[4],
+          resourceRef: 'pic1.jpg',
+        },
+        {
+          ...Component.defaultContent.items[0].picture[5],
+          resourceRef: 'pic1.jpg',
         },
       ],
     },
@@ -25,8 +45,28 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.items[1],
       picture: [
         {
+          ...Component.defaultContent.items[1].picture[0],
           resourceRef: 'pic2.jpg',
-          alt: 'Picture about the company',
+        },
+        {
+          ...Component.defaultContent.items[1].picture[1],
+          resourceRef: 'pic2.jpg',
+        },
+        {
+          ...Component.defaultContent.items[1].picture[2],
+          resourceRef: 'pic2.jpg',
+        },
+        {
+          ...Component.defaultContent.items[1].picture[3],
+          resourceRef: 'pic2.jpg',
+        },
+        {
+          ...Component.defaultContent.items[1].picture[4],
+          resourceRef: 'pic2.jpg',
+        },
+        {
+          ...Component.defaultContent.items[1].picture[5],
+          resourceRef: 'pic2.jpg',
         },
       ],
     },
@@ -34,8 +74,28 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.items[2],
       picture: [
         {
+          ...Component.defaultContent.items[2].picture[0],
           resourceRef: 'pic3.jpg',
-          alt: 'Picture about the company',
+        },
+        {
+          ...Component.defaultContent.items[2].picture[1],
+          resourceRef: 'pic3.jpg',
+        },
+        {
+          ...Component.defaultContent.items[2].picture[2],
+          resourceRef: 'pic3.jpg',
+        },
+        {
+          ...Component.defaultContent.items[2].picture[3],
+          resourceRef: 'pic3.jpg',
+        },
+        {
+          ...Component.defaultContent.items[2].picture[4],
+          resourceRef: 'pic3.jpg',
+        },
+        {
+          ...Component.defaultContent.items[2].picture[5],
+          resourceRef: 'pic3.jpg',
         },
       ],
     },
