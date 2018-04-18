@@ -2,6 +2,12 @@
 
 /* start here */
 .section {
+
+  @media (min-width: 992px) {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
   &__inner {
     padding: 40px;
 
@@ -27,7 +33,8 @@
   }
 
   .subtitle {
-    color: #939696;
+    color: var(--ui-dark-shade-color );
+    opacity: 0.6;
 
     @media (min-width: 768px) {
       font-size: var(--ui-subtitle-size);
@@ -51,7 +58,8 @@
 
   &__field {
     background-color: var(--ui-light-shade-color);
-    color: #7d7d7d;
+    color: var(--ui-dark-shade-color );
+    opacity: 0.6;
     font-size: var(--ui-text-size);
     text-align: center;
     padding: 12px;
@@ -59,7 +67,8 @@
     margin-top: 0;
     border-radius: 0;
     border: 0;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid;
+    border-bottom-color: #dcdcdc;
 
     &::placeholder {
       color: currentColor;
