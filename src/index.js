@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-series-4-contacts/src/component'
 import style from './style.css'
 
 import options from './options.json'
@@ -11,6 +11,13 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  socialIcons: {
+    ...Component.defaultContent.socialIcons,
+    design: {
+      ...Component.defaultContent.socialIcons.design,
+      color: 'brand-color',
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
