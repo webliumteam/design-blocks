@@ -20,7 +20,7 @@ class Wireframe extends React.Component {
         {children}
         <Text tagName="h2" className={style.item__title} bind={`collection[${index}].title`} />
         {this.getModifierValue('body') && (
-          <Text tagName="p" className={style.item__descv} bind={`collection[${index}].desc`} />
+          <Text tagName="p" className={style.item__desc} bind={`collection[${index}].desc`} />
         )}
         {this.getModifierValue('item-button') && (
           <Button
@@ -137,21 +137,11 @@ Wireframe.defaultContent = {
   cta: {
     textValue: 'More about our flowers',
     type: 'secondary',
+    size: 'lg',
   },
 }
 
 Wireframe.modifierScheme = {
-  itemsQuantity: {
-    children: [
-      {id: '1', label: '1'},
-      {id: '2', label: '2'},
-      {id: '3', label: '3'},
-    ],
-    defaultValue: '3',
-    name: 'Items in block',
-    type: 'radio-button-group',
-    style: 'buttons',
-  },
   body: {defaultValue: true, label: 'Title description', type: 'checkbox'},
   'item-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
   cta: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
