@@ -111,8 +111,10 @@
   flex-direction: column;
 
   @media (--ui-tablet-devices) {
+    margin: -15px;
     padding: 0;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
   }
@@ -124,15 +126,7 @@
     margin-bottom: 15px;
 
     @media (--ui-tablet-devices) {
-      margin-right: 30px;
-      margin-bottom: 0;
-    }
-  }
-
-  &:only-child {
-
-    @media (--ui-tablet-devices) {
-      margin-right: 0;
+      margin: 15px;
     }
   }
 }

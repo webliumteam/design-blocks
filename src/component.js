@@ -71,12 +71,24 @@ Wireframe.defaultContent = {
     content: 'Why Us',
     type: 'blockTitle',
   },
-
   subtitle: {
     content: 'Once upon a time and a very good time it was there was a moocow coming down along the road and this moocow',
     type: 'subtitle',
   },
   collection: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5ad5a3826678f100250985e4.jpeg',
+          imageColor: [250, 250, 250],
+        }],
+      ],
+    },
     items: [
       {
         icon: {
@@ -90,10 +102,6 @@ Wireframe.defaultContent = {
         subheading: {
           type: 'subheading',
           content: 'Once upon a time and a very good time it was there was a moocow',
-        },
-        background: {
-          type: 'color',
-          color: '#d8d8d8',
         },
       },
       {
@@ -140,7 +148,6 @@ Wireframe.defaultContent = {
       },
     ],
   },
-
   button: {
     actionConfig: {
       action: 'link',
@@ -155,7 +162,6 @@ Wireframe.defaultContent = {
     textValue: 'Medium button',
     type: 'primary',
   },
-
   secondaryButton: {
     actionConfig: {
       action: 'link',
