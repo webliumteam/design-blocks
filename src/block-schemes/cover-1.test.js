@@ -49,7 +49,6 @@ const W_ZAPDOS_COVER = {
 
 const D_ZAPDOS_COVER = {
   ...W_ZAPDOS_COVER,
-  theme: "dark",
   background: {
     type: "image",
     position: {

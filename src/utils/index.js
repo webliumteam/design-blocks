@@ -1,14 +1,22 @@
-const string = () => ({
-  type: "string"
+const number = options => ({
+  type: "number",
+  ...options
 });
 
-const object = properties => ({
+const string = options => ({
+  type: "string",
+  ...options
+});
+
+const object = (properties, options) => ({
   type: "object",
   additionalProperties: false,
-  properties
+  properties,
+  ...options
 });
 
 module.exports = {
+  number,
   string,
   object
 };
