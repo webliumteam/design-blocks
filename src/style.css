@@ -124,6 +124,7 @@
 
     @media (--ui-medium-devices) {
       width: auto;
+      max-width: calc(100% - 30px);
       margin-top: 25px;
     }
   }

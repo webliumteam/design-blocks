@@ -62,7 +62,7 @@ Wireframe.defaultContent = {
       {
         type: 'phone',
         id: 'contactForm_phoneNumber ',
-        title: 'Phone number ',
+        title: 'Phone number',
         placeholder: '',
         required: true,
       },
