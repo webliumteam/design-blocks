@@ -5,10 +5,6 @@
   &__header {
     margin-bottom: 38px;
   }
-
-  .article__text {
-    color: #7d7d7d;
-  }
 }
 
 .article {
@@ -16,7 +12,8 @@
   text-align: center;
 
   @media (min-width: 992px) {
-    padding: 0 44px;
+    padding-right: 44px;
+    padding-left: 44px;
     align-items: center;
     text-align: left;
   }
@@ -33,10 +30,15 @@
   &__icon {
     width: 50px;
     height: 50px;
-    margin: 0 auto 26px;
+    margin-right: auto;
+    margin-bottom: 26px;
+    margin-left: auto;
 
     @media (min-width: 992px) {
-      margin: 0 68px 0 0;
+      margin-top: 0;
+      margin-right: 68px;
+      margin-bottom: 0;
+      margin-left: 0;
     }
   }
 }
