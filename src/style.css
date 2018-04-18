@@ -25,14 +25,14 @@
     &:empty {
       margin-bottom: 0;
     }
-
-    @media (--ui-phone-devices) {
-      padding: 7.2727% 10% 0;
-    }
   }
 
   &__inner {
     margin: 0 auto;
+
+    @media (--ui-phone-devices) {
+      padding: 7.2727% 10% 9.0909%;
+    }
 
     @media (--ui-tablet-devices) {
       max-width: 550px;
@@ -75,15 +75,12 @@
     resize: none;
   }
 
-  @media (--ui-phone-devices) {
-    padding: 0 16.3636% 9.0909%;
-  }
-
   @media (--ui-medium-devices) {
     display: flex;
-    padding: 0 10% 7.2727%;
+    padding: 0;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-end;
   }
 
   &__item {
@@ -92,6 +89,7 @@
     text-align: left;
 
     @media (--ui-medium-devices) {
+      max-width: calc(33.3333% - 30px);
       margin: 0 15px;
       flex-basis: calc(33.3333% - 30px);
     }
