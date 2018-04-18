@@ -1,4 +1,4 @@
-const { object, string } = require("../utils");
+const { object, string, bool } = require("../utils");
 
 const scheme = object({
   type: string(),
@@ -13,7 +13,12 @@ const scheme = object({
     })
   }),
   textValue: string(),
-  size: string()
+  size: string(),
+  iconEnabled: bool(),
+  iconAlignment: string(),
+  icon: object({
+    svg: string()
+  })
 });
 
 module.exports = scheme;

@@ -8,6 +8,10 @@ const string = options => ({
   ...options
 });
 
+const bool = () => ({
+  type: "boolean"
+});
+
 const object = (properties, options) => ({
   type: "object",
   additionalProperties: false,
@@ -18,5 +22,6 @@ const object = (properties, options) => ({
 module.exports = {
   number,
   string,
+  bool,
   object
 };

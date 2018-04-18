@@ -20,7 +20,12 @@ const scheme = {
         type: string(),
         cover: string()
       }),
-      resourceRef: string()
+      resourceRef: string(),
+      overlay: object({
+        type: string(),
+        color: string(),
+        opacity: number()
+      })
     })
   ]
 };
