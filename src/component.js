@@ -48,7 +48,7 @@ class Wireframe extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
+          {this.getModifierValue('cta') && (
             <div className={style['btns-group']}>
               <Button
                 className={style['btns-group__button']}
