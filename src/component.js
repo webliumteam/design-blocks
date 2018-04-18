@@ -82,8 +82,8 @@ class Block extends React.Component {
             settings={{
                 dots: false,
                 arrows: true,
-                swipeToSlide: true,
                 focusOnSelect: true,
+                slidesToScroll: 1,
                 slidesToShow: 5,
                 asNavFor: this.state.nav1,
                 responsive: [
