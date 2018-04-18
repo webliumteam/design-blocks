@@ -9,6 +9,20 @@
   letter-spacing: -0.1px;
 }
 
+.articles-wrapper {
+  &:first-child {
+    .article {
+      &:first-of-type {
+        margin-top: 0;
+
+        @media (min-width: 768px) {
+          margin-top: 65px;
+        }
+      }
+    }
+  }
+}
+
 .article {
   margin-top: 65px;
 
@@ -87,6 +101,16 @@
 
   .subtitle {
     margin-top: 38px;
+  }
+
+  .articles-wrapper {
+    &:first-child {
+      .article {
+        &:first-of-type {
+          margin-top: 50px;
+        }
+      }
+    }
   }
 
   .article {
