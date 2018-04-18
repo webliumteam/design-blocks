@@ -11,137 +11,79 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-
   background: {
     type: 'color',
     color: '#ffffff',
   },
   blog: [
     {
+      ...Component.defaultContent.blog[0],
       title: {
+        ...Component.defaultContent.blog[0].title,
         content: 'Brand image',
-        type: 'heading',
       },
       description: {
+        ...Component.defaultContent.blog[0].description,
         content: 'We guard your brand, help draw new workers, and build positive working conditions by preserving your facility clean with the ShinyHouse services.',
-        type: 'text',
       },
       category: {
+        ...Component.defaultContent.blog[0].category,
         content: 'Positive working conditions',
-        type: 'caption',
-      },
-      date: {
-        content: 'September 22, 2017',
-        type: 'caption',
       },
       picture: {
+        ...Component.defaultContent.blog[0].picture,
         resourceRef: '1.png',
-        alt: 'Article illustration photo',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
       },
     },
     {
+      ...Component.defaultContent.blog[1],
       title: {
+        ...Component.defaultContent.blog[1].title,
         content: 'Safety guarantee',
-        type: 'heading',
       },
       description: {
+        ...Component.defaultContent.blog[1].description,
         content: 'A clean working place means it is a safe one. Greasy, sticky, and dirty floors may result in slips and falls. We can proudly guarantee you properly cleaned facility’s floors.',
-        type: 'text',
       },
       category: {
+        ...Component.defaultContent.blog[1].category,
         content: 'Safe working place',
-        type: 'caption',
-      },
-      date: {
-        content: 'September 22, 2017',
-        type: 'caption',
       },
       picture: {
+        ...Component.defaultContent.blog[1].picture,
         resourceRef: '2.png',
-        alt: 'Article illustration photo',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
       },
     },
     {
+      ...Component.defaultContent.blog[2],
       title: {
+        ...Component.defaultContent.blog[2].title,
         content: 'Productivity',
-        type: 'heading',
       },
       description: {
+        ...Component.defaultContent.blog[2].description,
         content: 'Clean work environment supports good mental and physical health. The facility serviced by a ShinyHouse not only seems nice but can also play a positive role in growing productivity.',
-        type: 'text',
       },
       category: {
+        ...Component.defaultContent.blog[2].category,
         content: 'Helping in productivity growth',
-        type: 'caption',
-      },
-      date: {
-        content: 'September 22, 2017',
-        type: 'caption',
       },
       picture: {
+        ...Component.defaultContent.blog[2].picture,
         resourceRef: '3.png',
-        alt: 'Article illustration photo',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
       },
     },
   ],
   title: {
+    ...Component.defaultContent.title,
     content: 'Advantages',
-    type: 'blockTitle',
   },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-
-  'block-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
-  'post-description': {defaultValue: true, label: 'Post main text', type: 'checkbox'},
-  'post-image': {defaultValue: true, label: 'Post image', type: 'checkbox'},
-  'post-link': {defaultValue: false, label: 'Post link', type: 'checkbox'},
-  'post-publish-date': {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  'block-button': {defaultValue: false, label: 'Button', type: 'hidden'},
+  'post-link': {defaultValue: false, label: 'Post link', type: 'hidden'},
 }
 
 export default ExtendedWireframe
