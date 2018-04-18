@@ -38,8 +38,10 @@
 .articles-wrapper {
   margin: 0;
 
-  &:last-child {
-    margin-bottom: -54px;
+  @media (min-width: 992px) {
+    &:last-child {
+      margin-bottom: -54px;
+    }
   }
 }
 
