@@ -1,1 +1,132 @@
 @import "media.css";
+
+.section {
+  min-width: 320px;
+  text-align: center;
+  font-size: var(--ui-text-size);
+  color: var(--ui-text-color);
+  line-height: var(--ui-text-line-height);
+  font-family: var(--ui-text-font-family);
+  font-weight: var(--ui-text-font-weight);
+  word-wrap: break-word;
+
+  @media (--ui-tablet-devices) {
+    padding: 60px 0;
+  }
+
+  @media (--ui-medium-devices) {
+    padding: 75px 0;
+  }
+
+  &__header {
+    padding: 40px 20px 0;
+    margin-bottom: 25px;
+
+    &:empty {
+      margin-bottom: 0;
+    }
+
+    @media (--ui-phone-devices) {
+      padding: 7.2727% 10% 0;
+    }
+  }
+
+  &__inner {
+    margin: 0 auto;
+
+    @media (--ui-tablet-devices) {
+      max-width: 550px;
+      border-radius: 3px;
+    }
+
+    @media (--ui-medium-devices) {
+      max-width: 90%;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 15px;
+
+  @media (--ui-medium-devices) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+.subtitle {
+  margin-bottom: 10px;
+
+  @media (--ui-tablet-devices) {
+    font-size: calc(var(--ui-subtitle-size) * 0.8);
+  }
+
+  @media (--ui-medium-devices) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+.form {
+  padding: 0 20px 50px;
+
+  textarea {
+    min-height: 69px;
+    resize: none;
+  }
+
+  @media (--ui-phone-devices) {
+    padding: 0 16.3636% 9.0909%;
+  }
+
+  @media (--ui-medium-devices) {
+    display: flex;
+    padding: 0 10% 7.2727%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 20px;
+    text-align: left;
+
+    @media (--ui-medium-devices) {
+      margin: 0 15px;
+      flex-basis: calc(33.3333% - 30px);
+    }
+  }
+
+  [data-node="description"] {
+    display: block;
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    height: 46px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: inherit;
+    text-overflow: ellipsis;
+    background-color: rgba(103, 103, 103, 0.2);
+
+    @media (--ui-medium-devices) {
+      margin-top: 10px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 20px;
+
+    @media (--ui-medium-devices) {
+      width: auto;
+      margin-top: 25px;
+    }
+  }
+}
