@@ -1,3 +1,29 @@
 @import "wireframe-series-2-gallery/src/style.css";
 
 /* start here */
+.item__picture {
+
+  @media (min-width: 480px) {
+    min-height: 400px;
+  }
+
+  @media (min-width: 768px) {
+    min-height: 220px;
+  }
+}
+
+.items-wrapper :global {
+
+  /* styles for default arrows */
+
+  .slick-arrow-default {
+
+    @media (min-width: 480px) {
+      top: 50%;
+    }
+
+    @media (min-width: 768px) {
+      top: 130px;
+    }
+  }
+}
