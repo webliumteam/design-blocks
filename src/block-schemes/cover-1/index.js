@@ -1,9 +1,9 @@
-const { object, string } = require("../utils");
+const { object, string } = require("../../utils");
 const {
   backgroundScheme,
   btnScheme,
   textScheme
-} = require("../component-schemes");
+} = require("../../component-schemes");
 
 const scheme = object({
   theme: string(),
