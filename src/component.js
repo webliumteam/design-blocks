@@ -52,7 +52,7 @@ class Wireframe extends React.Component {
             className={style.button}
             linkClassName={style.link}
             bind="button"
-          />) }
+          />)}
           {_.get(['modifier', 'secondaryButton'], $block) && (<Button
             className={style.button}
             linkClassName={style.link}
@@ -67,6 +67,10 @@ class Wireframe extends React.Component {
 Wireframe.components = _.pick(['Text', 'Icon', 'Button', 'Collection'])($editor.components)
 
 Wireframe.defaultContent = {
+  background: {
+    type: 'color',
+    color: '#fff',
+  },
   title: {
     content: 'Why Us',
     type: 'blockTitle',
