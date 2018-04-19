@@ -1,3 +1,59 @@
 @import "wireframe-series-3-gallery/src/style.css";
 
 /* start here */
+
+.title {
+  font-weight: var(--ui-heading-lg-font-weight);
+
+  @media (min-width: 992px) {
+    margin-bottom: 24px;
+  }
+}
+
+.subtitle {
+  font-weight: var(--ui-heading-lg-font-weight);
+}
+
+.items-wrapper {
+  :global {
+    .slick-arrow-default {
+      width: 14px;
+      height: 31px;
+      color: var(--ui-text-color);
+    }
+
+    .slick-arrow-default.slick-prev-default {
+      left: 20px;
+
+      @media (min-width: 768px) {
+        left: -30px;
+      }
+
+      @media (min-width: 992px) {
+        left: -30px;
+      }
+    }
+
+    .slick-arrow-default.slick-next-default {
+      right: 20px;
+
+      @media (min-width: 768px) {
+        right: -30px;
+      }
+
+      @media (min-width: 992px) {
+        right: -30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .preview-slider .item__picture {
+    padding-top: 58%;
+  }
+
+  .items-wrapper .item__picture {
+    padding-top: 68%;
+  }
+}
