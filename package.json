@@ -1,6 +1,6 @@
 {
   "name": "wireframe-series-2-contacts",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "category": "contacts",
   "main": "src/index.js",
