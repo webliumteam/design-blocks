@@ -13,6 +13,7 @@ class Wireframe extends React.Component {
     const {components: {Icon, Text}, style} = this.props
     return (
       <div className={classNames(style.item, className)}>
+        {children}
         {this.getModifierValue('icon') && (<Icon
           bind={`collection[${index}].icon`}
           className={classNames(style.icon, style.item__icon)}
@@ -27,7 +28,6 @@ class Wireframe extends React.Component {
           className={classNames(style.subheading, style.item__subheading)}
           bind={`collection[${index}].subheading`}
         />)}
-        {children}
       </div>
     )
   }
@@ -48,12 +48,12 @@ class Wireframe extends React.Component {
           }}
         />
         <div className={style['btn-group']}>
-          {_.get(['modifier', 'primaryButton'], $block) && (<Button
+          {this.getModifierValue('primaryButton') && (<Button
             className={style.button}
             linkClassName={style.link}
             bind="button"
           />)}
-          {_.get(['modifier', 'secondaryButton'], $block) && (<Button
+          {this.getModifierValue('secondaryButton') && (<Button
             className={style.button}
             linkClassName={style.link}
             bind="secondaryButton"
@@ -181,7 +181,6 @@ Wireframe.defaultContent = {
     type: 'secondary',
   },
 }
-
 
 Wireframe.modifierScheme = {
   primaryButton: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
