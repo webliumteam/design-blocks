@@ -1,13 +1,14 @@
 @import "media.css";
 
 .header {
+  display: flex;
   min-width: 320px;
   padding-top: 15px;
   padding-bottom: 15px;
+  flex-wrap: wrap;
   word-wrap: break-word;
 
   &__inner {
-    display: flex;
     max-width: var(--ui-content-container);
     min-height: 50px;
     padding: var(--ui-content-gutter);
@@ -76,15 +77,22 @@
   }
 }
 
+.subtitle {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .logo {
   display: flex;
   min-width: 200px;
-  max-width: 325px;
+  max-width: calc(100% - 100px);
   min-height: 46px;
+  margin: 0 auto;
   flex-direction: column;
   justify-content: center;
   text-decoration: none;
-  margin-right: 30px;
+  text-align: center;
 
   @media (min-width: 992px) {
     margin-right: 0;
@@ -190,7 +198,7 @@
   width: 20px;
   height: 16px;
   top: 32px;
-  right: 15px;
+  left: 15px;
   padding: 0;
   background-color: transparent;
   color: var(--ui-brand-color);

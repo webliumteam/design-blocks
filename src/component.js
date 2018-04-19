@@ -41,9 +41,10 @@ class Block extends React.Component {
   }
 
   renderLogo = () => {
-    const {components: {Logo}, style} = this.props
+    const {components: {Logo, Text}, style} = this.props
     return (
-      this.getModifierValue('logo') && (
+      [
+        this.getModifierValue('logo') && (
         <Logo
           bind="logo"
           className={style.logo}
@@ -51,7 +52,11 @@ class Block extends React.Component {
           maxWidth={this.getOptionValue('logo-max-width')}
           maxHeight={this.getOptionValue('logo-max-height')}
         />
-      )
+        ),
+        this.getModifierValue('subtitle') && (
+        <Text tagName="p" className={style.subtitle} bind="subtitle" />
+        ),
+      ]
     )
   }
 
@@ -125,7 +130,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Logo', 'Menu', 'Button', 'Background', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Logo', 'Menu', 'Button', 'Background', 'SocialIcons', 'Text'])($editor.components)
 
 Block.defaultContent = {
   background: {
@@ -138,6 +143,10 @@ Block.defaultContent = {
       tagName: 'h1',
       fontSize: 32,
     },
+  },
+  subtitle: {
+    type: 'subtitle',
+    content: 'Company slogan',
   },
   menu: [
     {
@@ -249,6 +258,7 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   logo: {defaultValue: true, label: 'Company name', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Company slogan', type: 'checkbox'},
 }
 
 export default Block
