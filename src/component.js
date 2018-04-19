@@ -217,7 +217,6 @@ Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Gallery description', type: 'checkbox'},
   'item-heading': {defaultValue: false, label: 'Image description', type: 'checkbox'},
-  arrows: {defaultValue: true, label: 'Slide arrows', type: 'checkbox'},
   'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
