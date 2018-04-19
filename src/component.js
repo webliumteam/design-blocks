@@ -104,12 +104,14 @@ class Wireframe extends React.Component {
           {this.getModifierValue('body') && (
             <Text tagName="p" className={style.item__body} bind={`items[${index}].body`} />
           )}
-          <Button
-            linkClassName={style.link}
-            buttonClassName={style.button}
-            className={style.item__button}
-            bind={`items[${index}].cta`}
-          />
+          {this.getModifierValue('primary-button') && (
+            <Button
+              linkClassName={style.link}
+              buttonClassName={style.button}
+              className={style.item__button}
+              bind={`items[${index}].cta`}
+            />
+          )}
         </div>
       </div>
     )
@@ -142,14 +144,16 @@ class Wireframe extends React.Component {
               images,
             }}
           />
-          <div className={style['btns-group']}>
-            <Button
-              className={style['btns-group__button']}
-              linkClassName={style.link}
-              buttonClassName={style.button}
-              bind="cta"
-            />
-          </div>
+          {this.getModifierValue('secondary-button') && (
+            <div className={style['btns-group']}>
+              <Button
+                className={style['btns-group__button']}
+                linkClassName={style.link}
+                buttonClassName={style.button}
+                bind="cta"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -252,6 +256,16 @@ Wireframe.defaultContent = {
         type: 'text',
       },
       cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
         textValue: 'Learn more',
         type: 'primary',
       },
@@ -340,6 +354,16 @@ Wireframe.defaultContent = {
         type: 'text',
       },
       cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
         textValue: 'Learn more',
         type: 'primary',
       },
@@ -428,12 +452,32 @@ Wireframe.defaultContent = {
         type: 'text',
       },
       cta: {
+        actionConfig: {
+          action: 'link',
+          actions: {
+            link: {
+              type: '',
+              innerPage: '',
+              url: '',
+            },
+          },
+        },
         textValue: 'Learn more',
         type: 'primary',
       },
     },
   ],
   cta: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
     textValue: 'All events',
     type: 'secondary',
   },
@@ -462,6 +506,8 @@ Wireframe.modifierScheme = {
   location: {defaultValue: true, label: "Event's location", type: 'checkbox'},
   cost: {defaultValue: true, label: "Event's cost", type: 'checkbox'},
   body: {defaultValue: true, label: "Event's details", type: 'checkbox'},
+  'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Wireframe
