@@ -168,13 +168,8 @@
   }
 
   &__link {
-    color: inherit;
     text-decoration: none;
     transition: color 0.2s ease-in;
-
-    &:hover {
-      color: var(--ui-link-hover-color);
-    }
   }
 }
 
