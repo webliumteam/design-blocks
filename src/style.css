@@ -49,6 +49,11 @@
     max-width: calc(33% - 30px);
     margin: 15px;
     flex-basis: calc(33% - 30px);
+
+    &:only-of-type {
+      max-width: 770px;
+      flex-basis: 770px;
+    }
   }
 
   &__title {
