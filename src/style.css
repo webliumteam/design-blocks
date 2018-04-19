@@ -30,11 +30,11 @@
 }
 
 .section--state-8 .contacts:first-child .socials {
+  max-width: 100%;
   margin-top: 10px;
   margin-left: 0;
   padding-left: 0;
   justify-content: center;
-  max-width: 100%;
 }
 
 .section--state-8 .contacts:first-child .contacts-list__item {
@@ -203,6 +203,7 @@
 }
 
 .contacts__title {
+
   /* font-size: calc(var(--ui-heading-size) * 0.8334); */
 }
 
@@ -218,18 +219,11 @@
     @media (min-width: 768px) {
       font-size: calc(var(--ui-text-size) * 1.25);
     }
-
-    &--adress,
-    &--phone,
-    &--email {
-      color: var(--ui-text-color);
-    }
   }
 }
 
 .contacts__desc a {
   max-width: 100%;
-  color: inherit;
 }
 
 @media (min-width: 768px) {
@@ -254,8 +248,8 @@
   .contacts:first-child .contacts-list {
     display: flex;
 
-    /* width: 100%; */
-    /* max-width: calc(100% - 180px); */
+    /* width: 100%;
+    max-width: calc(100% - 180px); */
     margin-top: 0;
     align-items: flex-start;
     justify-content: center;
@@ -263,11 +257,11 @@
 
   .contacts:first-child .contacts-list__item {
 
-    /* width: 265px; */
-    /* padding-right: 40px; */
+    /* width: 265px;
+    padding-right: 40px; */
+    max-width: 33%;
     margin-bottom: 0;
     flex: 1 1 auto;
-    max-width: 33%;
     flex-basis: 33%;
 
     &:only-child {
@@ -291,11 +285,12 @@
 }
 
 .section--state-3 {
+
   @media (min-width: 768px) {
     .contacts .contacts-list {
       max-width: 80%;
-      flex-basis: 80%;
       margin: 0 -20px;
+      flex-basis: 80%;
     }
 
     .contacts .contacts-list__item {
@@ -304,8 +299,8 @@
 
     .contacts-list__item:nth-last-of-type(2):first-of-type,
     .contacts-list__item:nth-last-of-type(2):first-of-type ~ .contacts-list__item {
-      flex-basis: 40%;
       max-width: 40%;
+      flex-basis: 40%;
     }
 
     .contacts .socials {
@@ -316,8 +311,8 @@
 
   @media (min-width: 992px) {
     .contacts .contacts-list {
-      flex-basis: 70%;
       max-width: 70%;
+      flex-basis: 70%;
     }
   }
 }
@@ -328,14 +323,14 @@
     .contacts .contacts-list {
       display: flex;
       max-width: 100%;
-      flex-basis: 100%;
       margin: 0 -20px;
+      flex-basis: 100%;
     }
 
     .contacts-list__item {
       max-width: 33%;
-      flex-basis: 33%;
       padding: 0 20px;
+      flex-basis: 33%;
     }
 
     .contacts-list__item:only-child {
@@ -383,7 +378,6 @@
   padding-right: 15px;
   align-items: center;
   justify-content: center;
-  color: var(--ui-text-color);
   text-decoration: none;
 
   picture {
@@ -405,10 +399,9 @@
 }
 
 .logo__title {
-  max-width: 100%;
   min-width: 1px;
+  max-width: 100%;
   font-size: var(--ui-text-size);
-  color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
