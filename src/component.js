@@ -186,7 +186,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: false, label: 'Block title', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Why us description', type: 'checkbox'},
   'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
   'main-button': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
