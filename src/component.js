@@ -44,6 +44,8 @@ class Wireframe extends React.Component {
       nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
       prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
     } : {}
+    const mobileSlidesCount = this.getOptionValue('visible-slides-mobile') || 1
+    const desktopSlidesCount = this.getOptionValue('visible-slides-desktop') || 3
 
     return (
       <section className={style.section}>
@@ -67,20 +69,20 @@ class Wireframe extends React.Component {
               swipeToSlide: true,
               centerMode: true,
               centerPadding: '0px',
-              slidesToShow: 3,
+              slidesToShow: desktopSlidesCount,
               initialSlide: 1,
               adaptiveHeight: false,
               responsive: [
                 {
                   breakpoint: 767,
                   settings: {
-                    slidesToShow: 1,
+                    slidesToShow: mobileSlidesCount,
                   },
                 },
                 {
                   breakpoint: 100000,
                   settings: {
-                    slidesToShow: 3,
+                    slidesToShow: desktopSlidesCount,
                     arrows: true,
                   },
                 },
