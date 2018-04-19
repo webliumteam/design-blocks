@@ -12,50 +12,58 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   gallery: [{
+    ...Component.defaultContent.gallery[0],
     image: {
+      ...Component.defaultContent.gallery[0].image,
       resourceRef: 'benjamin-wong-388833-unsplash.jpg',
-      alt: 'Gallery image',
     },
   },
   {
+    ...Component.defaultContent.gallery[1],
     image: {
+      ...Component.defaultContent.gallery[1].image,
       resourceRef: 'bookblock-363195-unsplash.jpg',
-      alt: 'Gallery image',
     },
   },
   {
+    ...Component.defaultContent.gallery[2],
     image: {
+      ...Component.defaultContent.gallery[2].image,
       resourceRef: 'emma-tsui-492731-unsplash.jpg',
-      alt: 'Gallery image',
     },
   },
   {
+    ...Component.defaultContent.gallery[3],
     image: {
+      ...Component.defaultContent.gallery[3].image,
       resourceRef: 'freddy-castro-133326-unsplash.jpg',
-      alt: 'Gallery image',
     },
   },
   {
+    ...Component.defaultContent.gallery[4],
     image: {
+      ...Component.defaultContent.gallery[4].image,
       resourceRef: 'heather-schwartz-512780-unsplash.jpg',
-      alt: 'Gallery image',
     },
   },
   {
+    ...Component.defaultContent.gallery[5],
     image: {
+      ...Component.defaultContent.gallery[5].image,
       resourceRef: 'joanna-kosinska-254405-unsplash.jpg',
-      alt: 'Gallery image',
     },
   },
   {
+    ...Component.defaultContent.gallery[6],
     image: {
+      ...Component.defaultContent.gallery[6].image,
       resourceRef: 'nordwood-themes-452444-unsplash.jpg',
-      alt: 'Gallery image',
     },
   }, {
+    ...Component.defaultContent.gallery[7],
     image: {
+      ...Component.defaultContent.gallery[7].image,
       resourceRef: 'rawpixel-com-480212-unsplash.jpg',
-      alt: 'Gallery image',
     },
   }],
 }
