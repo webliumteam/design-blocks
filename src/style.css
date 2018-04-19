@@ -98,17 +98,6 @@
 .header__email {
   text-decoration: none;
   margin-bottom: 50px;
-  color: var(--ui-heading-color);
-
-  a {
-    color: var(--ui-link-color);
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--ui-link-hover-color);
-    }
-  }
 
   @media (min-width: 992px) {
     position: relative;
