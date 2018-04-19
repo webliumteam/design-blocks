@@ -35,14 +35,6 @@
     max-width: 100%;
     margin-bottom: 10px;
 
-    a {
-      color: var(--ui-link-color);
-
-      &:hover {
-        color: var(--ui-link-hover-color);
-      }
-    }
-
     @media (min-width: 768px) {
       width: 0;
       max-width: calc(100% - 350px);
@@ -347,8 +339,10 @@
   }
 
   &__title {
-    color: var(--ui-block-title-color);
-    font-size: calc(var(--ui-block-title-size) * 0.625);
+
+    @media (min-width: 768px) {
+      font-size: calc(var(--ui-block-title-size) * 0.625);
+    }
 
     @media (min-width: 992px) {
       text-align: left;
