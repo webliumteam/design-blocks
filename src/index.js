@@ -24,7 +24,7 @@ ExtendedWireframe.defaultContent = {
     type: 'text',
   },
   picture: {
-    src: 'Depositphotos_5997067_original.jpg',
+    resourceRef: 'Depositphotos_5997067_original.jpg',
     alt: 'Picture about the company',
   },
 }
