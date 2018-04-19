@@ -48,12 +48,12 @@ class Wireframe extends React.Component {
           }}
         />
         <div className={style['btn-group']}>
-          {this.getModifierValue('primaryButton') && (<Button
+          {this.getModifierValue('primary-button') && (<Button
             buttonClassName={style.button}
             linkClassName={style.link}
             bind="button"
           />)}
-          {this.getModifierValue('secondaryButton') && (<Button
+          {this.getModifierValue('secondary-button') && (<Button
             className={style.button}
             linkClassName={style.link}
             bind="secondaryButton"
@@ -163,8 +163,8 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  primaryButton: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  secondaryButton: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Block subtitle', type: 'checkbox'},
   icon: {defaultValue: true, label: 'Icon item', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Heading Item', type: 'checkbox'},
