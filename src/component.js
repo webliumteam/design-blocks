@@ -49,7 +49,7 @@ class Wireframe extends React.Component {
         />
         <div className={style['btn-group']}>
           {this.getModifierValue('primaryButton') && (<Button
-            className={style.button}
+            buttonClassName={style.button}
             linkClassName={style.link}
             bind="button"
           />)}
@@ -153,30 +153,10 @@ Wireframe.defaultContent = {
     ],
   },
   button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Medium button',
     type: 'primary',
   },
   secondaryButton: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Medium button',
     type: 'secondary',
   },
