@@ -40,10 +40,8 @@
 
 .map {
   padding-top: 58%;
-}
 
-@media (min-width: 768px) {
-  .map {
+  @media (min-width: 768px) {
     padding-top: 40%;
   }
 }
@@ -79,13 +77,8 @@
     margin-bottom: 10px;
 
     a {
-      color: var(--ui-text-color);
       text-decoration: none;
       transition: color .2s ease-in;
-
-      &:hover {
-        color: var(--ui-link-hover-color);
-      }
     }
   }
 
