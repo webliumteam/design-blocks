@@ -42,21 +42,25 @@ class Block extends React.Component {
 
   renderLogo = () => {
     const {components: {Logo, Text}, style} = this.props
+    const companyInfo = this.getModifierValue('logo') || this.getModifierValue('subtitle')
+
     return (
-      [
-        this.getModifierValue('logo') && (
-        <Logo
-          bind="logo"
-          className={style.logo}
-          textClassName={style.logo__title}
-          maxWidth={this.getOptionValue('logo-max-width')}
-          maxHeight={this.getOptionValue('logo-max-height')}
-        />
-        ),
-        this.getModifierValue('subtitle') && (
-        <Text tagName="p" className={style.subtitle} bind="subtitle" />
-        ),
-      ]
+      companyInfo && (
+        <div className={style['company-info']}>
+          {this.getModifierValue('logo') && (
+          <Logo
+            bind="logo"
+            className={style.logo}
+            textClassName={style.logo__title}
+            maxWidth={this.getOptionValue('logo-max-width')}
+            maxHeight={this.getOptionValue('logo-max-height')}
+          />
+        )}
+          {this.getModifierValue('subtitle') && (
+          <Text tagName="p" className={style.subtitle} bind="subtitle" />
+        )}
+        </div>
+      )
     )
   }
 
@@ -111,10 +115,12 @@ class Block extends React.Component {
         data-header="target"
       >
         <div className={style.header__inner}>
-          {this.renderLogo()}
-          {this.renderBtn()}
-          {this.renderNav()}
-          {this.renderIcon()}
+          <div className={style.header__wrapper}>
+            {this.renderLogo()}
+            {this.renderBtn()}
+            {this.renderNav()}
+            {this.renderIcon()}
+          </div>
         </div>
         <Background
           bind="background"
