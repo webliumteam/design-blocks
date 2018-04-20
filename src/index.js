@@ -16,9 +16,8 @@ ExtendedWireframe.defaultContent = {
     color: '#eeeeee',
   },
   button: {
+    ...Component.defaultContent.button,
     type: 'primary-alt',
-    size: 'md',
-    textValue: 'Show all events',
   },
 }
 
