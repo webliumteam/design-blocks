@@ -34,6 +34,7 @@ class Wireframe extends React.Component {
 
   render() {
     const {components: {Text, Collection, Button}, style, $block} = this.props
+    const buttonsGroup = this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
 
     return (
       <section className={style.section}>
@@ -47,18 +48,20 @@ class Wireframe extends React.Component {
             modifier: $block.modifier,
           }}
         />
-        <div className={style['btn-group']}>
-          {this.getModifierValue('primary-button') && (<Button
-            buttonClassName={style.button}
-            linkClassName={style.link}
-            bind="button"
-          />)}
-          {this.getModifierValue('secondary-button') && (<Button
-            className={style.button}
-            linkClassName={style.link}
-            bind="secondaryButton"
-          />)}
-        </div>
+        {buttonsGroup && (
+          <div className={style['btn-group']}>
+            {this.getModifierValue('primary-button') && (<Button
+              buttonClassName={style.button}
+              linkClassName={style.link}
+              bind="button"
+            />)}
+            {this.getModifierValue('secondary-button') && (<Button
+              className={style.button}
+              linkClassName={style.link}
+              bind="secondaryButton"
+            />)}
+          </div>
+        )}
       </section>
     )
   }
