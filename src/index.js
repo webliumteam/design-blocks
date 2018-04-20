@@ -12,10 +12,17 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   socialIcons: {
-    ...Component.defaultContent.socialIcons.networks,
+    ...Component.defaultContent.socialIcons,
+    target: '_blank',
     design: {
       ...Component.defaultContent.socialIcons.design,
-      color: 'dark-accent-color',
+      border: 'softRect',
+      innerFill: true,
+      preset: 'preset001',
+      offset: 15,
+      color: 'brand-color',
+      sizes: [10, 20, 30, 40],
+      size: 30,
     },
   },
   background: {
