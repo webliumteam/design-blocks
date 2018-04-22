@@ -38,6 +38,9 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  subtitle: {defaultValue: true, label: 'Contacts description', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'button-secondary': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
