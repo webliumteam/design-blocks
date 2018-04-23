@@ -1,3 +1,100 @@
 @import "wireframe-lucario-cover/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 22px;
+    padding-bottom: 30px;
+  }
+}
+
+.item {
+  &__title {
+    letter-spacing: -3px;
+
+    @media (min-width: 992px) {
+      max-width: 770px;
+      font-size: calc(var(--ui-hero-title-size) * 80/40);
+    }
+  }
+}
+
+.subtitle {
+  letter-spacing: -0.5px;
+
+  @media (min-width: 768px) {
+    font-size: var(--ui-subtitle-size);
+  }
+
+  @media (min-width: 992px) {
+    font-size: calc(var(--ui-subtitle-size) * 18/20);
+    margin-top: 0;
+  }
+}
+
+.btns-group {
+
+  @media (min-width: 992px) {
+    margin-top: 37px;
+  }
+}
+
+.slider-dots {
+
+  @media (min-width: 992px) {
+    margin-top: 54px;
+  }
+
+  li {
+
+    @media (min-width: 992px) {
+      margin-right: 9px;
+    }
+
+    button {
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      border: 3px solid var(--ui-brand-color);
+    }
+  }
+}
+
+/* stylelint-disable */
+.slider-dots :global li.slick-active button {
+/* stylelint-enable */
+  background-color: transparent;
+  border-color: var(--ui-light-shade-color);
+}
+
+.items-wrapper :global .slick-arrow-default {
+
+  @media (min-width: 992px) {
+    width: 12px;
+    height: 20px;
+    color: var(--ui-dark-shade-color);
+  }
+}
+
+.items-wrapper :global .slick-prev-default {
+
+  @media (min-width: 992px) {
+    left: 90px;
+  }
+}
+
+.items-wrapper :global .slick-next-default {
+
+  @media (min-width: 992px) {
+    right: 90px;
+  }
+}
+
+.items-wrapper :global .slick-prev-default,
+.items-wrapper :global .slick-next-default {
+
+  @media (min-width: 992px) {
+    top: 226px;
+  }
+}
