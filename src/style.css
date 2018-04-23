@@ -2,26 +2,39 @@
 
 /* start here */
 
+.section {
+
+  @media (min-width: 992px) {
+    padding: 75px 0 110px;
+  }
+}
+
 .article {
   text-align: center;
 
   &__title {
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2.6px;
     position: relative;
     margin-bottom: 40px;
 
-    @media (min-width: 768px) {
-      &:before {
-        content: "";
-        position: absolute;
-        width: 22px;
-        height: 3px;
-        bottom: -12px;
-        left: 0;
-        background: var(--ui-brand-color);
-      }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 3px;
+      bottom: -16px;
+      left: 3px;
+      background: var(--ui-brand-color);
     }
+  }
+
+  &__heading {
+    margin-bottom: 15px;
+  }
+
+  &__subheading {
+    margin-bottom: 14px;
   }
 
   @media (min-width: 768px) {
@@ -29,5 +42,9 @@
     max-width: 520px;
     text-align: left;
   }
+}
+
+.btns-group {
+  margin: 22px -15px -10px;
 }
 

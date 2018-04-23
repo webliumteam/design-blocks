@@ -56,7 +56,7 @@ ExtendedWireframe.defaultContent = {
     ],
     target: '_blank',
     design: {
-      border: 'null',
+      border: null,
       innerFill: true,
       preset: 'preset001',
       offset: 15,
@@ -69,8 +69,8 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  heading: {defaultValue: true},
-  subheading: {defaultValue: true},
+  heading: {defaultValue: true, label: 'Company title', type: 'checkbox'},
+  subheading: {defaultValue: true, label: 'Company description', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
