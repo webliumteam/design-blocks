@@ -1,3 +1,29 @@
 @import "wireframe-series-1-partners/src/style.css";
 
 /* start here */
+
+.title {
+  font-weight: var(--ui-hero-title-font-weight);
+  font-size: var(--ui-heading-lg-size);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.items-wrapper {
+  justify-content: space-around;
+  margin-bottom: 45px;
+}
+
+@media (min-width: 992px) {
+  .items-wrapper {
+    margin-bottom: 45px;
+  }
+
+  .section__header {
+    margin-top: 13px;
+    margin-bottom: 61px;
+  }
+}
