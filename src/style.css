@@ -44,6 +44,14 @@
   }
 }
 
+.socials-wrapper {
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
 .btns-group {
   margin: 22px -15px -10px;
 }
