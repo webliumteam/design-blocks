@@ -67,15 +67,15 @@
 }
 
 .logo {
-  max-width: 292px;
+  max-width: 174px;
+
+  a,
+  picture {
+    display: block;
+  }
 
   @media (min-width: 768px) {
     margin-bottom: 35px;
-
-    img {
-      width: 180px;
-      height: auto;
-    }
   }
 }
 
