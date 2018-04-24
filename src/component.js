@@ -26,8 +26,6 @@ class Block extends React.Component {
 
     if (!reset && opened && document.body.offsetWidth < 992) {
       nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
-    } else if (!reset && opened && document.body.offsetWidth >= 992) {
-      nodes.forEach(resetStyleProperties(['overflow-y']))
     } else {
       nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
     }
@@ -124,15 +122,18 @@ class Block extends React.Component {
             {this.renderIcon()}
           </div>
         </div>
-        <Background
-          bind="background"
-          className={classNames(style.header__inner, style['header__inner--fixed'])}
-        >
-          {this.renderBtn()}
-          {this.renderLogo()}
-          {this.renderNav()}
-          {this.renderIcon()}
-        </Background>
+        <div className={classNames(style.header__inner, style['header__inner--fixed'])}>
+          <Background
+            bind="background"
+            className={style['sidebar-menu']}
+          >
+            {this.renderBtn()}
+            {this.renderLogo()}
+            {this.renderNav()}
+            {this.renderIcon()}
+          </Background>
+          <div className={style.outside} onClick={this.toggleOpened} />
+        </div>
       </header>
     )
   }
