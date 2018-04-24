@@ -66,6 +66,7 @@
       }
 
       .sidebar-menu {
+        min-height: 100%;
         padding: 15px 50px;
 
         @media (--ui-medium-devices) {

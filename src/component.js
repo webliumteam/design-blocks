@@ -99,9 +99,11 @@ class Block extends React.Component {
   renderIcon = () => {
     const {components: {SocialIcons}, style} = this.props
     return (
-      <div className={style.header__socials}>
-        <SocialIcons bind="socialIcons" className={style.socials} />
-      </div>
+      this.getModifierValue('socials') ?
+        <div className={style.header__socials}>
+          <SocialIcons bind="socialIcons" className={style.socials} />
+        </div> :
+        null
     )
   }
 
@@ -268,6 +270,7 @@ Block.defaultContent = {
 Block.modifierScheme = {
   logo: {defaultValue: true, label: 'Company name', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Company slogan', type: 'checkbox'},
+  socials: {defaultValue: true, label: 'Social icons', type: 'checkbox'},
 }
 
 export default Block
