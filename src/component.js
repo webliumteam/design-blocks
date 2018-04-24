@@ -24,8 +24,10 @@ class Block extends React.Component {
     const {opened} = this.state
     const nodes = [document.getElementsByTagName('html')[0], document.body]
 
-    if (!reset && opened) {
+    if (!reset && opened && document.body.offsetWidth < 992) {
       nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
+    } else if (!reset && opened && document.body.offsetWidth >= 992) {
+      nodes.forEach(resetStyleProperties(['overflow-y']))
     } else {
       nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
     }

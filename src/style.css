@@ -16,16 +16,21 @@
     margin-right: auto;
     align-items: center;
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       display: flex;
-      max-width: var(--ui-content-container);
+      max-width: calc(100% - 30px);
       min-height: 65px;
       justify-content: flex-end;
       flex: 1;
     }
 
+    @media (--ui-large-devices) {
+      max-width: 1200px;
+    }
+
     &--fixed {
       position: fixed;
+      max-width: 100%;
       top: 0;
       right: 0;
       bottom: 0;
@@ -41,11 +46,18 @@
       .header:not(.header--opened) & {
         opacity: 0;
         pointer-events: none;
+      }
 
-        @media (min-width: 992px) {
-          width: 335px;
-          transform: translateX(-100%);
-          opacity: 1;
+      @media (min-width: 992px) {
+        width: 335px;
+        margin: 0;
+        transform: translateX(-100%);
+        transition: transform 200ms ease;
+        justify-content: flex-start;
+        opacity: 1;
+
+        .header--opened & {
+          transform: translateX(0);
         }
       }
 
@@ -70,14 +82,6 @@
         @media (--ui-medium-devices) {
           display: none;
         }
-      }
-
-      @media (--ui-medium-devices) {
-        max-width: 335px;
-        margin: 0;
-        transform: translateX(0);
-        transition: transform 200ms ease;
-        justify-content: flex-start;
       }
 
       .header__socials {
