@@ -18,6 +18,8 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.partners[0].logo,
         image: {
           resourceRef: 'andote.jpg',
+          width: 130,
+          height: 80,
         },
       },
     },
@@ -27,6 +29,8 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.partners[1].logo,
         image: {
           resourceRef: 'cribspot.jpg',
+          width: 130,
+          height: 80,
         },
       },
     },
@@ -36,6 +40,8 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.partners[2].logo,
         image: {
           resourceRef: 'astrohaus.jpg',
+          width: 130,
+          height: 80,
         },
       },
     },
@@ -45,6 +51,8 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.partners[3],
         image: {
           resourceRef: 'cradled.jpg',
+          width: 130,
+          height: 80,
         },
       },
     },
