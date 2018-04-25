@@ -1,2 +1,10 @@
 @import "wireframe-series-2-header/src/style.css";
 
+.logo {
+  max-width: 200px;
+
+  a,
+  picture {
+    display: block;
+  }
+}
