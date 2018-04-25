@@ -9,8 +9,13 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Button, Image}, style} = this.props
+    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 70
+    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 150
 
     return (
       <article className={classNames(style.article, className)}>
@@ -49,6 +54,7 @@ class Block extends React.Component {
             'min-width: 768px': 720,
             'min-width: 480px': 560,
           }}
+          resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
         />
       </article>
     )

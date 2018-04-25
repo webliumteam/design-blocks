@@ -1,3 +1,5 @@
 {
-  "image_wrapper": true
+  "min-resize": false,
+  "max-resize": false,
+  "disable-resizer": false
 }

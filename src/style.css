@@ -191,6 +191,7 @@
 
 .article__picture {
   display: block;
+  padding-top: 70%;
   height: 100%;
 }
 
