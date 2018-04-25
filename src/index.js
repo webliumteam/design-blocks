@@ -30,6 +30,7 @@ ExtendedWireframe.modifierScheme = {
   'article-picture': {defaultValue: false, label: 'Article picture', type: 'hidden'},
   socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
+  'arrange-elements': {type: 'hidden'},
 }
 
 export default ExtendedWireframe
