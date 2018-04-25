@@ -146,7 +146,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Learn more',
-    type: 'primary',
+    type: 'secondary',
     size: 'md',
   },
   'button-2': {
@@ -161,7 +161,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Learn more',
-    type: 'secondary',
+    type: 'primary',
   },
   socialIcons: {
     networks: [
@@ -209,8 +209,8 @@ Block.modifierScheme = {
     type: 'radio-button-group',
   },
   'article-picture': {defaultValue: true, label: 'Article picture', type: 'hidden'},
-  'button': {defaultValue: false, label: 'Button', type: 'checkbox'},
-  'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
+  'button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'additional-button': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
   'socialIcons': {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
   'subtitle': {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
   'text': {defaultValue: true, label: 'Company main text', type: 'checkbox'},
