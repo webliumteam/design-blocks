@@ -80,6 +80,7 @@ ExtendedWireframe.modifierScheme = {
     type: 'checkbox',
     classNameOnActive: style['section--with-border'],
   },
+  'arrange-elements': {type: 'hidden'},
 }
 
 export default ExtendedWireframe
