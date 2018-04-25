@@ -44,6 +44,10 @@ ExtendedWireframe.defaultContent = {
       size: 30,
     },
   },
+  'button-2': {
+    ...Component.defaultContent['button-2'],
+    type: 'link',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
