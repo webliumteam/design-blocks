@@ -161,7 +161,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Learn more',
-    type: 'link',
+    type: 'secondary',
   },
   socialIcons: {
     networks: [
@@ -200,8 +200,8 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   'article-picture': {defaultValue: true, label: 'Article picture', type: 'hidden'},
-  'button': {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'additional-button': {defaultValue: false, label: 'Additional button', type: 'hidden'},
+  'button': {defaultValue: false, label: 'Button', type: 'checkbox'},
+  'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
   'socialIcons': {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
   'subtitle': {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
   'text': {defaultValue: true, label: 'Company main text', type: 'checkbox'},
