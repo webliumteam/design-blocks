@@ -74,16 +74,7 @@ ExtendedWireframe.defaultContent = {
     },
   ],
   button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
+    ...Component.defaultContent.button,
     textValue: 'Main button (L)',
     type: 'primary',
     size: 'lg',
