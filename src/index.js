@@ -62,6 +62,10 @@ ExtendedWireframe.defaultContent = {
     ...Component.defaultContent.subtitle,
     content: 'WE PROVIDE A WIDE RANGE OF SERVICES TO MEET EVEN THE MOST DARING REQUIREMENTS.',
   },
+  'button-2': {
+    ...Component.defaultContent['button-2'],
+    type: 'link',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
