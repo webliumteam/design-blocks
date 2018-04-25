@@ -44,14 +44,14 @@ class Block extends React.Component {
     const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 46
     const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 100
 
+    const arrange = this.getModifierValue('arrange-elements')
+
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout})}>
+      <section className={classNames(css.section, {[css['section--column']]: columnLayout}, css[`section--${arrange}`])}>
         <div className={css.section__inner}>
           {this.getOptionValue('icon-decorator-in-top') && getIconDecorator}
           {this.getOptionValue('title-in-top') && getTitle}
-
-
-          <article className={css.article}>
+          <div className={css.article}>
             {this.getModifierValue('article-picture') && (
               <Image
                 wrapperClassName={css['article__picture-wrapper']}
@@ -100,7 +100,7 @@ class Block extends React.Component {
                 )}
               </div>
             )}
-          </article>
+          </div>
         </div>
       </section>
     )
@@ -199,6 +199,15 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  'arrange-elements': {
+    children: [
+      {id: 'default', label: 'Default'},
+      {id: 'reverse', label: 'Reverse'},
+    ],
+    defaultValue: 'Default',
+    name: 'Arrange elements',
+    type: 'radio-button-group',
+  },
   'article-picture': {defaultValue: true, label: 'Article picture', type: 'hidden'},
   'button': {defaultValue: false, label: 'Button', type: 'checkbox'},
   'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
