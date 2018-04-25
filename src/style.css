@@ -34,6 +34,15 @@
       padding: 0;
     }
   }
+
+  &--reverse {
+    .article__content {
+
+      @media (min-width: 992px) {
+        padding-left: 80px;
+      }
+    }
+  }
 }
 
 .article {
@@ -98,3 +107,4 @@
     }
   }
 }
+
