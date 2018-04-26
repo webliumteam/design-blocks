@@ -76,13 +76,15 @@ class Block extends React.Component {
               />
             </div>
           </div>
-          <div className={style['btns-group']}>
-            <Button
-              className={style.button}
-              linkClassName={style.link}
-              bind="cta"
-            />
-          </div>
+          {this.getModifierValue('button') && (
+            <div className={style['btns-group']}>
+              <Button
+                className={style.button}
+                linkClassName={style.link}
+                bind="cta"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -239,6 +241,7 @@ Block.defaultContent = {
 Block.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Description of FAQ', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Type/Category of questions', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Block
