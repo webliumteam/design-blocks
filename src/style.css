@@ -322,6 +322,8 @@
   text-decoration: none;
 
   @media (min-width: 992px) {
+    display: flex;
+    align-items: center;
     flex-basis: auto;
   }
 
@@ -331,14 +333,14 @@
     margin: 0 auto;
 
     @media (min-width: 480px) {
-      min-width: 200px;
+      min-width: 100px;
       max-width: 275px;
     }
 
     @media (min-width: 992px) {
       display: flex;
-      margin: 0;
-      flex: 1;
+      margin-right: 30px;
+      flex-basis: auto;
       text-align: left;
     }
   }
@@ -350,6 +352,8 @@
     }
 
     @media (min-width: 992px) {
+      max-width: 100%;
+      align-self: flex-start;
       text-align: left;
     }
   }
