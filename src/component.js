@@ -5,6 +5,7 @@ class Wireframe extends React.Component {
     components: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
@@ -25,7 +26,7 @@ class Wireframe extends React.Component {
         {body && (
           <ul className={style.schedule}>
             {_.map(n => (
-              <li className={style.schedule__item}>
+              <li className={style.schedule__item} key={n}>
                 {time && (
                   <Text tagName="time" className={style.schedule__time} bind={`collection[${index}].body[${n}].time`} />
                 )}
@@ -41,10 +42,12 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Text, Collection, Button}, style, $block} = this.props
+    const {components: {Text, Collection, Button}, style, $block, content} = this.props
     const headerInfo = this.getModifierValue('title') || this.getModifierValue('subtitle')
     const showButtonGroups = this.getModifierValue('additional-button') || this.getModifierValue('button')
     const bodyItems = _.times(Number, this.getModifierValue('bodyQuantity'))
+    const collectionLength = _.get('collection.items.length', content) || 7
+    const shrinkCollection = collectionLength % 3 === 0 || collectionLength % 5 === 0
 
     return (
       <section className={style.section}>
@@ -60,7 +63,7 @@ class Wireframe extends React.Component {
             </div>
           )}
           <Collection
-            className={style['items-wrapper']}
+            className={classNames(style['items-wrapper'], shrinkCollection && style['items-wrapper--shrinked'])}
             bind="collection"
             Item={this.collectionItem}
             itemProps={{
