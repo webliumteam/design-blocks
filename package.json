@@ -1,6 +1,6 @@
 {
-  "name": "design-default-master",
-  "version": "0.0.1",
+  "name": "design-tauros-blog_4_services_commecial",
+  "version": "0.0.5",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -30,6 +30,6 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
-    "wireframe-default-master": "https://github.com/webliumteam/blocks#w/default/master"
+    "wireframe-zapdos-blog": "https://github.com/webliumteam/blocks#w/zapdos/blog/prod"
   }
 }
