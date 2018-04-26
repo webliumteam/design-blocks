@@ -1,3 +1,83 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-2-cta/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  &__inner {
+    padding: 40px;
+
+    @media (min-width: 768px) {
+      max-width: 570px;
+      border-radius: 0;
+      padding: 88px 50px;
+    }
+  }
+
+  &__header {
+    padding: 0;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 36px;
+    }
+  }
+
+  .subtitle {
+    color: var(--ui-dark-shade-color );
+    opacity: 0.6;
+
+    @media (min-width: 768px) {
+      font-size: var(--ui-subtitle-size);
+    }
+  }
+}
+
+.form {
+  max-width: 370px;
+  margin: 0 auto;
+
+  @media (min-width: 480px) {
+    padding: 0 0 16px;
+  }
+
+  &__item {
+    width: 100%;
+    font-size: 0;
+    margin-bottom: 6px;
+  }
+
+  &__field {
+    background-color: var(--ui-light-shade-color);
+    color: var(--ui-dark-shade-color );
+    opacity: 0.6;
+    font-size: var(--ui-text-size);
+    text-align: center;
+    padding: 12px;
+    height: 44px;
+    margin-top: 0;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid;
+    border-bottom-color: #dcdcdc;
+
+    &::placeholder {
+      color: currentColor;
+    }
+  }
+
+  &__button {
+    border: 0;
+    margin-top: 24px;
+    width: auto;
+  }
+}
