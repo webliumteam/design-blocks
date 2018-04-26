@@ -40,3 +40,23 @@
     }
   }
 }
+
+.submenu {
+  .nav-list {
+    &__item {
+
+      @media (min-width: 992px) {
+        margin-left: 0;
+        margin-right: 0;
+        opacity: 1;
+
+        &:only-child,
+        &:last-child,
+        &:first-child {
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
