@@ -13,6 +13,7 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   team: [
     {
+      ...Component.defaultContent.team[0],
       name: {
         content: 'Dave Reez',
         type: 'heading',
@@ -29,55 +30,9 @@ ExtendedWireframe.defaultContent = {
         src: 'image1.jpg',
         alt: 'Dave Reez photo',
       },
-      more: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
-      },
-      email: {
-        content: '<a href="mailto:shimmer@gmail.com">shimmer@gmail.com</a>',
-        type: 'caption',
-      },
-      socialIcons: {
-        networks: [
-          {
-            id: 'facebook',
-            name: 'Facebook',
-            url: 'https://facebook.com/',
-          },
-          {
-            id: 'twitter',
-            name: 'Twitter',
-            url: 'https://twitter.com/',
-          },
-          {
-            id: 'linkedin',
-            name: 'LinkedIn',
-            url: 'https://www.linkedin.com/',
-          },
-        ],
-        target: '_blank',
-        design: {
-          border: 'circle',
-          innerFill: true,
-          preset: 'preset001',
-          offset: 15,
-          color: '#b9b9b9',
-          sizes: [15, 25, 35, 45],
-          size: 30,
-        },
-      },
     },
     {
+      ...Component.defaultContent.team[1],
       name: {
         content: 'John Davidson',
         type: 'heading',
@@ -94,55 +49,9 @@ ExtendedWireframe.defaultContent = {
         src: 'image2.jpg',
         alt: 'John Davidson photo',
       },
-      more: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
-      },
-      email: {
-        content: '<a href="mailto:maisner@gmail.com">maisner@gmail.com</a>',
-        type: 'caption',
-      },
-      socialIcons: {
-        networks: [
-          {
-            id: 'facebook',
-            name: 'Facebook',
-            url: 'https://facebook.com/',
-          },
-          {
-            id: 'twitter',
-            name: 'Twitter',
-            url: 'https://twitter.com/',
-          },
-          {
-            id: 'linkedin',
-            name: 'LinkedIn',
-            url: 'https://www.linkedin.com/',
-          },
-        ],
-        target: '_blank',
-        design: {
-          border: 'circle',
-          innerFill: true,
-          preset: 'preset001',
-          offset: 15,
-          color: '#b9b9b9',
-          sizes: [15, 25, 35, 45],
-          size: 30,
-        },
-      },
     },
     {
+      ...Component.defaultContent.team[2],
       name: {
         content: 'Anthony Taylor',
         type: 'heading',
@@ -158,53 +67,6 @@ ExtendedWireframe.defaultContent = {
       picture: {
         src: 'image3.jpg',
         alt: 'Anthony Taylor photo',
-      },
-      more: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
-        textValue: 'Learn more',
-        type: 'link',
-      },
-      email: {
-        content: '<a href="mailto:abbar@gmail.com">abbar@gmail.com</a>',
-        type: 'caption',
-      },
-      socialIcons: {
-        networks: [
-          {
-            id: 'facebook',
-            name: 'Facebook',
-            url: 'https://facebook.com/',
-          },
-          {
-            id: 'twitter',
-            name: 'Twitter',
-            url: 'https://twitter.com/',
-          },
-          {
-            id: 'linkedin',
-            name: 'LinkedIn',
-            url: 'https://www.linkedin.com/',
-          },
-        ],
-        target: '_blank',
-        design: {
-          border: 'circle',
-          innerFill: true,
-          preset: 'preset001',
-          offset: 15,
-          color: '#b9b9b9',
-          sizes: [15, 25, 35, 45],
-          size: 30,
-        },
       },
     },
   ],
