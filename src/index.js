@@ -24,7 +24,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '1.png',
+        resourceRef: '1.png',
         alt: 'Service illustration photo',
       },
     },
@@ -40,7 +40,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '2.png',
+        resourceRef: '2.png',
         alt: 'Service illustration photo',
       },
     },
@@ -56,7 +56,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '3.png',
+        resourceRef: '3.png',
         alt: 'Service illustration photo',
       },
     },
@@ -72,7 +72,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '4.png',
+        resourceRef: '4.png',
         alt: 'Service illustration photo',
       },
     },
@@ -88,7 +88,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '5.png',
+        resourceRef: '5.png',
         alt: 'Service illustration photo',
       },
     },
@@ -104,7 +104,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '6.png',
+        resourceRef: '6.png',
         alt: 'Service illustration photo',
       },
     },
@@ -120,7 +120,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '7.png',
+        resourceRef: '7.png',
         alt: 'Service illustration photo',
       },
     },
@@ -136,7 +136,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '8.png',
+        resourceRef: '8.png',
         alt: 'Service illustration photo',
       },
     },
@@ -152,7 +152,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '9.png',
+        resourceRef: '9.png',
         alt: 'Service illustration photo',
       },
     },
@@ -168,7 +168,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '10.png',
+        resourceRef: '10.png',
         alt: 'Service illustration photo',
       },
     },
@@ -184,7 +184,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '11.png',
+        resourceRef: '11.png',
         alt: 'Service illustration photo',
       },
     },
@@ -200,7 +200,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '12.png',
+        resourceRef: '12.png',
         alt: 'Service illustration photo',
       },
     },
@@ -216,7 +216,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '13.png',
+        resourceRef: '13.png',
         alt: 'Service illustration photo',
       },
     },
@@ -232,7 +232,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '14.png',
+        resourceRef: '14.png',
         alt: 'Service illustration photo',
       },
     },
@@ -248,7 +248,7 @@ ExtendedWireframe.defaultContent = {
         color: 'brand-color',
       },
       picture: {
-        src: '15.png',
+        resourceRef: '15.png',
         alt: 'Service illustration photo',
       },
     },
@@ -265,8 +265,8 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'button-secondary': {defaultValue: false, label: 'Button', type: 'checkbox'},
-  link: {defaultValue: false, label: 'Link', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Button', type: 'hidden'},
+  link: {defaultValue: false, label: 'Link', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Services description', type: 'checkbox'},
 }
 
