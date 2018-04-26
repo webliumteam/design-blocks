@@ -3,7 +3,8 @@
 .section {
 
   @media (min-width: 1200px) {
-    padding: 75px 0 60px;
+    padding-top: 75px;
+    padding-bottom: 60px;
   }
 }
 
@@ -34,9 +35,7 @@
   &__text {
 
     @media (min-width: 1200px) {
-      color: var(--ui-brand-color);
       font-size: var(--ui-small-size);
-      font-weight: 600;
     }
   }
 }
