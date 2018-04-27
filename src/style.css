@@ -56,12 +56,12 @@
     }
   }
 
-  &__title {
-    margin-bottom: 5px;
+  &__header {
+    margin-bottom: 20px;
   }
 
-  &__desc {
-    margin-bottom: 20px;
+  &__title {
+    margin-bottom: 5px;
   }
 
   &__button {
