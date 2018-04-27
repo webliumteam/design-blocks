@@ -15,10 +15,6 @@
   @media (min-width: 992px) {
     padding-bottom: 55px;
   }
-
-  &__company-info {
-    display: none;
-  }
 }
 
 .nav__link {

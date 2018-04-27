@@ -154,8 +154,8 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'company-slogan': {defaultValue: false, label: 'Company slogan', type: 'checkbox'},
-  'company-contacts': {defaultValue: false, label: 'Contact information', type: 'checkbox'},
+  'company-slogan': {defaultValue: false, label: 'Company slogan', type: 'hidden'},
+  'company-contacts': {defaultValue: false, label: 'Contact information', type: 'hidden'},
 }
 
 export default ExtendedWireframe
