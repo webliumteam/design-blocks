@@ -39,7 +39,6 @@
 
   &__title {
     position: relative;
-    color: var(--ui-light-shade-color);
     font-size: calc(var(--ui-heading-size)*1.25);
     font-weight: calc(var(--ui-heading-font-weight)*0.835);
     margin-bottom: 30px;
