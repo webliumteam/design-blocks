@@ -15,15 +15,21 @@ ExtendedWireframe.defaultContent = {
     image: {
       resourceRef: 'logo.png',
       alt: 'logo',
+      width: 244,
+      height: 44,
     },
   },
   background: {
     type: 'color',
     color: '#13194d',
   },
+  follow: {
+    type: 'text',
+    content: 'Follow Us',
+  },
   menu: [
     {
-      id: 'about',
+      id: 'Industries',
       metadata: {
         displayName: 'Industries',
         clickAction: {
@@ -40,7 +46,7 @@ ExtendedWireframe.defaultContent = {
     {
       id: 'Case Studies',
       metadata: {
-        displayName: 'Testimonials',
+        displayName: 'Case Studies',
         clickAction: {
           action: 'page',
           target: '_self',
@@ -53,7 +59,7 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      id: 'team',
+      id: 'Investors',
       metadata: {
         displayName: 'Investors',
         clickAction: {
@@ -83,7 +89,7 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      id: 'careers',
+      id: 'About Us',
       metadata: {
         displayName: 'About Us',
         clickAction: {
@@ -98,7 +104,7 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      id: 'projects',
+      id: 'News',
       metadata: {
         displayName: 'News',
         clickAction: {
@@ -113,7 +119,7 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      id: 'blog',
+      id: 'solutions',
       metadata: {
         displayName: 'solutions',
         clickAction: {
@@ -128,7 +134,7 @@ ExtendedWireframe.defaultContent = {
       },
     },
     {
-      id: 'approach',
+      id: 'Careers',
       metadata: {
         displayName: 'Careers',
         clickAction: {
@@ -146,19 +152,19 @@ ExtendedWireframe.defaultContent = {
   socialIcons: {
     networks: [
       {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
-      },
-      {
         id: 'twitter',
         name: 'Twitter',
         url: 'http://twitter.com/',
       },
       {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
+        id: 'facebook',
+        name: 'Facebook',
+        url: 'http://facebook.com/',
+      },
+      {
+        id: 'youtube',
+        name: 'YouTube',
+        url: 'http://youtube.com/',
       },
       {
         id: 'linkedin',
@@ -171,8 +177,8 @@ ExtendedWireframe.defaultContent = {
       border: 'circle',
       innerFill: true,
       preset: 'preset001',
-      offset: 15,
-      color: '#9b9b9b',
+      offset: 20,
+      color: '#55acee',
       sizes: [10, 20, 30, 40],
       size: 30,
     },
