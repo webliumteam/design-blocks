@@ -25,3 +25,23 @@ Code example (usage):
 'top-caption': {defaultValue: true, label: 'Top caption', type: 'checkbox'},
 ```
 ----------
+
+# options
+
+**image-hidden**
+
+Option name: `image-hidden`
+
+Disabled Image in items
+
+Possible values: `false` or `true`
+
+Default value: `false` (Image enabled)
+
+Code example (usage):
+
+```
+{
+    "image-hidden": true
+}
+```
