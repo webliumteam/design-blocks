@@ -262,9 +262,9 @@
 
 .logo {
   display: flex;
-  min-width: 200px;
-  max-width: 325px;
-  min-height: 46px;
+  min-width: 300px;
+  max-width: calc(100% - (50px * 2));
+  min-height: 70px;
   margin: 0 auto;
   flex-direction: column;
   justify-content: center;
