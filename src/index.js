@@ -26,12 +26,12 @@ ExtendedWireframe.defaultContent = {
   title: {
     ...Component.defaultContent.title,
     content: 'Ask our experts about your freight',
-    color: 'var(--ui-light-shade-color)',
+    color: 'light-shade-color',
   },
   description: {
     ...Component.defaultContent.description,
     content: 'Our experts are always ready to help. Get in touch with us and we\'ll find the right solution to meet your needs.',
-    color: 'var(--ui-light-shade-color)',
+    color: 'light-shade-color',
   },
   cta: {
     ...Component.defaultContent.cta,
