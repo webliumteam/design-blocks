@@ -77,14 +77,6 @@
   }
 }
 
-.typography__text.theme-light {
-  color: var(--ui-light-shade-color);
-}
-
-.typography__heading.theme-light {
-  color: var(--ui-light-shade-color);
-}
-
 .btns-group {
   margin-top: 70px;
 }
