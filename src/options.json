@@ -1,3 +1,3 @@
 {
-  "image_wrapper": true
+  "disable-resizer": false,
 }
