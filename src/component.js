@@ -48,7 +48,7 @@ class Wireframe extends React.Component {
             modifier: $block.modifier,
           }}
         />
-        {buttonsGroup && (
+        {false && buttonsGroup && (
           <div className={style['btn-group']}>
             {this.getModifierValue('primary-button') && (<Button
               className={style.button}
