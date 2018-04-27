@@ -106,13 +106,15 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          <div className={style['btns-group']}>
-            <Button
-              className={style.button}
-              buttonClassName={style['button--view-default']}
-              bind="button"
-            />
-          </div>
+          {this.getModifierValue('button') && (
+            <div className={style['btns-group']}>
+              <Button
+                className={style.button}
+                buttonClassName={style['button--view-default']}
+                bind="button"
+              />
+            </div>
+          )}
         </div>
       </section>
     )
@@ -191,6 +193,7 @@ Block.defaultContent = {
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Gallery description', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Block
