@@ -11,14 +11,14 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  background: {
-    type: 'image',
-    position: {
-      type: 'cover',
-      cover: '50% 50%',
-    },
-    resourceRef: 'bg.jpg',
-  },
+  // background: {
+  //   type: 'image',
+  //   position: {
+  //     type: 'cover',
+  //     cover: '50% 50%',
+  //   },
+  //   resourceRef: 'bg.jpg',
+  // },
   testimonials: [
     {
       title: {
@@ -115,8 +115,7 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   subtitle: {defaultValue: true, label: 'Testimonials description', type: 'checkbox'},
-  'top-caption': {defaultValue: true, label: 'Top caption', type: 'hidden'},
+  'top-caption': {defaultValue: true, label: 'Top caption', type: 'checkbox'},
 }
-
 
 export default ExtendedWireframe
