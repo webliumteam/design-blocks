@@ -71,7 +71,7 @@ class Wireframe extends React.Component {
               bodyItems,
             }}
           />
-          {showButtonGroups && (
+          {false && showButtonGroups && (
             <div className={style['btns-group']}>
               {this.getModifierValue('button') && (
                 <Button
@@ -720,8 +720,8 @@ Wireframe.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Schedule description', type: 'checkbox'},
   time: {defaultValue: true, label: 'Time', type: 'checkbox'},
   event: {defaultValue: true, label: 'Event', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'additional-button': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
+  // button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  // 'additional-button': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
 }
 
 export default Wireframe
