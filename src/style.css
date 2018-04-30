@@ -1,12 +1,6 @@
 @import "wireframe-series-3-cta/src/style.css";
 
 /* start here */
-.section {
-  .title {
-    color: var(--ui-light-shade-color);
-  }
-}
-
 .title {
   position: relative;
   margin: -24px 0 36px;
