@@ -27,10 +27,6 @@ ExtendedWireframe.defaultContent = {
     content: 'Get in Touch with Our Logistics Expert',
     type: 'blockTitle',
   },
-  subtitle: {
-    content: 'Complete the form below and receive a full analysis of your business within 2 days!',
-    type: 'subtitle',
-  },
   contactForm: {
     fields: [
       {
