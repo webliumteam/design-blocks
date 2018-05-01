@@ -9,8 +9,6 @@ class Wireframe extends React.Component {
 
   state = {}
 
-  onResizeHeight = resizeHeight => this.setState({resizeHeight})
-
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   getOptionValue = (path, defaultValue = false) =>
@@ -24,15 +22,6 @@ class Wireframe extends React.Component {
       <div className={classNames(style.item, hiddenBodyClass, className)}>
         {children}
         <div className={style.item__inner}>
-          <Image
-            pictureClassName={style.item__picture}
-            imgClassName={style.item__image}
-            bind={`collection[${index}].image`}
-            size={{
-              'min-width: 480px': 800,
-            }}
-            resize={{disable: true}}
-          />
           <div className={style.item__text}>
             <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].heading`} />
             {this.getModifierValue('item-body') && (
@@ -97,12 +86,21 @@ Wireframe.defaultContent = {
     type: 'subtitle',
   },
   collection: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'image',
+          position: {
+            type: 'contain',
+            cover: '50% 50%',
+          },
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          imageColor: [216, 216, 216],
+        }],
+      ],
+    },
     items: [
       {
-        image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Picture about the company',
-        },
         heading: {
           content: 'Samsung',
           type: 'heading',
@@ -117,10 +115,6 @@ Wireframe.defaultContent = {
         },
       },
       {
-        image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Picture about the company',
-        },
         heading: {
           content: 'Ford',
           type: 'heading',
@@ -135,10 +129,6 @@ Wireframe.defaultContent = {
         },
       },
       {
-        image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Picture about the company',
-        },
         heading: {
           content: 'Medical Family',
           type: 'heading',
@@ -153,10 +143,6 @@ Wireframe.defaultContent = {
         },
       },
       {
-        image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Picture about the company',
-        },
         heading: {
           content: 'Coffee Break Now',
           type: 'heading',
@@ -171,10 +157,6 @@ Wireframe.defaultContent = {
         },
       },
       {
-        image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Picture about the company',
-        },
         heading: {
           content: 'Samsung',
           type: 'heading',
@@ -189,10 +171,6 @@ Wireframe.defaultContent = {
         },
       },
       {
-        image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Picture about the company',
-        },
         heading: {
           content: 'Ford',
           type: 'heading',
