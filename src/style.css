@@ -77,7 +77,12 @@
   }
 
   &__pic-wrapper {
+    display: block;
     margin-bottom: 31px;
+  }
+
+  &__img {
+    border-radius: 50%;
   }
 
   &__position {
