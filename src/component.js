@@ -19,6 +19,7 @@ class Block extends React.Component {
         {children}
         {!this.getOptionValue('image-hidden') && (
           <Image
+            wrapperClassName={style['article__picture-wrapper']}
             pictureClassName={style.article__picture}
             imgClassName={style.article__image}
             bind={`services[${index}].picture`}
@@ -90,72 +91,75 @@ class Block extends React.Component {
 Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  services: [
-    {
-      title: {
-        content: 'Quantum E-commerce',
-        type: 'heading',
-      },
-      subtitle: {
-        content: 'Most popular service',
-        type: 'subtitle',
-      },
-      text: {
-        content: 'Multipurpose program that will perfectly suit online stores and online retail business. You can add up to 2000 items with a detailed description, characteristics, and photos. Also, the shopping cart, clients’ feedback, rating, and related items option are available.',
-        type: 'text',
-      },
-      picture: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Quantum E-commerce illustration',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+  services: {
+    background: {},
+    items: [
+      {
+        title: {
+          content: 'Quantum E-commerce',
+          type: 'heading',
+        },
+        subtitle: {
+          content: 'Most popular service',
+          type: 'subtitle',
+        },
+        text: {
+          content: 'Multipurpose program that will perfectly suit online stores and online retail business. You can add up to 2000 items with a detailed description, characteristics, and photos. Also, the shopping cart, clients’ feedback, rating, and related items option are available.',
+          type: 'text',
+        },
+        picture: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Quantum E-commerce illustration',
+        },
+        cta: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Request a quote',
+          type: 'primary',
         },
-        textValue: 'Request a quote',
-        type: 'primary',
       },
-    },
-    {
-      title: {
-        content: 'Quantum Aftersales',
-        type: 'heading',
-      },
-      subtitle: {
-        content: 'Most popular service',
-        type: 'subtitle',
-      },
-      text: {
-        content: 'Aftersales assistance that includes marketing campaigns, additional digital solutions, and educational courses. Our specialists will help to find out what will work for your business and decide on the steps that are to be taken immediately. ',
-        type: 'text',
-      },
-      picture: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Quantum Aftersales illustration',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+      {
+        title: {
+          content: 'Quantum Aftersales',
+          type: 'heading',
+        },
+        subtitle: {
+          content: 'Most popular service',
+          type: 'subtitle',
+        },
+        text: {
+          content: 'Aftersales assistance that includes marketing campaigns, additional digital solutions, and educational courses. Our specialists will help to find out what will work for your business and decide on the steps that are to be taken immediately. ',
+          type: 'text',
+        },
+        picture: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Quantum Aftersales illustration',
+        },
+        cta: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Request a quote',
+          type: 'primary',
         },
-        textValue: 'Request a quote',
-        type: 'primary',
       },
-    },
-  ],
+    ],
+  },
   title: {
     content: 'Services',
     type: 'blockTitle',

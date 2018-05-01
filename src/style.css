@@ -106,6 +106,10 @@
   }
 }
 
+.article__picture-wrapper {
+  position: static;
+}
+
 .article__picture {
   position: absolute;
   width: 100%;
