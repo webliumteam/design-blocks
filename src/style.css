@@ -1,1 +1,108 @@
 @import "media.css";
+
+.section {
+  min-width: 320px;
+  padding: 50px 0;
+  word-wrap: break-word;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding: 75px 0;
+  }
+
+  &__inner {
+    max-width: var(--ui-content-container);
+    margin: 0 auto;
+    padding: var(--ui-content-gutter);
+  }
+
+  &__header {
+    margin-bottom: 30px;
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 20px;
+
+  @media (--ui-tablet-devices) {
+    max-width: 620px;
+  }
+}
+
+.item {
+  margin-bottom: 40px;
+
+  @media (--ui-tablet-devices) {
+    max-width: 530px;
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+
+  &__heading {
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    margin-bottom: 10px;
+  }
+}
+
+.advantages {
+  &__item {
+    display: flex;
+    margin-bottom: 10px;
+
+    &:las-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+
+  &__desc {
+    max-width: calc(100% - 34px);
+  }
+}
+
+.btns-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+
+  @media (--ui-tablet-devices) {
+    margin-top: 60px;
+    justify-content: flex-start;
+  }
+}
+
+.button {
+  width: 100%;
+  min-width: 1px;
+  max-width: calc(100% - 20px);
+  margin: 10px;
+
+  @media (min-width: 480px) {
+    width: auto;
+  }
+}
