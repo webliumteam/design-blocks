@@ -20,12 +20,18 @@
 
 .item {
   &__pic {
+    background-color: transparent;
     width: 209px;
     height: 209px;
 
     &-wrapper {
       margin-bottom: 30px;
+      display: block;
     }
+  }
+
+  &__img {
+    border-radius: 50%;
   }
 
   &__contacts {
