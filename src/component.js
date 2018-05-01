@@ -5,6 +5,7 @@ class Wireframe extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   state = {}
@@ -39,9 +40,10 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Text, Collection, Button}, style, $block} = this.props
+    const {components: {Text, Collection, Button}, style, $block, content} = this.props
     const showButtonGroups = this.getModifierValue('button')
-
+    const collectionLength = _.get('collection.items.length', content) || 7
+    const shrinkCollection = collectionLength % 4 === 0
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -52,7 +54,7 @@ class Wireframe extends React.Component {
             )}
           </div>
           <Collection
-            className={style['items-wrapper']}
+            className={classNames(style['items-wrapper'], shrinkCollection && style['items-wrapper--shrinked'])}
             bind="collection"
             Item={this.collectionItem}
             itemProps={{
@@ -199,7 +201,7 @@ Wireframe.modifierScheme = {
   'item-title': {defaultValue: true, label: 'Partner name', type: 'checkbox'},
   'item-body': {defaultValue: true, label: 'Partner info', type: 'checkbox'},
   'item-link': {defaultValue: true, label: 'Link', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Secondary button', type: 'hidden'},
 }
 
 export default Wireframe

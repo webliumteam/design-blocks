@@ -38,7 +38,24 @@
   @media (--ui-tablet-devices) {
     display: flex;
     margin: 0 -15px;
+    justify-content: center;
     flex-wrap: wrap;
+  }
+
+  &--shrinked {
+
+    @media (--ui-medium-devices) {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .item {
+
+      @media (--ui-medium-devices) {
+        max-width: calc(50% - 30px);
+        flex-basis: calc(50% - 30px);
+      }
+    }
   }
 }
 
