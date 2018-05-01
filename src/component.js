@@ -24,7 +24,7 @@ class Block extends React.Component {
     return (
       <Resizer
         styleProp="minHeight"
-        bindToModifier="resizer.items"
+        bindToModifier="resizer.collection"
         min={this.getOptionValue('min-resize')}
         max={this.getOptionValue('max-resize')}
         disable={this.getOptionValue('disable-resizer')}
@@ -34,19 +34,10 @@ class Block extends React.Component {
         <div className={classNames(style.item, hiddenBodyClass, className)}>
           {children}
           <div className={style.item__inner}>
-            <Image
-              pictureClassName={style.item__picture}
-              imgClassName={style.item__image}
-              bind={`items[${index}].image`}
-              size={{
-                'min-width: 480px': 800,
-              }}
-              resize={{disable: true}}
-            />
             <div className={style.item__text}>
-              <Text tagName="h2" className={style.item__heading} bind={`items[${index}].heading`} />
+              <Text tagName="h2" className={style.item__heading} bind={`collection[${index}].heading`} />
               {this.getModifierValue('item-body') && (
-                <Text tagName="p" className={style.item__description} bind={`items[${index}].text`} />
+                <Text tagName="p" className={style.item__description} bind={`collection[${index}].text`} />
               )}
             </div>
           </div>
@@ -70,7 +61,7 @@ class Block extends React.Component {
           )}
           <Collection
             className={style['items-wrapper']}
-            bind="items"
+            bind="collection"
             Item={this.collectionItem}
             itemProps={{
               modifier: $block.modifier,
@@ -100,7 +91,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'Collection', 'Resizer'])($editor.components)
+Block.components = _.pick(['Text', 'Button', 'Collection', 'Resizer'])($editor.components)
 
 Block.defaultContent = {
   title: {
@@ -111,50 +102,53 @@ Block.defaultContent = {
     type: 'subtitle',
     content: 'Still have some hesitations whether cooperation with us is worth the trouble? Check the reasons why you should choose us among other companies!',
   },
-  items: [
-    {
-      image: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture about the company',
-      },
-      heading: {
-        type: 'heading',
-        content: 'Open-minded',
-      },
-      text: {
-        type: 'text',
-        content: 'We always look for new ideas, explore various spheres, and apply a positive approach',
-      },
+  collection: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          imageColor: [216, 216, 216],
+        }],
+      ],
     },
-    {
-      image: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture about the company',
+    items: [
+      {
+        heading: {
+          type: 'heading',
+          content: 'Open-minded',
+        },
+        text: {
+          type: 'text',
+          content: 'We always look for new ideas, explore various spheres, and apply a positive approach',
+        },
       },
-      heading: {
-        type: 'heading',
-        content: 'Long-term cooperation',
+      {
+        heading: {
+          type: 'heading',
+          content: 'Long-term cooperation',
+        },
+        text: {
+          type: 'text',
+          content: 'We believe that effective cooperation should last for ages',
+        },
       },
-      text: {
-        type: 'text',
-        content: 'We believe that effective cooperation should last for ages',
+      {
+        heading: {
+          type: 'heading',
+          content: 'Turnkey solutions',
+        },
+        text: {
+          type: 'text',
+          content: 'Every good or service we provide is empowered with the top-notch features to deliver the best result to our customers',
+        },
       },
-    },
-    {
-      image: {
-        src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-        alt: 'Picture about the company',
-      },
-      heading: {
-        type: 'heading',
-        content: 'Turnkey solutions',
-      },
-      text: {
-        type: 'text',
-        content: 'Every good or service we provide is empowered with the top-notch features to deliver the best result to our customers',
-      },
-    },
-  ],
+    ],
+  },
   mainButton: {
     actionConfig: {
       action: 'link',

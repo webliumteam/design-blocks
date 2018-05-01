@@ -40,9 +40,8 @@
 .items-wrapper {
   margin: 35px -15px 0;
 
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     display: flex;
-    margin: 35px -8px 0;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -50,17 +49,18 @@
 
 .item {
   display: flex;
+  width: 100%;
   margin-bottom: 30px;
 
-  @media(min-width: 768px) {
-    max-width: 50%;
-    flex-basis: 50%;
-    margin-bottom: 15px;
+  @media (min-width: 768px) {
+    max-width: calc(50% - 30px);
+    margin: 0 15px 15px;
+    flex-basis: calc(50% - 30px);
   }
 
-  @media(min-width: 992px) {
-    max-width: 33%;
-    flex-basis: 33%;
+  @media (min-width: 992px) {
+    max-width: calc(33% - 30px);
+    flex-basis: calc(33% - 30px);
 
     &:hover {
       .item__description {
@@ -72,16 +72,9 @@
   &__inner {
     display: flex;
     position: relative;
-    width: calc(100% - 16px);
     min-height: 400px;
-    margin: 0 8px;
     justify-content: center;
     align-items: center;
-
-    @media(min-width: 992px) {
-      max-width: calc(100% - 30px);
-      margin: 0 15px;
-    }
   }
 
   &__picture {
