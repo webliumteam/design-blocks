@@ -68,6 +68,11 @@
   @media (--ui-medium-devices) {
     max-width: calc(50% - 30px);
     flex-basis: calc(50% - 30px);
+
+    &:hover &__description,
+    &:hover &__button {
+      opacity: 1;
+    }
   }
 
   &__pic-wrapper {
@@ -108,6 +113,11 @@
 
   &__description {
     margin-top: 15px;
+
+    @media (--ui-medium-devices) {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
   }
 
   .item__button {
@@ -116,6 +126,11 @@
     @media (--ui-tablet-devices) {
       margin: 0;
       align-self: flex-start;
+    }
+
+    @media (--ui-medium-devices) {
+      opacity: 0;
+      transition: opacity 0.2s ease;
     }
   }
 }

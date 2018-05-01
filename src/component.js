@@ -18,17 +18,18 @@ class Wireframe extends React.Component {
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        {/* <div className={style.item__inner}> */}
-        <Image
-          wrapperClassName={style['item__pic-wrapper']}
-          pictureClassName={style.item__pic}
-          imgClassName={style.item__img}
-          bind={`collection[${index}].image`}
-          size={{
-            'min-width: 320px': 120,
-          }}
-          resize={{disable: true}}
-        />
+        {this.getModifierValue('item-image') && (
+          <Image
+            wrapperClassName={style['item__pic-wrapper']}
+            pictureClassName={style.item__pic}
+            imgClassName={style.item__img}
+            bind={`collection[${index}].image`}
+            size={{
+              'min-width: 320px': 120,
+            }}
+            resize={{disable: true}}
+          />
+        )}
         <div className={style.item__text}>
           <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].title`} />
           {this.getModifierValue('item-body') && (
@@ -43,7 +44,6 @@ class Wireframe extends React.Component {
             bind={`collection[${index}].cta`}
           />
         )}
-        {/* </div> */}
       </div>
     )
   }
@@ -177,8 +177,9 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
-  'item-body': {defaultValue: true, label: 'Item description', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Services description', type: 'checkbox'},
+  'item-image': {defaultValue: true, label: 'Service Icon', type: 'checkbox'},
+  'item-body': {defaultValue: true, label: 'Service main text', type: 'checkbox'},
   'item-button': {defaultValue: true, label: 'Item Button', type: 'checkbox'},
   cta: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
 }
