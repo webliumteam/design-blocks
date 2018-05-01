@@ -75,71 +75,81 @@ class Block extends React.Component {
 Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
-  testimonials: [
-    {
-      title: {
-        content: 'Amanda Peterson',
-        type: 'heading',
-      },
-      date: {
-        content: 'October 28, 2017',
-        type: 'caption',
-      },
-      description: {
-        content: '“I was happy to work with Quantum! Their efficient solutions helped us to improve a plenty of business processes. Now our clients receive their products faster so that they are more satisfied with our services. They deserve the highest grade!”',
-        type: 'text',
-      },
-      position: {
-        content: 'Marketing Director at Junk Food Co.',
-        type: 'caption',
-      },
-      picture: {
-        alt: 'Amanda Peterson review',
-      },
+  testimonials: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'color',
+          color: '#d8d8d8',
+        }],
+      ],
     },
-    {
-      title: {
-        content: 'Jeff Gordons',
-        type: 'heading',
+    items: [
+      {
+        title: {
+          content: 'Amanda Peterson',
+          type: 'heading',
+        },
+        date: {
+          content: 'October 28, 2017',
+          type: 'caption',
+        },
+        description: {
+          content: '“I was happy to work with Quantum! Their efficient solutions helped us to improve a plenty of business processes. Now our clients receive their products faster so that they are more satisfied with our services. They deserve the highest grade!”',
+          type: 'text',
+        },
+        position: {
+          content: 'Marketing Director at Junk Food Co.',
+          type: 'caption',
+        },
+        picture: {
+          alt: 'Amanda Peterson review',
+        },
       },
-      date: {
-        content: 'October 28, 2017',
-        type: 'caption',
+      {
+        title: {
+          content: 'Jeff Gordons',
+          type: 'heading',
+        },
+        date: {
+          content: 'October 28, 2017',
+          type: 'caption',
+        },
+        description: {
+          content: '“Our company started to work with Quantum 4 years ago. We had only positive experience and implemented a lot of projects together. We’re totally satisfied and now we know that we can rely on Quantum experts any time.”',
+          type: 'text',
+        },
+        position: {
+          content: 'CEO at Clear Thinking',
+          type: 'caption',
+        },
+        picture: {
+          alt: 'Jeff Gordons review',
+        },
       },
-      description: {
-        content: '“Our company started to work with Quantum 4 years ago. We had only positive experience and implemented a lot of projects together. We’re totally satisfied and now we know that we can rely on Quantum experts any time.”',
-        type: 'text',
+      {
+        title: {
+          content: 'Elizabeth Smith',
+          type: 'heading',
+        },
+        date: {
+          content: 'October 28, 2017',
+          type: 'caption',
+        },
+        description: {
+          content: '“Quantum is a reliable and professional company that applies high technology and creates exclusive programs for the clients. We highly appreciate this approach and will definitely continue our fruitful cooperation with them.”',
+          type: 'text',
+        },
+        position: {
+          content: 'Director of Media at Legal Company',
+          type: 'caption',
+        },
+        picture: {
+          alt: 'Elizabeth Smith review',
+        },
       },
-      position: {
-        content: 'CEO at Clear Thinking',
-        type: 'caption',
-      },
-      picture: {
-        alt: 'Jeff Gordons review',
-      },
-    },
-    {
-      title: {
-        content: 'Elizabeth Smith',
-        type: 'heading',
-      },
-      date: {
-        content: 'October 28, 2017',
-        type: 'caption',
-      },
-      description: {
-        content: '“Quantum is a reliable and professional company that applies high technology and creates exclusive programs for the clients. We highly appreciate this approach and will definitely continue our fruitful cooperation with them.”',
-        type: 'text',
-      },
-      position: {
-        content: 'Director of Media at Legal Company',
-        type: 'caption',
-      },
-      picture: {
-        alt: 'Elizabeth Smith review',
-      },
-    },
-  ],
+    ],
+  },
   title: {
     content: 'Testimonials',
     type: 'blockTitle',
