@@ -101,6 +101,7 @@
   }
 
   &__pic-wrapper {
+    display: block;
 
     @media (min-width: 768px) {
       padding-bottom: 50px;
@@ -112,6 +113,10 @@
     height: 170px;
     margin-top: 20px;
     position: relative;
+  }
+
+  &__img {
+    border-radius: 50%;
   }
 
   &__desc {
