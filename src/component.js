@@ -12,15 +12,70 @@ class Wireframe extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
+  collectionItem = ({index, children, className}) => {
+    const {components: {Image, Text, Button}, style} = this.props
+
+    return (
+      <div className={classNames(style.item, className)}>
+        {children}
+        {/* <div className={style.item__inner}> */}
+        <Image
+          wrapperClassName={style['item__pic-wrapper']}
+          pictureClassName={style.item__pic}
+          imgClassName={style.item__img}
+          bind={`collection[${index}].image`}
+          size={{
+            'min-width: 320px': 120,
+          }}
+          resize={{disable: true}}
+        />
+        <div className={style.item__text}>
+          <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].title`} />
+          {this.getModifierValue('item-body') && (
+            <Text tagName="p" className={style.item__description} bind={`collection[${index}].desc`} />
+          )}
+        </div>
+        {this.getModifierValue('item-button') && (
+          <Button
+            linkClassName={style.link}
+            buttonClassName={style.button}
+            className={style.item__button}
+            bind={`collection[${index}].cta`}
+          />
+        )}
+        {/* </div> */}
+      </div>
+    )
+  }
+
   render() {
-    const {components: {Text}, style} = this.props
+    const {components: {Text, Collection, Button}, style, $block} = this.props
 
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <Text bind="title" className={style.title} tagName="h2" />
-          {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
+          <div className={style.section__header}>
+            <Text bind="title" className={style.title} tagName="h2" />
+            {this.getModifierValue('subtitle') && (
+              <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            )}
+          </div>
+          <Collection
+            className={style['items-wrapper']}
+            bind="collection"
+            Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
+          />
+          {this.getModifierValue('cta') && (
+            <div className={style['btns-group']}>
+              <Button
+                linkClassName={style.link}
+                className={style.button}
+                bind="cta"
+              />
+            </div>
           )}
         </div>
       </section>
@@ -28,21 +83,104 @@ class Wireframe extends React.Component {
   }
 }
 
-Wireframe.components = _.pick(['Text'])($editor.components)
+Wireframe.components = _.pick(['Text', 'Image', 'Collection', 'Button'])($editor.components)
 
 Wireframe.defaultContent = {
   title: {
-    content: 'Hello world',
+    content: 'Services We Provide',
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Type here something',
+    content: 'We deliver all kind of services that support small and micro businesses. Here are some of them:',
     type: 'subtitle',
+  },
+  collection: {
+    items: [
+      {
+        image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Service illustration photo',
+        },
+        title: {
+          type: 'heading',
+          content: 'Service 1',
+        },
+        desc: {
+          type: 'text',
+          content: 'Multipurpose assistance for online stores and offline retail businesses.',
+        },
+        cta: {
+          textValue: 'Learn more',
+          type: 'primary',
+        },
+      },
+      {
+        image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Service illustration photo',
+        },
+        title: {
+          type: 'heading',
+          content: 'Service 2',
+        },
+        desc: {
+          type: 'text',
+          content: 'Developing marketing and business strategy to help company grow fast.',
+        },
+        cta: {
+          textValue: 'Learn more',
+          type: 'primary',
+        },
+      },
+      {
+        image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Service illustration photo',
+        },
+        title: {
+          type: 'heading',
+          content: 'Service 3',
+        },
+        desc: {
+          type: 'text',
+          content: 'Building brand awareness for small businesses to increase potential reach.',
+        },
+        cta: {
+          textValue: 'Learn more',
+          type: 'primary',
+        },
+      },
+      {
+        image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Service illustration photo',
+        },
+        title: {
+          type: 'heading',
+          content: 'Service 4',
+        },
+        desc: {
+          type: 'text',
+          content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
+        },
+        cta: {
+          textValue: 'Learn more',
+          type: 'primary',
+        },
+      },
+    ],
+  },
+  cta: {
+    textValue: 'All services',
+    type: 'secondary',
   },
 }
 
 Wireframe.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
+  'item-body': {defaultValue: true, label: 'Item description', type: 'checkbox'},
+  'item-button': {defaultValue: true, label: 'Item Button', type: 'checkbox'},
+  cta: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
 }
 
 export default Wireframe
