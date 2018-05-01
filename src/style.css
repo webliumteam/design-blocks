@@ -45,6 +45,7 @@
 .item {
   display: flex;
   position: relative;
+  min-height: 200px;
   padding: 35px 10px;
   margin-bottom: 30px;
   flex-direction: column;
@@ -67,6 +68,18 @@
 
     @media (--ui-medium-devices) {
       opacity: 1;
+    }
+  }
+
+  &--hidden-body {
+    transition: none;
+
+    .item__text,
+    .item__link {
+
+      @media (--ui-medium-devices) {
+        opacity: 1;
+      }
     }
   }
 
@@ -139,7 +152,6 @@
 
     @media (min-width: 480px) {
       width: auto;
-      margin-right: 15px;
     }
   }
 }

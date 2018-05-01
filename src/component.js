@@ -15,7 +15,7 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Image}, style} = this.props
+    const {components: {Text}, style} = this.props
     const hiddenBodyClass = !this.getModifierValue('item-body') && style['item--hidden-body']
 
     return (
@@ -23,13 +23,15 @@ class Wireframe extends React.Component {
         {children}
         <div className={style.item__inner}>
           <div className={style.item__text}>
-            <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].heading`} />
+            {this.getModifierValue('item-title') && (
+              <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].heading`} />
+            )}
             {this.getModifierValue('item-body') && (
               <Text tagName="p" className={style.item__description} bind={`collection[${index}].text`} />
             )}
           </div>
           {this.getModifierValue('item-link') && (
-            <Text tagName="a" className={style.item__link} bind={`collection[${index}].link`} />
+            <Text tagName="p" className={style.item__link} bind={`collection[${index}].link`} />
           )}
         </div>
       </div>
@@ -110,7 +112,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: 'Know more',
+          content: '<a href="#">Know more</a>',
           type: 'text',
         },
       },
@@ -124,7 +126,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: 'Know more',
+          content: '<a href="#">Know more</a>',
           type: 'text',
         },
       },
@@ -138,7 +140,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: 'Know more',
+          content: '<a href="#">Know more</a>',
           type: 'text',
         },
       },
@@ -152,7 +154,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: 'Know more',
+          content: '<a href="#">Know more</a>',
           type: 'text',
         },
       },
@@ -166,7 +168,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: 'Know more',
+          content: '<a href="#">Know more</a>',
           type: 'text',
         },
       },
@@ -180,7 +182,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: 'Know more',
+          content: '<a href="#">Know more</a>',
           type: 'text',
         },
       },
@@ -193,10 +195,11 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
-  'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
-  'item-link': {defaultValue: true, label: 'Advantage button', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Partners description', type: 'checkbox'},
+  'item-title': {defaultValue: true, label: 'Partner name', type: 'checkbox'},
+  'item-body': {defaultValue: true, label: 'Partner info', type: 'checkbox'},
+  'item-link': {defaultValue: true, label: 'Link', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Wireframe
