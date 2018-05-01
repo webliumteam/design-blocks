@@ -39,17 +39,16 @@
 }
 
 .items-wrapper {
-  display: flex;
   margin: 10px -15px;
-  flex-wrap: wrap;
-  flex-direction: column;
 
   @media (--ui-tablet-devices) {
     margin: 10px 25px;
   }
 
   @media (--ui-medium-devices) {
+    display: flex;
     margin: 10px -15px;
+    flex-wrap: wrap;
     flex-direction: row;
   }
 }

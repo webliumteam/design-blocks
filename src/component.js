@@ -181,7 +181,7 @@ Wireframe.modifierScheme = {
   'item-image': {defaultValue: true, label: 'Service Icon', type: 'checkbox'},
   'item-body': {defaultValue: true, label: 'Service main text', type: 'checkbox'},
   'item-button': {defaultValue: true, label: 'Item Button', type: 'checkbox'},
-  cta: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  cta: {defaultValue: false, label: 'Primary button', type: 'hidden'},
 }
 
 export default Wireframe
