@@ -263,7 +263,7 @@
   padding: 5px;
   cursor: pointer;
   background-color: transparent;
-  color: var(--ui-text-color);
+  color: inherit;
   border: 0;
   transition: color 0.2s ease-in-out;
 
