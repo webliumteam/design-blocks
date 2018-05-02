@@ -70,7 +70,6 @@
 
 .header__slogan {
   margin-bottom: 20px;
-  color: var(--ui-heading-color);
 
   &:last-child {
     margin-bottom: 50px;
