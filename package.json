@@ -1,6 +1,6 @@
 {
   "name": "design-gengar-gallery",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "",
   "main": "src/index.js",
   "scripts": {
