@@ -199,7 +199,9 @@
   cursor: pointer;
   transition: color 0.2s ease;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     color: var(--ui-brand-color);
   }
 
