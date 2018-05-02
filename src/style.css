@@ -34,6 +34,27 @@
 
   @media (--ui-tablet-devices) {
     max-width: 620px;
+    margin: 0 auto;
+  }
+}
+
+.items-wrapper {
+
+  @media (--ui-medium-devices) {
+    display: flex;
+    margin: -15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &--shink-items {
+    .item {
+
+      @media (--ui-medium-devices) {
+        max-width: calc(25% - 30px);
+        flex-basis: calc(25% - 30px);
+      }
+    }
   }
 }
 
@@ -42,6 +63,12 @@
 
   @media (--ui-tablet-devices) {
     max-width: 530px;
+  }
+
+  @media (--ui-medium-devices) {
+    max-width: calc(33% - 30px);
+    margin: 15px;
+    flex-basis: calc(33% - 30px);
   }
 
   &__icon {
@@ -93,6 +120,10 @@
   @media (--ui-tablet-devices) {
     margin-top: 60px;
     justify-content: flex-start;
+  }
+
+  @media (--ui-medium-devices) {
+    justify-content: center;
   }
 }
 
