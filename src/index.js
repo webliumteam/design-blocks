@@ -104,14 +104,8 @@ ExtendedWireframe.defaultContent = {
 
 
 ExtendedWireframe.modifierScheme = {
-  body: {defaultValue: true, label: 'Step main text', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'additional-button': {defaultValue: false, label: 'Button', type: 'hidden'},
-  heading: {defaultValue: true, label: 'Step title', type: 'checkbox'},
-  icon: {defaultValue: true, label: 'Step icon', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Process description', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  ...Component.modifierScheme,
+  subtitle: {defaultValue: false, label: 'Process description', type: 'hidden'},
 }
 
 

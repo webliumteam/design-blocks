@@ -73,7 +73,14 @@
       font-weight: calc(var(--ui-heading-font-weight)*0.835);
       font-family: var(--ui-heading-font-family);
     }
+
+    &.article__content--icon-none {
+      &::before {
+        display: none;
+      }
+    }
   }
+  
 }
 
 .btns-group {
