@@ -284,8 +284,8 @@ Wireframe.modifierScheme = {
   'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
   'list-icon': {defaultValue: true, label: 'Advantage subtopic icon', type: 'checkbox'},
   'list-body': {defaultValue: true, label: 'Advantage subtopic', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'hidden'},
-  'additional-button': {defaultValue: true, label: 'Primary button', type: 'hidden'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'additional-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
 }
 
 export default Wireframe
