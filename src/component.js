@@ -21,6 +21,7 @@ class Block extends React.Component {
       <div className={classNames(css.item, className)}>
         {children}
         <Image
+          wrapperClassName={css['item__picture-wrapper']}
           pictureClassName={css.item__picture}
           imgClassName={css.item__image}
           bind={`services[${index}].picture`}
