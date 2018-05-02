@@ -358,6 +358,7 @@
   width: var(--logoSize);
   margin: 0 auto 10px;
   text-decoration: none;
+  text-align: center;
 
   @media (min-width: 768px) {
     margin: 0 var(--logoOffsetSize) 0 0;
