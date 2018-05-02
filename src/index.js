@@ -13,16 +13,16 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   services: [
     {
-      ...Component.defaultContent.services[0],
+      ...Component.defaultContent.services.items[0],
       picture: {
-        ...Component.defaultContent.services[0].picture,
+        ...Component.defaultContent.services.items[0].picture,
         resourceRef: 'jack-kaminski-129845-unsplash.jpg',
       },
     },
     {
-      ...Component.defaultContent.services[1],
+      ...Component.defaultContent.services.items[1],
       picture: {
-        ...Component.defaultContent.services[1].picture,
+        ...Component.defaultContent.services.items[1].picture,
         resourceRef: 'julien-pianetti-230463-unsplash.jpg',
       },
     },
