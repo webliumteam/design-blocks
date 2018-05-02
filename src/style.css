@@ -193,10 +193,15 @@
   top: 32px;
   padding: 0;
   background-color: transparent;
-  color: var(--ui-brand-color);
+  color: inherit;
   border: 0;
   outline: none;
   cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--ui-brand-color);
+  }
 
   &__line {
     position: absolute;
