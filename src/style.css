@@ -17,6 +17,14 @@
     max-width: var(--ui-content-container);
     margin: 0 auto;
     padding: var(--ui-content-gutter);
+
+    @media (--ui-tablet-devices) {
+      padding: 0 50px;
+    }
+
+    @media (--ui-medium-devices) {
+      padding: var(--ui-content-gutter);
+    }
   }
 
   &__header {
