@@ -14,40 +14,55 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Icon, Text, Button}, style} = this.props
+    const {components: {Icon, Text}, style} = this.props
+    const showMainText = this.getModifierValue('item-title') || this.getModifierValue('item-body')
 
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        <div className={style.item__icon}>
-          <Icon bind={`collection[${index}].icon`} />
-        </div>
-        <div className={style.item__text}>
-          <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].title`} />
-          {this.getModifierValue('item-body') && (
-            <Text tagName="p" className={style.item__desc} bind={`collection[${index}].desc`} />
-          )}
-        </div>
-        <ul className={style.advantages}>
-          <li className={style.advantages__item}>
-            <div className={style.advantages__icon}>
-              <Icon bind={`collection[${index}].advantages[0].icon`} />
-            </div>
-            <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[0].desc`} />
-          </li>
-          <li className={style.advantages__item}>
-            <div className={style.advantages__icon}>
-              <Icon bind={`collection[${index}].advantages[0].icon`} />
-            </div>
-            <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[1].desc`} />
-          </li>
-          <li className={style.advantages__item}>
-            <div className={style.advantages__icon}>
-              <Icon bind={`collection[${index}].advantages[0].icon`} />
-            </div>
-            <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[2].desc`} />
-          </li>
-        </ul>
+        {this.getModifierValue('item-icon') && (
+          <div className={style.item__icon}>
+            <Icon bind={`collection[${index}].icon`} />
+          </div>
+        )}
+        {showMainText && (
+          <div className={style.item__text}>
+            {this.getModifierValue('item-title') && (
+              <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].title`} />
+            )}
+            {this.getModifierValue('item-body') && (
+              <Text tagName="p" className={style.item__desc} bind={`collection[${index}].desc`} />
+            )}
+          </div>
+        )}
+        {this.getModifierValue('list-body') && (
+          <ul className={style.advantages}>
+            <li className={style.advantages__item}>
+              {this.getModifierValue('list-icon') && (
+                <div className={style.advantages__icon}>
+                  <Icon bind={`collection[${index}].advantages[0].icon`} />
+                </div>
+              )}
+              <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[0].desc`} />
+            </li>
+            <li className={style.advantages__item}>
+              {this.getModifierValue('list-icon') && (
+                <div className={style.advantages__icon}>
+                  <Icon bind={`collection[${index}].advantages[0].icon`} />
+                </div>
+              )}
+              <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[1].desc`} />
+            </li>
+            <li className={style.advantages__item}>
+              {this.getModifierValue('list-icon') && (
+                <div className={style.advantages__icon}>
+                  <Icon bind={`collection[${index}].advantages[0].icon`} />
+                </div>
+              )}
+              <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[2].desc`} />
+            </li>
+          </ul>
+        )}
       </div>
     )
   }
@@ -263,10 +278,14 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Partners description', type: 'checkbox'},
-  'item-body': {defaultValue: true, label: 'Partner info', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Secondary button', type: 'hidden'},
-  'additional-button': {defaultValue: false, label: 'Primary button', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Why us description', type: 'checkbox'},
+  'item-icon': {defaultValue: true, label: 'Advantage icon', type: 'checkbox'},
+  'item-title': {defaultValue: true, label: 'Advantage title', type: 'checkbox'},
+  'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
+  'list-icon': {defaultValue: true, label: 'Advantage subtopic icon', type: 'checkbox'},
+  'list-body': {defaultValue: true, label: 'Advantage subtopic', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'hidden'},
+  'additional-button': {defaultValue: true, label: 'Primary button', type: 'hidden'},
 }
 
 export default Wireframe
