@@ -1,3 +1,62 @@
 @import "wireframe-series-2-header/src/style.css";
 
 /* start here */
+
+.header {
+  &__slogan,
+  &__email {
+    font-weight: var(--ui-block-title-font-weight);
+
+    @media (min-width: 992px) {
+      top: -49px;
+    }
+  }
+}
+
+.nav {
+
+  @media (min-width: 992px) {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__item {
+    font-weight: var(--ui-heading-font-weight);
+    text-transform: uppercase;
+
+    @media (min-width: 992px) {
+      margin-top: 21px;
+      margin-right: 9px;
+    }
+  }
+
+  &__link {
+    padding: 6px 13px;
+    border-radius: 5px;
+    transition: background-color 0.2s linear, color 0.2s linear;
+
+    &:hover {
+      background-color: var(--ui-brand-color);
+    }
+  }
+
+  &::after {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 63px;
+    top: -3px;
+    z-index: -1;
+    opacity: 0.09;
+    background-color: var(--ui-dark-shade-color);
+
+    @media (min-width: 992px) {
+      display: block;
+    }
+  }
+}
+
+.nav__list .nav__link:hover {
+  color: var(--ui-light-shade-color);
+}
