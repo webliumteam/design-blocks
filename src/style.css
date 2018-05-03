@@ -1,3 +1,44 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-2-why/src/style.css";
 
 /* start here */
+.section {
+  &__header {
+    margin-bottom: 38px;
+  }
+}
+
+.article {
+  margin-bottom: 56px;
+  text-align: center;
+
+  @media (min-width: 992px) {
+    padding-right: 44px;
+    padding-left: 44px;
+    align-items: center;
+    text-align: left;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    text-align: center;
+
+    @media (min-width: 992px) {
+      text-align: left;
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    margin-right: auto;
+    margin-bottom: 26px;
+    margin-left: auto;
+
+    @media (min-width: 992px) {
+      margin-top: 0;
+      margin-right: 68px;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+}
