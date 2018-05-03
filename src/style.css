@@ -1,3 +1,38 @@
 @import "wireframe-zapdos-cta/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 122px;
+    padding-bottom: 122px;
+  }
+}
+
+.title {
+  position: relative;
+  padding-bottom: 30px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: var(--ui-brand-color);
+  }
+}
+
+.description {
+  padding-top: 20px;
+
+  @media (min-width: 768px) {
+    max-width: 800px;
+    padding-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+  }
+}
