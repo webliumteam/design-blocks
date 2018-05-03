@@ -13,7 +13,7 @@ const {
   hoistStatics,
 } = $editor
 
-const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', {...defaultOptions, options}))))(Component)
+const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', {...defaultOptions, ...options}))))(Component)
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
