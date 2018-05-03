@@ -32,8 +32,7 @@
       position: absolute;
       width: 21px;
       height: 3px;
-      top: 25px;
-      bottom: 0;
+      bottom: -10px;
       left: 0;
       background-color: var(--ui-light-shade-color);
     }
