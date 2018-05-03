@@ -98,10 +98,6 @@ ExtendedWireframe.defaultContent = {
       offset: 10,
     },
   },
-  description: {
-    ...Component.defaultContent.description,
-    content: 'We work to promote the use of natural, organic food, growing our crops and raising our animals with the help of traditional chemical-free farming methods to improve the health of our community.',
-  },
 }
 
 ExtendedWireframe.modifierScheme = {
