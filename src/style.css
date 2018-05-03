@@ -1,3 +1,66 @@
 @import "wireframe-series-2-footer/src/style.css";
 
 /* start here */
+.footer {
+  &__text {
+    letter-spacing: -0.2px;
+  }
+
+  &__part--center {
+
+    @media (min-width: 992px) {
+      max-width: 59%;
+      flex-basis: 59%;
+      padding-left: 107px;
+      padding-top: 18px;
+    }
+  }
+
+  &__part--last {
+
+    @media (min-width: 992px) {
+      max-width: 16%;
+      flex-basis: 16%;
+      padding-top: 13px;
+    }
+  }
+
+  &__bottom {
+    background-color: #f3f4f9;
+
+    @media (min-width: 992px) {
+      margin-top: 85px;
+      padding-top: 19px;
+      padding-bottom: 22px;
+    }
+  }
+
+  &__meta {
+    text-transform: uppercase;
+    color: var(--ui-dark-shade-color);
+  }
+}
+
+.logo {
+
+  @media (min-width: 992px) {
+    margin-bottom: 12px;
+  }
+}
+
+.nav-list {
+  &__item {
+
+    @media (min-width: 992px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__link {
+    color: var(--ui-text-color);
+
+    &:hover {
+      color: var(--ui-brand-color);
+    }
+  }
+}
