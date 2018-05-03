@@ -1,3 +1,22 @@
 @import "wireframe-zapdos-awards/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+}
+
+.item__picture {
+  background-color: transparent;
+
+  @media (min-width: 768px) {
+    padding-top: 80%;
+  }
+
+  img {
+    object-fit: contain;
+  }
+}
