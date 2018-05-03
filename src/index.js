@@ -12,27 +12,30 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   title: {
+    ...Component.defaultContent.title,
     content: 'About Us',
-    type: 'blockTitle',
   },
   text: {
+    ...Component.defaultContent.text,
     content: 'Acrozz Logistics Company expands targeted, complete logistics solutions that meet each client’s special set of challenges, products, systems, and vision since 1983. Companies with diversified and complicated transportation needs trust our innovative technologies to deliver comprehensive, high-value logistics strategies. We guarantee our clients their shipment delivery in time and in the most secure and optimal way. ',
-    type: 'text',
   },
   'text-2': {
+    ...Component.defaultContent['text-2'],
     content: 'We are committed to quality, honesty, and integrity, so you can be sure that Acrozz will take care of your supply chain and logistics needs. Regardless of the type of transportation, our main goal is to ensure the safety of your cargo during transportation and minimize all possible risks.',
-    type: 'text',
   },
   picture: {
-    src: 'Depositphotos_5997067_original.jpg',
-    alt: 'Picture about the company',
+    ...Component.defaultContent.picture,
+    resourceRef: 'picture.jpg',
   },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
-  'additional-text': {defaultValue: true, label: 'Additional text', type: 'hidden'},
+  'additional-text': {defaultValue: true, label: 'Additional text', type: 'checkbox'},
+  'article-picture': {defaultValue: true, label: 'Article picture', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'hidden'},
+  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
 }
 
 export default ExtendedWireframe
