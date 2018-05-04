@@ -16,42 +16,42 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.gallery[0],
       picture: {
         ...Component.defaultContent.gallery[0].picture,
-        src: 'img_1.jpg',
+        resourceRef: 'img_1.jpg',
       },
     },
     {
       ...Component.defaultContent.gallery[1],
       picture: {
         ...Component.defaultContent.gallery[1].picture,
-        src: 'img_2.jpg',
+        resourceRef: 'img_2.jpg',
       },
     },
     {
       ...Component.defaultContent.gallery[2],
       picture: {
         ...Component.defaultContent.gallery[2].picture,
-        src: 'img_3.jpg',
+        resourceRef: 'img_3.jpg',
       },
     },
     {
       ...Component.defaultContent.gallery[3],
       picture: {
         ...Component.defaultContent.gallery[3].picture,
-        src: 'img_4.jpg',
+        resourceRef: 'img_4.jpg',
       },
     },
     {
       ...Component.defaultContent.gallery[4],
       picture: {
         ...Component.defaultContent.gallery[4].picture,
-        src: 'img_5.jpg',
+        resourceRef: 'img_5.jpg',
       },
     },
     {
       ...Component.defaultContent.gallery[5],
       picture: {
         ...Component.defaultContent.gallery[5].picture,
-        src: 'img_6.jpg',
+        resourceRef: 'img_6.jpg',
       },
     },
   ],
