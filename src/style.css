@@ -125,6 +125,13 @@
   .item__body {
     order: -1;
   }
+
+  .item__title {
+    &:only-child {
+      max-width: 50%;
+      margin-left: auto;
+    }
+  }
 }
 
 .item__title {
