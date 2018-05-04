@@ -40,7 +40,7 @@ ExtendedWireframe.defaultContent = {
     iconEnabled: true,
     iconAlignment: 'right',
     icon: {
-      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125"><path d="M50 66.138l3.2-2.7 26-22-6.4-7.7-22.8 19.4-22.8-19.3-6.4 7.7 26 22 3.2 2.6z"/></svg>',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.1 119.9"><path d="M76.3 60l-2.7-3.2-22-26-7.7 6.4L63.3 60 44 82.8l7.7 6.4 22-26 2.6-3.2z"/></svg>',
     },
   },
 }
