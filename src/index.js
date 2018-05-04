@@ -26,6 +26,7 @@ ExtendedWireframe.defaultContent = {
   title: {
     content: 'Get in Touch with Our Logistics Expert',
     type: 'blockTitle',
+    color: 'light-shade-color',
   },
   contactForm: {
     fields: [
@@ -69,7 +70,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Title description', type: 'hidden'},
 }
 
 export default ExtendedWireframe
