@@ -10,56 +10,78 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
 
 ExtendedWireframe.defaultContent = {
-  steps: [
-    {
-      title: {
-        content: 'Schedule an</br>appointment',
-        type: 'heading',
-        color: 'light-shade-color',
-      },
-      description: {
-        content: 'Choose the date and time that suits you.',
-        type: 'text',
-        color: 'light-shade-color',
-      },
+  steps: {
+    background: {
+      'nth-child': [
+        ['4n+1', {
+          color: 'dark-accent-color?lighten=7.84&spin=19',
+          type: 'color',
+        }],
+        ['4n+2', {
+          color: 'dark-accent-color?spin=16',
+          type: 'color',
+        }],
+        ['4n+3', {
+          color: 'dark-accent-color?spin=8',
+          type: 'color',
+        }],
+        ['4n+4', {
+          color: 'dark-accent-color',
+          type: 'color',
+        }],
+      ],
     },
-    {
-      title: {
-        content: 'Request your</br>service',
-        type: 'heading',
-        color: 'light-shade-color',
+    items: [
+      {
+        title: {
+          content: 'Schedule an</br>appointment',
+          type: 'heading',
+          color: 'light-shade-color',
+        },
+        description: {
+          content: 'Choose the date and time that suits you.',
+          type: 'text',
+          color: 'light-shade-color',
+        },
       },
-      description: {
-        content: 'Specify the service you need for your project.',
-        type: 'text',
-        color: 'light-shade-color',
+      {
+        title: {
+          content: 'Request your</br>service',
+          type: 'heading',
+          color: 'light-shade-color',
+        },
+        description: {
+          content: 'Specify the service you need for your project.',
+          type: 'text',
+          color: 'light-shade-color',
+        },
       },
-    },
-    {
-      title: {
-        content: 'Choose an</br>electrician',
-        type: 'heading',
-        color: 'light-shade-color',
+      {
+        title: {
+          content: 'Choose an</br>electrician',
+          type: 'heading',
+          color: 'light-shade-color',
+        },
+        description: {
+          content: 'Select a highly trained & registered electrician.',
+          type: 'text',
+          color: 'light-shade-color',
+        },
       },
-      description: {
-        content: 'Select a highly trained & registered electrician.',
-        type: 'text',
-        color: 'light-shade-color',
+      {
+        title: {
+          content: 'Request a free</br>estimate',
+          type: 'heading',
+          color: 'light-shade-color',
+        },
+        description: {
+          content: 'We offer free estimates on any service.',
+          type: 'text',
+          color: 'light-shade-color',
+        },
       },
-    },
-    {
-      title: {
-        content: 'Request a free</br>estimate',
-        type: 'heading',
-        color: 'light-shade-color',
-      },
-      description: {
-        content: 'We offer free estimates on any service.',
-        type: 'text',
-        color: 'light-shade-color',
-      },
-    },
-  ],
+    ],
+  },
   title: {
     content: 'How to get started',
     type: 'blockTitle',
