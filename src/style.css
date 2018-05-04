@@ -1,3 +1,51 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-awards/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.title {
+  position: relative;
+  text-align: left;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    width: 53px;
+    height: 5px;
+    bottom: -5px;
+    left: 0;
+    transform: skewX(-25deg);
+    background: linear-gradient(
+      to right,
+      var(--ui-light-accent-color) 0%,
+      var(--ui-light-accent-color) 60%,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0) 70%,
+      var(--ui-light-accent-color) 70%,
+      var(--ui-light-accent-color) 80%,
+      rgba(0, 0, 0, 0) 80%,
+      rgba(0, 0, 0, 0) 90%,
+      var(--ui-light-accent-color) 90%,
+      var(--ui-light-accent-color) 100%
+    );
+  }
+}
+
+.items-wrapper {
+
+  @media (min-width: 992px) {
+    margin-top: 40px;
+  }
+}
+
+.item {
+  &__picture {
+    padding-top: 78%;
+  }
+}
