@@ -81,7 +81,9 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  heading: {defaultValue: false, label: 'Awards title', type: 'checkbox'},
+  heading: {defaultValue: false, label: 'Awards title', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'hidden'},
+  button: {defaultValue: false, label: 'Button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
