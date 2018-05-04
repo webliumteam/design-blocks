@@ -1,3 +1,77 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-cta/src/style.css";
 
 /* start here */
+.section {
+
+  @media (min-width: 992px) {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__inner {
+    padding-top: 13.2478%;
+    padding-bottom: 14.1%;
+
+    @media (min-width: 992px) {
+      max-width: 653px;
+      margin-left: 0;
+      padding-left: 78px;
+      padding-right: 50px;
+      text-align: left;
+    }
+  }
+}
+
+.title {
+  position: relative;
+  line-height: calc(var(--ui-block-title-line-height) * 0.79);
+  text-transform: capitalize;
+  margin-bottom: 55px;
+  letter-spacing: 0.6px;
+
+  @media (min-width: 992px) {
+    font-size: calc(var(--ui-block-title-size) * 0.95);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 53px;
+    height: 5px;
+    top: 100%;
+    left: 50%;
+    transform: skewX(-25deg) translateX(-50%);
+    margin-top: 15px;
+    background: linear-gradient(
+      to right,
+      var(--ui-light-accent-color) 0%,
+      var(--ui-light-accent-color) 60%,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0) 70%,
+      var(--ui-light-accent-color) 70%,
+      var(--ui-light-accent-color) 80%,
+      rgba(0, 0, 0, 0) 80%,
+      rgba(0, 0, 0, 0) 90%,
+      var(--ui-light-accent-color) 90%,
+      var(--ui-light-accent-color) 100%
+    );
+
+    @media (min-width: 992px) {
+      left: 0;
+      transform: skewX(-25deg);
+      margin-top: 10px;
+    }
+  }
+}
+
+.description {
+  font-family: var(--ui-subheading-font-family);
+  letter-spacing: 0.2px;
+
+  @media (min-width: 992px) {
+    font-size: calc(var(--ui-text-size) * 1.375);
+    margin-bottom: 50px;
+  }
+}
