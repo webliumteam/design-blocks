@@ -2,18 +2,42 @@
 
 .section {
   min-width: 320px;
-  padding: 50px 0;
+  padding: 80px 0;
   word-wrap: break-word;
 
   @media (min-width: 992px) {
-    padding: 430px 0 50px;
+    padding-top: 430px;
+  }
+
+  &--with-header {
+
+    @media (--ui-medium-devices) {
+      padding-top: 180px;
+    }
+  }
+
+  &__inner {
+    max-width: var(--ui-content-container);
+    margin: 0 auto;
+    padding: var(--ui-content-gutter);
+  }
+
+  &__header {
+    margin-bottom: 60px;
+
+    @media (--ui-medium-devices) {
+      margin-bottom: 130px;
+    }
   }
 }
 
-.section__inner {
-  max-width: var(--ui-content-container);
-  margin: 0 auto;
-  padding: var(--ui-content-gutter);
+.title {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
 }
 
 .items-wrapper {
