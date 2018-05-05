@@ -43,13 +43,13 @@ class Wireframe extends React.Component {
     return (
       <section className={classNames(style.section, blockHeader && style['section--with-header'])}>
         <div className={style.section__inner}>
-          {!blockHeader && (
+          {blockHeader && (
             <div className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text tagName="h2" className="title" bind="title" />
+                <Text tagName="h2" className={style.title} bind="title" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text tagName="p" className="subtitle" bind="subtitle" />
+                <Text tagName="p" className={style.subtitle} bind="subtitle" />
               )}
             </div>
           )}
@@ -85,8 +85,12 @@ Wireframe.defaultContent = {
     color: '#d8d8d8',
   },
   title: {
-    content: 'Hello world',
-    type: 'blockTitle',
+    content: 'Best Flower Delivery in Town',
+    type: 'heroTitle',
+  },
+  subtitle: {
+    content: 'We can deliver even the most unusual ideas!',
+    type: 'subtitle',
   },
   collection: {
     background: {
