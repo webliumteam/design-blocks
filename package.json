@@ -1,7 +1,7 @@
 {
   "name": "wireframe-zapdos-awards",
   "category": "awards",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "",
   "main": "src/index.js"
 }
