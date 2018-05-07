@@ -138,7 +138,7 @@ Wireframe.defaultContent = {
         },
         desc: {
           type: 'text',
-          content: 'We have a considerable experience and already completed more than 10 000 projects.',
+          content: 'We have extensive experience and can be proud of 10 000+ completed projects.',
         },
         advantages: [
           {
