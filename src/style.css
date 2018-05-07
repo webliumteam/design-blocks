@@ -1,3 +1,84 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-3-cta/src/style.css";
 
 /* start here */
+.title {
+  position: relative;
+  margin: -24px 0 36px;
+  font-weight: 600;
+  font-size: calc(var(--ui-block-title-size) * 0.8);
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--ui-block-title-size) * 0.95);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 53px;
+    height: 5px;
+    bottom: -16px;
+    left: 50%;
+    transform: skewX(-25deg);
+    margin-left: -26.5px;
+    background: linear-gradient(
+      to right,
+      var(--ui-light-accent-color ) 0%,
+      var(--ui-light-accent-color ) 60%,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0) 70%,
+      var(--ui-light-accent-color ) 70%,
+      var(--ui-light-accent-color ) 80%,
+      rgba(0, 0, 0, 0) 80%,
+      rgba(0, 0, 0, 0) 90%,
+      var(--ui-light-accent-color ) 90%,
+      var(--ui-light-accent-color ) 100%
+    );
+  }
+}
+
+.subtitle {
+  font-size: calc(var(--ui-subtitle-size) * 1.35);
+  font-family: var(--ui-block-title-font-family);
+}
+
+.form {
+
+  @media (min-width: 768px) {
+    max-width: 470px;
+    margin: 40px auto 0;
+  }
+
+  &__field {
+    text-transform: uppercase;
+    font-size: calc(var(--ui-text-size) * 0.875);
+    font-family: var(--ui-block-title-font-family);
+    font-weight: 600;
+    color: #b5b5b5;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 4px;
+
+    @media (min-width: 480px) {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &::placeholder {
+      color: currentColor;
+    }
+  }
+
+  &__button {
+    margin-top: 14px;
+    border: 0;
+    font-family: var(--ui-block-title-font-family);
+    font-weight: 600;
+    border-radius: 3px;
+
+    @media (min-width: 480px) {
+      margin-top: 0;
+      margin-left: -2px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+}
