@@ -1,3 +1,69 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-process/src/style.css";
 
 /* start here */
+
+.article {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  max-width: calc(100% - 15px);
+  padding: 0;
+
+  @media (min-width: 768px) {
+    margin-top: 45px;
+    flex-basis: calc(50% - 15px);
+    max-width: calc(50% - 15px);
+  }
+
+  @media (min-width: 992px) {
+    flex-basis: calc(25% - 15px);
+    max-width: calc(25% - 15px);
+  }
+
+  &__title {
+    position: relative;
+    font-size: calc(var(--ui-heading-size) * 1.25);
+    font-weight: calc(var(--ui-heading-font-weight) * 0.835);
+    margin-bottom: 30px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 31px;
+      height: 1px;
+      background-color: currentColor;
+      position: absolute;
+      bottom: -10px;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    padding: 35px 20px 35px 40px;
+
+    &::before {
+      counter-increment: steps;
+      content: "0"counter(steps)". ";
+      position: relative;
+      height: auto;
+      display: inline-block;
+      padding: 0;
+      margin-bottom: 7px;
+      background-color: transparent;
+      line-height: 1em;
+      color: var(--ui-light-shade-color);
+      font-size: calc(var(--ui-heading-size) * 1.335);
+      font-weight: calc(var(--ui-heading-font-weight) * 0.835);
+      font-family: var(--ui-heading-font-family);
+    }
+
+    &.article__content--icon-none {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.btns-group {
+  margin-top: 70px;
+}
