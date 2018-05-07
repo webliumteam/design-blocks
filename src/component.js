@@ -53,7 +53,7 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Slider}, style, $block} = this.props
+    const {components: {Slider}, style, content, $block} = this.props
     const customArrows = this.getOptionValue('custom-arrows') ? {
       nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
       prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
@@ -70,6 +70,7 @@ class Wireframe extends React.Component {
           }}
           itemProps={{
             modifier: $block.modifier,
+            content,
           }}
         />
       </section>
