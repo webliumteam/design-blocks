@@ -1,9 +1,6 @@
 @import "wireframe-series-2-cta/src/style.css";
 
 .section {
-  background: linear-gradient(to right, #ffdfdf 70%, var(--ui-light-shade-color) 70%);
-  background-size: 100px 100%;
-
   &__inner {
     max-width: 1170px;
     background-color: transparent;
@@ -35,10 +32,6 @@
   padding-left: 17%;
   padding-right: 17%;
 
-  &__item:nth-child(4) .form__field {
-    min-height: 150px;
-  }
-
   &__field {
     border: 1px solid var(--ui-text-color);
     background-color: transparent;
@@ -54,4 +47,8 @@
       margin-top: 25px;
     }
   }
+}
+
+.form textarea {
+  min-height: 150px;
 }

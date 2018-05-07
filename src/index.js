@@ -14,15 +14,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  title: {
-    ...Component.defaultContent.title,
-    content: 'Get in Touch',
-  },
-  subtitle: {
-    ...Component.defaultContent.subtitle,
-    content:
-      'We are available 24/7 by fax, e-mail, or by phone. You can also use our quick contact form to ask a question about our services and products. We would be happy to answer your questions or offer any help.',
-  },
   contactForm: {
     ...Component.defaultContent.contactForm,
     fields: [
@@ -46,7 +37,7 @@ ExtendedWireframe.defaultContent = {
         required: false,
       },
       {
-        type: 'text',
+        type: 'textArea',
         id: 'contactForm_message',
         title: 'Message',
         placeholder: '',
@@ -58,7 +49,6 @@ ExtendedWireframe.defaultContent = {
       title: 'Send',
       size: 'sm',
     },
-    submitButtonClassName: 'button button--size-sm button--primary form__button',
   },
 }
 
