@@ -86,7 +86,7 @@ Wireframe.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
+    content: 'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
     type: 'subtitle',
   },
   collection: {
@@ -114,7 +114,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: '<a href="#">Know more</a>',
+          content: '<a href="#">Partner’s website</a>',
           type: 'text',
         },
       },
@@ -128,7 +128,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: '<a href="#">Know more</a>',
+          content: '<a href="#">Partner’s website</a>',
           type: 'text',
         },
       },
@@ -142,7 +142,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: '<a href="#">Know more</a>',
+          content: '<a href="#">Partner’s website</a>',
           type: 'text',
         },
       },
@@ -156,7 +156,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: '<a href="#">Know more</a>',
+          content: '<a href="#">Partner’s website</a>',
           type: 'text',
         },
       },
@@ -170,7 +170,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: '<a href="#">Know more</a>',
+          content: '<a href="#">Partner’s website</a>',
           type: 'text',
         },
       },
@@ -184,7 +184,7 @@ Wireframe.defaultContent = {
           type: 'text',
         },
         link: {
-          content: '<a href="#">Know more</a>',
+          content: '<a href="#">Partner’s website</a>',
           type: 'text',
         },
       },
@@ -192,7 +192,7 @@ Wireframe.defaultContent = {
   },
   mainButton: {
     type: 'secondary',
-    textValue: 'Request a quote',
+    textValue: 'Learn more',
   },
 }
 
