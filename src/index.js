@@ -21,17 +21,7 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'picture.jpg',
   },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
-    textValue: 'Request a quote',
+    ...Component.defaultContent.cta,
     type: 'primary',
     size: 'lg',
   },
