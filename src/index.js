@@ -28,6 +28,7 @@ ExtendedWireframe.defaultContent = {
     textValue: 'Go to homepage',
     type: 'primary',
     iconEnabled: true,
+
     iconAlignment: 'right',
     icon: {
       svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120.1 119.9"><path d="M76.3 60l-2.7-3.2-22-26-7.7 6.4L63.3 60 44 82.8l7.7 6.4 22-26 2.6-3.2z"/></svg>',
