@@ -9,12 +9,7 @@
   }
 }
 
-:root {
-  --ui-brand-color: rgba(198, 36, 52);
-}
-
 .title {
-  display: inline-block;
   position: relative;
   line-height: 1.4;
   margin-bottom: 50px;
@@ -29,16 +24,16 @@
     transform: skewX(-25deg) translateX(-50%);
     background: linear-gradient(
       to right,
-      var(--ui-brand-color) 0%,
-      var(--ui-brand-color) 60%,
-      rgba(0, 0, 0 0) 60%,
+      var(--ui-light-accent-color) 0%,
+      var(--ui-light-accent-color) 60%,
+      rgba(0, 0, 0, 0) 60%,
       rgba(0, 0, 0, 0) 70%,
-      var(--ui-brand-color) 70%,
-      var(--ui-brand-color) 80%,
+      var(--ui-light-accent-color) 70%,
+      var(--ui-light-accent-color) 80%,
       rgba(0, 0, 0, 0) 80%,
       rgba(0, 0, 0, 0) 90%,
-      var(--ui-brand-color) 90%,
-      var(--ui-brand-color) 100%
+      var(--ui-light-accent-color) 90%,
+      var(--ui-light-accent-color) 100%
     );
   }
 }
