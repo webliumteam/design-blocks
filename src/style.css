@@ -1,22 +1,25 @@
 @import "wireframe-zapdos-about/src/style.css";
 
 /* start here */
-
-.article {
+.section {
 
   @media (min-width: 768px) {
-    min-height: 720px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
+}
 
+.article {
   &__content {
     justify-content: flex-start;
-    padding: 32px 0 0 50px;
+    padding-top: 32px;
+    padding-left: 50px;
   }
 
   &__title {
     position: relative;
-    line-height: var(--ui-block-title-line-height)*0.97;
-    letter-spacing: 2px;
+    line-height: calc(var(--ui-block-title-line-height) * 1.41);
+    letter-spacing: 1px;
 
     &::after {
       content: "";
@@ -41,21 +44,15 @@
     letter-spacing: 0.8px;
   }
 
-  &__picture-wrapper {
-    border-radius: 11px;
-  }
-
   &__picture {
     background-color: var(--ui-light-shade-color);
-  }
-
-  &__picture img {
-    object-fit: contain;
+    padding-top: 90%;
+    border-radius: 11px;
   }
 }
 
 .article .article__subtitle ~ .btns-group {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .social {
