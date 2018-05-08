@@ -236,8 +236,8 @@ Wireframe.modifierScheme = {
   body: {defaultValue: true, label: 'Text', type: 'checkbox'},
   arrows: {defaultValue: true, label: 'Arrow navigation', type: 'checkbox'},
   counter: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox'},
-  'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'primary-button': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
+  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Wireframe
