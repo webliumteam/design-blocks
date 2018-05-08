@@ -65,14 +65,14 @@ class Block extends React.Component {
           {(this.getModifierValue('button-secondary') ||
             this.getModifierValue('button-primary')) && (
             <div className={style['btns-group']}>
-              {this.getModifierValue('button-primary') && (
+              {this.getModifierValue('button-secondary') && (
                 <Button
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="button-1"
                 />
               )}
-              {this.getModifierValue('button-secondary') && (
+              {this.getModifierValue('button-primary') && (
                 <Button
                   buttonClassName={style.button}
                   linkClassName={style.link}
@@ -229,7 +229,7 @@ Block.defaultContent = {
       },
     },
     textValue: 'Request a quote',
-    type: 'primary',
+    type: 'secondary',
   },
   'button-2': {
     actionConfig: {
@@ -243,19 +243,18 @@ Block.defaultContent = {
       },
     },
     textValue: 'Learn more',
-    type: 'secondary',
+    type: 'primary',
   },
 }
 
 Block.modifierScheme = {
-  body: {defaultValue: true, label: 'Service main text', type: 'checkbox'},
-  'button-primary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
-  'button-secondary': {defaultValue: true, label: 'Button', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Service title', type: 'checkbox'},
-  link: {defaultValue: true, label: 'Link', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Services description', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Heading', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Service main text', type: 'checkbox'},
+  link: {defaultValue: true, label: 'Link', type: 'checkbox'},
+  'button-secondary': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'button-primary': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block
