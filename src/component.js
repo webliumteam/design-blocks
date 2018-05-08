@@ -204,14 +204,13 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'block-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'project-button': {defaultValue: true, label: 'Project button', type: 'checkbox'},
-  'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox'},
-  'project-description': {defaultValue: true, label: 'Project description', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Project description', type: 'checkbox'},
+  'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox'},
+  'project-description': {defaultValue: true, label: 'Project main text', type: 'checkbox'},
+  'block-button': {defaultValue: true, label: 'Link', type: 'checkbox'},
+  'project-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block
