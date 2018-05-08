@@ -25,13 +25,7 @@
 .nav-list__item {
   margin-top: 6px;
   margin-bottom: 6px;
-
-  &:not(:first-child) {
-
-    @media (min-width: 992px) {
-      margin-left: 30px;
-    }
-  }
+  margin-right: 30px;
 }
 
 .nav {
