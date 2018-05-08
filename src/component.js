@@ -233,8 +233,8 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   logo: {defaultValue: true, label: 'Company name', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
 }
 
 export default Block
