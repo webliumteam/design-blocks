@@ -43,10 +43,12 @@ class Wireframe extends React.Component {
               </div>
             )}
           </Background>
-          <div className={style.counter}>
-            <span className={style.counter__current}>{`0${index + 1}`}</span>
-            <span className={style.counter__count}>/{`0${content.cover.length}`}</span>
-          </div>
+          {this.getModifierValue('counter') && (
+            <div className={style.counter}>
+              <span className={style.counter__current}>{`0${index + 1}`}</span>
+              <span className={style.counter__count}>&nbsp;/{`0${content.cover.length}`}</span>
+            </div>
+          )}
         </div>
       </div>
     )
@@ -54,7 +56,7 @@ class Wireframe extends React.Component {
 
   render() {
     const {components: {Slider}, style, content, $block} = this.props
-    const customArrows = this.getOptionValue('custom-arrows') ? {
+    const customArrows = this.getModifierValue('arrows') && this.getOptionValue('custom-arrows') ? {
       nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
       prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
     } : {}
@@ -66,6 +68,7 @@ class Wireframe extends React.Component {
           bind="cover"
           Item={this.collectionItem}
           settings={{
+            arrows: this.getModifierValue('arrows'),
             ...customArrows,
           }}
           itemProps={{
@@ -228,9 +231,11 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
-  body: {defaultValue: true, label: 'Block description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Hero title', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Text', type: 'checkbox'},
+  arrows: {defaultValue: true, label: 'Arrow navigation', type: 'checkbox'},
+  counter: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox'},
   'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
   'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
