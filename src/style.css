@@ -15,7 +15,7 @@
 
   .item {
     position: relative;
-    padding: 80px 0;
+    padding: 100px 0;
 
     @media (--ui-tablet-devices) {
       padding: 170px 0;
@@ -133,7 +133,7 @@
     position: absolute;
     width: 40px;
     height: 1px;
-    bottom: 25px;
+    bottom: 50%;
     left: -50px;
     background-color: currentColor;
     opacity: 0.8;
