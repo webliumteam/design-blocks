@@ -2,20 +2,25 @@
 
 .section {
   min-width: 320px;
-  padding: 50px 0;
+  padding: 50px 0 80px;
   word-wrap: break-word;
 
   @media (min-width: 768px) {
-    padding: 60px 0;
+    padding: 60px 0 90px;
   }
 
   @media (min-width: 992px) {
-    padding: 75px 0;
+    padding: 75px 0 105px;
   }
 
   &__inner {
-    max-width: var(--ui-content-container);
-    margin: 0 auto;
-    padding: var(--ui-content-gutter);
+    max-width: 100%;
+    padding: 0;
+
+    @media (--ui-tablet-devices) {
+      max-width: var(--ui-content-container);
+      margin: 0 auto;
+      padding: var(--ui-content-gutter);
+    }
   }
 }
