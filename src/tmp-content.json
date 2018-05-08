@@ -47,6 +47,7 @@
       "preset": "preset001",
       "color": "var(--ui-link-color)",
       "sizes": [10, 20, 30, 32, 40],
+      "offset": 20,
       "size": "32px"
     }
   }
