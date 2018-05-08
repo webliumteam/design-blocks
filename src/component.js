@@ -74,7 +74,7 @@ class Block extends React.Component {
           [style['section--column']]: mapWithSocials,
           [style['section--state-3']]: listWithSocials,
           [style['section--state-4']]: onlyList,
-          [style['section--state-11']]: this.getModifierValue('map-arrangement') === 'right',
+          [style['section--state-11']]: this.getModifierValue('map-arrangement'),
         })}
       >
         <div className={style.section__inner}>
