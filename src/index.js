@@ -41,9 +41,7 @@ ExtendedWireframe.defaultContent = {
     ...Component.defaultContent.socialIcons,
     networks: [
       {
-        id: 'facebook',
-        name: 'Facebook',
-        url: 'http://facebook.com/',
+        ...Component.defaultContent.socialIcons.networks[0],
       },
       {
         id: 'twitter',
@@ -51,9 +49,7 @@ ExtendedWireframe.defaultContent = {
         url: 'http://twitter.com/',
       },
       {
-        id: 'instagram',
-        name: 'Instagram',
-        url: 'http://instagram.com/',
+        ...Component.defaultContent.socialIcons.networks[1],
       },
     ],
     design: {
