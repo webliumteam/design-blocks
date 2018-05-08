@@ -64,7 +64,7 @@ class Block extends React.Component {
     )
 
     const blockHeader = [
-      <Text bind="title" className={style.title} tagName="h1" />,
+      this.getModifierValue('title') && <Text bind="title" className={style.title} tagName="h1" />,
       this.getModifierValue('subtitle') && <Text bind="subtitle" className={style.subtitle} tagName="p" />,
     ]
 
@@ -244,6 +244,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  'map-arrangement': {
+    defaultValue: false,
+    title: 'Arrange elements',
+    type: 'swap',
+  },
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   map: {defaultValue: true, label: 'Map', type: 'checkbox'},
   logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
   phone: {defaultValue: true, label: 'Phone text block', type: 'checkbox'},
@@ -252,16 +258,6 @@ Block.modifierScheme = {
   social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
-  'map-arrangement': {
-    children: [
-      {id: 'left', label: 'Left'},
-      {id: 'right', label: 'Right'},
-    ],
-    defaultValue: 'left',
-    name: 'Map arrangement',
-    type: 'radio-button-group',
-    style: 'buttons',
-  },
 }
 
 
