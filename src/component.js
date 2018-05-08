@@ -200,7 +200,7 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   'arrange-elements': {
-    defaultValue: 'false',
+    defaultValue: false,
     name: 'Arrange elements',
     type: 'swap',
   },
