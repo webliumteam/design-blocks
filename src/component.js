@@ -32,7 +32,7 @@ class Block extends React.Component {
     const arrange = this.getModifierValue('arrange-elements')
 
     return (
-      <section className={classNames(style.section, style[`section--${arrange}`])}>
+      <section className={classNames(style.section, arrange && style['section--reverse'])}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
@@ -161,13 +161,9 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   'arrange-elements': {
-    children: [
-      {id: 'default', label: 'Default'},
-      {id: 'reverse', label: 'Reverse'},
-    ],
-    defaultValue: 'Default',
-    name: 'Arrange elements',
-    type: 'radio-button-group',
+    type: 'swap',
+    title: 'Arrange elements',
+    defaultValue: false,
   },
   body: {defaultValue: true, label: 'Careers main text', type: 'checkbox'},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
