@@ -13,7 +13,10 @@
   &__content {
     justify-content: flex-start;
     padding-top: 32px;
-    padding-left: 50px;
+
+    @media (min-width: 768px) {
+      padding-left: 50px;
+    }
   }
 
   &__title {
