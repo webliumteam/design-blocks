@@ -19,6 +19,7 @@
   &__title {
     position: relative;
     line-height: calc(var(--ui-block-title-line-height) * 1.41);
+    font-weight: var(--ui-heading-lg-font-weight);
     letter-spacing: 1px;
 
     &::after {
@@ -46,8 +47,11 @@
 
   &__picture {
     background-color: var(--ui-light-shade-color);
-    padding-top: 90%;
     border-radius: 11px;
+
+    @media (min-width: 768px) {
+      padding-top: 123%;
+    }
   }
 }
 
