@@ -244,13 +244,13 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
-  address: {defaultValue: true, label: 'Address text block', type: 'checkbox'},
-  email: {defaultValue: true, label: 'E-mail text block', type: 'checkbox'},
-  logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
   map: {defaultValue: true, label: 'Map', type: 'checkbox'},
+  logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
   phone: {defaultValue: true, label: 'Phone text block', type: 'checkbox'},
+  email: {defaultValue: true, label: 'E-mail text block', type: 'checkbox'},
+  address: {defaultValue: true, label: 'Address text block', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
   'map-arrangement': {
     children: [
