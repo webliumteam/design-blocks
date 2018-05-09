@@ -69,6 +69,10 @@
   max-width: 970px;
 }
 
+.picture-wrapper {
+  position: relative;
+}
+
 .items-wrapper {
   margin-bottom: -40px;
 

@@ -14,10 +14,10 @@ class Block extends React.Component {
     return (
       <div className={classNames(style.item, className)}>
         {children}
-
         <div className={style.item__inner}>
           {_.get('image')(modifier) && (
             <Image
+              wrapperClassName={style['picture-wrapper']}
               pictureClassName={style.item__pic}
               imgClassName={style.item__img}
               bind={`numbers[${index}].picture`}
