@@ -1,6 +1,6 @@
 {
   "name": "wireframe-series-2-services",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "category": "services",
   "main": "src/index.js",
