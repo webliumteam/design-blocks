@@ -271,8 +271,8 @@ Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Partner description', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Partner title', type: 'checkbox'},
   body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
-  link: {defaultValue: true, label: 'Partner link', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  link: {defaultValue: true, label: 'Link', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
