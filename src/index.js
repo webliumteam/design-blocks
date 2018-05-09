@@ -11,6 +11,14 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  subtitle: {
+    ...Component.defaultContent.subtitle,
+    type: 'subheading',
+  },
+  background: {
+    ...Component.defaultContent.background,
+    color: 'light-shade-color',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
