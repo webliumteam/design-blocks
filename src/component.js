@@ -233,11 +233,11 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'block-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'post-description': {defaultValue: true, label: 'Post main text', type: 'checkbox'},
-  'post-image': {defaultValue: true, label: 'Post image', type: 'checkbox'},
-  'post-link': {defaultValue: true, label: 'Post link', type: 'checkbox'},
+  'post-image': {defaultValue: true, label: 'Image', type: 'checkbox'},
   'post-publish-date': {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
+  'post-description': {defaultValue: true, label: 'Post main text', type: 'checkbox'},
+  'post-link': {defaultValue: true, label: 'Link', type: 'checkbox'},
+  'block-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
