@@ -21,65 +21,28 @@ ExtendedWireframe.defaultContent = {
     color: 'eff1f2',
   },
   title: {
-    content: 'Contacts Us',
+    ...Component.defaultContent.title,
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'We are always ready to help. There are many ways to contact us. You may drop us a line, give us a call, or send an email. Choose what suits you the most.',
+    ...Component.defaultContent.subtitle,
     type: 'subtitle',
   },
   'hours-title': {
-    content: 'Contacts',
+    ...Component.defaultContent['hours-title'],
     type: 'heading',
   },
   'contacts-title': {
-    content: 'Contacts',
+    ...Component.defaultContent['contacts-title'],
     type: 'heading',
   },
   'address-content': {
-    content: 'SFTE “SpetsTechnoExport” <br>7, Stepan Bandera Avenue, <br>Kyiv, 04073, Ukraine ',
+    ...Component.defaultContent['address-content'],
     type: 'text',
   },
   'hours-content': {
-    content: 'tel:<a href="tel:+38044-568-50-70">+38044-568-50-70</a><br>fax: <a href="tel:+38044-568-50-68">+38044-568-50-68</a> <br><a href="mailto:office@ste.kiev.ua">office@ste.kiev.ua</a><br><a href="www.spetstechnoexport.com">www.spetstechnoexport.com</a>',
+    ...Component.defaultContent['hours-content'],
     type: 'text',
-  },
-  contactForm: {
-    fields: [
-      {
-        type: 'text',
-        id: 'contactForm_name',
-        title: '',
-        placeholder: 'Enter your full name *',
-        required: true,
-      },
-      {
-        type: 'phone',
-        id: 'contactForm_phoneNumber ',
-        title: '',
-        placeholder: 'Enter your phone number *',
-        required: true,
-      },
-      {
-        type: 'email',
-        id: 'contactForm_email',
-        title: '',
-        placeholder: 'Enter your e-mail *',
-        required: true,
-      },
-      {
-        type: 'textArea',
-        id: 'contactForm_textarea',
-        title: '',
-        placeholder: 'Enter your full message',
-        required: false,
-      },
-    ],
-    submitButton: {
-      title: 'Request a quote',
-      type: 'primary',
-    },
-    className: 'form',
   },
 }
 
