@@ -27,7 +27,6 @@ ExtendedWireframe.defaultContent = {
   picture: {
     ...Component.defaultContent.picture,
     resourceRef: 'about.png',
-    alt: 'Picture about the company',
   },
   'button-1': {
     ...Component.defaultContent['button-1'],
@@ -63,6 +62,7 @@ ExtendedWireframe.defaultContent = {
 }
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  'article-picture': {defaultValue: true, label: 'Article picture', type: 'hidden', minHeight: 1200},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
   socialIcons: {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
