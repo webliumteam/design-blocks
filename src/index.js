@@ -41,21 +41,17 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    content: 'RAM UAV',
     type: 'heroTitle',
   },
   'top-caption': {
     ...Component.defaultContent['top-caption'],
-    content: 'About',
     type: 'blockTitle',
   },
   text: {
     ...Component.defaultContent.text,
-    content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. <br> <br> We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
   },
   'button-1': {
     ...Component.defaultContent['button-1'],
-    textValue: 'Learn More',
     size: 'lg',
   },
 }
