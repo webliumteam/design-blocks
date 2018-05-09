@@ -205,12 +205,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
-  title: {defaultValue: true, label: 'Gallery title', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Gallery description', type: 'checkbox'},
   'body-text': {defaultValue: false, label: 'Image description', type: 'checkbox'},
+  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
   caption: {defaultValue: false, label: 'Image caption', type: 'hidden'},
-  'secondary-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
 export default Block
