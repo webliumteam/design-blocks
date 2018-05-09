@@ -148,7 +148,7 @@ Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Process description', type: 'checkbox'},
   body: {defaultValue: true, label: 'Step main text', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
 
