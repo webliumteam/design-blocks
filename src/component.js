@@ -205,11 +205,11 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  arrows: {defaultValue: true, label: 'Navigation arrows', type: 'checkbox'},
-  dots: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox'},
-  'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'hidden'},
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  arrows: {defaultValue: true, label: 'Navigation arrows', type: 'checkbox'},
+  'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  dots: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox'},
+  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'hidden'},
 }
 
 export default Block
