@@ -150,13 +150,13 @@ Block.defaultContent = {
 
 
 Block.modifierScheme = {
-  body: {defaultValue: true, label: 'Step main text', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'additional-button': {defaultValue: false, label: 'Button', type: 'hidden'},
-  heading: {defaultValue: true, label: 'Step title', type: 'checkbox'},
-  icon: {defaultValue: true, label: 'Step icon', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Process description', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Process description', type: 'checkbox'},
+  icon: {defaultValue: true, label: 'Step icon', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Step title', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Step main text', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'additional-button': {defaultValue: false, label: 'Button', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
