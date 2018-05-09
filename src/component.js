@@ -77,11 +77,11 @@ Block.modifierScheme = {
     type: 'radio-button-group',
     style: 'buttons',
   },
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Description', type: 'checkbox'},
   heading: {defaultValue: false, label: 'Title', type: 'checkbox'},
   subheading: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Description', type: 'checkbox'},
   text: {defaultValue: true, label: 'Main text', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
