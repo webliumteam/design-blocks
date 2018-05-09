@@ -1,6 +1,6 @@
 {
   "name": "wireframe-series-2-numbers",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "description": "",
   "category": "numbers",
   "main": "src/index.js",

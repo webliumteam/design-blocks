@@ -163,6 +163,7 @@
     &-wrapper {
       position: relative;
       min-height: 63px;
+      z-index: 1;
     }
   }
 
