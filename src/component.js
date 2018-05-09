@@ -112,10 +112,10 @@ Block.modifierScheme = {
     type: 'radio-button-group',
     style: 'buttons',
   },
-  'caption-decorator': {defaultValue: false, label: 'Pretitle', type: 'hidden'},
-  'primary-btn': {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'secondary-btn': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  'primary-btn': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  'secondary-btn': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'caption-decorator': {defaultValue: false, label: 'Pretitle', type: 'hidden'},
   undefined: {type: 'separator'},
 }
 
