@@ -170,8 +170,8 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'secondary-button': {defaultValue: false, label: 'Button', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'FAQ description', type: 'checkbox'},
+  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
