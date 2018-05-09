@@ -14,9 +14,10 @@ class Wireframe extends React.Component {
 
   render() {
     const {components: {Text, Button, SocialIcons, Background}, style} = this.props
+    const blockAlignment = this.getModifierValue('block-alignment')
 
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, style[`section--${blockAlignment}`])}>
         <div className={style.section__inner}>
           <Background tagName="div" bind="content-bg" className={style.section__content}>
             <div className={style['caption-wrapper']}>
@@ -109,6 +110,17 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
+  'block-alignment': {
+    children: [
+      {id: 'left', label: 'Left'},
+      {id: 'center', label: 'Center'},
+      {id: 'right', label: 'Right'},
+    ],
+    defaultValue: 'left',
+    name: 'Block alignment',
+    type: 'radio-button-group',
+    style: 'buttons',
+  },
   caption: {defaultValue: true, label: 'Block caption', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
