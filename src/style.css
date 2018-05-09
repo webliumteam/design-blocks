@@ -61,7 +61,7 @@
       }
     }
 
-    .slick-next {
+    .slick-prev {
       transform: translateY(0) translateX(-100%);
 
       @media (--ui-tablet-devices) {
@@ -69,7 +69,7 @@
       }
     }
 
-    .slick-prev {
+    .slick-next {
       transform: translateY(0) translateX(0);
 
       @media (--ui-tablet-devices) {
