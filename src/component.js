@@ -12,14 +12,14 @@ class Wireframe extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className, modifier}) => {
+  collectionItem = ({index, children, className}) => {
     const {components: {Text, Button}, style} = this.props
 
     return (
       <div className={classNames(style.item, className)}>
         {children}
         <div className={style.item__header}>
-          <Text tagName="h2" className={style.item__title} bind={`collection[${index}].title`} />
+          <Text tagName="h3" className={style.item__title} bind={`collection[${index}].title`} />
           {this.getModifierValue('body') && (
             <Text tagName="p" className={style.item__desc} bind={`collection[${index}].desc`} />
           )}
@@ -37,11 +37,22 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Button}, style, $block} = this.props
+    const {components: {Text, Collection, Button}, style, $block} = this.props
+    const blockHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
 
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, blockHeader && style['section--with-header'])}>
         <div className={style.section__inner}>
+          {blockHeader && (
+            <div className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text tagName="h2" className={style.title} bind="title" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text tagName="p" className={style.subtitle} bind="subtitle" />
+              )}
+            </div>
+          )}
           <Collection
             className={style['items-wrapper']}
             bind="collection"
@@ -74,8 +85,12 @@ Wireframe.defaultContent = {
     color: '#d8d8d8',
   },
   title: {
-    content: 'Hello world',
-    type: 'blockTitle',
+    content: 'Best Flower Delivery in Town',
+    type: 'heroTitle',
+  },
+  subtitle: {
+    content: 'We can deliver even the most unusual ideas!',
+    type: 'subtitle',
   },
   collection: {
     background: {
@@ -144,9 +159,11 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
   body: {defaultValue: true, label: 'Title description', type: 'checkbox'},
-  'item-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  cta: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'item-button': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
+  cta: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Wireframe
