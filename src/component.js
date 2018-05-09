@@ -161,7 +161,7 @@ Wireframe.defaultContent = {
 Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
-  body: {defaultValue: false, label: 'Title description', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Title description', type: 'checkbox'},
   'item-button': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
   cta: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
