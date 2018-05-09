@@ -232,8 +232,8 @@ Block.modifierScheme = {
   price: {defaultValue: true, label: 'Product price', type: 'checkbox'},
   'price-info': {defaultValue: true, label: 'Price additional info', type: 'checkbox'},
   body: {defaultValue: true, label: 'Product details', type: 'checkbox'},
-  'product-button': {defaultValue: true, label: 'Product button', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
+  'product-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Block
