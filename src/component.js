@@ -340,18 +340,19 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'additional-btn': {defaultValue: true, label: 'Button', type: 'checkbox'},
   'block-title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Pricing description', type: 'checkbox'},
+  'plan-icon': {defaultValue: true, label: 'Product icon', type: 'checkbox'},
+  'plan-price': {defaultValue: true, label: 'Product price', type: 'checkbox'},
   'plan-additional-info': {
     defaultValue: true,
     label: 'Product additional information',
     type: 'checkbox',
   },
-  'plan-button': {defaultValue: true, label: 'Package button', type: 'checkbox'},
   'plan-description': {defaultValue: true, label: 'Product description', type: 'checkbox'},
-  'plan-icon': {defaultValue: true, label: 'Product icon', type: 'checkbox'},
-  'plan-price': {defaultValue: true, label: 'Product price', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
+  'plan-button': {defaultValue: true, label: 'Primary small button', type: 'checkbox'},
+  'additional-btn': {defaultValue: true, label: 'Medium button secondary', type: 'checkbox'},
+
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
