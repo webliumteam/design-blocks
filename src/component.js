@@ -168,9 +168,9 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
   'text-left': {defaultValue: true, label: 'Left text', type: 'checkbox'},
   'text-right': {defaultValue: true, label: 'Right text', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
 }
 
 
