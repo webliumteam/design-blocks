@@ -68,7 +68,7 @@ ExtendedWireframe.modifierScheme = {
   button: {defaultValue: false, label: 'Button', type: 'hidden'},
   border: {
     defaultValue: true,
-    lable: 'White border',
+    label: 'White border',
     type: 'checkbox',
     classNameOnActive: style['section--with-border'],
   },
