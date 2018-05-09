@@ -143,6 +143,8 @@
 }
 
 .article__category {
+  display: inline-block;
+  max-width: 100%;
   padding-right: 10px;
 
   &:only-child {
@@ -151,6 +153,8 @@
 }
 
 .article__date {
+  display: inline-block;
+  max-width: 100%;
   position: relative;
   padding-left: 10px;
 
