@@ -16,14 +16,6 @@ ExtendedWireframe.defaultContent = {
     type: 'color',
     color: '#dddfe8',
   },
-  title: {
-    ...Component.defaultContent.title,
-    content: 'RAM&nbspUAV',
-  },
-  subtitle: {
-    ...Component.defaultContent.subtitle,
-    content: 'UNMANNED AERIAL SYSTEM',
-  },
   picture: {
     ...Component.defaultContent.picture,
     resourceRef: 'plane1.png',
