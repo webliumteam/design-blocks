@@ -20,40 +20,6 @@ ExtendedWireframe.defaultContent = {
       height: 59,
     },
   },
-  menu: {
-    links: [
-      {
-        id: 'about',
-        metadata: {
-          displayName: 'About',
-        },
-      },
-      {
-        id: 'advantages',
-        metadata: {
-          displayName: 'Advantages',
-        },
-      },
-      {
-        id: 'numbers',
-        metadata: {
-          displayName: 'Numbers',
-        },
-      },
-      {
-        id: 'partners',
-        metadata: {
-          displayName: 'Partners',
-        },
-      },
-      {
-        id: 'contacts',
-        metadata: {
-          displayName: 'Contact us',
-        },
-      },
-    ],
-  },
 }
 
 ExtendedWireframe.modifierScheme = {
