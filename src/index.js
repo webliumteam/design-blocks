@@ -25,7 +25,6 @@ ExtendedWireframe.defaultContent = {
       {
         label: {
           ...Component.defaultContent.numbers[0].label,
-          content: 'for our customers',
         },
         value: {
           ...Component.defaultContent.numbers[0].value,
@@ -36,7 +35,6 @@ ExtendedWireframe.defaultContent = {
       {
         label: {
           ...Component.defaultContent.numbers[1].label,
-          content: 'of our clients',
         },
         value: {
           ...Component.defaultContent.numbers[1].value,
@@ -47,7 +45,6 @@ ExtendedWireframe.defaultContent = {
       {
         label: {
           ...Component.defaultContent.numbers[2].label,
-          content: 'of our users',
         },
         value: {
           ...Component.defaultContent.numbers[2].value,
@@ -59,7 +56,6 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    content: 'Тактико-технічні характеристики',
   },
 }
 
