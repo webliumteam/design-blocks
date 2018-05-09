@@ -35,7 +35,7 @@ ExtendedWireframe.defaultContent = {
   },
   'button-2': {
     ...Component.defaultContent['button-2'],
-    type: 'primary-alt',
+    type: 'secondary',
   },
   socialIcons: {
     ...Component.defaultContent.socialIcons,
@@ -62,7 +62,6 @@ ExtendedWireframe.defaultContent = {
 }
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'article-picture': {defaultValue: true, label: 'Article picture', type: 'checkbox'},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
   socialIcons: {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
