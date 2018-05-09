@@ -192,8 +192,8 @@ Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Service description', type: 'checkbox'},
   'item-desc': {defaultValue: false, label: 'Service details', type: 'checkbox'},
   'body-text': {defaultValue: true, label: 'Service main text', type: 'checkbox'},
-  'service-button': {defaultValue: true, label: 'Service button', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'service-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
