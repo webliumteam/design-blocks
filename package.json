@@ -1,6 +1,6 @@
 {
   "name": "wireframe-zapdos-events",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "category": "events",
   "main": "src/index.js",
