@@ -165,11 +165,11 @@ Block.modifierScheme = {
     title: 'Arrange elements',
     defaultValue: false,
   },
-  body: {defaultValue: true, label: 'Careers main text', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
-  icon: {defaultValue: true, label: 'Careers icon', type: 'checkbox'},
-  image: {defaultValue: true, label: 'Сareers photo', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Careers description', type: 'checkbox'},
+  image: {defaultValue: true, label: 'Сareers photo', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Careers main text', type: 'checkbox'},
+  icon: {defaultValue: true, label: 'Careers icon', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
