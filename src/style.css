@@ -2,7 +2,6 @@
 
 .section {
   min-width: 320px;
-  padding: 50px 0 80px;
   word-wrap: break-word;
 
   @media (min-width: 768px) {
@@ -22,5 +21,46 @@
       margin: 0 auto;
       padding: var(--ui-content-gutter);
     }
+  }
+
+  &__content {
+    padding: 40px 20px;
+  }
+}
+
+.caption {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  padding-bottom: 10px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--ui-brand-color);
+  }
+
+  &-wrapper {
+    margin-bottom: 40px;
+  }
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  margin-bottom: 40px;
+}
+
+.socials {
+  margin: 50px -10px -10px;
+
+  li {
+    margin: 10px;
   }
 }

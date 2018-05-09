@@ -13,15 +13,17 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Text, Button, SocialIcons}, style} = this.props
+    const {components: {Text, Button, SocialIcons, Background}, style} = this.props
 
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <div className={style.section__content}>
-            {this.getModifierValue('caption') && (
-              <Text bind="caption" className={style.caption} tagName="p" />
-            )}
+          <Background tagName="div" bind="content-bg" className={style.section__content}>
+            <div className={style['caption-wrapper']}>
+              {this.getModifierValue('caption') && (
+                <Text bind="caption" className={style.caption} tagName="p" />
+              )}
+            </div>
             {this.getModifierValue('title') && (
               <Text bind="title" className={style.title} tagName="h2" />
             )}
@@ -36,16 +38,24 @@ class Wireframe extends React.Component {
             {this.getModifierValue('socials') && (
               <SocialIcons className={style.socials} bind="socialIcons" />
             )}
-          </div>
+          </Background>
         </div>
       </section>
     )
   }
 }
 
-Wireframe.components = _.pick(['Text', 'Button', 'SocialIcons'])($editor.components)
+Wireframe.components = _.pick(['Text', 'Button', 'SocialIcons', 'Background'])($editor.components)
 
 Wireframe.defaultContent = {
+  background: {
+    type: 'color',
+    color: '#D8D8D8',
+  },
+  'content-bg': {
+    type: 'color',
+    color: '#fff',
+  },
   title: {
     content: 'Want to Work With Us?',
     type: 'blockTitle',
