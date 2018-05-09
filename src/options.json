@@ -1,5 +1,5 @@
 {
   "custom-arrows": true,
-  "prev-arrow": "<svg width='21' height='21' viewBox='0 0 21 21'><path d='M10.5.17L8.68 1.99l7.21 7.22H.17v2.58h15.72l-7.21 7.22 1.82 1.82L20.83 10.5z' fill='#757575' /></svg>",
-  "next-arrow": "<svg width='21' height='21' viewBox='0 0 21 21'><path d='M10.5 20.83l1.82-1.82-7.21-7.22h15.72V9.21H5.11l7.21-7.22L10.5.17.17 10.5z' fill='#757575' /></svg>"
+  "prev-arrow": "<svg width='21' height='21' viewBox='0 0 21 21'><path d='M10.5 20.83l1.82-1.82-7.21-7.22h15.72V9.21H5.11l7.21-7.22L10.5.17.17 10.5z' fill='#757575' /></svg>",
+  "next-arrow": "<svg width='21' height='21' viewBox='0 0 21 21'><path d='M10.5.17L8.68 1.99l7.21 7.22H.17v2.58h15.72l-7.21 7.22 1.82 1.82L20.83 10.5z' fill='#757575' /></svg>"
 }
