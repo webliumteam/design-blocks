@@ -197,12 +197,12 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Contacts description', type: 'checkbox'},
-  image: {defaultValue: true, label: 'Location photo', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Location title', type: 'checkbox'},
+  image: {defaultValue: true, label: 'Location photo', type: 'checkbox'},
   phone: {defaultValue: true, label: 'Phone', type: 'checkbox'},
   email: {defaultValue: true, label: 'E-mail', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
-  'button-secondary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Primary button', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
