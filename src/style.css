@@ -313,6 +313,7 @@
     }
 
     .contacts .socials {
+      max-width: 20%;
       margin-left: auto;
       padding-left: 15px;
     }
