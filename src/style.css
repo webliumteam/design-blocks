@@ -196,6 +196,10 @@
     max-width: 33.333%;
     flex-basis: 33.333%;
     text-align: left;
+
+    span {
+      display: flex;
+    }
   }
 }
 
