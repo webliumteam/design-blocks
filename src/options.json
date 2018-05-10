@@ -4,5 +4,7 @@
     "hidden-phone-title": false,
     "hidden-email-title": false,
     "logo-max-width": 240,
-    "logo-max-height": 120
+    "logo-max-height": 120,
+    "logo-max-width--no-map": 170,
+    "logo-max-height--no-map": 90
 }

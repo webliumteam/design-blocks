@@ -68,6 +68,10 @@ class Block extends React.Component {
       this.getModifierValue('subtitle') && <Text bind="subtitle" className={style.subtitle} tagName="p" />,
     ]
 
+    const maxWidth = this.getModifierValue('map') ? this.getOptionValue('logo-max-width') : this.getOptionValue('logo-max-width--no-map')
+    const maxHeight = this.getModifierValue('map') ? this.getOptionValue('logo-max-height') : this.getOptionValue('logo-max-height--no-map')
+
+
     return (
       <section className={classNames(style.section, {
           [style['section--state-8']]: (textWithSocials || emailWithSocials || phoneWithSocials),
