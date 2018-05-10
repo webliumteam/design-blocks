@@ -22,12 +22,10 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    color: 'dark-shade-color',
   },
   subtitle: {
     ...Component.defaultContent.subtitle,
-    color: 'dark-shade-color',
-    brightness: 45,
+    type: 'text',
   },
 }
 
