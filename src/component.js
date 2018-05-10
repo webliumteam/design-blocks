@@ -15,7 +15,7 @@ class Block extends React.Component {
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text, Button, Image}, style: css} = this.props
     const showBody = _.get('body-text')(modifier) || _.get('service-button')(modifier)
-    const contentModifierClass = css[`item__content--${_.get('content-arrangement')(modifier)}`]
+    const contentModifierClass = _.get('content-arrangement')(modifier) && css['item__content--reverse']
 
     return (
       <div className={classNames(css.item, className)}>
@@ -177,14 +177,9 @@ Block.modifierScheme = {
   'service-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   'content-arrangement': {
-    children: [
-      {id: 'default', label: 'Default'},
-      {id: 'reverse', label: 'Reverse'},
-    ],
-    defaultValue: 'default',
-    name: 'Content arrangement',
-    type: 'radio-button-group',
-    style: 'buttons',
+    defaultValue: false,
+    label: 'Arrange elements',
+    type: 'swipe',
   },
 }
 
