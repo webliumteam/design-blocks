@@ -206,7 +206,7 @@
   font-family: var(--ui-text-font-family);
   font-weight: var(--ui-text-font-weight);
 
-  @media (--ui-tablet-devices) {
+  @media (min-width: 768px) {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
