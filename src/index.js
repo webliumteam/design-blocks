@@ -25,7 +25,7 @@ ExtendedWireframe.defaultContent = {
       {
         logo: {
           image: {
-            resourceRef: '1.png',
+            resourceRef: '02.png',
             width: 153,
             height: 107,
           },
@@ -34,7 +34,7 @@ ExtendedWireframe.defaultContent = {
       {
         logo: {
           image: {
-            resourceRef: '2.png',
+            resourceRef: '01.png',
             width: 157,
             height: 97,
           },
@@ -43,7 +43,7 @@ ExtendedWireframe.defaultContent = {
       {
         logo: {
           image: {
-            resourceRef: '3.png',
+            resourceRef: '03.png',
             width: 189,
             height: 49,
           },
