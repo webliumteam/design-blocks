@@ -316,9 +316,9 @@ Block.modifierScheme = {
     type: 'radio-button-group',
     style: 'buttons',
   },
-  text: {defaultValue: true, label: 'Text', type: 'checkbox'},
-  'social-icons': {defaultValue: true, label: 'Social icons', type: 'checkbox'},
-  logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
+  text: {defaultValue: true, label: 'Contact information', type: 'checkbox'},
+  'social-icons': {defaultValue: true, label: 'Social buttons', type: 'checkbox'},
+  logo: {defaultValue: true, label: 'Company name', type: 'checkbox'},
 }
 
 export default Block
