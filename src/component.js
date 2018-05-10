@@ -103,8 +103,8 @@ class Block extends React.Component {
                       bind="logo"
                       className={style.logo}
                       textClassName={style.logo__title}
-                      maxWidth={this.getOptionValue('logo-max-width')}
-                      maxHeight={this.getOptionValue('logo-max-height')}
+                      maxWidth={maxWidth}
+                      maxHeight={maxHeight}
                     />
                   </div>
                 )}
