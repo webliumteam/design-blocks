@@ -412,10 +412,10 @@ Block.defaultContent = {
 Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Testimonials description', type: 'checkbox'},
   'item-date': {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
-  'item-image': {defaultValue: true, label: 'Reviewer photo', type: 'checkbox'},
+  'item-image': {defaultValue: true, label: 'Image', type: 'checkbox'},
   'item-position': {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
-  'item-socials': {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary Buttons', type: 'checkbox'},
+  'item-socials': {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Secondary buttons', type: 'checkbox'},
 }
 
 export default Block
