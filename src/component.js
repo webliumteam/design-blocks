@@ -33,8 +33,8 @@ class Wireframe extends React.Component {
             )}
             <Button
               bind="secondary-button"
-              className="button"
-              linkClassName="link"
+              className={style.button}
+              linkClassName={style.link}
             />
             {this.getModifierValue('socials') && (
               <SocialIcons className={style.socials} bind="socialIcons" />

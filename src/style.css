@@ -17,6 +17,11 @@
 
       @media (--ui-tablet-devices) {
         margin: 0 auto;
+        text-align: center;
+
+        .socials {
+          justify-content: center;
+        }
       }
     }
   }
@@ -89,5 +94,13 @@
 
   li {
     margin: 10px;
+  }
+}
+
+.button {
+  width: 100%;
+
+  @media (--ui-phone-devices) {
+    width: auto;
   }
 }
