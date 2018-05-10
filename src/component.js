@@ -288,7 +288,7 @@ Block.defaultContent = {
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
   caption: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  social: {defaultValue: true, label: 'Social media Icons', type: 'checkbox'},
+  social: {defaultValue: true, label: 'Social buttons', type: 'checkbox'},
   'subscribe-form': {defaultValue: true, label: 'Subscribe form', type: 'checkbox'},
 }
 
