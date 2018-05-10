@@ -77,7 +77,6 @@
     margin-bottom: 10px;
 
     a {
-      text-decoration: none;
       transition: color .2s ease-in;
     }
   }
