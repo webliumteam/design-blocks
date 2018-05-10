@@ -172,15 +172,15 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  'content-arrangement': {
+    defaultValue: false,
+    name: 'Arrange elements',
+    type: 'swap',
+  },
   subtitle: {defaultValue: false, label: 'Services description', type: 'checkbox'},
   'body-text': {defaultValue: true, label: 'Service main text', type: 'checkbox'},
   'service-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
-  'content-arrangement': {
-    defaultValue: false,
-    label: 'Arrange elements',
-    type: 'swipe',
-  },
 }
 
 export default Block
