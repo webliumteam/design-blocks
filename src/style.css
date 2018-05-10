@@ -118,7 +118,7 @@
 
 .button,
 .link {
-  width: calc(100% - 30px);
+  max-width: calc(100% - 30px);
   margin: 10px 15px;
 }
 
