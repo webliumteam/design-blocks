@@ -161,7 +161,7 @@
 }
 
 .btns-group {
-  max-width: 100%;
+  max-width: calc(100% + 30px);
   margin: 30px -15px 0;
   padding-top: 10px;
   text-align: center;
