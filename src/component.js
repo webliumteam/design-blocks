@@ -162,10 +162,10 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Block subtitle', type: 'checkbox'},
-  icon: {defaultValue: true, label: 'Icon item', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Heading Item', type: 'checkbox'},
-  subheading: {defaultValue: true, label: 'Subheading item', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Why Us description', type: 'checkbox'},
+  icon: {defaultValue: true, label: 'Advantage icon ', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Advantage title', type: 'checkbox'},
+  subheading: {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
   // 'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
   // 'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
