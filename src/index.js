@@ -18,9 +18,9 @@ ExtendedWireframe.defaultContent = {
   },
   logo: {
     image: {
-      resourceRef: 'cdet-logo.png',
-      width: 131,
-      height: 59,
+      resourceRef: 'logo.png',
+      width: 229,
+      height: 50,
     },
   },
 }
