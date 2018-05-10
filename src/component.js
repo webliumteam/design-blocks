@@ -165,13 +165,13 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  image: {defaultValue: true, label: 'About company illustration', type: 'checkbox'},
+  image: {defaultValue: true, label: 'Image', type: 'checkbox'},
   heading: {defaultValue: false, label: 'Company title', type: 'checkbox'},
   subheading: {defaultValue: false, label: 'Company description', type: 'checkbox'},
   text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  'social-icons': {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
-  'additional-button': {defaultValue: true, label: 'Additional button', type: 'checkbox'},
+  'social-icons': {defaultValue: false, label: 'Social icons', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Primary button', type: 'checkbox'},
+  'additional-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Block
