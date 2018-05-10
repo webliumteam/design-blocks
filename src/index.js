@@ -33,7 +33,7 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.services[1],
       picture: {
         ...Component.defaultContent.services[1].picture,
-        resourceRef: 'img-02.png',
+        resourceRef: 'img-05.jpg',
       },
       link: {
         ...Component.defaultContent.services[1].link,
