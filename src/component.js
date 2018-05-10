@@ -222,7 +222,7 @@ Wireframe.modifierScheme = {
   'contacts-title': {defaultValue: true, label: 'Contacts title', type: 'checkbox'},
   phone: {defaultValue: true, label: 'Phone', type: 'checkbox'},
   email: {defaultValue: true, label: 'E-mail', type: 'checkbox'},
-  social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
+  social: {defaultValue: true, label: 'Social media icons', type: 'checkbox'},
   'contact-form': {defaultValue: true, label: 'Contact form', type: 'checkbox'},
 }
 
