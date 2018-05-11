@@ -176,7 +176,7 @@ Block.modifierScheme = {
     name: 'Aligning',
     type: 'radio-button-group',
   },
-  title: {defaultValue: false, label: 'Block title', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   heading: {defaultValue: false, label: 'Company title', type: 'checkbox'},
   subheading: {defaultValue: false, label: 'Company description', type: 'checkbox'},
   text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
