@@ -16,9 +16,14 @@ ExtendedWireframe.defaultContent = {
     type: 'image',
     position: {
       type: 'cover',
-      cover: '50% 50%',
+      cover: '50% 35%',
     },
-    resourceRef: 'company-img.jpg',
+    resourceRef: 'ddd.jpg',
+    overlay: {
+      type: 'color',
+      color: 'light-shade-color',
+      opacity: 0.65,
+    },
   },
   'social-icons': {
     networks: [
@@ -44,10 +49,15 @@ ExtendedWireframe.defaultContent = {
       innerFill: true,
       preset: 'preset001',
       offset: 15,
-      color: '#3d87ff',
+      color: 'brand-color',
       sizes: [10, 20, 30, 40],
       size: 30,
     },
+  },
+  'button-2': {
+    ...Component.defaultContent['button-2'],
+    textValue: 'Learn more',
+    type: 'primary-alt',
   },
 }
 
