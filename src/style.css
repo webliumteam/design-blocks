@@ -174,7 +174,12 @@
   align-items: center;
 }
 
+.socials {
+  max-width: 150px;
+}
+
 .social-title {
+  max-width: calc(100% - 150px);
   margin-right: 10px;
   flex-shrink: 0;
 }
