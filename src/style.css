@@ -4,14 +4,14 @@
 .section {
 
   @media (min-width: 992px) {
-    padding-top: 125px;
-    padding-bottom: 125px;
+    padding-top: 120px;
+    padding-bottom: 157px;
   }
 }
 
 .title {
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 58px;
 
   &::after {
     content: "";
@@ -20,7 +20,7 @@
     height: 4px;
     top: 100%;
     left: calc(50% - 65px);
-    margin-top: 20px;
+    margin-top: 11px;
     background-color: var(--ui-light-shade-color);
   }
 }
@@ -29,18 +29,19 @@
 
   @media (min-width: 992px) {
     max-width: 100%;
+    letter-spacing: 0.6px;
   }
 }
 
 .form {
 
   @media (min-width: 992px) {
-    max-width: 703px;
+    max-width: 740px;
     align-items: stretch;
+    margin-top: 60px;
   }
 
   &__item {
-    margin-right: 20px;
     font-size: inherit;
   }
 
@@ -49,6 +50,19 @@
     background-color: var(--ui-light-shade-color);
     font-weight: var(--ui-text-font-weight);
     font-size: var(--ui-text-size);
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  &__button {
+
+    @media (min-width: 480px) {
+      margin-left: 20px;
+    }
+
+    @media (min-width: 992px) {
+      width: 190px;
+    }
   }
 }
 
