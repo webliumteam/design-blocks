@@ -217,12 +217,14 @@
   margin-bottom: 0;
 }
 
+.item .link {
+  padding: 0;
+}
+
 .item .link,
 .item .button {
-  display: inline-block;
   max-width: 100%;
   margin-bottom: 30px;
-  padding: 0;
 }
 
 .socials {
