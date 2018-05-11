@@ -32,7 +32,9 @@ class Block extends React.Component {
             {this.getModifierValue('top-caption') && (
               <Text bind="top-caption" className={style['caption-decorator']} tagName="div" />
             )}
-            <Text bind="title" className={style.article__title} tagName="h1" />
+            {this.getModifierValue('title') && (
+              <Text bind="title" className={style.article__title} tagName="h1" />
+            )}
             {this.getModifierValue('heading') && (
               <Text bind="heading" className={style.article__heading} tagName="h2" />
             )}
@@ -174,6 +176,7 @@ Block.modifierScheme = {
     name: 'Aligning',
     type: 'radio-button-group',
   },
+  title: {defaultValue: false, label: 'Block title', type: 'checkbox'},
   heading: {defaultValue: false, label: 'Company title', type: 'checkbox'},
   subheading: {defaultValue: false, label: 'Company description', type: 'checkbox'},
   text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
