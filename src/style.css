@@ -131,7 +131,7 @@
   margin: 0 auto;
   flex-wrap: wrap;
 
-  @media (--ui-tablet-devices) {
+  @media (--ui-phone-devices) {
     margin: 0;
   }
 
