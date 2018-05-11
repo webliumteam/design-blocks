@@ -88,7 +88,6 @@
 
 .article__picture {
   display: block;
-  min-height: 270px;
   order: -1;
 }
 
