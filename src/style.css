@@ -1,13 +1,15 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 }
@@ -32,7 +34,7 @@
   margin: 0 auto 15px;
   text-align: center;
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     max-width: 770px;
   }
 }
@@ -40,7 +42,7 @@
 .items-wrapper {
   margin: 35px -15px 0;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -52,13 +54,13 @@
   width: 100%;
   margin-bottom: 30px;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     max-width: calc(50% - 30px);
     margin: 0 15px 15px;
     flex-basis: calc(50% - 30px);
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     max-width: calc(33% - 30px);
     flex-basis: calc(33% - 30px);
 
@@ -102,7 +104,7 @@
   &__description {
     max-width: 100%;
 
-    @media(min-width: 992px) {
+    @media(--ui-medium-devices) {
       opacity: 0;
       transition: opacity .2s ease-in;
     }
@@ -114,7 +116,7 @@
 .item:nth-last-of-type(7):first-of-type,
 .item:nth-last-of-type(7):first-of-type ~ .item {
 
-  @media(min-width: 992px) {
+  @media(--ui-medium-devices) {
     max-width: 25%;
     flex-basis: 25%;
   }
@@ -125,7 +127,7 @@
   padding-top: 25px;
   margin-bottom: -10px;
 
-  @media(min-width: 992px) {
+  @media(--ui-medium-devices) {
     padding-top: 45px;
   }
 
@@ -134,7 +136,7 @@
     width: 100%;
     margin-bottom: 10px;
 
-    @media (min-width: 480px) {
+    @media (--ui-phone-devices) {
       width: auto;
       margin-right: 15px;
     }
