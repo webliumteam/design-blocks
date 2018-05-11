@@ -1,12 +1,14 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 20px;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 40px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
@@ -31,7 +33,7 @@
   /* font-size: calc(var(--ui-subtitle-size) * 0.8); */
   text-align: center;
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     max-width: 770px;
 
     /* font-size: var(--ui-subtitle-size); */
@@ -43,12 +45,12 @@
   padding-top: 5px;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     margin: 0 -40px;
     padding-top: 25px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     margin: 0;
   }
 }
@@ -57,7 +59,7 @@
   padding: 30px 25px;
   background-color: #d8d8d8;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 20px 25px;
     align-items: center;
   }
@@ -70,7 +72,7 @@
     display: flex;
     justify-content: flex-start;
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       max-width: 1120px;
       margin: 0 auto;
     }
@@ -103,7 +105,7 @@
     flex-direction: column;
     text-align: left;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       display: flex;
       flex-direction: row;
       flex: 1;
@@ -115,7 +117,7 @@
   &__info {
     margin-bottom: 40px;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       max-width: calc(100% - 220px);
       margin-right: 20px;
       margin-bottom: 0;
@@ -133,25 +135,25 @@
   &__link {
     text-align: left;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       max-width: 200px;
       margin-right: 10px;
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       &:only-child {
         margin-right: 25px;
       }
     }
   }
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     .article__picture + .article__content {
       margin-left: 49px;
     }
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     .article__picture + .article__content {
       margin-left: 0;
     }
@@ -165,18 +167,18 @@
   justify-content: center;
   margin-top: 40px;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     margin-top: 50px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     margin-top: 60px;
   }
 
   .button {
     width: 100%;
 
-    @media(min-width: 480px) {
+    @media(--ui-phone-devices) {
       width: auto;
     }
   }
