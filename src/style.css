@@ -150,6 +150,14 @@
   a {
     text-decoration: none;
   }
+
+  img {
+    margin: 0 auto;
+
+    @media (--ui-tablet-devices) {
+      margin: 0;
+    }
+  }
 }
 
 @media (min-width: 768px) {
