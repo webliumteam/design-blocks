@@ -17,8 +17,21 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'bg.jpg',
     overlay: {
       type: 'color',
-      color: 'dark-shade-color',
-      opacity: 0.3,
+      color: 'light-shade-color',
+      opacity: 0.35,
+    },
+  },
+  socialIcons: {
+    ...Component.defaultContent.socialIcons,
+    target: '_blank',
+    design: {
+      border: 'softRect',
+      innerFill: true,
+      preset: 'preset001',
+      offset: 15,
+      color: 'brand-color',
+      sizes: [20, 30, 40],
+      size: 30,
     },
   },
 }
