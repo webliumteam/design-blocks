@@ -1,14 +1,16 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   text-align: center;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
@@ -39,7 +41,7 @@
 .items-wrapper {
   margin: 0 -15px -30px;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -55,22 +57,22 @@
   text-align: center;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     width: calc(33.4% - 30px);
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     width: calc(25% - 30px);
   }
 
   &:nth-last-of-type(2n+3):first-of-type,
   &:nth-last-of-type(2n+3):first-of-type ~ & {
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       width: calc(33.333333% - 30px);
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       width: calc(25% - 30px);
     }
   }
@@ -78,7 +80,7 @@
   &:nth-last-of-type(n+5):first-of-type,
   &:nth-last-of-type(n+5):first-of-type ~ & {
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       width: calc(25.1% - 30px);
     }
   }
@@ -86,7 +88,7 @@
   &:nth-last-of-type(n+7):first-of-type,
   &:nth-last-of-type(n+7):first-of-type ~ & {
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       width: calc(25% - 30px);
     }
   }
@@ -94,7 +96,7 @@
   &:nth-last-of-type(9):first-of-type,
   &:nth-last-of-type(9):first-of-type ~ & {
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       width: calc(25.1% - 30px);
     }
   }
@@ -164,7 +166,7 @@
     font-family: var(--ui-text-font-family);
     font-weight: var(--ui-text-font-weight);
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       font-size: calc(var(--ui-text-size) * .875);
     }
 
@@ -185,7 +187,7 @@
 .btns-group {
   padding-top: 50px;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding-top: 60px;
   }
 }
@@ -193,7 +195,7 @@
 .button {
   width: 100%;
 
-  @media (min-width: 480px) {
+  @media (--ui-phone-devices) {
     width: auto;
   }
 }
