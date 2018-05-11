@@ -187,6 +187,7 @@
 @media (--ui-phone-devices) {
   .button {
     width: auto;
+    max-width: calc(100% - 30px);
     margin-right: 15px;
     margin-left: 15px;
   }
