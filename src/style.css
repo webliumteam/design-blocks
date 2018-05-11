@@ -1,14 +1,16 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   text-align: center;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 }
@@ -28,13 +30,13 @@
   margin: 30px auto 0;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .subtitle {
     margin: 25px auto 0;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .subtitle {
     max-width: 770px;
     margin: 15px auto 0;
@@ -50,13 +52,13 @@
   margin-right: -15px;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .items-wrapper {
     margin-top: 50px;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .items-wrapper {
     margin-top: 40px;
     justify-content: center;
@@ -67,13 +69,13 @@
   margin-top: 60px;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .title + .items-wrapper {
     margin-top: 60px;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .title + .items-wrapper {
     margin-top: 50px;
   }
@@ -88,14 +90,14 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .item {
     flex-basis: 50%;
     max-width: 50%;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item {
     flex-basis: 33.333333%;
     max-width: 33.333333%;
@@ -108,7 +110,7 @@
   border: 1px solid var(--ui-light-accent-color);
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item:nth-last-of-type(4):first-child,
   .item:nth-last-of-type(4):first-child ~ .item {
     flex-basis: 33.4%;
@@ -116,7 +118,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item:nth-last-of-type(7):first-child ~ .item {
     flex-basis: 33.4%;
     max-width: 33.4%;
@@ -140,7 +142,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item:nth-last-of-type(10):first-child ~ .item {
     flex-basis: 33.4%;
     max-width: 33.4%;
@@ -251,7 +253,7 @@
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .button {
     width: auto;
   }
