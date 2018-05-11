@@ -1,3 +1,5 @@
+@import "media.css";
+
 .section {
   display: flex;
   min-width: 320px;
@@ -11,7 +13,7 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .section {
     min-height: 700px;
   }
@@ -39,13 +41,13 @@
   word-wrap: break-word;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .title {
     padding: 0 100px;
   }
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .subtitle {
     padding: 0 100px;
     font-size: calc(var(--ui-subtitle-size) * 1.6);
@@ -60,7 +62,7 @@
   margin-top: 35px;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .btns-group {
     padding: 0 100px;
   }
@@ -73,7 +75,7 @@
   margin-right: 10px;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .button {
     width: auto;
   }
