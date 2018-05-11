@@ -1,13 +1,15 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
@@ -40,7 +42,7 @@
 .items-wrapper {
   margin: 0 -15px;
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -60,7 +62,7 @@
   &:first-child,
   &:nth-child(2) {
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       margin-top: 0;
     }
   }
@@ -69,12 +71,12 @@
     border-top: 0;
   }
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding-left: 140px;
     padding-right: 140px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     width: 100%;
     min-height: 400px;
     padding-left: 50px;
@@ -98,7 +100,7 @@
   max-width: none;
   flex-basis: 100%;
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding-left: 200px;
     padding-right: 200px;
   }
@@ -116,7 +118,7 @@
   text-align: center;
   z-index: 3;
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     display: flex;
   }
 }
@@ -147,7 +149,7 @@
     margin-bottom: 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     max-width: 50%;
     padding-right: 12px;
     flex-basis: 50%;
@@ -160,7 +162,7 @@
 
 .item__body {
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     max-width: 50%;
     padding-left: 12px;
     flex-basis: 50%;
@@ -180,7 +182,7 @@
   width: 100%;
   margin-top: 10px;
 
-  @media (min-width: 480px) {
+  @media (--ui-phone-devices) {
     width: auto;
   }
 }
@@ -193,7 +195,7 @@
 .button {
   width: 100%;
 
-  @media (min-width: 480px) {
+  @media (--ui-phone-devices) {
     width: auto;
   }
 }
