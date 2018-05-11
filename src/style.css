@@ -1,13 +1,15 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 }
@@ -32,7 +34,7 @@
   text-align: center;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .subtitle {
     margin-top: 15px;
   }
@@ -50,13 +52,13 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .article:nth-child(even) .article__picture-wrapper {
     order: 2;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .article:nth-child(even) .article__content {
     order: 1;
   }
@@ -66,7 +68,7 @@
   margin-bottom: 0;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .article {
     flex-direction: row;
     margin-bottom: 0;
@@ -89,7 +91,7 @@
   justify-content: center;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .article__content {
     padding-left: 30px;
     flex-basis: 50%;
@@ -101,7 +103,7 @@
   position: relative;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .article__picture-wrapper {
     max-width: 50%;
     flex-basis: 50%;
@@ -160,7 +162,7 @@
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .button {
     width: auto;
   }
