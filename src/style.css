@@ -1,13 +1,15 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 }
@@ -30,7 +32,7 @@
   flex-wrap: wrap;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .articles-wrapper {
     justify-content: center;
   }
@@ -45,7 +47,7 @@
   font-size: 0;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .fake {
     display: block;
   }
@@ -59,14 +61,14 @@
   align-items: stretch;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .article {
     flex-basis: 50%;
     max-width: 50%;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .article {
     flex-basis: 33.333%;
     max-width: 33.333%;
@@ -85,7 +87,7 @@
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .article:nth-last-of-type(1):first-child,
   .article:nth-last-of-type(2):first-child ~ .article,
   .article:nth-last-of-type(2):first-child,
@@ -96,7 +98,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .article:nth-last-of-type(3):first-child,
   .article:nth-last-of-type(3):first-child ~ .article {
     flex-basis: 33.333%;
@@ -104,7 +106,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .article:nth-last-of-type(1):first-child {
     text-align: center;
   }
@@ -208,7 +210,7 @@
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .button {
     width: auto;
     margin-right: 30px;
