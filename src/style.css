@@ -88,6 +88,7 @@
 
 .article__picture {
   display: block;
+  padding-top: 46%;
   order: -1;
 }
 
