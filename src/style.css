@@ -1,13 +1,15 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 }
@@ -40,7 +42,7 @@
 
 .article__content {
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     max-width: 770px;
     margin: 0 auto;
   }
@@ -122,7 +124,7 @@
   margin: 10px 15px;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .button {
     width: auto;
     max-width: calc(100% - 30px);
