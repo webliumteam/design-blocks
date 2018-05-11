@@ -1,18 +1,20 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .section--no-icon .plan--main .plan__title {
     margin-bottom: 35px;
   }
@@ -40,7 +42,7 @@
   text-align: center;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .subtitle {
     max-width: 770px;
   }
@@ -55,7 +57,7 @@
   justify-content: center;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .plans-wrapper {
     justify-content: center;
     margin-left: 0;
@@ -70,14 +72,14 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .plan {
     flex-basis: 33.3333%;
     max-width: 33.3333%;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .plan {
     padding: 50px;
   }
@@ -126,7 +128,7 @@
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .plan__button {
     width: auto;
   }
@@ -137,7 +139,7 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .plan--main {
     margin-top: -20px;
     margin-bottom: -30px;
@@ -170,7 +172,7 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .btns-group {
     margin-top: 90px;
   }
@@ -180,7 +182,7 @@
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .btns-group .button {
     width: auto;
     margin-right: 30px;
