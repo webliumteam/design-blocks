@@ -56,6 +56,7 @@ class Block extends React.Component {
               <Image
                 wrapperClassName={css['article__picture-wrapper']}
                 pictureClassName={css.article__picture}
+                imgClassName={css.article__image}
                 bind="picture"
                 size={this.getImageSize(columnLayout)}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
