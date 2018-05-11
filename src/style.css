@@ -1,3 +1,5 @@
+@import "media.css";
+
 .header {
   position: relative;
   min-width: 320px;
@@ -13,7 +15,7 @@
   &__top-line {
     padding: 7px 20px 30px;
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       padding-bottom: 10px;
     }
 
@@ -22,7 +24,7 @@
       margin: 0 auto;
       flex-direction: column;
 
-      @media (min-width: 768px) {
+      @media (--ui-tablet-devices) {
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
@@ -35,7 +37,7 @@
     max-width: 100%;
     margin-bottom: 10px;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       width: 0;
       max-width: calc(100% - 350px);
       margin-bottom: 0;
@@ -53,7 +55,7 @@
     flex-basis: auto;
     order: -1;
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       padding: 30px 20px;
       order: 1;
     }
@@ -76,7 +78,7 @@
   &__socials {
     max-width: 100%;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       display: flex;
       max-width: 350px;
       flex-basis: 350px;
@@ -111,7 +113,7 @@
     pointer-events: none;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     display: none;
   }
 
@@ -159,11 +161,11 @@
   display: none;
   padding: 40px 20px 50px;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding-top: 13px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     display: flex;
     position: relative;
     padding: 0;
@@ -199,7 +201,7 @@
 
       .nav__item {
 
-        @media (min-width: 992px) {
+        @media (--ui-medium-devices) {
           margin-left: 0;
           margin-right: 30px;
         }
@@ -221,7 +223,7 @@
       margin-bottom: 0;
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       margin-top: 10px;
       margin-left: 30px;
       margin-bottom: 0;
@@ -248,7 +250,7 @@
   &:last-of-type {
     margin-bottom: 16px;
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       margin-bottom: 0;
     }
   }
@@ -307,11 +309,11 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     left: 17px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     display: none;
   }
 }
@@ -321,7 +323,7 @@
   max-width: 100%;
   text-decoration: none;
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     display: flex;
     align-items: center;
     flex-basis: auto;
@@ -332,12 +334,12 @@
     max-width: calc(100% - 120px);
     margin: 0 auto;
 
-    @media (min-width: 480px) {
+    @media (--ui-phone-devices) {
       min-width: 100px;
       max-width: 275px;
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       display: flex;
       margin-right: 30px;
       flex-basis: auto;
@@ -347,11 +349,11 @@
 
   &__title {
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       font-size: calc(var(--ui-block-title-size) * 0.625);
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       max-width: 100%;
       align-self: flex-start;
       text-align: left;
@@ -369,7 +371,7 @@
   justify-content: center;
   flex-wrap: wrap;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     justify-content: flex-end;
   }
 
