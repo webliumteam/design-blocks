@@ -128,7 +128,12 @@
 
 .socials {
   display: flex;
+  margin: 0 auto;
   flex-wrap: wrap;
+
+  @media (--ui-tablet-devices) {
+    margin: 0;
+  }
 
   li {
     flex: 0 1 auto;
