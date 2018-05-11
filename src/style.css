@@ -1,3 +1,5 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
@@ -9,11 +11,11 @@
   font-weight: var(--ui-text-font-weight);
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
@@ -41,7 +43,7 @@
   margin: 0 auto;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .subtitle {
     max-width: 770px;
   }
@@ -62,21 +64,21 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .item {
     flex-basis: 50%;
     max-width: 50%;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item {
     flex-basis: 33.333333%;
     max-width: 33.333333%;
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item:nth-last-of-type(4):first-child,
   .item:nth-last-of-type(4):first-child ~ .item {
     flex-basis: 25%;
@@ -84,7 +86,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item:nth-last-of-type(7):first-child,
   .item:nth-last-of-type(7):first-child ~ .item {
     flex-basis: 25%;
@@ -98,7 +100,7 @@
   margin: 0 auto 23px;
   color: var(--ui-icon-color);
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     width: 100px;
     height: 100px;
   }
@@ -134,7 +136,7 @@
   margin: 10px;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .button {
     width: auto;
     margin-right: 20px;
