@@ -116,7 +116,7 @@
   text-align: center;
   z-index: 3;
 
-  @media(min-width: 992px) {
+  @media (min-width: 992px) {
     display: flex;
   }
 }
@@ -124,9 +124,14 @@
 .item__content--reverse {
   .item__body {
     order: -1;
+    padding-left: 0;
+    padding-right: 12px;
   }
 
   .item__title {
+    padding-right: 0;
+    padding-left: 12px;
+
     &:only-child {
       max-width: 50%;
       margin-left: auto;
@@ -142,7 +147,7 @@
     margin-bottom: 0;
   }
 
-  @media(min-width: 992px) {
+  @media (min-width: 992px) {
     max-width: 50%;
     padding-right: 12px;
     flex-basis: 50%;
@@ -155,7 +160,7 @@
 
 .item__body {
 
-  @media(min-width: 992px) {
+  @media (min-width: 992px) {
     max-width: 50%;
     padding-left: 12px;
     flex-basis: 50%;
