@@ -3,7 +3,6 @@
 /* start here */
 
 .title {
-  font-weight: var(--ui-hero-title-font-weight);
   font-size: var(--ui-heading-lg-size);
 }
 
