@@ -1,13 +1,15 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
@@ -54,11 +56,11 @@
 
 .article {
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 0 100px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     max-width: 854px;
   }
 }
@@ -82,7 +84,7 @@
 
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .article__title {
     text-align: left;
   }
@@ -147,7 +149,7 @@
   margin: 10px 15px;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .button {
     width: auto;
   }
