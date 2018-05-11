@@ -1,24 +1,26 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
   &--without-button {
     padding-bottom: 10px;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       padding-bottom: 20px;
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       padding-bottom: 35px;
     }
   }
@@ -35,7 +37,7 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .title {
     text-align: left;
   }
@@ -48,7 +50,7 @@
   justify-content: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .items-wrapper {
     justify-content: flex-start;
     padding-left: 0;
@@ -65,7 +67,7 @@
   text-align: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .item {
     text-align: left;
     flex-basis: 33.3333%;
@@ -73,7 +75,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item {
     flex-basis: 33.3333%;
     max-width: 33.3333%;
@@ -97,7 +99,7 @@
   justify-content: center;
 }
 
-@media (min-width: 768px) {
+@media (--ui-tablet-devices) {
   .item__content {
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -108,7 +110,7 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item__content br {
     display: block;
   }
@@ -120,7 +122,7 @@
   margin-right: 10px;
 }
 
-@media (min-width: 992px) {
+@media (--ui-medium-devices) {
   .item__number {
     font-size: calc(var(--ui-block-title-size) * 1.4375);
   }
@@ -145,7 +147,7 @@
   width: 100%;
 }
 
-@media (min-width: 480px) {
+@media (--ui-phone-devices) {
   .button {
     width: auto;
     margin-right: 30px;
