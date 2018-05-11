@@ -1,13 +1,15 @@
+@import "media.css";
+
 .section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
   
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
@@ -16,7 +18,7 @@
     margin: 0 auto;
     padding: var(--ui-content-gutter);
     
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -26,7 +28,7 @@
   &__header {
     margin-bottom: 50px;
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       width: 270px;
       margin-right: 30px;
       margin-bottom: 0;
@@ -54,7 +56,7 @@
 .items-wrapper {
   margin-bottom: -40px;
 
-  @media (min-width: 480px) {
+  @media (--ui-phone-devices) {
     display: flex;
     max-width: 540px;
     margin-left: auto;
@@ -63,7 +65,7 @@
     justify-content: space-around;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     max-width: none;
     margin-left: -10px;
     margin-right: -10px;
@@ -72,7 +74,7 @@
 
   &:first-child {
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       max-width: 880px;
     }
   }
@@ -81,12 +83,12 @@
 .item {
   margin-bottom: 40px;
   
-  @media (min-width: 480px) {
+  @media (--ui-phone-devices) {
     width: 220px;
     padding: 0 10px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     margin-bottom: 20px;
   }
 
@@ -97,7 +99,7 @@
   &:nth-last-of-type(9):first-child,
   &:nth-last-of-type(9):first-child ~ & {
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       width: 225px;
     }
   }
@@ -109,7 +111,7 @@
     padding-top: 65%;
     margin-bottom: -10px;
     
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       margin-bottom: 0;
     }
   }
@@ -130,7 +132,7 @@
     text-align: center;
     font-size: calc(var(--ui-heading-size) * 0.8333);
     
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       margin-bottom: 20px;
     }
   }
