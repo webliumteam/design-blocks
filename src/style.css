@@ -1,3 +1,5 @@
+@import "media.css";
+
 :root {
   --logoSize: 90px;
   --titleSize: 165px;
@@ -5,7 +7,7 @@
   --titleOffsetSize: 30px;
   --itemSideOffsets: 15px;
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     --logoSize: 130px;
     --logoOffsetSize: 50px;
     --titleOffsetSize: 50px;
@@ -16,11 +18,11 @@
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
@@ -33,7 +35,7 @@
   &__header {
     margin-bottom: 40px;
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       margin-bottom: 50px;
     }
   }
@@ -55,7 +57,7 @@
   /* font-size: calc(var(--ui-subtitle-size) * .8); */
   text-align: center;
 
-  /* @media (min-width: 992px) {
+  /* @media (--ui-medium-devices) {
     font-size: var(--ui-subtitle-size);
   } */
 }
@@ -65,7 +67,7 @@
 
   &--column {
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       display: flex;
       flex-wrap: wrap;
     }
@@ -82,11 +84,11 @@
 
     /* &:last-child {
 
-      @media (min-width: 768px) {
+      @media (--ui-tablet-devices) {
         margin-bottom: -30px;
       }
 
-      @media (min-width: 992px) {
+      @media (--ui-medium-devices) {
         margin-bottom: -50px;
       }
     } */
@@ -98,7 +100,7 @@
       border: 0;
       padding: 0 15px 30px;
 
-      @media (min-width: 768px) {
+      @media (--ui-tablet-devices) {
         max-width: 25%;
         flex-basis: auto;
         padding: 15px;
@@ -112,7 +114,7 @@
         }
       }
 
-      @media (min-width: 992px) {
+      @media (--ui-medium-devices) {
         padding: 15px 30px;
       }
     }
@@ -131,7 +133,7 @@
     border-bottom: 0;
   }
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     display: flex;
     align-items: flex-start;
     margin-left: var(--itemSideOffsets);
@@ -139,7 +141,7 @@
     padding: 30px 0 15px;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 30px 0 30px 20px;
   }
 
@@ -152,7 +154,7 @@
       width: var(--logoSize);
       margin: 0 auto 10px;
 
-      @media (min-width: 768px) {
+      @media (--ui-tablet-devices) {
         margin: 0 var(--logoOffsetSize) 0 0;
         flex-shrink: 0;
       }
@@ -183,7 +185,7 @@
 
     /* font-size: calc(var(--ui-heading-size) * 0.833); */
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       text-align: left;
       margin: 0 var(--titleOffsetSize) 0 0;
       width: var(--titleSize);
@@ -198,7 +200,7 @@
     text-align: center;
     font-size: 0;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       text-align: left;
       max-width: calc(100% - (var(--logoSize) + var(--titleSize) + var(--logoOffsetSize) + var(--titleOffsetSize)));
     }
@@ -230,11 +232,11 @@
     padding-top: 0;
     padding-bottom: 30px;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       align-items: center;
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       max-width: calc(50% - (var(--itemSideOffsets) * 2));
       padding-right: 20px;
       margin-left: var(--itemSideOffsets);
@@ -243,7 +245,7 @@
 
     &:nth-last-of-type(2):nth-child(odd) {
 
-      @media (min-width: 992px) {
+      @media (--ui-medium-devices) {
         border-bottom: 0;
         margin-bottom: 0;
         padding-bottom: 0;
@@ -258,7 +260,7 @@
 
   &--two-elements {
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       max-width: 310px;
       align-items: center;
       margin-bottom: 30px;
@@ -267,13 +269,13 @@
       margin-right: var(--itemSideOffsets);
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       max-width: 372px;
     }
 
     &:nth-last-of-type(2):nth-child(odd) {
 
-      @media (min-width: 768px) {
+      @media (--ui-tablet-devices) {
         border-bottom: 0;
         margin-bottom: 0;
         padding-bottom: 0;
@@ -287,7 +289,7 @@
 
     .item__title {
 
-      @media (min-width: 768px) {
+      @media (--ui-tablet-devices) {
         width: calc(var(--titleSize) + 30px);
         margin-right: 0;
       }
@@ -297,7 +299,7 @@
   &--heading-none {
     .item__content {
 
-      @media (min-width: 768px) {
+      @media (--ui-tablet-devices) {
         max-width: calc(100% - (var(--logoSize) + var(--logoOffsetSize)));
       }
     }
@@ -308,7 +310,7 @@
     flex-basis: 50%;
     margin-bottom: 20px;
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       max-width: 25%;
       padding: 0;
       margin-bottom: 30px;
@@ -316,7 +318,7 @@
       flex-basis: 25%;
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       margin-bottom: 50px;
       margin-left: 25px;
       margin-right: 25px;
@@ -335,11 +337,11 @@
 
   &--offset-sm {
 
-    @media (min-width: 768px) {
+    @media (--ui-tablet-devices) {
       padding-top: 30px;
     }
 
-    @media (min-width: 992px) {
+    @media (--ui-medium-devices) {
       padding-top: 10px;
     }
   }
@@ -348,7 +350,7 @@
 .button {
   width: 100%;
 
-  @media (min-width: 480px) {
+  @media (--ui-phone-devices) {
     width: auto;
   }
 }
@@ -360,7 +362,7 @@
   text-decoration: none;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     margin: 0 var(--logoOffsetSize) 0 0;
     flex-shrink: 0;
   }
