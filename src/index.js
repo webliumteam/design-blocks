@@ -15,9 +15,9 @@ ExtendedWireframe.defaultContent = {
     ...Component.defaultContent.logo,
     image: {
       resourceRef: 'Logo.png',
-      alt: '',
-      width: 118,
-      height: 23,
+      alt: 'logo',
+      width: 174,
+      height: 33,
     },
   },
 }
