@@ -12,14 +12,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  title: {
-    content: 'Gallery',
-    type: 'blockTitle',
-  },
-  subtitle: {
-    content: 'Learn more about our office work and all stages of production by looking at these photos',
-    type: 'subtitle',
-  },
   gallery: [{
     image: {
       resourceRef: 'gallery-img-1.png',
