@@ -1,3 +1,25 @@
 @import "wireframe-zapdos-header/src/style.css";
 
-/* start here */
+.logo img {
+
+  @media (min-width: 992px) {
+    width: 174px;
+  }
+}
+
+.nav {
+
+  @media (min-width: 992px) {
+    position: relative;
+    justify-content: center;
+    padding-right: 165px;
+  }
+}
+
+.header__button {
+
+  @media (min-width: 992px) {
+    position: absolute;
+    right: 0;
+  }
+}
