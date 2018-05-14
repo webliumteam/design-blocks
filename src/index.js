@@ -25,24 +25,21 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.cover[0],
       subtitle: {
         ...Component.defaultContent.cover[0].subtitle,
-        color: 'dark-shade-color',
-        brightness: 50,
+        type: 'subtitle',
       },
     },
     {
       ...Component.defaultContent.cover[1],
       subtitle: {
         ...Component.defaultContent.cover[0].subtitle,
-        color: 'dark-shade-color',
-        brightness: 50,
+        type: 'subtitle',
       },
     },
     {
       ...Component.defaultContent.cover[2],
       subtitle: {
         ...Component.defaultContent.cover[0].subtitle,
-        color: 'dark-shade-color',
-        brightness: 50,
+        type: 'subtitle',
       },
     },
   ],
