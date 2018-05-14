@@ -260,7 +260,7 @@ Block.modifierScheme = {
   },
   body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
   link: {defaultValue: true, label: 'Link', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
