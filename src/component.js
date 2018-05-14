@@ -48,19 +48,25 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Logo}, style, $block} = this.props
+    const {components: {Collection, Text, Button}, style, $block} = this.props
+    const header = this.getModifierValue('title') || this.getModifierValue('subtitle')
+
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-caption') && (
             <Text bind="top-caption" className={style['caption-decorator']} tagName="div" />
           )}
-          <header className={style.section__header}>
-            <Text bind="title" className={style.title} tagName="h1" />
-            {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={style.subtitle} tagName="p" />
-            )}
-          </header>
+          {header && (
+            <header className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text bind="title" className={style.title} tagName="h1" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text bind="subtitle" className={style.subtitle} tagName="p" />
+              )}
+            </header>
+          )}
           <Collection
             className={style['items-wrapper']}
             bind="partners"
@@ -245,6 +251,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Partner description', type: 'checkbox'},
   logo: {
     defaultValue: true,

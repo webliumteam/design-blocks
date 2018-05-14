@@ -55,7 +55,6 @@
   margin-right: 15px;
   margin-bottom: 30px;
   text-align: center;
-  word-wrap: break-word;
 
   @media (--ui-tablet-devices) {
     width: calc(33.4% - 30px);
