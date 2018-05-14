@@ -25,7 +25,7 @@ ExtendedWireframe.defaultContent = {
   },
   picture: {
     ...Component.defaultContent.picture,
-    src: 'picture.jpg',
+    resourceRef: 'picture.jpg',
   },
   'button-1': {
     ...Component.defaultContent['button-1'],
@@ -36,6 +36,7 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   'additional-text': {defaultValue: true, label: 'Additional text', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
 }
 
 export default ExtendedWireframe
