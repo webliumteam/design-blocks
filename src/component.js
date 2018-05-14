@@ -23,8 +23,6 @@ class Block extends React.Component {
           <ContactForm
             bind="contactForm"
             className={style.form}
-            labelClassName={style.form__item}
-            descriptionClassName={style['form__item-description']}
             fieldClassName={style.form__field}
             buttonClassName={style.form__button}
           />
