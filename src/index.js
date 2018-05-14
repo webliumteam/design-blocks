@@ -40,7 +40,7 @@ ExtendedWireframe.defaultContent = {
       innerFill: true,
       preset: 'preset001',
       offset: 15,
-      color: '#3d87ff',
+      color: 'brand-color',
       sizes: [10, 20, 30, 40],
       size: 30,
     },
