@@ -96,12 +96,6 @@
   margin-top: 20px;
 }
 
-@media (--ui-medium-devices) {
-  .form__button {
-    margin-top: 15px;
-  }
-}
-
 .title {
   margin-bottom: 15px;
 }
