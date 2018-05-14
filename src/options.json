@@ -1,3 +1,9 @@
 {
-  "showSubtitle": true
+  "showSubtitle": true,
+  "title-in-top": false,
+  "icon-decorator-in-top": false,
+  "hidden-social-heading": false,
+  "min-resize": 50,
+  "max-resize": 150,
+  "disable-resizer": false
 }
