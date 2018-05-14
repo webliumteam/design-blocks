@@ -46,6 +46,14 @@
   @media (min-width: 992px) {
     margin-bottom: 12px;
   }
+
+  img {
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      margin-left: 0;
+    }
+  }
 }
 
 .nav-list {
