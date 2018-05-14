@@ -23,24 +23,12 @@ ExtendedWireframe.defaultContent = {
   cover: [
     {
       ...Component.defaultContent.cover[0],
-      subtitle: {
-        ...Component.defaultContent.cover[0].subtitle,
-        type: 'subtitle',
-      },
     },
     {
       ...Component.defaultContent.cover[1],
-      subtitle: {
-        ...Component.defaultContent.cover[0].subtitle,
-        type: 'subtitle',
-      },
     },
     {
       ...Component.defaultContent.cover[2],
-      subtitle: {
-        ...Component.defaultContent.cover[0].subtitle,
-        type: 'subtitle',
-      },
     },
   ],
 }

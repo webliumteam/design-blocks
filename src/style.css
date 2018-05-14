@@ -22,14 +22,14 @@
 
 .subtitle {
   letter-spacing: -0.5px;
-  color: var(--ui-subtitle-color);
+  color: var(--ui-subheading-color);
 
   @media (min-width: 768px) {
     font-size: var(--ui-subtitle-size);
   }
 
   @media (min-width: 992px) {
-    font-size: calc(var(--ui-subtitle-size) * 18/20);
+    font-size: var(--ui-subheading-size);
     margin-top: 0;
   }
 }
