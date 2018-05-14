@@ -50,25 +50,12 @@
     padding: 0 0 16px;
   }
 
-  &__item {
-    width: 100%;
-    font-size: 0;
-    margin-bottom: 6px;
-  }
-
-  &__field {
-    background-color: var(--ui-light-shade-color);
-    color: var(--ui-dark-shade-color );
-    opacity: 0.6;
-    font-size: var(--ui-text-size);
+  &__field input {
+    background-color: transparent;
     text-align: center;
-    padding: 12px;
-    height: 44px;
-    margin-top: 0;
     border-radius: 0;
-    border: 0;
-    border-bottom: 1px solid;
-    border-bottom-color: #dcdcdc;
+    opacity: 0.8;
+    border-bottom: 1px solid var(--ui-dark-shade-color);
 
     &::placeholder {
       color: currentColor;
