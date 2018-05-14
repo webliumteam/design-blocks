@@ -68,42 +68,18 @@
 }
 
 .form {
-  padding: 0;
+  padding-right: 20%;
+  padding-left: 20%;
 
-  &__field {
-    /* stylelint-disable */
-    border: 0 !important;
-    /* stylelint-enable */
-    padding-top: 18px;
-    padding-bottom: 18px;
-    height: 49px;
+  &__field input {
     background-color: transparent;
+    opacity: 0.7;
     text-align: center;
+    border-bottom: 1px solid var(--ui-light-shade-color);
+    border-radius: 0;
 
     &:-moz-ui-invalid:not(output) {
       box-shadow: none;
-    }
-  }
-
-  &__item {
-    text-align: center;
-    position: relative;
-    margin-bottom: 10px;
-    max-width: 370px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 0;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: 1px;
-      background-color: var(--ui-text-color);
-      opacity: 0.2;
     }
   }
 
