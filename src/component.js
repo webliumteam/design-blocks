@@ -21,7 +21,6 @@ class Block extends React.Component {
           <ContactForm
             bind="contactForm"
             className={style.form}
-            labelClassName={style.form__item}
             fieldClassName={style.form__field}
             buttonClassName={style.form__button}
           />
@@ -61,8 +60,8 @@ Block.defaultContent = {
       },
       {
         type: 'phone',
-        id: 'contactForm_phoneNumber ',
-        title: 'Phone number ',
+        id: 'contactForm_phoneNumber',
+        title: 'Phone number',
         placeholder: '',
         required: true,
       },
@@ -84,8 +83,8 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
 }
 
 export default Block
