@@ -15,8 +15,8 @@
   @media (min-width: 768px) {
     padding-top: 80%;
   }
+}
 
-  img {
-    object-fit: contain;
-  }
+.item__image {
+  object-fit: contain;
 }
