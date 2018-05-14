@@ -42,6 +42,11 @@
 }
 
 .form {
+  display: flex;
+  position: relative;
+  width: 100%;
+  margin-top: 40px;
+  flex-direction: column;
 
   @media (--ui-phone-devices) {
     flex-direction: row;
@@ -51,11 +56,6 @@
     max-width: 515px;
     margin: 40px auto 0;
   }
-  display: flex;
-  position: relative;
-  width: 100%;
-  margin-top: 40px;
-  flex-direction: column;
 
   &__field {
     width: 100%;
