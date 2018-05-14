@@ -103,7 +103,7 @@ Wireframe.defaultContent = {
     color: '#F0F0F0',
   },
   title: {
-    content: 'Contacts Us',
+    content: 'Contacts',
     type: 'blockTitle',
   },
   subtitle: {
