@@ -20,10 +20,6 @@ ExtendedWireframe.defaultContent = {
       height: 44,
     },
   },
-  slogan: {
-    content: '69 Halsey St, New York, NY 10002',
-    type: 'text',
-  },
   menu: [
     {
       id: 'home',
@@ -146,10 +142,6 @@ ExtendedWireframe.defaultContent = {
       },
     },
   ],
-  email: {
-    content: 'Week Days: 8:00 am - 7:30 pm',
-    type: 'text',
-  },
 }
 
 ExtendedWireframe.modifierScheme = {
