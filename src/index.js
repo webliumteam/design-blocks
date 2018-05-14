@@ -11,22 +11,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  heading: {
-    content: 'Farm Location',
-    type: 'heading',
-  },
-  'address-content': {
-    content: '69 Halsey St, New York, NY 10002',
-    type: 'text',
-  },
-  'phone-link': {
-    content: '<a href="tel:(222) 111 11 11">(222) 111 11 11</a>',
-    type: 'text',
-  },
-  'email-link': {
-    content: '<a href="mailto:organicfarm@a.weblium.com">organicfarm@a.weblium.com</a>',
-    type: 'text',
-  },
   map: {
     ...Component.defaultContent.map,
     preset: 'dafault',
