@@ -3,11 +3,12 @@ import $editor from 'weblium/editor'
 import Component from 'wireframe-zapdos-services/src/component'
 import style from './style.css'
 
+import defaultOptions from 'wireframe-zapdos-services/src/options.json'
 import options from './options.json'
 
 const {enhancers: {withProps}, hoistStatics} = $editor
 
-const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
+const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', {...defaultOptions, ...options}))))(Component)
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
@@ -32,7 +33,7 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.services[1],
       picture: {
         ...Component.defaultContent.services[1].picture,
-        resourceRef: 'img-02.png',
+        resourceRef: 'img-05.jpg',
       },
       link: {
         ...Component.defaultContent.services[1].link,
