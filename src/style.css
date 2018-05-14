@@ -27,7 +27,6 @@
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 30px;
-    background-color: var(--ui-brand-color);
 
     @media (min-width: 768px) {
       min-height: 754px;
