@@ -60,8 +60,8 @@ Block.defaultContent = {
       },
       {
         type: 'phone',
-        id: 'contactForm_phoneNumber ',
-        title: 'Phone number ',
+        id: 'contactForm_phoneNumber',
+        title: 'Phone number',
         placeholder: '',
         required: true,
       },
