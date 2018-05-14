@@ -110,7 +110,7 @@
     width: 100%;
     padding-top: 65%;
     margin-bottom: -10px;
-    
+
     @media (--ui-medium-devices) {
       margin-bottom: 0;
     }
@@ -124,14 +124,12 @@
     top: 0;
     left: 0;
     object-fit: cover;
-    background-color: var(--ui-media-bg);
   }
 
   &__title {
     margin-top: 20px;
     text-align: center;
-    font-size: calc(var(--ui-heading-size) * 0.8333);
-    
+
     @media (--ui-medium-devices) {
       margin-bottom: 20px;
     }
