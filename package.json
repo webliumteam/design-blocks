@@ -33,5 +33,6 @@
   "category": "footer",
   "roles": [
     "footer"
-  ]
+  ],
+  "editorVersion": "4.13.0"
 }
