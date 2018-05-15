@@ -83,15 +83,15 @@
     border: solid 1px #e9e9e9;
     font-size: calc(var(--ui-text-size) * 0.8125);
     border-radius: 0;
+
+    > input,
+    > textarea {
+      margin-top: 0;
+      background-color: #fff;
+    }
   }
 
   &__button {
     margin-top: 16px;
   }
-}
-
-.editor-form-field input,
-.editor-form-field textarea {
-  margin-top: 0;
-  background-color: #fff;
 }
