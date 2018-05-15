@@ -39,6 +39,7 @@
 
     &:hover {
       background-color: var(--ui-brand-color);
+      color: var(--ui-light-shade-color);
     }
   }
 
@@ -55,16 +56,6 @@
 
     @media (min-width: 992px) {
       display: block;
-    }
-  }
-
-  &__list {
-    .nav {
-      &__link {
-        &:hover {
-          color: var(--ui-light-shade-color);
-        }
-      }
     }
   }
 }
