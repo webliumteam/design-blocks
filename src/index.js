@@ -30,6 +30,7 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   'additional-text': {defaultValue: true, label: 'Additional text', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
+  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
 }
 
 export default ExtendedWireframe
