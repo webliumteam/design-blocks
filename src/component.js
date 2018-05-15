@@ -10,7 +10,7 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Image}, style} = this.props
+    const {components: {Text, Image, Background}, style} = this.props
     return (
       <div className={classNames(style.item, className)}>
         {children}
@@ -36,7 +36,9 @@ class Block extends React.Component {
             <Text bind={`numbers[${index}].body`} className={style.item__desc} tagName="p" />
           </div>
         </div>
-        <Text bind={`numbers[${index}].number`} className={style.item__numbers} tagName="strong" />
+        <Background tagName="div" className={style['item__numbers-bg']} bind="numbersBackground">
+          <Text bind={`numbers[${index}].number`} className={style.item__numbers} tagName="strong" />
+        </Background>
       </div>
     )
   }
@@ -82,7 +84,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'Collection'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Button', 'Collection', 'Background'])($editor.components)
 
 Block.defaultContent = {
   title: {
@@ -93,6 +95,10 @@ Block.defaultContent = {
     content: 'We work to create new opportunities for our clients and help them to conquer the market. We’re proud of our achievements and want to share our results with you?',
     type: 'subtitle',
   },
+  numbersBackground: {
+    type: 'color',
+    color: 'dark-shade-color',
+  },
   numbers: [
     {
       body: {
@@ -101,7 +107,7 @@ Block.defaultContent = {
       },
       number: {
         content: '128%',
-        type: 'headingLg',
+        type: 'heading',
       },
       picture: {
         alt: 'Illustration for number',
@@ -114,7 +120,7 @@ Block.defaultContent = {
       },
       number: {
         content: '527%',
-        type: 'headingLg',
+        type: 'heading',
       },
       picture: {
         alt: 'Illustration for number',
@@ -127,7 +133,7 @@ Block.defaultContent = {
       },
       number: {
         content: '92%',
-        type: 'headingLg',
+        type: 'heading',
       },
       picture: {
         alt: 'Illustration for number',
