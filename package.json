@@ -30,5 +30,6 @@
     "stylelint-selector-bem-pattern": "^2.0.0",
     "stylelint-order": "^0.8.0"
   },
-  "category": "services"
+  "category": "services",
+  "editorVersion": "4.13.0"
 }
