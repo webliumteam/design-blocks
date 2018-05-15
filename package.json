@@ -32,5 +32,6 @@
   },
   "roles": [
     "cover"
-  ]
+  ],
+  "editorVersion": "4.13.0"
 }
