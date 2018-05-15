@@ -78,9 +78,8 @@
   }
 
   &__field {
-    background-color: #fff;
+
     margin-bottom: 20px;
-    border: solid 1px #e9e9e9;
     font-size: calc(var(--ui-text-size) * 0.8125);
     border-radius: 0;
 
@@ -88,6 +87,7 @@
     > textarea {
       margin-top: 0;
       background-color: #fff;
+      border: solid 1px #e9e9e9;
     }
   }
 
@@ -95,3 +95,4 @@
     margin-top: 16px;
   }
 }
+
