@@ -15,6 +15,7 @@ class Block extends React.Component {
   render() {
     const {components: {Text, Menu, Logo, SocialIcons}, style: css} = this.props
     const withoutLeftPart = this.getModifierValue('title') || this.getModifierValue('description')
+    const bottomtext = this.getModifierValue('leftText') || this.getModifierValue('rightText')
 
     return (
       <footer className={css.footer}>
@@ -52,10 +53,16 @@ class Block extends React.Component {
               </div>
             </div>
           )}
-          <div className={css.footer__bottom}>
-            <Text tagName="small" className={css.footer__meta} bind="copyright" />
-            <Text tagName="small" className={css.footer__meta} bind="additional" />
-          </div>
+          {bottomtext && (
+            <div className={css.footer__bottom}>
+              {this.getModifierValue('leftText') && (
+                <Text tagName="small" className={css.footer__meta} bind="copyright" />
+              )}
+              {this.getModifierValue('rightText') && (
+                <Text tagName="small" className={css.footer__meta} bind="additional" />
+              )}
+            </div>
+          )}
         </div>
       </footer>
     )
@@ -310,6 +317,8 @@ Block.modifierScheme = {
   title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
   description: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social media icons', type: 'checkbox'},
+  leftText: {defaultValue: true, label: 'Left text', type: 'checkbox'},
+  rightText: {defaultValue: true, label: 'Right text', type: 'checkbox'},
 }
 
 export default Block

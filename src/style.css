@@ -2,13 +2,13 @@
 
 .footer {
   min-width: 320px;
-  padding: 40px 0 0;
+  padding: 40px 0;
   word-wrap: break-word;
 }
 
 @media (--ui-tablet-devices) {
   .footer {
-    padding: 50px 0 0;
+    padding: 50px 0;
   }
 }
 
@@ -113,7 +113,7 @@
 }
 
 .footer__bottom {
-  padding: 10px 0;
+  padding-top: 10px;
 }
 
 @media (--ui-tablet-devices) {
