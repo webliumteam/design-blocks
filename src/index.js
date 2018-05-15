@@ -60,7 +60,10 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  title: {defaultValue: false, label: 'Gallery title', type: 'checkbox'},
+  title: {defaultValue: false, label: 'Gallery title', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Gallery description', type: 'hidden'},
+  'body-text': {defaultValue: false, label: 'Image description', type: 'hidden'},
+  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
