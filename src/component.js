@@ -15,23 +15,6 @@ class Block extends React.Component {
       <div className={classNames(style.item, className)}>
         {children}
         <div className={style.item__inner}>
-          {_.get('image')(modifier) && (
-            <Image
-              wrapperClassName={style['picture-wrapper']}
-              pictureClassName={style.item__pic}
-              imgClassName={style.item__img}
-              bind={`numbers[${index}].picture`}
-              size={
-                {
-                  'min-width: 992px': 320,
-                  'min-width: 768px': 420,
-                  'min-width: 480px': 710,
-                  'min-width: 320px': 420,
-                }
-              }
-              resize={{disable: true}}
-            />
-          )}
           <div className={style['item__desc-wrapper']}>
             <Text bind={`numbers[${index}].body`} className={style.item__desc} tagName="p" />
           </div>
@@ -99,47 +82,48 @@ Block.defaultContent = {
     type: 'color',
     color: 'dark-shade-color',
   },
-  numbers: [
-    {
-      body: {
-        content: 'increase in profits of our customers',
-        type: 'text',
-      },
-      number: {
-        content: '128%',
-        type: 'heading',
-      },
-      picture: {
-        alt: 'Illustration for number',
-      },
+  numbers: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'color',
+          color: 'light-accent-color',
+        }],
+      ],
     },
-    {
-      body: {
-        content: 'higher customer satisfaction',
-        type: 'text',
+    items: [
+      {
+        body: {
+          content: 'increase in profits of our customers',
+          type: 'text',
+        },
+        number: {
+          content: '128%',
+          type: 'heading',
+        },
       },
-      number: {
-        content: '527%',
-        type: 'heading',
+      {
+        body: {
+          content: 'higher customer satisfaction',
+          type: 'text',
+        },
+        number: {
+          content: '527%',
+          type: 'heading',
+        },
       },
-      picture: {
-        alt: 'Illustration for number',
+      {
+        body: {
+          content: 'of clients found new sales markets',
+          type: 'text',
+        },
+        number: {
+          content: '92%',
+          type: 'heading',
+        },
       },
-    },
-    {
-      body: {
-        content: 'of clients found new sales markets',
-        type: 'text',
-      },
-      number: {
-        content: '92%',
-        type: 'heading',
-      },
-      picture: {
-        alt: 'Illustration for number',
-      },
-    },
-  ],
+    ],
+  },
   button: {
     actionConfig: {
       action: 'link',
