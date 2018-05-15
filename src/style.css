@@ -19,4 +19,5 @@
 
 .item__image {
   object-fit: contain;
+  background-size: contain;
 }
