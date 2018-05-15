@@ -11,14 +11,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  title: {
-    content: 'Web Presence Made Easy',
-    type: 'blockTitle',
-  },
-  text: {
-    content: 'Our website designs are created by professional web design specialists who are passionate about state of the art and unique craft of web design. We help our customers make professional presentations of their businesses and grow their client base with ease.',
-    type: 'text',
-  },
 }
 
 ExtendedWireframe.modifierScheme = {
