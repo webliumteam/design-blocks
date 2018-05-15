@@ -16,8 +16,12 @@
   &--reverse {
     .article__content {
 
+      @media (min-width: 1200px) {
+        padding-left: 25%;
+      }
+
       @media (min-width: 768px) {
-        padding-left: 40px;
+        padding-left: 10%;
       }
     }
   }
@@ -88,8 +92,10 @@
   }
 }
 
-.button {
+.button,
+.link {
   text-transform: uppercase;
+  word-break: break-all;
 }
 
 .section--column .article__picture-wrapper + .article__content {
@@ -100,7 +106,7 @@
   padding-left: 40px;
 }
 
-.article__content:only-child .btns-group {
+.btns-group:only-child {
   margin-top: 0;
   margin-bottom: 0;
 }
