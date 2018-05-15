@@ -43,7 +43,7 @@
     }
   }
 
-  &::after {
+  /* &::after {
     content: "";
     display: none;
     position: absolute;
@@ -57,5 +57,5 @@
     @media (min-width: 992px) {
       display: block;
     }
-  }
+  } */
 }
