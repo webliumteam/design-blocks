@@ -90,6 +90,8 @@
   }
 }
 
-.editor-form-field input {
+.editor-form-field input,
+.editor-form-field textarea {
   margin-top: 0;
+  background-color: #fff;
 }
