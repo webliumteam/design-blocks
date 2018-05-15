@@ -33,5 +33,6 @@
   "dependencies": {
     "react-responsive": "^4.0.5"
   },
-  "category": "team"
+  "category": "team",
+  "editorVersion": "4.13.0"
 }
