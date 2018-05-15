@@ -33,17 +33,19 @@
 .preview-slider {
 
   @media (--ui-tablet-devices) {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   :global {
-    .slick-track {
-      padding: 10px 0;
+    .slick-slider {
+      padding: 10px;
     }
   }
 }
 
 .testimonial {
+  padding: 10px;
+
   &__text {
     margin-bottom: 10px;
     font-size: calc(var(--ui-heading-size) * 0.6666);
@@ -115,6 +117,10 @@
       transition: opacity 0.2s ease-in;
     }
 
+    .slick-slider {
+      padding: 10px;
+    }
+
     .slick-center {
       opacity: 1;
     }
@@ -169,7 +175,7 @@
   cursor: pointer;
 
   @media (--ui-tablet-devices) {
-    padding: 0 15px;
+    padding: 10px 15px;
   }
 
   &__inner {
