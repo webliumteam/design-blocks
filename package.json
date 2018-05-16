@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-series-2-testimonials": "https://github.com/webliumteam/blocks#w/series-2/testimonials/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
