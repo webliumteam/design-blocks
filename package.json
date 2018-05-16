@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-projects": "https://github.com/webliumteam/blocks#w/zapdos/projects/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
