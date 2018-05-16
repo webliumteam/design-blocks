@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-series-2-header": "https://github.com/webliumteam/blocks#w/series-2/header/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
