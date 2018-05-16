@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-events": "https://github.com/webliumteam/blocks#w/zapdos/events/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
