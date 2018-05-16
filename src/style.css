@@ -86,8 +86,7 @@
 
   .title {
     margin-bottom: 15px;
-
-    text-align: left;
+    text-align: center;
   }
 
   .contacts {
@@ -114,6 +113,10 @@
 
     &-wrapper {
       margin-bottom: 15px;
+    }
+
+    &__title {
+      margin: 0 auto;
     }
   }
 }
