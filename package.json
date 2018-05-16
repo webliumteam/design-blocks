@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-series-2-cta": "https://github.com/webliumteam/blocks#w/series-2/cta/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
