@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-careers": "https://github.com/webliumteam/blocks#w/zapdos/careers/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
