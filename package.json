@@ -32,5 +32,6 @@
   },
   "roles": [
     "header"
-  ]
+  ],
+  "editorVersion": "4.13.0"
 }
