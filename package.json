@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-faq": "https://github.com/webliumteam/blocks#w/zapdos/faq/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
