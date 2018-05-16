@@ -90,16 +90,46 @@
 
     /* styles for custom arrows */
     .slick-arrow {
-      width: 17px;
+      width: 40px;
+      height: 40px;
+      top: 100%;
       color: var(--ui-brand-color);
+      z-index: 1;
+
+      &::before {
+        content: none;
+      }
+
+      @media (--ui-tablet-devices) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
 
     .slick-prev {
-      transform: translateX(-200%);
+      transform: translateY(20px) translateX(-200%);
+      left: 50%;
+
+      @media (--ui-tablet-devices) {
+        left: 30px;
+      }
+
+      @media (--ui-medium-devices) {
+        left: 50px;
+      }
     }
 
     .slick-next {
-      transform: translateY(200%);
+      transform: translateY(20px) translateX(200%);
+      right: 50%;
+
+      @media (--ui-tablet-devices) {
+        right: 30px;
+      }
+
+      @media (--ui-medium-devices) {
+        right: 50px;
+      }
     }
 
     .slick-prev,
