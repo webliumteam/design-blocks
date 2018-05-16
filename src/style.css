@@ -54,7 +54,7 @@
 }
 
 .items-wrapper {
-  margin-bottom: -40px;
+  margin: -10px;
 
   @media (--ui-phone-devices) {
     display: flex;
@@ -66,9 +66,7 @@
   }
 
   @media (--ui-medium-devices) {
-    max-width: none;
-    margin-left: -10px;
-    margin-right: -10px;
+    max-width: 100%;
     justify-content: center;
   }
 
@@ -81,15 +79,10 @@
 }
 
 .item {
-  margin-bottom: 20px;
+  margin: 10px;
 
   @media (--ui-phone-devices) {
     width: 220px;
-    padding: 0 10px;
-  }
-
-  @media (--ui-medium-devices) {
-    margin-bottom: 20px;
   }
 
   &:nth-last-of-type(5):first-child,
