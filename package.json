@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-awards": "https://github.com/webliumteam/blocks#w/zapdos/awards/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
