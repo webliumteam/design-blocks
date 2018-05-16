@@ -317,7 +317,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Team description', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Team description', type: 'checkbox'},
   'member-desc': {defaultValue: true, label: 'Team member bio', type: 'checkbox'},
   'member-link': {defaultValue: true, label: 'Link', type: 'checkbox'},
   'member-email': {defaultValue: true, label: 'Team member contacts', type: 'checkbox'},
