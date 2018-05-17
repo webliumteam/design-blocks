@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-2-contacts": "https://github.com/webliumteam/blocks#w/series-2/contacts/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
