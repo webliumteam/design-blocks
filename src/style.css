@@ -32,6 +32,10 @@
   padding-bottom: 25px;
   transition: opacity 200ms ease;
 
+  [class^="background-wrapper"] {
+    position: fixed;
+  }
+
   .header:not(.header--opened) & {
     opacity: 0;
     pointer-events: none;
