@@ -53,7 +53,7 @@ Block.defaultContent = {
         type: 'email',
         id: 'contactForm_email',
         placeholder: 'Email',
-        required: false,
+        required: true,
       },
     ],
     submitButton: {
