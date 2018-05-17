@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-cover": "https://github.com/webliumteam/blocks#w/zapdos/cover/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
