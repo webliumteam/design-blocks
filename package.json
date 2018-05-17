@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-3-cover": "https://github.com/webliumteam/blocks#w/series-3/cover/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
