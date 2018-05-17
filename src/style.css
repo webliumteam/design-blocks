@@ -47,7 +47,7 @@
         left: 100%;
       }
 
-      @media (--ui-medium-devices) {
+      @media (--ui-large-devices) {
         left: calc(50% + 600px);
       }
 
