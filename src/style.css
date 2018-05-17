@@ -28,7 +28,7 @@
   }
 
   &__header {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 }
 
@@ -51,10 +51,11 @@
 
 .items-wrapper {
   margin: -10px;
+  padding: 10px 0;
 
   @media (--ui-medium-devices) {
     display: flex;
-    margin: -35px;
+    margin: -25px;
     flex-wrap: wrap;
   }
 }
@@ -64,8 +65,14 @@
   text-align: center;
   margin-bottom: 50px;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   @media (--ui-tablet-devices) {
     display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   @media (--ui-medium-devices) {
@@ -132,20 +139,21 @@
 }
 
 .btns-group {
-  margin: -15px 0;
+  margin-top: 30px;
+  margin-bottom: -15px;
 
-  @media (--ui-tablet-devices) {
+  @media (--ui-phone-devices) {
     margin: -5px -15px -15px;
   }
 
-  @media (--ui-tablet-devices) {
+  @media (--ui-medium-devices) {
     margin-top: 35px;
   }
 
   &__button {
     margin: 15px 0;
 
-    @media (--ui-tablet-devices) {
+    @media (--ui-phone-devices) {
       margin: 15px;
     }
   }
