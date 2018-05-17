@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-pricing": "https://github.com/webliumteam/blocks#w/zapdos/pricing/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
