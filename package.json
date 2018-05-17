@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-2-why": "https://github.com/webliumteam/blocks#w/series-2/why/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
