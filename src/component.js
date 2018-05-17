@@ -20,7 +20,7 @@ class Wireframe extends React.Component {
     return (
       <div className={style.item}>
         <div className={style.item__inner}>
-          <Background bind={`cover[${index}].background`} tagName="div" className={style.item__content}>
+          <Background bind={`cover[${index}].card_background`} tagName="div" className={style.item__content}>
             {this.getModifierValue('subtitle') && <Text tagName="p" className={style.item__subtitle} bind={`cover[${index}].subtitle`} />}
             {this.getModifierValue('title') && <Text tagName="h2" className={style.item__title} bind={`cover[${index}].title`} />}
             {this.getModifierValue('body') && <Text tagName="p" className={style.item__body} bind={`cover[${index}].body`} />}
@@ -46,7 +46,7 @@ class Wireframe extends React.Component {
           {this.getModifierValue('counter') && (
             <div className={style.counter}>
               <span className={style.counter__current}>{`0${index + 1}`}</span>
-              <span className={style.counter__count}>&nbsp;/{`0${content.cover.length}`}</span>
+              <span className={style.counter__count}>&nbsp;{`/0${content.cover.length}`}</span>
             </div>
           )}
         </div>
@@ -90,7 +90,7 @@ Wireframe.defaultContent = {
   },
   cover: [
     {
-      background: {
+      card_background: {
         type: 'color',
         color: '#fff',
       },
@@ -136,7 +136,7 @@ Wireframe.defaultContent = {
       },
     },
     {
-      background: {
+      card_background: {
         type: 'color',
         color: '#fff',
       },
@@ -182,7 +182,7 @@ Wireframe.defaultContent = {
       },
     },
     {
-      background: {
+      card_background: {
         type: 'color',
         color: '#fff',
       },
