@@ -45,7 +45,7 @@ class Wireframe extends React.Component {
           </Background>
           {this.getModifierValue('counter') && (
             <div className={style.counter}>
-              <span className={style.counter__current}>{`0${index + 1}`}</span>
+              <span className={style.counter__current}>{`0${index}`}</span>
               <span className={style.counter__count}>&nbsp;{`/0${content.cover.items.length}`}</span>
             </div>
           )}
