@@ -20,7 +20,7 @@ class Wireframe extends React.Component {
     return (
       <div className={style.item}>
         <div className={style.item__inner}>
-          <Background bind={`cover[${index}].card_background`} tagName="div" className={style.item__content}>
+          <Background bind={`cover[${index}].card`} tagName="div" className={style.item__content}>
             {this.getModifierValue('subtitle') && <Text tagName="p" className={style.item__subtitle} bind={`cover[${index}].subtitle`} />}
             {this.getModifierValue('title') && <Text tagName="h2" className={style.item__title} bind={`cover[${index}].title`} />}
             {this.getModifierValue('body') && <Text tagName="p" className={style.item__body} bind={`cover[${index}].body`} />}
@@ -46,7 +46,7 @@ class Wireframe extends React.Component {
           {this.getModifierValue('counter') && (
             <div className={style.counter}>
               <span className={style.counter__current}>{`0${index + 1}`}</span>
-              <span className={style.counter__count}>&nbsp;{`/0${content.cover.length}`}</span>
+              <span className={style.counter__count}>&nbsp;{`/0${content.cover.items.length}`}</span>
             </div>
           )}
         </div>
@@ -84,158 +84,160 @@ class Wireframe extends React.Component {
 Wireframe.components = _.pick(['Text', 'Background', 'Button', 'Slider'])($editor.components)
 
 Wireframe.defaultContent = {
-  cover: [
-    {
-      background: {
-        type: 'color',
-        color: 'dark-accent-color',
-      },
-      card_background: {
-        type: 'color',
-        color: 'light-shade-color',
-      },
-      title: {
-        content: 'FOR WEEDING',
-        type: 'heroTitle',
-      },
-      subtitle: {
-        content: 'Spring flowers',
-        type: 'subtitle',
-      },
-      body: {
-        content: 'Take a look at our best collection of beautiful flowers from all over the world',
-        type: 'text',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+  cover: {
+    items: [
+      {
+        background: {
+          type: 'color',
+          color: 'dark-accent-color',
+        },
+        card: {
+          type: 'color',
+          color: 'light-shade-color',
+        },
+        title: {
+          content: 'FOR WEEDING',
+          type: 'heroTitle',
+        },
+        subtitle: {
+          content: 'Spring flowers',
+          type: 'subtitle',
+        },
+        body: {
+          content: 'Take a look at our best collection of beautiful flowers from all over the world',
+          type: 'text',
+        },
+        cta: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Request a quote',
+          type: 'primary',
         },
-        textValue: 'Request a quote',
-        type: 'primary',
-      },
-      'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+        'cta-2': {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Learn more',
+          type: 'secondary',
         },
-        textValue: 'Learn more',
-        type: 'secondary',
       },
-    },
-    {
-      background: {
-        type: 'color',
-        color: 'dark-accent-color',
-      },
-      card_background: {
-        type: 'color',
-        color: 'light-shade-color',
-      },
-      title: {
-        content: 'FOR WEEDING',
-        type: 'heroTitle',
-      },
-      subtitle: {
-        content: 'Spring flowers',
-        type: 'subtitle',
-      },
-      body: {
-        content: 'Take a look at our best collection of beautiful flowers from all over the world',
-        type: 'text',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+      {
+        background: {
+          type: 'color',
+          color: 'dark-accent-color',
+        },
+        card: {
+          type: 'color',
+          color: 'light-shade-color',
+        },
+        title: {
+          content: 'FOR WEEDING',
+          type: 'heroTitle',
+        },
+        subtitle: {
+          content: 'Spring flowers',
+          type: 'subtitle',
+        },
+        body: {
+          content: 'Take a look at our best collection of beautiful flowers from all over the world',
+          type: 'text',
+        },
+        cta: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Request a quote',
+          type: 'primary',
         },
-        textValue: 'Request a quote',
-        type: 'primary',
-      },
-      'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+        'cta-2': {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Learn more',
+          type: 'secondary',
         },
-        textValue: 'Learn more',
-        type: 'secondary',
       },
-    },
-    {
-      background: {
-        type: 'color',
-        color: 'dark-accent-color',
-      },
-      card_background: {
-        type: 'color',
-        color: 'light-shade-color',
-      },
-      title: {
-        content: 'FOR WEEDING',
-        type: 'heroTitle',
-      },
-      subtitle: {
-        content: 'Spring flowers',
-        type: 'subtitle',
-      },
-      body: {
-        content: 'Take a look at our best collection of beautiful flowers from all over the world',
-        type: 'text',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+      {
+        background: {
+          type: 'color',
+          color: 'dark-accent-color',
+        },
+        card: {
+          type: 'color',
+          color: 'light-shade-color',
+        },
+        title: {
+          content: 'FOR WEEDING',
+          type: 'heroTitle',
+        },
+        subtitle: {
+          content: 'Spring flowers',
+          type: 'subtitle',
+        },
+        body: {
+          content: 'Take a look at our best collection of beautiful flowers from all over the world',
+          type: 'text',
+        },
+        cta: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Request a quote',
+          type: 'primary',
         },
-        textValue: 'Request a quote',
-        type: 'primary',
-      },
-      'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+        'cta-2': {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Learn more',
+          type: 'secondary',
         },
-        textValue: 'Learn more',
-        type: 'secondary',
       },
-    },
-  ],
+    ],
+  },
 }
 
 Wireframe.modifierScheme = {
