@@ -84,15 +84,15 @@ class Wireframe extends React.Component {
 Wireframe.components = _.pick(['Text', 'Background', 'Button', 'Slider'])($editor.components)
 
 Wireframe.defaultContent = {
-  background: {
-    type: 'color',
-    color: '#D8D8D8',
-  },
   cover: [
     {
+      background: {
+        type: 'color',
+        color: 'dark-accent-color',
+      },
       card_background: {
         type: 'color',
-        color: '#fff',
+        color: 'light-shade-color',
       },
       title: {
         content: 'FOR WEEDING',
@@ -136,9 +136,13 @@ Wireframe.defaultContent = {
       },
     },
     {
+      background: {
+        type: 'color',
+        color: 'dark-accent-color',
+      },
       card_background: {
         type: 'color',
-        color: '#fff',
+        color: 'light-shade-color',
       },
       title: {
         content: 'FOR WEEDING',
@@ -182,9 +186,13 @@ Wireframe.defaultContent = {
       },
     },
     {
+      background: {
+        type: 'color',
+        color: 'dark-accent-color',
+      },
       card_background: {
         type: 'color',
-        color: '#fff',
+        color: 'light-shade-color',
       },
       title: {
         content: 'FOR WEEDING',
