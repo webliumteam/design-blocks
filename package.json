@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-2-process": "https://github.com/webliumteam/blocks#w/series-2/process/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
