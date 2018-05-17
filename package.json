@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-3-footer": "https://github.com/webliumteam/blocks#w/series-3/footer/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
