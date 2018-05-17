@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-4-events": "https://github.com/webliumteam/blocks#w/series-4/events/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
