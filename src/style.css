@@ -53,8 +53,4 @@
 .text {
   text-align: center;
   max-width: 100%;
-
-  @media (min-width: 768px) {
-    font-size: calc(var(--ui-text-size) * 1.5);
-  }
 }
