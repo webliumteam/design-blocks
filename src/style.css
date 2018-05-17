@@ -17,6 +17,7 @@
     }
 
     @media (min-width: 992px) {
+      width: 100%;
       max-width: 1070px;
     }
   }
