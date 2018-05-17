@@ -106,6 +106,7 @@
 
 .section--column .article__picture-wrapper + .article__content {
   padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .section--column .article__content {
