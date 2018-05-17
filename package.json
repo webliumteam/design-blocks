@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-lucario-cover": "https://github.com/webliumteam/blocks#w/lucario/cover/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
