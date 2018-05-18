@@ -1,6 +1,6 @@
 {
   "name": "design-meowth-partners",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-series-1-partners": "https://github.com/webliumteam/blocks#w/series-1/partners/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
