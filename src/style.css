@@ -1,3 +1,30 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-1-partners/src/style.css";
 
 /* start here */
+
+.title {
+  font-size: var(--ui-heading-lg-size);
+  font-weight: 500;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.items-wrapper {
+  margin-bottom: 25px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 45px;
+    justify-content: space-around;
+  }
+}
+
+.section__header {
+
+  @media (min-width: 992px) {
+    margin-top: 13px;
+    margin-bottom: 61px;
+  }
+}
