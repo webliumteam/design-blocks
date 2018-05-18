@@ -1,6 +1,6 @@
 {
   "name": "design-deino-cta",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-cta": "https://github.com/webliumteam/blocks#w/zapdos/cta/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
