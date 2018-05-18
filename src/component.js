@@ -18,7 +18,7 @@ class Block extends React.Component {
 
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Image, Resizer}, style} = this.props
+    const {components: {Text, Resizer}, style} = this.props
     const hiddenBodyClass = !this.getModifierValue('item-body') && style['item--hidden-body']
 
     return (
