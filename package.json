@@ -1,6 +1,6 @@
 {
   "name": "design-gengar-footer",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-footer": "https://github.com/webliumteam/blocks#w/zapdos/footer/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
