@@ -26,8 +26,7 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     content: 'Get in Touch with Our Logistics Expert',
-    type: 'blockTitle',
-    color: 'light-shade-color',
+    type: 'headingLg',
   },
   contactForm: {
     fields: [
