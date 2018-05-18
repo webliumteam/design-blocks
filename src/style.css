@@ -12,12 +12,13 @@
 }
 
 .contacts {
-  padding: 58px 30px;
+  padding: 65px 20px 50px;
   box-shadow: none;
   border-radius: 4px;
 
   @media (min-width: 992px) {
     width: 283px;
+    padding: 58px 30px;
   }
 
   &__desc {
