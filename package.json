@@ -1,6 +1,6 @@
 {
   "name": "design-jolteon-header",
-  "version": "0.0.24",
+  "version": "0.0.26",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-3-header": "https://github.com/webliumteam/blocks#w/series-3/header/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
