@@ -43,6 +43,20 @@
   margin: 0 auto;
   padding: 0;
 
+  &__field {
+    background-color: var(--ui-light-shade-color);
+
+    input,
+    textarea {
+      background-color: transparent;
+    }
+  }
+
+  textarea {
+    height: 120px;
+    min-height: 120px;
+  }
+
   &__field,
   textarea {
     text-transform: uppercase;
@@ -63,28 +77,8 @@
     }
   }
 
-  &__field {
-    height: 51px;
-    background-color: var(--ui-light-shade-color);
-  }
-
-  textarea {
-    min-height: 120px;
-  }
-
   &__button {
     margin-top: 20px;
     border: 0;
-  }
-
-  .editor-form-field {
-    input {
-      background-color: transparent;
-    }
-
-    textarea {
-      height: 200px;
-      background-color: transparent;
-    }
   }
 }
