@@ -1,6 +1,6 @@
 {
   "name": "design-gengar-awards",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-awards": "https://github.com/webliumteam/blocks#w/zapdos/awards/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
