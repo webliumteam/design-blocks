@@ -1,6 +1,6 @@
 {
   "name": "design-deino-header",
-  "version": "0.0.17",
+  "version": "0.0.19",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-header": "https://github.com/webliumteam/blocks#w/zapdos/header/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
