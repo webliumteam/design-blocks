@@ -1,6 +1,6 @@
 {
   "name": "design-golurk-cover",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-lucario-cover": "https://github.com/webliumteam/blocks#w/lucario/cover/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
