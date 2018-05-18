@@ -1,6 +1,6 @@
 {
   "name": "design-deino-numbers",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-numbers": "https://github.com/webliumteam/blocks#w/zapdos/numbers/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
