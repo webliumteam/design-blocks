@@ -67,6 +67,21 @@ ExtendedWireframe.defaultContent = {
     ...Component.defaultContent['button-2'],
     type: 'link',
   },
+  'button-1': {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'primary',
+    size: 'md',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
