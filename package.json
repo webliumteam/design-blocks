@@ -1,6 +1,6 @@
 {
   "name": "design-poliwag-contacts_w4",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-4-contacts": "https://github.com/webliumteam/blocks#w/series-4/contacts/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
