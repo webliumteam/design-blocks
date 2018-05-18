@@ -64,13 +64,9 @@ class Block extends React.Component {
     )
 
     const blockHeader = [
-      this.getModifierValue('title') && <Text bind="title" className={style.title} tagName="h1" />,
+      <Text bind="title" className={style.title} tagName="h1" />,
       this.getModifierValue('subtitle') && <Text bind="subtitle" className={style.subtitle} tagName="p" />,
     ]
-
-    const maxWidth = this.getModifierValue('map') ? this.getOptionValue('logo-max-width') : this.getOptionValue('logo-max-width--no-map')
-    const maxHeight = this.getModifierValue('map') ? this.getOptionValue('logo-max-height') : this.getOptionValue('logo-max-height--no-map')
-
 
     return (
       <section className={classNames(style.section, {
@@ -78,7 +74,7 @@ class Block extends React.Component {
           [style['section--column']]: mapWithSocials,
           [style['section--state-3']]: listWithSocials,
           [style['section--state-4']]: onlyList,
-          [style['section--state-11']]: this.getModifierValue('map-arrangement'),
+          [style['section--state-11']]: this.getModifierValue('map-arrangement') === 'right',
         })}
       >
         <div className={style.section__inner}>
@@ -103,8 +99,8 @@ class Block extends React.Component {
                       bind="logo"
                       className={style.logo}
                       textClassName={style.logo__title}
-                      maxWidth={maxWidth}
-                      maxHeight={maxHeight}
+                      maxWidth={this.getOptionValue('logo-max-width')}
+                      maxHeight={this.getOptionValue('logo-max-height')}
                     />
                   </div>
                 )}
@@ -248,20 +244,24 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'map-arrangement': {
-    defaultValue: false,
-    title: 'Arrange elements',
-    type: 'swap',
-  },
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   map: {defaultValue: true, label: 'Map', type: 'checkbox'},
   logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
+  address: {defaultValue: true, label: 'Address text block', type: 'checkbox'},
   phone: {defaultValue: true, label: 'Phone text block', type: 'checkbox'},
   email: {defaultValue: true, label: 'E-mail text block', type: 'checkbox'},
-  address: {defaultValue: true, label: 'Address text block', type: 'checkbox'},
   social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  'map-arrangement': {
+    children: [
+      {id: 'left', label: 'Left'},
+      {id: 'right', label: 'Right'},
+    ],
+    defaultValue: 'left',
+    name: 'Map arrangement',
+    type: 'radio-button-group',
+    style: 'buttons',
+  },
 }
 
 
