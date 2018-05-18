@@ -21,7 +21,6 @@ class Wireframe extends React.Component {
           <ContactForm
             bind="contactForm"
             className={style.form}
-            labelClassName={style.form__item}
             fieldClassName={style.form__field}
             buttonClassName={style.form__button}
           />
