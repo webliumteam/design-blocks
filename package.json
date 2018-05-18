@@ -1,7 +1,7 @@
 {
   "name": "wireframe-zapdos-contacts",
   "category": "contacts",
-  "version": "0.0.58",
+  "version": "0.0.59",
   "description": "",
   "main": "src/index.js",
   "editorVersion": "0.0.0"
