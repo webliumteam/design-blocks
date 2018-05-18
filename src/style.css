@@ -1,3 +1,84 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-2-cta/src/style.css";
 
 /* start here */
+.section {
+  padding: 50px 0;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: 992px) {
+    padding: 118px 0;
+  }
+
+  &__header {
+    padding: 0;
+  }
+
+  &__inner {
+    max-width: none;
+    padding: 0 15px;
+    border-radius: 0;
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 32px;
+  font-weight: 400;
+  font-size: calc(var(--ui-block-title-size) * 0.65);
+
+  @media (min-width: 768px) {
+    padding: 0 24%;
+    font-size: calc(var(--ui-block-title-size) * 0.833);
+  }
+}
+
+.form {
+  max-width: 448px;
+  margin: 0 auto;
+  padding: 0;
+
+  &__field {
+    background-color: var(--ui-light-shade-color);
+
+    input,
+    textarea {
+      background-color: transparent;
+    }
+  }
+
+  textarea {
+    height: 120px;
+    min-height: 120px;
+  }
+
+  &__field,
+  textarea {
+    text-transform: uppercase;
+    font-family: var(--ui-heading-font-family);
+    font-weight: var(--ui-heading-font-weight);
+    font-size: calc(var(--ui-text-size) * 0.874);
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #b5b5b5;
+
+    @media (min-width: 992px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    &::placeholder {
+      color: currentColor;
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    border: 0;
+  }
+}
