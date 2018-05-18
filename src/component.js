@@ -225,11 +225,11 @@ Wireframe.defaultContent = {
 
 Wireframe.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
-  line: {defaultValue: true, label: 'Line', type: 'checkbox'},
-  location: {defaultValue: true, label: 'Event`s location', type: 'checkbox'},
   day: {defaultValue: true, label: 'Day of week', type: 'checkbox'},
   type: {defaultValue: true, label: 'Event`s type', type: 'checkbox'},
+  location: {defaultValue: true, label: 'Event`s location', type: 'checkbox'},
   time: {defaultValue: true, label: 'Event`s time', type: 'checkbox'},
+  line: {defaultValue: true, label: 'Line', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
