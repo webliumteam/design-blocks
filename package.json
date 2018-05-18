@@ -1,6 +1,6 @@
 {
   "name": "design-meowth-gallery",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-gallery": "https://github.com/webliumteam/blocks#w/zapdos/gallery/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
