@@ -62,3 +62,42 @@
   margin: 22px -15px -10px;
 }
 
+.section--center {
+  .article__title {
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .btns-group {
+    text-align: center;
+  }
+}
+
+.section--right {
+
+  @media (min-width: 768px) {
+    .article {
+      text-align: rigth;
+
+      &__title {
+        text-align: rigth;
+
+        &::before {
+          left: 100%;
+          right: 0;
+          transform: translateX(-100%);
+        }
+      }
+
+      &__text {
+        text-align: right;
+      }
+    }
+
+    .btns-group {
+      text-align: right;
+    }
+  }
+}
