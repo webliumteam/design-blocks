@@ -9,7 +9,7 @@
   position: relative;
 
   @media (--ui-medium-devices) {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -45,6 +45,10 @@
 
       @media (--ui-tablet-devices) {
         left: 100%;
+      }
+
+      @media (--ui-large-devices) {
+        left: calc(50% + 600px);
       }
 
       &::before {
@@ -144,6 +148,7 @@
     font-size: var(--ui-hero-title-size);
     font-weight: var(--ui-hero-title-font-weight);
     line-height: var(--ui-hero-title-line-height);
+    color: currentColor;
   }
 
   &__count {
@@ -151,6 +156,7 @@
     font-size: var(--ui-text-size);
     font-weight: var(--ui-text-font-weight);
     line-height: var(--ui-text-title-line-height);
+    color: currentColor;
     opacity: 0.8;
   }
 }
