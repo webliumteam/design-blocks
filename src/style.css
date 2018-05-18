@@ -37,6 +37,10 @@
   margin-bottom: 15px;
   text-align: center;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @media (--ui-tablet-devices) {
     text-align: left;
   }
