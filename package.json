@@ -1,6 +1,6 @@
 {
   "name": "design-gengar-why",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-why": "https://github.com/webliumteam/blocks#w/zapdos/why/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
