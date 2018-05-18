@@ -1,6 +1,6 @@
 {
   "name": "design-poliwag-careers_w2",
-  "version": "0.0.10",
+  "version": "0.0.14",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-2-careers": "https://github.com/webliumteam/blocks#w/series-2/careers/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
