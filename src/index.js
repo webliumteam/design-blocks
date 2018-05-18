@@ -20,18 +20,6 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'bg.jpg',
   },
-  heading: {
-    content: 'Welcome to Our Company ',
-    type: 'heading',
-  },
-  subheading: {
-    content: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider.',
-    type: 'subheading',
-  },
-  text: {
-    content: 'Our Company is the world’s leading manufacturer. We are also a leading financial services provider. We are in it for the long haul—for our customers and for our world. Our customers can be found in virtually every corner of the earth, and we realize our success comes directly from helping our customers be successful. We take seriously our responsibility to give back to the communities in which we work and live.',
-    type: 'text',
-  },
   'social-icons': {
     networks: [
       {
@@ -63,7 +51,7 @@ ExtendedWireframe.defaultContent = {
       offset: 15,
       color: '#9b9b9b',
       sizes: [10, 20, 30, 40],
-      size: 30,
+      size: 35,
     },
   },
 }
@@ -72,6 +60,7 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   heading: {defaultValue: true, label: 'Company title', type: 'checkbox'},
   subheading: {defaultValue: true, label: 'Company description', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
