@@ -1,3 +1,39 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-3-contacts/src/style.css";
 
 /* start here */
+.section {
+  &__inner {
+
+    @media (min-width: 992px) {
+      min-height: 400px;
+      padding: 70px 15px;
+    }
+  }
+}
+
+.contacts {
+  padding: 65px 20px 15px;
+  box-shadow: none;
+  border-radius: 4px;
+
+  @media (min-width: 992px) {
+    width: 283px;
+    padding: 58px 30px;
+  }
+
+  &__desc {
+    margin-bottom: 0;
+
+    a {
+      color: var(--ui-text-color);
+    }
+  }
+}
+
+.heading {
+  margin-bottom: 18px;
+}
+
+.button {
+  margin-top: 20px;
+}
