@@ -33,12 +33,12 @@
 .article {
   background-color: transparent;
 
+  &__picture-wrapper {
+    min-height: 0;
+  }
+
   &__picture {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    padding-top: 89%;
   }
 
   &__badge {
