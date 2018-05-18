@@ -77,7 +77,14 @@
     border: 0;
   }
 
-  .editor-form-field input {
-    background-color: transparent;
+  .editor-form-field {
+    input {
+      background-color: transparent;
+    }
+
+    textarea {
+      height: 200px;
+      background-color: transparent;
+    }
   }
 }
