@@ -1,27 +1,28 @@
 {
-    "name": "design-gengar-pricing",
-    "version": "0.0.1",
-    "description": "",
-    "main": "src/index.js",
-    "scripts": {
-        "precommit": "lint-staged"
-    },
-    "lint-staged": {},
-    "devDependencies": {
-        "babel-eslint": "^8.2.1",
-        "eslint": "^4.15.0",
-        "eslint-config-airbnb": "^16.1.0",
-        "eslint-plugin-import": "^2.8.0",
-        "eslint-plugin-jsx-a11y": "^6.0.3",
-        "eslint-plugin-react": "^7.5.1",
-        "husky": "^0.14.3",
-        "lint-staged": "^6.0.0",
-        "stylelint": "^8.4.0",
-        "stylelint-scss": "^2.2.0",
-        "stylelint-selector-bem-pattern": "^2.0.0"
-    },
-    "dependencies": {
-        "wireframe-zapdos-pricing": "https://github.com/webliumteam/blocks#w/zapdos/pricing/prod",
-        "wm-cli": "^1.0.45"
-    }
+  "name": "design-gengar-pricing",
+  "version": "0.0.3",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {},
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "husky": "^0.14.3",
+    "lint-staged": "^6.0.0",
+    "stylelint": "^8.4.0",
+    "stylelint-scss": "^2.2.0",
+    "stylelint-selector-bem-pattern": "^2.0.0"
+  },
+  "dependencies": {
+    "wireframe-zapdos-pricing": "https://github.com/webliumteam/blocks#w/zapdos/pricing/prod",
+    "wm-cli": "^1.0.45"
+  },
+  "editorVersion": "0.0.0"
 }
