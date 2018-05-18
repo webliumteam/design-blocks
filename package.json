@@ -1,6 +1,6 @@
 {
   "name": "design-deino-quote",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-series-1-quote": "https://github.com/webliumteam/blocks#w/series-1/quote/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
