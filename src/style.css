@@ -35,12 +35,6 @@
   @media (--ui-tablet-devices) {
     margin-top: 20px;
   }
-
-  :global {
-    .slick-slider {
-      padding: 10px;
-    }
-  }
 }
 
 .testimonial {
@@ -115,10 +109,6 @@
     .slick-slide {
       opacity: 0.6;
       transition: opacity 0.2s ease-in;
-    }
-
-    .slick-slider {
-      padding: 10px;
     }
 
     .slick-center {
