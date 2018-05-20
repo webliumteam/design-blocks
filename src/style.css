@@ -16,6 +16,14 @@
   }
 }
 
+.nav-list {
+  list-style: none;
+
+  @media (min-width: 992px) {
+    padding-right: 85px;
+  }
+}
+
 .header__button {
 
   @media (min-width: 992px) {

@@ -20,6 +20,10 @@ ExtendedWireframe.defaultContent = {
       height: 33,
     },
   },
+  cta: {
+    ...Component.defaultContent.cta,
+    type: 'secondary-alt',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
