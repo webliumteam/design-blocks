@@ -13,7 +13,7 @@ class Wireframe extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index}) => {
+  collectionItem = ({index, itemIndex}) => {
     const {components: {Text, Button, Background}, style, content} = this.props
     const showButton = this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
 
@@ -45,7 +45,7 @@ class Wireframe extends React.Component {
           </Background>
           {this.getModifierValue('counter') && (
             <div className={style.counter}>
-              <span className={style.counter__current}>{`0${index + 1}`}</span>
+              <span className={style.counter__current}>{`0${itemIndex + 1}`}</span>
               <span className={style.counter__count}>&nbsp;{`/0${content.cover.items.length}`}</span>
             </div>
           )}
