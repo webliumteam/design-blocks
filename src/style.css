@@ -15,20 +15,21 @@
 }
 
 .article {
-  &:not(:first-of-type) {
+  padding-left: 3%;
+  padding-right: 3%;
 
-    @media (min-width: 768px) {
-      padding-left: 25px;
-    }
+  @media (min-width: 992px) {
+    padding-left: 12px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     width: 33.3%;
   }
 
   &__icon {
     width: 70px;
     height: 70px;
+    text-align: center;
 
     @media (min-width: 768px) {
       margin-right: 5px;
@@ -36,6 +37,7 @@
   }
 
   &__content {
+    word-break: break-all;
 
     @media (min-width: 992px) {
       max-width: calc(100% - 70px);
@@ -54,3 +56,4 @@
     }
   }
 }
+
