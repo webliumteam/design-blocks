@@ -16,9 +16,9 @@ class Wireframe extends React.Component {
   collectionItem = ({index, itemIndex}) => {
     const {components: {Text, Button, Background}, style, content} = this.props
     const showButton = this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
-    const moreNineItems = content.cover.items.length > 9
+    const itemsLength = content.cover.items.length
     const currentItem = itemIndex < 9 ? `0${itemIndex + 1}` : `${itemIndex + 1}`
-    const itemsCount = moreNineItems ? `/0${content.cover.items.length}` : `/${content.cover.items.length}`
+    const itemsCount = itemsLength < 10 ? `/0${itemsLength}` : `/${itemsLength}`
 
     return (
       <div className={style.item}>
@@ -149,7 +149,7 @@ Wireframe.defaultContent = {
           color: 'light-shade-color',
         },
         title: {
-          content: 'FOR WEEDING',
+          content: 'FOR WEDDING',
           type: 'heroTitle',
         },
         subtitle: {
