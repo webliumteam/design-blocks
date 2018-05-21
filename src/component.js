@@ -24,23 +24,23 @@ class Wireframe extends React.Component {
       <div className={style.item}>
         <div className={style.item__inner}>
           <Background bind={`cover[${index}].card`} tagName="div" className={style.item__content}>
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.item__subtitle} bind={`cover[${index}].subtitle`} />}
-            {this.getModifierValue('title') && <Text tagName="h2" className={style.item__title} bind={`cover[${index}].title`} />}
-            {this.getModifierValue('body') && <Text tagName="p" className={style.item__body} bind={`cover[${index}].body`} />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.item__subtitle} bind={`cover[${index}].item_subheading`} />}
+            {this.getModifierValue('title') && <Text tagName="h2" className={style.item__title} bind={`cover[${index}].item_heading`} />}
+            {this.getModifierValue('body') && <Text tagName="p" className={style.item__body} bind={`cover[${index}].item_body`} />}
             {showButton && (
               <div className={style['btns-group']}>
                 {this.getModifierValue('primary-button') && (
                   <Button
                     className={style.button}
                     linkClassName={style.link}
-                    bind={`cover[${index}].cta`}
+                    bind={`cover[${index}].item_button`}
                   />
                 )}
                 {this.getModifierValue('secondary-button') && (
                   <Button
                     className={style.button}
                     linkClassName={style.link}
-                    bind={`cover[${index}].['cta-2']`}
+                    bind={`cover[${index}].item_button_additional`}
                   />
                 )}
               </div>
@@ -140,27 +140,27 @@ Wireframe.defaultContent = {
         },
       },
       {
-        background: {
+        item_background: {
           type: 'color',
           color: 'dark-accent-color',
         },
-        card: {
+        item_card_background: {
           type: 'color',
           color: 'light-shade-color',
         },
-        title: {
+        item_heading: {
           content: 'FOR WEDDING',
           type: 'heroTitle',
         },
-        subtitle: {
+        item_subheading: {
           content: 'Spring flowers',
           type: 'subtitle',
         },
-        body: {
+        item_body: {
           content: 'Take a look at our best collection of beautiful flowers from all over the world',
           type: 'text',
         },
-        cta: {
+        item_button: {
           actionConfig: {
             action: 'link',
             actions: {
@@ -174,7 +174,7 @@ Wireframe.defaultContent = {
           textValue: 'Request a quote',
           type: 'primary',
         },
-        'cta-2': {
+        item_button_additional: {
           actionConfig: {
             action: 'link',
             actions: {
@@ -190,27 +190,27 @@ Wireframe.defaultContent = {
         },
       },
       {
-        background: {
+        item_background: {
           type: 'color',
           color: 'dark-accent-color',
         },
-        card: {
+        item_card: {
           type: 'color',
           color: 'light-shade-color',
         },
-        title: {
+        item_heading: {
           content: 'FOR WEEDING',
           type: 'heroTitle',
         },
-        subtitle: {
+        item_subheading: {
           content: 'Spring flowers',
           type: 'subtitle',
         },
-        body: {
+        item_body: {
           content: 'Take a look at our best collection of beautiful flowers from all over the world',
           type: 'text',
         },
-        cta: {
+        item_button: {
           actionConfig: {
             action: 'link',
             actions: {
@@ -224,7 +224,7 @@ Wireframe.defaultContent = {
           textValue: 'Request a quote',
           type: 'primary',
         },
-        'cta-2': {
+        item_button_additional: {
           actionConfig: {
             action: 'link',
             actions: {
