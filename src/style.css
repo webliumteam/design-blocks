@@ -19,14 +19,15 @@
   padding-top: 0;
 
   @media (min-width: 992px) {
-    min-height: 470px;
+    min-height: 270px;
     margin-right: 70px;
   }
 
   &__picture {
 
     @media (min-width: 992px) {
-      min-height: 470px;
+      min-height: 270px;
+      padding-top: 85%;
     }
   }
 }
