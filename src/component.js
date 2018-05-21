@@ -17,7 +17,7 @@ class Wireframe extends React.Component {
     const {components: {Text, Button, Background}, style, content} = this.props
     const showButton = this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
     const moreNineItems = content.cover.items.length > 9
-    const currentItem = moreNineItems ? `0${itemIndex + 1}` : `${itemIndex + 1}`
+    const currentItem = itemIndex < 9 ? `0${itemIndex + 1}` : `${itemIndex + 1}`
     const itemsCount = moreNineItems ? `/0${content.cover.items.length}` : `/${content.cover.items.length}`
 
     return (
