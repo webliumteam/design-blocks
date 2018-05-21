@@ -80,7 +80,7 @@
         top: 50%;
         right: 0;
         transform: translateX(50%) translateY(-50%);
-        background-color: var(--ui-light-accent-color);
+        background-color: var(--ui-dark-accent-color);
       }
     }
 
