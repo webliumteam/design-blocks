@@ -28,6 +28,10 @@
 
 .article__socials {
   margin-bottom: 20px;
+
+  .socials {
+    max-width: 200px;
+  }
 }
 
 .link,
@@ -41,11 +45,6 @@
 
 .link {
   position: relative;
-  margin-top: 40px;
-
-  @media (min-width: 768px) {
-    margin-top: 10px;
-  }
 
   &::after {
     content: "";
@@ -57,7 +56,7 @@
     height: 2px;
     background-color: currentColor;
 
-    @media (min-width: 768px) {
+    @media (min-width: 480px) {
       display: block;
     }
   }
@@ -82,6 +81,10 @@
 
     &__socials {
       margin-left: -2px;
+
+      .socials {
+        max-width: 200px;
+      }
     }
   }
 }
