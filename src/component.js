@@ -16,6 +16,9 @@ class Wireframe extends React.Component {
   collectionItem = ({index, itemIndex}) => {
     const {components: {Text, Button, Background}, style, content} = this.props
     const showButton = this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
+    const moreNineItems = content.cover.items.length > 9
+    const currentItem = moreNineItems ? `0${itemIndex + 1}` : `${itemIndex + 1}`
+    const itemsCount = moreNineItems ? `/0${content.cover.items.length}` : `/${content.cover.items.length}`
 
     return (
       <div className={style.item}>
@@ -45,8 +48,8 @@ class Wireframe extends React.Component {
           </Background>
           {this.getModifierValue('counter') && (
             <div className={style.counter}>
-              <span className={style.counter__current}>{`0${itemIndex + 1}`}</span>
-              <span className={style.counter__count}>&nbsp;{`/0${content.cover.items.length}`}</span>
+              <span className={style.counter__current}>{currentItem}</span>
+              <span className={style.counter__count}>&nbsp;{itemsCount}</span>
             </div>
           )}
         </div>
