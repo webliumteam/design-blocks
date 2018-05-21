@@ -74,6 +74,7 @@
 
       &::after {
         content: "";
+        position: absolute;
         width: 1px;
         height: 40px;
         top: 50%;
