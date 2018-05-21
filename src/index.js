@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-zapdos-text/src/component'
 import style from './style.css'
 
 import options from './options.json'
@@ -15,6 +15,10 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  subtitle: {defaultValue: false, label: 'Description', type: 'hidden'},
+  heading: {defaultValue: false, label: 'Title', type: 'hidden'},
+  subheading: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
 export default ExtendedWireframe
