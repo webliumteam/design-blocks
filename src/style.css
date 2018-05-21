@@ -151,14 +151,18 @@
 
 .list {
   counter-reset: list;
+  margin-top: 5px;
+  margin-left: -12px;
+  margin-right: -12px;
 }
 
 .list__item {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 0;
   flex-direction: column;
   min-height: 70px;
+  padding: 12px;
 }
 
 @media (--ui-tablet-devices) {
