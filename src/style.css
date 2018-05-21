@@ -70,25 +70,6 @@
     margin-bottom: 5px;
   }
 
-  &__category {
-    padding-right: 0;
-  }
-
-  &__category + &__date {
-    padding-left: 0;
-
-    &::before {
-      display: inline-block;
-      content: " | ";
-      margin-left: 0.75ex;
-      margin-right: 0.75ex;
-    }
-
-    &::after {
-      content: none;
-    }
-  }
-
   &__title {
     position: relative;
     min-height: 62px;
