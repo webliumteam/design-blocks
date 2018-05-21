@@ -3,8 +3,10 @@
 /* start here */
 
 .title {
-  font-size: var(--ui-heading-lg-size);
-  font-weight: 500;
+
+  @media (min-width: 768px) {
+    font-size: calc(var(--ui-block-title-size) * 0.875);
+  }
 }
 
 .item {
