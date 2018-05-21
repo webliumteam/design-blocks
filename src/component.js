@@ -90,27 +90,27 @@ Wireframe.defaultContent = {
   cover: {
     items: [
       {
-        background: {
+        item_background: {
           type: 'color',
           color: 'dark-accent-color',
         },
-        card: {
+        item_card_background: {
           type: 'color',
           color: 'light-shade-color',
         },
-        title: {
+        item_heading: {
           content: 'FOR WEEDING',
           type: 'heroTitle',
         },
-        subtitle: {
+        item_subheading: {
           content: 'Spring flowers',
           type: 'subtitle',
         },
-        body: {
+        item_body: {
           content: 'Take a look at our best collection of beautiful flowers from all over the world',
           type: 'text',
         },
-        cta: {
+        item_button: {
           actionConfig: {
             action: 'link',
             actions: {
@@ -124,7 +124,7 @@ Wireframe.defaultContent = {
           textValue: 'Request a quote',
           type: 'primary',
         },
-        'cta-2': {
+        item_button_additional: {
           actionConfig: {
             action: 'link',
             actions: {
