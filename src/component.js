@@ -194,7 +194,7 @@ Wireframe.defaultContent = {
           type: 'color',
           color: 'dark-accent-color',
         },
-        item_card: {
+        item_card_background: {
           type: 'color',
           color: 'light-shade-color',
         },
