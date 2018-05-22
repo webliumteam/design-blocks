@@ -20,14 +20,11 @@
 
 .article {
   &__title {
-    font-size: var(--ui-subtitle-size);
-    line-height: var(--ui-subtitle-line-height);
     margin-bottom: 16px;
   }
 
   &__text {
     margin-bottom: 22px;
-    color: var(--ui-text-color);
   }
 
   &__picture-wrapper {
@@ -39,8 +36,6 @@
   }
 
   &__meta {
-    color: var(--ui-small-color);
-    text-transform: uppercase;
     font-size: var(--ui-small-size);
     margin-bottom: 16px;
   }
@@ -48,9 +43,6 @@
 
 .link {
   text-decoration: none;
-  text-transform: uppercase;
-  color: var(--ui-subtitle-color);
   font-size: var(--ui-small-size);
   font-family: var(--ui-small-font-family);
-  font-weight: var(--ui-caption-font-weight);
 }
