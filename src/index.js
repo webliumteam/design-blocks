@@ -12,20 +12,20 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  // background: {
-  //   type: 'image',
-  //   position: {
-  //     type: 'cover',
-  //     cover: '50% 50%',
-  //   },
-  //   resourceRef: 'careers-bg.jpg',
-  // },
-  image: {
-    ...Component.defaultContent.image,
+  picture: {
+    ...Component.defaultContent.picture,
     resourceRef: 'img_pic.jpg',
   },
-  button: {
-    ...Component.defaultContent.button,
+  background: {
+    type: 'image',
+    position: {
+      type: 'cover',
+      cover: '50% 50%',
+    },
+    resourceRef: 'careers-bg.jpg',
+  },
+  'button-1': {
+    ...Component.defaultContent['button-1'],
     type: 'secondary-alt',
   },
 }
@@ -34,5 +34,6 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   icon: {defaultValue: false, label: 'Careers icon', type: 'hidden'},
 }
+
 
 export default ExtendedWireframe

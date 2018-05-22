@@ -21,11 +21,16 @@
   }
 }
 
+.subtitle {
+  font-family: var(--ui-text-font-family);
+}
+
 .content {
   position: relative;
 
   &__text {
-    font-size: calc(var(--ui-text-size) * 1.125);
+    font-size: var(--ui-subtitle-size);
+    line-height: var(--ui-subtitle-line-height);
   }
 }
 
@@ -49,7 +54,7 @@
 }
 
 .list {
-  max-width: calc(85% + 24px);
+  max-width: 85%;
   margin: 0 auto;
 
   &__item {
@@ -66,7 +71,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      left: 13px;
+      left: 1px;
       width: 30px;
       height: 30px;
       border: 3px solid currentColor;
@@ -79,7 +84,7 @@
     }
 
     &-text {
-      padding-left: 57px;
+      padding-left: 45px;
       font-size: var(--ui-subtitle-size);
       line-height: var(--ui-subtitle-line-height);
       font-family: var(--ui-text-font-family);
@@ -117,12 +122,14 @@
   }
 
   .list {
-    margin-top: 44px;
-
     &__item {
       min-height: none;
-      margin-top: 6px;
-      margin-bottom: 0;
+      margin-top: -10px;
+      margin-bottom: 30px;
+
+      &:first-child {
+        margin-top: 30px;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -167,9 +174,8 @@
   }
 
   .list {
-    margin-left: -12px;
-    margin-right: -12px;
-    max-width: none;
+    max-width: 100%;
+    margin: 0;
   }
 
   .btns-group {
