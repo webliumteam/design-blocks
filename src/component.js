@@ -93,19 +93,19 @@ Wireframe.defaultContent = {
     type: 'subtitle',
   },
   collection: {
-    // background: {
-    //   'nth-child': [
-    //     ['n', {
-    //       type: 'image',
-    //       position: {
-    //         type: 'cover',
-    //         cover: '50% 50%',
-    //       },
-    //       src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5ad5a3826678f100250985e4.jpeg',
-    //       imageColor: [250, 250, 250],
-    //     }],
-    //   ],
-    // },
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5ad5a3826678f100250985e4.jpeg',
+          imageColor: [250, 250, 250],
+        }],
+      ],
+    },
     items: [
       {
         title: {
