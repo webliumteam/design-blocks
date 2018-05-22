@@ -11,10 +11,6 @@ const {enhancers: {withProps}, hoistStatics} = $editor
 const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', {...defaultOptions, ...options}))))(Component)
 
 ExtendedWireframe.defaultContent = {
-  background: {
-    type: 'color',
-    color: 'light-accent-color',
-  },
   title: {
     ...Component.defaultContent.title,
     content: '- BLOG -',
