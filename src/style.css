@@ -22,7 +22,7 @@
     padding-right: 80px;
   }
 
-  &::first-of-type {
+  &:first-of-type {
 
     @media (min-width: 768px) {
       padding-left: 15px;
@@ -43,14 +43,12 @@
     @media (min-width: 768px) {
       width: 50px;
       height: 50px;
-      margin-left: 0;
       margin-bottom: 27px;
+      margin-left: 0;
+    }
+
+    &:only-child {
+      margin-left: auto;
     }
   }
 }
-
-.item__top-element:only-child {
-  margin-left: auto;
-  margin-right: auto;
-}
-
