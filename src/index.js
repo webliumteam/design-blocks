@@ -17,23 +17,74 @@ ExtendedWireframe.defaultContent = {
     items: [
       {
         ...Component.defaultContent.collection.items[0],
+        item_title: {
+          ...Component.defaultContent.collection.items[0].item_title,
+          type: 'subtitle',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[0].item_category,
+          content: 'CREATIVE PROCESS',
+        },
+        item_date: {
+          ...Component.defaultContent.collection.items[0].item_date,
+          content: 'SEPTEMBER 22, 2017',
+        },
         item_image: {
           ...Component.defaultContent.collection.items[0].item_image,
           resourceRef: 'blog-pic-1.jpg',
         },
+        item_button: {
+          ...Component.defaultContent.collection.items[0].item_button,
+          textValue: 'LEARN MORE',
+          type: 'link',
+        },
       },
       {
         ...Component.defaultContent.collection.items[1],
+        item_title: {
+          ...Component.defaultContent.collection.items[1].item_title,
+          type: 'subtitle',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[1].item_category,
+          content: 'CREATIVE PROCESS',
+        },
+        item_date: {
+          ...Component.defaultContent.collection.items[1].item_date,
+          content: 'SEPTEMBER 22, 2017',
+        },
         item_image: {
           ...Component.defaultContent.collection.items[1].item_image,
           resourceRef: 'blog-pic-2.jpg',
         },
+        item_button: {
+          ...Component.defaultContent.collection.items[1].item_button,
+          textValue: 'LEARN MORE',
+          type: 'link',
+        },
       },
       {
         ...Component.defaultContent.collection.items[2],
+        item_title: {
+          ...Component.defaultContent.collection.items[2].item_title,
+          type: 'subtitle',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[2].item_category,
+          content: 'CREATIVE PROCESS',
+        },
+        item_date: {
+          ...Component.defaultContent.collection.items[2].item_date,
+          content: 'SEPTEMBER 22, 2017',
+        },
         item_image: {
           ...Component.defaultContent.collection.items[2].item_image,
           resourceRef: 'blog-pic-3.jpg',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[2].item_button,
+          textValue: 'LEARN MORE',
+          type: 'link',
         },
       },
     ],
