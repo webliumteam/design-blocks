@@ -1,6 +1,8 @@
 @import "wireframe-zapdos-careers/src/style.css";
 
 .subtitle {
+  line-height: 28px;
+  font-size: calc(var(--ui-subtitle-size) * 0.8);
   margin-top: 20px;
 }
 
@@ -53,11 +55,9 @@
 }
 
 .list {
-  margin-top: 24px;
-
   &__item {
     min-height: 0;
-    margin-top: 9px;
+    margin-top: 39px;
   }
 
   &__item-icon {
@@ -82,8 +82,10 @@
   }
 
   .list__item-text {
-    font-weight: 400;
+    line-height: 28px;
     font-size: calc(var(--ui-heading-size) * 0.5834);
+    font-weight: 400;
+    color: var(--ui-text-color);
   }
 }
 
@@ -92,7 +94,8 @@
     text-transform: uppercase;
     font-weight: 600;
     position: relative;
-    color: inherit;
+    font-size: var(--ui-small-size);
+    color: var(--ui-block-title-color);
 
     &::after,
     &::before {
