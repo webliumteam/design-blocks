@@ -68,25 +68,7 @@
 
   &__meta {
     margin-bottom: 5px;
-  }
-
-  &__category {
-    padding-right: 0;
-  }
-
-  &__category + &__date {
-    padding-left: 0;
-
-    &::before {
-      display: inline-block;
-      content: " | ";
-      margin-left: 0.75ex;
-      margin-right: 0.75ex;
-    }
-
-    &::after {
-      content: none;
-    }
+    margin-top: 15px;
   }
 
   &__title {
@@ -110,5 +92,15 @@
 
   &__text {
     font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .article:last-of-type:first-child {
+    flex-basis: 60%;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
   }
 }
