@@ -133,6 +133,16 @@ Block.defaultContent = {
         item_button: {
           textValue: 'Learn more',
           type: 'link',
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
+            },
+          },
         },
       },
       {
@@ -159,6 +169,16 @@ Block.defaultContent = {
         item_button: {
           textValue: 'Learn more',
           type: 'link',
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
+            },
+          },
         },
       },
       {
@@ -185,6 +205,16 @@ Block.defaultContent = {
         item_button: {
           textValue: 'Learn more',
           type: 'link',
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
+            },
+          },
         },
       },
     ],
@@ -192,6 +222,16 @@ Block.defaultContent = {
   button: {
     textValue: 'Learn more',
     type: 'secondary',
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
   },
 }
 
