@@ -12,34 +12,37 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  blog: [
-    {
-      ...Component.defaultContent.blog[0],
-      picture: {
-        ...Component.defaultContent.blog[0].picture,
-        resourceRef: 'img1.jpg',
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        item_image: {
+          ...Component.defaultContent.collection.items[0].item_image,
+          resourceRef: 'img1.jpg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.blog[1],
-      picture: {
-        ...Component.defaultContent.blog[1].picture,
-        resourceRef: 'img2.jpg',
+      {
+        ...Component.defaultContent.collection.items[1],
+        item_image: {
+          ...Component.defaultContent.collection.items[1].item_image,
+          resourceRef: 'img2.jpg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.blog[2],
-      picture: {
-        ...Component.defaultContent.blog[2].picture,
-        resourceRef: 'img3.jpg',
+      {
+        ...Component.defaultContent.collection.items[2],
+        item_image: {
+          ...Component.defaultContent.collection.items[2].item_image,
+          resourceRef: 'img3.jpg',
+        },
       },
-    },
-  ],
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'block-button': {defaultValue: false, label: 'Button', type: 'hidden'},
+  button: {defaultValue: false, label: 'Button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
