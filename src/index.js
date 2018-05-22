@@ -19,7 +19,6 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.gallery[0].picture,
         resourceRef: 'picture1.jpg',
       },
-
     },
     {
       ...Component.defaultContent.gallery[1],
