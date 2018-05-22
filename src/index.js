@@ -48,8 +48,8 @@ ExtendedWireframe.defaultContent = {
       {
         ...Component.defaultContent.collection.items[1],
         item_title: {
-          ...Component.defaultContent.collection[1].item_title,
-          content: 'HOW TO ACHIEVE HIGHER PROFITS IN RETAIL WITH OUR NEW PRODUCT?',
+          ...Component.defaultContent.collection.items[1].item_title,
+          content: 'OW TO ACHIEVE HIGHER PROFITS IN RETAIL WITH OUR NEW PRODUCT?',
         },
         item_category: {
           ...Component.defaultContent.collection.items[1].item_category,
@@ -86,6 +86,7 @@ ExtendedWireframe.defaultContent = {
     ],
   },
   button: {
+    ...Component.defaultContent.button,
     textValue: 'Learn more',
     type: 'link',
   },
