@@ -32,9 +32,7 @@ class Wireframe extends React.Component {
           />
         )}
         <div className={style.item__text}>
-          {this.getModifierValue('heading') && (
-            <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].item__heading`} />
-          )}
+          <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].item__heading`} />
           {this.getModifierValue('text') && (
             <Text tagName="p" className={style.item__body} bind={`collection[${index}].item__body`} />
           )}
@@ -235,7 +233,6 @@ Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Projects description', type: 'checkbox'},
   caption: {defaultValue: true, label: 'Project category', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Project title', type: 'checkbox'},
   text: {defaultValue: true, label: 'Project main text', type: 'checkbox'},
   itemButton: {defaultValue: true, label: 'Link', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
