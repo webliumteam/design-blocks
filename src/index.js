@@ -12,40 +12,37 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  blog: [
-    {
-      ...Component.defaultContent.blog[0],
-      picture: {
-        resourceRef: 'blog-pic-1.jpg',
-        alt: 'Article illustration photo',
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        item_image: {
+          ...Component.defaultContent.collection.items[0].item_image,
+          resourceRef: 'blog-pic-1.jpg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.blog[1],
-      picture: {
-        resourceRef: 'blog-pic-2.jpg',
-        alt: 'Article illustration photo',
+      {
+        ...Component.defaultContent.collection.items[1],
+        item_image: {
+          ...Component.defaultContent.collection.items[1].item_image,
+          resourceRef: 'blog-pic-2.jpg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.blog[2],
-      picture: {
-        resourceRef: 'blog-pic-3.jpg',
-        alt: 'Article illustration photo',
+      {
+        ...Component.defaultContent.collection.items[2],
+        item_image: {
+          ...Component.defaultContent.collection.items[2].item_image,
+          resourceRef: 'blog-pic-3.jpg',
+        },
       },
-    },
-  ],
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'block-button': {defaultValue: false, label: 'Block button', type: 'hidden'},
-  'post-description': {defaultValue: true, label: 'Post main text', type: 'checkbox'},
-  'post-image': {defaultValue: true, label: 'Post image', type: 'checkbox'},
-  'post-link': {defaultValue: true, label: 'Post link', type: 'checkbox'},
-  'post-publish-date': {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  button: {defaultValue: false, label: 'Block button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
