@@ -153,12 +153,6 @@
   &__desc {
     max-width: 100%;
 
-    /* font-size: calc(var(--ui-text-size) * .875); */
-
-    /* @media (--ui-tablet-devices) {
-      font-size: var(--ui-text-size);
-    } */
-
     &-wrapper {
       display: flex;
       position: relative;
@@ -183,6 +177,7 @@
       bottom: 20px;
       left: -40px;
       border-radius: 50%;
+      overflow: hidden;
 
       @media (--ui-tablet-devices) {
         width: 104px;
