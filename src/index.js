@@ -33,7 +33,7 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   align: {
     ...Component.modifierScheme.align,
-    defaultValue: 'center',
+    type: 'hidden',
   },
   'primary-btn': {defaultValue: false, label: 'Button', type: 'hidden'},
   'secondary-btn': {defaultValue: false, label: 'Additional button', type: 'hidden'},
