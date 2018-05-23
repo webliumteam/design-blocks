@@ -99,7 +99,7 @@ Wireframe.defaultContent = {
           color: 'light-shade-color',
         },
         item_heading: {
-          content: 'FOR WEEDING',
+          content: 'FOR WEDDING',
           type: 'heroTitle',
         },
         item_subheading: {
@@ -199,7 +199,7 @@ Wireframe.defaultContent = {
           color: 'light-shade-color',
         },
         item_heading: {
-          content: 'FOR WEEDING',
+          content: 'FOR WEDDING',
           type: 'heroTitle',
         },
         item_subheading: {
