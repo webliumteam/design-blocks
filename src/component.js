@@ -5,6 +5,7 @@ class Wireframe extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
@@ -31,12 +32,14 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Text, Slider, Button}, style, $block} = this.props
+    const {components: {Text, Slider, Button}, style, content, $block} = this.props
     const customArrows = this.getOptionValue('custom-arrows') ? {
       nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
       prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
     } : {}
     const sectionHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
+    const lessFourItems = content.collection.items.length < 4
+    const oneItem = content.collection.items.length === 1
 
     return (
       <section className={style.section}>
@@ -48,7 +51,7 @@ class Wireframe extends React.Component {
             </div>
           )}
           <Slider
-            className={style['items-wrapper']}
+            className={classNames(style['items-wrapper'], lessFourItems && style['items-wrapper--less-four-items'], oneItem && style['items-wrapper--one-item'])}
             bind="collection"
             Item={this.collectionItem}
             settings={{
@@ -67,12 +70,6 @@ class Wireframe extends React.Component {
                   breakpoint: 767,
                   settings: {
                     slidesToShow: 2,
-                  },
-                },
-                {
-                  breakpoint: 991,
-                  settings: {
-                    slidesToShow: 4,
                   },
                 },
               ],
