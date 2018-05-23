@@ -25,6 +25,8 @@ class Wireframe extends React.Component {
     const withoutContent = withoutList && withoutBody
     const twoRows = parseInt(this.getModifierValue('imagesQuantity'), 10) > 3
 
+    const imageCount = parseInt(this.getModifierValue('imagesQuantity'), 10)
+
     const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 300
     const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 800
 
@@ -49,7 +51,7 @@ class Wireframe extends React.Component {
           >
             {_.map(n => (
               <Image
-                wrapperClassName={style['item__picture-wrapper']}
+                wrapperClassName={classNames(style['item__picture-wrapper'], style[`item__picture-wrapper--${imageCount}-items`])}
                 pictureClassName={style.item__picture}
                 imageClassName={style.item__image}
                 bind={`items[${index}].picture[${n}]`}
