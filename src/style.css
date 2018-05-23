@@ -76,18 +76,22 @@
     }
   }
 
-  /* stylelint-enable */
-
   :global {
 
     /* styles for custom arrows */
     .slick-arrow {
       width: 24px;
+      height: 24px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--ui-brand-color);
       opacity: 1;
       transition: opacity 0.2s ease-in;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
 
       &::before {
         content: none;
@@ -114,6 +118,8 @@
       }
     }
   }
+
+  /* stylelint-enable */
 }
 
 .item {
