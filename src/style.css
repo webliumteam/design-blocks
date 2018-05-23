@@ -86,6 +86,10 @@
       padding-top: 75%;
     }
   }
+
+  &__image {
+    object-fit: contain;
+  }
 }
 
 .btns-group {
