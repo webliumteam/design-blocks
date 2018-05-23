@@ -187,7 +187,9 @@
 }
 
 .item__position,
-.item__desc {
+.item__title,
+.item__desc,
+.item__email {
   word-break: break-word;
 }
 
