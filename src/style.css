@@ -36,7 +36,7 @@
 .items-wrapper {
   position: relative;
   max-width: calc(100% - 40px);
-  margin: -15px auto 40px;
+  margin: -15px auto 0;
 
   :global {
 
@@ -89,9 +89,11 @@
 
   &__image {
     object-fit: contain;
+    background-size: contain;
   }
 }
 
 .btns-group {
+  margin-top: 40px;
   text-align: center;
 }
