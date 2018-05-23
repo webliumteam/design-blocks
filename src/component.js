@@ -36,7 +36,7 @@ class Wireframe extends React.Component {
       nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
       prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
     } : {}
-    const sectionHeader = this.getModifierValue('title') && this.getModifierValue('subtitle')
+    const sectionHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
 
     return (
       <section className={style.section}>
@@ -160,7 +160,7 @@ Wireframe.defaultContent = {
 
 Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Partners description', type: 'checkbox'},
   button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
