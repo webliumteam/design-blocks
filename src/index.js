@@ -3,48 +3,97 @@ import $editor from 'weblium/editor'
 import Component from 'wireframe-zapdos-blog/src/component'
 import style from './style.css'
 
+import defaultOptions from 'wireframe-zapdos-blog/src/options.json'
 import options from './options.json'
 
 const {enhancers: {withProps}, hoistStatics} = $editor
 
-const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
+const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', {...defaultOptions, ...options}))))(Component)
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  blog: [
-    {
-      ...Component.defaultContent.blog[0],
-      picture: {
-        resourceRef: 'blog-pic-1.jpg',
-        alt: 'Article illustration photo',
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        item_title: {
+          ...Component.defaultContent.collection.items[0].item_title,
+          type: 'subtitle',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[0].item_category,
+          content: 'CREATIVE PROCESS',
+        },
+        item_date: {
+          ...Component.defaultContent.collection.items[0].item_date,
+          content: 'SEPTEMBER 22, 2017',
+        },
+        item_image: {
+          ...Component.defaultContent.collection.items[0].item_image,
+          resourceRef: 'blog-pic-1.jpg',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[0].item_button,
+          textValue: 'LEARN MORE',
+          type: 'link',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.blog[1],
-      picture: {
-        resourceRef: 'blog-pic-2.jpg',
-        alt: 'Article illustration photo',
+      {
+        ...Component.defaultContent.collection.items[1],
+        item_title: {
+          ...Component.defaultContent.collection.items[1].item_title,
+          type: 'subtitle',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[1].item_category,
+          content: 'CREATIVE PROCESS',
+        },
+        item_date: {
+          ...Component.defaultContent.collection.items[1].item_date,
+          content: 'SEPTEMBER 22, 2017',
+        },
+        item_image: {
+          ...Component.defaultContent.collection.items[1].item_image,
+          resourceRef: 'blog-pic-2.jpg',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[1].item_button,
+          textValue: 'LEARN MORE',
+          type: 'link',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.blog[2],
-      picture: {
-        resourceRef: 'blog-pic-3.jpg',
-        alt: 'Article illustration photo',
+      {
+        ...Component.defaultContent.collection.items[2],
+        item_title: {
+          ...Component.defaultContent.collection.items[2].item_title,
+          type: 'subtitle',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[2].item_category,
+          content: 'CREATIVE PROCESS',
+        },
+        item_date: {
+          ...Component.defaultContent.collection.items[2].item_date,
+          content: 'SEPTEMBER 22, 2017',
+        },
+        item_image: {
+          ...Component.defaultContent.collection.items[2].item_image,
+          resourceRef: 'blog-pic-3.jpg',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[2].item_button,
+          textValue: 'LEARN MORE',
+          type: 'link',
+        },
       },
-    },
-  ],
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'block-button': {defaultValue: false, label: 'Block button', type: 'hidden'},
-  'post-description': {defaultValue: true, label: 'Post main text', type: 'checkbox'},
-  'post-image': {defaultValue: true, label: 'Post image', type: 'checkbox'},
-  'post-link': {defaultValue: true, label: 'Post link', type: 'checkbox'},
-  'post-publish-date': {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  button: {defaultValue: false, label: 'Block button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
