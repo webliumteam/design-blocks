@@ -67,6 +67,7 @@
 
     .slick-prev {
       transform: translateY(0) translateX(-100%);
+      z-index: 2;
 
       @media (--ui-tablet-devices) {
         transform: translateY(0) translateX(-200%);
