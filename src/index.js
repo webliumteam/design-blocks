@@ -38,12 +38,20 @@ ExtendedWireframe.defaultContent = {
           resourceRef: 'image-2.jpg',
           alt: 'Service illustration photo',
         },
+        cta: {
+          textValue: 'Learn more',
+          type: 'secondary',
+        },
       },
       {
         ...Component.defaultContent.collection.items[2],
         image: {
           resourceRef: 'image-3.jpg',
           alt: 'Service illustration photo',
+        },
+        cta: {
+          textValue: 'Learn more',
+          type: 'secondary',
         },
       },
       {
