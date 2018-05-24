@@ -18,6 +18,11 @@ ExtendedWireframe.defaultContent = {
       cover: '50% 50%',
     },
     resourceRef: 'img-bg.jpg',
+    overlay: {
+      type: 'color',
+      color: 'brand-color',
+      opacity: 0.3,
+    },
   },
   socialIcons: {
     ...Component.defaultContent.socialIcons,
