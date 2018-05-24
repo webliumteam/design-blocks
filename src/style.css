@@ -45,6 +45,10 @@
 
       &__numbers {
         bottom: 0;
+
+        &-bg {
+          bottom: 0;
+        }
       }
     }
 
