@@ -32,7 +32,7 @@
         min-height: 80px;
         padding-top: 16px;
         padding-bottom: 16px;
-        justify-content: flex-start;
+        justify-content: center;
 
         @media (--ui-tablet-devices) {
           min-height: 104px;
@@ -44,8 +44,7 @@
       }
 
       &__numbers {
-        bottom: 50%;
-        transform: translateY(50%);
+        bottom: 0;
       }
     }
 
