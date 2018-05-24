@@ -144,7 +144,7 @@ Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Numbers description', type: 'checkbox'},
   image: {defaultValue: true, label: 'Image', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
 
 
