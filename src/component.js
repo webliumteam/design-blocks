@@ -28,7 +28,7 @@ class Wireframe extends React.Component {
               'min-width: 480px': 800,
             }}
             resize={{disable: true}}
-            onOpenLightbox={() => console.log('open lightbox')}
+            onOpenLightbox={openLightbox}
           />
           {this.getModifierValue('item-heading') && (
             <Text tagName="h2" className={style.item__heading} bind={`gallery[${index}].heading`} />
