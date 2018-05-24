@@ -19,6 +19,13 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'img-bg.jpg',
   },
+  socialIcons: {
+    ...Component.defaultContent.socialIcons,
+    design: {
+      ...Component.defaultContent.socialIcons.design,
+      color: 'brand-color',
+    },
+  },
 }
 
 ExtendedWireframe.modifierScheme = {

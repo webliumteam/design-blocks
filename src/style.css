@@ -7,3 +7,9 @@
     padding: 75px 0;
   }
 }
+
+.socials {  
+  .social-icons_icon {
+    color: var(--ui-brand-color);
+  }
+}
