@@ -14,6 +14,7 @@ class Wireframe extends React.Component {
 
   collectionItem = ({index, modifier, openLightbox}) => {
     const {components: {Image, Text}, style} = this.props
+    console.log(openLightbox)
     return (
       <div className={style.item}>
         <div className={style.item__inner}>
