@@ -24,6 +24,10 @@
     font-weight: var(--ui-heading-font-weight);
     text-transform: uppercase;
 
+    &-triangle {
+      right: -6px;
+    }
+
     @media (min-width: 992px) {
       margin-top: 14px;
       margin-right: 12px;
