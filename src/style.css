@@ -44,5 +44,5 @@
 
 .subtitle {
   font-weight: bold;
-  font-size: calc(var(--ui-subtitle-font-size) * 0.8);
+  font-size: calc(var(--ui-subtitle-size) * 0.8);
 }
