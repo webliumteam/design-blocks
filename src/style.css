@@ -212,17 +212,6 @@
   fill: var(--ui-light-shade-color);
 }
 
-.link {
-  color: var(--ui-link-color);
-}
-
-.link:hover,
-.link:focus,
-.link:active {
-  color: var(--ui-link-hover-color);
-  text-decoration: none;
-}
-
 .header-button {
   margin-top: 20px;
 }
