@@ -19,6 +19,7 @@ ExtendedWireframe.defaultContent = {
       cover: '100% 50%',
     },
     resourceRef: 'bg.jpg',
+    imageColor: [255, 255, 255],
   },
   team: {
     background: {
