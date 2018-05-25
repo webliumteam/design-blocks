@@ -23,7 +23,6 @@
 .subtitle {
   margin: 0 auto;
   text-align: center;
-  font-weight: calc(var(--ui-subtitle-font-weight) * 0.8);
 
   @media (min-width: 992px) {
     max-width: 55%;
@@ -77,21 +76,6 @@
       background-color: var(--ui-light-shade-color);
       opacity: 0.05;
       z-index: -1;
-    }
-  }
-
-  &__date {
-    font-size: var(--ui-text-size);
-  }
-
-  &__title {
-    line-height: var(--ui-heading-line-height);
-  }
-
-  &__time {
-
-    @media (min-width: 768px) {
-      font-size: calc(var(--ui-text-size) * 0.875);
     }
   }
 }
