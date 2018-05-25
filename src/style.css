@@ -39,7 +39,7 @@
   &__picture {
 
     @media (min-width: 768px) {
-      padding-bottom: 70%;
+      padding-top: 100%;
     }
   }
 
