@@ -161,14 +161,7 @@
 }
 
 .link {
-  color: var(--ui-link-color);
   transition: color 0.2s ease-out;
-}
-
-.link:hover,
-.link:active,
-.link:focus {
-  color: var(--ui-link-hover-color);
 }
 
 .top-icon {
