@@ -1,6 +1,6 @@
 {
   "name": "design-zapdos-cta_2",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-series-2-cta": "https://github.com/webliumteam/blocks#w/series-2/cta/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }

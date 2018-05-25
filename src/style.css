@@ -68,8 +68,13 @@
 }
 
 .form {
-  padding-right: 20%;
-  padding-left: 20%;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @media (min-width: 768px) {
+    padding-right: 20%;
+    padding-left: 20%;
+  }
 
   &__field input {
     background-color: transparent;
@@ -85,6 +90,10 @@
 
   &__button {
     margin-top: 30px;
-    width: auto;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: auto;
+    }
   }
 }
