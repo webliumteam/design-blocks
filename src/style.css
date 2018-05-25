@@ -7,6 +7,10 @@
     padding-top: 130px;
     padding-bottom: 130px;
   }
+
+  &__inner {
+    max-width: 72%;
+  }
 }
 
 .article {
@@ -29,8 +33,8 @@
   &__picture-wrapper {
 
     @media (min-width: 992px) {
-      max-width: 56%;
-      flex-basis: 56%;
+      max-width: 48.2%;
+      flex-basis: 48.2%;
     }
   }
 
@@ -41,9 +45,9 @@
   &__content {
 
     @media (min-width: 992px) {
-      max-width: 44%;
-      flex-basis: 44%;
-      padding-left: 70px;
+      max-width: 51.8%;
+      flex-basis: 51.8%;
+      padding-left: 12%;
     }
   }
 }
