@@ -11,31 +11,11 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  title: {
-    content: 'Organic Farm Education',
-    type: 'blockTitle',
-  },
-  subtitle: {
-    content: 'The word “organic” is very significant nowadays. We understand the importance and effectiveness of the organic lifestyle and its impact on the environment. We welcome you to learn more about raising organic products and methods of organic farming.',
-    type: 'subtitle',
-  },
   projects: [
     {
       ...Component.defaultContent.projects[0],
-      title: {
-        content: 'Internship Program',
-        type: 'heading',
-      },
-      subtitle: {
-        content: '01',
-        type: 'caption',
-      },
-      text: {
-        content: 'We are proud to offer an internship program to all future farmers during all our farm existence. We are devoted to providing our interns with a comprehensive farm experience which consists of a diverse variety of farming aspects.<br> Our Farm Internship Program also aims to offer interns all the means to understand how to implement the principles and theories of organic farming in action.<br>We provide the excellent opportunity to actively experience the hard work in the fields daily and be a part of our working team and farm environment. We train future farmers in successfully creating a versatile commercial farm.',
-        type: 'text',
-      },
       picture: {
-        src: 'img-1.jpg',
+        resourceRef: 'img-1.jpg',
         alt: 'Project 1',
         size: {
           'min-width: 992px': 960,
@@ -50,20 +30,8 @@ ExtendedWireframe.defaultContent = {
     },
     {
       ...Component.defaultContent.projects[1],
-      title: {
-        content: 'Program Overview',
-        type: 'heading',
-      },
-      subtitle: {
-        content: '02',
-        type: 'caption',
-      },
-      text: {
-        content: 'We are proud to offer the Organic Farmer Training Program. This program includes a combination of a course of lectures, written tasks, in-the-field practical lessons, farm tours to understand and learn how to realize organic farming principles.<br> The program concentrates on the technical skills and knowledge whereas providing practical training. We offer great opportunities for those who strive to run their own farm business, successfully manage farm operations, or work with others on their way to organic food production.<br>The program is created to give all the participants a strong experience of farm production and management.',
-        type: 'text',
-      },
       picture: {
-        src: 'img-2.jpg',
+        resourceRef: 'img-2.jpg',
         alt: 'Project 2',
         size: {
           'min-width: 992px': 960,
@@ -91,7 +59,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'img-3.jpg',
+        resourceRef: 'img-3.jpg',
         alt: 'Project 3',
         size: {
           'min-width: 992px': 586,
@@ -130,7 +98,7 @@ ExtendedWireframe.defaultContent = {
         type: 'text',
       },
       picture: {
-        src: 'img-4.jpg',
+        resourceRef: 'img-4.jpg',
         alt: 'Project 4',
         size: {
           'min-width: 992px': 586,

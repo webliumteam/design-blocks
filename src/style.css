@@ -3,6 +3,7 @@
 /* start here */
 .section {
   padding: 0;
+  overflow: hidden;
 
   &__inner {
     max-width: none;
@@ -18,7 +19,7 @@
     z-index: 1;
 
     &::after {
-      
+
       @media (min-width: 992px) {
         content: "";
         position: absolute;
@@ -57,6 +58,10 @@
 
   &__content {
     padding: 20px;
+
+    @media (min-width: 992px) {
+      min-height: 540px;
+    }
   }
 
   &:nth-child(odd) {
