@@ -127,8 +127,8 @@
     &--3-items {
 
       @media (--ui-tablet-devices) {
-        max-width: calc(33% - 20px);
-        flex-basis: calc(33% - 20px);
+        max-width: calc(33.3333% - 20px);
+        flex-basis: calc(33.3333% - 20px);
       }
     }
 
@@ -136,7 +136,7 @@
 
       @media (--ui-tablet-devices) {
         height: calc(50% - 20px);
-        min-width: calc(33% - 20px);
+        min-width: calc(33.3333% - 20px);
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: auto;
@@ -148,7 +148,7 @@
     }
 
     &--6-items {
-      height: calc(33% - 20px);
+      height: calc(33.3333% - 20px);
     }
   }
 
