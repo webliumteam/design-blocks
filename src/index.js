@@ -90,5 +90,4 @@ ExtendedWireframe.defaultContent = {
       },
     ],
   },
-
 }
