@@ -16,17 +16,12 @@ ExtendedWireframe.defaultContent = {
     ...Component.defaultContent.background,
     color: 'light-shade-color',
   },
-  title: {
-    ...Component.defaultContent.title,
-    content: 'Join Our Team',
-  },
   description: {
-    content: 'Interested in a farming career with the Organic Farm family? We are always in search of young people to join our team. Find a position you need and enjoy your new career and our friendly work environment!',
+    ...Component.defaultContent.description,
     type: 'subtitle',
   },
   cta: {
     ...Component.defaultContent.cta,
-    textValue: 'Get Started now',
     type: 'primary',
   },
 }
