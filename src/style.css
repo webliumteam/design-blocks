@@ -126,7 +126,6 @@
   display: block;
   height: 100%;
   padding-top: 65%;
-  background-color: var(--ui-media-bg);
 }
 
 @media (--ui-medium-devices) {
@@ -184,8 +183,8 @@
   padding: 15px;
   flex-shrink: 0;
   margin-bottom: 20px;
-  color: var(--ui-icon-color);
-  background-color: var(--ui-media-bg);
+  color: var(--ui-brand-color);
+  background-color: var(--ui-light-accent-color);
   font-size: 40px;
   line-height: 40px;
   text-align: center;
