@@ -1,3 +1,36 @@
 @import "wireframe-series-10-partners/src/style.css";
 
-/* start here */
+.item {
+  &__picture {
+    box-shadow: 0 0 5px 5px var(--ui-brand-color);
+  }
+}
+
+/* stylelint-disable */
+:global {
+
+  /* styles for custom arrows */
+
+  .slick-arrow-default.slick-prev-default {
+    display: block;
+    left: -50px;
+  }
+
+  .slick-arrow-default.slick-next-default {
+    display: block;
+    right: -50px;
+  }
+
+  .slick-arrow.slick-prev {
+    display: block;
+    left: -20px;
+
+    @media (--ui-large-devices) {
+      display: block;
+      left: -140px;
+    }
+  }
+
+}
+/* stylelint-enable */
+

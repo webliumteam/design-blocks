@@ -11,6 +11,34 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [{
+      ...Component.defaultContent.collection.items[0],
+      item_image: {
+        resourceRef: 'andote.jpg',
+      },
+    },
+    {
+      ...Component.defaultContent.collection.items[0],
+      item_image: {
+        resourceRef: 'cradled.jpg',
+      },
+    },
+    {
+      ...Component.defaultContent.collection.items[0],
+      item_image: {
+        resourceRef: 'cribspot.jpg',
+      },
+    },
+    {
+      ...Component.defaultContent.collection.items[0],
+      item_image: {
+        resourceRef: 'fresh.jpg',
+      },
+    },
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
