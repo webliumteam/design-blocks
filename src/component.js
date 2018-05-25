@@ -78,7 +78,7 @@ Block.defaultContent = {
   },
   numbersBackground: {
     type: 'color',
-    color: 'dark-shade-color',
+    color: 'dark-accent-color',
   },
   numbers: {
     background: {
