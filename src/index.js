@@ -20,6 +20,11 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'bg.jpg',
     imageColor: [255, 255, 255],
+    overlay: {
+      opacity: 0.11,
+      color: 'light-shade-color',
+      type: 'color',
+    },
   },
   team: {
     background: {
