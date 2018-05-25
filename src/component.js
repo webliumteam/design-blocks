@@ -29,6 +29,8 @@ class Block extends React.Component {
 
   render() {
     const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const btnsGroup = this.getModifierValue('button') || this.getModifierValue('additional-button')
+
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -49,13 +51,15 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
+          {btnsGroup && (
             <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="cta-1"
-              />
+              {this.getModifierValue('button') && (
+                <Button
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind="cta-1"
+                />
+              )}
               {this.getModifierValue('additional-button') && (
                 <Button
                   buttonClassName={style.button}
