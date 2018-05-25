@@ -7,30 +7,30 @@
 }
 
 /* stylelint-disable */
-:global {
+.items-wrapper {
+  :global {
+    .slick-arrow.slick-prev {
+      left: -40px;
 
-  /* styles for custom arrows */
+      @media (min-width: 768px) {
+        display: block;
+        left: -30px;
+      }
 
-  .slick-arrow-default.slick-prev-default {
-    display: block;
-    left: -50px;
-  }
-
-  .slick-arrow-default.slick-next-default {
-    display: block;
-    right: -50px;
-  }
-
-  .slick-arrow.slick-prev {
-    display: block;
-    left: -20px;
-
-    @media (--ui-large-devices) {
-      display: block;
-      left: -140px;
+      @media (--ui-large-devices) {
+        display: block;
+        left: -40px;
+      }
     }
-  }
 
+    .slick-arrow.slick-next {
+      right: -40px;
+
+      @media (--ui-large-devices) {
+        right: -40px;
+      }
+    }
+
+  }
 }
 /* stylelint-enable */
-
