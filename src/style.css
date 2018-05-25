@@ -177,33 +177,13 @@
   margin-bottom: 10px;
 }
 
-.article__title a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.article__title a:hover,
-.article__title a:active,
-.article__title a:focus {
-  color: var(--ui-link-hover-color);
-}
-
 .btns-group {
   text-align: center;
   padding-top: 10px;
 }
 
 .link {
-  color: var(--ui-link-color);
-  font-size: var(--ui-text-size);
-  font-family: var(--ui-text-font-family);
   transition: color 0.2s ease-out;
-}
-
-.link:hover,
-.link:active,
-.link:focus {
-  color: var(--ui-link-hover-color);
 }
 
 .button {
