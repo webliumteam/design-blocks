@@ -9,7 +9,7 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className, modifier}) => {
+  collectionItem = ({index, children, className}) => {
     const {components: {Text, Image, Background}, style} = this.props
     return (
       <div className={classNames(style.item, className)}>
@@ -29,10 +29,8 @@ class Block extends React.Component {
   render() {
     const {components: {Text, Button, Collection}, style, $block} = this.props
 
-    const withoutImage = !this.getModifierValue('image')
-
     return (
-      <section className={classNames(style.section, {[style['section--state-4']]: withoutImage})}>
+      <section className={style.section}>
         <div className={style.section__inner}>
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
@@ -143,7 +141,6 @@ Block.defaultContent = {
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Numbers description', type: 'checkbox'},
-  image: {defaultValue: true, label: 'Image', type: 'checkbox'},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
 }
 
