@@ -11,11 +11,24 @@
   &__inner {
     max-width: 72%;
   }
+
+  &--reverse {
+    .article__content {
+
+      @media (min-width: 992px) {
+        padding-right: 12%;
+      }
+    }
+  }
 }
 
 .article {
 
   @media (min-width: 768px) {
+    align-items: flex-start;
+  }
+
+  @media (min-width: 992px) {
     align-items: center;
   }
 
@@ -26,7 +39,7 @@
   &__picture {
 
     @media (min-width: 768px) {
-      min-height: 490px;
+      padding-bottom: 70%;
     }
   }
 

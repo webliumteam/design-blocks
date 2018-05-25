@@ -21,6 +21,9 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   button: {defaultValue: false, label: 'Button', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
+  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
+  'additional-button': {defaultValue: false, label: 'Primary button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
