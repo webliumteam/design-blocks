@@ -20,62 +20,72 @@ ExtendedWireframe.defaultContent = {
     },
     resourceRef: 'bg.jpg',
   },
-  team: [
-    {
-      ...Component.defaultContent.team[0],
-      picture: {
-        ...Component.defaultContent.team[0].picture,
-        resourceRef: 'pic1.png',
-      },
-      socialIcons: {
-        ...Component.defaultContent.team[0].socialIcons,
-        design: {
-          ...Component.defaultContent.team[0].socialIcons.design,
-          border: null,
-          innerFill: true,
-          offset: 0,
-          color: '#505050',
-          size: 30,
+  team: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'color',
+          color: 'light-shade-color',
+        }],
+      ],
+    },
+    items: [
+      {
+        ...Component.defaultContent.team[0],
+        picture: {
+          ...Component.defaultContent.team[0].picture,
+          resourceRef: 'pic1.png',
+        },
+        socialIcons: {
+          ...Component.defaultContent.team[0].socialIcons,
+          design: {
+            ...Component.defaultContent.team[0].socialIcons.design,
+            border: null,
+            innerFill: true,
+            offset: 0,
+            color: '#505050',
+            size: 30,
+          },
         },
       },
-    },
-    {
-      ...Component.defaultContent.team[1],
-      picture: {
-        ...Component.defaultContent.team[1].picture,
-        resourceRef: 'pic2.png',
-      },
-      socialIcons: {
-        ...Component.defaultContent.team[1].socialIcons,
-        design: {
-          ...Component.defaultContent.team[1].socialIcons.design,
-          border: null,
-          innerFill: true,
-          offset: 0,
-          color: '#505050',
-          size: 30,
+      {
+        ...Component.defaultContent.team[1],
+        picture: {
+          ...Component.defaultContent.team[1].picture,
+          resourceRef: 'pic2.png',
+        },
+        socialIcons: {
+          ...Component.defaultContent.team[1].socialIcons,
+          design: {
+            ...Component.defaultContent.team[1].socialIcons.design,
+            border: null,
+            innerFill: true,
+            offset: 0,
+            color: '#505050',
+            size: 30,
+          },
         },
       },
-    },
-    {
-      ...Component.defaultContent.team[2],
-      picture: {
-        ...Component.defaultContent.team[2].picture,
-        resourceRef: 'pic3.png',
-      },
-      socialIcons: {
-        ...Component.defaultContent.team[2].socialIcons,
-        design: {
-          ...Component.defaultContent.team[2].socialIcons.design,
-          border: null,
-          innerFill: true,
-          offset: 0,
-          color: '#505050',
-          size: 30,
+      {
+        ...Component.defaultContent.team[2],
+        picture: {
+          ...Component.defaultContent.team[2].picture,
+          resourceRef: 'pic3.png',
+        },
+        socialIcons: {
+          ...Component.defaultContent.team[2].socialIcons,
+          design: {
+            ...Component.defaultContent.team[2].socialIcons.design,
+            border: null,
+            innerFill: true,
+            offset: 0,
+            color: '#505050',
+            size: 30,
+          },
         },
       },
-    },
-  ],
+    ],
+  },
   cta: {
     ...Component.defaultContent.cta,
     type: 'secondary-alt',
