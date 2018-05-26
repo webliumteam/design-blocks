@@ -37,6 +37,24 @@ ExtendedWireframe.defaultContent = {
         resourceRef: 'fresh.jpg',
       },
     },
+    {
+      ...Component.defaultContent.collection.items[0],
+      item_image: {
+        resourceRef: 'mg.jpg',
+      },
+    },
+    {
+      ...Component.defaultContent.collection.items[0],
+      item_image: {
+        resourceRef: 'leap.jpg',
+      },
+    },
+    {
+      ...Component.defaultContent.collection.items[0],
+      item_image: {
+        resourceRef: 'nothingmagical.jpg',
+      },
+    },
     ],
   },
 }

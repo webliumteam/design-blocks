@@ -5,32 +5,3 @@
     box-shadow: 0 0 5px 5px var(--ui-brand-color);
   }
 }
-
-/* stylelint-disable */
-.items-wrapper {
-  :global {
-    .slick-arrow.slick-prev {
-      left: -40px;
-
-      @media (min-width: 768px) {
-        display: block;
-        left: -30px;
-      }
-
-      @media (--ui-large-devices) {
-        display: block;
-        left: -40px;
-      }
-    }
-
-    .slick-arrow.slick-next {
-      right: -40px;
-
-      @media (--ui-large-devices) {
-        right: -40px;
-      }
-    }
-
-  }
-}
-/* stylelint-enable */
