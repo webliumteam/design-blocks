@@ -2,25 +2,12 @@
 
 /* start here */
 
-.section {
-
-  @media (min-width: 992px) {
-    padding-top: 70px;
-  }
-}
-
 .subtitle {
   margin-top: 20px;
   font-size: calc(var(--ui-subtitle-size) * 0.8);
 }
 
 .item {
-  margin-top: 40px;
-
-  &:first-of-type {
-    margin-top: 40px;
-  }
-
   &__title {
     padding: 0 10px;
   }
@@ -32,4 +19,8 @@
   &__picture {
     padding-top: 67%;
   }
+}
+
+.items-wrapper {
+  margin-top: 10px;
 }
