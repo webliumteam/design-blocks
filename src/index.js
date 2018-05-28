@@ -20,7 +20,7 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.team[0],
       name: {
         ...Component.defaultContent.team[0].name,
-        content: 'Amanda Peterson',
+        content: '&mdash; Amanda Peterson',
       },
       description: {
         ...Component.defaultContent.team[0].description,
@@ -35,7 +35,7 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.team[1],
       name: {
         ...Component.defaultContent.team[1].name,
-        content: 'Amanda Peterson',
+        content: '&mdash; Amanda Peterson',
       },
       description: {
         ...Component.defaultContent.team[1].description,
@@ -50,7 +50,7 @@ ExtendedWireframe.defaultContent = {
       ...Component.defaultContent.team[2],
       name: {
         ...Component.defaultContent.team[2].name,
-        content: 'Amanda Peterson',
+        content: '&mdash; Amanda Peterson',
       },
       description: {
         ...Component.defaultContent.team[2].description,
