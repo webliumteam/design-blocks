@@ -17,56 +17,26 @@
 
 .form {
   &__item {
-    position: relative;
-    z-index: 1;
     margin-bottom: 11px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      border-radius: 2px;
-      background-color: var(--ui-dark-shade-color);
-      opacity: 0.02;
-    }
   }
 
   &__field {
-    position: relative;
-    height: 53px;
-    z-index: 2;
-    padding-left: 12px;
-    padding-right: 12px;
     font-size: var(--ui-small-size);
     font-style: italic;
-    background-color: transparent;
-  }
+    background-color: rgba(103, 103, 103, 0);
 
-  textarea {
-    min-height: 170px;
-  }
+    input,
+    textarea {
+      background-color: rgba(103, 103, 103, 0.06);
+      font-style: italic;
+    }
 
-  > div {
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      border-radius: 2px;
-      background-color: var(--ui-dark-shade-color);
-      opacity: 0.02;
+    textarea {
+      min-height: 170px;
     }
   }
 
   &__button {
     margin-top: 11px;
-    border-width: 0;
   }
 }
