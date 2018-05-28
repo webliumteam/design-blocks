@@ -28,8 +28,6 @@
   &__subtitle {
     max-width: 560px;
     margin-bottom: 30px;
-    font-size: var(--ui-heading-size);
-    line-height: var(--ui-heading-line-height);
   }
 
   &__content {
