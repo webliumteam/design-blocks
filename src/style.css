@@ -2,6 +2,6 @@
 
 .item {
   &__picture {
-    box-shadow: 0 0 5px 5px var(--ui-brand-color);
+    box-shadow: 0 0 5px var(--ui-brand-color);
   }
 }
