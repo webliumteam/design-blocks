@@ -16,6 +16,10 @@ ExtendedWireframe.defaultContent = {
     ...Component.defaultContent.picture,
     resourceRef: 'company-foto.png',
   },
+  subtitle: {
+    ...Component.defaultContent.subtitle,
+    type: 'heading',
+  },
   'button-1': {
     ...Component.defaultContent['button-1'],
     type: 'secondary',
