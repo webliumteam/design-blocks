@@ -91,3 +91,8 @@ ExtendedWireframe.defaultContent = {
     ],
   },
 }
+
+ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
+
+}
