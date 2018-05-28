@@ -15,11 +15,11 @@
   @media (min-width: 768px) {
     padding-top: 80%;
   }
-}
 
-.item__image {
-  object-fit: contain;
-  background-position: 50% 50%;
-  background-size: contain;
-  background-repeat: no-repeat;
+  .item__image {
+    object-fit: contain;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
