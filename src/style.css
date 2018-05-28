@@ -4,7 +4,7 @@
 .section {
 
   @media (min-width: 992px) {
-    padding-top: 118px;
+    padding-top: 145px;
     padding-bottom: 125px;
   }
 }
@@ -21,7 +21,6 @@
   }
 
   &__field {
-    padding-left: 15px;
     font-style: italic;
     font-weight: 300;
     font-size: calc(var(--ui-btn-lg-font-size) * 0.875);
