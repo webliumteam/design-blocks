@@ -1,6 +1,6 @@
 {
   "name": "design-deino-projects",
-  "version": "0.0.22",
+  "version": "0.0.24",
   "description": "",
   "main": "src/index.js",
   "scripts": {
