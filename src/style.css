@@ -43,7 +43,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    background-color: var(--ui-dark-shade-color);
     padding: 30px;
 
     @media (min-width: 992px) {
@@ -59,7 +58,6 @@
     position: relative;
     font-family: var(--ui-block-title-font-family);
     font-weight: var(--ui-block-title-font-weight);
-    color: var(--ui-light-shade-color);
 
     @media (min-width: 992px) {
       font-size: var(--ui-heading-lg-size);
@@ -79,9 +77,6 @@
   &__text {
     padding-right: 0;
     margin-bottom: 40px;
-    font-family: var(--ui-text-font-family);
-    font-weight: var(--ui-text-font-weight);
-    color: var(--ui-light-shade-color);
 
     @media (min-width: 992px) {
       font-size: var(--ui-heading-size);
@@ -91,7 +86,6 @@
   .link {
     text-decoration: none;
     font-weight: 600;
-    color: var(--ui-light-shade-color);
 
     @media (min-width: 992px) {
       font-size: calc(var(--ui-text-size) * 1.125);
@@ -113,26 +107,15 @@
 
       &__content {
         padding-bottom: 30px;
-        background-color: var(--ui-light-shade-color);
 
         @media (min-width: 992px) {
           order: 2;
           padding-bottom: 130px;
         }
       }
-
-      &__title {
-        color: var(--ui-block-title-color);
-      }
-
-      &__text {
-        color: var(--ui-block-title-color);
-      }
     }
 
     .link {
-      color: var(--ui-block-title-color);
-
       &:hover {
         color: var(--ui-link-hover-color);
       }
