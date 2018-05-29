@@ -35,11 +35,20 @@ class Wireframe extends React.Component {
   render() {
     const {components: {Text, Collection, Button}, style, $block} = this.props
     const buttonsGroup = this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
+    const sectionHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
 
     return (
       <section className={style.section}>
-        <Text tagName="h1" className={style.title} bind="title" />
-        {this.getModifierValue('subtitle') && (<Text tagName="p" className={style.subtitle} bind="subtitle" />)}
+        {sectionHeader && (
+          <div className={style.section__header}>
+            {this.getModifierValue('title') && (
+              <Text tagName="h1" className={style.title} bind="title" />
+            )}
+            {this.getModifierValue('subtitle') && (
+              <Text tagName="p" className={style.subtitle} bind="subtitle" />
+            )}
+          </div>
+        )}
         <Collection
           className={style['collection-wrapper']}
           bind="collection"
@@ -48,7 +57,7 @@ class Wireframe extends React.Component {
             modifier: $block.modifier,
           }}
         />
-        {false && buttonsGroup && (
+        {buttonsGroup && (
           <div className={style['btn-group']}>
             {this.getModifierValue('primary-button') && (<Button
               className={style.button}
@@ -162,12 +171,13 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Why Us description', type: 'checkbox'},
   icon: {defaultValue: true, label: 'Advantage icon ', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Advantage title', type: 'checkbox'},
   subheading: {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
-  // 'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  // 'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Wireframe

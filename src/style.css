@@ -11,6 +11,10 @@
     padding-top: 46px;
     padding-bottom: 63px;
   }
+
+  &__header {
+    margin-bottom: 40px;
+  }
 }
 
 .title {
@@ -31,8 +35,9 @@
 }
 
 .collection-wrapper {
-  padding-top: 40px;
-  padding-bottom: 60px;
+  max-width: calc(100% + 20px);
+  margin: -10px;
+  padding: 10px;
 
   @media (--ui-tablet-devices) {
     display: flex;
@@ -107,7 +112,7 @@
 
 .btn-group {
   display: flex;
-  padding: 0 20px;
+  padding: 40px 20px 0;
   flex-direction: column;
 
   @media (--ui-tablet-devices) {
