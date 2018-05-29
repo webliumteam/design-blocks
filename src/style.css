@@ -27,14 +27,10 @@
 
 .subtitle {
   margin: 0 auto 25px;
-
-  /* font-size: calc(var(--ui-subtitle-size) * 0.8); */
   text-align: center;
 
   @media (min-width: 992px) {
     max-width: 770px;
-
-    /* font-size: var(--ui-subtitle-size); */
   }
 }
 
@@ -55,15 +51,10 @@
 
 .item {
   padding: 30px 25px;
-  background-color: #d8d8d8;
 
   @media (min-width: 768px) {
     padding: 20px 25px;
     align-items: center;
-  }
-
-  &:nth-of-type(even) {
-    background-color: #fbfbfb;
   }
 
   &__inner {
@@ -94,7 +85,6 @@
 
   &__title {
     margin-bottom: 4px;
-    font-size: calc(var(--ui-heading-size) * .8333);
     text-align: left;
   }
 

@@ -94,104 +94,118 @@ Block.defaultContent = {
     content: 'We’re always looking for talents who want to grow personally and professionally in our company. Please check the open positions: ',
     type: 'subtitle',
   },
-  items: [
-    {
-      icon: {
-        svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: '#676767',
-      },
-      heading: {
-        content: 'Web Developer',
-        type: 'heading',
-      },
-      employment: {
-        content: 'Full time',
-        type: 'text',
-      },
-      location: {
-        content: 'London',
-        type: 'text',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+  items: {
+    background: {
+      'nth-child': [
+        ['2n', {
+          type: 'color',
+          color: 'light-accent-color',
+        }],
+        ['2n+1', {
+          type: 'color',
+          color: 'dark-accent-color?lighten=30',
+        }],
+      ],
+    },
+    items: [
+      {
+        icon: {
+          svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
+          fill: 'brand-color',
+        },
+        heading: {
+          content: 'Web Developer',
+          type: 'heading',
+        },
+        employment: {
+          content: 'Full time',
+          type: 'text',
+        },
+        location: {
+          content: 'London',
+          type: 'text',
+        },
+        link: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          type: 'link',
+          textValue: 'More about vacancy',
         },
-        type: 'link',
-        textValue: 'More about vacancy',
       },
-    },
-    {
-      icon: {
-        svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: '#676767',
-      },
-      heading: {
-        content: '3D designer',
-        type: 'heading',
-      },
-      employment: {
-        content: 'Remote work',
-        type: 'text',
-      },
-      location: {
-        content: 'Amsterdam',
-        type: 'text',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+      {
+        icon: {
+          svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
+          fill: 'brand-color',
+        },
+        heading: {
+          content: '3D designer',
+          type: 'heading',
+        },
+        employment: {
+          content: 'Remote work',
+          type: 'text',
+        },
+        location: {
+          content: 'Amsterdam',
+          type: 'text',
+        },
+        link: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          type: 'link',
+          textValue: 'More about vacancy',
         },
-        type: 'link',
-        textValue: 'More about vacancy',
       },
-    },
-    {
-      icon: {
-        svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
-        fill: '#676767',
-      },
-      heading: {
-        content: 'Office manager',
-        type: 'heading',
-      },
-      employment: {
-        content: 'Full time',
-        type: 'text',
-      },
-      location: {
-        content: 'Amsterdam',
-        type: 'text',
-      },
-      link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+      {
+        icon: {
+          svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
+          fill: 'brand-color',
+        },
+        heading: {
+          content: 'Office manager',
+          type: 'heading',
+        },
+        employment: {
+          content: 'Full time',
+          type: 'text',
+        },
+        location: {
+          content: 'Amsterdam',
+          type: 'text',
+        },
+        link: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          type: 'link',
+          textValue: 'More about vacancy',
         },
-        type: 'link',
-        textValue: 'More about vacancy',
       },
-    },
-  ],
+    ],
+  },
   button: {
     actionConfig: {
       action: 'link',
