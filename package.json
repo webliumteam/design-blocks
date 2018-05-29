@@ -1,6 +1,6 @@
 {
   "name": "design-meowth-projects",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "",
   "main": "src/index.js",
   "scripts": {

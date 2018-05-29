@@ -73,9 +73,6 @@
   }
 
   &__content {
-    background-color: var(--ui-light-shade-color);
-    padding-left: 15px;
-    padding-right: 15px;
 
     @media (min-width: 992px) {
       padding-right: 115px;
