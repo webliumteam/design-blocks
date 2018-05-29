@@ -14,8 +14,12 @@
 }
 
 .article {
+  margin-bottom: 12px;
+
   &__content {
-    padding-bottom: 0;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   &__caption {
