@@ -12,30 +12,40 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  projects: [
-    {
-      ...Component.defaultContent.projects[0],
-      picture: {
-        ...Component.defaultContent.projects[0].picture,
-        resourceRef: 'project_1.png',
+  projects: {
+    items: [
+      {
+        ...Component.defaultContent.projects[0],
+        picture: {
+          ...Component.defaultContent.projects[0].picture,
+          resourceRef: 'project_1.png',
+        },
+        link: {
+          ...Component.defaultContent.projects[0].link,
+          type: 'link',
+        },
+        background: {
+          type: 'color',
+          color: 'dark-shade-color',
+        },
       },
-      link: {
-        ...Component.defaultContent.projects[0].link,
-        type: 'link',
+      {
+        ...Component.defaultContent.projects[1],
+        picture: {
+          ...Component.defaultContent.projects[1].picture,
+          resourceRef: 'project_2.png',
+        },
+        link: {
+          ...Component.defaultContent.projects[1].link,
+          type: 'link',
+        },
+        background: {
+          type: 'color',
+          color: 'light-shade-color',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.projects[1],
-      picture: {
-        ...Component.defaultContent.projects[1].picture,
-        resourceRef: 'project_2.png',
-      },
-      link: {
-        ...Component.defaultContent.projects[1].link,
-        type: 'link',
-      },
-    },
-  ],
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
