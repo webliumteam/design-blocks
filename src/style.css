@@ -1,9 +1,1 @@
 @import "wireframe-series-2-careers/src/style.css";
-
-.item:nth-child(2) {
-  background-color: #c8c8c8;
-}
-
-.item:nth-child(2n+1) {
-  background-color: #e4e4e4;
-}
