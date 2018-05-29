@@ -39,17 +39,14 @@
 }
 
 .subtitle {
-  font-size: calc(var(--ui-subtitle-size) * 0.875);
   margin-top: 24px;
 }
 
-.item {
+.items-wrapper {
   margin-top: 62px;
+}
 
-  &__desc {
-    font-size: calc(var(--ui-text-size) * 0.875);
-  }
-
+.item {
   &__top-element {
     margin: 0 auto;
     position: relative;
@@ -70,14 +67,5 @@
 
   .button {
     margin-right: 10px;
-  }
-
-  .link {
-    color: var(--ui-link-hover-color);
-    font-size: calc(var(--ui-text-size) * 0.94);
-
-    &:hover {
-      color: var(--ui-link-color);
-    }
   }
 }
