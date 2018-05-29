@@ -73,7 +73,6 @@
   }
 
   &__content {
-    background-color: var(--ui-light-shade-color);
     padding-left: 15px;
     padding-right: 15px;
 
