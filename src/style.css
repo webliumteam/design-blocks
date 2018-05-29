@@ -124,9 +124,10 @@
 }
 
 .btns-group {
-  text-align: center;
+  max-width: calc(100% + 30px);
+  margin: -15px;
   padding-top: 25px;
-  margin-bottom: -10px;
+  text-align: center;
 
   @media(--ui-medium-devices) {
     padding-top: 45px;
@@ -135,11 +136,11 @@
   &__button,
   &__link {
     width: 100%;
-    margin-bottom: 10px;
+    max-width: calc(100% - 30px);
+    margin: 15px;
 
     @media (--ui-phone-devices) {
       width: auto;
-      margin-right: 15px;
     }
   }
 }
