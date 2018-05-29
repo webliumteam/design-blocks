@@ -7,13 +7,19 @@
   }
 }
 
+.articles-wrapper {
+  margin: -28px;
+}
+
 .article {
-  margin-bottom: 56px;
+  margin: 28px;
   text-align: center;
 
+  @media (min-width: 768px) {
+    max-width: calc(50% - 56px);
+  }
+
   @media (min-width: 992px) {
-    padding-right: 44px;
-    padding-left: 44px;
     align-items: center;
     text-align: left;
   }
