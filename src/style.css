@@ -33,7 +33,7 @@
 }
 
 .title {
-  margin-bottom: 25px;
+  margin-bottom: 12.5px;
   text-align: center;
 }
 
@@ -52,7 +52,7 @@
 @media (--ui-tablet-devices) {
   .items-wrapper {
     justify-content: flex-start;
-    margin: 0 -22.5px;
+    margin: 0 -15px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -62,7 +62,8 @@
   flex-basis: 100%;
   width: 100%;
   padding: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 12.5px;
+  margin-top: 12.5px;
   text-align: center;
 }
 
@@ -136,7 +137,7 @@
 }
 
 .btns-group {
-  margin-top: 20px;
+  margin-top: 32.5px;
   text-align: center;
 }
 
