@@ -1,5 +1,5 @@
 {
-  "min-resize": false,
-  "max-resize": false,
-  "disable-resizer": false
+  "disable-resizer": false,
+  "min-resize": 180,
+  "max-resize": 510
 }

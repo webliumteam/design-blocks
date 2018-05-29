@@ -13,50 +13,56 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Image}, style} = this.props
-    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 70
-    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 150
+    const {components: {Text, Button, Image, Resizer}, style} = this.props
 
     return (
-      <article className={classNames(style.article, className)}>
-        {children}
+      <Resizer
+        styleProp="minHeight"
+        bindToModifier={`resizer.events${index}`}
+        min={this.getOptionValue('min-resize')}
+        max={this.getOptionValue('max-resize')}
+        disable={this.getOptionValue('disable-resizer')}
+      >
+        <div className={classNames(style.article, className)}>
+          {children}
 
-        {_.get('badge')(modifier) && (
-          <Text tagName="div" className={style.article__badge} bind={`events[${index}].badge`} />
-        )}
-        <div className={style.article__info}>
-          <div className={style.article__top}>
-            <Text tagName="time" className={style.article__date} bind={`events[${index}].date`} />
-            <Text tagName="time" className={style.article__time} bind={`events[${index}].time`} />
+          {_.get('badge')(modifier) && (
+            <Text tagName="div" className={style.article__badge} bind={`events[${index}].badge`} />
+          )}
+          <div className={style.article__info}>
+            <div className={style.article__top}>
+              <Text tagName="time" className={style.article__date} bind={`events[${index}].date`} />
+              <Text tagName="time" className={style.article__time} bind={`events[${index}].time`} />
+            </div>
+            <Text tagName="h3" className={style.article__title} bind={`events[${index}].title`} />
+            <div className={style.article__bottom}>
+              {_.get('location')(modifier) && (
+                <Text tagName="p" className={style.article__location} bind={`events[${index}].location`} />
+              )}
+              {_.get('link')(modifier) && (
+                <Button
+                  className={classNames(style.article__cta)}
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind={`events[${index}].cta`}
+                />
+              )}
+            </div>
           </div>
-          <Text tagName="h2" className={style.article__title} bind={`events[${index}].title`} />
-          <div className={style.article__bottom}>
-            {_.get('location')(modifier) && (
-              <Text tagName="p" className={style.article__location} bind={`events[${index}].location`} />
-            )}
-            {_.get('link')(modifier) && (
-              <Button
-                className={classNames(style.article__cta)}
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind={`events[${index}].cta`}
-              />
-            )}
-          </div>
+          <Image
+            wrapperClassName={style['article__picture-wrapper']}
+            pictureClassName={style.article__picture}
+            imgClassName={style.article__image}
+            bind={`events[${index}].picture`}
+            size={{
+              'min-width: 992px': 540,
+              'min-width: 768px': 720,
+              'min-width: 480px': 560,
+            }}
+            resize={{disable: true}}
+          />
         </div>
-        <Image
-          wrapperClassName={style['article__picture-wrapper']}
-          pictureClassName={style.article__picture}
-          imgClassName={style.article__image}
-          bind={`events[${index}].picture`}
-          size={{
-            'min-width: 992px': 540,
-            'min-width: 768px': 720,
-            'min-width: 480px': 560,
-          }}
-          resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
-        />
-      </article>
+      </Resizer>
     )
   }
 
@@ -69,7 +75,7 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <Text tagName="h1" className={style.title} bind="title" />
+          <Text tagName="h2" className={style.title} bind="title" />
           {this.getModifierValue('subtitle') && (
             <Text tagName="p" className={style.subtitle} bind="subtitle" />
           )}
@@ -96,7 +102,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon', 'Resizer'])($editor.components)
 
 Block.defaultContent = {
   events: [
