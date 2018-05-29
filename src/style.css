@@ -7,8 +7,12 @@
   }
 }
 
+.articles-wrapper {
+  margin-top: -28px;
+}
+
 .article {
-  margin-bottom: 56px;
+  margin: 28px 0;
   text-align: center;
 
   @media (min-width: 992px) {
