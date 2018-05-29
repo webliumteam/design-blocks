@@ -40,6 +40,7 @@
 }
 
 .items-wrapper {
+  max-width: calc(100% + 30px);
   margin: 35px -15px 0;
 
   @media (--ui-tablet-devices) {
@@ -117,8 +118,8 @@
 .item:nth-last-of-type(7):first-of-type ~ .item {
 
   @media(--ui-medium-devices) {
-    max-width: 25%;
-    flex-basis: 25%;
+    max-width: calc(25% - 30px);
+    flex-basis: calc(25% - 30px);
   }
 }
 
