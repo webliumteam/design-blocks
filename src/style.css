@@ -64,6 +64,12 @@
     }
   }
 
+  &__caption {
+    font-weight: 600;
+    color: var(--ui-brand-color);
+    margin-bottom: 28px;
+  }
+
   &:nth-child(odd) {
     .article__picture-wrapper {
 
@@ -105,10 +111,4 @@
       }
     }
   }
-}
-
-:global .ui-caption {
-  font-weight: 600;
-  color: var(--ui-brand-color);
-  margin-bottom: 28px;
 }
