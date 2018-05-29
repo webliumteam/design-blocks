@@ -88,18 +88,6 @@
     padding: 10px;
   }
 
-  &:nth-last-of-type(5):first-child,
-  &:nth-last-of-type(5):first-child ~ &,
-  &:nth-last-of-type(6):first-child,
-  &:nth-last-of-type(6):first-child ~ &,
-  &:nth-last-of-type(9):first-child,
-  &:nth-last-of-type(9):first-child ~ & {
-
-    @media (--ui-medium-devices) {
-      width: 245px;
-    }
-  }
-
   &__picture {
     display: block;
     position: relative;
