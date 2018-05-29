@@ -61,4 +61,8 @@
       padding-top: 100%;
     }
   }
+
+  &__image {
+    background-size: cover;
+  }
 }
