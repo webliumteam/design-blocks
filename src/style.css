@@ -33,7 +33,11 @@
 }
 
 .subtitle {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 45px;
+  }
 }
 
 .item {
