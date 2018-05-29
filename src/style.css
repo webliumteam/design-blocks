@@ -9,7 +9,7 @@
   }
 
   @media (--ui-medium-devices) {
-    padding: 75px 0;
+    padding: 75px 40px;
   }
 
   &__inner {
@@ -38,16 +38,12 @@
 
 .items-wrapper {
   margin: 0 -20px;
-  padding-top: 5px;
+  padding: 5px;
   text-align: center;
 
   @media (--ui-tablet-devices) {
     margin: 0 -40px;
-    padding-top: 25px;
-  }
-
-  @media (--ui-medium-devices) {
-    margin: 0;
+    padding: 15px;
   }
 }
 
@@ -155,14 +151,14 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 35px;
 
   @media (--ui-tablet-devices) {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   @media (--ui-medium-devices) {
-    margin-top: 60px;
+    margin-top: 50px;
   }
 
   .button {
