@@ -38,12 +38,12 @@
 
 .items-wrapper {
   margin: 0 -20px;
-  padding: 5px;
+  padding: 5px 0;
   text-align: center;
 
   @media (--ui-tablet-devices) {
     margin: 0 -40px;
-    padding: 15px;
+    padding: 15px 0;
   }
 }
 
@@ -58,6 +58,10 @@
   &__inner {
     display: flex;
     justify-content: flex-start;
+
+    @media (--ui-tablet-devices) {
+      align-items: center;
+    }
 
     @media (--ui-medium-devices) {
       max-width: 1120px;
