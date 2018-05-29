@@ -8,16 +8,18 @@
 }
 
 .articles-wrapper {
-  margin-top: -28px;
+  margin: -28px;
 }
 
 .article {
-  margin: 28px 0;
+  margin: 28px;
   text-align: center;
 
+  @media (min-width: 768px) {
+    max-width: calc(50% - 56px);
+  }
+
   @media (min-width: 992px) {
-    padding-right: 44px;
-    padding-left: 44px;
     align-items: center;
     text-align: left;
   }
