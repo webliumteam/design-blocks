@@ -46,6 +46,11 @@ class Block extends React.Component {
   render() {
     const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
     const noIconClass = this.getModifierValue('item-icon') ? '' : style['section--no-icon']
+    const sectionHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
+    const withoutCollection =
+      !this.getModifierValue('item-icon') &&
+      !this.getModifierValue('item-heading') &&
+      !this.getModifierValue('item-description')
 
     return (
       <section className={classNames(style.section, noIconClass)}>
@@ -53,20 +58,26 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          {this.getModifierValue('title') && (
-            <Text bind="title" className={style.title} tagName="h1" />
+          {sectionHeader && (
+            <div className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text bind="title" className={style.title} tagName="h1" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text bind="description" className={style.subtitle} tagName="p" />
+              )}
+            </div>
           )}
-          {this.getModifierValue('subtitle') && (
-            <Text bind="description" className={style.subtitle} tagName="p" />
+          {!withoutCollection && (
+            <Collection
+              className={style['items-wrapper']}
+              bind="articles"
+              Item={this.collectionItem}
+              itemProps={{
+                modifier: $block.modifier,
+              }}
+            />
           )}
-          <Collection
-            className={style['items-wrapper']}
-            bind="articles"
-            Item={this.collectionItem}
-            itemProps={{
-              modifier: $block.modifier,
-            }}
-          />
           {(this.getModifierValue('button-secondary') || this.getModifierValue('button-primary')) && (
             <div className={style['btns-group']}>
               {this.getModifierValue('button-primary') && (

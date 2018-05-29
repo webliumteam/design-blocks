@@ -22,12 +22,16 @@
   &--no-icon {
     word-wrap: break-word;
   }
-}
 
-.section__inner {
-  max-width: var(--ui-content-container);
-  margin: 0 auto;
-  padding: var(--ui-content-gutter);
+  &__inner {
+    max-width: var(--ui-content-container);
+    margin: 0 auto;
+    padding: var(--ui-content-gutter);
+  }
+
+  &__header {
+    margin-bottom: 30px;
+  }
 }
 
 .title {
