@@ -1,6 +1,6 @@
 {
   "name": "design-zapdos-process",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-process": "https://github.com/webliumteam/blocks#w/zapdos/process/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
