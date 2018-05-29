@@ -54,8 +54,7 @@
 }
 
 .item {
-  padding: 0 20px;
-  margin-top: 40px;
+  padding: 20px;
   flex-grow: 0;
   width: 100%;
   max-width: 100%;
@@ -125,7 +124,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 50px -10px -10px;
+  margin: 30px -10px -10px;
 }
 
 .button {
