@@ -79,10 +79,12 @@
 }
 
 .item {
-  margin: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 
   @media (--ui-phone-devices) {
-    width: 220px;
+    width: 240px;
+    padding: 10px;
   }
 
   &:nth-last-of-type(5):first-child,
@@ -93,7 +95,7 @@
   &:nth-last-of-type(9):first-child ~ & {
 
     @media (--ui-medium-devices) {
-      width: 225px;
+      width: 245px;
     }
   }
 
@@ -117,9 +119,6 @@
   &__title {
     margin-top: 20px;
     text-align: center;
-
-    @media (--ui-medium-devices) {
-      margin-bottom: 20px;
-    }
+    margin-bottom: 10px;
   }
 }
