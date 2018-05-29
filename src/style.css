@@ -11,19 +11,14 @@
 .title {
   font-weight: var(--ui-block-title-font-weight);
   margin-bottom: 37px;
-  letter-spacing: -1.05px;
 }
 
 .subtitle {
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
-  letter-spacing: -0.9px;
-  margin-bottom: 15px;
 }
 
 .item {
-  margin-bottom: 30px;
-
   &__picture {
     padding-top: 100%;
     cursor: pointer;
