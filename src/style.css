@@ -129,10 +129,10 @@
 .link {
   &:first-child {
     margin-bottom: 15px;
+  }
 
-    @media (--ui-tablet-devices) {
-      margin: 15px;
-    }
+  @media (--ui-tablet-devices) {
+    margin: 15px;
   }
 }
 
