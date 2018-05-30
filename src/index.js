@@ -15,6 +15,10 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  background: {
+    type: 'color',
+    color: '#fff',
+  },
   contactForm: {
     ...Component.defaultContent.contactForm,
     fields: [

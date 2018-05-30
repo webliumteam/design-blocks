@@ -33,8 +33,13 @@
   padding-right: 17%;
 
   &__field {
-    border: 1px solid var(--ui-text-color);
     background-color: transparent;
+
+    input,
+    textarea {
+      border: 1px solid var(--ui-text-color);
+      background-color: transparent;
+    }
   }
 
   &__button {
