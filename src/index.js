@@ -23,9 +23,13 @@ ExtendedWireframe.defaultContent = {
     },
     items: [
       {
-        image: {
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
           resourceRef: 'pic1.jpg',
-          alt: 'Picture about the company',
         },
         heading: {
           type: 'heading',
@@ -37,9 +41,13 @@ ExtendedWireframe.defaultContent = {
         },
       },
       {
-        image: {
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
           resourceRef: 'pic2.jpg',
-          alt: 'Picture about the company',
         },
         heading: {
           type: 'heading',
@@ -51,9 +59,13 @@ ExtendedWireframe.defaultContent = {
         },
       },
       {
-        image: {
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
           resourceRef: 'pic3.jpg',
-          alt: 'Picture about the company',
         },
         heading: {
           type: 'heading',
