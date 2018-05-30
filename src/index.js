@@ -12,14 +12,7 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  background: {
-    type: 'image',
-    position: {
-      type: 'tile',
-      cover: '50% 50%',
-    },
-    resourceRef: 'bg-pattern.jpg',
-  },
+
   numbers: [
     ...Component.defaultContent.numbers,
     {

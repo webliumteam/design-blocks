@@ -67,15 +67,15 @@
 
   .item:nth-last-of-type(4):first-child,
   .item:nth-last-of-type(4):first-child ~ .item {
-    flex-basis: 25%;
-    max-width: 25%;
+    flex-basis: calc(25% - 15px);
+    max-width: calc(25% - 15px);
   }
 }
 
 @media (min-width: 768px) {
   .item {
-    flex-basis: 25%;
-    max-width: 25%;
+    flex-basis: calc(25% - 15px);
+    max-width: calc(25% - 15px);
     margin-top: 25px;
     margin-bottom: 25px;
   }
