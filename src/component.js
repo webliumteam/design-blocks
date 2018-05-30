@@ -172,7 +172,7 @@ Wireframe.defaultContent = {
 
 Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Why Us description', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Why Us description', type: 'checkbox'},
   icon: {defaultValue: true, label: 'Advantage icon ', type: 'checkbox'},
   heading: {defaultValue: true, label: 'Advantage title', type: 'checkbox'},
   subheading: {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
