@@ -144,7 +144,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
@@ -154,7 +154,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
@@ -164,7 +164,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
@@ -190,7 +190,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
@@ -200,7 +200,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
@@ -210,7 +210,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
@@ -236,7 +236,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
@@ -246,7 +246,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
@@ -256,7 +256,7 @@ Wireframe.defaultContent = {
           {
             icon: {
               svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
-              fill: '#676767',
+              fill: 'brand-color',
             },
             desc: {
               type: 'text',
