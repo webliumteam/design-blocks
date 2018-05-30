@@ -41,15 +41,15 @@
 
 .articles-wrapper {
   display: flex;
-  margin: 0 -15px -50px;
+  margin: -30px -15px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .article {
   width: 100%;
-  padding: 0 15px;
-  margin-bottom: 50px;
+  margin: 15px 0;
+  padding: 10px 15px;
 
   @media (--ui-tablet-devices) {
     width: 39%;
