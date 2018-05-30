@@ -40,13 +40,15 @@
       border: 1px solid var(--ui-text-color);
       background-color: transparent;
     }
+
+    textarea {
+      min-height: 150px;
+    }
   }
 
   &__button {
     width: 110px;
     padding-top: 10px;
-    opacity: 0.8;
-    letter-spacing: 1px;
 
     @media (min-width: 992px) {
       margin-top: 25px;
@@ -54,6 +56,3 @@
   }
 }
 
-.form textarea {
-  min-height: 150px;
-}
