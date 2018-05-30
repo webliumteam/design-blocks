@@ -208,8 +208,8 @@ Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Project description', type: 'checkbox'},
   'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox'},
   'project-description': {defaultValue: true, label: 'Project main text', type: 'checkbox'},
-  'block-button': {defaultValue: true, label: 'Link', type: 'checkbox'},
-  'project-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'project-button': {defaultValue: true, label: 'Project link', type: 'checkbox'},
+  'block-button': {defaultValue: true, label: 'Block button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
