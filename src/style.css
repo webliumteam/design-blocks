@@ -41,14 +41,14 @@
 
 .articles-wrapper {
   display: flex;
-  margin: -30px -15px;
+  margin: -30px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .article {
   width: 100%;
-  margin: 15px 0;
+  margin: 15px;
   padding: 10px 15px;
 
   @media (--ui-tablet-devices) {
@@ -56,7 +56,7 @@
   }
 
   @media (--ui-medium-devices) {
-    width: 33.333%;
+    width: calc(33.333% - 30px);
   }
 
   &:first-child:last-of-type {
@@ -100,7 +100,6 @@
     position: relative;
     margin-bottom: 10px;
     padding-top: 100%;
-    background-color: var(--ui-media-bg);
 
     @media (--ui-phone-devices) {
       padding-top: 65%;
