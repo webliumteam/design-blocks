@@ -1,6 +1,6 @@
 {
-  "name": "wireframe-default-master",
-  "version": "0.0.1",
+  "name": "wireframe-series-5-cover",
+  "version": "0.0.19",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -29,5 +29,6 @@
     "stylelint-scss": "^2.2.0",
     "stylelint-selector-bem-pattern": "^2.0.0",
     "stylelint-order": "^0.8.0"
-  }
+  },
+  "editorVersion": "0.0.0"
 }

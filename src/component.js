@@ -7,20 +7,69 @@ class Wireframe extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  render() {
-    const {components: {Text}, style} = this.props
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  collectionItem = ({index, children, className}) => {
+    const {components: {Text, Button}, style} = this.props
 
     return (
-      <section className={style.section}>
+      <div className={classNames(style.item, className)}>
+        {children}
+        <div className={style.item__header}>
+          <Text tagName="h3" className={style.item__title} bind={`collection[${index}].title`} />
+          {this.getModifierValue('body') && (
+            <Text tagName="p" className={style.item__desc} bind={`collection[${index}].desc`} />
+          )}
+        </div>
+        {this.getModifierValue('item-button') && (
+          <Button
+            linkClassName={style.link}
+            buttonClassName={style.button}
+            className={style.item__button}
+            bind={`collection[${index}].cta`}
+          />
+        )}
+      </div>
+    )
+  }
+
+  render() {
+    const {components: {Text, Collection, Button}, style, $block} = this.props
+    const blockHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
+
+    return (
+      <section className={classNames(style.section, blockHeader && style['section--with-header'])}>
         <div className={style.section__inner}>
-          <Text bind="title" className={style.title} tagName="h2" />
-          {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
+          {blockHeader && (
+            <div className={style.section__header}>
+              {this.getModifierValue('title') && (
+                <Text tagName="h2" className={style.title} bind="title" />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text tagName="p" className={style.subtitle} bind="subtitle" />
+              )}
+            </div>
+          )}
+          <Collection
+            className={style['items-wrapper']}
+            bind="collection"
+            Item={this.collectionItem}
+            itemProps={{
+              modifier: $block.modifier,
+            }}
+          />
+          {this.getModifierValue('cta') && (
+            <div className={style['btns-group']}>
+              <Button
+                className={style['btns-group__button']}
+                linkClassName={style.link}
+                buttonClassName={style.button}
+                bind="cta"
+              />
+            </div>
           )}
         </div>
       </section>
@@ -28,21 +77,93 @@ class Wireframe extends React.Component {
   }
 }
 
-Wireframe.components = _.pick(['Text'])($editor.components)
+Wireframe.components = _.pick(['Text', 'Collection', 'Button'])($editor.components)
 
 Wireframe.defaultContent = {
+  background: {
+    type: 'color',
+    color: '#d8d8d8',
+  },
   title: {
-    content: 'Hello world',
-    type: 'blockTitle',
+    content: 'Best Flower Delivery in Town',
+    type: 'heroTitle',
   },
   subtitle: {
-    content: 'Type here something',
+    content: 'We can deliver even the most unusual ideas!',
     type: 'subtitle',
+  },
+  collection: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5ad5a3826678f100250985e4.jpeg',
+          imageColor: [250, 250, 250],
+        }],
+      ],
+    },
+    items: [
+      {
+        title: {
+          type: 'heading',
+          content: 'Spring flowers',
+        },
+        desc: {
+          type: 'text',
+          content: 'Take a look at our best collection of beautiful flowers',
+        },
+        cta: {
+          textValue: 'Order spring flowers',
+          type: 'primary',
+        },
+      },
+      {
+        title: {
+          type: 'heading',
+          content: 'Summer flowers',
+        },
+        desc: {
+          type: 'text',
+          content: 'Take a look at our best collection of beautiful flowers',
+        },
+        cta: {
+          textValue: 'Order summer flowers',
+          type: 'primary',
+        },
+      },
+      {
+        title: {
+          type: 'heading',
+          content: 'Autumn flowers',
+        },
+        desc: {
+          type: 'text',
+          content: 'Take a look at our best collection of beautiful flowers',
+        },
+        cta: {
+          textValue: 'Order autumn flowers',
+          type: 'primary',
+        },
+      },
+    ],
+  },
+  cta: {
+    textValue: 'More about our flowers',
+    type: 'secondary',
+    size: 'lg',
   },
 }
 
 Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  'item-button': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
+  cta: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Wireframe
