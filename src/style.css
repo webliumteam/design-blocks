@@ -159,11 +159,11 @@
   &__desc {
     margin-bottom: 40px;
 
-    /* font-size: calc(var(--ui-text-size) * .875); */
+    /* font-size: calc(var(--ui-text-size) * .875);
     color: var(--ui-text-color);
     line-height: var(--ui-text-line-height);
     font-family: var(--ui-text-font-family);
-    font-weight: var(--ui-text-font-weight);
+    font-weight: var(--ui-text-font-weight); */
 
     @media (--ui-tablet-devices) {
       font-size: calc(var(--ui-text-size) * .875);
@@ -173,9 +173,9 @@
       margin-bottom: 0;
     }
 
-    span {
+    /* span {
       color: var(--ui-heading-color);
-    }
+    } */
   }
 
   &__link-wrapper {
