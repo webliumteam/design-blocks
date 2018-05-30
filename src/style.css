@@ -72,10 +72,10 @@
 
 .item {
   margin: 0 -15px 50px;
-  padding: 0 10px 10px;
+  padding: 0 15px 15px;
 
   @media (--ui-tablet-devices) {
-    padding: 10px;
+    padding: 15px;
   }
 
   @media (--ui-medium-devices) {
