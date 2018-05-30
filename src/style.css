@@ -50,11 +50,11 @@
 
 .article {
   box-shadow: 0 2px 12px 0 rgba(33, 67, 71, 0.08);
+  background-color: var(--ui-light-shade-color);
 
   @media (min-width: 992px) {
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-    background-color: transparent;
   }
 
   &__picutre {
@@ -84,7 +84,6 @@
   }
 
   &__info {
-    background-color: var(--ui-light-shade-color);
     border: 0;
 
     @media (min-width: 992px) {
@@ -100,15 +99,7 @@
   }
 
   .article__date {
-    color: var(--ui-brand-color);
-    font-weight: bold;
-    font-size: calc(var(--ui-text-size) * 0.75);
     margin-bottom: 0;
-  }
-
-  &__time {
-    font-weight: bold;
-    font-size: calc(var(--ui-text-size) * 0.75);
   }
 
   &__title {
