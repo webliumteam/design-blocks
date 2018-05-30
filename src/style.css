@@ -47,6 +47,7 @@
 
 .articles-wrapper {
   margin: 0 -15px;
+  margin-top: 5px;
   counter-reset: steps;
 }
 
@@ -54,6 +55,7 @@
   .articles-wrapper {
     display: flex;
     padding: 0 59px;
+    margin-top: 10px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -68,23 +70,27 @@
 
 .article {
   display: flex;
-  padding: 0 15px;
-  margin-top: 40px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   align-items: flex-start;
 }
 
 @media (--ui-tablet-devices) {
   .article {
-    margin-top: 50px;
-    flex-basis: 50%;
-    max-width: 50%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+    flex-basis: calc(50% - 15px);
+    max-width: calc(50% - 15px);
   }
 }
 
 @media (--ui-medium-devices) {
   .article {
-    flex-basis: 33.333%;
-    max-width: 33.333%;
+    flex-basis: calc(33.333% - 15px);
+    max-width: calc(33.333% - 15px);
   }
 }
 
@@ -92,8 +98,8 @@
   .article:nth-last-of-type(1):first-child,
   .article:nth-last-of-type(2):first-child ~ .article,
   .article:nth-last-of-type(2):first-child {
-    flex-basis: 41.66%;
-    max-width: 41.66%;
+    flex-basis: calc(41.66% - 15px);
+    max-width: calc(41.66% - 15px);
   }
 }
 
@@ -145,7 +151,11 @@
 
 .btns-group {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 25px;
+
+  @media (--ui-medium-devices) {
+    margin-top: 20px;
+  }
 }
 
 .button {
