@@ -31,21 +31,21 @@
 }
 
 .item {
-  padding: 0 15px;  
-  
-  &__inner {
-    border: 2px solid #dde5ed;
-    border-radius: 6px;
-    background-color: var(--ui-light-shade-color);
-    display: flex;
+  padding: 0 15px;
+  border: 2px solid #dde5ed;
+  border-radius: 6px;
 
-    &:hover {
-      border-color: var(--ui-brand-color);
+  &:hover {
+    border-color: var(--ui-brand-color);
 
-      .item__title {
-        color: var(--ui-brand-color);
-      }
+    .item__title {
+      color: var(--ui-brand-color);
     }
+  }
+
+  &__inner {
+    display: flex;
+    border-radius: 6px;
   }
 
   &__title {
@@ -86,5 +86,5 @@
 }
 
 .items-wrapper {
-  align-items: flex-start;    
+  align-items: flex-start;
 }
