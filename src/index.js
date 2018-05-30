@@ -3,11 +3,12 @@ import $editor from 'weblium/editor'
 import Component from 'wireframe-zapdos-numbers/src/component'
 import style from './style.css'
 
+import defaultOptions from 'wireframe-zapdos-numbers/src/options.json'
 import options from './options.json'
 
 const {enhancers: {withProps}, hoistStatics} = $editor
 
-const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
+const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', {...defaultOptions, ...options}))))(Component)
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
@@ -24,7 +25,6 @@ ExtendedWireframe.defaultContent = {
       {
         label: {
           ...Component.defaultContent.numbers[0].label,
-          content: 'for our customers',
         },
         value: {
           ...Component.defaultContent.numbers[0].value,
@@ -35,7 +35,6 @@ ExtendedWireframe.defaultContent = {
       {
         label: {
           ...Component.defaultContent.numbers[1].label,
-          content: 'of our clients',
         },
         value: {
           ...Component.defaultContent.numbers[1].value,
@@ -46,7 +45,6 @@ ExtendedWireframe.defaultContent = {
       {
         label: {
           ...Component.defaultContent.numbers[2].label,
-          content: 'of our users',
         },
         value: {
           ...Component.defaultContent.numbers[2].value,
@@ -58,7 +56,6 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    content: 'Тактико-технічні характеристики',
   },
 }
 
