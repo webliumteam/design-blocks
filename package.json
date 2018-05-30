@@ -1,6 +1,6 @@
 {
   "name": "design-drifloon-cover",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
-    "wireframe-lucario-cover": "https://github.com/webliumteam/blocks#w/lucario/cover/prod"
+    "wireframe-lucario-cover": "git+https://github.com/webliumteam/blocks.git#w/series-2/cover/prod"
   },
   "editorVersion": "4.13.0"
 }
