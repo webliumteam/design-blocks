@@ -271,10 +271,6 @@
   }
 }
 
-.link {
-  padding: var(--ui-btn-md-padding);
-}
-
 .brief {
   display: flex;
   max-width: 100%;
