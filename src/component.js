@@ -98,11 +98,11 @@ Wireframe.components = _.pick(['Text', 'Icon', 'Button', 'Collection'])($editor.
 
 Wireframe.defaultContent = {
   title: {
-    content: 'Our Services',
+    content: 'Services We Provide',
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Still have some hesitations whether cooperation with us is worth the trouble? Check the reasons why you should choose us among other companies!',
+    content: 'We deliver all kind of services that support small and micro businesses. Here are some of them:',
     type: 'subtitle',
   },
   collection: {
@@ -113,11 +113,11 @@ Wireframe.defaultContent = {
         },
         heading: {
           type: 'heading',
-          content: 'Experienced team',
+          content: 'Service 1',
         },
         text: {
           type: 'text',
-          content: 'We have extensive experience and can be proud of 10 000+ completed projects.',
+          content: 'Multipurpose assistance for online stores and offline retail businesses.',
         },
         button: {
           type: 'link',
@@ -130,11 +130,11 @@ Wireframe.defaultContent = {
         },
         heading: {
           type: 'heading',
-          content: 'Custom-tailored approach',
+          content: 'Service 2',
         },
         text: {
           type: 'text',
-          content: 'We appreciate each client and consider all demands throughout our cooperation.',
+          content: 'Developing marketing and business strategy to help company grow fast.',
         },
         button: {
           type: 'link',
@@ -147,11 +147,11 @@ Wireframe.defaultContent = {
         },
         heading: {
           type: 'heading',
-          content: 'First-class product',
+          content: 'Service 3',
         },
         text: {
           type: 'text',
-          content: 'We use modern technologies and advanced solutions to develop our products.',
+          content: 'Building brand awareness for micro and small businesses to increase potential reach.',
         },
         button: {
           type: 'link',
@@ -164,11 +164,11 @@ Wireframe.defaultContent = {
         },
         heading: {
           type: 'heading',
-          content: 'Multifunctional programs',
+          content: 'Service 4',
         },
         text: {
           type: 'text',
-          content: 'We offer multifunctional programs that include the needed set of features and support services.',
+          content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
         },
         button: {
           type: 'link',
