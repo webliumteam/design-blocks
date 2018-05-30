@@ -38,11 +38,11 @@
 
 .subtitle {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
 
   @media (--ui-tablet-devices) {
     max-width: 620px;
-    margin: 0 auto;
+    margin: 15px auto 0;
   }
 }
 
