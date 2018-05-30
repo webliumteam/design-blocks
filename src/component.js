@@ -12,13 +12,14 @@ class Wireframe extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  collectionItem = ({index, children, className, modifier}) => {
+  collectionItem = ({index, children, className}) => {
     const {components: {Text, Button}, style} = this.props
     const withoutLine = !this.getModifierValue('line')
     const withoutDay = !this.getModifierValue('day')
     const withoutType = !this.getModifierValue('type')
     const locInfo = this.getModifierValue('location') || this.getModifierValue('time')
     const minimalState = withoutDay && withoutType && !locInfo
+    const onlyDayNumber = !this.getModifierValue('day') && !this.getModifierValue('month')
 
     return (
       <li className={classNames(style.item, withoutLine && style['item--no-line'], className)}>
@@ -43,12 +44,16 @@ class Wireframe extends React.Component {
         </div>
         <time className={classNames(style.date, minimalState && style['date--center'])}>
           <Text bind={`events[${index}].day`} className={style.date__day} tagName="span" />
-          <span className={style.date__text}>
-            <Text bind={`events[${index}].month`} className={style.date__month} tagName="span" />
-            {this.getModifierValue('day') && (
-              <Text bind={`events[${index}].weekDay`} className={style['date__week-day']} tagName="span" />
-            )}
-          </span>
+          {!onlyDayNumber && (
+            <span className={style.date__text}>
+              {this.getModifierValue('month') && (
+                <Text bind={`events[${index}].month`} className={style.date__month} tagName="span" />
+              )}
+              {this.getModifierValue('day') && (
+                <Text bind={`events[${index}].weekDay`} className={style['date__week-day']} tagName="span" />
+              )}
+            </span>
+          )}
         </time>
         <div className={classNames(style['item__button-wrapper'], minimalState && style['item__button-wrapper--center'])}>
           <Button
@@ -225,6 +230,7 @@ Wireframe.defaultContent = {
 
 Wireframe.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
+  month: {defaultValue: true, label: 'Month', type: 'checkbox'},
   day: {defaultValue: true, label: 'Day of week', type: 'checkbox'},
   type: {defaultValue: true, label: 'Event`s type', type: 'checkbox'},
   location: {defaultValue: true, label: 'Event`s location', type: 'checkbox'},
