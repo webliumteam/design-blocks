@@ -1,3 +1,19 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-events/src/style.css";
 
 /* start here */
+.article {
+  &__badge {
+    background-color: #eee;
+
+    &::after {
+      border-top-color: #eee;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+    }
+  }
+}
+
+.article__picture {
+  padding-top: 73.33333%;
+}
