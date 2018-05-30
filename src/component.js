@@ -89,6 +89,10 @@ Block.defaultContent = {
         content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
       },
+      background: {
+        type: 'color',
+        color: 'dark-shade-color',
+      },
     },
     {
       title: {
@@ -98,6 +102,10 @@ Block.defaultContent = {
       description: {
         content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
+      },
+      background: {
+        type: 'color',
+        color: 'dark-shade-color?lighten=15',
       },
     },
     {
@@ -109,6 +117,10 @@ Block.defaultContent = {
         content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
       },
+      background: {
+        type: 'color',
+        color: 'dark-shade-color?lighten=30',
+      },
     },
     {
       title: {
@@ -118,6 +130,10 @@ Block.defaultContent = {
       description: {
         content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with <b>you</b> shortly to clarify all the details.',
         type: 'text',
+      },
+      background: {
+        type: 'color',
+        color: 'dark-shade-color?lighten=45',
       },
     },
     {
