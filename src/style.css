@@ -24,7 +24,7 @@
 
     @media (--ui-tablet-devices) {
       max-width: 740px;
-      margin: 0 auto;
+      margin: 0 auto 40px;
     }
 
     @media (--ui-medium-devices) {
