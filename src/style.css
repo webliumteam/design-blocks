@@ -12,6 +12,19 @@
   @media (--ui-medium-devices) {
     padding: 75px 0;
   }
+
+  &--only-icon {
+    .article {
+      &__content {
+        padding-left: 0;
+
+        &::before {
+          position: relative;
+          width: 36px;
+        }
+      }
+    }
+  }
 }
 
 .section__inner {

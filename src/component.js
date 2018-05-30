@@ -11,6 +11,7 @@ class Block extends React.Component {
 
   collectionItem = ({index, children, className, modifier}) => {
     const {components: {Text}, style} = this.props
+
     return (
       <article className={classNames(style.article, className)}>
         {children}
@@ -30,9 +31,17 @@ class Block extends React.Component {
   render() {
     const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
     const btnsGroup = this.getModifierValue('button') || this.getModifierValue('additional-button')
+    const stepItem = this.getModifierValue('icon') || this.getModifierValue('heading') || this.getModifierValue('body')
+    const onlyIconClass =
+      this.getModifierValue('icon') &&
+      !this.getModifierValue('heading') &&
+      !this.getModifierValue('body')
+        ? style['section--only-icon']
+        : ''
 
     return (
-      <section className={style.section}>
+      // <section className={style.section}>
+      <section className={classNames(style.section, onlyIconClass)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
@@ -43,14 +52,16 @@ class Block extends React.Component {
           {this.getModifierValue('subtitle') && (
             <Text bind="subtitle" className={style.subtitle} tagName="p" />
           )}
-          <Collection
-            className={style['articles-wrapper']}
-            bind="steps"
-            Item={this.collectionItem}
-            itemProps={{
-              modifier: $block.modifier,
-            }}
-          />
+          {stepItem && (
+            <Collection
+              className={style['articles-wrapper']}
+              bind="steps"
+              Item={this.collectionItem}
+              itemProps={{
+                modifier: $block.modifier,
+              }}
+            />
+          )}
           {btnsGroup && (
             <div className={style['btns-group']}>
               {this.getModifierValue('button') && (
@@ -119,30 +130,10 @@ Block.defaultContent = {
     type: 'subtitle',
   },
   'cta-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'secondary',
   },
   'cta-2': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'link',
   },
