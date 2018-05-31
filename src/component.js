@@ -17,20 +17,6 @@ class Block extends React.Component {
     return (
       <article className={classNames(style.article, className)}>
         {children}
-        {!this.getOptionValue('image-hidden') && (
-          <Image
-            wrapperClassName={style['article__picture-wrapper']}
-            pictureClassName={style.article__picture}
-            imgClassName={style.article__image}
-            bind={`services[${index}].picture`}
-            size={{
-              'min-width: 992px': 600,
-              'min-width: 768px': 1000,
-              'min-width: 480px': 800,
-            }}
-            resize={{disable: true}}
-          />
-        )}
         <div className={style.article__content}>
           <Text bind={`services[${index}].title`} className={style.article__title} tagName="h3" />
           {_.get('item-desc')(modifier) && (
@@ -91,10 +77,25 @@ class Block extends React.Component {
 Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.components)
 
 Block.defaultContent = {
+  title: {
+    content: 'Services',
+    type: 'blockTitle',
+  },
+  subtitle: {
+    content: 'Do you want to sell and promote your business? Here are best of Quantum services for you: ',
+    type: 'subtitle',
+  },
   services: {
-    background: {},
     items: [
       {
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        },
         title: {
           content: 'Quantum E-commerce',
           type: 'heading',
@@ -106,10 +107,6 @@ Block.defaultContent = {
         text: {
           content: 'Multipurpose program that will perfectly suit online stores and online retail business. You can add up to 2000 items with a detailed description, characteristics, and photos. Also, the shopping cart, clients’ feedback, rating, and related items option are available.',
           type: 'text',
-        },
-        picture: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Quantum E-commerce illustration',
         },
         cta: {
           actionConfig: {
@@ -127,6 +124,14 @@ Block.defaultContent = {
         },
       },
       {
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        },
         title: {
           content: 'Quantum Aftersales',
           type: 'heading',
@@ -138,10 +143,6 @@ Block.defaultContent = {
         text: {
           content: 'Aftersales assistance that includes marketing campaigns, additional digital solutions, and educational courses. Our specialists will help to find out what will work for your business and decide on the steps that are to be taken immediately. ',
           type: 'text',
-        },
-        picture: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Quantum Aftersales illustration',
         },
         cta: {
           actionConfig: {
@@ -159,14 +160,6 @@ Block.defaultContent = {
         },
       },
     ],
-  },
-  title: {
-    content: 'Services',
-    type: 'blockTitle',
-  },
-  subtitle: {
-    content: 'Do you want to sell and promote your business? Here are best of Quantum services for you: ',
-    type: 'subtitle',
   },
   cta: {
     actionConfig: {
