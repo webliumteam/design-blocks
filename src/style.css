@@ -13,14 +13,29 @@
   flex-direction: column;
   max-width: 770px;
   margin: 0 auto;
+  margin-top: 6px;
 }
 
 .item {
+  position: relative;
   text-align: center;
-  border-bottom: var(--ui-light-shade-color) 2px solid;
   margin-top: 0;
+  padding-top: 34px;
   padding-bottom: 20px;
+  margin-bottom: 0;
   width: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--ui-dark-shade-color);
+    opacity: 0.075;
+  }
 
   &__button {
     text-align: center;
@@ -28,7 +43,7 @@
 
   &__title {
     text-transform: uppercase;
-    padding: 34px 20px 0;
+    padding: 0 15px;
     border-bottom: 0;
 
     @media (min-width: 992px) {
@@ -37,7 +52,7 @@
   }
 
   &__content {
-    padding: 10px 0 0;
+    padding: 10px 15px 0;
   }
 
   &__icon {
@@ -46,9 +61,11 @@
 }
 
 .btns-group {
+  margin-top: 40px;
+
   .link {
     position: relative;
-    color: var(--ui-block-title-color);
+    color: inherit;
     font-weight: 600;
 
     &::before,
