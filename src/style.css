@@ -91,6 +91,10 @@
 
   /* stylelint-disable */
   :global {
+    li {
+      margin: 5px
+    }
+
     li button {
       width: 15px;
       height: 15px;
