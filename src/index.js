@@ -31,7 +31,8 @@ ExtendedWireframe.defaultContent = {
     ],
     submitButton: {
       ...Component.defaultContent.contactForm.submitButton,
-      size: 'md',
+      type: 'primary-alt',
+      size: 'lg',
     },
   },
 }
