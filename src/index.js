@@ -107,7 +107,7 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   arrows: {defaultValue: false, label: 'Navigation arrows', type: 'hidden'},
   dots: {defaultValue: true, label: 'Navigation indicators', type: 'hidden'},
-  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  item_button_additional: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
