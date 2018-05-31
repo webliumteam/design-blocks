@@ -1,6 +1,6 @@
 {
   "name": "design-poliwag-testimonials_w1",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-testimonials": "https://github.com/webliumteam/blocks#w/zapdos/testimonials/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
