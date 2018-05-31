@@ -76,7 +76,7 @@ ExtendedWireframe.modifierScheme = {
     label: 'Title description',
     defaultValue: true,
   },
-  'primary-button': {
+  item_button: {
     id: 'primary-button',
     type: 'checkbox',
     label: 'Button',
