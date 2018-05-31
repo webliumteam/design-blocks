@@ -59,6 +59,14 @@
     }
   }
 
+  &__title {
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
   &__contacts {
 
     @media (min-width: 768px) {
@@ -91,10 +99,6 @@
       margin-left: 30px;
       text-align: left;
     }
-  }
-
-  &__title {
-    text-align: left;
   }
 }
 
@@ -148,9 +152,11 @@
 
     .slick-arrow.slick-prev,
     .slick-arrow.slick-next {
+      margin-top: 25px;
 
       @media (min-width: 768px) {
         transform: translateY(-50%);
+        margin-top: 0;
       }
     }
   }
