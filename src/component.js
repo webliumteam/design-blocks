@@ -40,7 +40,6 @@ class Block extends React.Component {
         : ''
 
     return (
-      // <section className={style.section}>
       <section className={classNames(style.section, onlyIconClass)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
