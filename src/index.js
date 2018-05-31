@@ -16,65 +16,67 @@ ExtendedWireframe.defaultContent = {
     type: 'color',
     color: '#ffffff',
   },
-  blog: [
-    {
-      ...Component.defaultContent.blog[0],
-      title: {
-        ...Component.defaultContent.blog[0].title,
-        content: 'Brand image',
+  collection: {
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        item_title: {
+          ...Component.defaultContent.collection.items[0].item_title,
+          content: 'Brand image',
+        },
+        item_body: {
+          ...Component.defaultContent.collection.items[0].item_body,
+          content: 'We guard your brand, help draw new workers, and build positive working conditions by preserving your facility clean with the ShinyHouse services.',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[0].item_category,
+          content: 'Positive working conditions',
+        },
+        item_image: {
+          ...Component.defaultContent.collection.items[0].item_image,
+          resourceRef: '1.png',
+        },
       },
-      description: {
-        ...Component.defaultContent.blog[0].description,
-        content: 'We guard your brand, help draw new workers, and build positive working conditions by preserving your facility clean with the ShinyHouse services.',
+      {
+        ...Component.defaultContent.collection.items[1],
+        item_title: {
+          ...Component.defaultContent.collection.items[1].item_title,
+          content: 'Safety guarantee',
+        },
+        item_body: {
+          ...Component.defaultContent.collection.items[1].item_body,
+          content: 'A clean working place means it is a safe one. Greasy, sticky, and dirty floors may result in slips and falls. We can proudly guarantee you properly cleaned facility’s floors.',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[1].item_category,
+          content: 'Safe working place',
+        },
+        item_image: {
+          ...Component.defaultContent.collection.items[1].item_image,
+          resourceRef: '2.png',
+        },
       },
-      category: {
-        ...Component.defaultContent.blog[0].category,
-        content: 'Positive working conditions',
+      {
+        ...Component.defaultContent.collection.items[2],
+        item_title: {
+          ...Component.defaultContent.collection.items[2].item_title,
+          content: 'Productivity',
+        },
+        item_body: {
+          ...Component.defaultContent.collection.items[2].item_body,
+          content: 'Clean work environment supports good mental and physical health. The facility serviced by a ShinyHouse not only seems nice but can also play a positive role in growing productivity.',
+        },
+        item_category: {
+          ...Component.defaultContent.collection.items[2].item_category,
+          content: 'Helping in productivity growth',
+        },
+        item_image: {
+          ...Component.defaultContent.collection.items[2].item_image,
+          resourceRef: '3.png',
+        },
       },
-      picture: {
-        ...Component.defaultContent.blog[0].picture,
-        resourceRef: '1.png',
-      },
-    },
-    {
-      ...Component.defaultContent.blog[1],
-      title: {
-        ...Component.defaultContent.blog[1].title,
-        content: 'Safety guarantee',
-      },
-      description: {
-        ...Component.defaultContent.blog[1].description,
-        content: 'A clean working place means it is a safe one. Greasy, sticky, and dirty floors may result in slips and falls. We can proudly guarantee you properly cleaned facility’s floors.',
-      },
-      category: {
-        ...Component.defaultContent.blog[1].category,
-        content: 'Safe working place',
-      },
-      picture: {
-        ...Component.defaultContent.blog[1].picture,
-        resourceRef: '2.png',
-      },
-    },
-    {
-      ...Component.defaultContent.blog[2],
-      title: {
-        ...Component.defaultContent.blog[2].title,
-        content: 'Productivity',
-      },
-      description: {
-        ...Component.defaultContent.blog[2].description,
-        content: 'Clean work environment supports good mental and physical health. The facility serviced by a ShinyHouse not only seems nice but can also play a positive role in growing productivity.',
-      },
-      category: {
-        ...Component.defaultContent.blog[2].category,
-        content: 'Helping in productivity growth',
-      },
-      picture: {
-        ...Component.defaultContent.blog[2].picture,
-        resourceRef: '3.png',
-      },
-    },
-  ],
+    ],
+  },
   title: {
     ...Component.defaultContent.title,
     content: 'Advantages',
@@ -83,8 +85,8 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'block-button': {defaultValue: false, label: 'Button', type: 'hidden'},
-  'post-link': {defaultValue: false, label: 'Post link', type: 'hidden'},
+  button: {defaultValue: false, label: 'Button', type: 'hidden'},
+  item_button: {defaultValue: false, label: 'Post link', type: 'hidden'},
 }
 
 export default ExtendedWireframe
