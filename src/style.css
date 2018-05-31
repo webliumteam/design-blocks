@@ -1,15 +1,5 @@
 @import "wireframe-zapdos-process/src/style.css";
 
-/* start here */
-
-.section {
-
-  @media (min-width: 920px) {
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-}
-
 .top-icon {
   position: relative;
   width: 60px;
@@ -43,9 +33,14 @@
   margin-top: 24px;
 }
 
+.articles-wrapper {
+  margin-top: 54.5px;
+}
+
 .article {
   display: block;
-  margin-top: 73px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
 
   &__content {
     position: relative;
@@ -85,6 +80,9 @@
   }
 
   &__text {
-    font-size: calc(var(--ui-text-size) * 0.875);
+
+    @media (min-width: 768px;) {
+      font-size: calc(var(--ui-text-size) * 0.875);
+    }
   }
 }
