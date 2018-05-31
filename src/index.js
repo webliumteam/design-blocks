@@ -12,17 +12,24 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  background: {
-    type: 'image',
-    position: {
-      type: 'cover',
-      cover: '50% 50%',
-    },
-    resourceRef: 'img-bg.jpg',
-    overlay: {
-      type: 'color',
-      color: '#000',
-      opacity: 0.55,
+  collection: {
+    ...Component.defaultContent.collection,
+    background: {
+      'nth-child': [
+        'n', {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'img-bg.jpg',
+          overlay: {
+            type: 'color',
+            color: '#000',
+            opacity: 0.55,
+          },
+        },
+      ],
     },
   },
 }
