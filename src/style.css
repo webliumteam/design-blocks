@@ -28,6 +28,9 @@
 .slider-dots {
     /* stylelint-disable */
   :global {
+    li {
+      margin: 5px;
+    }
 
     li button {
       width: 8px;
