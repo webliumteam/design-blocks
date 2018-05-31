@@ -1,3 +1,7 @@
 @import "wireframe-lucario-cover/src/style.css";
 
 /* start here */
+
+.slider-dots li {
+  margin: 5px;
+}
