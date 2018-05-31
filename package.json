@@ -1,6 +1,6 @@
 {
   "name": "design-poliwag-schedule_w2",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-2-schedule": "https://github.com/webliumteam/blocks#w/series-2/schedule/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
