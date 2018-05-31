@@ -12,38 +12,57 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  background: {
-    type: 'image',
-    position: {
-      type: 'cover',
-      cover: '50% 50%',
-    },
-    resourceRef: 'bg.png',
-  },
   theme: 'dark',
-  cover: [
-    {
-      ...Component.defaultContent.cover[0],
-      cta: {
-        ...Component.defaultContent.cover[0].cta,
-        size: 'lg',
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'bg.png',
+        },
+        cta: {
+          ...Component.defaultContent.collection.items[0].item_button,
+          size: 'lg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.cover[1],
-      cta: {
-        ...Component.defaultContent.cover[1].cta,
-        size: 'lg',
+      {
+        ...Component.defaultContent.collection.items[1],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'bg.png',
+        },
+        cta: {
+          ...Component.defaultContent.collection.items[1].item_button,
+          size: 'lg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.cover[2],
-      cta: {
-        ...Component.defaultContent.cover[2].cta,
-        size: 'lg',
+      {
+        ...Component.defaultContent.collection.items[2],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'bg.png',
+        },
+        cta: {
+          ...Component.defaultContent.collection.items[2].item_button,
+          size: 'lg',
+        },
       },
-    },
-  ],
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
