@@ -69,14 +69,14 @@
 .items-wrapper :global .slick-prev {
 
   @media (min-width: 992px) {
-    left: 90px;
+    left: calc(50% - 400px);
   }
 }
 
 .items-wrapper :global .slick-next {
 
   @media (min-width: 992px) {
-    right: 90px;
+    right: calc(50% - 400px);
   }
 }
 
