@@ -65,6 +65,15 @@
     }
 
     :global {
+      .slick-prev,
+      .slick-next {
+        margin-top: 20px;
+
+        @media (min-width: 768px) {
+          margin-top: 0;
+        }
+      }
+
       .slick-prev {
 
         @media (min-width: 768px) {
@@ -148,4 +157,8 @@
       }
     }
   }
+}
+
+.btns-group {
+  padding-top: 15px;
 }
