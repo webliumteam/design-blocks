@@ -33,7 +33,7 @@
 .items-wrapper {
   position: relative;
   max-width: 1200px;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-bottom: 40px;
 
   :global {
@@ -202,6 +202,8 @@
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 
   @media (--ui-medium-devices) {
     max-width: 860px;
@@ -214,13 +216,13 @@
 
 @media (--ui-tablet-devices) {
   .item__inner {
-    padding: 0 48px;
+    padding: 15px 48px;
   }
 }
 
 @media (--ui-medium-devices) {
   .item__inner {
-    padding: 0 31.5px;
+    padding: 15px 31.5px;
   }
 }
 
@@ -296,6 +298,10 @@
 
 .btns-group {
   padding-top: 40px;
+
+  @media (--ui-tablet-devices) {
+    padding-top: 25px;
+  }
 }
 
 .item__author-wrapper {
