@@ -12,11 +12,10 @@
 }
 
 .item {
-  padding: 0;
-  margin-bottom: 30px;
+  margin: 0;
 
   @media (min-width: 480px) {
-    padding: 0 15px;
+    padding: 10px;
   }
 
   @media (min-width: 768px) {
