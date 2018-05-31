@@ -13,64 +13,83 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  background: {
-    type: 'image',
-    position: {
-      type: 'cover',
-      cover: '25% 50%',
-    },
-    resourceRef: 'img-1-pizza.png',
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '25% 50%',
+          },
+          resourceRef: 'img-1-pizza.png',
+        },
+        item_heading: {
+          ...Component.defaultContent.collection.items[0].item_heading,
+          content: 'QUANTUM COMPANY',
+        },
+        item_subheading: {
+          ...Component.defaultContent.collection.items[0].item_subheading,
+          content: 'WE IMPLEMENT INNOVATIVE PROJECTS',
+          color: 'light-accent-color',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[0].item_button,
+          size: 'lg',
+        },
+      },
+      {
+        ...Component.defaultContent.collection.items[0],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '25% 50%',
+          },
+          resourceRef: 'img-1-pizza.png',
+        },
+        item_heading: {
+          ...Component.defaultContent.collection.items[0].item_heading,
+          content: 'QUANTUM COMPANY',
+        },
+        item_subheading: {
+          ...Component.defaultContent.collection.items[0].item_subheading,
+          content: 'WE IMPLEMENT INNOVATIVE PROJECTS',
+          color: 'light-accent-color',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[0].item_button,
+          size: 'lg',
+        },
+      },
+      {
+        ...Component.defaultContent.collection.items[0],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '25% 50%',
+          },
+          resourceRef: 'img-1-pizza.png',
+        },
+        item_heading: {
+          ...Component.defaultContent.collection.items[0].item_heading,
+          content: 'QUANTUM COMPANY',
+        },
+        item_subheading: {
+          ...Component.defaultContent.collection.items[0].item_subheading,
+          content: 'WE IMPLEMENT INNOVATIVE PROJECTS',
+          color: 'light-accent-color',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[0].item_button,
+          size: 'lg',
+        },
+      },
+    ],
   },
-  cover: [
-    {
-      ...Component.defaultContent.cover[0],
-      title: {
-        ...Component.defaultContent.cover[0].title,
-        content: 'QUANTUM COMPANY',
-      },
-      subtitle: {
-        ...Component.defaultContent.cover[0].subtitle,
-        content: 'WE IMPLEMENT INNOVATIVE PROJECTS',
-        color: 'light-accent-color',
-      },
-      cta: {
-        ...Component.defaultContent.cover[0].cta,
-        size: 'lg',
-      },
-    },
-    {
-      ...Component.defaultContent.cover[0],
-      title: {
-        ...Component.defaultContent.cover[0].title,
-        content: 'QUANTUM COMPANY',
-      },
-      subtitle: {
-        ...Component.defaultContent.cover[0].subtitle,
-        content: 'WE IMPLEMENT INNOVATIVE PROJECTS',
-        color: 'light-accent-color',
-      },
-      cta: {
-        ...Component.defaultContent.cover[0].cta,
-        size: 'lg',
-      },
-    },
-    {
-      ...Component.defaultContent.cover[0],
-      title: {
-        ...Component.defaultContent.cover[0].title,
-        content: 'QUANTUM COMPANY',
-      },
-      subtitle: {
-        ...Component.defaultContent.cover[0].subtitle,
-        content: 'WE IMPLEMENT INNOVATIVE PROJECTS',
-        color: 'light-accent-color',
-      },
-      cta: {
-        ...Component.defaultContent.cover[0].cta,
-        size: 'lg',
-      },
-    },
-  ],
 }
 
 ExtendedWireframe.modifierScheme = {
