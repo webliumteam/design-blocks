@@ -12,84 +12,113 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  cover: [
-    {
-      ...Component.defaultContent.cover[0],
-      title: {
-        ...Component.defaultContent.cover[0].title,
-        content: 'QUANTUM COMPANY',
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'cover.jpg',
+          overlay: {
+            type: 'color',
+            color: '#072747',
+            opacity: 0.4,
+          },
+        },
+        item_heading: {
+          ...Component.defaultContent.collection.items[0].item_heading,
+          content: 'QUANTUM COMPANY',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[0].item_button,
+          textValue: 'Request a quote',
+          type: 'secondary',
+          size: 'lg',
+        },
+        item_button_additional: {
+          ...Component.defaultContent.collection.items[0].item_button_additional,
+          textValue: 'Learn more',
+          type: 'primary',
+          size: 'lg',
+        },
       },
-      cta: {
-        ...Component.defaultContent.cover[0].cta,
-        textValue: 'Request a quote',
-        type: 'secondary',
-        size: 'lg',
+      {
+        ...Component.defaultContent.collection.items[1],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'cover.jpg',
+          overlay: {
+            type: 'color',
+            color: '#072747',
+            opacity: 0.4,
+          },
+        },
+        item_heading: {
+          ...Component.defaultContent.collection.items[1].item_heading,
+          content: 'QUANTUM COMPANY',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[1].item_button,
+          textValue: 'Request a quote',
+          type: 'secondary',
+          size: 'lg',
+        },
+        item_button_additional: {
+          ...Component.defaultContent.collection.items[1].item_button_additional,
+          textValue: 'Learn more',
+          type: 'primary',
+          size: 'lg',
+        },
       },
-      'cta-2': {
-        ...Component.defaultContent.cover[0]['cta-2'],
-        textValue: 'Learn more',
-        type: 'primary',
-        size: 'lg',
+      {
+        ...Component.defaultContent.collection.items[2],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'cover.jpg',
+          overlay: {
+            type: 'color',
+            color: '#072747',
+            opacity: 0.4,
+          },
+        },
+        item_heading: {
+          ...Component.defaultContent.collection.items[2].item_heading,
+          content: 'QUANTUM COMPANY',
+        },
+        item_button: {
+          ...Component.defaultContent.collection.items[2].item_button,
+          textValue: 'Request a quote',
+          type: 'secondary',
+          size: 'lg',
+        },
+        item_button_additional: {
+          ...Component.defaultContent.collection.items[2].item_button_additional,
+          textValue: 'Learn more',
+          type: 'primary',
+          size: 'lg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.cover[1],
-      title: {
-        ...Component.defaultContent.cover[1].title,
-        content: 'QUANTUM COMPANY',
-      },
-      cta: {
-        ...Component.defaultContent.cover[1].cta,
-        textValue: 'Request a quote',
-        type: 'secondary',
-        size: 'lg',
-      },
-      'cta-2': {
-        ...Component.defaultContent.cover[1]['cta-2'],
-        textValue: 'Learn more',
-        type: 'primary',
-        size: 'lg',
-      },
-    },
-    {
-      ...Component.defaultContent.cover[2],
-      title: {
-        ...Component.defaultContent.cover[2].title,
-        content: 'QUANTUM COMPANY',
-      },
-      cta: {
-        ...Component.defaultContent.cover[2].cta,
-        textValue: 'Request a quote',
-        type: 'secondary',
-        size: 'lg',
-      },
-      'cta-2': {
-        ...Component.defaultContent.cover[2]['cta-2'],
-        textValue: 'Learn more',
-        type: 'primary',
-        size: 'lg',
-      },
-    },
-  ],
-  background: {
-    type: 'image',
-    position: {
-      type: 'cover',
-      cover: '50% 50%',
-    },
-    resourceRef: 'cover.jpg',
-    overlay: {
-      type: 'color',
-      color: '#072747',
-      opacity: 0.4,
-    },
+    ],
   },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   arrows: {defaultValue: false, label: 'Navigation arrows', type: 'hidden'},
-  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  item_button_additional: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
