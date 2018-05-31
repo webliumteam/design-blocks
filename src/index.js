@@ -3,46 +3,66 @@ import $editor from 'weblium/editor'
 import Component from 'wireframe-lucario-cover/src/component'
 import style from './style.css'
 
+import defaultOptions from 'wireframe-lucario-cover/src/options.json'
 import options from './options.json'
 
 const {enhancers: {withProps}, hoistStatics} = $editor
 
-const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
+const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', {...defaultOptions, ...options}))))(Component)
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  background: {
-    type: 'image',
-    position: {
-      type: 'cover',
-      cover: '50% 50%',
-    },
-    resourceRef: 'bg.png',
-  },
   theme: 'dark',
-  cover: [
-    {
-      ...Component.defaultContent.cover[0],
-      cta: {
-        ...Component.defaultContent.cover[0].cta,
-        size: 'lg',
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'bg.png',
+        },
+        cta: {
+          ...Component.defaultContent.collection.items[0].item_button,
+          size: 'lg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.cover[1],
-      cta: {
-        ...Component.defaultContent.cover[1].cta,
-        size: 'lg',
+      {
+        ...Component.defaultContent.collection.items[1],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'bg.png',
+        },
+        cta: {
+          ...Component.defaultContent.collection.items[1].item_button,
+          size: 'lg',
+        },
       },
-    },
-    {
-      ...Component.defaultContent.cover[2],
-      cta: {
-        ...Component.defaultContent.cover[2].cta,
-        size: 'lg',
+      {
+        ...Component.defaultContent.collection.items[2],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'bg.png',
+        },
+        cta: {
+          ...Component.defaultContent.collection.items[2].item_button,
+          size: 'lg',
+        },
       },
-    },
-  ],
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
