@@ -2,14 +2,17 @@
 
 /* start here */
 
+.articles-wrapper {
+  margin-top: 36.5px;
+}
+
 .article {
-  margin-left: 7.5px;
-  margin-right: 7.5px;
+  margin: 7.5px;
   max-width: calc(100% - 15px);
   padding: 0;
 
   @media (min-width: 768px) {
-    margin-top: 45px;
+    margin: 7.5px;
     flex-basis: calc(50% - 15px);
     max-width: calc(50% - 15px);
   }
@@ -21,9 +24,11 @@
 
   &__title {
     position: relative;
-    font-size: calc(var(--ui-heading-size) * 1.25);
-    font-weight: calc(var(--ui-heading-font-weight) * 0.835);
     margin-bottom: 30px;
+
+    @media (min-width: 768px;) {
+      font-size: calc(var(--ui-heading-size) * 1.25);
+    }
 
     &::after {
       content: "";
@@ -65,5 +70,5 @@
 }
 
 .btns-group {
-  margin-top: 70px;
+  margin-top: 62.5px;
 }
