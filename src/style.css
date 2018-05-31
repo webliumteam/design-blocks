@@ -2,16 +2,13 @@
 
 /* start here */
 
-.section {
-  color: #fff;
+.item {
 
   @media (min-width: 768px) {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-}
 
-.item {
   &__inner {
 
     @media (min-width: 992px) {
@@ -22,21 +19,10 @@
       padding-right: 0;
     }
   }
-
-  &__title {
-
-    @media (min-width: 992px) {
-      font-size: calc(var(--ui-hero-title-size) * 0.9847);
-    }
-  }
 }
 
 .subtitle {
   margin-top: 15px;
-
-  @media (min-width: 768px) {
-    font-size: calc(var(--ui-subtitle-size) * 0.7);
-  }
 }
 
 .slider-dots {

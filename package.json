@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-lucario-cover": "https://github.com/webliumteam/blocks#w/lucario/cover/prod"
+    "wireframe-lucario-cover": "https://github.com/webliumteam/blocks#w/series-2/cover/prod"
   },
   "editorVersion": "4.13.0"
 }
