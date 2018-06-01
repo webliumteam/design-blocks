@@ -1,6 +1,6 @@
 {
   "name": "design-poliwag-services_w2",
-  "version": "0.0.17",
+  "version": "0.0.20",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-2-services": "https://github.com/webliumteam/blocks#w/series-2/services/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
