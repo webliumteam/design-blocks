@@ -126,7 +126,6 @@ Block.defaultContent = {
         image: {
           resourceRef: '',
           width: 130,
-          height: 62,
         },
       },
       title: {
@@ -138,16 +137,6 @@ Block.defaultContent = {
         type: 'text',
       },
       button: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Partner’s website',
         type: 'link',
       },
@@ -157,7 +146,6 @@ Block.defaultContent = {
         image: {
           resourceRef: '',
           width: 130,
-          height: 62,
         },
       },
       title: {
@@ -169,16 +157,6 @@ Block.defaultContent = {
         type: 'text',
       },
       button: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Partner’s website',
         type: 'link',
       },
@@ -188,7 +166,6 @@ Block.defaultContent = {
         image: {
           resourceRef: '',
           width: 130,
-          height: 62,
         },
       },
       title: {
@@ -200,16 +177,6 @@ Block.defaultContent = {
         type: 'text',
       },
       button: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Partner’s website',
         type: 'link',
       },
@@ -219,7 +186,6 @@ Block.defaultContent = {
         image: {
           resourceRef: '',
           width: 130,
-          height: 62,
         },
       },
       title: {
@@ -231,32 +197,12 @@ Block.defaultContent = {
         type: 'text',
       },
       button: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Partner’s website',
         type: 'link',
       },
     },
   ],
   button: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'secondary',
   },

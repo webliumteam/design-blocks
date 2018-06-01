@@ -17,6 +17,7 @@
 .section {
   padding: 50px 0;
   word-wrap: break-word;
+  hyphens: auto;
 
   @media (--ui-tablet-devices) {
     padding: 60px 0;
@@ -370,7 +371,6 @@
 
 .logo__image {
   max-width: 100%;
-  height: auto;
   margin: 0 auto;
 }
 
