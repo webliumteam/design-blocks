@@ -1,15 +1,12 @@
 @import "wireframe-lucario-cover/src/style.css";
 
-.section {
-  color: #fff;
+.item {
 
   @media (min-width: 992px) {
     padding-top: 150px;
     padding-bottom: 47px;
   }
-}
 
-.item {
   &__inner {
 
     @media (min-width: 992px) {
@@ -35,7 +32,6 @@
   max-width: 616px;
   margin-left: auto;
   margin-right: auto;
-  font-size: var(--ui-subtitle-size);
 }
 
 .btns-group {
