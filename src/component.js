@@ -92,10 +92,9 @@ class Block extends React.Component {
             bind={`${bindActive}.itemPicture`}
             size={
               {
-              'min-width: 992px': 470,
-              'min-width: 768px': 300,
+              'min-width: 768px': 940,
               'min-width: 480px': 800,
-              'min-width: 320px': 480,
+              'min-width: 320px': 600,
               }
             }
             attributes={{'aria-hidden': true}}
@@ -112,7 +111,7 @@ class Block extends React.Component {
                   'min-width: 992px': 470,
                   'min-width: 768px': 300,
                   'min-width: 480px': 800,
-                  'min-width: 320px': 480,
+                  'min-width: 320px': 600,
                   }
                 }
               />
