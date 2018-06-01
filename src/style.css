@@ -59,7 +59,6 @@
   }
 
   .link {
-    color: var(--ui-block-title-color);
     font-size: calc(var(--ui-text-size) * 0.78);
     font-weight: 700;
   }
@@ -70,7 +69,6 @@
   text-decoration: none;
   padding-right: 27px;
   transition: color 0.2s ease-in;
-  color: var(--ui-block-title-color);
 
   &::after {
     position: absolute;
@@ -84,11 +82,13 @@
   }
 
   &:only-child {
+    padding-left: 30px;
+
     &::before {
       position: absolute;
       content: "";
       top: 50%;
-      left: -30px;
+      left: -3px;
       transform: translateY(-50%);
       width: 12px;
       height: 2px;
@@ -99,8 +99,10 @@
 
 .btns-group {
   .link {
-    color: var(--ui-block-title-color);
     font-weight: 700;
-    font-size: calc(var(--ui-text-size) * 0.78);
   }
+}
+
+.title + .articles-wrapper {
+  margin-top: 0;
 }
