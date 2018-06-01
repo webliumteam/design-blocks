@@ -1,49 +1,39 @@
 @import "wireframe-lucario-cover/src/style.css";
 
 /* start here */
-.section {
+
+.item {
 
   @media (min-width: 992px) {
     padding-top: 22px;
     padding-bottom: 21px;
   }
-}
 
-.item {
   &__title {
-    letter-spacing: -3px;
 
     @media (min-width: 992px) {
       max-width: 770px;
-      font-size: calc(var(--ui-hero-title-size) * 80/40);
     }
   }
 }
 
 .subtitle {
-  letter-spacing: -0.5px;
-  color: var(--ui-subheading-color);
-
-  @media (min-width: 768px) {
-    font-size: var(--ui-subtitle-size);
-  }
 
   @media (min-width: 992px) {
-    font-size: var(--ui-subheading-size);
     margin-top: 0;
   }
 }
 
 .btns-group {
+  margin-bottom: 25px;
 
   @media (min-width: 992px) {
     margin-top: 37px;
+    margin-bottom: 54px;
   }
 }
 
 .slider-dots {
-  margin-top: 54px;
-
   li {
     margin-bottom: 9px;
 
@@ -67,7 +57,7 @@
   border-color: var(--ui-light-shade-color);
 }
 
-.items-wrapper :global .slick-arrow-default {
+.items-wrapper :global .slick-arrow {
 
   @media (min-width: 992px) {
     width: 12px;
@@ -76,22 +66,22 @@
   }
 }
 
-.items-wrapper :global .slick-prev-default {
+.items-wrapper :global .slick-prev {
 
   @media (min-width: 992px) {
-    left: 90px;
+    left: calc(50% - 400px);
   }
 }
 
-.items-wrapper :global .slick-next-default {
+.items-wrapper :global .slick-next {
 
   @media (min-width: 992px) {
-    right: 90px;
+    right: calc(50% - 400px);
   }
 }
 
-.items-wrapper :global .slick-prev-default,
-.items-wrapper :global .slick-next-default {
+.items-wrapper :global .slick-prev,
+.items-wrapper :global .slick-next {
 
   @media (min-width: 992px) {
     top: 226px;
