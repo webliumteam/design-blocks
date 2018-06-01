@@ -1,3 +1,19 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-cta/src/style.css";
 
 /* start here */
+
+.section__inner {
+
+  @media (min-width: 768px) {
+    margin: 130px auto;
+  }
+}
+
+.title {
+  margin-bottom: 43px;
+}
+
+.description {
+  font-size: var(--ui-subtitle-size);
+  margin-bottom: 57px;
+}
