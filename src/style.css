@@ -31,12 +31,14 @@
   @media (min-width: 992px) {
     max-width: 100%;
     letter-spacing: 0.6px;
+    color: var(--ui-light-shade-color);
   }
 }
 
 .form {
 
   @media (min-width: 992px) {
+    display: block;
     max-width: 735px;
     align-items: stretch;
     margin-top: 64px;
@@ -46,8 +48,16 @@
     font-size: inherit;
   }
 
+  &__field {
+
+    @media (min-width: 992px) {
+      display: inline-block;
+      width: 525px;
+    }
+  }
+
   input {
-    width: auto;
+    height: 60px;
     margin-top: 0;
     background-color: var(--ui-light-shade-color);
     font-weight: var(--ui-text-font-weight);
