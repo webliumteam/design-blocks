@@ -91,4 +91,8 @@
     margin: 15px;
     flex-basis: 25%;
   }
+
+  &:first-child {
+    padding-top: 56px;
+  }
 }
