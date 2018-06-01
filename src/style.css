@@ -40,14 +40,16 @@
 }
 
 .contacts {
+  &:only-child {
+
+    @media (--ui-tablet-devices) {
+      max-width: 100%;
+    }
+  }
 
   @media (--ui-medium-devices) {
     max-width: calc(100% - 645px);
     flex: 1;
-
-    &:only-child {
-      flex-basis: calc(100% - 645px);
-    }
   }
 
   &-list {
@@ -85,6 +87,13 @@
 
       @media (--ui-tablet-devices) {
         margin-bottom: 10px;
+      }
+    }
+
+    &:only-child {
+
+      @media (--ui-tablet-devices) {
+        max-width: 100%;
       }
     }
   }
