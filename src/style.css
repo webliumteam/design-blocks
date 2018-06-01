@@ -1,3 +1,66 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-2-why/src/style.css";
 
 /* start here */
+
+.section {
+
+  @media (min-width: 992px) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.articles-wrapper {
+  justify-content: center;
+}
+
+.article {
+  padding-left: 3%;
+  padding-right: 3%;
+
+  &:first-of-type {
+
+    @media (min-width: 992px) {
+      padding-left: 0;
+    }
+  }
+
+  @media (min-width: 992px) {
+    width: 33.3%;
+    padding-left: 12px;
+  }
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin-right: 5px;
+    }
+  }
+
+  &__content {
+    word-break: break-all;
+
+    @media (min-width: 992px) {
+      max-width: calc(100% - 70px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+}
+
+.section--state-5 .article {
+  align-items: flex-start;
+}
