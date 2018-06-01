@@ -72,16 +72,8 @@
     width: 100%;
     padding: 0;
     border: 0;
-
-    /* background-color: transparent; */
     text-align: left;
-
-    /* transition: background-color 0.2s ease-in; */
   }
-
-  /* &:hover .item__button {
-    background-color: var(--ui-light-accent-color);
-  } */
 
   &__title {
     padding: 30px 35px 22px 15px;
@@ -125,11 +117,6 @@
   }
 
   &--active {
-
-    /* .item__button {
-      background-color: var(--ui-light-accent-color);
-    } */
-
     .item__title {
       border: 1px solid #979797;
     }
