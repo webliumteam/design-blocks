@@ -25,15 +25,15 @@
 }
 
 .btns-group {
+  margin-bottom: 25px;
 
   @media (min-width: 992px) {
     margin-top: 37px;
+    margin-bottom: 54px;
   }
 }
 
 .slider-dots {
-  margin-top: 54px;
-
   li {
     margin-bottom: 9px;
 
