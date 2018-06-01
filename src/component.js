@@ -20,7 +20,7 @@ class Block extends React.Component {
   }
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Image}, style} = this.props
+    const {components: {Text, Image, SocialIcons, Button}, style} = this.props
     const activeTab = +index.match(/\d+$/)[0]
 
     return (
@@ -40,8 +40,24 @@ class Block extends React.Component {
             resize={{disable: true}}
           />
           <div className={style['tabs-item__content']}>
-            <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={style['tabs-item__title']} />
             <Text bind={`collection[${index}].itemPosition`} tagName="small" className={style['tabs-item__position']} />
+            <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={style['tabs-item__title']} />
+            <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'])} tagName="p" />
+
+            <div className={classNames(style.item__bottom, style['tabs-item__bottom'], style['item__bottom--mobile'])}>
+              <div className={style['item__bottom-side']}>
+                <div className={style['item__email-wrapper']}>
+                  <Text bind={`collection[${index}].itemEmail`} className={style.item__email} />
+                </div>
+                <SocialIcons className={style.socials} bind={`collection[${index}].itemSocialIcons`} />
+              </div>
+              <Button
+                buttonClassName={style.button}
+                linkClassName={style.link}
+                className={style.item__button}
+                bind={`collection[${index}].itemLink`}
+              />
+            </div>
           </div>
         </button>
       </li>
@@ -187,7 +203,7 @@ Block.defaultContent = {
             innerFill: true,
             preset: 'preset001',
             offset: 15,
-            color: '#9b9b9b',
+            color: 'brand-color',
             sizes: [15, 25, 35, 45],
             size: 25,
           },
@@ -251,7 +267,7 @@ Block.defaultContent = {
             innerFill: true,
             preset: 'preset001',
             offset: 15,
-            color: '#9b9b9b',
+            color: 'brand-color',
             sizes: [15, 25, 35, 45],
             size: 25,
           },
@@ -315,7 +331,7 @@ Block.defaultContent = {
             innerFill: true,
             preset: 'preset001',
             offset: 15,
-            color: '#9b9b9b',
+            color: 'brand-color',
             sizes: [15, 25, 35, 45],
             size: 25,
           },
@@ -379,7 +395,7 @@ Block.defaultContent = {
             innerFill: true,
             preset: 'preset001',
             offset: 15,
-            color: '#9b9b9b',
+            color: 'brand-color',
             sizes: [15, 25, 35, 45],
             size: 25,
           },
