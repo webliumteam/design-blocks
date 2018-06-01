@@ -104,3 +104,7 @@
     text-align: left;
   }
 }
+
+.title + .articles-wrapper {
+  margin-top: 0;
+}
