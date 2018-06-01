@@ -27,7 +27,6 @@
 
 .slider-dots {
     /* stylelint-disable */
-    padding-top: 25px;
 
   :global {
     li {
@@ -54,4 +53,5 @@
 
 .btns-group {
   margin-top: 40px;
+  margin-bottom: 25px;
 }
