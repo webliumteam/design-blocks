@@ -29,6 +29,23 @@
       justify-content: center;
     }
   }
+
+  &--right {
+    text-align: left;
+
+    .article {
+      margin: 0 0 0 auto;
+
+      &__title,
+      &__heading {
+        text-align: left;
+      }
+    }
+
+    .socials-wrapper {
+      justify-content: flex-start;
+    }
+  }
 }
 
 .section__inner {

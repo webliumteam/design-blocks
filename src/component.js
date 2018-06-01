@@ -170,6 +170,7 @@ Block.modifierScheme = {
     children: [
       {id: 'left', label: 'Left'},
       {id: 'center', label: 'Center'},
+      {id: 'right', label: 'Right'},
     ],
     defaultValue: 'left',
     name: 'Aligning',
