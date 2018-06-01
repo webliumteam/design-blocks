@@ -3,22 +3,17 @@
 /* start here */
 
 .section {
-  padding-bottom: 0;
-
-  @media (min-width: 768px) {
-    padding-bottom: 10px;
-  }
-
-  @media (min-width: 992px) {
-    padding-bottom: 25px;
-  }
+  padding-top: 30px;
 }
 
 .title {
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 }
 
 .article {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
   &__title {
     margin-bottom: 16px;
   }
