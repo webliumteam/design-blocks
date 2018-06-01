@@ -22,6 +22,8 @@ class Block extends React.Component {
   collectionItem = ({index, children, className}) => {
     const {components: {Text, Image, SocialIcons, Button}, style} = this.props
     const activeTab = +index.match(/\d+$/)[0]
+    const itemBottomSide = this.getModifierValue('item_contacts') || this.getModifierValue('item_socials')
+    const itemBottom = itemBottomSide || this.getModifierValue('item_link')
 
     return (
       <li className={classNames(style['tabs-item'], className, {[style['tabs-item--active']]: activeTab === this.state.active})} onClick={this.toggleItemVisible(index)} role="presentation">
@@ -42,22 +44,32 @@ class Block extends React.Component {
           <div className={style['tabs-item__content']}>
             <Text bind={`collection[${index}].itemPosition`} tagName="small" className={style['tabs-item__position']} />
             <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={style['tabs-item__title']} />
-            <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'])} tagName="p" />
-
-            <div className={classNames(style.item__bottom, style['tabs-item__bottom'], style['item__bottom--mobile'])}>
-              <div className={style['item__bottom-side']}>
-                <div className={style['item__email-wrapper']}>
-                  <Text bind={`collection[${index}].itemEmail`} className={style.item__email} />
-                </div>
-                <SocialIcons className={style.socials} bind={`collection[${index}].itemSocialIcons`} />
+            {this.getModifierValue('item_body') && (
+              <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'])} tagName="p" />
+            )}
+            {itemBottom && (
+              <div className={classNames(style.item__bottom, style['tabs-item__bottom'], style['item__bottom--mobile'])}>
+                {itemBottomSide && (
+                  <div className={style['item__bottom-side']}>
+                    {this.getModifierValue('item_contacts') && (
+                      <div className={style['item__email-wrapper']}>
+                        <Text bind={`collection[${index}].itemEmail`} className={style.item__email} />
+                      </div>
+                    )}
+                    {this.getModifierValue('item_socials') && (
+                      <SocialIcons className={style.socials} bind={`collection[${index}].itemSocialIcons`} />
+                    )}
+                  </div>
+                )}
+                {this.getModifierValue('item_link')}
+                <Button
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  className={style.item__button}
+                  bind={`collection[${index}].itemLink`}
+                />
               </div>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                className={style.item__button}
-                bind={`collection[${index}].itemLink`}
-              />
-            </div>
+            )}
           </div>
         </button>
       </li>
@@ -67,6 +79,8 @@ class Block extends React.Component {
   render() {
     const {components: {Text, Image, Collection, Button, SocialIcons}, style, $block} = this.props
     const bindActive = `collection.items[${this.state.active}]`
+    const itemBottomSide = this.getModifierValue('item_contacts') || this.getModifierValue('item_socials')
+    const itemBottom = itemBottomSide || this.getModifierValue('item_link')
 
     return (
       <section className={style.section}>
@@ -105,22 +119,33 @@ class Block extends React.Component {
               <div className={style.item__content}>
                 <Text bind={`${bindActive}.itemPosition`} className={style.item__position} tagName="small" />
                 <Text bind={`${bindActive}.itemTitle`} className={style.item__title} tagName="h2" />
-                <Text bind={`${bindActive}.itemContent`} className={style.item__text} tagName="p" />
-
-                <div className={style.item__bottom}>
-                  <div className={style['item__bottom-side']}>
-                    <div className={style['item__email-wrapper']}>
-                      <Text bind={`${bindActive}.itemEmail`} className={style.item__email} />
-                    </div>
-                    <SocialIcons className={style.socials} bind={`${bindActive}.itemSocialIcons`} />
+                {this.getModifierValue('item_body') && (
+                  <Text bind={`${bindActive}.itemContent`} className={style.item__text} tagName="p" />
+                )}
+                {itemBottom && (
+                  <div className={style.item__bottom}>
+                    {itemBottomSide && (
+                      <div className={style['item__bottom-side']}>
+                        {this.getModifierValue('item_contacts') && (
+                          <div className={style['item__email-wrapper']}>
+                            <Text bind={`${bindActive}.itemEmail`} className={style.item__email} />
+                          </div>
+                        )}
+                        {this.getModifierValue('item_socials') && (
+                          <SocialIcons className={style.socials} bind={`${bindActive}.itemSocialIcons`} />
+                        )}
+                      </div>
+                    )}
+                    {this.getModifierValue('item_link') && (
+                      <Button
+                        buttonClassName={style.button}
+                        linkClassName={style.link}
+                        className={style.item__button}
+                        bind={`${bindActive}.itemLink`}
+                      />
+                    )}
                   </div>
-                  <Button
-                    buttonClassName={style.button}
-                    linkClassName={style.link}
-                    className={style.item__button}
-                    bind={`${bindActive}.itemLink`}
-                  />
-                </div>
+                )}
               </div>
             </div>
             <Collection
@@ -133,6 +158,15 @@ class Block extends React.Component {
                 modifier: $block.modifier,
               }}
             />
+            {this.getModifierValue('button') && (
+              <div className={style['btns-group']}>
+                <Button
+                  className={style.button}
+                  linkClassName={style.link}
+                  bind="button"
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -166,17 +200,7 @@ Block.defaultContent = {
           alt: 'Andrew Shimmer photo',
         },
         itemLink: {
-          actionConfig: {
-            action: 'link',
-            actions: {
-              link: {
-                type: '',
-                innerPage: '',
-                url: '',
-              },
-            },
-          },
-          textValue: 'Learn more',
+          textValue: 'View full bio',
           type: 'link',
         },
         itemSocialIcons: {
@@ -230,17 +254,7 @@ Block.defaultContent = {
           alt: 'Amanda Trainer  photo',
         },
         itemLink: {
-          actionConfig: {
-            action: 'link',
-            actions: {
-              link: {
-                type: '',
-                innerPage: '',
-                url: '',
-              },
-            },
-          },
-          textValue: 'Learn more',
+          textValue: 'View full bio',
           type: 'link',
         },
         itemSocialIcons: {
@@ -294,17 +308,7 @@ Block.defaultContent = {
           alt: 'Tomas Abbar photo',
         },
         itemLink: {
-          actionConfig: {
-            action: 'link',
-            actions: {
-              link: {
-                type: '',
-                innerPage: '',
-                url: '',
-              },
-            },
-          },
-          textValue: 'Learn more',
+          textValue: 'View full bio',
           type: 'link',
         },
         itemSocialIcons: {
@@ -358,17 +362,7 @@ Block.defaultContent = {
           alt: 'Jeff Bin photo',
         },
         itemLink: {
-          actionConfig: {
-            action: 'link',
-            actions: {
-              link: {
-                type: '',
-                innerPage: '',
-                url: '',
-              },
-            },
-          },
-          textValue: 'Learn more',
+          textValue: 'View full bio',
           type: 'link',
         },
         itemSocialIcons: {
@@ -403,11 +397,18 @@ Block.defaultContent = {
       },
     ],
   },
+  button: {
+    type: 'secondary',
+    textValue: 'All team members',
+  },
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  item_body: {defaultValue: true, label: 'Employee bio', type: 'checkbox'},
+  item_contacts: {defaultValue: true, label: 'Employee contacts', type: 'checkbox'},
+  item_socials: {defaultValue: true, label: 'Socials buttons', type: 'checkbox'},
+  item_link: {defaultValue: true, label: 'Link', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
-
 
 export default Block

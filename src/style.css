@@ -287,3 +287,8 @@
     max-width: 50%;
   }
 }
+
+.btns-group {
+  padding-top: 60px;
+  text-align: center;
+}
