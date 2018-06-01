@@ -169,19 +169,6 @@
   }
 }
 
-.logo__title {
-
-  /*
-  font-size: inherit;
-  */
-}
-
-.logo__subtitle {
-
-  /* font-size: calc(var(--ui-subtitle-size) * 0.8); */
-  color: var(--ui-subtitle-color);
-}
-
 .logo__pic {
   width: 100%;
 }
