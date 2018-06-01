@@ -27,6 +27,8 @@
 
 .slider-dots {
     /* stylelint-disable */
+    padding-top: 25px;
+
   :global {
     li {
       margin: 5px;
