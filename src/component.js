@@ -1,11 +1,18 @@
 import $editor from 'weblium/editor'
 // import MediaQuery from 'react-responsive'
 
+const mediaSizes = {
+  'min-width: 992px': 470,
+  'min-width: 768px': 300,
+  'min-width: 480px': 800,
+  'min-width: 320px': 480,
+}
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   state = {
@@ -20,11 +27,13 @@ class Block extends React.Component {
   }
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Image}, style} = this.props
+    const {components: {Text, Image}, style, $block, content} = this.props
     const activeTab = +index.match(/\d+$/)[0]
 
     return (
-      <li className={classNames(style['tabs-item'], className, {[style['tabs-item--active']]: activeTab === this.state.active})} onClick={this.toggleItemVisible(index)} role="presentation">
+      <li className={classNames(style['tabs-item'], className, {[style['tabs-item--active']]: activeTab === this.state.active})}
+          onClick={this.toggleItemVisible(index)} role="presentation"
+      >
         {children}
 
         <button type="button" role="tab" className={style['tabs-item__button']}>
@@ -48,6 +57,25 @@ class Block extends React.Component {
     )
   }
 
+  renderShadowImages = () => {
+    const {content, components: {SsrOnly, Image}, style} = this.props
+    return _.flow(
+      _.get('collection.items.length'),
+      (length) => _.range(0, length),
+      _.map((index) => (
+        <SsrOnly>
+          <Image
+            pictureClassName={style['tabs-item__picture']}
+            imgClassName={style['tabs-item__image']}
+            bind={`collection.items[${index}].itemPicture`}
+            size={mediaSizes}
+            disableMarkup
+            />
+        </SsrOnly>
+      ))
+    )(content)
+  }
+
   render() {
     const {components: {Text, Image, Collection, Button, SocialIcons}, style, $block} = this.props
     const bindActive = `collection.items[${this.state.active}]`
@@ -60,16 +88,10 @@ class Block extends React.Component {
             pictureClassName={style.item__picture}
             imgClassName={style.item__image}
             bind={`${bindActive}.itemPicture`}
-            size={
-              {
-              'min-width: 992px': 470,
-              'min-width: 768px': 300,
-              'min-width: 480px': 800,
-              'min-width: 320px': 480,
-              }
-            }
+            size={mediaSizes}
             attributes={{'aria-hidden': true}}
           />
+          {this.renderShadowImages()}
           <div className={style['item-wrapper']}>
             <div className={style.item} role="tabpanel">
               <Image
@@ -77,14 +99,7 @@ class Block extends React.Component {
                 pictureClassName={style.item__picture}
                 imgClassName={style.item__image}
                 bind={`${bindActive}.itemPicture`}
-                size={
-                  {
-                  'min-width: 992px': 470,
-                  'min-width: 768px': 300,
-                  'min-width: 480px': 800,
-                  'min-width: 320px': 480,
-                  }
-                }
+                size={mediaSizes}
               />
               <div className={style.item__content}>
                 <Text bind={`${bindActive}.itemPosition`} className={style.item__position} tagName="small" />
@@ -124,7 +139,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Collection', 'Button', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Collection', 'Button', 'SocialIcons', 'SsrOnly'])($editor.components)
 
 Block.defaultContent = {
   collection: {
