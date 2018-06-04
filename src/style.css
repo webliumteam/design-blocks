@@ -1,3 +1,42 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-2-cta/src/style.css";
 
 /* start here */
+
+.section {
+  &__header {
+    margin-bottom: 37px;
+  }
+
+  &__inner {
+
+    @media (min-width: 768px) {
+      max-width: 849px;
+    }
+  }
+}
+
+.form {
+  &__item {
+    margin-bottom: 11px;
+  }
+
+  &__field {
+    font-size: var(--ui-small-size);
+    font-style: italic;
+    background-color: rgba(103, 103, 103, 0);
+
+    input,
+    textarea {
+      background-color: rgba(103, 103, 103, 0.06);
+      font-style: italic;
+    }
+
+    textarea {
+      min-height: 170px;
+    }
+  }
+
+  &__button {
+    margin-top: 11px;
+  }
+}
