@@ -1,6 +1,82 @@
-@import "wireframe-master/src/style.css";
+@import "wireframe-series-2-footer/src/style.css";
 
-.section {
-  color: #fff;
-  background-color: #333;
+/* start here */
+.footer {
+  padding-bottom: 0;
+
+  @media (min-width: 992px) {
+    padding-top: 85px;
+  }
+
+  &__text {
+    letter-spacing: -0.2px;
+  }
+
+  &__part--center {
+
+    @media (min-width: 992px) {
+      max-width: 61%;
+      flex-basis: 61%;
+      padding-left: 107px;
+      padding-top: 18px;
+    }
+  }
+
+  &__part--last {
+
+    @media (min-width: 992px) {
+      max-width: 14%;
+      flex-basis: 14%;
+      padding-top: 13px;
+    }
+  }
+
+  &__bottom {
+    background-color: #f3f4f9;
+    padding-bottom: 10px;
+
+    @media (min-width: 992px) {
+      margin-top: 85px;
+      padding-top: 19px;
+      padding-bottom: 22px;
+    }
+  }
+
+  &__meta {
+    text-transform: uppercase;
+    color: var(--ui-dark-shade-color);
+  }
+}
+
+.logo {
+
+  @media (min-width: 992px) {
+    margin-bottom: 14px;
+  }
+
+  img {
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      margin-left: 0;
+    }
+  }
+}
+
+.nav-list {
+  &__item {
+
+    @media (min-width: 992px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__link {
+    color: var(--ui-text-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--ui-brand-color);
+    }
+  }
 }
