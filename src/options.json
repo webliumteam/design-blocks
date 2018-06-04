@@ -2,7 +2,7 @@
   "title-in-top": false,
   "icon-decorator-in-top": false,
   "hidden-social-heading": false,
-  "min-resize": false,
-  "max-resize": false,
+  "min-resize": 20,
+  "max-resize": 100,
   "disable-resizer": false
 }
