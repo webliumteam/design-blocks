@@ -1,4 +1,5 @@
 import $editor from 'weblium/editor'
+import ReactMarkdown from 'react-markdown'
 
 class Block extends React.Component {
   static propTypes = {
@@ -6,49 +7,81 @@ class Block extends React.Component {
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
+  state = {}
+
+  componentDidMount() {
+    const {$block, registerRoute} = this.props
+
+    // const {accessToken, space} = this.getModifierValue('contentfull')
+    const contentful = require('contentful')
+    const client = contentful.createClient({
+      accessToken: 'f58f465d35450cc8a0f033fdedaf4d4b375da8e747f41f9a59ea2df52beaf0f7',
+      space: 'yrzptirqba05'
+    })
+    client.getEntries({
+      content_type: 'post',
+    }).then((entries) => {
+      const posts = entries.items
+      this.setState({posts})
+      registerRoute && registerRoute(posts)
+    })
+  }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  itemHeader = (itemNumber) => {
+  itemHeader = (post) => {
     const {components: {Text, Image}, style} = this.props
+    const imageUrl = _.get('image.fields.file.url')(post)
     return [
       this.getModifierValue('item_image') && (
         <Image
           wrapperClassName={style['article__picture-wrapper']}
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
-          bind={`collection[${itemNumber}].item_image`}
+          value={{src: imageUrl}}
           size={{'min-width: 768px': 570, 'min-width: 480px': 768, 'min-width: 320px': 480}}
         />
       ),
       this.getModifierValue('item_date') && (
         <small className={style.article__meta}>
-          {!this.getOptionValue('hidden-category') && <Text tagName="span" bind={`collection[${itemNumber}].item_category`} className={style.article__category} /> }
-          {!this.getOptionValue('hidden-date') && <Text tagName="span" bind={`collection[${itemNumber}].item_date`} className={style.article__date} /> }
+          {!this.getOptionValue('hidden-category') && <Text tagName="span" value={{content: post.articleCategory}} className={style.article__category} /> }
+          {!this.getOptionValue('hidden-date') && <Text tagName="span" value={{content: post.subtitle}} className={style.article__date} /> }
         </small>
       ),
     ]
   }
 
-  collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button}, style} = this.props
+  renderPosts = () => {
+    const {posts} = this.state
+    const {style, components: {Text}} = this.props
+    if (!posts) {
+      return <div>Loading ....</div>
+    }
+    return <div className={classNames('collection', style['articles-wrapper'])}>{posts.map(this.postItem)}</div>
+  }
+
+  postItem = (item) => {
+    const {style, components: {Text, Button}, $block} = this.props
+    const post = _.getOr({}, 'fields')(item)
+    const resolveLink = () => {
+      return '/news/post1'
+    }
+
     return (
-      <article className={classNames(style.article, className)}>
-        {children}
-        {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(index)}</div> : this.itemHeader(index)}
-        <Text tagName="h2" className={style.article__title} bind={`collection[${index}].item_title`} />
-        {this.getModifierValue('item_body') && (
-        <Text tagName="p" className={style.article__text} bind={`collection[${index}].item_body`} />
-        )}
+      <article className={classNames(style.article)}>
+        {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(post)}</div> : this.itemHeader(post)}
+        <Text tagName="h2" className={style.article__title} value={{content: post.title}} />
+        <ReactMarkdown source={post.content} />
         {this.getModifierValue('item_button') && (
           <Button
             className={style.article__link}
             buttonClassName={style.button}
             linkClassName={style.link}
-            bind={`collection[${index}].item_button`}
+            bind="moreButton"
+            resolveLink={resolveLink}
           />
         )}
       </article>
@@ -56,7 +89,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style} = this.props
+    const {components: {Text, Button, Icon}, style} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -67,15 +100,7 @@ class Block extends React.Component {
           {this.getModifierValue('subtitle') && (
             <Text tagName="div" className={style.subtitle} bind="subtitle" />
             )}
-          <Collection
-            className={style['articles-wrapper']}
-            bind="collection"
-            Item={this.collectionItem}
-            fakeHelpers={{
-              count: 2,
-              className: style.fake,
-            }}
-          />
+          {this.renderPosts()}
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
@@ -108,86 +133,10 @@ Block.defaultContent = {
   },
   collection: {
     background: {},
-    items: [
-      {
-        item_title: {
-          content: 'How to Hire the Best Employees to Your Company?',
-          type: 'heading',
-        },
-        item_body: {
-          content: 'Our HR Director shares his experience how to fill positions with the best candidates, where to find talents, and how to attract professionals to your business. ',
-          type: 'text',
-        },
-        item_category: {
-          content: 'Creative Process',
-          type: 'caption',
-        },
-        item_date: {
-          content: 'September 22, 2017',
-          type: 'caption',
-        },
-        item_image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Article illustration photo',
-        },
-        item_button: {
-          textValue: 'Learn more',
-          type: 'link',
-        },
-      },
-      {
-        item_title: {
-          content: 'How to Achieve Higher Profits in Retail with One Product?',
-          type: 'heading',
-        },
-        item_body: {
-          content: 'Do you want to achieve higher profits this year? Our new product will help you get what you want. In this article, you will find out how to use it to get more benefits.',
-          type: 'text',
-        },
-        item_category: {
-          content: 'Creative Process',
-          type: 'caption',
-        },
-        item_date: {
-          content: 'September 22, 2017',
-          type: 'caption',
-        },
-        item_image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Article illustration photo',
-        },
-        item_button: {
-          textValue: 'Learn more',
-          type: 'link',
-        },
-      },
-      {
-        item_title: {
-          content: 'Top 5 Tips to Improve Your Engineering Department.',
-          type: 'heading',
-        },
-        item_body: {
-          content: 'You engineers can bring you better results! Get to know how to improve engineering department to make a new step for your company growth. ',
-          type: 'text',
-        },
-        item_category: {
-          content: 'Creative Process',
-          type: 'caption',
-        },
-        item_date: {
-          content: 'September 22, 2017',
-          type: 'caption',
-        },
-        item_image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Article illustration photo',
-        },
-        item_button: {
-          textValue: 'Learn more',
-          type: 'link',
-        },
-      },
-    ],
+  },
+  moreButton: {
+    textValue: 'Load more',
+    type: 'secondary',
   },
   button: {
     textValue: 'Learn more',
@@ -205,5 +154,11 @@ Block.modifierScheme = {
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
+Block.provideRoute = () => {
+  const parentPath = window.location.path
+  return {
+    path: `/${parentPath}/:id`,
+  }
+}
 
 export default Block
