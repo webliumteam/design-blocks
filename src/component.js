@@ -16,7 +16,7 @@ class Block extends React.Component {
     const contentful = require('contentful')
     const client = contentful.createClient({
       accessToken: 'f58f465d35450cc8a0f033fdedaf4d4b375da8e747f41f9a59ea2df52beaf0f7',
-      space: 'yrzptirqba05'
+      space: 'yrzptirqba05',
     })
     client.getEntries({
       content_type: 'post',
@@ -66,9 +66,7 @@ class Block extends React.Component {
   postItem = (item) => {
     const {style, components: {Text, Button}, $block} = this.props
     const post = _.getOr({}, 'fields')(item)
-    const resolveLink = () => {
-      return '/news/post1'
-    }
+    const resolveLink = () => '/news/post1'
 
     return (
       <article className={classNames(style.article)}>
