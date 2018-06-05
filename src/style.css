@@ -11,6 +11,11 @@
       top: -49px;
     }
   }
+
+  &__email {
+    margin-right: 0;
+    margin-left: auto;
+  }
 }
 
 .nav {
