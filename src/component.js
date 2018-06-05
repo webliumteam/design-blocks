@@ -152,11 +152,4 @@ Block.modifierScheme = {
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
 
-Block.provideRoute = () => {
-  const parentPath = window.location.path
-  return {
-    path: `/${parentPath}/:id`,
-  }
-}
-
 export default Block
