@@ -106,6 +106,7 @@ class Block extends React.Component {
             itemProps={{
               modifier: $block.modifier,
             }}
+            disableControls
           />
           <Slider
             className={classNames(style['items-wrapper'], onlyNameClass)}
