@@ -6,6 +6,7 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   state = {
@@ -13,6 +14,11 @@ class Block extends React.Component {
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  getActiveIndex = () => {
+    const {content} = this.props
+    return _.clamp(0, content.collection.items.length - 1)(this.state.active)
+  }
 
   toggleItemVisible = item => () => {
     const index = +item.match(/\d+$/)[0]
@@ -24,9 +30,10 @@ class Block extends React.Component {
     const activeTab = +index.match(/\d+$/)[0]
     const itemBottomSide = this.getModifierValue('item_contacts') || this.getModifierValue('item_socials')
     const itemBottom = itemBottomSide || this.getModifierValue('item_link')
+    const activeIndex = this.getActiveIndex()
 
     return (
-      <li className={classNames(style['tabs-item'], className, {[style['tabs-item--active']]: activeTab === this.state.active})} onClick={this.toggleItemVisible(index)} role="presentation">
+      <li className={classNames(style['tabs-item'], className, {[style['tabs-item--active']]: activeTab === activeIndex})} onClick={this.toggleItemVisible(index)} role="presentation">
         {children}
 
         <button type="button" role="tab" className={style['tabs-item__button']}>
@@ -77,8 +84,8 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Text, Image, Collection, Button, SocialIcons}, style, $block} = this.props
-    const bindActive = `collection.items[${this.state.active}]`
+    const {components: {Text, Image, Collection, Button, SocialIcons}, style, content, $block} = this.props
+    const bindActive = `collection.items[${this.getActiveIndex()}]`
     const itemBottomSide = this.getModifierValue('item_contacts') || this.getModifierValue('item_socials')
     const itemBottom = itemBottomSide || this.getModifierValue('item_link')
 
