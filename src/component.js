@@ -1,5 +1,6 @@
 import $editor from 'weblium/editor'
 import ReactMarkdown from 'react-markdown'
+import {Link} from 'react-router-dom'
 
 class Block extends React.Component {
   static propTypes = {
@@ -73,6 +74,7 @@ class Block extends React.Component {
         {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(post)}</div> : this.itemHeader(post)}
         <Text tagName="h2" className={style.article__title} value={{content: post.title}} />
         <ReactMarkdown source={post.content} />
+        <Link to={{pathname: '/news/post', state: {item}}} >Load more</Link>
         {this.getModifierValue('item_button') && (
           <Button
             className={style.article__link}
