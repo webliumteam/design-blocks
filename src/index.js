@@ -13,6 +13,14 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   collection: {
     ...Component.defaultContent.collection,
+    background: {
+      'nth-child': [
+        ['n', {
+          color: 'light-shade-color',
+          type: 'color',
+        }],
+      ],
+    },
     items: [
       {
         ...Component.defaultContent.collection.items[0],
@@ -115,8 +123,8 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'karim-ghantous-329207-unsplash.jpg',
     overlay: {
       type: 'color',
-      color: 'light-shade-color',
-      opacity: 0.75,
+      color: 'brand-color',
+      opacity: 0.35,
     },
   },
 }
