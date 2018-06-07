@@ -1,3 +1,63 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-2-cta/src/style.css";
 
-/* start here */
+.section {
+  &__inner {
+    max-width: 1170px;
+    background-color: transparent;
+  }
+
+  &__header {
+    margin-bottom: 35px;
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+.title {
+  &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    margin: 25px auto 55px;
+    background-color: var(--ui-brand-color);
+  }
+}
+
+.subtitle {
+  font-size: var(--ui-subtitle-size);
+}
+
+.form {
+
+  @media (min-width: 768px) {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
+
+  &__field {
+    background-color: transparent;
+
+    input,
+    textarea {
+      border: 1px solid var(--ui-text-color);
+      background-color: transparent;
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+  }
+
+  &__button {
+    width: auto;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    @media (min-width: 992px) {
+      margin-top: 25px;
+    }
+  }
+}
+
