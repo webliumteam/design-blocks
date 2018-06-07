@@ -93,8 +93,12 @@
   @media (min-width: 992px) {
     display: none;
   }
-  
-  .background-wrapper {
+
+  [class*="background-wrapper"] {
     position: fixed;
+
+    @media (min-width: 992px) {
+      position: absolute;
+    }
   }
 }
