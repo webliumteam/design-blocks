@@ -2,25 +2,7 @@
 
 /* start here */
 
-.title {
-  letter-spacing: var(--ui-block-title-letter-spacing);
-}
-
 .item {
-  &__heading {
-    font-weight: 500;
-    letter-spacing: var(--ui-heading-letter-spacing);
-  }
-
-  &__desc {
-    margin-bottom: 20px;
-    padding-right: 35px;
-    letter-spacing: var(--ui-text-letter-spacing);
-  }
-}
-
-.advantages {
-  &__desc {
-    letter-spacing: var(--ui-text-letter-spacing);
-  }
+  border: 1px solid var(--ui-brand-color);
+  box-shadow: 2px 2px 1px var(--ui-brand-color);
 }
