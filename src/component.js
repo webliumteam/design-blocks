@@ -91,10 +91,10 @@ class Block extends React.Component {
                             <Text tagName="span" className={style.author__name} bind="author_name" />
                           )}
                           {this.getModifierValue('date') && (
-                            <Text tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} bind="author_date" />
+                            <Text tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} bind="article_date" />
                           )}
                           {this.getModifierValue('time') && (
-                            <Text tagName="span" className={style.author__time} />
+                            <Text tagName="span" className={style.author__time} bind="article_time" />
                           )}
                         </div>
                       )}
@@ -128,13 +128,29 @@ Block.defaultContent = {
     content: 'We provide a wide range of services to meet even the most daring requirements. ',
     type: 'subtitle',
   },
+  author_picture: {
+    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+    alt: 'Avatar',
+  },
+  author_name: {
+    type: 'subheading',
+    content: 'Mellany Brown',
+  },
+  article_date: {
+    type: 'small',
+    content: 'Jun 7',
+  },
+  article_time: {
+    type: 'small',
+    content: '⋆ 7 min read',
+  },
   body: {
     content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
     type: 'text',
   },
   picture: {
     src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-    alt: 'Picture about the company',
+    alt: 'Picture about the post',
   },
 }
 
@@ -144,10 +160,16 @@ Block.modifierScheme = {
     name: 'Arrange elements',
     type: 'swap',
   },
+  'article-picture': {defaultValue: true, label: 'Article picture', type: 'checkbox'},
+  category: {defaultValue: true, label: 'Post category', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
+  avatar: {defaultValue: true, label: 'Author photo', type: 'checkbox'},
+  name: {defaultValue: true, label: 'Author name', type: 'checkbox'},
+  date: {defaultValue: true, label: 'Publication date', type: 'checkbox'},
+  divider: {defaultValue: true, label: 'Decorator divider', type: 'checkbox'},
+  time: {defaultValue: true, label: 'Post read time', type: 'checkbox'},
   body: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  'article-picture': {defaultValue: true, label: 'Article picture', type: 'checkbox'},
 }
 
 export default Block
