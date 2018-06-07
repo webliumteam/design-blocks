@@ -93,4 +93,8 @@
   @media (min-width: 992px) {
     display: none;
   }
+  
+  .background-wrapper {
+    position: fixed;
+  }
 }
