@@ -147,7 +147,7 @@ Block.modifierScheme = {
     type: 'swap',
   },
   category: {defaultValue: true, label: 'Post category', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
   avatar: {defaultValue: true, label: 'Author photo', type: 'checkbox'},
   name: {defaultValue: true, label: 'Author name', type: 'checkbox'},
   date: {defaultValue: true, label: 'Publication date', type: 'checkbox'},

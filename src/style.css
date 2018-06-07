@@ -94,10 +94,6 @@
     margin-top: 5px;
   }
 
-  &__subtitle + * {
-    margin-top: 25px;
-  }
-
   &__content {
     max-width: 100%;
 
@@ -110,6 +106,7 @@
 
 .author {
   display: flex;
+  margin-top: 25px;
   align-items: center;
 
   &__info {
