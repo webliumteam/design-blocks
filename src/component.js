@@ -25,16 +25,6 @@ class Block extends React.Component {
       this.getModifierValue('text')
     )
 
-    const onlyImage = !(
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle') ||
-      this.getModifierValue('text')
-    )
-
-    const articleHeader = this.getModifierValue('category') ||
-      this.getModifierValue('title') ||
-      this.getModifierValue('subtitle')
-
     const authorText = this.getModifierValue('name') ||
       this.getModifierValue('date') ||
       this.getModifierValue('divider') ||
@@ -60,46 +50,44 @@ class Block extends React.Component {
                 size={this.getImageSize(columnLayout)}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
               />
-              {articleHeader && (
-                <header className={style.article__header}>
-                  {this.getModifierValue('category') &&
-                    <Text tagName="p" className={style.article__category} bind="category" />
-                  }
-                  <Text tagName="h1" className={style.article__title} bind="title" />
-                  {this.getModifierValue('subtitle') && (
-                    <Text tagName="p" className={style.article__subtitle} bind="subtitle" />
-                  )}
-                  {authorInfo && (
-                    <div className={style.author}>
-                      {this.getModifierValue('avatar') && (
-                        <Image
-                          wrapperClassName={style['author__picture-wrapper']}
-                          pictureClassName={style.author__picture}
-                          imgClassName={style.author__image}
-                          bind="author_picture"
-                          size={this.getImageSize(columnLayout)}
-                          resize={{disable: true}}
-                        />
-                      )}
-                      {authorText && (
-                        <div className={style.author__info}>
-                          {this.getModifierValue('name') && (
-                            <Text tagName="span" className={style.author__name} bind="author_name" />
+              <header className={style.article__header}>
+                {this.getModifierValue('category') &&
+                  <Text tagName="p" className={style.article__category} bind="category" />
+                }
+                <Text tagName="h1" className={style.article__title} bind="title" />
+                {this.getModifierValue('subtitle') && (
+                  <Text tagName="p" className={style.article__subtitle} bind="subtitle" />
+                )}
+                {authorInfo && (
+                  <div className={style.author}>
+                    {this.getModifierValue('avatar') && (
+                      <Image
+                        wrapperClassName={style['author__picture-wrapper']}
+                        pictureClassName={style.author__picture}
+                        imgClassName={style.author__image}
+                        bind="author_picture"
+                        size={this.getImageSize(columnLayout)}
+                        resize={{disable: true}}
+                      />
+                    )}
+                    {authorText && (
+                      <div className={style.author__info}>
+                        {this.getModifierValue('name') && (
+                          <Text tagName="span" className={style.author__name} bind="author_name" />
+                        )}
+                        <div className={style.author__bottom}>
+                          {this.getModifierValue('date') && (
+                            <Text tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} bind="article_date" />
                           )}
-                          <div className={style.author__bottom}>
-                            {this.getModifierValue('date') && (
-                              <Text tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} bind="article_date" />
-                            )}
-                            {this.getModifierValue('time') && (
-                              <Text tagName="span" className={style.author__time} bind="article_time" />
-                            )}
-                          </div>
+                          {this.getModifierValue('time') && (
+                            <Text tagName="span" className={style.author__time} bind="article_time" />
+                          )}
                         </div>
-                      )}
-                    </div>
-                  )}
-                </header>
-              )}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </header>
             </div>
             <div className={style.article__content}>
               <Text tagName="p" className={style.article__body} bind="body" />
