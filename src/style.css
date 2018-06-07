@@ -1,9 +1,14 @@
 @import "wireframe-zapdos-header/src/style.css";
 
-.logo img {
+.logo {
+  max-width: 250px;
+  max-height: 47px;
 
-  @media (min-width: 992px) {
-    width: 174px;
+  img {
+    
+    @media (min-width: 992px) {
+      width: 174px;
+    }
   }
 }
 
