@@ -29,8 +29,11 @@
 }
 
 .form {
-  padding-left: 17%;
-  padding-right: 17%;
+
+  @media (min-width: 768px) {
+    padding-left: 17%;
+    padding-right: 17%;
+  }
 
   &__field {
     background-color: transparent;
@@ -47,8 +50,10 @@
   }
 
   &__button {
-    width: 110px;
+    width: auto;
     padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
 
     @media (min-width: 992px) {
       margin-top: 25px;
