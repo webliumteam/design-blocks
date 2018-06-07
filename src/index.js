@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-series-3-cta/src/component'
 import style from './style.css'
 
 import options from './options.json'
@@ -11,6 +11,14 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  subtitle: {
+    ...Component.defaultContent.subtitle,
+    type: 'subheading',
+  },
+  background: {
+    ...Component.defaultContent.background,
+    color: 'light-shade-color',
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
