@@ -51,7 +51,7 @@ class Block extends React.Component {
       <section className={classNames(style.section, {[style['section--column']]: columnLayout}, arrange && style['section--reverse'])}>
         <div className={style.section__inner}>
           <article className={style.article}>
-            {this.getModifierValue('article-picture') && (
+            <div className={style.article__top}>
               <Image
                 wrapperClassName={style['article__picture-wrapper']}
                 pictureClassName={style.article__picture}
@@ -60,16 +60,12 @@ class Block extends React.Component {
                 size={this.getImageSize(columnLayout)}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
               />
-            )}
-            {!onlyImage && [
-              articleHeader && (
+              {articleHeader && (
                 <header className={style.article__header}>
                   {this.getModifierValue('category') &&
                     <Text tagName="p" className={style.article__category} bind="category" />
                   }
-                  {this.getModifierValue('title') &&
-                    <Text tagName="h1" className={style.article__title} bind="title" />
-                  }
+                  <Text tagName="h1" className={style.article__title} bind="title" />
                   {this.getModifierValue('subtitle') && (
                     <Text tagName="p" className={style.article__subtitle} bind="subtitle" />
                   )}
@@ -90,22 +86,24 @@ class Block extends React.Component {
                           {this.getModifierValue('name') && (
                             <Text tagName="span" className={style.author__name} bind="author_name" />
                           )}
-                          {this.getModifierValue('date') && (
-                            <Text tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} bind="article_date" />
-                          )}
-                          {this.getModifierValue('time') && (
-                            <Text tagName="span" className={style.author__time} bind="article_time" />
-                          )}
+                          <div className={style.author__bottom}>
+                            {this.getModifierValue('date') && (
+                              <Text tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} bind="article_date" />
+                            )}
+                            {this.getModifierValue('time') && (
+                              <Text tagName="span" className={style.author__time} bind="article_time" />
+                            )}
+                          </div>
                         </div>
                       )}
                     </div>
                   )}
-                </header>),
-              this.getModifierValue('body') && (
-                <div className={style.article__content}>
-                  <Text tagName="p" className={style.article__body} bind="body" />
-                </div>),
-            ]}
+                </header>
+              )}
+            </div>
+            <div className={style.article__content}>
+              <Text tagName="p" className={style.article__body} bind="body" />
+            </div>
           </article>
         </div>
       </section>
@@ -125,7 +123,7 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'We provide a wide range of services to meet even the most daring requirements. ',
+    content: 'Our interstellar communication is as much for us as it is for them',
     type: 'subtitle',
   },
   author_picture: {
@@ -142,10 +140,10 @@ Block.defaultContent = {
   },
   article_time: {
     type: 'small',
-    content: '⋆ 7 min read',
+    content: '7 min read',
   },
   body: {
-    content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
+    content: 'The idea is that if an intelligent alien comes across this map, floating somewhere out in space, they could figure all of that out.<br><br>The pulsar map is best known as a component of the cover of the Voyager Golden Record, the 12-inch discs each attached to the pair of Voyager probes flung to the far reaches of the solar system in the 1970s. The probes were designed to visit Jupiter and Saturn, but NASA knew they’d have enough momentum to keep trucking on through — and out of — the solar system. And so, in a gesture of great romanticism, they commissioned Carl Sagan to adorn the probes with some sort of return address and, more than that, a message to whoever might find them.',
     type: 'text',
   },
   picture: {
@@ -160,16 +158,13 @@ Block.modifierScheme = {
     name: 'Arrange elements',
     type: 'swap',
   },
-  'article-picture': {defaultValue: true, label: 'Article picture', type: 'checkbox'},
   category: {defaultValue: true, label: 'Post category', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
   avatar: {defaultValue: true, label: 'Author photo', type: 'checkbox'},
   name: {defaultValue: true, label: 'Author name', type: 'checkbox'},
   date: {defaultValue: true, label: 'Publication date', type: 'checkbox'},
-  divider: {defaultValue: true, label: 'Decorator divider', type: 'checkbox'},
+  divider: {defaultValue: true, label: 'Decorator divider', type: 'hidden'},
   time: {defaultValue: true, label: 'Post read time', type: 'checkbox'},
-  body: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
 }
 
 export default Block
