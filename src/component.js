@@ -352,7 +352,6 @@ Block.modifierScheme = {
   'plan-description': {defaultValue: true, label: 'Product description', type: 'checkbox'},
   'plan-button': {defaultValue: true, label: 'Primary small button', type: 'checkbox'},
   'additional-btn': {defaultValue: true, label: 'Medium button secondary', type: 'checkbox'},
-
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
