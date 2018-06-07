@@ -12,18 +12,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   collection: {
-    background: {
-      'nth-child': [
-        ['3n+2', {
-          color: 'brand-color',
-          type: 'color',
-        }],
-        ['3n+3', {
-          color: 'brand-color',
-          type: 'color',
-        }],
-      ],
-    },
     items: [
       {
         ...Component.defaultContent.collection.items[0],
@@ -38,20 +26,12 @@ ExtendedWireframe.defaultContent = {
           resourceRef: 'image-2.jpg',
           alt: 'Service illustration photo',
         },
-        cta: {
-          textValue: 'Learn more',
-          type: 'secondary',
-        },
       },
       {
         ...Component.defaultContent.collection.items[2],
         image: {
           resourceRef: 'image-3.jpg',
           alt: 'Service illustration photo',
-        },
-        cta: {
-          textValue: 'Learn more',
-          type: 'secondary',
         },
       },
       {
