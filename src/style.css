@@ -5,17 +5,268 @@
   padding: 50px 0;
   word-wrap: break-word;
 
-  @media (min-width: 768px) {
+  @media (--ui-tablet-devices) {
     padding: 60px 0;
   }
 
-  @media (min-width: 992px) {
+  @media (--ui-medium-devices) {
     padding: 75px 0;
   }
 
-  &__inner {
-    max-width: var(--ui-content-container);
-    margin: 0 auto;
-    padding: var(--ui-content-gutter);
+  &--reverse {
+    .article__content {
+
+      @media (--ui-medium-devices) {
+        order: -1;
+        padding-left: 0;
+        padding-right: 30px;
+      }
+    }
+
+    &.section--column {
+      .article__content {
+
+        @media (min-width: 992px) {
+          order: 1;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.section--column .article {
+  flex-direction: column;
+  align-items: center;
+}
+
+.section--column .article__picture-wrapper {
+  max-width: 100%;
+  flex-basis: auto;
+}
+
+.section--column .article__picture {
+  padding-top: 35%;
+}
+
+.section--column .article__content {
+  max-width: 100%;
+  margin-bottom: 40px;
+  padding-left: 0;
+}
+
+.section--column .article__picture-wrapper + .article__content {
+  margin-top: 30px;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section--column .btns-group {
+  justify-content: center;
+}
+
+.section__inner {
+  max-width: var(--ui-content-container);
+  margin: 0 auto;
+  padding: var(--ui-content-gutter);
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (--ui-tablet-devices) {
+  .article {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.article__picture {
+  display: block;
+  padding-top: 46%;
+  order: -1;
+}
+
+.article__picture-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+@media (--ui-tablet-devices) {
+  .article__picture {
+    order: unset;
+  }
+
+  .article__picture-wrapper {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+}
+
+.article__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.article__content {
+  display: flex;
+  padding: 30px 0 0;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}
+
+@media (--ui-tablet-devices) {
+  .article__content {
+    max-width: 50%;
+    padding-top: 0;
+    flex-basis: 50%;
+    padding-left: 30px;
+  }
+}
+
+.article__title {
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+@media (--ui-medium-devices) {
+  .article__title {
+    margin-top: 0;
+  }
+}
+
+.article__subtitle {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.article__subtitle--socials {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.article__text {
+  margin-bottom: 30px;
+}
+
+.article__additional-text {
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.article__socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials {
+  max-width: 150px;
+}
+
+.social-title {
+  max-width: calc(100% - 160px);
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.article .article__title + .article__socials {
+  margin-top: 20px;
+}
+
+.article .article__subtitle + .article__socials {
+  margin-top: 20px;
+}
+
+.article .article__subtitle ~ .btns-group {
+  margin-top: 40px;
+}
+
+.article .article__text + .btns-group {
+  margin-top: 0;
+}
+
+.socials__item {
+  margin-right: 15px;
+}
+
+.socials__item:last-child {
+  margin-right: 0;
+}
+
+.socials__link {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  border-radius: 50%;
+  background-color: var(--ui-icon-color);
+}
+
+.socials__link:hover,
+.socials__link:active,
+.socials__link:focus {
+  background-color: var(--ui-link-hover-color);
+}
+
+.socials__icon {
+  max-width: 100%;
+  max-height: 100%;
+  fill: var(--ui-light-shade-color);
+}
+
+.btns-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: -10px;
+}
+
+.btns-group:only-child {
+  margin-top: 10px;
+}
+
+.button {
+  width: 100%;
+  max-width: calc(100% - 20px);
+  min-width: 1px;
+  margin: 10px;
+}
+
+@media (--ui-phone-devices) {
+  .button {
+    width: auto;
+  }
+}
+
+.link {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+  margin: 10px;
+}
+
+@media (--ui-phone-devices) {
+  .link {
+    width: auto;
   }
 }

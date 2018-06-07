@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-class Wireframe extends React.Component {
+class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
@@ -12,110 +12,95 @@ class Wireframe extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, children, className, openLightbox}) => {
-    const {components: {Image}, style} = this.props
-    const logoSize = this.getModifierValue('logo_size')
-    const itemModifierClass = style[`item--${logoSize}`]
-
-    return (
-      <div className={classNames(style.item, itemModifierClass, className)}>
-        {children}
-        <div className={style.item__inner}>
-          <Image
-            wrapperClassName={style['item__picture-wrapper']}
-            pictureClassName={style.item__picture}
-            imgClassName={style.item__image}
-            bind={`collection[${index}].picture`}
-            size={
-              {
-                'min-width: 320px': 480,
-                'min-width: 480px': 768,
-                'min-width: 768px': 310,
-                'min-width: 992px': 380,
-              }
-            }
-            onOpenLightbox={openLightbox}
-          />
-        </div>
-      </div>
-    )
-  }
+  getImageSize = fullWidth =>
+    fullWidth
+      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
+      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
-    const {components: {Text, Collection}, style, $block} = this.props
+    const {components: {Text, Image}, style} = this.props
+    const columnLayout = !(
+      this.getModifierValue('title') ||
+      this.getModifierValue('subtitle') ||
+      this.getModifierValue('text')
+    )
+
+    const onlyImage = !(
+      this.getModifierValue('title') ||
+      this.getModifierValue('subtitle') ||
+      this.getModifierValue('text')
+    )
+
+    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 46
+    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 100
+
+    const arrange = this.getModifierValue('arrange-elements')
 
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, {[style['section--column']]: columnLayout}, arrange && style['section--reverse'])}>
         <div className={style.section__inner}>
-          <Text bind="title" className={style.title} tagName="h2" />
-          {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
-          )}
-          <Collection
-            className={style['items-wrapper']}
-            bind="collection"
-            galleryId="gallery"
-            Item={this.collectionItem}
-            itemProps={{
-              modifier: $block.modifier,
-            }}
-          />
+          <div className={style.article}>
+            {this.getModifierValue('article-picture') && (
+              <Image
+                wrapperClassName={style['article__picture-wrapper']}
+                pictureClassName={style.article__picture}
+                imgClassName={style.article__image}
+                bind="picture"
+                size={this.getImageSize(columnLayout)}
+                resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
+              />
+            )}
+            {!onlyImage && (
+              <div className={style.article__content}>
+                {this.getModifierValue('title') &&
+                  <Text tagName="h1" className={style.article__title} bind="title" />
+                }
+                {this.getModifierValue('subtitle') && (
+                  <Text tagName="p" className={style.article__subtitle} bind="subtitle" />
+                )}
+                {this.getModifierValue('text') && (
+                  <Text tagName="p" className={style.article__text} bind="text" />
+                )}
+              </div>
+            )}
+          </div>
         </div>
       </section>
     )
   }
 }
 
-Wireframe.components = _.pick(['Text', 'Collection', 'Image'])($editor.components)
+Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons', 'Icon'])($editor.components)
 
-Wireframe.defaultContent = {
+Block.defaultContent = {
   title: {
-    content: 'Partners',
+    content: 'About The Company',
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Friendship in business can be as strong as in life. We do very like our community with this guys.',
+    content: 'We provide a wide range of services to meet even the most daring requirements. ',
     type: 'subtitle',
   },
-  collection: {
-    items: [
-      {
-        picture: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Our partner',
-          galleryId: 'gallery',
-        },
-      },
-      {
-        picture: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Our partner',
-          galleryId: 'gallery',
-        },
-      },
-      {
-        picture: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Our partner',
-          galleryId: 'gallery',
-        },
-      },
-    ],
+  text: {
+    content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
+    type: 'text',
+  },
+  picture: {
+    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+    alt: 'Picture about the company',
   },
 }
 
-Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
-  logo_size: {
-    children: [
-      {id: 'large', label: 'Large logo'},
-      {id: 'medium', label: 'Medium logo'},
-      {id: 'small', label: 'Small logo'},
-    ],
-    defaultValue: 'large',
-    name: 'Logo sizes',
-    type: 'radio-button-group',
+Block.modifierScheme = {
+  'arrange-elements': {
+    defaultValue: true,
+    name: 'Arrange elements',
+    type: 'swap',
   },
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
+  text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
+  'article-picture': {defaultValue: true, label: 'Article picture', type: 'checkbox'},
 }
 
-export default Wireframe
+export default Block
