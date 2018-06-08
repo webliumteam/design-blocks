@@ -1,3 +1,8 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-8-why/src/style.css";
 
 /* start here */
+
+.item {
+  border: 1px solid var(--ui-brand-color);
+  box-shadow: 2px 2px 1px var(--ui-brand-color);
+}
