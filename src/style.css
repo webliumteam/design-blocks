@@ -86,9 +86,14 @@
 
 .author {
   display: flex;
-  max-width: 100%;
+  min-width: 35%;
+  max-width: calc(100% - 20px);
   margin: 5px 10px;
   align-items: center;
+
+  &:only-child {
+    flex: 1;
+  }
 
   &__picture {
     padding-top: 100%;
@@ -111,7 +116,7 @@
 
 .date {
   display: flex;
-  max-width: 100%;
+  max-width: calc(100% - 20px);
   margin: 5px 10px;
   flex: 1;
   align-items: center;

@@ -133,7 +133,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.3)',
+          color: 'rgba(0,0,0, 0.2)',
         },
         item_category: {
           type: 'caption',
@@ -149,7 +149,7 @@ Wireframe.defaultContent = {
         },
         item_person_image: {
           src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Project 1',
+          alt: 'Person image',
         },
         item_date: {
           type: 'text',
@@ -163,7 +163,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.3)',
+          color: 'rgba(0,0,0, 0.2)',
         },
         item_category: {
           type: 'caption',
@@ -179,7 +179,7 @@ Wireframe.defaultContent = {
         },
         item_person_image: {
           src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Project 1',
+          alt: 'Person image',
         },
         item_date: {
           type: 'text',
@@ -193,7 +193,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.3)',
+          color: 'rgba(0,0,0, 0.2)',
         },
         item_category: {
           type: 'caption',
@@ -209,7 +209,7 @@ Wireframe.defaultContent = {
         },
         item_person_image: {
           resourceRef: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: '',
+          alt: 'Person image',
         },
         item_date: {
           type: 'text',
@@ -230,13 +230,11 @@ Wireframe.defaultContent = {
 
 Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  item_image: {defaultValue: true, label: 'Blog image', type: 'checkbox'},
   item_category: {defaultValue: true, label: 'Blog category', type: 'checkbox'},
-  item_heading: {defaultValue: true, label: 'Blog heading', type: 'checkbox'},
-  item_person_image: {defaultValue: true, label: 'Blog author picture', type: 'checkbox'},
-  item_person: {defaultValue: true, label: 'Blog author name', type: 'checkbox'},
+  item_person_image: {defaultValue: true, label: 'Author picture', type: 'checkbox'},
+  item_person: {defaultValue: true, label: 'Author name', type: 'checkbox'},
   item_date_icon: {defaultValue: true, label: 'Blog date icon', type: 'checkbox'},
-  item_date: {defaultValue: true, label: 'Block button', type: 'checkbox'},
+  item_date: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
   button: {defaultValue: true, label: 'Block button', type: 'checkbox'},
 }
 
