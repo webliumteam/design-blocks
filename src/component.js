@@ -37,7 +37,6 @@ class Block extends React.Component {
   render() {
     const {components: {Text, Menu, Button}, style: css, Link} = this.props
     const {usersTotal} = this.state
-
     return (
       <footer
         className={classNames(
@@ -62,7 +61,7 @@ class Block extends React.Component {
                     className={classNames(css.text, css['text--right'], css['text--nowrap'])}
                   />
                   <Button bind="counter" className={classNames(css.text, css['text--value'], css['text--nowrap'])}>
-                    &nbsp;{usersTotal} людей
+                    {`&nbsp;${usersTotal} людей`}
                   </Button>
                 </div>
               )}
