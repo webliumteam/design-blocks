@@ -18,32 +18,26 @@ ExtendedWireframe.defaultContent = {
         ['1', {
           ...Component.defaultContent.collection.background['nth-child'][0][1],
           resourceRef: '1.jpg',
-          imageColor: [0, 0, 0],
         }],
         ['2', {
           ...Component.defaultContent.collection.background['nth-child'][0][1],
           resourceRef: '2.jpg',
-          imageColor: [0, 0, 0],
         }],
         ['3', {
           ...Component.defaultContent.collection.background['nth-child'][0][1],
           resourceRef: '3.jpg',
-          imageColor: [0, 0, 0],
         }],
         ['4', {
           ...Component.defaultContent.collection.background['nth-child'][0][1],
           resourceRef: '4.jpg',
-          imageColor: [0, 0, 0],
         }],
         ['5', {
           ...Component.defaultContent.collection.background['nth-child'][0][1],
           resourceRef: '5.jpg',
-          imageColor: [0, 0, 0],
         }],
         ['6', {
           ...Component.defaultContent.collection.background['nth-child'][0][1],
           resourceRef: '6.jpg',
-          imageColor: [0, 0, 0],
         }],
       ],
     },
