@@ -184,6 +184,11 @@
           grid-row: unset;
         }
       }
+
+      &:only-of-type {
+        grid-row: 1;
+        grid-column: span 12;
+      }
     }
   }
 }
