@@ -133,7 +133,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.3)',
+          color: 'rgba(0,0,0, 0.15)',
         },
         item_category: {
           type: 'caption',
@@ -149,7 +149,7 @@ Wireframe.defaultContent = {
         },
         item_person_image: {
           src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Project 1',
+          alt: 'Person image',
         },
         item_date: {
           type: 'text',
@@ -163,7 +163,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.3)',
+          color: 'rgba(0,0,0, 0.15)',
         },
         item_category: {
           type: 'caption',
@@ -179,7 +179,7 @@ Wireframe.defaultContent = {
         },
         item_person_image: {
           src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Project 1',
+          alt: 'Person image',
         },
         item_date: {
           type: 'text',
@@ -193,7 +193,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.3)',
+          color: 'rgba(0,0,0, 0.15)',
         },
         item_category: {
           type: 'caption',
@@ -208,8 +208,8 @@ Wireframe.defaultContent = {
           content: 'By Ben Moss',
         },
         item_person_image: {
-          resourceRef: '',
-          alt: '',
+          resourceRef: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Person image',
         },
         item_date: {
           type: 'text',
