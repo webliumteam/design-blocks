@@ -78,15 +78,17 @@
 
   &__meta {
     display: flex;
-    margin: -10px;
+    margin: -5px -10px;
     flex-wrap: wrap;
+    align-items: center;
   }
 }
 
 .author {
   display: flex;
   max-width: 100%;
-  margin: 0 10px;
+  margin: 5px 10px;
+  align-items: center;
 
   &__picture {
     padding-top: 100%;
@@ -110,11 +112,13 @@
 .date {
   display: flex;
   max-width: 100%;
-  margin: 10px;
+  margin: 5px 10px;
+  flex: 1;
+  align-items: center;
 
   &__icon {
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
   }
 
   &__value {
