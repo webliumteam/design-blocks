@@ -26,7 +26,7 @@ ExtendedWireframe.defaultContent = {
     color: 'brand-color',
   },
   picture: {
-    resourceRef: '3.jpg',
+    resourceRef: '1.jpg',
     alt: 'Picture about the post',
   },
 }
