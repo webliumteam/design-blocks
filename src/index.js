@@ -13,21 +13,24 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   author_picture: {
+    ...Component.defaultContent.author_picture,
     resourceRef: 'photo.jpg',
   },
   article_date: {
+    ...Component.defaultContent.article_date,
     type: 'caption',
     content: 'Jun 7',
     color: 'brand-color',
   },
   article_time: {
+    ...Component.defaultContent.article_time,
     type: 'caption',
     content: '7 min read',
     color: 'brand-color',
   },
   picture: {
+    ...Component.defaultContent.picture,
     resourceRef: '1.jpg',
-    alt: 'Picture about the post',
   },
 }
 
