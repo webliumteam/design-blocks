@@ -133,7 +133,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.15)',
+          color: 'rgba(0,0,0, 0.2)',
         },
         item_category: {
           type: 'caption',
@@ -163,7 +163,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.15)',
+          color: 'rgba(0,0,0, 0.2)',
         },
         item_category: {
           type: 'caption',
@@ -193,7 +193,7 @@ Wireframe.defaultContent = {
       {
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.15)',
+          color: 'rgba(0,0,0, 0.2)',
         },
         item_category: {
           type: 'caption',
