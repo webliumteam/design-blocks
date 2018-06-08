@@ -22,18 +22,18 @@ ExtendedWireframe.defaultContent = {
     items: [
       {
         ...Component.defaultContent.collection.items[0],
-          itemPicture: {
+        itemPicture: {
           ...Component.defaultContent.collection.items[0].picture,
           resourceRef: 'img1.jpg',
-          },
-          itemSocialIcons: {
-            ...Component.defaultContent.collection.items[0].itemSocialIcons,
-              design: {
-              ...Component.defaultContent.collection.items[0].itemSocialIcons.design,
-              color: 'brand-color',
-            }
-          }
         },
+        itemSocialIcons: {
+          ...Component.defaultContent.collection.items[0].itemSocialIcons,
+          design: {
+            ...Component.defaultContent.collection.items[0].itemSocialIcons.design,
+            color: 'brand-color',
+          },
+        },
+      },
       {
         ...Component.defaultContent.collection.items[1],
         itemPicture: {
@@ -42,11 +42,11 @@ ExtendedWireframe.defaultContent = {
         },
         itemSocialIcons: {
           ...Component.defaultContent.collection.items[1].itemSocialIcons,
-            design: {
+          design: {
             ...Component.defaultContent.collection.items[1].itemSocialIcons.design,
             color: 'brand-color',
-          }
-        }
+          },
+        },
       },
       {
         ...Component.defaultContent.collection.items[2],
@@ -56,11 +56,11 @@ ExtendedWireframe.defaultContent = {
         },
         itemSocialIcons: {
           ...Component.defaultContent.collection.items[2].itemSocialIcons,
-            design: {
+          design: {
             ...Component.defaultContent.collection.items[2].itemSocialIcons.design,
             color: 'brand-color',
-          }
-        }
+          },
+        },
       },
       {
         ...Component.defaultContent.collection.items[3],
@@ -70,14 +70,14 @@ ExtendedWireframe.defaultContent = {
         },
         itemSocialIcons: {
           ...Component.defaultContent.collection.items[3].itemSocialIcons,
-            design: {
+          design: {
             ...Component.defaultContent.collection.items[3].itemSocialIcons.design,
             color: 'brand-color',
-          }
-        }
+          },
+        },
       },
-    ]
-  }
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
