@@ -1,3 +1,7 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-series-10-partners/src/style.css";
 
-/* start here */
+.item {
+  &__picture {
+    box-shadow: 0 0 5px var(--ui-brand-color);
+  }
+}
