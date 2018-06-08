@@ -1,3 +1,5 @@
 {
-  "image_wrapper": true
+  "disable-resizer": false,
+  "min-resize": 340,
+  "max-resize": 670
 }
