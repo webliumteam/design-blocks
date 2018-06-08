@@ -208,7 +208,7 @@ Wireframe.defaultContent = {
           content: 'By Ben Moss',
         },
         item_person_image: {
-          resourceRef: '',
+          resourceRef: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
           alt: '',
         },
         item_date: {
