@@ -60,9 +60,9 @@ class Block extends React.Component {
                     bind="text1"
                     className={classNames(css.text, css['text--right'], css['text--nowrap'])}
                   />
-                  <Button bind="counter" className={classNames(css.text, css['text--value'], css['text--nowrap'])}>
-                    {`&nbsp;${usersTotal} людей`}
-                  </Button>
+                  <a className={classNames(css.text, css['text--value'], css['text--nowrap'], css['total-link'])} href="/people">
+                    {` ${usersTotal} людей`}
+                  </a>
                 </div>
               )}
               <button className={classNames(css.button)} onClick={this.login}>
