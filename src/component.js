@@ -231,10 +231,10 @@ Wireframe.defaultContent = {
 Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   item_category: {defaultValue: true, label: 'Blog category', type: 'checkbox'},
-  item_person_image: {defaultValue: true, label: 'Blog author picture', type: 'checkbox'},
-  item_person: {defaultValue: true, label: 'Blog author name', type: 'checkbox'},
+  item_person_image: {defaultValue: true, label: 'Author picture', type: 'checkbox'},
+  item_person: {defaultValue: true, label: 'Author name', type: 'checkbox'},
   item_date_icon: {defaultValue: true, label: 'Blog date icon', type: 'checkbox'},
-  item_date: {defaultValue: true, label: 'Blog date value', type: 'checkbox'},
+  item_date: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
   button: {defaultValue: true, label: 'Block button', type: 'checkbox'},
 }
 
