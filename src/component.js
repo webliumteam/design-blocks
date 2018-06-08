@@ -30,21 +30,6 @@ class Wireframe extends React.Component {
       >
         <div className={classNames(style.item, modifierClass, className)}>
           {children}
-          <Image
-            wrapperClassName={style['item__picture-wrapper']}
-            pictureClassName={style.item__picture}
-            imgClassName={style.item__image}
-            bind={`collection[${index}].item_image`}
-            size={
-              {
-                'min-width: 320px': 480,
-                'min-width: 480px': 768,
-                'min-width: 768px': 310,
-                'min-width: 992px': 380,
-              }
-            }
-            resize={{disable: true}}
-          />
           <Background tagName="div" bind={`collection[${index}].item_panel`} className={style.item__panel}>
             {_.get('item_category')(modifier) && (
               <Text tagName="p" className={style.item__category} bind={`collection[${index}].item_category`} />
@@ -131,16 +116,25 @@ Wireframe.defaultContent = {
     content: 'Blog',
   },
   collection: {
+    background: {
+      'nth-child': [
+        ['n', {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          imageColor: [216, 216, 216],
+        }],
+      ],
+    },
     items: [
       {
         item_panel: {
           type: 'color',
           color: 'rgba(0,0,0, 0.3)',
         },
-        item_image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Project 1',
-        },
         item_category: {
           type: 'caption',
           content: 'UX DESIGN',
@@ -171,10 +165,6 @@ Wireframe.defaultContent = {
           type: 'color',
           color: 'rgba(0,0,0, 0.3)',
         },
-        item_image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Project 1',
-        },
         item_category: {
           type: 'caption',
           content: 'UX DESIGN',
@@ -204,10 +194,6 @@ Wireframe.defaultContent = {
         item_panel: {
           type: 'color',
           color: 'rgba(0,0,0, 0.3)',
-        },
-        item_image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Project 1',
         },
         item_category: {
           type: 'caption',
