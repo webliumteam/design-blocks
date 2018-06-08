@@ -18,6 +18,7 @@ class Block extends React.Component {
       : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
+    console.log(this.props)
     const {components: {Text, Image}, style} = this.props
     const columnLayout = !(
       this.getModifierValue('title') ||
