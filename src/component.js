@@ -6,6 +6,31 @@ class Block extends React.Component {
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
+  componentDidMount() {
+    const post = _.get('location.state')(this.props)
+    console.log(post)
+    if (!window.contentful) {
+      ((d) => {
+        const wf = d.createElement('script')
+        const s = d.scripts[0]
+        wf.src = 'https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js'
+        wf.async = true
+        wf.onload = this.connectContentful()
+        s.parentNode.insertBefore(wf, s)
+      })(document)
+    }
+  }
+
+  connectContentful = () => {
+    try {
+      const accessToken = _.get('contentful.accessToken')(window)
+      const space = _.get('contentful.space')(window)
+      const client = window.contentfull.createClient({space, accessToken})
+      window.contentfulClient = client
+    } catch (error) {
+      this.setState({error})
+    }
+  }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
@@ -17,8 +42,11 @@ class Block extends React.Component {
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
       : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
+  getPostValue = (path) => {
+
+  }
+
   render() {
-    console.log(this.props)
     const {components: {Text, Image}, style} = this.props
     const columnLayout = !(
       this.getModifierValue('title') ||
@@ -38,6 +66,7 @@ class Block extends React.Component {
 
     const arrange = this.getModifierValue('arrange-elements')
 
+    console.log(this.props.location)
     return (
       <section className={classNames(style.section, {[style['section--column']]: columnLayout}, arrange && style['section--reverse'])}>
         <div className={style.section__inner}>
