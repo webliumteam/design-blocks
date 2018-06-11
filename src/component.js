@@ -1,7 +1,7 @@
 import $editor from 'weblium/editor'
-import ReactMarkdown from 'react-markdown'
-import {Link} from 'react-router-dom'
+import md from 'showdown'
 
+const converter = new md.Converter()
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
@@ -11,20 +11,25 @@ class Block extends React.Component {
   state = {}
 
   componentDidMount() {
-    const {$block, registerRoute} = this.props
-
-    // const {accessToken, space} = this.getModifierValue('contentfull')
-    const contentful = require('contentful')
-    const client = contentful.createClient({
-      accessToken: 'f58f465d35450cc8a0f033fdedaf4d4b375da8e747f41f9a59ea2df52beaf0f7',
-      space: 'yrzptirqba05',
-    })
-    client.getEntries({
+    if (window.contentfull) {
+      this.getPosts()
+    } else {
+      const accessToken = this.getModifierValue('accessToken')
+      const space = this.getModifierValue('space')
+      if (accessToken && space) {
+        const contentful = require('contentful')
+        const client = contentful.createClient({accessToken, space})
+        window.contentfull = client
+        this.getPosts()
+      }
+    }
+  }
+  getPosts = () => {
+    window.contentfull.getEntries({
       content_type: 'post',
     }).then((entries) => {
       const posts = entries.items
       this.setState({posts})
-      registerRoute && registerRoute(posts)
     })
   }
 
@@ -34,7 +39,7 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   itemHeader = (post) => {
-    const {components: {Text, Image}, style} = this.props
+    const {components: {SsrText, Image}, style} = this.props
     const imageUrl = _.get('image.fields.file.url')(post)
     return [
       this.getModifierValue('item_image') && (
@@ -44,47 +49,55 @@ class Block extends React.Component {
           imgClassName={style.article__image}
           value={{src: imageUrl}}
           size={{'min-width: 768px': 570, 'min-width: 480px': 768, 'min-width: 320px': 480}}
+          disabledControls={['toolbar', 'scale']}
         />
       ),
       this.getModifierValue('item_date') && (
         <small className={style.article__meta}>
-          {!this.getOptionValue('hidden-category') && <Text tagName="span" value={{content: post.articleCategory}} className={style.article__category} /> }
-          {!this.getOptionValue('hidden-date') && <Text tagName="span" value={{content: post.subtitle}} className={style.article__date} /> }
+          {!this.getOptionValue('hidden-category') && <SsrText tagName="span" value={{content: post.articleCategory}} className={style.article__category} /> }
+          {!this.getOptionValue('hidden-date') && <SsrText tagName="span" value={{content: post.subtitle}} className={style.article__date} /> }
         </small>
       ),
     ]
   }
 
-  renderPosts = () => {
-    const {posts} = this.state
-    const {style, components: {Text}} = this.props
-    if (!posts) {
-      return <div>Loading ....</div>
-    }
-    return <div className={classNames('collection', style['articles-wrapper'])}>{posts.map(this.postItem)}</div>
-  }
-
   postItem = (item) => {
-    const {style, components: {Text, Button}, $block} = this.props
+    const {style, components: {SsrText, Button}} = this.props
     const post = _.getOr({}, 'fields')(item)
     const postId = _.getOr('', 'sys.id')(item)
+    const postPage = this.getModifierValue('post_mount')
 
     return (
       <article className={classNames(style.article)}>
         {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(post)}</div> : this.itemHeader(post)}
-        <Text tagName="h2" className={style.article__title} value={{content: post.title}} />
-        <ReactMarkdown source={post.content} />
-        <Link to={{pathname: '/post', search: `?postid=${encodeURIComponent(postId)}`, state: {item}}} >Load more</Link>
+        <SsrText tagName="h2" className={style.article__title} value={{content: post.title, type: 'subtitle'}} />
+        <SsrText tagName="h2" value={{content: converter.makeHtml(post.content)}} />
         {this.getModifierValue('item_button') && (
           <Button
             className={style.article__link}
             buttonClassName={style.button}
             linkClassName={style.link}
             bind="moreButton"
+            to={{pathname: `/${postPage}`, search: `?postid=${encodeURIComponent(postId)}`, state: {item}}}
+            disabledControls={['action']}
           />
         )}
       </article>
     )
+  }
+
+  renderPosts = () => {
+    const {posts} = this.state
+    const {style} = this.props
+    const accessToken = this.getModifierValue('accessToken')
+    const space = this.getModifierValue('space')
+    if (_.isEmpty(accessToken) || _.isEmpty(space)) {
+      return <div>Please add contentfull tokens</div>
+    }
+    if (!posts) {
+      return <div>Loading ....</div>
+    }
+    return <div className={classNames('collection', style['articles-wrapper'])}>{posts.map(this.postItem)}</div>
   }
 
   render() {
@@ -115,7 +128,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon'])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'SsrText', 'Button', 'Image', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   icon_decorator: {
@@ -151,6 +164,9 @@ Block.modifierScheme = {
   item_body: {defaultValue: true, label: 'Post main text', type: 'checkbox'},
   item_button: {defaultValue: true, label: 'Link', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  post_mount: {defaultValue: '', label: 'Post mount slug', type: 'input'},
+  accessToken: {defaultValue: '', label: 'Contentfull accessToken', type: 'input'},
+  space: {defaultValue: '', label: 'Contentfull space', type: 'input'},
 }
 
 export default Block
