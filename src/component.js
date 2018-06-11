@@ -11,19 +11,30 @@ class Block extends React.Component {
   state = {}
 
   componentDidMount() {
+    const accessToken = this.getModifierValue('accessToken')
+    const space = this.getModifierValue('space')
+    this.initContentful({accessToken, space})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const accessToken = _.get('modifier.accessToken')(nextProps.$block)
+    const space = _.get('modifier.space')(nextProps.$block)
+    this.initContentful({accessToken, space})
+  }
+
+  initContentful = ({accessToken, space}) => {
     if (window.contentfulClient) {
       this.getPosts()
-    } else {
-      const accessToken = this.getModifierValue('accessToken')
-      const space = this.getModifierValue('space')
-      if (accessToken && space) {
-        const contentful = require('contentful')
-        const client = contentful.createClient({accessToken, space})
-        window.contentfulClient = client
-        this.getPosts()
-      }
+      return
+    }
+    if (accessToken && space) {
+      const contentful = require('contentful')
+      const client = contentful.createClient({accessToken, space})
+      window.contentfulClient = client
+      this.getPosts()
     }
   }
+
   getPosts = () => {
     window.contentfulClient.getEntries({
       content_type: 'post',
