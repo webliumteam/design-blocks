@@ -6,6 +6,7 @@ class Block extends React.Component {
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
+  state = {}
   componentDidMount() {
     const post = _.get('location.state')(this.props)
     if (post) {
@@ -58,6 +59,7 @@ class Block extends React.Component {
 
   render() {
     const {components: {Text, Image}, style} = this.props
+    const {post} = this.state
     const columnLayout = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
