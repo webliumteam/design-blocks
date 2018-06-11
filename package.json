@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-6-blog": "https://github.com/webliumteam/blocks#w/series-6/blog/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
