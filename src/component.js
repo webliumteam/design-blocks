@@ -8,7 +8,17 @@ class Block extends React.Component {
   }
   componentDidMount() {
     const post = _.get('location.state')(this.props)
-    console.log(post)
+    if (post) {
+      this.setState({post})
+      return
+    }
+    if (window.contentfulClient) {
+      console.log(this.props.location)
+      const postId = 'foo'
+      window.contentfulClient.getEntry(postId)
+        .then((entry) => console.log(entry))
+        .catch(console.error)
+    }
     if (!window.contentful) {
       ((d) => {
         const wf = d.createElement('script')
@@ -23,8 +33,8 @@ class Block extends React.Component {
 
   connectContentful = () => {
     try {
-      const accessToken = _.get('contentful.accessToken')(window)
-      const space = _.get('contentful.space')(window)
+      const accessToken = _.getModifierValue('accessToken')
+      const space = _.getModifierValue('space')
       const client = window.contentfull.createClient({space, accessToken})
       window.contentfulClient = client
     } catch (error) {
@@ -66,7 +76,9 @@ class Block extends React.Component {
 
     const arrange = this.getModifierValue('arrange-elements')
 
-    console.log(this.props.location)
+    if (!post) {
+      return <div>Loading....</div>
+    }
     return (
       <section className={classNames(style.section, {[style['section--column']]: columnLayout}, arrange && style['section--reverse'])}>
         <div className={style.section__inner}>
@@ -183,6 +195,8 @@ Block.modifierScheme = {
   date: {defaultValue: true, label: 'Publication date', type: 'checkbox'},
   divider: {defaultValue: true, label: 'Decorator divider', type: 'hidden'},
   time: {defaultValue: true, label: 'Post read time', type: 'checkbox'},
+  accessToken: {defaultValue: '', label: 'Contentfull accessToken', type: 'input'},
+  space: {defaultValue: '', label: 'Contentfull space', type: 'input'},
 }
 
 export default Block
