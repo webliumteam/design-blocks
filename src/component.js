@@ -16,7 +16,7 @@ class Block extends React.Component {
       console.log(this.props.location)
       const postId = 'foo'
       window.contentfulClient.getEntry(postId)
-        .then((entry) => console.log(entry))
+        .then(entry => console.log(entry))
         .catch(console.error)
     }
     if (!window.contentful) {
