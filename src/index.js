@@ -18,6 +18,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[0].picture,
         resourceRef: 'gallery01.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -25,6 +31,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[1].picture,
         resourceRef: 'gallery02.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -32,6 +44,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[2].picture,
         resourceRef: 'gallery03.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -39,6 +57,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[3].picture,
         resourceRef: 'gallery04.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -53,6 +77,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[5].picture,
         resourceRef: 'gallery06.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
   ],
