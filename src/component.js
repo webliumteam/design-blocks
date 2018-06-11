@@ -11,7 +11,7 @@ class Block extends React.Component {
   state = {}
 
   componentDidMount() {
-    if (window.contentfull) {
+    if (window.contentfulClient) {
       this.getPosts()
     } else {
       const accessToken = this.getModifierValue('accessToken')
@@ -25,7 +25,7 @@ class Block extends React.Component {
     }
   }
   getPosts = () => {
-    window.contentfull.getEntries({
+    window.contentfulClient.getEntries({
       content_type: 'post',
     }).then((entries) => {
       const posts = entries.items
