@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-4-careers": "https://github.com/webliumteam/blocks#w/series-4/careers/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
