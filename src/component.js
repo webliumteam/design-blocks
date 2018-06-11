@@ -19,7 +19,7 @@ class Block extends React.Component {
       if (accessToken && space) {
         const contentful = require('contentful')
         const client = contentful.createClient({accessToken, space})
-        window.contentfull = client
+        window.contentfulClient = client
         this.getPosts()
       }
     }
