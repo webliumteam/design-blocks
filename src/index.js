@@ -30,6 +30,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.projects[0].picture,
         resourceRef: 'iphone.jpg',
+        size: {
+          'min-width: 992px': 1200,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
       link: {
         ...Component.defaultContent.projects[0].link,
@@ -49,6 +55,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.projects[1].picture,
         resourceRef: 'project_02.jpg',
+        size: {
+          'min-width: 992px': 1200,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
       link: {
         ...Component.defaultContent.projects[1].link,
