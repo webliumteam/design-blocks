@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-series-10-services": "https://github.com/webliumteam/blocks#w/series-10/services/prod"
-  }
+  },
+  "editorVersion": "0.0.0"
 }
