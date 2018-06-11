@@ -67,21 +67,20 @@ class Block extends React.Component {
   postItem = (item) => {
     const {style, components: {Text, Button}, $block} = this.props
     const post = _.getOr({}, 'fields')(item)
-    const resolveLink = () => '/news/post1'
+    const postId = _.getOr('', 'sys.id')(item)
 
     return (
       <article className={classNames(style.article)}>
         {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(post)}</div> : this.itemHeader(post)}
         <Text tagName="h2" className={style.article__title} value={{content: post.title}} />
         <ReactMarkdown source={post.content} />
-        <Link to={{pathname: '/news/post', state: {item}}} >Load more</Link>
+        <Link to={{pathname: '/post', search: `?postid=${encodeURIComponent(postId)}`, state: {item}}} >Load more</Link>
         {this.getModifierValue('item_button') && (
           <Button
             className={style.article__link}
             buttonClassName={style.button}
             linkClassName={style.link}
             bind="moreButton"
-            resolveLink={resolveLink}
           />
         )}
       </article>
