@@ -107,7 +107,6 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon', 'Image', 'Ico
 Block.defaultContent = {
   articles: [
     {
-      id: 'f822d787-b3e2-432d-a03e-689c58efb302',
       title: {
         content: 'Experience',
         type: 'heading',
@@ -130,7 +129,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: '18ce5632-46d1-4c9e-b249-ca0e37f665c2',
       title: {
         content: 'Support',
         type: 'heading',
@@ -153,7 +151,6 @@ Block.defaultContent = {
       },
     },
     {
-      id: '7986b4e0-751f-48f6-8861-5ace080e284b',
       title: {
         content: 'Technologies',
         type: 'heading',
