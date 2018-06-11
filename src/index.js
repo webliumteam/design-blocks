@@ -37,48 +37,56 @@ ExtendedWireframe.defaultContent = {
         title: {
           content: 'Schedule an</br>appointment',
           type: 'heading',
-          color: 'light-shade-color',
         },
         description: {
           content: 'Choose the date and time that suits you.',
           type: 'text',
-          color: 'light-shade-color',
+        },
+        background: {
+          type: 'color',
+          color: 'dark-accent-color?lighten=7.84&spin=19',
         },
       },
       {
         title: {
           content: 'Request your</br>service',
           type: 'heading',
-          color: 'light-shade-color',
         },
         description: {
           content: 'Specify the service you need for your project.',
           type: 'text',
-          color: 'light-shade-color',
+        },
+        background: {
+          type: 'color',
+          color: 'dark-accent-color?spin=16',
         },
       },
       {
         title: {
           content: 'Choose an</br>electrician',
           type: 'heading',
-          color: 'light-shade-color',
         },
         description: {
           content: 'Select a highly trained & registered electrician.',
           type: 'text',
-          color: 'light-shade-color',
+        },
+        background: {
+          type: 'color',
+          color: 'dark-accent-color?spin=8',
         },
       },
       {
         title: {
           content: 'Request a free</br>estimate',
           type: 'heading',
-          color: 'light-shade-color',
         },
         description: {
           content: 'We offer free estimates on any service.',
           type: 'text',
-          color: 'light-shade-color',
+        },
+        background: {
+          type: 'color',
+          color: 'dark-accent-color',
         },
       },
     ],
