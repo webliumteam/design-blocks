@@ -9,16 +9,10 @@ class Block extends React.Component {
   state = {}
   componentDidMount() {
     const post = _.get('location.state')(this.props)
+    // transition from main page
     if (post) {
       this.setState({post})
       return
-    }
-    if (window.contentfulClient) {
-      console.log(this.props.location)
-      const postId = 'foo'
-      window.contentfulClient.getEntry(postId)
-        .then(entry => console.log(entry))
-        .catch(console.error)
     }
     if (!window.contentful) {
       ((d) => {
@@ -29,6 +23,29 @@ class Block extends React.Component {
         wf.onload = this.connectContentful()
         s.parentNode.insertBefore(wf, s)
       })(document)
+      return
+    }
+    this.loadPost(this.props)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.loadPost(nextProps)
+  }
+
+  loadPost = async (props) => {
+    if (window.contentfulClient) {
+      const postId = _.get('location.search')(props)
+      try {
+        const entry = await window.contentfulClient.getEntry(postId)
+        this.setState({post: _.get('item.fileds')(entry)})
+      } catch (e) {
+        try {
+          const entries = await window.contentfulClient.get
+          this.setState({post: _.get('item.fileds[0]')(entries)})
+        } catch (error) {
+          this.setState({error})
+        }
+      }
     }
   }
 
@@ -38,6 +55,7 @@ class Block extends React.Component {
       const space = _.getModifierValue('space')
       const client = window.contentfull.createClient({space, accessToken})
       window.contentfulClient = client
+      this.loadPost(this.props)
     } catch (error) {
       this.setState({error})
     }
@@ -53,13 +71,9 @@ class Block extends React.Component {
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
       : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
-  getPostValue = (path) => {
-
-  }
-
   render() {
     const {components: {Text, Image}, style} = this.props
-    const {post} = this.state
+    const {post, error} = this.state
     const columnLayout = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
@@ -78,6 +92,12 @@ class Block extends React.Component {
 
     const arrange = this.getModifierValue('arrange-elements')
 
+    if (_.isEmpty(this.getModifierValue('accessToken')) || _.isEmpty(this.getModifierValue('space'))) {
+      return <div>Please add contentful auth variables</div>
+    }
+    if (error) {
+      return <div>Something went wrong</div>
+    }
     if (!post) {
       return <div>Loading....</div>
     }
