@@ -6,9 +6,15 @@ import style from './style.css'
 import defaultOptions from 'wireframe-zapdos-gallery/src/options.json'
 import options from './options.json'
 
-const {enhancers: {withProps}, hoistStatics} = $editor
+const {
+  enhancers: {withProps},
+  hoistStatics,
+} = $editor
 
-const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', {...defaultOptions, ...options}))))(Component)
+const ExtendedWireframe = hoistStatics(withProps(_.pipe(
+  _.set('style', style),
+  _.set('$block.options', {...defaultOptions, ...options}),
+)))(Component)
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
@@ -18,6 +24,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[0].picture,
         resourceRef: 'picture1.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -25,6 +37,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[1].picture,
         resourceRef: 'picture2.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -32,6 +50,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[2].picture,
         resourceRef: 'picture3.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -39,6 +63,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[3].picture,
         resourceRef: 'picture4.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -46,6 +76,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[4].picture,
         resourceRef: 'picture5.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
     {
@@ -53,6 +89,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.gallery[5].picture,
         resourceRef: 'picture6.jpg',
+        size: {
+          'min-width: 320px': 480,
+          'min-width: 480px': 768,
+          'min-width: 768px': 992,
+          'min-width: 992px': 1200,
+        },
       },
     },
   ],
