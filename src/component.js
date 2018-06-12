@@ -34,7 +34,7 @@ class Wireframe extends React.Component {
             {_.get('item_category')(modifier) && (
               <Text tagName="p" className={style.item__category} bind={`collection[${index}].item_category`} />
             )}
-            <Text tagName="h3" className={style.item__title} bind={`collection[${index}].item_heading`} />
+            <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].item_heading`} />
             {metaShown && (
               <div className={style.item__meta}>
                 {personShown && (
@@ -208,7 +208,7 @@ Wireframe.defaultContent = {
           content: 'By Ben Moss',
         },
         item_person_image: {
-          resourceRef: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
           alt: 'Person image',
         },
         item_date: {
