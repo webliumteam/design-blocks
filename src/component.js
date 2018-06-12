@@ -69,11 +69,11 @@ Block.components = _.pick(['Text', 'Image', 'Button', 'Collection'])($editor.com
 
 Block.defaultContent = {
   title: {
-    content: 'Projects',
+    content: 'Gallery',
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Over more than 15 years of our practice, we have completed a number of projects for our clients and have helped them generate more than $15 million in revenues. Browse through our selected projects to get the idea of what we do on a daily basis.',
+    content: 'Browse through our photos to see who we are, how we work, and what inspires us',
     type: 'subtitle',
   },
   projects: [
