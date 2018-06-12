@@ -80,46 +80,55 @@ Block.defaultContent = {
     {
       picture: {
         alt: 'Illustration for project',
+        galleryId: 'projects',
       },
     },
     {
       picture: {
         alt: 'Picture about the company',
+        galleryId: 'projects',
       },
     },
     {
       picture: {
         alt: 'Picture about the company',
+        galleryId: 'projects',
       },
     },
     {
       picture: {
         alt: 'Picture about the company',
+        galleryId: 'projects',
       },
     },
     {
       picture: {
         alt: 'Picture about the company',
+        galleryId: 'projects',
       },
     },
     {
       picture: {
         alt: 'Picture about the company',
+        galleryId: 'projects',
       },
     },
     {
       picture: {
         alt: 'Picture about the company',
+        galleryId: 'projects',
       },
     },
     {
       picture: {
         alt: 'Picture about the company',
+        galleryId: 'projects',
       },
     },
     {
       picture: {
         alt: 'Picture about the company',
+        galleryId: 'projects',
       },
     },
   ],
