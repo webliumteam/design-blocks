@@ -55,7 +55,7 @@
       margin-bottom: 7px;
       background-color: transparent;
       line-height: 1em;
-      color: var(--ui-light-shade-color);
+      color: inherit;
       font-size: calc(var(--ui-heading-size) * 1.335);
       font-weight: calc(var(--ui-heading-font-weight) * 0.835);
       font-family: var(--ui-heading-font-family);
