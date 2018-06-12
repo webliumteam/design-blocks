@@ -7,42 +7,79 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
   state = {}
+
+
+  componentWillMount() {
+    this.isBlog = !(_.isEmpty(this.getModifierValue('accessToken')) || _.isEmpty(this.getModifierValue('space')))
+  }
+
   componentDidMount() {
-    const post = _.get('location.state')(this.props)
-    // transition from main page
-    if (post) {
-      this.setState({post})
-      return
+    if (this.isBlog) {
+      const post = this.formatDate(_.get('location.state.item')(this.props))
+      // transition from main page
+      if (post) {
+        this.setState({post})
+        return
+      }
+      if (!window.contentful) {
+        ((w) => {
+          const {document} = w
+          const wf = document.createElement('script')
+          const s = document.getElementsByTagName('script')[0]
+          wf.src = 'https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js'
+          wf.onload = this.connectContentful
+          if (s) {
+            s.parentNode.insertBefore(wf, s)
+          } else {
+            document.body.insertBefore(wf, s)
+          }
+        })(window)
+        return
+      }
+      this.loadPost(this.props)
     }
-    if (!window.contentful) {
-      ((d) => {
-        const wf = d.createElement('script')
-        const s = d.scripts[0]
-        wf.src = 'https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js'
-        wf.async = true
-        wf.onload = this.connectContentful()
-        s.parentNode.insertBefore(wf, s)
-      })(document)
-      return
-    }
-    this.loadPost(this.props)
   }
 
   componentWillReceiveProps(nextProps) {
     this.loadPost(nextProps)
   }
 
+  formatDate = (post) => {
+    if (!post) {
+      return
+    }
+    const postItem = _.get('fields')(post)
+    const createdAt = _.get('sys.createdAt')(post)
+    if (createdAt) {
+      const date = new Date(createdAt)
+      postItem.articleDate = date.toLocaleDateString()
+      postItem.articleTime = date.toLocaleTimeString()
+    }
+    return postItem
+  }
+
   loadPost = async (props) => {
-    if (window.contentfulClient) {
+    if (this.isBlog) {
       const postId = _.get('location.search')(props)
       try {
+        if (!postId) {
+          throw new Error('no postid specified')
+        }
         const entry = await window.contentfulClient.getEntry(postId)
-        this.setState({post: _.get('item.fileds')(entry)})
+        const post = this.formatDate(_.get('item')(entry))
+        console.log(post)
+        this.setState({post})
       } catch (e) {
         try {
-          const entries = await window.contentfulClient.get
-          this.setState({post: _.get('item.fileds[0]')(entries)})
+          const entries = await window.contentfulClient.getEntries({
+            content_type: 'post',
+          })
+          const item = _.get('items[0]')(entries)
+          const post = this.formatDate(item)
+          console.log(post)
+          this.setState({post})
         } catch (error) {
+          console.log(error)
           this.setState({error})
         }
       }
@@ -51,12 +88,13 @@ class Block extends React.Component {
 
   connectContentful = () => {
     try {
-      const accessToken = _.getModifierValue('accessToken')
-      const space = _.getModifierValue('space')
-      const client = window.contentfull.createClient({space, accessToken})
+      const accessToken = this.getModifierValue('accessToken')
+      const space = this.getModifierValue('space')
+      const client = window.contentful.createClient({space, accessToken})
       window.contentfulClient = client
       this.loadPost(this.props)
     } catch (error) {
+      console.log(error)
       this.setState({error})
     }
   }
@@ -72,7 +110,7 @@ class Block extends React.Component {
       : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
-    const {components: {Text, Image}, style} = this.props
+    const {components: {Text, Image, SsrText}, style} = this.props
     const {post, error} = this.state
     const columnLayout = !(
       this.getModifierValue('title') ||
@@ -92,13 +130,11 @@ class Block extends React.Component {
 
     const arrange = this.getModifierValue('arrange-elements')
 
-    if (_.isEmpty(this.getModifierValue('accessToken')) || _.isEmpty(this.getModifierValue('space'))) {
-      return <div>Please add contentful auth variables</div>
-    }
     if (error) {
       return <div>Something went wrong</div>
     }
-    if (!post) {
+    const {isBlog} = this
+    if (isBlog && !post) {
       return <div>Loading....</div>
     }
     return (
@@ -110,17 +146,26 @@ class Block extends React.Component {
                 wrapperClassName={style['article__picture-wrapper']}
                 pictureClassName={style.article__picture}
                 imgClassName={style.article__image}
-                bind="picture"
-                size={this.getImageSize(columnLayout)}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
+                {...isBlog ? {value: {src: _.get('image.fields.file.url')(post)}} : {bind: 'picture', size: this.getImageSize(columnLayout)}}
               />
               <header className={style.article__header}>
                 {this.getModifierValue('category') &&
-                  <Text tagName="p" className={style.article__category} bind="category" />
+                  (
+                    isBlog
+                      ? <SsrText tagName="p" className={style.article__category} value={{type: 'caption', content: post.articleCategory}} />
+                      : <Text tagName="p" className={style.article__category} bind="category" />
+                  )
                 }
-                <Text tagName="h1" className={style.article__title} bind="title" />
+                {
+                  isBlog
+                    ? <SsrText tagName="h1" className={style.article__title} value={{type: 'blockTitle', content: post.title}} />
+                    : <Text tagName="h1" className={style.article__title} bind="title" />
+                }
                 {this.getModifierValue('subtitle') && (
-                  <Text tagName="p" className={style.article__subtitle} bind="subtitle" />
+                  isBlog
+                    ? <SsrText tagName="p" className={style.article__subtitle} value={{type: 'subtitle', content: post.subtitle}} />
+                    : <Text tagName="p" className={style.article__subtitle} bind="subtitle" />
                 )}
                 {authorInfo && (
                   <div className={style.author}>
@@ -129,22 +174,27 @@ class Block extends React.Component {
                         wrapperClassName={style['author__picture-wrapper']}
                         pictureClassName={style.author__picture}
                         imgClassName={style.author__image}
-                        bind="author_picture"
-                        size={this.getImageSize(columnLayout)}
                         resize={{disable: true}}
+                        {...isBlog ? {value: {src: _.get('author.fields.avatar.fields.file.url')(post)}} : {bind: 'author_picture', size: this.getImageSize(columnLayout)}}
                       />
                     )}
                     {authorText && (
                       <div className={style.author__info}>
                         {this.getModifierValue('name') && (
-                          <Text tagName="span" className={style.author__name} bind="author_name" />
+                          isBlog
+                            ? <SsrText tagName="span" className={style.author__name} value={{type: 'subheading', content: _.get('author.fields.authorName')(post)}} />
+                            : <Text tagName="span" className={style.author__name} bind="author_name" />
                         )}
                         <div className={style.author__bottom}>
                           {this.getModifierValue('date') && (
-                            <Text tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} bind="article_date" />
+                            isBlog
+                              ? <SsrText tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} value={{type: 'small', content: post.articleDate}} />
+                              : <Text tagName="time" className={classNames(style.author__date, this.getModifierValue('divider') && style['author__date--decorated'])} bind="article_date" />
                           )}
                           {this.getModifierValue('time') && (
-                            <Text tagName="span" className={style.author__time} bind="article_time" />
+                            isBlog
+                              ? <SsrText tagName="span" className={style.author__time} value={{type: 'small', content: post.articleTime}} />
+                              : <Text tagName="span" className={style.author__time} bind="article_time" />
                           )}
                         </div>
                       </div>
@@ -154,7 +204,11 @@ class Block extends React.Component {
               </header>
             </div>
             <div className={style.article__content}>
-              <Text tagName="p" className={style.article__body} bind="body" />
+              {
+                isBlog
+                  ? <SsrText tagName="p" className={style.article__body} value={{content: post.content, type: 'text'}} />
+                  : <Text tagName="p" className={style.article__body} bind="body" />
+              }
             </div>
           </article>
         </div>
@@ -163,7 +217,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Text', 'Image', 'Button', 'SocialIcons', 'Icon'])($editor.components)
+Block.components = _.pick(['Text', 'SsrText', 'Image', 'Button', 'SocialIcons', 'Icon'])($editor.components)
 
 Block.defaultContent = {
   category: {
