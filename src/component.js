@@ -12,7 +12,7 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
+  collectionItem = ({index, children, className, openLightbox}) => {
     const {components: {Image}, style} = this.props
     return (
       <div className={classNames(style.item, className)}>
@@ -24,6 +24,7 @@ class Block extends React.Component {
             imgClassName={style.item__image}
             bind={`projects[${index}].picture`}
             resize={{disable: true}}
+            onOpenLightbox={openLightbox}
           />
         </div>
       </div>
@@ -47,6 +48,7 @@ class Block extends React.Component {
             className={style['items-wrapper']}
             bind="projects"
             Item={this.collectionItem}
+            galleryId="projects"
           />
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
