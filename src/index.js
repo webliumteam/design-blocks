@@ -26,6 +26,13 @@ ExtendedWireframe.defaultContent = {
       image: {
         ...Component.defaultContent.testimonials[0].image,
         resourceRef: 'tanja-heffner-196114.jpg',
+        size: {
+          'min-width: 1200px': 240,
+          'min-width: 992px': 240,
+          'min-width: 768px': 240,
+          'min-width: 480px': 240,
+          'min-width: 320px': 240,
+        },
       },
     },
     {
@@ -37,6 +44,13 @@ ExtendedWireframe.defaultContent = {
       image: {
         ...Component.defaultContent.testimonials[1].image,
         resourceRef: 'tanja-heffner-196114.jpg',
+        size: {
+          'min-width: 1200px': 240,
+          'min-width: 992px': 240,
+          'min-width: 768px': 240,
+          'min-width: 480px': 240,
+          'min-width: 320px': 240,
+        },
       },
     },
   ],
