@@ -11,46 +11,68 @@ class Block extends React.Component {
   state = {}
 
   componentDidMount() {
-    const accessToken = this.getModifierValue('accessToken')
-    const space = this.getModifierValue('space')
-    this.initContentful({accessToken, space})
+    if (this.state.isBlog) {
+      this.loadPosts()
+    }
   }
 
-  componentWillReceiveProps(nextProps) {
-    const accessToken = _.get('modifier.accessToken')(nextProps.$block)
-    const space = _.get('modifier.space')(nextProps.$block)
-    this.initContentful({accessToken, space})
+  static getDerivedStateFromProps(props, state) {
+    const accessToken = _.get('$block.modifier.accessToken')(props)
+    const space = _.get('$block.modifier.space')(props)
+    return {accessToken, space, isBlog: !(_.isEmpty(accessToken) || _.isEmpty(space))}
   }
 
-  initContentful = ({accessToken, space}) => {
-    if (window.contentfulClient) {
-      this.getPosts()
+  loadPosts = () => {
+    if (!window.contentful) {
+      ((w) => {
+        const {document} = w
+        const wf = document.createElement('script')
+        const s = document.getElementsByTagName('script')[0]
+        wf.src = 'https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js'
+        wf.onload = this.connectContentful
+        if (s) {
+          s.parentNode.insertBefore(wf, s)
+        } else {
+          document.body.insertBefore(wf, s)
+        }
+      })(window)
       return
     }
-    if (accessToken && space) {
-      const contentful = require('contentful')
-      const client = contentful.createClient({accessToken, space})
-      window.contentfulClient = client
-      this.getPosts()
+    if (this.state.isBlog && !this.state.posts) {
+      try {
+        window.contentfulClient.getEntries({
+          content_type: 'post',
+        }).then((entries) => {
+          const posts = entries.items
+          this.setState({posts})
+        })
+      } catch (error) {
+        this.setState({error})
+      }
     }
   }
 
-  getPosts = () => {
-    window.contentfulClient.getEntries({
-      content_type: 'post',
-    }).then((entries) => {
-      const posts = entries.items
-      this.setState({posts})
-    })
+  connectContentful = () => {
+    try {
+      const {accessToken, space} = this.state
+      const client = window.contentful.createClient({space, accessToken})
+      window.contentfulClient = client
+      this.loadPosts()
+    } catch (error) {
+      console.log(error)
+      this.setState({error})
+    }
   }
+
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  itemHeader = (post) => {
+  itemHeader = (index, post) => {
     const {components: {SsrText, Image}, style} = this.props
+    const {isBlog} = this.state
     const imageUrl = _.get('image.fields.file.url')(post)
     return [
       this.getModifierValue('item_image') && (
@@ -58,9 +80,11 @@ class Block extends React.Component {
           wrapperClassName={style['article__picture-wrapper']}
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
-          value={{src: imageUrl}}
+          {...isBlog
+            ? {value: {disabledControls: ['toolbar, scale'], src: imageUrl}}
+            : {bind: `collection[${index}].item_image`}
+          }
           size={{'min-width: 768px': 570, 'min-width: 480px': 768, 'min-width: 320px': 480}}
-          disabledControls={['toolbar', 'scale']}
         />
       ),
       this.getModifierValue('item_date') && (
@@ -72,47 +96,56 @@ class Block extends React.Component {
     ]
   }
 
-  postItem = (item) => {
-    const {style, components: {SsrText, Button}} = this.props
+  collectionItem = ({index, children = null, className}, item) => {
+    const {components: {Text, Button, SsrText}, style} = this.props
+    const {isBlog} = this.state
     const post = _.getOr({}, 'fields')(item)
     const postId = _.getOr('', 'sys.id')(item)
     const postPage = this.getModifierValue('post_mount')
-
     return (
-      <article className={classNames(style.article)}>
-        {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(post)}</div> : this.itemHeader(post)}
-        <SsrText tagName="h2" className={style.article__title} value={{content: post.title, type: 'subtitle'}} />
-        <SsrText tagName="h2" value={{content: converter.makeHtml(post.content)}} />
-        {this.getModifierValue('item_button') && (
-          <Button
-            className={style.article__link}
-            buttonClassName={style.button}
-            linkClassName={style.link}
-            bind="moreButton"
-            to={{pathname: `/${postPage}`, search: `?postid=${encodeURIComponent(postId)}`, state: {item}}}
-            disabledControls={['action']}
-          />
+      <article className={classNames(style.article, className)}>
+        {children}
+        {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(index, post)}</div> : this.itemHeader(index, post)}
+        {isBlog
+          ? <SsrText tagName="h2" className={style.article__title} value={{content: post.title, type: 'subtitle'}} />
+          : <Text tagName="h2" className={style.article__title} bind={`collection[${index}].item_title`} />
+        }
+        {this.getModifierValue('item_body') && (
+          isBlog
+            ? <SsrText tagName="p" className={style.article__text} value={{content: converter.makeHtml(post.content)}} />
+            : <Text tagName="p" className={style.article__text} bind={`collection[${index}].item_body`} />
         )}
+        {this.getModifierValue('item_button') && (
+        <Button
+          className={style.article__link}
+          buttonClassName={style.button}
+          linkClassName={style.link}
+          {...isBlog
+            ? {disabledControls: ['action'], bind: 'moreButton', to: {pathname: `/${postPage}`, search: `?postid=${encodeURIComponent(postId)}`, state: {item}}}
+            : {bind: `collection[${index}].item_button`}
+          }
+        />
+      )}
       </article>
     )
   }
 
   renderPosts = () => {
-    const {posts} = this.state
+    const {posts, accessToken, space} = this.state
     const {style} = this.props
-    const accessToken = this.getModifierValue('accessToken')
-    const space = this.getModifierValue('space')
     if (_.isEmpty(accessToken) || _.isEmpty(space)) {
       return <div>Please add contentfull tokens</div>
     }
     if (!posts) {
       return <div>Loading ....</div>
     }
-    return <div className={classNames('collection', style['articles-wrapper'])}>{posts.map(this.postItem)}</div>
+    return <div className={classNames('collection', style['articles-wrapper'])}>{posts.map(item => this.collectionItem({}, item))}</div>
   }
 
+
   render() {
-    const {components: {Text, Button, Icon}, style} = this.props
+    const {isBlog} = this.state
+    const {components: {Text, Button, Icon, Collection}, style} = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -123,7 +156,18 @@ class Block extends React.Component {
           {this.getModifierValue('subtitle') && (
             <Text tagName="div" className={style.subtitle} bind="subtitle" />
             )}
-          {this.renderPosts()}
+          {isBlog
+       ? this.renderPosts()
+       : <Collection
+         className={style['articles-wrapper']}
+         bind="collection"
+         Item={this.collectionItem}
+         fakeHelpers={{
+             count: 2,
+             className: style.fake,
+           }}
+       />
+          }
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
               <Button
@@ -156,12 +200,92 @@ Block.defaultContent = {
   },
   collection: {
     background: {},
-  },
-  moreButton: {
-    textValue: 'Load more',
-    type: 'secondary',
+    items: [
+      {
+        item_title: {
+          content: 'How to Hire the Best Employees to Your Company?',
+          type: 'heading',
+        },
+        item_body: {
+          content: 'Our HR Director shares his experience how to fill positions with the best candidates, where to find talents, and how to attract professionals to your business. ',
+          type: 'text',
+        },
+        item_category: {
+          content: 'Creative Process',
+          type: 'caption',
+        },
+        item_date: {
+          content: 'September 22, 2017',
+          type: 'caption',
+        },
+        item_image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Article illustration photo',
+        },
+        item_button: {
+          textValue: 'Learn more',
+          type: 'link',
+        },
+      },
+      {
+        item_title: {
+          content: 'How to Achieve Higher Profits in Retail with One Product?',
+          type: 'heading',
+        },
+        item_body: {
+          content: 'Do you want to achieve higher profits this year? Our new product will help you get what you want. In this article, you will find out how to use it to get more benefits.',
+          type: 'text',
+        },
+        item_category: {
+          content: 'Creative Process',
+          type: 'caption',
+        },
+        item_date: {
+          content: 'September 22, 2017',
+          type: 'caption',
+        },
+        item_image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Article illustration photo',
+        },
+        item_button: {
+          textValue: 'Learn more',
+          type: 'link',
+        },
+      },
+      {
+        item_title: {
+          content: 'Top 5 Tips to Improve Your Engineering Department.',
+          type: 'heading',
+        },
+        item_body: {
+          content: 'You engineers can bring you better results! Get to know how to improve engineering department to make a new step for your company growth. ',
+          type: 'text',
+        },
+        item_category: {
+          content: 'Creative Process',
+          type: 'caption',
+        },
+        item_date: {
+          content: 'September 22, 2017',
+          type: 'caption',
+        },
+        item_image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+          alt: 'Article illustration photo',
+        },
+        item_button: {
+          textValue: 'Learn more',
+          type: 'link',
+        },
+      },
+    ],
   },
   button: {
+    textValue: 'Learn more',
+    type: 'secondary',
+  },
+  moreButton: {
     textValue: 'Learn more',
     type: 'secondary',
   },
