@@ -14,7 +14,7 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index}) => {
-    const {components: {Image}, style} = this.props
+    const {components: {Image, Text}, style} = this.props
     return (
       <div className={style.item}>
         <Image
@@ -27,6 +27,7 @@ class Wireframe extends React.Component {
           }}
           resize={{disable: true}}
         />
+        {this.getModifierValue('item_title') && <Text tagName="h3" className={style.item__title} bind={`collection[${index}].item_title`} />}
       </div>
     )
   }
@@ -111,11 +112,9 @@ Wireframe.defaultContent = {
         src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Partner logo',
       },
-    },
-    {
-      item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+      item_title: {
+        content: 'Partners 1',
+        type: 'heading',
       },
     },
     {
@@ -123,11 +122,9 @@ Wireframe.defaultContent = {
         src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Partner logo',
       },
-    },
-    {
-      item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+      item_title: {
+        content: 'Partners 2',
+        type: 'heading',
       },
     },
     {
@@ -135,17 +132,49 @@ Wireframe.defaultContent = {
         src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Partner logo',
       },
-    },
-    {
-      item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+      item_title: {
+        content: 'Partners 3',
+        type: 'heading',
       },
     },
     {
       item_image: {
         src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Partner logo',
+      },
+      item_title: {
+        content: 'Partners 4',
+        type: 'heading',
+      },
+    },
+    {
+      item_image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Partner logo',
+      },
+      item_title: {
+        content: 'Partners 5',
+        type: 'heading',
+      },
+    },
+    {
+      item_image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Partner logo',
+      },
+      item_title: {
+        content: 'Partners 6',
+        type: 'heading',
+      },
+    },
+    {
+      item_image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Partner logo',
+      },
+      item_title: {
+        content: 'Partners 7',
+        type: 'heading',
       },
     }],
   },
@@ -158,6 +187,7 @@ Wireframe.defaultContent = {
 Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Partners description', type: 'checkbox'},
+  item_title: {defaultValue: false, label: 'Partners title', type: 'checkbox'},
   button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
