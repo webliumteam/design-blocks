@@ -20,7 +20,11 @@ ExtendedWireframe.defaultContent = {
     image: {
       resourceRef: 'Logo.png',
       alt: 'Logo',
+      maxWidth: 275,
+      maxHeight: 275,
     },
+    maxWidth: 275,
+    maxHeight: 275,
   },
   menu: [
     {
