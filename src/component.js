@@ -60,7 +60,6 @@ class Wireframe extends React.Component {
               arrows: true,
               slidesToScroll: 1,
               slidesToShow: 4,
-              adaptiveHeight: false,
               responsive: [
                 {
                   breakpoint: 479,
