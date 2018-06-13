@@ -1,4 +1,7 @@
 import $editor from 'weblium/editor'
+import md from 'showdown'
+
+const converter = new md.Converter()
 
 class Block extends React.Component {
   static propTypes = {
@@ -9,31 +12,18 @@ class Block extends React.Component {
   state = {}
 
 
-  componentWillMount() {
-    this.isBlog = !(_.isEmpty(this.getModifierValue('accessToken')) || _.isEmpty(this.getModifierValue('space')))
+  static getDerivedStateFromProps(props) {
+    const accessToken = _.get('$block.modifier.accessToken')(props)
+    const space = _.get('$block.modifier.space')(props)
+    return {accessToken, space, isBlog: !(_.isEmpty(accessToken) || _.isEmpty(space))}
   }
 
   componentDidMount() {
-    if (this.isBlog) {
+    if (this.state.isBlog) {
       const post = this.formatDate(_.get('location.state.item')(this.props))
       // transition from main page
       if (post) {
-        this.setState({post})
-        return
-      }
-      if (!window.contentful) {
-        ((w) => {
-          const {document} = w
-          const wf = document.createElement('script')
-          const s = document.getElementsByTagName('script')[0]
-          wf.src = 'https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js'
-          wf.onload = this.connectContentful
-          if (s) {
-            s.parentNode.insertBefore(wf, s)
-          } else {
-            document.body.insertBefore(wf, s)
-          }
-        })(window)
+        this.setState({post}) //eslint-disable-line
         return
       }
       this.loadPost(this.props)
@@ -42,6 +32,71 @@ class Block extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.loadPost(nextProps)
+  }
+
+
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
+  getImageSize = fullWidth =>
+    fullWidth
+      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
+      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
+
+  connectContentful = () => {
+    try {
+      const accessToken = this.getModifierValue('accessToken')
+      const space = this.getModifierValue('space')
+      const client = window.contentful.createClient({space, accessToken})
+      window.contentfulClient = client
+      this.loadPost(this.props)
+    } catch (error) {
+      console.log(error)
+      this.setState({error})
+    }
+  }
+
+  loadPost = async (props) => {
+    if (!window.contentful) {
+      ((w) => {
+        const {document} = w
+        const wf = document.createElement('script')
+        const s = document.getElementsByTagName('script')[0]
+        wf.src = 'https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js'
+        wf.onload = this.connectContentful
+        if (s) {
+          s.parentNode.insertBefore(wf, s)
+        } else {
+          document.body.insertBefore(wf, s)
+        }
+      })(window)
+      return
+    }
+    if (this.state.isBlog) {
+      const postId = _.get('location.search')(props)
+      try {
+        if (!postId) {
+          throw new Error('no postid specified')
+        }
+        const entry = await window.contentfulClient.getEntry(postId)
+        const post = this.formatDate(_.get('item')(entry))
+        this.setState({post})
+      } catch (e) {
+        try {
+          const entries = await window.contentfulClient.getEntries({
+            content_type: 'post',
+          })
+          const item = _.get('items[0]')(entries)
+          const post = this.formatDate(item)
+          this.setState({post})
+        } catch (error) {
+          console.log(error)
+          this.setState({error})
+        }
+      }
+    }
   }
 
   formatDate = (post) => {
@@ -57,57 +112,6 @@ class Block extends React.Component {
     }
     return postItem
   }
-
-  loadPost = async (props) => {
-    if (this.isBlog) {
-      const postId = _.get('location.search')(props)
-      try {
-        if (!postId) {
-          throw new Error('no postid specified')
-        }
-        const entry = await window.contentfulClient.getEntry(postId)
-        const post = this.formatDate(_.get('item')(entry))
-        console.log(post)
-        this.setState({post})
-      } catch (e) {
-        try {
-          const entries = await window.contentfulClient.getEntries({
-            content_type: 'post',
-          })
-          const item = _.get('items[0]')(entries)
-          const post = this.formatDate(item)
-          console.log(post)
-          this.setState({post})
-        } catch (error) {
-          console.log(error)
-          this.setState({error})
-        }
-      }
-    }
-  }
-
-  connectContentful = () => {
-    try {
-      const accessToken = this.getModifierValue('accessToken')
-      const space = this.getModifierValue('space')
-      const client = window.contentful.createClient({space, accessToken})
-      window.contentfulClient = client
-      this.loadPost(this.props)
-    } catch (error) {
-      console.log(error)
-      this.setState({error})
-    }
-  }
-
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  getImageSize = fullWidth =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
     const {components: {Text, Image, SsrText}, style} = this.props
@@ -133,7 +137,7 @@ class Block extends React.Component {
     if (error) {
       return <div>Something went wrong</div>
     }
-    const {isBlog} = this
+    const {isBlog} = this.state
     if (isBlog && !post) {
       return <div>Loading....</div>
     }
@@ -206,7 +210,7 @@ class Block extends React.Component {
             <div className={style.article__content}>
               {
                 isBlog
-                  ? <SsrText tagName="p" className={style.article__body} value={{content: post.content, type: 'text'}} />
+                  ? <SsrText tagName="p" className={style.article__body} value={{content: converter.makeHtml(post.content), type: 'text'}} />
                   : <Text tagName="p" className={style.article__body} bind="body" />
               }
             </div>
