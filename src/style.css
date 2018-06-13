@@ -139,6 +139,23 @@
   max-width: 100%;
 }
 
+.article__buttons {
+  width: 100%;
+}
+
+.article__button {
+  margin-right: 30px;
+  margin-bottom: 15px;
+
+  @media (min-width: 480px) {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
 .link {
   padding: 0;
 }

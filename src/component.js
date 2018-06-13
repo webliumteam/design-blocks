@@ -38,13 +38,25 @@ class Block extends React.Component {
             {_.get('project-description')(modifier) && (
               <Text bind={`projects[${index}].text`} className={style.article__text} tagName="p" />
             )}
-            {_.get('project-button')(modifier) && (
-              <Button
-                className={style.article__link}
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind={`projects[${index}].link`}
-              />
+            {(_.get('project-button')(modifier) || _.get('project-button-2')(modifier)) && (
+              <div className={style.article__buttons}>
+                {_.get('project-button-2')(modifier) && (
+                  <Button
+                    className={style.article__button}
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind={`projects[${index}].button`}
+                  />
+                )}
+                {_.get('project-button')(modifier) && (
+                  <Button
+                    className={style.article__link}
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind={`projects[${index}].link`}
+                  />
+                )}
+              </div>
             )}
           </div>
         </article>
@@ -120,17 +132,11 @@ Block.defaultContent = {
           'min-width: 320px': 450,
         },
       },
+      button: {
+        textValue: 'Learn more',
+        type: 'secondary',
+      },
       link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -159,17 +165,11 @@ Block.defaultContent = {
           'min-width: 320px': 450,
         },
       },
+      button: {
+        textValue: 'Learn more',
+        type: 'secondary',
+      },
       link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -208,6 +208,7 @@ Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Project description', type: 'checkbox'},
   'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox'},
   'project-description': {defaultValue: true, label: 'Project main text', type: 'checkbox'},
+  'project-button-2': {defaultValue: false, label: 'Project button', type: 'checkbox'},
   'project-button': {defaultValue: true, label: 'Project link', type: 'checkbox'},
   'block-button': {defaultValue: true, label: 'Block button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
