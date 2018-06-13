@@ -34,7 +34,6 @@ class Block extends React.Component {
     this.loadPost(nextProps)
   }
 
-
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   getOptionValue = (path, defaultValue = false) =>
@@ -47,8 +46,7 @@ class Block extends React.Component {
 
   connectContentful = () => {
     try {
-      const accessToken = this.getModifierValue('accessToken')
-      const space = this.getModifierValue('space')
+      const {accessToken, space} = this.state
       const client = window.contentful.createClient({space, accessToken})
       window.contentfulClient = client
       this.loadPost(this.props)
