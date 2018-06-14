@@ -244,14 +244,14 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  map: {defaultValue: true, label: 'Map', type: 'checkbox'},
-  logo: {defaultValue: true, label: 'Logo', type: 'checkbox'},
-  address: {defaultValue: true, label: 'Address text block', type: 'checkbox'},
-  phone: {defaultValue: true, label: 'Phone text block', type: 'checkbox'},
-  email: {defaultValue: true, label: 'E-mail text block', type: 'checkbox'},
-  social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  map: {defaultValue: true, label: 'Map', type: 'checkbox', sortOrder: 10},
+  logo: {defaultValue: true, label: 'Logo', type: 'checkbox', sortOrder: 20},
+  address: {defaultValue: true, label: 'Address text block', type: 'checkbox', sortOrder: 30},
+  phone: {defaultValue: true, label: 'Phone text block', type: 'checkbox', sortOrder: 40},
+  email: {defaultValue: true, label: 'E-mail text block', type: 'checkbox', sortOrder: 50},
+  social: {defaultValue: true, label: 'Social Media Buttons', type: 'checkbox', sortOrder: 60},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden', sortOrder: 70},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden', sortOrder: 80},
   'map-arrangement': {
     children: [
       {id: 'left', label: 'Left'},
@@ -261,6 +261,7 @@ Block.modifierScheme = {
     name: 'Map arrangement',
     type: 'radio-button-group',
     style: 'buttons',
+    sortOrder: 90,
   },
 }
 
