@@ -62,12 +62,12 @@ ExtendedWireframe.modifierScheme = {
     ...Component.modifierScheme.align,
     type: 'hidden',
   },
+  'top-caption': {defaultValue: true, label: 'Top caption', type: 'checkbox'},
   heading: {defaultValue: false, label: 'Company title', type: 'hidden'},
   subheading: {defaultValue: false, label: 'Company description', type: 'hidden'},
   'social-icons': {defaultValue: false, label: 'Social media buttons', type: 'hidden'},
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   'additional-button': {defaultValue: false, label: 'Additional button', type: 'hidden'},
-  'top-caption': {defaultValue: true, label: 'Top caption', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'checkbox'},
 }
 
