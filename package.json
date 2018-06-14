@@ -1,6 +1,6 @@
 {
   "name": "design-snorlax-about",
-  "version": "0.0.14",
+  "version": "0.0.21",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "wireframe-zapdos-about": "https://github.com/webliumteam/blocks#w/zapdos/about/prod"
-  }
+  },
+  "editorVersion": "4.13.0"
 }
