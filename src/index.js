@@ -42,15 +42,15 @@ ExtendedWireframe.defaultContent = {
 }
 
 ExtendedWireframe.modifierScheme = {
-  body: {defaultValue: true, label: 'Numbers description', type: 'checkbox'},
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   button: {defaultValue: false, label: 'Button', type: 'hidden'},
   'number-title': {
     defaultValue: true,
     label: 'Additional information on numbers',
     type: 'checkbox',
   },
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Numbers description', type: 'checkbox'},
 }
 
 export default ExtendedWireframe
