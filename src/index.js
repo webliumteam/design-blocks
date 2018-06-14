@@ -74,8 +74,8 @@ ExtendedWireframe.defaultContent = {
 }
 
 ExtendedWireframe.modifierScheme = {
-  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
   ...Component.modifierScheme,
+  'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Partner description', type: 'checkbox'},
   heading: {defaultValue: false, label: 'Partner title', type: 'hidden'},
   body: {defaultValue: false, label: 'About partner', type: 'hidden'},
