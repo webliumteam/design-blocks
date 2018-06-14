@@ -18,10 +18,10 @@ ExtendedWireframe.defaultContent = {
         resourceRef: 'img-1.jpg',
         alt: 'Project 1',
         size: {
-          'min-width: 992px': 960,
-          'min-width: 768px': 962,
+          'min-width: 992px': 1200,
+          'min-width: 768px': 992,
           'min-width: 480px': 768,
-          'min-width: 320px': 450,
+          'min-width: 320px': 480,
         },
       },
       link: {
@@ -34,10 +34,10 @@ ExtendedWireframe.defaultContent = {
         resourceRef: 'img-2.jpg',
         alt: 'Project 2',
         size: {
-          'min-width: 992px': 960,
-          'min-width: 768px': 962,
+          'min-width: 992px': 1200,
+          'min-width: 768px': 992,
           'min-width: 480px': 768,
-          'min-width: 320px': 450,
+          'min-width: 320px': 480,
         },
       },
       link: {
@@ -62,10 +62,10 @@ ExtendedWireframe.defaultContent = {
         resourceRef: 'img-3.jpg',
         alt: 'Project 3',
         size: {
-          'min-width: 992px': 586,
-          'min-width: 768px': 962,
+          'min-width: 992px': 1200,
+          'min-width: 768px': 992,
           'min-width: 480px': 768,
-          'min-width: 320px': 450,
+          'min-width: 320px': 480,
         },
       },
       link: {
@@ -101,10 +101,10 @@ ExtendedWireframe.defaultContent = {
         resourceRef: 'img-4.jpg',
         alt: 'Project 4',
         size: {
-          'min-width: 992px': 586,
-          'min-width: 768px': 962,
+          'min-width: 992px': 1200,
+          'min-width: 768px': 992,
           'min-width: 480px': 768,
-          'min-width: 320px': 450,
+          'min-width: 320px': 480,
         },
       },
       link: {
