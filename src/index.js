@@ -39,8 +39,6 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   'caption-decorator': {defaultValue: false, label: 'Pretitle', type: 'hidden'},
-  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
-  'primary-btn': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
   'secondary-btn': {defaultValue: false, label: 'Secondary button', type: 'hidden'},
   undefined: {type: 'separator'},
 }
