@@ -57,7 +57,7 @@
 
   @media (--ui-tablet-devices) {
     max-width: calc(50% - 30px);
-    margin: 0 15px 15px;
+    margin: 0 15px 30px;
     flex-basis: calc(50% - 30px);
   }
 
@@ -126,11 +126,11 @@
 .btns-group {
   max-width: calc(100% + 30px);
   margin: -15px;
-  padding-top: 25px;
+  padding-top: 10px;
   text-align: center;
 
   @media(--ui-medium-devices) {
-    padding-top: 45px;
+    padding-top: 30px;
   }
 
   &__button,
