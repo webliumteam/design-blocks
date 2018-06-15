@@ -138,7 +138,7 @@ Block.defaultContent = {
   },
   centerBackground: {
     type: 'color',
-    color: '#ebeaea',
+    color: '#d2d2d2',
   },
   rightBackground: {
     type: 'color',
