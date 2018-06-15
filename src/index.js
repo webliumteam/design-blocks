@@ -80,7 +80,7 @@ ExtendedWireframe.defaultContent = {
 }
 
 ExtendedWireframe.modifierScheme = {
-
+  ...Component.modifierScheme,
   'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
