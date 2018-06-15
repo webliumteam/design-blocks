@@ -33,6 +33,12 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   icon: {defaultValue: false, label: 'Careers icon', type: 'hidden'},
+  dots: {
+    defaultValue: true,
+    label: 'Dots image decorator',
+    type: 'checkbox',
+    classNameOnActive: style['section--with-dots'],
+  },
 }
 
 
