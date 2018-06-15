@@ -3,6 +3,17 @@
 /* start here */
 .section {
   position: relative;
+
+  &--with-dots {
+    .media {
+      &__decorator {
+
+        @media (min-width: 992px) {
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 .title {
@@ -159,7 +170,7 @@
     }
 
     &__decorator {
-      display: block;
+      display: none;
       height: 100%;
       bottom: -20px;
       right: -45px;
