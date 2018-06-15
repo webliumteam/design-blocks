@@ -20,6 +20,7 @@ ExtendedWireframe.defaultContent = {
 }
 
 ExtendedWireframe.modifierScheme = {
+  ...Component.modifierScheme,
   text: {defaultValue: true, label: 'Main text', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
