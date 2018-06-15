@@ -65,6 +65,8 @@ ExtendedWireframe.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: true, label: 'Top icon decorator', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Secondary button', type: 'hidden'},
+
 }
 
 export default ExtendedWireframe
