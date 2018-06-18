@@ -101,6 +101,7 @@
     &-wrapper {
       width: 30px;
       height: 30px;
+      margin-right: 10px;
     }
   }
 
@@ -110,7 +111,6 @@
 
   &__name {
     max-width: calc(100% - 35px);
-    margin-left: 10px;
   }
 }
 
@@ -124,11 +124,11 @@
   &__icon {
     width: 24px;
     height: 24px;
+    margin-right: 10px;
   }
 
   &__value {
     max-width: calc(100% - 30px);
-    margin-left: 10px;
   }
 }
 

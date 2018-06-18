@@ -116,21 +116,12 @@ Wireframe.defaultContent = {
     content: 'Blog',
   },
   collection: {
-    background: {
-      'nth-child': [
-        ['n', {
-          type: 'image',
-          position: {
-            type: 'cover',
-            cover: '50% 50%',
-          },
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          imageColor: [216, 216, 216],
-        }],
-      ],
-    },
     items: [
       {
+        background: {
+          type: 'color',
+          color: '#eee',
+        },
         item_panel: {
           type: 'color',
           color: 'rgba(0,0,0, 0.2)',
@@ -161,6 +152,10 @@ Wireframe.defaultContent = {
         },
       },
       {
+        background: {
+          type: 'color',
+          color: '#eee',
+        },
         item_panel: {
           type: 'color',
           color: 'rgba(0,0,0, 0.2)',
@@ -191,6 +186,10 @@ Wireframe.defaultContent = {
         },
       },
       {
+        background: {
+          type: 'color',
+          color: '#eee',
+        },
         item_panel: {
           type: 'color',
           color: 'rgba(0,0,0, 0.2)',
