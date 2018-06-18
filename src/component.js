@@ -7,6 +7,7 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    pages: PropTypes.object.isRequired,
   }
   state = {}
 
@@ -96,12 +97,26 @@ class Block extends React.Component {
     ]
   }
 
+  getPostMount = () => {
+    const pageBySlug = _.flow(
+      _.filter(({slug}) => slug),
+      _.keyBy('slug'),
+    )(this.props.pages)
+    const postMountId = this.getModifierValue('post_mount')
+    const page = pageBySlug[postMountId]
+    if (page) {
+      const {metadata: {slug}} = page
+      return slug
+    }
+    return ''
+  }
+
   collectionItem = ({index, children = null, className}, item) => {
     const {components: {Text, Button, SsrText}, style} = this.props
     const {isBlog} = this.state
     const post = _.getOr({}, 'fields')(item)
     const postId = _.getOr('', 'sys.id')(item)
-    const postPage = this.getModifierValue('post_mount')
+    const postPage = this.getPostMount()
     return (
       <article className={classNames(style.article, className)}>
         {children}
@@ -299,9 +314,11 @@ Block.modifierScheme = {
   item_body: {defaultValue: true, label: 'Post main text', type: 'checkbox'},
   item_button: {defaultValue: true, label: 'Link', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
-  post_mount: {defaultValue: '', label: 'Post mount slug', type: 'input'},
-  accessToken: {defaultValue: '', label: 'Contentfull accessToken', type: 'input'},
-  space: {defaultValue: '', label: 'Contentfull space', type: 'input'},
+  textLabel: {defaultValue: '', label: 'Connect Contentful CMS', type: 'label', advanced: true},
+  post_mount: {defaultValue: '', label: 'Post mount slug', type: 'select', data: 'pages', advanced: true},
+  space: {defaultValue: '', label: 'Space ID', type: 'input', advanced: true},
+  accessToken: {defaultValue: '', label: 'Content Delivery API', type: 'input', advanced: true},
 }
 
-export default Block
+const {enhancers: {withConnect}, connectHelpers: {withPages}} = $editor
+export default withConnect(withPages)(Block)
