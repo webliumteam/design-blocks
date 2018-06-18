@@ -17,10 +17,74 @@ class Block extends React.Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.isBlog && this.state.isBlog) {
+      this.loadPosts()
+    }
+  }
+
   static getDerivedStateFromProps(props, state) {
     const accessToken = _.get('$block.modifier.accessToken')(props)
     const space = _.get('$block.modifier.space')(props)
     return {accessToken, space, isBlog: !(_.isEmpty(accessToken) || _.isEmpty(space))}
+  }
+
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
+
+  getOptionValue = (path, defaultValue = false) =>
+    _.getOr(defaultValue, ['options', path], this.props.$block)
+
+
+  getPostMount = () => {
+    const pageBySlug = _.flow(
+      _.filter(({slug}) => slug),
+      _.keyBy('slug'),
+    )(this.props.pages)
+    const postMountId = this.getModifierValue('post_mount')
+    const page = pageBySlug[postMountId]
+    if (page) {
+      const {metadata: {slug}} = page
+      return slug
+    }
+    return ''
+  }
+
+  itemHeader = (index, post) => {
+    const {components: {SsrText, Image}, style} = this.props
+    const {isBlog} = this.state
+    const imageUrl = _.get('image.fields.file.url')(post)
+    return [
+      this.getModifierValue('item_image') && (
+        <Image
+          wrapperClassName={style['article__picture-wrapper']}
+          pictureClassName={style.article__picture}
+          imgClassName={style.article__image}
+          {...isBlog
+            ? {value: {disabledControls: ['toolbar, scale'], src: imageUrl}}
+            : {bind: `collection[${index}].item_image`}
+          }
+          size={{'min-width: 768px': 570, 'min-width: 480px': 768, 'min-width: 320px': 480}}
+        />
+      ),
+      this.getModifierValue('item_date') && (
+        <small className={style.article__meta}>
+          {!this.getOptionValue('hidden-category') && <SsrText tagName="span" value={{content: post.articleCategory}} className={style.article__category} /> }
+          {!this.getOptionValue('hidden-date') && <SsrText tagName="span" value={{content: post.subtitle}} className={style.article__date} /> }
+        </small>
+      ),
+    ]
+  }
+
+  connectContentful = () => {
+    try {
+      const {accessToken, space} = this.state
+      const client = window.contentful.createClient({space, accessToken})
+      window.contentfulClient = client
+      this.loadPosts()
+    } catch (error) {
+      console.log(error)
+      this.setState({error})
+    }
   }
 
   loadPosts = () => {
@@ -51,64 +115,6 @@ class Block extends React.Component {
         this.setState({error})
       }
     }
-  }
-
-  connectContentful = () => {
-    try {
-      const {accessToken, space} = this.state
-      const client = window.contentful.createClient({space, accessToken})
-      window.contentfulClient = client
-      this.loadPosts()
-    } catch (error) {
-      console.log(error)
-      this.setState({error})
-    }
-  }
-
-
-  getModifierValue = path => _.get(['modifier', path], this.props.$block)
-
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
-
-  itemHeader = (index, post) => {
-    const {components: {SsrText, Image}, style} = this.props
-    const {isBlog} = this.state
-    const imageUrl = _.get('image.fields.file.url')(post)
-    return [
-      this.getModifierValue('item_image') && (
-        <Image
-          wrapperClassName={style['article__picture-wrapper']}
-          pictureClassName={style.article__picture}
-          imgClassName={style.article__image}
-          {...isBlog
-            ? {value: {disabledControls: ['toolbar, scale'], src: imageUrl}}
-            : {bind: `collection[${index}].item_image`}
-          }
-          size={{'min-width: 768px': 570, 'min-width: 480px': 768, 'min-width: 320px': 480}}
-        />
-      ),
-      this.getModifierValue('item_date') && (
-        <small className={style.article__meta}>
-          {!this.getOptionValue('hidden-category') && <SsrText tagName="span" value={{content: post.articleCategory}} className={style.article__category} /> }
-          {!this.getOptionValue('hidden-date') && <SsrText tagName="span" value={{content: post.subtitle}} className={style.article__date} /> }
-        </small>
-      ),
-    ]
-  }
-
-  getPostMount = () => {
-    const pageBySlug = _.flow(
-      _.filter(({slug}) => slug),
-      _.keyBy('slug'),
-    )(this.props.pages)
-    const postMountId = this.getModifierValue('post_mount')
-    const page = pageBySlug[postMountId]
-    if (page) {
-      const {metadata: {slug}} = page
-      return slug
-    }
-    return ''
   }
 
   collectionItem = ({index, children = null, className}, item) => {
@@ -146,10 +152,13 @@ class Block extends React.Component {
   }
 
   renderPosts = () => {
-    const {posts, accessToken, space} = this.state
+    const {posts, accessToken, space, error} = this.state
     const {style} = this.props
     if (_.isEmpty(accessToken) || _.isEmpty(space)) {
       return <div>Please add contentfull tokens</div>
+    }
+    if (error) {
+      return <div>Something went wrong</div>
     }
     if (!posts) {
       return <div>Loading ....</div>
