@@ -151,7 +151,7 @@ class Block extends React.Component {
                 wrapperClassName={style['article__picture-wrapper']}
                 pictureClassName={style.article__picture}
                 imgClassName={style.article__image}
-                resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
+                resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer'), bindToModifier: 'picture'}}
                 {...isBlog ? {value: {src: _.get('image.fields.file.url')(post)}, disabledControls: ['toolbar', 'scale']} : {bind: 'picture', size: this.getImageSize(columnLayout)}}
               />
               <header className={style.article__header}>
@@ -179,7 +179,7 @@ class Block extends React.Component {
                         wrapperClassName={style['author__picture-wrapper']}
                         pictureClassName={style.author__picture}
                         imgClassName={style.author__image}
-                        resize={{disable: true}}
+                        resize={{disable: true, bindToModifier: 'author_picture'}}
                         {...isBlog ? {value: {src: _.get('author.fields.avatar.fields.file.url')(post)}, disabledControls: ['toolbar', 'scale']} : {bind: 'author_picture', size: this.getImageSize(columnLayout)}}
                       />
                     )}
