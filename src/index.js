@@ -58,6 +58,7 @@ ExtendedWireframe.modifierScheme = {
   'project-button': {defaultValue: true, label: 'Project button', type: 'checkbox'},
   'project-category': {defaultValue: false, label: 'Project category', type: 'hidden'},
   'project-description': {defaultValue: true, label: 'Project description', type: 'checkbox'},
+  'project-button-2': {defaultValue: false, label: 'Project button', type: 'hidden'},
   subtitle: {defaultValue: false, label: 'Title description', type: 'hidden'},
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
