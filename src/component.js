@@ -8,6 +8,7 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
   }
   state = {}
 
@@ -26,12 +27,14 @@ class Block extends React.Component {
         this.setState({post}) //eslint-disable-line
         return
       }
-      this.loadPost(this.props)
+      this.loadPost()
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.loadPost(nextProps)
+  componentDidUpdate(prevProps, prevState) {
+    if ((!prevState.isBlog && this.state.isBlog) || (prevProps.location !== this.props.location)) {
+      this.loadPost()
+    }
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
@@ -49,14 +52,14 @@ class Block extends React.Component {
       const {accessToken, space} = this.state
       const client = window.contentful.createClient({space, accessToken})
       window.contentfulClient = client
-      this.loadPost(this.props)
+      this.loadPost()
     } catch (error) {
       console.log(error)
       this.setState({error})
     }
   }
 
-  loadPost = async (props) => {
+  loadPost = async () => {
     if (!window.contentful) {
       ((w) => {
         const {document} = w
@@ -73,7 +76,7 @@ class Block extends React.Component {
       return
     }
     if (this.state.isBlog) {
-      const postId = _.get('location.search')(props)
+      const postId = _.get('location.search')(this.props)
       try {
         if (!postId) {
           throw new Error('no postid specified')
@@ -149,7 +152,7 @@ class Block extends React.Component {
                 pictureClassName={style.article__picture}
                 imgClassName={style.article__image}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
-                {...isBlog ? {value: {src: _.get('image.fields.file.url')(post)}} : {bind: 'picture', size: this.getImageSize(columnLayout)}}
+                {...isBlog ? {value: {src: _.get('image.fields.file.url')(post)}, disabledControls: ['toolbar', 'scale']} : {bind: 'picture', size: this.getImageSize(columnLayout)}}
               />
               <header className={style.article__header}>
                 {this.getModifierValue('category') &&
@@ -177,7 +180,7 @@ class Block extends React.Component {
                         pictureClassName={style.author__picture}
                         imgClassName={style.author__image}
                         resize={{disable: true}}
-                        {...isBlog ? {value: {src: _.get('author.fields.avatar.fields.file.url')(post)}} : {bind: 'author_picture', size: this.getImageSize(columnLayout)}}
+                        {...isBlog ? {value: {src: _.get('author.fields.avatar.fields.file.url')(post)}, disabledControls: ['toolbar', 'scale']} : {bind: 'author_picture', size: this.getImageSize(columnLayout)}}
                       />
                     )}
                     {authorText && (
