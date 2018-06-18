@@ -6,6 +6,15 @@
   padding-bottom: 25px;
   word-wrap: break-word;
 
+  &--opened {
+    .nav-button {
+
+      @media (--ui-medium-devices) {
+        opacity: 0;
+      }
+    }
+  }
+
   &__inner {
     max-width: 100%;
     min-height: 50px;
@@ -19,6 +28,7 @@
 
     @media (--ui-medium-devices) {
       display: flex;
+      position: relative;
       max-width: calc(100% - 30px);
       min-height: 65px;
       justify-content: flex-end;
@@ -41,6 +51,14 @@
       align-items: normal;
       transition: opacity 200ms ease;
       overflow-y: auto;
+
+      @media (--ui-medium-devices) {
+        .nav-button {
+          top: 70px;
+          left: 50px;
+          opacity: 1;
+        }
+      }
 
       .header:not(.header--opened) & {
         opacity: 0;
@@ -263,7 +281,7 @@
   position: absolute;
   width: 20px;
   height: 16px;
-  top: 32px;
+  top: 50%;
   left: 15px;
   padding: 0;
   background-color: transparent;
@@ -271,8 +289,9 @@
   border: 0;
   outline: none;
   cursor: pointer;
+  opacity: 1;
   z-index: 1;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
 
   &:hover,
   &:active,
