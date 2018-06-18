@@ -18,10 +18,8 @@ class Block extends React.Component {
       this.getModifierValue('item_category') ||
       this.getModifierValue('item_date')
 
-    const arrange = this.getModifierValue('arrange-elements')
-
     return (
-      <article className={classNames(style.article, arrange && style['article--reverse'])}>
+      <article className={style.article}>
         {children}
         {this.getModifierValue('item_image') && (
           <Image
@@ -34,7 +32,6 @@ class Block extends React.Component {
                 'min-width: 320px': 230,
               }
             }
-            resize={{disable: true}}
           />
           )}
         <div className={style.article__wrapper}>
@@ -71,8 +68,9 @@ class Block extends React.Component {
 
   render() {
     const {components: {Collection, Text, Button}, style} = this.props
+    const arrange = this.getModifierValue('arrange-elements')
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, arrange && style['section--reverse'])} >
         <div className={style.section__inner}>
           <Text tagName="h1" className={style.title} bind="title" />
           <Collection
@@ -203,7 +201,7 @@ Block.defaultContent = {
   },
   button: {
     textValue: 'Learn more',
-    type: 'link',
+    type: 'secondary',
   },
 }
 
@@ -213,10 +211,9 @@ Block.modifierScheme = {
     name: 'Arrange elements',
     type: 'swap',
   },
-  icon_decorator: {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
   item_image: {defaultValue: true, label: 'Image', type: 'checkbox'},
+  item_date: {defaultValue: false, label: 'Date of publishing', type: 'checkbox'},
   item_category: {defaultValue: true, label: 'Category of publishing', type: 'checkbox'},
-  item_date: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
   item_body: {defaultValue: true, label: 'Post main text', type: 'checkbox'},
   item_button: {defaultValue: true, label: 'Link', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
