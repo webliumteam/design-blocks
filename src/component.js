@@ -221,8 +221,8 @@ Block.modifierScheme = {
   'item-icon': {defaultValue: true, label: 'Advantages icon', type: 'checkbox'},
   'item-heading': {defaultValue: true, label: 'Advantages title', type: 'checkbox'},
   'item-description': {defaultValue: true, label: 'Advantages description', type: 'checkbox'},
-  'button-secondary': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
   'button-primary': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
