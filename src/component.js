@@ -273,8 +273,9 @@ Block.modifierScheme = {
   date: {defaultValue: true, label: 'Publication date', type: 'checkbox'},
   divider: {defaultValue: true, label: 'Decorator divider', type: 'hidden'},
   time: {defaultValue: true, label: 'Post read time', type: 'checkbox'},
-  accessToken: {defaultValue: '', label: 'Contentfull accessToken', type: 'input'},
-  space: {defaultValue: '', label: 'Contentfull space', type: 'input'},
+  textLabel: {defaultValue: '', label: 'Connect Contentful CMS', type: 'label', advanced: true},
+  space: {defaultValue: '', label: 'Space ID', type: 'input', advanced: true},
+  accessToken: {defaultValue: '', label: 'Content Delivery API', type: 'input', advanced: true},
 }
 
 export default Block
