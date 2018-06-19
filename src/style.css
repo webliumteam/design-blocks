@@ -3,9 +3,17 @@
 /* start here */
 
 .item {
-  border-width: 2px;
+  border-width: 3px;
+
+  @media (--ui-tablet-devices) {
+    border-width: 1px;
+  }
 
   &:nth-child(odd) {
-    border-width: 2px;
+    border-width: 3px;
+
+    @media (--ui-tablet-devices) {
+      border-width: 1px;
+    }
   }
 }
