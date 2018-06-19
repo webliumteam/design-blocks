@@ -25,22 +25,22 @@ class Block extends React.Component {
         )}
         <div className={style.item__info}>
           <Text tagName="h2" className={style.item__title} bind={`items[${index}].heading`} />
-          {this.getModifierValue('body') && (
-            <Text tagName="p" className={style.item__text} bind={`items[${index}].body`} />
-          )}
+          <Text tagName="p" className={style.item__text} bind={`items[${index}].body`} />
           {this.getModifierValue('price') && (
             <div className={style['item__price-wrapper']}>
               <Text tagName="p" className={style.item__price} bind={`items[${index}].price`} />
-              <Text tagName="p" className={style.item__caption} bind={`items[${index}].caption`} />
+              {this.getModifierValue('caption') && (<Text tagName="p" className={style.item__caption} bind={`items[${index}].caption`} />)}
             </div>
           )}
         </div>
-        <Button
-          linkClassName={style.link}
-          buttonClassName={style.button}
-          className={style.item__link}
-          bind={`items[${index}].link`}
-        />
+        {this.getModifierValue('item-button') && (
+          <Button
+            linkClassName={style.link}
+            buttonClassName={style.button}
+            className={style.item__link}
+            bind={`items[${index}].link`}
+          />
+        )}
       </article>
     )
   }
@@ -225,10 +225,10 @@ Block.defaultContent = {
 Block.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Careers description', type: 'checkbox'},
   'item-icon': {defaultValue: true, label: 'Product icon', type: 'checkbox'},
-  body: {defaultValue: true, label: 'Type of employment (full-time/part-time)', type: 'checkbox'},
   price: {defaultValue: true, label: 'Price', type: 'checkbox'},
+  caption: {defaultValue: true, label: 'Price period', type: 'checkbox'},
+  'item-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
   'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
-  'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
 export default Block
