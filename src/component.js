@@ -60,7 +60,7 @@ class Block extends React.Component {
           pictureClassName={style.article__picture}
           imgClassName={style.article__image}
           {...isBlog
-            ? {value: {src: imageUrl}, disabledControls: ['toolbar', 'scale']}
+            ? {value: {src: imageUrl}, disabledControls: ['toolbar', 'scale'], resize: {bindToModifier: 'author_picture'}}
             : {bind: `collection[${index}].item_image`}
           }
           size={{'min-width: 768px': 570, 'min-width: 480px': 768, 'min-width: 320px': 480}}
