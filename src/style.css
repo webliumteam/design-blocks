@@ -1,3 +1,11 @@
 @import "wireframe-series-10-projects/src/style.css";
 
 /* start here */
+
+.item {
+  border-width: 2px;
+
+  &:nth-child(odd) {
+    border-width: 2px;
+  }
+}
