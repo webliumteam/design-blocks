@@ -35,7 +35,7 @@ class Block extends React.Component {
           />
           )}
         <div className={style.article__wrapper}>
-          <Text tagName="h2" className={style.article__title} bind={`collection[${index}].item_title`} />
+          <Text tagName="h2" className={style.article__title} bind={`collection[${index}].item_heading`} />
           {categoryShow && (
             <div className={classNames(style['article__category-wrapper'], className)}>
               {this.getModifierValue('item_date') && (
@@ -120,7 +120,7 @@ Block.defaultContent = {
     },
     items: [
       {
-        item_title: {
+        item_heading: {
           content: 'Alice was beginning to get very tired of sitting by her sister on the bank',
           type: 'heading',
         },
@@ -146,7 +146,7 @@ Block.defaultContent = {
         },
       },
       {
-        item_title: {
+        item_heading: {
           content: 'Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with',
           type: 'heading',
         },
@@ -172,7 +172,7 @@ Block.defaultContent = {
         },
       },
       {
-        item_title: {
+        item_heading: {
           content: 'Down a large rabbit-hole under the hedge?',
           type: 'heading',
         },
