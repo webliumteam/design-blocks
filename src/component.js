@@ -47,9 +47,13 @@ class Block extends React.Component {
 
   render() {
     const {components: {Text, Collection, Button}, style: css, $block} = this.props
+    const withoutIcon = !this.getModifierValue('item-icon') ? css['section--without-icon'] : ''
+    const withoutButton = !this.getModifierValue('item-button') ? css['section--without-button'] : ''
+    const withoutPrice = !this.getModifierValue('price') ? css['section--without-price'] : ''
+    const withoutPeriod = !this.getModifierValue('caption') ? css['section--without-period'] : ''
 
     return (
-      <section className={classNames(css.section)}>
+      <section className={classNames(css.section, withoutIcon, withoutButton, withoutPrice, withoutPeriod)}>
         <div className={css.section__inner}>
           <div className={css.section__header}>
             {this.getModifierValue('title') &&
