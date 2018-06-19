@@ -43,8 +43,8 @@ class Block extends React.Component {
     const postMountId = this.getModifierValue('post_mount')
     const page = pageBySlug[postMountId]
     if (page) {
-      const {metadata: {slug}} = page
-      return slug
+      const {metadata: {slug, homepage}} = page
+      return homepage ? '/' : slug
     }
     return ''
   }
