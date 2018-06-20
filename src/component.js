@@ -104,6 +104,12 @@ Block.defaultContent = {
   collection: {
     background: {
       id: 'monochrome',
+      color: {
+        background: {
+          type: 'color',
+          color: '#d8d8d8',
+        },
+      },
       preset: [
         ['n', '#d8d8d8'],
       ],

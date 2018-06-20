@@ -136,6 +136,7 @@
 
   &__date {
     margin-right: 15px;
+    word-wrap: break-word;
 
     @media (min-width: 768px) {
       margin-right: 25px;
@@ -143,6 +144,8 @@
   }
 
   &__category {
+    word-wrap: break-word;
+
     &-wrapper {
       display: flex;
       margin-top: 10px;
