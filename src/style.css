@@ -74,15 +74,15 @@
 }
 
 .article {
-  display: flex;
+  display: block;
   width: 100%;
   padding: 35px 0 25px;
-  flex-direction: column;
   margin-top: 15px;
   margin-bottom: 35px;
   align-items: center;
 
   @media (min-width: 768px) {
+    display: flex;
     padding: 52px 42px;
     flex-direction: row;
   }
