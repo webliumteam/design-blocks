@@ -1,3 +1,19 @@
 @import "wireframe-series-10-projects/src/style.css";
 
 /* start here */
+
+.item {
+  border-width: 3px;
+
+  @media (--ui-tablet-devices) {
+    border-width: 1px;
+  }
+
+  &:nth-child(odd) {
+    border-width: 3px;
+
+    @media (--ui-tablet-devices) {
+      border-width: 1px;
+    }
+  }
+}
