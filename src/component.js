@@ -70,8 +70,9 @@ class Block extends React.Component {
   render() {
     const {components: {Collection, Text, Button}, style} = this.props
     const arrange = this.getModifierValue('arrange-elements')
+    const withoutImage = !this.getModifierValue('item_image') ? style['section--without-image'] : ''
     return (
-      <section className={classNames(style.section, arrange && style['section--reverse'])} >
+      <section className={classNames(style.section, arrange && style['section--reverse'], withoutImage)} >
         <div className={style.section__inner}>
           <Text tagName="h1" className={style.title} bind="title" />
           <Collection
@@ -105,13 +106,8 @@ Block.defaultContent = {
     background: {
       'nth-child': [
         ['n', {
-          type: 'image',
-          position: {
-            type: 'cover',
-            cover: '50% 50%',
-          },
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          imageColor: [216, 216, 216],
+          type: 'color',
+          color: '#D8D8D8',
         }],
       ],
     },
@@ -134,7 +130,7 @@ Block.defaultContent = {
           type: 'caption',
         },
         item_image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-1.png',
+          src: 'https://res.weblium.site/res/weblium/5b2a1a1559d3e4002549c515',
           alt: 'Article illustration photo',
         },
         item_button: {
@@ -160,7 +156,7 @@ Block.defaultContent = {
           type: 'caption',
         },
         item_image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-1.png',
+          src: 'https://res.weblium.site/res/weblium/5b2a1a1559d3e4002549c515',
           alt: 'Article illustration photo',
         },
         item_button: {
@@ -186,7 +182,7 @@ Block.defaultContent = {
           type: 'caption',
         },
         item_image: {
-          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-1.png',
+          src: 'https://res.weblium.site/res/weblium/5b2a1a1559d3e4002549c515',
           alt: 'Article illustration photo',
         },
         item_button: {
