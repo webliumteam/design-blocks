@@ -37,7 +37,7 @@ class Block extends React.Component {
       this.getModifierValue('button')
     )
 
-    const getTitle = this.getModifierValue('title') && <Text tagName="h1" className={css.article__title} bind="title" />
+    const getTitle = this.getModifierValue('title') && <Text tagName="h1" className={classNames(css.article__title, 'title')} bind="title" />
 
     const getIconDecorator = this.getModifierValue('top-icon') && <Icon className={css['top-icon']} bind="topIcon" />
 
@@ -67,7 +67,7 @@ class Block extends React.Component {
                 {!this.getOptionValue('icon-decorator-in-top') && getIconDecorator}
                 {!this.getOptionValue('title-in-top') && getTitle}
                 {this.getModifierValue('subtitle') && (
-                  <Text tagName="p" className={css.article__subtitle} bind="subtitle" />
+                  <Text tagName="p" className={classNames(css.article__subtitle, 'subtitle')} bind="subtitle" />
                 )}
                 {this.getModifierValue('text') && (
                   <Text tagName="p" className={css.article__text} bind="text" />
