@@ -229,12 +229,12 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Pricing title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Pricing description', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Pricing description', type: 'checkbox'},
   'item-icon': {defaultValue: true, label: 'Pricing icon', type: 'checkbox'},
   price: {defaultValue: true, label: 'Price', type: 'checkbox'},
   caption: {defaultValue: true, label: 'Price period', type: 'checkbox'},
   'item-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
-  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
 export default Block
