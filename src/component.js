@@ -41,7 +41,10 @@ class Block extends React.Component {
   }
 
   renderLogo = () => {
-    const {components: {Logo}, style: css} = this.props
+    const {
+      components: {Logo},
+      style: css,
+    } = this.props
     return (
       <Logo
         bind="logo"
@@ -70,7 +73,10 @@ class Block extends React.Component {
   }
 
   renderMenu = () => {
-    const {components: {Menu}, style: css} = this.props
+    const {
+      components: {Menu},
+      style: css,
+    } = this.props
     return (
       <nav className={css.nav}>
         <Menu
@@ -86,7 +92,10 @@ class Block extends React.Component {
   }
 
   renderInfo = () => {
-    const {components: {Text}, style: css} = this.props
+    const {
+      components: {Text},
+      style: css,
+    } = this.props
     return (
       <div className={css['header__company-info']}>
         {this.getModifierValue('company-slogan') && (
@@ -100,7 +109,10 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Background}, style: css} = this.props
+    const {
+      components: {Background},
+      style: css,
+    } = this.props
     const {opened} = this.state
 
     return (
@@ -114,7 +126,10 @@ class Block extends React.Component {
           {this.renderMenu()}
           {this.renderInfo()}
         </div>
-        <Background bind="background" className={classNames(css.header__inner, css['header__inner--fixed'])}>
+        <Background
+          bind="background"
+          className={classNames(css.header__inner, css['header__inner--fixed'])}
+        >
           {this.renderLogo()}
           {this.renderBtn()}
           {this.renderMenu()}
@@ -143,128 +158,130 @@ Block.defaultContent = {
     content: 'Solutions & Support',
     type: 'text',
   },
-  menu: [
-    {
-      id: 'about-us',
-      metadata: {
-        displayName: 'About us',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+  menu: {
+    links: [
+      {
+        id: 'about-us',
+        metadata: {
+          displayName: 'About us',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'services',
-      metadata: {
-        displayName: 'Services',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'services',
+        metadata: {
+          displayName: 'Services',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'projects',
-      metadata: {
-        displayName: 'Projects',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'projects',
+        metadata: {
+          displayName: 'Projects',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'testimonials',
-      metadata: {
-        displayName: 'Testimonials',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'testimonials',
+        metadata: {
+          displayName: 'Testimonials',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'careers',
-      metadata: {
-        displayName: 'Careers',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'careers',
+        metadata: {
+          displayName: 'Careers',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'team',
-      metadata: {
-        displayName: 'Team',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'team',
+        metadata: {
+          displayName: 'Team',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'development',
-      metadata: {
-        displayName: 'Development',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'development',
+        metadata: {
+          displayName: 'Development',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'contact-us',
-      metadata: {
-        displayName: 'Contact us',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'contact-us',
+        metadata: {
+          displayName: 'Contact us',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-  ],
+    ],
+  },
   email: {
     content: '<a href="mailto:ourcompany@a.weblium.com">ourcompany@a.weblium.com</a>',
     type: 'text',
