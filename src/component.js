@@ -19,7 +19,7 @@ class Block extends React.Component {
       this.getModifierValue('item_date')
 
     return (
-      <article className={style.article}>
+      <article className={classNames(style.article, className)}>
         {children}
         {this.getModifierValue('item_image') && (
           <Image
@@ -103,15 +103,16 @@ Block.defaultContent = {
   },
   collection: {
     background: {
-      id: 'monochrome',
-      color: {
-        background: {
-          type: 'color',
-          color: '#d8d8d8',
-        },
-      },
-      preset: [
-        ['n', '#d8d8d8'],
+      'nth-child': [
+        ['n', {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          imageColor: [216, 216, 216],
+        }],
       ],
     },
     items: [
