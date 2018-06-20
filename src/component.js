@@ -30,6 +30,7 @@ class Block extends React.Component {
             size={
               {
                 'min-width: 320px': 230,
+                'min-width: 992px': 240,
               }
             }
           />
@@ -77,10 +78,6 @@ class Block extends React.Component {
             className={style['articles-wrapper']}
             bind="collection"
             Item={this.collectionItem}
-            fakeHelpers={{
-              count: 2,
-              className: style.fake,
-            }}
           />
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
@@ -106,16 +103,9 @@ Block.defaultContent = {
   },
   collection: {
     background: {
-      'nth-child': [
-        ['n', {
-          type: 'image',
-          position: {
-            type: 'cover',
-            cover: '50% 50%',
-          },
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          imageColor: [216, 216, 216],
-        }],
+      id: 'monochrome',
+      preset: [
+        ['n', '#d8d8d8'],
       ],
     },
     items: [
