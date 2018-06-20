@@ -138,83 +138,85 @@ Block.defaultContent = {
       fontSize: 32,
     },
   },
-  menu: [
-    {
-      id: 'about-us',
-      metadata: {
-        displayName: 'About us',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+  menu: {
+    links: [
+      {
+        id: 'about-us',
+        metadata: {
+          displayName: 'About us',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'services',
-      metadata: {
-        displayName: 'Services',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'services',
+        metadata: {
+          displayName: 'Services',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'projects',
-      metadata: {
-        displayName: 'Projects',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'projects',
+        metadata: {
+          displayName: 'Projects',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'testimonials',
-      metadata: {
-        displayName: 'Testimonials',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'testimonials',
+        metadata: {
+          displayName: 'Testimonials',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-    {
-      id: 'contact-us',
-      metadata: {
-        displayName: 'Contact us',
-        actionConfig: {
-          action: 'page',
-          target: '_self',
-          actions: {
-            page: '',
-            link: '',
-            block: '',
+      {
+        id: 'contact-us',
+        metadata: {
+          displayName: 'Contact us',
+          actionConfig: {
+            action: 'page',
+            target: '_self',
+            actions: {
+              page: '',
+              link: '',
+              block: '',
+            },
           },
         },
       },
-    },
-  ],
+    ],
+  },
   cta: {
     actionConfig: {
       action: 'link',
