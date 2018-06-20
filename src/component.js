@@ -233,7 +233,7 @@ Block.modifierScheme = {
   'item-icon': {defaultValue: true, label: 'Pricing icon', type: 'checkbox'},
   price: {defaultValue: true, label: 'Price', type: 'checkbox'},
   caption: {defaultValue: true, label: 'Price period', type: 'checkbox'},
-  'item-button': {defaultValue: true, label: 'Button', type: 'checkbox'},
+  'item-button': {defaultValue: true, label: 'Price button', type: 'checkbox'},
   'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
 }
 
