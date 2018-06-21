@@ -39,7 +39,7 @@ class Block extends React.Component {
       <article className={classNames(style.article, className)}>
         {children}
         {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(index)}</div> : this.itemHeader(index)}
-        <Text tagName="h2" className={style.article__title} bind={`collection[${index}].item_title`} />
+        <Text tagName="h2" className={style.article__title} bind={`collection[${index}].item_heading`} />
         {this.getModifierValue('item_body') && (
         <Text tagName="p" className={style.article__text} bind={`collection[${index}].item_body`} />
         )}
@@ -110,7 +110,7 @@ Block.defaultContent = {
     background: {},
     items: [
       {
-        item_title: {
+        item_heading: {
           content: 'How to Hire the Best Employees to Your Company?',
           type: 'heading',
         },
@@ -136,7 +136,7 @@ Block.defaultContent = {
         },
       },
       {
-        item_title: {
+        item_heading: {
           content: 'How to Achieve Higher Profits in Retail with One Product?',
           type: 'heading',
         },
@@ -162,7 +162,7 @@ Block.defaultContent = {
         },
       },
       {
-        item_title: {
+        item_heading: {
           content: 'Top 5 Tips to Improve Your Engineering Department.',
           type: 'heading',
         },
