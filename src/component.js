@@ -13,10 +13,12 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button, Image}, style} = this.props
+    const {
+      components: {Text, Button, Image},
+      style,
+    } = this.props
     const categoryShow =
-      this.getModifierValue('item_category') ||
-      this.getModifierValue('item_date')
+      this.getModifierValue('item_category') || this.getModifierValue('item_date')
 
     return (
       <article className={classNames(style.article, className)}>
@@ -27,32 +29,42 @@ class Block extends React.Component {
             pictureClassName={style.article__picture}
             imgClassName={style.article__image}
             bind={`collection[${index}].item_image`}
-            size={
-              {
-                'min-width: 320px': 230,
-                'min-width: 992px': 240,
-              }
-            }
+            size={{
+              'min-width: 320px': 230,
+              'min-width: 992px': 240,
+            }}
           />
-          )}
+        )}
         <div className={style.article__wrapper}>
-          <Text tagName="h2" className={style.article__title} bind={`collection[${index}].item_heading`} />
+          <Text
+            tagName="h2"
+            className={style.article__title}
+            bind={`collection[${index}].item_heading`}
+          />
           {categoryShow && (
             <div className={classNames(style['article__category-wrapper'], className)}>
               {this.getModifierValue('item_date') && (
-              <Text tagName="p" className={style.article__date} bind={`collection[${index}].item_date`} />
+                <Text
+                  tagName="p"
+                  className={style.article__date}
+                  bind={`collection[${index}].item_date`}
+                />
               )}
               {this.getModifierValue('item_category') && (
-              <Text
-                tagName="p"
-                className={style.article__category}
-                bind={`collection[${index}].item_category`}
-              />
+                <Text
+                  tagName="p"
+                  className={style.article__category}
+                  bind={`collection[${index}].item_category`}
+                />
               )}
             </div>
           )}
           {this.getModifierValue('item_body') && (
-          <Text tagName="p" className={style.article__text} bind={`collection[${index}].item_body`} />
+            <Text
+              tagName="p"
+              className={style.article__text}
+              bind={`collection[${index}].item_body`}
+            />
           )}
           {this.getModifierValue('item_button') && (
             <Button
@@ -68,11 +80,16 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style} = this.props
+    const {
+      components: {Collection, Text, Button},
+      style,
+    } = this.props
     const arrange = this.getModifierValue('arrange-elements')
     const withoutImage = !this.getModifierValue('item_image') ? style['section--without-image'] : ''
     return (
-      <section className={classNames(style.section, arrange && style['section--reverse'], withoutImage)} >
+      <section
+        className={classNames(style.section, arrange && style['section--reverse'], withoutImage)}
+      >
         <div className={style.section__inner}>
           <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
           <Collection
@@ -82,11 +99,7 @@ class Block extends React.Component {
           />
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
-              <Button
-                className={style.button}
-                linkClassName={style.link}
-                bind="button"
-              />
+              <Button className={style.button} linkClassName={style.link} bind="button" />
             </div>
           )}
         </div>
@@ -104,12 +117,14 @@ Block.defaultContent = {
   },
   collection: {
     background: {
-      'nth-child': [
-        ['n', {
+      id: 'monochrome',
+      colors: {
+        background: {
           type: 'color',
-          color: '#D8D8D8',
-        }],
-      ],
+          color: '#d8d8d8',
+        },
+      },
+      preset: [['n', {type: 'color', color: '#d8d8d8'}]],
     },
     items: [
       {
@@ -118,7 +133,8 @@ Block.defaultContent = {
           type: 'heading',
         },
         item_body: {
-          content: 'So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy- chain would be worth the trouble of getting up',
+          content:
+            'So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy- chain would be worth the trouble of getting up',
           type: 'text',
         },
         item_category: {
@@ -140,11 +156,13 @@ Block.defaultContent = {
       },
       {
         item_heading: {
-          content: 'Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with',
+          content:
+            'Alice started to her feet, for it flashed across her mind that she had never before seen a rabbit with',
           type: 'heading',
         },
         item_body: {
-          content: 'The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well…',
+          content:
+            'The rabbit-hole went straight on like a tunnel for some way, and then dipped suddenly down, so suddenly that Alice had not a moment to think about stopping herself before she found herself falling down a very deep well…',
           type: 'text',
         },
         item_category: {
@@ -170,7 +188,8 @@ Block.defaultContent = {
           type: 'heading',
         },
         item_body: {
-          content: 'But when the Rabbit actually took a watch out of its waistcoat- pocket, and looked at it, and then hurried on, Alice started to her feet, for it flashed she ran across the field after it, and fortunately was…',
+          content:
+            'But when the Rabbit actually took a watch out of its waistcoat- pocket, and looked at it, and then hurried on, Alice started to her feet, for it flashed she ran across the field after it, and fortunately was…',
           type: 'text',
         },
         item_category: {
@@ -211,6 +230,5 @@ Block.modifierScheme = {
   item_button: {defaultValue: true, label: 'Link', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
 }
-
 
 export default Block
