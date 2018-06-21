@@ -39,9 +39,9 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <header className={style.section__header}>
-            <Text tagName="h1" className={style.title} bind="title" />
+            <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
             {this.getModifierValue('subtitle') && (
-              <Text tagName="p" className={style.subtitle} bind="subtitle" />
+              <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
             )}
           </header>
           <Collection
