@@ -22,7 +22,7 @@ class Block extends React.Component {
         <div className={style.section__inner}>
           <div className={classNames(style.section__header, headerClassModifier)}>
             {this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />}
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />}
             {this.getModifierValue('header-button') && (
               <Button
                 className={style['header-button']}
