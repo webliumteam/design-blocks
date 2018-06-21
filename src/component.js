@@ -15,7 +15,7 @@ class Block extends React.Component {
   getContent = () => {
     const {components: {Text}, style} = this.props
     return [
-      this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />,
+      this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />,
       this.getModifierValue('subtitle') && <Text tagName="p" className={style.description} bind="description" />,
     ]
   }
