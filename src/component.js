@@ -33,7 +33,7 @@ class Block extends React.Component {
           {!onlyMap && (
             <Background tagName="div" className={css.contacts} bind="contactsBackground">
               {this.getModifierValue('title') && (
-                <Text tagName="h1" className={css.title} bind="title" />
+                <Text tagName="h1" className={classNames(css.title, 'title')} bind="title" />
               )}
               {this.getModifierValue('heading') && (
                 <Text tagName="h2" className={css.heading} bind="heading" />
