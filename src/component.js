@@ -46,10 +46,10 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           {this.getModifierValue('title') && (
-            <Text bind="title" className={style.title} tagName="h1" />
+            <Text bind="title" className={classNames(style.title, 'title')} tagName="h1" />
           )}
           {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
           )}
           {stepItem && (
             <Collection
