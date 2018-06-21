@@ -24,7 +24,7 @@ class Wireframe extends React.Component {
       <div className={style.item}>
         <div className={style.item__inner}>
           <Background bind={`cover[${index}].item_card_background`} tagName="div" className={style.item__content}>
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.item__subtitle} bind={`cover[${index}].item_subheading`} />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.item__subtitle, 'subtitle')} bind={`cover[${index}].item_subheading`} />}
             {this.getModifierValue('title') && <Text tagName="h2" className={style.item__title} bind={`cover[${index}].item_heading`} />}
             {this.getModifierValue('body') && <Text tagName="p" className={style.item__body} bind={`cover[${index}].item_body`} />}
             {showButton && (
