@@ -15,8 +15,8 @@ class Block extends React.Component {
       <section className={style.section}>
         <Background className={style.section__inner} bind="formBackground">
           <header className={style.section__header}>
-            {this.getModifierValue('title') && <Text tagName="h1" className={style.title} bind="title" />}
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
+            {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />}
           </header>
           <ContactForm
             bind="contactForm"
