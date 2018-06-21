@@ -37,8 +37,8 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          {!this.getOptionValue('title-in-content') && <Text tagName="h1" className={style.title} bind="title" />}
-          {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="subtitle" />}
+          {!this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
+          {this.getModifierValue('subtitle') && <Text tagName="p" className={className(style.subtitle, 'subtitle')} bind="subtitle" />}
           <div className={style.content}>
             {this.getModifierValue('image') && (
               <Image
@@ -54,7 +54,7 @@ class Block extends React.Component {
               </Image>
             )}
             <div className={style.content__main}>
-              {this.getOptionValue('title-in-content') && <Text tagName="h1" className={style.title} bind="title" />}
+              {this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
               {this.getModifierValue('body') && <Text tagName="p" className={style.content__text} bind="text" />}
               <Collection
                 className={style.list}
