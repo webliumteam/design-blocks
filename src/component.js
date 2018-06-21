@@ -54,9 +54,9 @@ class Block extends React.Component {
                 {this.getModifierValue('category') &&
                   <Text tagName="p" className={style.article__category} bind="category" />
                 }
-                <Text tagName="h1" className={style.article__title} bind="title" />
+                <Text tagName="h1" className={classNames(style.article__title, 'title')} bind="title" />
                 {this.getModifierValue('subtitle') && (
-                  <Text tagName="p" className={style.article__subtitle} bind="subtitle" />
+                  <Text tagName="p" className={classNames(style.article__subtitle, 'subtitle')} bind="subtitle" />
                 )}
                 {authorInfo && (
                   <div className={style.author}>
