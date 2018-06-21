@@ -74,7 +74,7 @@ class Block extends React.Component {
     return (
       <section className={classNames(style.section, arrange && style['section--reverse'], withoutImage)} >
         <div className={style.section__inner}>
-          <Text tagName="h1" className={style.title} bind="title" />
+          <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
           <Collection
             className={style['articles-wrapper']}
             bind="collection"
