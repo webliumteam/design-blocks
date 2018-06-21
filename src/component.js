@@ -51,8 +51,8 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          {this.getModifierValue('block-title') && <Text tagName="h1" className={style.title} bind="title" />}
-          {this.getModifierValue('subtitle') && <Text tagName="p" className={style.subtitle} bind="description" />}
+          {this.getModifierValue('block-title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
+          {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="description" />}
           <div className={style['plans-wrapper']}>
             <Background className={style.plan} bind="leftBackground" tagName="article">
               {this.getOptionValue('price-wrapper') ? (<Background bind="leftWrapperBackground" className={style['price-wrapper']}>{this.planHeader('1')}</Background>) : this.planHeader('1')}
