@@ -17,7 +17,7 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  toggleItemOpening = (collectionName, index) => () => {
+  toggleItemOpening = (collectionName, index) => {
     this.setState({[`${collectionName}Opened`]: index === this.state[`${collectionName}Opened`] ? null : index})
   }
 
@@ -32,10 +32,16 @@ class Block extends React.Component {
         className={classNames(style.item, openedItem === index && style['item--active'], className)}
       >
         {children}
-        <button type="button" className={style.item__button} onClick={this.toggleItemOpening(collectionName, index)}>
+        <div
+          role="button"
+          tabIndex="0"
+          className={style.item__button}
+          onClick={() => this.toggleItemOpening(collectionName, index)}
+          onKeyPress={event => (event.key === 'Enter' || event.key === ' ') && this.toggleItemOpening(collectionName, index)}
+        >
           <Text tagName="h3" className={style.item__title} bind={`${collectionName}.faq[${index}].title`} />
           {this.getOptionValue('toogle-item-controls') && controlIcons}
-        </button>
+        </div>
         <Text tagName="div" className={style.item__content} bind={`${collectionName}.faq[${index}].description`} />
       </div>
     )
