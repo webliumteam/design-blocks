@@ -19,105 +19,69 @@ ExtendedWireframe.defaultContent = {
   collection: {
     items: [
       {
+        ...Component.defaultContent.collection.items[0],
         background: {
-          type: 'color',
-          color: '#eee',
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          image: {
+            src: 'image-1.jpg',
+          },
         },
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.2)',
-        },
-        item_category: {
-          type: 'caption',
-          content: 'UX DESIGN',
-        },
-        item_heading: {
-          type: 'heading',
-          content: 'How to Increase Profits in Retail Business with Our New Product?',
-        },
-        item_person: {
-          type: 'text',
-          content: 'By Ben Moss',
+          color: 'dark-shade-color',
+          opacity: '0.85',
         },
         item_person_image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          src: 'mark.jpg',
           alt: 'Person image',
-        },
-        item_date: {
-          type: 'text',
-          content: '20 hrs ago',
-        },
-        item_date_icon: {
-          svg: '<svg viewBox="0 0 32.857 32.857"><path d="M16.43 32.857C7.37 32.857 0 25.489 0 16.432 0 7.371 7.37 0 16.43 0c9.059 0 16.428 7.371 16.428 16.432-.001 9.057-7.37 16.425-16.428 16.425zM16.43 1C7.922 1 1 7.923 1 16.432c0 8.506 6.922 15.426 15.43 15.426 8.507 0 15.428-6.92 15.428-15.426C31.857 7.923 24.937 1 16.43 1z"/><path d="M21.205 22.701a.497.497 0 0 1-.385-.182l-4.775-5.77a.499.499 0 0 1-.115-.318V6.844a.5.5 0 0 1 1 0v9.408l4.66 5.631a.499.499 0 0 1-.385.818z"/></svg>',
-          fill: 'brand-color',
         },
       },
       {
+        ...Component.defaultContent.collection.items[1],
         background: {
-          type: 'color',
-          color: '#eee',
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          image: {
+            src: 'image-2.jpg',
+          },
         },
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.2)',
-        },
-        item_category: {
-          type: 'caption',
-          content: 'UX DESIGN',
-        },
-        item_heading: {
-          type: 'heading',
-          content: 'How to Increase Profits in Retail Business with Our New Product?',
-        },
-        item_person: {
-          type: 'text',
-          content: 'By Ben Moss',
+          color: 'dark-shade-color',
+          opacity: '0.85',
         },
         item_person_image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          src: 'mark.jpg',
           alt: 'Person image',
-        },
-        item_date: {
-          type: 'text',
-          content: '20 hrs ago',
-        },
-        item_date_icon: {
-          svg: '<svg viewBox="0 0 32.857 32.857"><path d="M16.43 32.857C7.37 32.857 0 25.489 0 16.432 0 7.371 7.37 0 16.43 0c9.059 0 16.428 7.371 16.428 16.432-.001 9.057-7.37 16.425-16.428 16.425zM16.43 1C7.922 1 1 7.923 1 16.432c0 8.506 6.922 15.426 15.43 15.426 8.507 0 15.428-6.92 15.428-15.426C31.857 7.923 24.937 1 16.43 1z"/><path d="M21.205 22.701a.497.497 0 0 1-.385-.182l-4.775-5.77a.499.499 0 0 1-.115-.318V6.844a.5.5 0 0 1 1 0v9.408l4.66 5.631a.499.499 0 0 1-.385.818z"/></svg>',
-          fill: 'brand-color',
         },
       },
       {
+        ...Component.defaultContent.collection.items[2],
         background: {
-          type: 'color',
-          color: '#eee',
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          image: {
+            src: 'image-3.jpg',
+          },
         },
         item_panel: {
           type: 'color',
-          color: 'rgba(0,0,0, 0.2)',
-        },
-        item_category: {
-          type: 'caption',
-          content: 'UX DESIGN',
-        },
-        item_heading: {
-          type: 'heading',
-          content: 'How to Increase Profits in Retail Business with Our New Product?',
-        },
-        item_person: {
-          type: 'text',
-          content: 'By Ben Moss',
+          color: 'dark-shade-color',
+          opacity: '0.85',
         },
         item_person_image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          src: 'mark.jpg',
           alt: 'Person image',
-        },
-        item_date: {
-          type: 'text',
-          content: '20 hrs ago',
-        },
-        item_date_icon: {
-          svg: '<svg viewBox="0 0 32.857 32.857"><path d="M16.43 32.857C7.37 32.857 0 25.489 0 16.432 0 7.371 7.37 0 16.43 0c9.059 0 16.428 7.371 16.428 16.432-.001 9.057-7.37 16.425-16.428 16.425zM16.43 1C7.922 1 1 7.923 1 16.432c0 8.506 6.922 15.426 15.43 15.426 8.507 0 15.428-6.92 15.428-15.426C31.857 7.923 24.937 1 16.43 1z"/><path d="M21.205 22.701a.497.497 0 0 1-.385-.182l-4.775-5.77a.499.499 0 0 1-.115-.318V6.844a.5.5 0 0 1 1 0v9.408l4.66 5.631a.499.499 0 0 1-.385.818z"/></svg>',
-          fill: 'brand-color',
         },
       },
     ],
