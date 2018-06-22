@@ -32,7 +32,7 @@ ExtendedWireframe.defaultContent = {
           opacity: '0.85',
         },
         item_person_image: {
-          src: 'mark.jpg',
+          resourceRef: 'mark.jpg',
           alt: 'Person image',
         },
       },
@@ -54,7 +54,7 @@ ExtendedWireframe.defaultContent = {
           opacity: '0.85',
         },
         item_person_image: {
-          src: 'mark.jpg',
+          resourceRef: 'mark.jpg',
           alt: 'Person image',
         },
       },
@@ -76,7 +76,7 @@ ExtendedWireframe.defaultContent = {
           opacity: '0.85',
         },
         item_person_image: {
-          src: 'mark.jpg',
+          resourceRef: 'mark.jpg',
           alt: 'Person image',
         },
       },
