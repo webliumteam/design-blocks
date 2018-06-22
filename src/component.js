@@ -124,11 +124,11 @@ Block.defaultContent = {
     type: 'subtitle',
   },
   text: {
-    content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding. We are devoted to creating unique and innovative solutions along with the high-quality supporting services. ',
+    content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding.',
     type: 'text',
   },
   'text-2': {
-    content: 'Additional text',
+    content: 'We are devoted to creating unique and innovative solutions along with the high-quality supporting services.',
     type: 'text',
   },
   picture: {
