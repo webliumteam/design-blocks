@@ -101,7 +101,7 @@ class Block extends React.Component {
               arrows: false,
               asNavFor: this.state.nav2,
               adaptiveHeight: true,
-              infinite: false,
+              infinite: true,
             }}
             itemProps={{
               modifier: $block.modifier,
@@ -116,7 +116,7 @@ class Block extends React.Component {
             settings={{
               arrows: false,
               centerMode: true,
-              infinite: false,
+              infinite: true,
               focusOnSelect: true,
               slidesToShow: 3,
               centerPadding: '0',
