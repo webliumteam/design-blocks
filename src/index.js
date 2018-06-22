@@ -12,10 +12,6 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
-  title: {
-    type: 'blockTitle',
-    content: 'Blog',
-  },
   collection: {
     items: [
       {
@@ -27,7 +23,7 @@ ExtendedWireframe.defaultContent = {
             cover: '50% 50%',
           },
           image: {
-            src: 'image-1.jpg',
+            resourceRef: 'image-1.jpg',
           },
         },
         item_panel: {
@@ -49,7 +45,7 @@ ExtendedWireframe.defaultContent = {
             cover: '50% 50%',
           },
           image: {
-            src: 'image-2.jpg',
+            resourceRef: 'image-2.jpg',
           },
         },
         item_panel: {
@@ -71,7 +67,7 @@ ExtendedWireframe.defaultContent = {
             cover: '50% 50%',
           },
           image: {
-            src: 'image-3.jpg',
+            resourceRef: 'image-3.jpg',
           },
         },
         item_panel: {
@@ -85,10 +81,6 @@ ExtendedWireframe.defaultContent = {
         },
       },
     ],
-  },
-  button: {
-    type: 'secondary',
-    textValue: 'Medium button',
   },
 }
 
