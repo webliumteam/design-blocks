@@ -20,16 +20,16 @@ class Block extends React.Component {
         {children}
         {this.getModifierValue('item-icon') && (
           <div className={style['item__icon-wrapper']}>
-            <Icon className={style.item__icon} bind={`items[${index}].icon`} />
+            <Icon className={style.item__icon} bind={`collection[${index}].icon`} />
           </div>
         )}
         <div className={style.item__info}>
-          <Text tagName="h2" className={style.item__title} bind={`items[${index}].heading`} />
-          <Text tagName="p" className={style.item__text} bind={`items[${index}].body`} />
+          <Text tagName="h2" className={style.item__title} bind={`collection[${index}].heading`} />
+          <Text tagName="p" className={style.item__text} bind={`collection[${index}].body`} />
           {this.getModifierValue('price') && (
             <div className={style['item__price-wrapper']}>
-              <Text tagName="p" className={style.item__price} bind={`items[${index}].price`} />
-              {this.getModifierValue('caption') && (<Text tagName="p" className={style.item__caption} bind={`items[${index}].caption`} />)}
+              <Text tagName="p" className={style.item__price} bind={`collection[${index}].price`} />
+              {this.getModifierValue('caption') && (<Text tagName="p" className={style.item__caption} bind={`collection[${index}].caption`} />)}
             </div>
           )}
         </div>
@@ -38,7 +38,7 @@ class Block extends React.Component {
             linkClassName={style.link}
             buttonClassName={style.button}
             className={style.item__link}
-            bind={`items[${index}].link`}
+            bind={`collection[${index}].link`}
           />
         )}
       </article>
@@ -63,7 +63,7 @@ class Block extends React.Component {
           <Collection
             className={css['items-wrapper']}
             TagName="div"
-            bind="items"
+            bind="collection"
             Item={this.collectionItem}
             itemProps={{
               modifier: $block.modifier,
@@ -96,7 +96,7 @@ Block.defaultContent = {
     content: 'Choose the plan that perfectly suits your business needs or personal requirements',
     type: 'subtitle',
   },
-  items: {
+  collection: {
     background: {
     },
     items: [
