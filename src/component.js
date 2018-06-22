@@ -18,27 +18,27 @@ class Block extends React.Component {
     return (
       <article className={classNames(style.item, className)}>
         {children}
-        {this.getModifierValue('item-icon') && (
+        {this.getModifierValue('item_icon') && (
           <div className={style['item__icon-wrapper']}>
-            <Icon className={style.item__icon} bind={`collection[${index}].icon`} />
+            <Icon className={style.item__icon} bind={`collection[${index}].item_icon`} />
           </div>
         )}
         <div className={style.item__info}>
-          <Text tagName="h2" className={style.item__title} bind={`collection[${index}].heading`} />
-          <Text tagName="p" className={style.item__text} bind={`collection[${index}].body`} />
-          {this.getModifierValue('price') && (
+          <Text tagName="h2" className={style.item__title} bind={`collection[${index}].item_heading`} />
+          <Text tagName="p" className={style.item__text} bind={`collection[${index}].item_body`} />
+          {this.getModifierValue('item_price') && (
             <div className={style['item__price-wrapper']}>
-              <Text tagName="p" className={style.item__price} bind={`collection[${index}].price`} />
-              {this.getModifierValue('caption') && (<Text tagName="p" className={style.item__caption} bind={`collection[${index}].caption`} />)}
+              <Text tagName="p" className={style.item__price} bind={`collection[${index}].item_price`} />
+              {this.getModifierValue('item_caption') && (<Text tagName="p" className={style.item__caption} bind={`collection[${index}].item_caption`} />)}
             </div>
           )}
         </div>
-        {this.getModifierValue('item-button') && (
+        {this.getModifierValue('item_button') && (
           <Button
             linkClassName={style.link}
             buttonClassName={style.button}
             className={style.item__link}
-            bind={`collection[${index}].link`}
+            bind={`collection[${index}].item_button`}
           />
         )}
       </article>
@@ -47,10 +47,10 @@ class Block extends React.Component {
 
   render() {
     const {components: {Text, Collection, Button}, style: css, $block} = this.props
-    const withoutIcon = !this.getModifierValue('item-icon') ? css['section--without-icon'] : ''
-    const withoutButton = !this.getModifierValue('item-button') ? css['section--without-button'] : ''
-    const withoutPrice = !this.getModifierValue('price') ? css['section--without-price'] : ''
-    const withoutPeriod = !this.getModifierValue('caption') ? css['section--without-period'] : ''
+    const withoutIcon = !this.getModifierValue('item_icon') ? css['section--without-icon'] : ''
+    const withoutButton = !this.getModifierValue('item_button') ? css['section--without-button'] : ''
+    const withoutPrice = !this.getModifierValue('item_price') ? css['section--without-price'] : ''
+    const withoutPeriod = !this.getModifierValue('item_caption') ? css['section--without-period'] : ''
 
     return (
       <section className={classNames(css.section, withoutIcon, withoutButton, withoutPrice, withoutPeriod)}>
@@ -69,7 +69,7 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('secondary-button') && (
+          {this.getModifierValue('button') && (
             <div className={css['btns-group']}>
               <Button
                 linkClassName={css.link}
@@ -101,27 +101,27 @@ Block.defaultContent = {
     },
     items: [
       {
-        icon: {
+        item_icon: {
           svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
           fill: 'brand-color',
         },
-        heading: {
+        item_heading: {
           content: 'Basic',
           type: 'heading',
         },
-        body: {
+        item_body: {
           content: '1 Product',
           type: 'text',
         },
-        price: {
+        item_price: {
           content: 'Free',
           type: 'headingLg',
         },
-        caption: {
+        item_caption: {
           content: 'For all period',
           type: 'caption',
         },
-        link: {
+        item_button: {
           actionConfig: {
             action: 'link',
             actions: {
@@ -137,27 +137,27 @@ Block.defaultContent = {
         },
       },
       {
-        icon: {
+        item_icon: {
           svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
           fill: 'brand-color',
         },
-        heading: {
+        item_heading: {
           content: 'Standard',
           type: 'heading',
         },
-        body: {
+        item_body: {
           content: '3 products',
           type: 'text',
         },
-        price: {
+        item_price: {
           content: '$80',
           type: 'headingLg',
         },
-        caption: {
+        item_caption: {
           content: 'monthly',
           type: 'caption',
         },
-        link: {
+        item_button: {
           actionConfig: {
             action: 'link',
             actions: {
@@ -173,27 +173,27 @@ Block.defaultContent = {
         },
       },
       {
-        icon: {
+        item_icon: {
           svg: "<svg viewBox='0 0 70 70' fill='currentColor'><circle cx='35' cy='35' r='35' /></svg>",
           fill: 'brand-color',
         },
-        heading: {
+        item_heading: {
           content: 'Pro',
           type: 'heading',
         },
-        body: {
+        item_body: {
           content: 'Unlimited products',
           type: 'text',
         },
-        price: {
+        item_price: {
           content: '$180',
           type: 'headingLg',
         },
-        caption: {
+        item_caption: {
           content: 'monthly',
           type: 'caption',
         },
-        link: {
+        item_button: {
           actionConfig: {
             action: 'link',
             actions: {
@@ -230,11 +230,11 @@ Block.defaultContent = {
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Pricing title', type: 'checkbox'},
   subtitle: {defaultValue: false, label: 'Pricing description', type: 'checkbox'},
-  'item-icon': {defaultValue: true, label: 'Pricing icon', type: 'checkbox'},
-  price: {defaultValue: true, label: 'Price', type: 'checkbox'},
-  caption: {defaultValue: true, label: 'Price period', type: 'checkbox'},
-  'item-button': {defaultValue: true, label: 'Price button', type: 'checkbox'},
-  'secondary-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
+  item_icon: {defaultValue: true, label: 'Pricing icon', type: 'checkbox'},
+  item_price: {defaultValue: true, label: 'Price', type: 'checkbox'},
+  item_caption: {defaultValue: true, label: 'Price period', type: 'checkbox'},
+  item_button: {defaultValue: true, label: 'Price button', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
 }
 
 export default Block
