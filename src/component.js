@@ -46,6 +46,26 @@ class Block extends React.Component {
     )
   }
 
+  collectionItemPreview = ({index, modifier}) => {
+    const {components: {Image}, style} = this.props
+    return (
+      <div className={style.item}>
+        <Image
+          wrapperClassName={style['item__picture-wrapper']}
+          pictureClassName={style.item__picture}
+          imgClassName={style.item__image}
+          bind={`gallery[${index}].image`}
+          size={{
+            'min-width: 992px': 1200,
+            'min-width: 768px': 1000,
+            'min-width: 480px': 800,
+          }}
+          resize={{disable: true}}
+        />
+      </div>
+    )
+  }
+
   render() {
     const {components: {Text, Slider, Button}, style, $block} = this.props
     const customArrows = this.getOptionValue('custom-arrows') ? {
@@ -63,7 +83,7 @@ class Block extends React.Component {
           <Slider
             className={style['preview-slider']}
             bind="gallery"
-            Item={this.collectionItem}
+            Item={this.collectionItemPreview}
             setRef={slider => (this.slider1 = slider)}
             settings={{
               dots: false,
