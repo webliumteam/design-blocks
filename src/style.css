@@ -27,14 +27,17 @@
     word-break: break-word;
 
     .item {
-      padding-left: 90px;
-      padding-right: 90px;
 
-      &__info {
+      @media (--ui-medium-devices) {
+        padding-left: 90px;
+        padding-right: 90px;
+      }
+    }
 
-        @media (--ui-medium-devices) {
-          width: calc(100% - 250px);
-        }
+    &__info {
+
+      @media (--ui-medium-devices) {
+        width: calc(100% - 250px);
       }
     }
   }
