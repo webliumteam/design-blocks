@@ -1,3 +1,7 @@
 @import "wireframe-series-5-gallery/src/style.css";
 
 /* start here */
+
+.item__image {
+  background-size: cover;
+}
