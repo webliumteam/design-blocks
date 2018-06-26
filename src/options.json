@@ -1,3 +1,8 @@
 {
-  "image_wrapper": true
+  "title-in-top": false,
+  "icon-decorator-in-top": false,
+  "hidden-social-heading": false,
+  "min-resize": 20,
+  "max-resize": 100,
+  "disable-resizer": false
 }
