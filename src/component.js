@@ -159,13 +159,13 @@ class Block extends React.Component {
                 }
                 {
                   isBlog
-                    ? <SsrText tagName="h1" className={style.article__title} value={{type: 'blockTitle', content: post.title}} />
-                    : <Text tagName="h1" className={style.article__title} bind="title" />
+                    ? <SsrText tagName="h1" className={classNames(style.article__title, 'title')} value={{type: 'blockTitle', content: post.title}} />
+                    : <Text tagName="h1" className={classNames(style.article__title, 'title')} bind="title" />
                 }
                 {this.getModifierValue('subtitle') && (
                   isBlog
-                    ? <SsrText tagName="p" className={style.article__subtitle} value={{type: 'subtitle', content: post.subtitle}} />
-                    : <Text tagName="p" className={style.article__subtitle} bind="subtitle" />
+                    ? <SsrText tagName="p" className={classNames(style.article__subtitle, 'subtitle')} value={{type: 'subtitle', content: post.subtitle}} />
+                    : <Text tagName="p" className={classNames(style.article__subtitle, 'subtitle')} bind="subtitle" />
                 )}
                 {authorInfo && (
                   <div className={style.author}>
