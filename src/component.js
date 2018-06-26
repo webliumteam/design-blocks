@@ -33,7 +33,7 @@ class Block extends React.Component {
               <Text bind="top-caption" className={style['caption-decorator']} tagName="div" />
             )}
             {this.getModifierValue('title') && (
-              <Text bind="title" className={style.article__title} tagName="h1" />
+              <Text bind="title" className={classNames(style.article__title, 'title')} tagName="h1" />
             )}
             {this.getModifierValue('heading') && (
               <Text bind="heading" className={style.article__heading} tagName="h2" />
