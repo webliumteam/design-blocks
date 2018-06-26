@@ -1,6 +1,6 @@
 {
   "name": "wireframe-series-6-blog",
-  "version": "0.0.81",
+  "version": "0.0.70",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -30,5 +30,8 @@
     "stylelint-selector-bem-pattern": "^2.0.0",
     "stylelint-order": "^0.8.0"
   },
-  "editorVersion": "4.13.0"
+  "editorVersion": "4.13.0",
+  "dependencies": {
+    "showdown": "^1.8.6"
+  }
 }
