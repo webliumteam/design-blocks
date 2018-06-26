@@ -1,7 +1,7 @@
 {
   "name": "wireframe-zapdos-blog",
   "category": "blogs",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -30,5 +30,9 @@
     "stylelint-scss": "^2.2.0",
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
-  "editorVersion": "4.13.0"
+  "editorVersion": "4.13.0",
+  "dependencies": {
+    "contentful": "^6.1.1",
+    "showdown": "^1.8.6"
+  }
 }
