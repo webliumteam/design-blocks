@@ -50,7 +50,7 @@ class Block extends React.Component {
   }
 
   itemHeader = (index, post) => {
-    const {components: {SsrText, Image}, style} = this.props
+    const {components: {SsrText, Image, Text}, style} = this.props
     const {isBlog} = this.state
     const imageUrl = _.get('image.fields.file.url')(post)
     return [
@@ -68,8 +68,16 @@ class Block extends React.Component {
       ),
       this.getModifierValue('item_date') && (
         <small className={style.article__meta}>
-          {!this.getOptionValue('hidden-category') && <SsrText tagName="span" value={{content: post.articleCategory}} className={style.article__category} /> }
-          {!this.getOptionValue('hidden-date') && <SsrText tagName="span" value={{content: post.subtitle}} className={style.article__date} /> }
+          {!this.getOptionValue('hidden-category') && (
+            isBlog
+              ? <SsrText tagName="span" value={{content: post.articleCategory}} className={style.article__category} />
+              : <Text tagName="span" bind={`collection[${index}].item_category`} className={style.article__category} />
+          )}
+          {!this.getOptionValue('hidden-date') && (
+            isBlog
+              ? <SsrText tagName="span" value={{content: post.subtitle}} className={style.article__date} />
+              : <Text tagName="span" bind={`collection[${index}].item_date`} className={style.article__date} />
+          )}
         </small>
       ),
     ]
