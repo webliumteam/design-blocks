@@ -18,9 +18,9 @@ class Wireframe extends React.Component {
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <Text bind="title" className={style.title} tagName="h2" />
+          <Text bind="title" className={classNames(style.title, 'title')} tagName="h2" />
           {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" className={style.subtitle} tagName="p" />
+            <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
           )}
         </div>
       </section>
