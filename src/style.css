@@ -112,8 +112,25 @@
   }
 
   &__link {
-    margin-top: 15px;
     text-align: left;
+    margin-top: 15px;
+
+    @media (--ui-tablet-devices) {
+      width: auto;
+      max-width: fit-content;
+    }
+  }
+
+  @media (--ui-tablet-devices) {
+    .article__picture + .article__content {
+      margin-left: 49px;
+    }
+  }
+
+  @media (--ui-medium-devices) {
+    .article__picture + .article__content {
+      margin-left: 0;
+    }
   }
 
   @media (--ui-medium-devices) {
@@ -177,13 +194,16 @@
 }
 
 .btns-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin-top: 60px;
-  text-align: center;
 
   .button {
     width: 100%;
 
-    @media (--ui-tablet-devices) {
+    @media(--ui-phone-devices) {
       width: auto;
     }
   }
