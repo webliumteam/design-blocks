@@ -16,7 +16,7 @@ class Block extends React.Component {
     const {components: {Image, Text, Button, SocialIcons}, style} = this.props
     const showButtonGroups = this.getModifierValue('button') || this.getModifierValue('additional-button')
     const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 28
-    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 42
+    const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 67
 
     return (
       <section className={classNames(style.section)}>
@@ -36,7 +36,9 @@ class Block extends React.Component {
               />
             )}
             <div className={style.article__content}>
-              <Text bind="title" className={classNames(style.article__title, 'title')} tagName="h1" />
+              {this.getModifierValue('title') && (
+                <Text bind="title" className={classNames(style.article__title, 'title')} tagName="h1" />
+              )}
               {this.getModifierValue('heading') && (
                 <Text bind="heading" className={style.article__heading} tagName="h2" />
               )}
@@ -165,6 +167,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
   image: {defaultValue: true, label: 'Image', type: 'checkbox'},
   heading: {defaultValue: false, label: 'Company title', type: 'checkbox'},
   subheading: {defaultValue: false, label: 'Company description', type: 'checkbox'},
