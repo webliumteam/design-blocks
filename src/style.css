@@ -2,14 +2,34 @@
 
 /* start here */
 
-.section__inner {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0;
+.section {
+  &__inner {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  &__header {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
-@media (max-width: 767px) {
-  .article__content {
+.article__content {
+  padding-right: 15px;
+  padding-left: 30px;
+
+  @media (max-width: 991px) {
     padding: 15px;
+  }
+}
+
+.section--reverse {
+  .article__content {
+    
+    @media (--ui-medium-devices) {
+      padding-left: 15px;
+      padding-right: 30px;
+    }
   }
 }
