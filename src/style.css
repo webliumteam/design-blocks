@@ -8,6 +8,8 @@
   padding: 0;
 }
 
-.article__content {
-  padding: 15px;
+@media (max-width: 767px) {
+  .article__content {
+    padding: 15px;
+  }
 }
