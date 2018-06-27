@@ -41,17 +41,21 @@ class Block extends React.Component {
     const arrange = this.getModifierValue('arrange-elements')
     const categoryShow =
       this.getModifierValue('category') || this.getModifierValue('date')
+    const headerShow =
+      this.getModifierValue('title') || this.getModifierValue('subtitle')
 
     return (
       <section className={classNames(css.section, {[css['section--column']]: columnLayout}, arrange && css['section--reverse'])}>
         <div className={css.section__inner}>
-          <div className={css.section__header}>
-            {this.getModifierValue('title') && (
-            <Text bind="title" className={css.title} tagName="h2" />)}
-            {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={css.subtitle} tagName="p" />
-            )}
-          </div>
+          {headerShow && (
+            <div className={css.section__header}>
+              {this.getModifierValue('title') && (
+              <Text bind="title" className={css.title} tagName="h2" />)}
+              {this.getModifierValue('subtitle') && (
+                <Text bind="subtitle" className={css.subtitle} tagName="p" />
+              )}
+            </div>
+           )}
           <div className={css.article}>
             {this.getModifierValue('image') && (
               <Image
