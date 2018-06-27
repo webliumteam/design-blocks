@@ -18,7 +18,7 @@
 }
 
 .article__content {
-  padding-right: 15px;
+  padding-right: 30px;
   padding-left: 30px;
 
   @media (max-width: 991px) {
@@ -30,7 +30,7 @@
   .article__content {
     
     @media (--ui-medium-devices) {
-      padding-left: 15px;
+      padding-left: 30px;
       padding-right: 30px;
     }
   }
