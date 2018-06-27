@@ -3,6 +3,8 @@
 /* start here */
 
 .section {
+  padding: 0;
+
   &__inner {
     max-width: 100%;
     margin: 0 auto;
@@ -32,4 +34,8 @@
       padding-right: 30px;
     }
   }
+}
+
+.article__picture {
+  padding-top: 57%;
 }

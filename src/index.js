@@ -28,6 +28,9 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  title: {defaultValue: false, label: 'Blog title', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Blog subtitle', type: 'hidden'},
+  button_additional: {defaultValue: false, label: 'Button', type: 'hidden'},
 }
 
 export default ExtendedWireframe
