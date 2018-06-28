@@ -109,8 +109,12 @@ Wireframe.defaultContent = {
   collection: {
     items: [{
       item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+        type: 'image',
+        image: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Partner logo',
+          fitBy: 'contain',
+        },
       },
       item_title: {
         content: 'Partners 1',
@@ -119,8 +123,12 @@ Wireframe.defaultContent = {
     },
     {
       item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+        type: 'image',
+        image: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Partner logo',
+          fitBy: 'contain',
+        },
       },
       item_title: {
         content: 'Partners 2',
@@ -129,8 +137,12 @@ Wireframe.defaultContent = {
     },
     {
       item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+        type: 'image',
+        image: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Partner logo',
+          fitBy: 'contain',
+        },
       },
       item_title: {
         content: 'Partners 3',
@@ -153,8 +165,12 @@ Wireframe.defaultContent = {
     },
     {
       item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+        type: 'image',
+        image: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Partner logo',
+          fitBy: 'contain',
+        },
       },
       item_title: {
         content: 'Partners 5',
@@ -163,8 +179,12 @@ Wireframe.defaultContent = {
     },
     {
       item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+        type: 'image',
+        image: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Partner logo',
+          fitBy: 'contain',
+        },
       },
       item_title: {
         content: 'Partners 6',
@@ -173,8 +193,12 @@ Wireframe.defaultContent = {
     },
     {
       item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+        type: 'image',
+        image: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Partner logo',
+          fitBy: 'contain',
+        },
       },
       item_title: {
         content: 'Partners 7',
