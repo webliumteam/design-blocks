@@ -67,9 +67,9 @@
 
   @media(--ui-medium-devices) {
     position: relative;
-    width: 460px;
-    padding: 65px 80px;
-    margin-right: 40px;
+    width: 420px;
+    padding: 50px 60px;
+    margin-right: 0;
     margin-left: auto;
     z-index: 2;
     box-shadow: #000 1px 1px 3px 0;
