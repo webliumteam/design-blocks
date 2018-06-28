@@ -99,11 +99,11 @@ Wireframe.defaultContent = {
           color: 'light-shade-color',
         },
         item_heading: {
-          content: 'FOR WEDDING',
+          content: 'SPRING FLOWERS',
           type: 'heroTitle',
         },
         item_subheading: {
-          content: 'Spring flowers',
+          content: 'For wedding',
           type: 'subtitle',
         },
         item_body: {
