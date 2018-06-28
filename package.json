@@ -1,6 +1,6 @@
 {
   "name": "design-manectric-cover",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -33,5 +33,5 @@
   "dependencies": {
     "wireframe-lucario-cover": "https://github.com/webliumteam/blocks#w/series-2/cover/prod"
   },
-  "editorVersion": "4.13.0"
+  "editorVersion": "0.0.0"
 }
