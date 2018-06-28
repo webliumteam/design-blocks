@@ -12,6 +12,29 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  steps: [
+    {
+      ...Component.defaultContent.steps[0],
+      background: {
+        type: 'color',
+        color: 'dark-shade-color?lighten=15',
+      },
+    },
+    {
+      ...Component.defaultContent.steps[0],
+      background: {
+        type: 'color',
+        color: 'dark-shade-color?lighten=30',
+      },
+    },
+    {
+      ...Component.defaultContent.steps[0],
+      background: {
+        type: 'color',
+        color: 'dark-shade-color?lighten=45',
+      },
+    },
+  ],
 }
 
 ExtendedWireframe.modifierScheme = {
