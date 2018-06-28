@@ -25,7 +25,6 @@ class Wireframe extends React.Component {
           size={{
             'min-width: 480px': 600,
           }}
-          fitBy="contain"
           resize={{disable: true}}
         />
         {this.getModifierValue('item_title') && <Text tagName="h3" className={style.item__title} bind={`collection[${index}].item_title`} />}
@@ -140,8 +139,12 @@ Wireframe.defaultContent = {
     },
     {
       item_image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-        alt: 'Partner logo',
+        type: 'image',
+        image: {
+          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+          alt: 'Partner logo',
+          fitBy: 'contain',
+        },
       },
       item_title: {
         content: 'Partners 4',
