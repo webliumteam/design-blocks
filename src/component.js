@@ -25,6 +25,7 @@ class Wireframe extends React.Component {
           size={{
             'min-width: 480px': 600,
           }}
+          fitBy="contain"
           resize={{disable: true}}
         />
         {this.getModifierValue('item_title') && <Text tagName="h3" className={style.item__title} bind={`collection[${index}].item_title`} />}

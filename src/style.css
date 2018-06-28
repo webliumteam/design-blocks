@@ -134,11 +134,6 @@
     }
   }
 
-  &__image {
-    object-fit: contain;
-    background-size: contain;
-  }
-
   &__title {
     text-align: center;
   }
