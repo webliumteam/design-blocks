@@ -18,48 +18,10 @@ ExtendedWireframe.defaultContent = {
   },
   logo: {
     image: {
-      resourceRef: 'cdet-logo.png',
-      alt: 'CDET',
-      width: 131,
-      height: 59,
+      resourceRef: 'logo.png',
+      width: 229,
+      height: 50,
     },
-  },
-  menu: {
-    linkColor: {
-      hover: 'brand-color',
-    },
-    links: [
-      {
-        id: 'about',
-        metadata: {
-          displayName: 'About',
-        },
-      },
-      {
-        id: 'advantages',
-        metadata: {
-          displayName: 'Advantages',
-        },
-      },
-      {
-        id: 'numbers',
-        metadata: {
-          displayName: 'Numbers',
-        },
-      },
-      {
-        id: 'partners',
-        metadata: {
-          displayName: 'Partners',
-        },
-      },
-      {
-        id: 'contacts',
-        metadata: {
-          displayName: 'Contact us',
-        },
-      },
-    ],
   },
 }
 

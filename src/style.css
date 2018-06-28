@@ -20,13 +20,13 @@
 .logo {
 
   @media (min-width: 992px) {
-    min-width: 131px;
+    min-width: 229px;
   }
 
   &__title {
 
     @media (min-width: 992px) {
-      min-width: 131px;
+      min-width: 229px;
       max-width: 325px;
     }
   }
