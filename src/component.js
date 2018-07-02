@@ -10,21 +10,32 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text}, style} = this.props
+    const {
+      components: {Text},
+      style,
+    } = this.props
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        {_.get('number-title')(modifier) && <Text tagName="h2" className={style.item__title} bind={`numbers[${index}].title`} />}
+        {_.get('number-title')(modifier) && (
+          <Text tagName="h2" className={style.item__title} bind={`numbers[${index}].title`} />
+        )}
         <div className={style.item__content}>
           <Text tagName="strong" className={style.item__number} bind={`numbers[${index}].value`} />
-          {_.get('body')(modifier) && <Text tagName="p" className={style.item__text} bind={`numbers[${index}].label`} />}
+          {_.get('body')(modifier) && (
+            <Text tagName="p" className={style.item__text} bind={`numbers[${index}].label`} />
+          )}
         </div>
       </div>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+      $block,
+    } = this.props
     return (
       <section
         className={classNames(style.section, {
@@ -35,7 +46,9 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
+          {this.getModifierValue('title') && (
+            <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
+          )}
           <Collection
             className={style['items-wrapper']}
             bind="numbers"
@@ -50,11 +63,7 @@ class Block extends React.Component {
           />
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+              <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
             </div>
           )}
         </div>
@@ -120,16 +129,6 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'secondary',
   },
@@ -146,6 +145,5 @@ Block.modifierScheme = {
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block
