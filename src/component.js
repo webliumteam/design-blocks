@@ -15,6 +15,7 @@ class Wireframe extends React.Component {
   render() {
     const {components: {Text, Button, SocialIcons, Background}, style} = this.props
     const blockAlignment = this.getModifierValue('block-alignment')
+    const textAlignmentClass = this.getModifierValue('block-alignment') !== 'right' ? `text-${blockAlignment}` : ''
 
     return (
       <section className={classNames(style.section, style[`section--${blockAlignment}`])}>
@@ -26,11 +27,11 @@ class Wireframe extends React.Component {
               )}
             </div>
             {this.getModifierValue('title') && (
-              <Text bind="title" className={classNames(style.title, 'title')} tagName="h2" />
+              <Text bind="title" className={classNames(style.title, 'title', textAlignmentClass)} tagName="h2" />
             )}
             {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
-            )}
+              <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', textAlignmentClass)} tagName="p" />
+              )}
             <Button
               bind="secondary-button"
               className={style.button}
