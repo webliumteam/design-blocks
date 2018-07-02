@@ -13,7 +13,10 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, modifier, openLightbox}) => {
-    const {components: {Image, Text}, style} = this.props
+    const {
+      components: {Image, Text},
+      style,
+    } = this.props
     console.log(openLightbox)
     return (
       <div className={style.item}>
@@ -40,11 +43,21 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Text, Slider, Button}, style, $block} = this.props
-    const customArrows = this.getOptionValue('custom-arrows') ? {
-      nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
-      prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
-    } : {}
+    const {
+      components: {Text, Slider, Button},
+      style,
+      $block,
+    } = this.props
+    const customArrows = this.getOptionValue('custom-arrows')
+      ? {
+        nextArrow: (
+          <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />
+        ),
+        prevArrow: (
+          <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />
+        ),
+      }
+      : {}
     const mobileSlidesCount = this.getOptionValue('visible-slides-mobile') || 1
     const desktopSlidesCount = this.getOptionValue('visible-slides-desktop') || 3
 
@@ -53,10 +66,18 @@ class Wireframe extends React.Component {
         <div className={style.section__inner}>
           <div className={style.section__header}>
             {this.getModifierValue('title') && (
-              <Text bind="title" className={classNames(style.title, 'title')} tagName="h1" />
+              <Text
+                bind="title"
+                className={classNames(style.title, 'title', 'text-center')}
+                tagName="h1"
+              />
             )}
             {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
+              <Text
+                bind="subtitle"
+                className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                tagName="p"
+              />
             )}
           </div>
           <Slider
@@ -96,11 +117,7 @@ class Wireframe extends React.Component {
           />
           {this.getModifierValue('secondary-button') && (
             <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+              <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
             </div>
           )}
         </div>
@@ -117,97 +134,104 @@ Wireframe.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Learn more about our office work and all stages of production by looking at these photos',
+    content:
+      'Learn more about our office work and all stages of production by looking at these photos',
     type: 'subtitle',
   },
-  gallery: [{
-    image: {
-      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-      alt: 'Gallery image',
-      galleryId: 'gallery',
+  gallery: [
+    {
+      image: {
+        src:
+          'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Gallery image',
+        galleryId: 'gallery',
+      },
+      heading: {
+        content: 'Quantum CEO & our partners',
+        type: 'subtitle',
+      },
     },
-    heading: {
-      content: 'Quantum CEO & our partners',
-      type: 'subtitle',
+    {
+      image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Gallery image',
+        galleryId: 'gallery',
+      },
+      heading: {
+        content: 'Digital Marketing workshop lecturer',
+        type: 'subtitle',
+      },
     },
-  },
-  {
-    image: {
-      src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
-      alt: 'Gallery image',
-      galleryId: 'gallery',
+    {
+      image: {
+        src:
+          'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Gallery image',
+        galleryId: 'gallery',
+      },
+      heading: {
+        content: 'Quantum Company at WebSummit',
+        type: 'subtitle',
+      },
     },
-    heading: {
-      content: 'Digital Marketing workshop lecturer',
-      type: 'subtitle',
+    {
+      image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Gallery image',
+        galleryId: 'gallery',
+      },
+      heading: {
+        content: 'Quantum CEO & our partners',
+        type: 'subtitle',
+      },
     },
-  },
-  {
-    image: {
-      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-      alt: 'Gallery image',
-      galleryId: 'gallery',
+    {
+      image: {
+        src:
+          'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Gallery image',
+        galleryId: 'gallery',
+      },
+      heading: {
+        content: 'Digital Marketing workshop lecturer',
+        type: 'subtitle',
+      },
     },
-    heading: {
-      content: 'Quantum Company at WebSummit',
-      type: 'subtitle',
+    {
+      image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Gallery image',
+        galleryId: 'gallery',
+      },
+      heading: {
+        content: 'Quantum Company at WebSummit',
+        type: 'subtitle',
+      },
     },
-  },
-  {
-    image: {
-      src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
-      alt: 'Gallery image',
-      galleryId: 'gallery',
+    {
+      image: {
+        src:
+          'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        alt: 'Gallery image',
+        galleryId: 'gallery',
+      },
+      heading: {
+        content: 'Quantum CEO & our partners',
+        type: 'subtitle',
+      },
     },
-    heading: {
-      content: 'Quantum CEO & our partners',
-      type: 'subtitle',
+    {
+      image: {
+        src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
+        alt: 'Gallery image',
+        galleryId: 'gallery',
+      },
+      heading: {
+        content: 'Quantum CEO & our partners',
+        type: 'subtitle',
+      },
     },
-  },
-  {
-    image: {
-      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-      alt: 'Gallery image',
-      galleryId: 'gallery',
-    },
-    heading: {
-      content: 'Digital Marketing workshop lecturer',
-      type: 'subtitle',
-    },
-  },
-  {
-    image: {
-      src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
-      alt: 'Gallery image',
-      galleryId: 'gallery',
-    },
-    heading: {
-      content: 'Quantum Company at WebSummit',
-      type: 'subtitle',
-    },
-  },
-  {
-    image: {
-      src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-      alt: 'Gallery image',
-      galleryId: 'gallery',
-    },
-    heading: {
-      content: 'Quantum CEO & our partners',
-      type: 'subtitle',
-    },
-  },
-  {
-    image: {
-      src: 'https://weblium-prod.storage.googleapis.com/res/weblium/5a7074b3f73f3b0026754830.png',
-      alt: 'Gallery image',
-      galleryId: 'gallery',
-    },
-    heading: {
-      content: 'Quantum CEO & our partners',
-      type: 'subtitle',
-    },
-  }],
+  ],
   cta: {
     textValue: 'Learn more',
     type: 'secondary',
