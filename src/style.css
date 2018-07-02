@@ -27,6 +27,7 @@
 
 .title {
   margin-bottom: 15px;
+  text-align: center;
 
   &:last-child {
     margin-bottom: 0;
@@ -36,6 +37,7 @@
 .subtitle {
   max-width: 970px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .articles-wrapper {
