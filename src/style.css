@@ -3,7 +3,6 @@
 .section {
   min-width: 320px;
   padding: 50px 0;
-  text-align: center;
 
   @media (--ui-tablet-devices) {
     padding: 60px 0;
@@ -22,10 +21,12 @@
 
 .title {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .description {
   margin-bottom: 30px;
+  text-align: center;
 
   &:nth-child(2) {
     margin-top: -15px;

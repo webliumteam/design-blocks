@@ -15,13 +15,13 @@ class Block extends React.Component {
   getContent = () => {
     const {components: {Text}, style} = this.props
     return [
-      this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />,
+      this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />,
       this.getModifierValue('subtitle') && <Text tagName="p" className={style.description} bind="description" />,
     ]
   }
 
   getSectionInner = () => {
-    const {components: {Background, Button, Image}, style} = this.props
+    const {components: {Button, Image}, style} = this.props
     return [
       this.getOptionValue('content-wrapper') ?
         <div className={style['content-wrapper']}>{this.getContent()}</div> :
@@ -43,7 +43,7 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Background, Image, Button}, style} = this.props
+    const {components: {Background}, style} = this.props
     return (
       <section className={style.section}>
         {this.getOptionValue('content-bg') ?
@@ -80,16 +80,6 @@ Block.defaultContent = {
     type: 'text',
   },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Request a quote',
     type: 'primary-alt',
     size: 'lg',
