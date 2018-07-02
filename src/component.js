@@ -13,7 +13,10 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, modifier, className}) => {
-    const {components: {Text, Button, Logo}, style} = this.props
+    const {
+      components: {Text, Button, Logo},
+      style,
+    } = this.props
     const showContent = _.get('body')(modifier) || _.get('link')(modifier)
     const showBody = _.get('body')(modifier)
     const showLink = _.get('link')(modifier)
@@ -40,13 +43,17 @@ class Block extends React.Component {
     ]
 
     return (
-      <article className={classNames(
-        style.item,
-        {[style['item--body-none']]: !showBody && (showBody || showLink || showHeading)},
-        {[style['item--heading-none']]: !showHeading},
-        {[style['item--two-elements']]: (!showBody && !showLink && showHeading) || (!showBody && showLink && !showHeading)},
-        {[style['item--logo']]: (!showBody && !showLink && !showHeading)},
-        className,
+      <article
+        className={classNames(
+          style.item,
+          {[style['item--body-none']]: !showBody && (showBody || showLink || showHeading)},
+          {[style['item--heading-none']]: !showHeading},
+          {
+            [style['item--two-elements']]:
+              (!showBody && !showLink && showHeading) || (!showBody && showLink && !showHeading),
+          },
+          {[style['item--logo']]: !showBody && !showLink && !showHeading},
+          className,
         )}
       >
         {children}
@@ -58,16 +65,29 @@ class Block extends React.Component {
           maxWidth={this.getOptionValue('logo-max-width')}
           maxHeight={this.getOptionValue('logo-max-height')}
         />
-        {this.getOptionValue('content-wrapper') ? <div className={style['item__content-wrapper']}>{itemContent}</div> : itemContent}
+        {this.getOptionValue('content-wrapper') ? (
+          <div className={style['item__content-wrapper']}>{itemContent}</div>
+        ) : (
+          itemContent
+        )}
       </article>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+      $block,
+    } = this.props
     const showBody = this.getModifierValue('body')
-    const onlyLogo = (!this.getModifierValue('body') && !this.getModifierValue('link') && !this.getModifierValue('heading'))
-    const centerItems = !this.getModifierValue('body') && (this.getModifierValue('link') || this.getModifierValue('heading'))
+    const onlyLogo =
+      !this.getModifierValue('body') &&
+      !this.getModifierValue('link') &&
+      !this.getModifierValue('heading')
+    const centerItems =
+      !this.getModifierValue('body') &&
+      (this.getModifierValue('link') || this.getModifierValue('heading'))
     const blockHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
     return (
       <section className={classNames(style.section)}>
@@ -78,15 +98,27 @@ class Block extends React.Component {
           {blockHeader && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
+                <Text
+                  tagName="h1"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  bind="title"
+                />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
+                <Text
+                  tagName="p"
+                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  bind="subtitle"
+                />
               )}
             </header>
           )}
           <Collection
-            className={classNames(style['items-wrapper'], {[style['items-wrapper--column']]: !showBody, [style['items-wrapper--center']]: centerItems || onlyLogo, [style['items-wrapper--only-logo']]: onlyLogo})}
+            className={classNames(style['items-wrapper'], {
+              [style['items-wrapper--column']]: !showBody,
+              [style['items-wrapper--center']]: centerItems || onlyLogo,
+              [style['items-wrapper--only-logo']]: onlyLogo,
+            })}
             TagName="div"
             bind="partners"
             Item={this.collectionItem}
@@ -95,12 +127,12 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], {[style['btns-group--offset-sm']]: onlyLogo})}>
-              <Button
-                linkClassName={style.link}
-                buttonClassName={style.button}
-                bind="button"
-              />
+            <div
+              className={classNames(style['btns-group'], {
+                [style['btns-group--offset-sm']]: onlyLogo,
+              })}
+            >
+              <Button linkClassName={style.link} buttonClassName={style.button} bind="button" />
             </div>
           )}
         </div>
@@ -117,7 +149,8 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
+    content:
+      'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
     type: 'subtitle',
   },
   partners: [
@@ -133,7 +166,8 @@ Block.defaultContent = {
         type: 'heading',
       },
       desc: {
-        content: 'Back in 1995, we started cooperation with this brand. Samsung became our main supplier of high-quality tech products. Today, Samsung is our main partner who supports each initiative and actively participates in company development.',
+        content:
+          'Back in 1995, we started cooperation with this brand. Samsung became our main supplier of high-quality tech products. Today, Samsung is our main partner who supports each initiative and actively participates in company development.',
         type: 'text',
       },
       button: {
@@ -153,7 +187,8 @@ Block.defaultContent = {
         type: 'heading',
       },
       desc: {
-        content: 'The company that has always put reliability first. We started to work with Ford in 2002, and now this is one of the partners who’ve been with us for more than 15 years! We believe that this partnership is one of the achievements we can be proud of.',
+        content:
+          'The company that has always put reliability first. We started to work with Ford in 2002, and now this is one of the partners who’ve been with us for more than 15 years! We believe that this partnership is one of the achievements we can be proud of.',
         type: 'text',
       },
       button: {
@@ -173,7 +208,8 @@ Block.defaultContent = {
         type: 'heading',
       },
       desc: {
-        content: 'Health of our team members is a top priority for us. Therefore, we work with the best clinics only, like Medical Family. We entrust our health to them and we entrust our business as well.',
+        content:
+          'Health of our team members is a top priority for us. Therefore, we work with the best clinics only, like Medical Family. We entrust our health to them and we entrust our business as well.',
         type: 'text',
       },
       button: {
@@ -193,7 +229,8 @@ Block.defaultContent = {
         type: 'heading',
       },
       desc: {
-        content: 'Coffee and cakes won’t sell themselves. Whenever we are hungry or just need to restore energy, Coffee Break Now saves us. Also, they cater all our events, from workshops and seminars to everyday meals for our team members.',
+        content:
+          'Coffee and cakes won’t sell themselves. Whenever we are hungry or just need to restore energy, Coffee Break Now saves us. Also, they cater all our events, from workshops and seminars to everyday meals for our team members.',
         type: 'text',
       },
       button: {
@@ -207,7 +244,8 @@ Block.defaultContent = {
     type: 'secondary',
   },
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
 }
