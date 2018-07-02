@@ -184,9 +184,9 @@ class Block extends React.Component {
           {this.getModifierValue('icon_decorator') && (
             <Icon className={style['top-icon']} bind="icon_decorator" />
           )}
-          <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
+          <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="div" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
+            <Text tagName="div" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />
             )}
           {isBlog
        ? this.renderPosts()
