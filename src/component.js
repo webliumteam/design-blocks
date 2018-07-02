@@ -21,9 +21,9 @@ class Block extends React.Component {
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
+          <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
+            <Text tagName="p" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />
           )}
           <ContactForm
             bind="contactForm"
