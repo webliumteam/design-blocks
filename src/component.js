@@ -50,9 +50,9 @@ class Block extends React.Component {
           {headerShow && (
             <div className={css.section__header}>
               {this.getModifierValue('title') && (
-              <Text bind="title" className={classNames(css.title, 'title')} tagName="h2" />)}
+              <Text bind="title" className={classNames(css.title, 'title', 'text-center')} tagName="h2" />)}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(css.subtitle, 'subtitle')} tagName="p" />
+                <Text bind="subtitle" className={classNames(css.subtitle, 'subtitle', 'text-center')} tagName="p" />
               )}
             </div>
            )}
