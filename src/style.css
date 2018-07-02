@@ -32,8 +32,7 @@
 .section--left .title,
 .section--left .subtitle,
 .section--left .heading,
-.section--left .subheading,
-.section--left .text {
+.section--left .subheading {
   margin-left: 0;
   text-align: left;
 }
@@ -54,6 +53,7 @@
 .title {
   max-width: 970px;
   margin: 0 auto 5px;
+  text-align: center;
 }
 
 .title:last-child {
@@ -63,11 +63,13 @@
 .subtitle {
   max-width: 570px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .heading {
   max-width: 970px;
   margin: 0 auto 10px;
+  text-align: center;
 }
 
 .heading + .text {
@@ -77,6 +79,7 @@
 .subheading {
   max-width: 770px;
   margin: 0 auto 20px;
+  text-align: center;
 }
 
 .text {

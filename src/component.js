@@ -15,6 +15,10 @@ class Block extends React.Component {
       this.getModifierValue('align') !== 'center'
         ? style[`section--${this.getModifierValue('align')}`]
         : ''
+    const headerAlignClass =
+      this.getModifierValue('align') !== 'left'
+        ? `text-${this.getModifierValue('align')}`
+        : ''
 
     return (
       <section className={classNames(style.section, alignClass)}>
@@ -23,8 +27,8 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           <header className={style.section__header}>
-            {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />}
+            {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title', headerAlignClass)} bind="title" />}
+            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle', headerAlignClass)} bind="subtitle" />}
           </header>
           {this.getModifierValue('heading') && <Text tagName="h2" className={style.heading} bind="heading" />}
           {this.getModifierValue('subheading') && <Text tagName="p" className={style.subheading} bind="subheading" />}
