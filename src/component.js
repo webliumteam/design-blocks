@@ -64,8 +64,8 @@ class Block extends React.Component {
     )
 
     const blockHeader = [
-      <Text bind="title" className={classNames(style.title, 'title')} tagName="h1" />,
-      this.getModifierValue('subtitle') && <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />,
+      <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />,
+      this.getModifierValue('subtitle') && <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />,
     ]
 
     return (
