@@ -10,7 +10,10 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text, Image}, style, $block: {id}} = this.props
+    const {
+      components: {Text, Image},
+      style,
+    } = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -54,7 +57,8 @@ Block.defaultContent = {
     color: '#f0f0f0',
   },
   blockquote: {
-    content: 'There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.',
+    content:
+      'There are two types of people who will tell you that you cannot make a difference in this world: those who are afraid to try and those who are afraid you will succeed.',
     type: 'quote',
   },
   author: {
