@@ -12,7 +12,10 @@ class Block extends React.Component {
   getOptionValue = path => _.get(['options', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Image, Resizer}, style} = this.props
+    const {
+      components: {Text, Button, Image, Resizer},
+      style,
+    } = this.props
     return (
       <Resizer
         styleProp="minHeight"
@@ -32,7 +35,11 @@ class Block extends React.Component {
           />
           <div className={style.article__content}>
             {_.get('project-category')(modifier) && (
-              <Text bind={`projects[${index}].subtitle`} className={style.article__caption} tagName="p" />
+              <Text
+                bind={`projects[${index}].subtitle`}
+                className={style.article__caption}
+                tagName="p"
+              />
             )}
             <Text bind={`projects[${index}].title`} className={style.article__title} tagName="h2" />
             {_.get('project-description')(modifier) && (
@@ -65,7 +72,11 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+      $block,
+    } = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -75,10 +86,18 @@ class Block extends React.Component {
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title')} tagName="h1" />
+                <Text
+                  bind="title"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  tagName="h1"
+                />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
+                <Text
+                  bind="subtitle"
+                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  tagName="p"
+                />
               )}
             </header>
           )}
@@ -92,11 +111,7 @@ class Block extends React.Component {
           />
           {this.getModifierValue('block-button') && (
             <div className={style['btns-group']}>
-              <Button
-                className={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+              <Button className={style.button} linkClassName={style.link} bind="cta" />
             </div>
           )}
         </div>
@@ -105,7 +120,14 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon', 'Resizer'])($editor.components)
+Block.components = _.pick([
+  'Collection',
+  'Text',
+  'Button',
+  'Image',
+  'Icon',
+  'Resizer',
+])($editor.components)
 
 Block.defaultContent = {
   projects: [
@@ -119,7 +141,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       text: {
-        content: 'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
+        content:
+          'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
         type: 'text',
       },
       picture: {
@@ -152,7 +175,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       text: {
-        content: 'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
+        content:
+          'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
         type: 'text',
       },
       picture: {
@@ -176,7 +200,8 @@ Block.defaultContent = {
     },
   ],
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
   title: {
@@ -188,16 +213,6 @@ Block.defaultContent = {
     type: 'subtitle',
   },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'secondary',
   },
