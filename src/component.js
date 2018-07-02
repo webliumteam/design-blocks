@@ -10,7 +10,10 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier, openLightbox}) => {
-    const {components: {Text, Image}, style} = this.props
+    const {
+      components: {Text, Image},
+      style,
+    } = this.props
     return (
       <div className={classNames(style.item, className)}>
         {children}
@@ -19,14 +22,12 @@ class Block extends React.Component {
           pictureClassName={style.item__picture}
           imgClassName={style.item__image}
           bind={`gallery[${index}].picture`}
-          size={
-            {
-              'min-width: 320px': 480,
-              'min-width: 480px': 768,
-              'min-width: 768px': 310,
-              'min-width: 992px': 380,
-            }
-          }
+          size={{
+            'min-width: 320px': 480,
+            'min-width: 480px': 768,
+            'min-width: 768px': 310,
+            'min-width: 992px': 380,
+          }}
           onOpenLightbox={openLightbox}
         />
         {_.get('body-text')(modifier) && (
@@ -40,7 +41,11 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+      $block,
+    } = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -50,10 +55,18 @@ class Block extends React.Component {
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
+                <Text
+                  tagName="h1"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  bind="title"
+                />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
+                <Text
+                  tagName="p"
+                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  bind="subtitle"
+                />
               )}
             </header>
           )}
@@ -68,11 +81,7 @@ class Block extends React.Component {
           />
           {this.getModifierValue('secondary-button') && (
             <div className={style['btns-group']}>
-              <Button
-                className={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+              <Button className={style.button} linkClassName={style.link} bind="cta" />
             </div>
           )}
         </div>
@@ -199,7 +208,8 @@ Block.defaultContent = {
     type: 'secondary',
   },
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
 }
