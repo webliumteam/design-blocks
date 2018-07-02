@@ -13,17 +13,27 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = planIndex => ({index, children, className}) => {
-    const {components: {Text}, style} = this.props
+    const {
+      components: {Text},
+      style,
+    } = this.props
     return (
       <li className={classNames(style['plan__list-item'], className)}>
         {children}
-        <Text tagName="span" className={style['plan__list-item-text']} bind={`plan-list-${planIndex}[${index}].text`} />
+        <Text
+          tagName="span"
+          className={style['plan__list-item-text']}
+          bind={`plan-list-${planIndex}[${index}].text`}
+        />
       </li>
     )
   }
 
   planHeader = (itemNumber) => {
-    const {components: {Text, Icon}, style} = this.props
+    const {
+      components: {Text, Icon},
+      style,
+    } = this.props
     return [
       <Text tagName="h2" className={style.plan__title} bind={`plan-title-${itemNumber}`} />,
       this.getModifierValue('plan-icon') && (
@@ -33,9 +43,17 @@ class Block extends React.Component {
       ),
       this.getModifierValue('plan-price') && (
         <p className={style.plan__price}>
-          <Text tagName="strong" className={style['plan__price-count']} bind={`plan-price-count-${itemNumber}`} />
+          <Text
+            tagName="strong"
+            className={style['plan__price-count']}
+            bind={`plan-price-count-${itemNumber}`}
+          />
           {this.getModifierValue('plan-additional-info') && (
-            <Text tagName="span" className={style['plan__price-text']} bind={`plan-price-text-${itemNumber}`} />
+            <Text
+              tagName="span"
+              className={style['plan__price-text']}
+              bind={`plan-price-text-${itemNumber}`}
+            />
           )}
         </p>
       ),
@@ -43,7 +61,10 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon, Background}, $block: {options}, style} = this.props
+    const {
+      components: {Collection, Text, Button, Icon, Background},
+      style,
+    } = this.props
 
     return (
       <section className={style.section}>
@@ -51,11 +72,29 @@ class Block extends React.Component {
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          {this.getModifierValue('block-title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
-          {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="description" />}
+          {this.getModifierValue('block-title') && (
+            <Text
+              tagName="h1"
+              className={classNames(style.title, 'title', 'text-center')}
+              bind="title"
+            />
+          )}
+          {this.getModifierValue('subtitle') && (
+            <Text
+              tagName="p"
+              className={classNames(style.subtitle, 'subtitle', 'text-center')}
+              bind="description"
+            />
+          )}
           <div className={style['plans-wrapper']}>
             <Background className={style.plan} bind="leftBackground" tagName="article">
-              {this.getOptionValue('price-wrapper') ? (<Background bind="leftWrapperBackground" className={style['price-wrapper']}>{this.planHeader('1')}</Background>) : this.planHeader('1')}
+              {this.getOptionValue('price-wrapper') ? (
+                <Background bind="leftWrapperBackground" className={style['price-wrapper']}>
+                  {this.planHeader('1')}
+                </Background>
+              ) : (
+                this.planHeader('1')
+              )}
               {this.getModifierValue('plan-description') && (
                 <Collection
                   className={style.plan__list}
@@ -74,8 +113,18 @@ class Block extends React.Component {
               )}
             </Background>
             {!this.getOptionValue('hidden-main') && (
-              <Background className={classNames(style.plan, style['plan--main'])} bind="centerBackground" tagName="article">
-                {this.getOptionValue('price-wrapper') ? (<Background bind="centerWrapperBackground" className={style['price-wrapper']}>{this.planHeader('2')}</Background>) : this.planHeader('2')}
+              <Background
+                className={classNames(style.plan, style['plan--main'])}
+                bind="centerBackground"
+                tagName="article"
+              >
+                {this.getOptionValue('price-wrapper') ? (
+                  <Background bind="centerWrapperBackground" className={style['price-wrapper']}>
+                    {this.planHeader('2')}
+                  </Background>
+                ) : (
+                  this.planHeader('2')
+                )}
                 {this.getModifierValue('plan-description') && (
                   <Collection
                     className={style.plan__list}
@@ -95,7 +144,13 @@ class Block extends React.Component {
               </Background>
             )}
             <Background className={style.plan} bind="rightBackground" tagName="article">
-              {this.getOptionValue('price-wrapper') ? (<Background bind="rightWrapperBackground" className={style['price-wrapper']}>{this.planHeader('3')}</Background>) : this.planHeader('3')}
+              {this.getOptionValue('price-wrapper') ? (
+                <Background bind="rightWrapperBackground" className={style['price-wrapper']}>
+                  {this.planHeader('3')}
+                </Background>
+              ) : (
+                this.planHeader('3')
+              )}
               {this.getModifierValue('plan-description') && (
                 <Collection
                   className={style.plan__list}
@@ -116,11 +171,7 @@ class Block extends React.Component {
           </div>
           {this.getModifierValue('additional-btn') && (
             <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+              <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
             </div>
           )}
         </div>
@@ -129,7 +180,13 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon', 'Background'])($editor.components)
+Block.components = _.pick([
+  'Collection',
+  'Text',
+  'Button',
+  'Icon',
+  'Background',
+])($editor.components)
 
 Block.defaultContent = {
   leftBackground: {
@@ -217,7 +274,8 @@ Block.defaultContent = {
     },
   ],
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
   title: {
@@ -354,6 +412,5 @@ Block.modifierScheme = {
   'additional-btn': {defaultValue: true, label: 'Medium button secondary', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block
