@@ -24,15 +24,6 @@
   }
 }
 
-.title,
-.subtitle {
-  text-align: center;
-
-  @media (--ui-tablet-devices) {
-    text-align: left;
-  }
-}
-
 .title {
   margin-bottom: 10px;
 }
