@@ -18,14 +18,32 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   toggleItemOpening = (collectionName, index) => {
-    this.setState({[`${collectionName}Opened`]: index === this.state[`${collectionName}Opened`] ? null : index})
+    this.setState({
+      [`${collectionName}Opened`]: index === this.state[`${collectionName}Opened`] ? null : index,
+    })
   }
 
   createCollectionItem = collectionName => ({index, children, className, openedItem}) => {
-    const {components: {Text}, style} = this.props
-    const controlIcons = !this.getOptionValue('different-icons') ?
-      (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.getOptionValue('open-icon')}} />) :
-      (<div className={style.item__icon} dangerouslySetInnerHTML={{__html: this.state[`${collectionName}Opened`] === index ? this.getOptionValue('open-icon') : this.getOptionValue('close-icon')}} />)
+    const {
+      components: {Text},
+      style,
+    } = this.props
+    const controlIcons = !this.getOptionValue('different-icons') ? (
+      <div
+        className={style.item__icon}
+        dangerouslySetInnerHTML={{__html: this.getOptionValue('open-icon')}}
+      />
+    ) : (
+      <div
+        className={style.item__icon}
+        dangerouslySetInnerHTML={{
+          __html:
+            this.state[`${collectionName}Opened`] === index
+              ? this.getOptionValue('open-icon')
+              : this.getOptionValue('close-icon'),
+        }}
+      />
+    )
 
     return (
       <div
@@ -37,12 +55,23 @@ class Block extends React.Component {
           tabIndex="0"
           className={style.item__button}
           onClick={() => this.toggleItemOpening(collectionName, index)}
-          onKeyPress={event => (event.key === 'Enter' || event.key === ' ') && this.toggleItemOpening(collectionName, index)}
+          onKeyPress={event =>
+            (event.key === 'Enter' || event.key === ' ') &&
+            this.toggleItemOpening(collectionName, index)
+          }
         >
-          <Text tagName="h3" className={style.item__title} bind={`${collectionName}.faq[${index}].title`} />
+          <Text
+            tagName="h3"
+            className={style.item__title}
+            bind={`${collectionName}.faq[${index}].title`}
+          />
           {this.getOptionValue('toogle-item-controls') && controlIcons}
         </div>
-        <Text tagName="div" className={style.item__content} bind={`${collectionName}.faq[${index}].description`} />
+        <Text
+          tagName="div"
+          className={style.item__content}
+          bind={`${collectionName}.faq[${index}].description`}
+        />
       </div>
     )
   }
@@ -52,19 +81,32 @@ class Block extends React.Component {
   companyCollectionItem = this.createCollectionItem('companies')
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+    } = this.props
     const {individualsOpened, companiesOpened} = this.state
 
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
+          <Text
+            tagName="h1"
+            className={classNames(style.title, 'title', 'text-center')}
+            bind="title"
+          />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="description" />
+            <Text
+              tagName="p"
+              className={classNames(style.subtitle, 'subtitle', 'text-center')}
+              bind="description"
+            />
           )}
           <div className={style['collections-wrapper']}>
             <div className={style.items__wrapper}>
-              {this.getModifierValue('heading') && <Text tagName="h2" className={style.items__title} bind="individuals.heading" />}
+              {this.getModifierValue('heading') && (
+                <Text tagName="h2" className={style.items__title} bind="individuals.heading" />
+              )}
               <Collection
                 className={style.items}
                 bind="individuals.faq"
@@ -73,7 +115,9 @@ class Block extends React.Component {
               />
             </div>
             <div className={style.items__wrapper}>
-              {this.getModifierValue('heading') && <Text tagName="h2" className={style.items__title} bind="companies.heading" />}
+              {this.getModifierValue('heading') && (
+                <Text tagName="h2" className={style.items__title} bind="companies.heading" />
+              )}
               <Collection
                 className={style.items}
                 bind="companies.faq"
@@ -84,11 +128,7 @@ class Block extends React.Component {
           </div>
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
-              <Button
-                className={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+              <Button className={style.button} linkClassName={style.link} bind="cta" />
             </div>
           )}
         </div>
@@ -120,7 +160,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -130,7 +171,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'We ship orders by air and sea (UPS, FedEx). UPS and FedEx offers value-added services such as pickup and delivery options, delivery notification, and special handling options. We deliver order to the US and abroad, including Europe, Asia, Australia, and Africa. You can also order standard shipping within 4-5 business days.',
+          content:
+            'We ship orders by air and sea (UPS, FedEx). UPS and FedEx offers value-added services such as pickup and delivery options, delivery notification, and special handling options. We deliver order to the US and abroad, including Europe, Asia, Australia, and Africa. You can also order standard shipping within 4-5 business days.',
           type: 'text',
         },
       },
@@ -140,7 +182,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -150,7 +193,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -160,7 +204,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -178,7 +223,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -188,7 +234,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -198,7 +245,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -208,7 +256,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -218,7 +267,8 @@ Block.defaultContent = {
           type: 'subtitle',
         },
         description: {
-          content: 'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
+          content:
+            'Click Order button next to the service you want to purchase and leave your contacts in a follow-up form. We will get in touch with shortly to clarify all the details. ',
           type: 'text',
         },
       },
@@ -239,7 +289,8 @@ Block.defaultContent = {
     type: 'secondary',
   },
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
 }
