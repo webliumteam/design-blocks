@@ -87,9 +87,9 @@ class Block extends React.Component {
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <Text bind="title" className={classNames(style.title, 'title')} tagName="h1" />
+          <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />
           {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
+            <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
           )}
           <Slider
             className={style['preview-slider']}
