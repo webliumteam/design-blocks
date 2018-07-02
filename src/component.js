@@ -7,8 +7,7 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
-  getModifierValue = path => _.get([
-    'modifier', path], this.props.$block)
+  getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
