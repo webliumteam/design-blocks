@@ -1,6 +1,6 @@
 {
   "name": "wireframe-zapdos-process",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "",
   "category": "process",
   "main": "src/index.js",
