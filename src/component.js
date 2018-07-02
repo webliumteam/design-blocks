@@ -13,13 +13,18 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Text, ContactForm}, style} = this.props
+    const {
+      components: {Text, ContactForm},
+      style,
+    } = this.props
 
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
           <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
-          {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />}
+          {this.getModifierValue('subtitle') && (
+            <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
+          )}
           <ContactForm
             bind="contactForm"
             className={style.form}
@@ -44,7 +49,8 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Enter your email and get our latest news, special offers, and useful content about our products and services.',
+    content:
+      'Enter your email and get our latest news, special offers, and useful content about our products and services.',
     type: 'subtitle',
   },
   contactForm: {
