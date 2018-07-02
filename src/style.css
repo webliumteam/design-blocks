@@ -3,7 +3,6 @@
 .section {
   min-width: 320px;
   padding: 50px 0;
-  text-align: center;
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
@@ -36,6 +35,7 @@
 
 .title {
   margin-bottom: 15px;
+  text-align: center;
 
   &:last-child {
     margin-bottom: 0;
@@ -45,6 +45,7 @@
 .subtitle {
   max-width: 620px;
   margin: 0 auto;
+  text-align: center;
 }
 
 @media (--ui-medium-devices) {

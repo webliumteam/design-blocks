@@ -13,23 +13,38 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Icon, Image}, style} = this.props
+    const {
+      components: {Text, Icon, Image},
+      style,
+    } = this.props
     const topElement = this.getOptionValue('icon-replacer') || 'icon'
     const cases = {
-      image: () => <Image pictureClassName={style['item__icon-picture']} bind={`articles[${index}].iconImage`} resize={{disable: this.getOptionValue('disable-resizer')}} />,
-      text: () => <Text className={style['item__icon-text']} bind={`articles[${index}].iconText`} tagName="span" />,
+      image: () => (
+        <Image
+          pictureClassName={style['item__icon-picture']}
+          bind={`articles[${index}].iconImage`}
+          resize={{disable: this.getOptionValue('disable-resizer')}}
+        />
+      ),
+      text: () => (
+        <Text
+          className={style['item__icon-text']}
+          bind={`articles[${index}].iconText`}
+          tagName="span"
+        />
+      ),
       icon: () => <Icon bind={`articles[${index}].icon`} />,
     }
     const selectedElement = cases[topElement] ? topElement : 'empty'
-    const imageWrapperClass = selectedElement === 'image' ?
-      style['image-wrapper'] : ''
-    const textWrapperClass = selectedElement === 'text' ?
-      style['text-wrapper'] : ''
+    const imageWrapperClass = selectedElement === 'image' ? style['image-wrapper'] : ''
+    const textWrapperClass = selectedElement === 'text' ? style['text-wrapper'] : ''
     return (
       <article className={classNames(style.item, className)}>
         {children}
         {this.getModifierValue('item-icon') && (
-          <div className={classNames(style['item__top-element'], imageWrapperClass, textWrapperClass)}>
+          <div
+            className={classNames(style['item__top-element'], imageWrapperClass, textWrapperClass)}
+          >
             {cases[selectedElement]()}
           </div>
         )}
@@ -44,7 +59,11 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+      $block,
+    } = this.props
     const noIconClass = this.getModifierValue('item-icon') ? '' : style['section--no-icon']
     const sectionHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
     const withoutCollection =
@@ -61,10 +80,18 @@ class Block extends React.Component {
           {sectionHeader && (
             <div className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title')} tagName="h1" />
+                <Text
+                  bind="title"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  tagName="h1"
+                />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="description" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
+                <Text
+                  bind="description"
+                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  tagName="p"
+                />
               )}
             </div>
           )}
@@ -78,21 +105,14 @@ class Block extends React.Component {
               }}
             />
           )}
-          {(this.getModifierValue('button-secondary') || this.getModifierValue('button-primary')) && (
+          {(this.getModifierValue('button-secondary') ||
+            this.getModifierValue('button-primary')) && (
             <div className={style['btns-group']}>
               {this.getModifierValue('button-primary') && (
-                <Button
-                  buttonClassName={style.button}
-                  linkClassName={style.link}
-                  bind="button-2"
-                />
+                <Button buttonClassName={style.button} linkClassName={style.link} bind="button-2" />
               )}
               {this.getModifierValue('button-secondary') && (
-                <Button
-                  className={style.button}
-                  linkClassName={style.link}
-                  bind="button-1"
-                />
+                <Button className={style.button} linkClassName={style.link} bind="button-1" />
               )}
             </div>
           )}
@@ -102,7 +122,14 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Icon', 'Image', 'Icon'])($editor.components)
+Block.components = _.pick([
+  'Collection',
+  'Text',
+  'Button',
+  'Icon',
+  'Image',
+  'Icon',
+])($editor.components)
 
 Block.defaultContent = {
   articles: [
@@ -168,7 +195,8 @@ Block.defaultContent = {
         alt: 'Picture instead icon',
       },
       description: {
-        content: 'We create our products using the latest technologies to ensure the best experience.',
+        content:
+          'We create our products using the latest technologies to ensure the best experience.',
         type: 'text',
       },
     },
@@ -178,39 +206,21 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   description: {
-    content: 'Still have some hesitations whether cooperation with us is worth the trouble? Check the reasons why you should choose us among other companies!',
+    content:
+      'Still have some hesitations whether cooperation with us is worth the trouble? Check the reasons why you should choose us among other companies!',
     type: 'subtitle',
   },
   'button-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'secondary',
   },
   'button-2': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Request a quote',
     type: 'primary',
   },
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
 }
