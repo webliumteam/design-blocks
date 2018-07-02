@@ -15,6 +15,9 @@ class Block extends React.Component {
     const alignClass = this.getModifierValue('align') !== 'left'
       ? css[`section--${this.getModifierValue('align')}`]
       : ''
+    const subtitleAlignClass = this.getModifierValue('align') !== 'left'
+    ? `text-${this.getModifierValue('align')}`
+    : ''
 
     return (
       <section className={classNames(css.section, alignClass)}>
@@ -24,9 +27,9 @@ class Block extends React.Component {
               <Text bind="topCaption" />
             </div>
           )}
-          <Text bind="title" tagName="h1" className={classNames(css.title, 'title')} />
+          <Text bind="title" tagName="h1" className={css.title} />
           {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" tagName="p" className={classNames(css.subtitle, 'subtitle')} />
+            <Text bind="subtitle" tagName="p" className={classNames(css.subtitle, 'subtitle', themeAlignClass)} />
           )}
           {showButtonGroups && (
             <div className={css['btns-group']}>
