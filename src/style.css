@@ -2,7 +2,6 @@
 
 .section {
   min-width: 320px;
-  text-align: center;
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
@@ -47,6 +46,7 @@
 
 .title {
   margin-bottom: 15px;
+  text-align: center;
 
   @media (--ui-medium-devices) {
     margin-left: 15px;
@@ -56,6 +56,7 @@
 
 .subtitle {
   margin-bottom: 10px;
+  text-align: center;
 
   @media (--ui-medium-devices) {
     margin-left: 15px;
