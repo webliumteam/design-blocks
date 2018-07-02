@@ -35,6 +35,8 @@
   }
 }
 
+/* stylelint-disable */
+
 .preview-slider {
   display: none;
 
@@ -53,6 +55,14 @@
 
       @media (--ui-tablet-devices) {
         padding: 20px 0;
+      }
+    }
+
+    .slick-arrow-default {
+      color: var(--ui-brand-color);
+
+      svg {
+        fill: currentColor;
       }
     }
   }
@@ -92,6 +102,10 @@
       color: var(--ui-brand-color);
       cursor: pointer;
       transition: opacity .2s ease-in;
+
+      svg {
+        fill: currentColor;
+      }
     }
 
     .slick-arrow-default.slick-prev-default {
@@ -122,7 +136,7 @@
     .slick-arrow {
       width: 17px;
       transform: translateY(-50%);
-      color: var(--ui-brand-color);
+      color: inherit;
     }
 
     .slick-arrow.slick-prev {
@@ -170,6 +184,8 @@
     }
   }
 }
+
+/* stylelint-enable */
 
 .item {
   width: 100%;
