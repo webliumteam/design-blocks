@@ -13,8 +13,12 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Background, Text, Map, SocialIcons, Button}, style: css} = this.props
-    const onlyMap = !this.getModifierValue('title') &&
+    const {
+      components: {Background, Text, Map, SocialIcons, Button},
+      style: css,
+    } = this.props
+    const onlyMap =
+      !this.getModifierValue('title') &&
       !this.getModifierValue('heading') &&
       !this.getModifierValue('address') &&
       !this.getModifierValue('phone') &&
@@ -33,7 +37,11 @@ class Block extends React.Component {
           {!onlyMap && (
             <Background tagName="div" className={css.contacts} bind="contactsBackground">
               {this.getModifierValue('title') && (
-                <Text tagName="h1" className={classNames(css.title, 'title', 'text-center')} bind="title" />
+                <Text
+                  tagName="h1"
+                  className={classNames(css.title, 'title', 'text-center')}
+                  bind="title"
+                />
               )}
               {this.getModifierValue('heading') && (
                 <Text tagName="h2" className={css.heading} bind="heading" />
@@ -41,17 +49,29 @@ class Block extends React.Component {
               <ul className={css['contacts-list']}>
                 {this.getModifierValue('address') && (
                   <li className={css['contacts-list__item']}>
-                    <Text bind="address-content" className={classNames(css.contacts__desc, css['contacts__desc--adress'])} tagName="p" />
+                    <Text
+                      bind="address-content"
+                      className={classNames(css.contacts__desc, css['contacts__desc--adress'])}
+                      tagName="p"
+                    />
                   </li>
                 )}
                 {this.getModifierValue('phone') && (
                   <li className={css['contacts-list__item']}>
-                    <Text bind="phone-link" className={classNames(css.contacts__desc, css['contacts__desc--phone'])} tagName="p" />
+                    <Text
+                      bind="phone-link"
+                      className={classNames(css.contacts__desc, css['contacts__desc--phone'])}
+                      tagName="p"
+                    />
                   </li>
                 )}
                 {this.getModifierValue('email') && (
                   <li className={css['contacts-list__item']}>
-                    <Text bind="email-link" className={classNames(css.contacts__desc, css['contacts__desc--email'])} tagName="p" />
+                    <Text
+                      bind="email-link"
+                      className={classNames(css.contacts__desc, css['contacts__desc--email'])}
+                      tagName="p"
+                    />
                   </li>
                 )}
               </ul>
@@ -59,11 +79,7 @@ class Block extends React.Component {
                 <SocialIcons className={css.socials} bind="socialIcons" />
               )}
               {this.getModifierValue('button') && (
-                <Button
-                  buttonClassName={css.button}
-                  linkClassName={css.link}
-                  bind="button"
-                />
+                <Button buttonClassName={css.button} linkClassName={css.link} bind="button" />
               )}
             </Background>
           )}
