@@ -13,7 +13,10 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Image, Resizer}, style} = this.props
+    const {
+      components: {Text, Button, Image, Resizer},
+      style,
+    } = this.props
 
     return (
       <Resizer
@@ -37,7 +40,11 @@ class Block extends React.Component {
             <Text tagName="h3" className={style.article__title} bind={`events[${index}].title`} />
             <div className={style.article__bottom}>
               {_.get('location')(modifier) && (
-                <Text tagName="p" className={style.article__location} bind={`events[${index}].location`} />
+                <Text
+                  tagName="p"
+                  className={style.article__location}
+                  bind={`events[${index}].location`}
+                />
               )}
               {_.get('link')(modifier) && (
                 <Button
@@ -67,7 +74,11 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+      $block,
+    } = this.props
 
     return (
       <section className={style.section}>
@@ -89,11 +100,7 @@ class Block extends React.Component {
           />
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+              <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
             </div>
           )}
         </div>
@@ -102,7 +109,14 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon', 'Resizer'])($editor.components)
+Block.components = _.pick([
+  'Collection',
+  'Text',
+  'Button',
+  'Image',
+  'Icon',
+  'Resizer',
+])($editor.components)
 
 Block.defaultContent = {
   events: [
@@ -132,16 +146,6 @@ Block.defaultContent = {
         alt: 'Digital marketing workshop illustration',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Know more',
         type: 'link',
       },
@@ -172,16 +176,6 @@ Block.defaultContent = {
         alt: 'Blogging for beginners illustration',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Know more',
         type: 'link',
       },
@@ -212,16 +206,6 @@ Block.defaultContent = {
         alt: 'How to find insight illustration',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Know more',
         type: 'link',
       },
@@ -252,16 +236,6 @@ Block.defaultContent = {
         alt: 'UX workshop illustration',
       },
       cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Know more',
         type: 'link',
       },
@@ -272,25 +246,17 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'We regularly host different kinds of events to satisfy the desires and demands even of all our clients. Do you want to know more about our activities? Follow the updates and never miss the workshops and seminars from our professionals.',
+    content:
+      'We regularly host different kinds of events to satisfy the desires and demands even of all our clients. Do you want to know more about our activities? Follow the updates and never miss the workshops and seminars from our professionals.',
     type: 'subtitle',
   },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'secondary',
   },
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
 }
@@ -303,6 +269,5 @@ Block.modifierScheme = {
   button: {defaultValue: true, label: 'Button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block
