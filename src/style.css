@@ -20,7 +20,6 @@
 
   &__header {
     max-width: 100%;
-    text-align: center;
 
     @media (--ui-tablet-devices) {
       max-width: 740px;
@@ -35,6 +34,11 @@
 
 .title {
   margin-bottom: 15px;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
 }
 
 .items-wrapper {
