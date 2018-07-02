@@ -2,7 +2,6 @@
 
 .section {
   min-width: 320px;
-  text-align: center;
   font-size: var(--ui-text-size);
   color: var(--ui-text-color);
   line-height: var(--ui-text-line-height);
@@ -98,11 +97,13 @@
 
 .title {
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .subtitle {
   margin-bottom: 10px;
   font-size: calc(var(--ui-subtitle-size) * .8);
+  text-align: center;
 }
 
 .message {
