@@ -117,7 +117,7 @@ class Block extends React.Component {
               arrows: false,
               centerMode: true,
               infinite: true,
-              // focusOnSelect: true,
+              focusOnSelect: true,
               slidesToShow: 3,
               centerPadding: '0',
               draggable: true,
