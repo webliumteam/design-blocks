@@ -13,7 +13,10 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Image}, style} = this.props
+    const {
+      components: {Text, Button, Image},
+      style,
+    } = this.props
     return (
       <article className={classNames(style.article, className)}>
         {children}
@@ -24,8 +27,16 @@ class Block extends React.Component {
           bind={`services[${index}].picture`}
           size={{'min-width: 320px': 446, 'min-width: 480px': 738, 'min-width: 768px': 460}}
         />
-        {_.get('heading')(modifier) && <Text tagName="h2" className={style.article__title} bind={`services[${index}].title`} />}
-        {_.get('body')(modifier) && <Text tagName="p" className={style.article__text} bind={`services[${index}].description`} />}
+        {_.get('heading')(modifier) && (
+          <Text tagName="h2" className={style.article__title} bind={`services[${index}].title`} />
+        )}
+        {_.get('body')(modifier) && (
+          <Text
+            tagName="p"
+            className={style.article__text}
+            bind={`services[${index}].description`}
+          />
+        )}
         {_.get('link')(modifier) && (
           <Button
             className={style.article__link}
@@ -39,7 +50,11 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+      $block,
+    } = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
@@ -47,8 +62,20 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           <header className={style.section__header}>
-            {!this.getOptionValue('disabled-title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />}
+            {!this.getOptionValue('disabled-title') && (
+              <Text
+                tagName="h1"
+                className={classNames(style.title, 'title', 'text-center')}
+                bind="title"
+              />
+            )}
+            {this.getModifierValue('subtitle') && (
+              <Text
+                tagName="p"
+                className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                bind="subtitle"
+              />
+            )}
           </header>
           <Collection
             className={style['articles-wrapper']}
@@ -66,18 +93,10 @@ class Block extends React.Component {
             this.getModifierValue('button-primary')) && (
             <div className={style['btns-group']}>
               {this.getModifierValue('button-secondary') && (
-                <Button
-                  buttonClassName={style.button}
-                  linkClassName={style.link}
-                  bind="button-1"
-                />
+                <Button buttonClassName={style.button} linkClassName={style.link} bind="button-1" />
               )}
               {this.getModifierValue('button-primary') && (
-                <Button
-                  buttonClassName={style.button}
-                  linkClassName={style.link}
-                  bind="button-2"
-                />
+                <Button buttonClassName={style.button} linkClassName={style.link} bind="button-2" />
               )}
             </div>
           )}
@@ -105,16 +124,6 @@ Block.defaultContent = {
         alt: 'Service illustration photo',
       },
       link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -133,16 +142,6 @@ Block.defaultContent = {
         alt: 'Service illustration photo',
       },
       link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -153,7 +152,8 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'Building brand awareness for micro and small businesses to increase potential reach.',
+        content:
+          'Building brand awareness for micro and small businesses to increase potential reach.',
         type: 'text',
       },
       picture: {
@@ -161,16 +161,6 @@ Block.defaultContent = {
         alt: 'Service illustration photo',
       },
       link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -181,7 +171,8 @@ Block.defaultContent = {
         type: 'heading',
       },
       description: {
-        content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
+        content:
+          'Aftersales support in marketing, sales, and staff training for enhanced performance.',
         type: 'text',
       },
       picture: {
@@ -189,16 +180,6 @@ Block.defaultContent = {
         alt: 'Service illustration photo',
       },
       link: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -214,34 +195,15 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'We deliver all kind of services that support small and micro businesses. Here are some of them:',
+    content:
+      'We deliver all kind of services that support small and micro businesses. Here are some of them:',
     type: 'subtitle',
   },
   'button-1': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Request a quote',
     type: 'secondary',
   },
   'button-2': {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'primary',
   },
