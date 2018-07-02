@@ -46,10 +46,10 @@ class Wireframe extends React.Component {
           {blockHeader && (
             <div className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text tagName="h2" className={style.title} bind="title" />
+                <Text tagName="h2" className={classNames(style.title, 'title', 'text-center')} bind="title" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
+                <Text tagName="p" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />
               )}
             </div>
           )}
