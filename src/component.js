@@ -37,13 +37,13 @@ class Block extends React.Component {
             )}
             <div className={style.article__content}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.article__title, 'title')} tagName="h1" />
+                <Text bind="title" className={classNames(style.article__title, 'title', 'text-center')} tagName="h1" />
               )}
               {this.getModifierValue('heading') && (
                 <Text bind="heading" className={style.article__heading} tagName="h2" />
               )}
               {this.getModifierValue('subheading') && (
-                <Text bind="subheading" className={classNames(style.article__subheading, 'subtitle')} tagName="p" />
+                <Text bind="subheading" className={classNames(style.article__subheading, 'subtitle', 'text-center')} tagName="p" />
               )}
               {this.getModifierValue('text') && (
                 <Text bind="text" className={style.article__text} tagName="p" />

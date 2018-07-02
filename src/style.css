@@ -20,10 +20,6 @@
   padding: var(--ui-content-gutter);
 }
 
-.article {
-  text-align: center;
-}
-
 .article__picture {
   display: block;
   position: relative;
@@ -71,11 +67,13 @@
   width: 100%;
   margin-top: 5px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .article__subheading {
   width: 100%;
   margin-bottom: 10px;
+  text-align: center;
 
   + .socials {
     margin-top: 10px;
@@ -89,6 +87,7 @@
 
 .article__text {
   margin-bottom: 30px;
+  text-align: center;
 
   + .btns-group {
     margin-top: 0;
@@ -116,6 +115,7 @@
 
 .btns-group {
   margin: 30px -15px -10px;
+  text-align: center;
 }
 
 .button,
