@@ -10,13 +10,24 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text, ContactForm, Background}, style} = this.props
+    const {
+      components: {Text, ContactForm, Background},
+      style,
+    } = this.props
     return (
       <section className={style.section}>
         <Background className={style.section__inner} bind="formBackground">
           <header className={style.section__header}>
-            {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />}
+            {this.getModifierValue('title') && (
+              <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
+            )}
+            {this.getModifierValue('subtitle') && (
+              <Text
+                tagName="p"
+                className={classNames(style.subtitle, 'subtitle')}
+                bind="subtitle"
+              />
+            )}
           </header>
           <ContactForm
             bind="contactForm"
