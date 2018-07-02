@@ -46,6 +46,10 @@ class Block extends React.Component {
     )
   }
 
+  preventClick = (e) => {
+    e.preventDefault()
+  }
+
   collectionItemPreview = ({index, modifier}) => {
     const {components: {Image}, style} = this.props
     return (
@@ -61,6 +65,7 @@ class Block extends React.Component {
             'min-width: 480px': 800,
           }}
           resize={{disable: true}}
+          onClick={this.preventClick}
         />
       </div>
     )
