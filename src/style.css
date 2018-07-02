@@ -3,7 +3,6 @@
 .section {
   min-width: 320px;
   padding: 50px 0;
-  text-align: center;
   word-wrap: break-word;
 
   @media (--ui-tablet-devices) {
@@ -23,11 +22,13 @@
 
 .title {
   word-wrap: break-word;
+  text-align: center;
 }
 
 .subtitle {
   max-width: 770px;
   margin: 15px auto 0;
+  text-align: center;
 }
 
 .items-wrapper {
@@ -191,6 +192,7 @@
   display: flex;
   padding: 0 5px;
   outline: none;
+  text-align: center;
 }
 
 @media (--ui-tablet-devices) {
@@ -299,6 +301,7 @@
 
 .btns-group {
   padding-top: 40px;
+  text-align: center;
 
   @media (--ui-tablet-devices) {
     padding-top: 25px;
