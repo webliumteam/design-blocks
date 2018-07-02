@@ -10,15 +10,16 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   render() {
-    const {components: {Text, Icon}, style} = this.props
+    const {
+      components: {Text, Icon},
+      style,
+    } = this.props
     const alignClass =
       this.getModifierValue('align') !== 'center'
         ? style[`section--${this.getModifierValue('align')}`]
         : ''
     const headerAlignClass =
-      this.getModifierValue('align') !== 'left'
-        ? `text-${this.getModifierValue('align')}`
-        : ''
+      this.getModifierValue('align') !== 'left' ? `text-${this.getModifierValue('align')}` : ''
 
     return (
       <section className={classNames(style.section, alignClass)}>
@@ -27,11 +28,27 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           <header className={style.section__header}>
-            {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title', headerAlignClass)} bind="title" />}
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle', headerAlignClass)} bind="subtitle" />}
+            {this.getModifierValue('title') && (
+              <Text
+                tagName="h1"
+                className={classNames(style.title, 'title', headerAlignClass)}
+                bind="title"
+              />
+            )}
+            {this.getModifierValue('subtitle') && (
+              <Text
+                tagName="p"
+                className={classNames(style.subtitle, 'subtitle', headerAlignClass)}
+                bind="subtitle"
+              />
+            )}
           </header>
-          {this.getModifierValue('heading') && <Text tagName="h2" className={style.heading} bind="heading" />}
-          {this.getModifierValue('subheading') && <Text tagName="p" className={style.subheading} bind="subheading" />}
+          {this.getModifierValue('heading') && (
+            <Text tagName="h2" className={style.heading} bind="heading" />
+          )}
+          {this.getModifierValue('subheading') && (
+            <Text tagName="p" className={style.subheading} bind="subheading" />
+          )}
           {this.getModifierValue('text') && <Text tagName="p" className={style.text} bind="text" />}
         </div>
       </section>
@@ -60,11 +77,13 @@ Block.defaultContent = {
     type: 'heading',
   },
   subheading: {
-    content: 'We always aim to establish long-term relationships with customers. That’s why we believe that quality always comes first. This notion is the cornerstone of our mission, solidified by the highest standards we apply in every operation.',
+    content:
+      'We always aim to establish long-term relationships with customers. That’s why we believe that quality always comes first. This notion is the cornerstone of our mission, solidified by the highest standards we apply in every operation.',
     type: 'subheading',
   },
   text: {
-    content: 'We always work hard to improve our goods and services to achieve higher results for our clients. We love challenging tasks that require an innovative approach. Thus, if your business needs a unique solution, we are ready to fine-tune our existing products to meet all your demands.<br>Our company is a group of devotees sharing mutual priorities and values. We know that only those committed to their work can provide the best-quality products and services. That’s why every person that wants to join our team should undergo rigorous selection.',
+    content:
+      'We always work hard to improve our goods and services to achieve higher results for our clients. We love challenging tasks that require an innovative approach. Thus, if your business needs a unique solution, we are ready to fine-tune our existing products to meet all your demands.<br>Our company is a group of devotees sharing mutual priorities and values. We know that only those committed to their work can provide the best-quality products and services. That’s why every person that wants to join our team should undergo rigorous selection.',
     type: 'text',
   },
 }
@@ -88,6 +107,5 @@ Block.modifierScheme = {
   text: {defaultValue: true, label: 'Main text', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block
