@@ -13,7 +13,10 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Text, SocialIcons}, style} = this.props
+    const {
+      components: {Text, SocialIcons},
+      style,
+    } = this.props
     const header = this.getModifierValue('title') || this.getModifierValue('subtitle')
     const alignment = this.getModifierValue('itemsAlignment')
     const headerAlignmentClass = `text-${this.getModifierValue('itemsAlignment')}`
@@ -24,10 +27,18 @@ class Wireframe extends React.Component {
           {header && (
             <div className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title', headerAlignmentClass)} tagName="h2" />
+                <Text
+                  bind="title"
+                  className={classNames(style.title, 'title', headerAlignmentClass)}
+                  tagName="h2"
+                />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', headerAlignmentClass)} tagName="p" />
+                <Text
+                  bind="subtitle"
+                  className={classNames(style.subtitle, 'subtitle', headerAlignmentClass)}
+                  tagName="p"
+                />
               )}
             </div>
           )}
