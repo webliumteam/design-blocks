@@ -13,9 +13,14 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Image, SocialIcons}, style} = this.props
+    const {
+      components: {Text, Button, Image, SocialIcons},
+      style,
+    } = this.props
     const memberContacts = [
-      _.get('member-email')(modifier) && <Text tagName="div" className={style.item__email} bind={`team[${index}].email`} />,
+      _.get('member-email')(modifier) && (
+        <Text tagName="div" className={style.item__email} bind={`team[${index}].email`} />
+      ),
       _.get('member-social')(modifier) && (
         <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
       ),
@@ -44,25 +49,39 @@ class Block extends React.Component {
               bind={`team[${index}].more`}
             />
           )}
-          {this.getOptionValue('member-contacts-wrapper') ?
-            <div className={style.item__contacts}>{memberContacts}</div> : memberContacts
-          }
+          {this.getOptionValue('member-contacts-wrapper') ? (
+            <div className={style.item__contacts}>{memberContacts}</div>
+          ) : (
+            memberContacts
+          )}
         </div>
       </article>
     )
   }
 
   render() {
-    const {components: {Collection, Text, Button, Icon}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button, Icon},
+      style,
+      $block,
+    } = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
-          <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />
+          <Text
+            tagName="h1"
+            className={classNames(style.title, 'title', 'text-center')}
+            bind="title"
+          />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="p" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />
+            <Text
+              tagName="p"
+              className={classNames(style.subtitle, 'subtitle', 'text-center')}
+              bind="subtitle"
+            />
           )}
           <Collection
             className={style['items-wrapper']}
@@ -74,11 +93,7 @@ class Block extends React.Component {
           />
           {this.getModifierValue('block-button') && (
             <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+              <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
             </div>
           )}
         </div>
@@ -87,8 +102,14 @@ class Block extends React.Component {
   }
 }
 
-Block.components =
-  _.pick(['Collection', 'Text', 'Button', 'Image', 'SocialIcons', 'Icon'])($editor.components)
+Block.components = _.pick([
+  'Collection',
+  'Text',
+  'Button',
+  'Image',
+  'SocialIcons',
+  'Icon',
+])($editor.components)
 
 Block.defaultContent = {
   team: [
@@ -102,7 +123,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       description: {
-        content: 'Andrew Shimmer has more than 15 years of experience in IT development and marketing. He has successfully run companies specializing in innovative technologies.',
+        content:
+          'Andrew Shimmer has more than 15 years of experience in IT development and marketing. He has successfully run companies specializing in innovative technologies.',
         type: 'text',
       },
       picture: {
@@ -110,16 +132,6 @@ Block.defaultContent = {
         alt: 'Andrew Shimmer photo',
       },
       more: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -167,7 +179,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       description: {
-        content: 'Ann is a highly skilled professional with over 10 years of experience in marketing. She has been rewarded by the Association of Marketing as one of the most successful directors. ',
+        content:
+          'Ann is a highly skilled professional with over 10 years of experience in marketing. She has been rewarded by the Association of Marketing as one of the most successful directors. ',
         type: 'text',
       },
       picture: {
@@ -175,16 +188,6 @@ Block.defaultContent = {
         alt: 'Ann Maisner photo',
       },
       more: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -232,7 +235,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       description: {
-        content: 'For 13 years, Tomas has been taking a position of product manager at Quantum. He successfully launched several best-selling products. Now he is working on 3 new products.',
+        content:
+          'For 13 years, Tomas has been taking a position of product manager at Quantum. He successfully launched several best-selling products. Now he is working on 3 new products.',
         type: 'text',
       },
       picture: {
@@ -240,16 +244,6 @@ Block.defaultContent = {
         alt: 'Tomas Abbar photo',
       },
       more: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
-            },
-          },
-        },
         textValue: 'Learn more',
         type: 'link',
       },
@@ -293,25 +287,17 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Our team is our proud. Each of the team members is dedicated to delivering the best results to the clients. Meet some of our expert who will work on your case:',
+    content:
+      'Our team is our proud. Each of the team members is dedicated to delivering the best results to the clients. Meet some of our expert who will work on your case:',
     type: 'subtitle',
   },
   cta: {
-    actionConfig: {
-      action: 'link',
-      actions: {
-        link: {
-          type: '',
-          innerPage: '',
-          url: '',
-        },
-      },
-    },
     textValue: 'Learn more',
     type: 'secondary',
   },
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
 }
@@ -325,6 +311,5 @@ Block.modifierScheme = {
   'block-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
-
 
 export default Block
