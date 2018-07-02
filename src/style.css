@@ -135,8 +135,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: var(--ui-media-bg);
-    color: var(--ui-heading-color);
+    background-color: var(--ui-brand-color);
+    color: currentColor;
     font-family: var(--ui-text-font-family);
     font-size: var(--ui-text-size);
     line-height: var(--ui-text-line-height);
