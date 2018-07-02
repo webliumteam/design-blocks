@@ -47,9 +47,9 @@ class Block extends React.Component {
             {this.getModifierValue('top-caption') && (
               <Text bind="top-caption" className={style['caption-decorator']} tagName="div" />
             )}
-            <Text bind="title" className={classNames(style.title, 'title')} tagName="h1" />
+            <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />
             {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
+              <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
             )}
           </header>
           <Collection
