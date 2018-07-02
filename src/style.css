@@ -38,10 +38,12 @@
 
 .title {
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .subtitle {
   margin-bottom: 10px;
+  text-align: center;
 
   @media (--ui-tablet-devices) {
     font-size: calc(var(--ui-subtitle-size) * 0.8);
