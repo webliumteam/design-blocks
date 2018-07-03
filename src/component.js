@@ -35,7 +35,7 @@ class Wireframe extends React.Component {
             onOpenLightbox={openLightbox}
           />
           {this.getModifierValue('item-heading') && (
-            <Text tagName="h2" className={style.item__heading} bind={`gallery[${index}].heading`} />
+            <Text tagName="h2" className={classNames(style.item__heading, 'subtitle', 'text-center', 'text-lg-left')} bind={`gallery[${index}].heading`} />
           )}
         </div>
       </div>
