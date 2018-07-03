@@ -30,19 +30,19 @@ class Block extends React.Component {
           {children}
 
           {_.get('badge')(modifier) && (
-            <Text tagName="div" className={style.article__badge} bind={`events[${index}].badge`} />
+            <Text tagName="div" className={classNames(style.article__badge, 'caption', 'text-center')} bind={`events[${index}].badge`} />
           )}
           <div className={style.article__info}>
             <div className={style.article__top}>
-              <Text tagName="time" className={style.article__date} bind={`events[${index}].date`} />
-              <Text tagName="time" className={style.article__time} bind={`events[${index}].time`} />
+              <Text tagName="time" className={classNames(style.article__date, 'subtitle')} bind={`events[${index}].date`} />
+              <Text tagName="time" className={classNames(style.article__time, 'body')} bind={`events[${index}].time`} />
             </div>
-            <Text tagName="h3" className={style.article__title} bind={`events[${index}].title`} />
+            <Text tagName="h3" className={classNames(style.article__title, 'heading')} bind={`events[${index}].title`} />
             <div className={style.article__bottom}>
               {_.get('location')(modifier) && (
                 <Text
                   tagName="p"
-                  className={style.article__location}
+                  className={classNames(style.article__location, 'caption')}
                   bind={`events[${index}].location`}
                 />
               )}
