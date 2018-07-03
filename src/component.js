@@ -13,24 +13,40 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   getContent = () => {
-    const {components: {Text}, style} = this.props
+    const {
+      components: {Text},
+      style,
+    } = this.props
     return [
-      this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />,
-      this.getModifierValue('subtitle') && <Text tagName="p" className={style.description} bind="description" />,
+      this.getModifierValue('title') && (
+        <Text
+          tagName="h1"
+          className={classNames(style.title, 'title', 'text-center')}
+          bind="title"
+        />
+      ),
+      this.getModifierValue('subtitle') && (
+        <Text
+          tagName="p"
+          className={classNames(style.description, 'body', 'text-center')}
+          bind="description"
+        />
+      ),
     ]
   }
 
   getSectionInner = () => {
-    const {components: {Button, Image}, style} = this.props
+    const {
+      components: {Button, Image},
+      style,
+    } = this.props
     return [
-      this.getOptionValue('content-wrapper') ?
-        <div className={style['content-wrapper']}>{this.getContent()}</div> :
-        this.getContent(),
-      <Button
-        buttonClassName={style.button}
-        linkClassName={style.link}
-        bind="cta"
-      />,
+      this.getOptionValue('content-wrapper') ? (
+        <div className={style['content-wrapper']}>{this.getContent()}</div>
+      ) : (
+        this.getContent()
+      ),
+      <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />,
       this.getModifierValue('picture') && (
         <Image
           wrapperClassName={style['section__picture-wrapper']}
@@ -43,17 +59,19 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Background}, style} = this.props
+    const {
+      components: {Background},
+      style,
+    } = this.props
     return (
       <section className={style.section}>
-        {this.getOptionValue('content-bg') ?
+        {this.getOptionValue('content-bg') ? (
           <Background className={style.section__inner} bind="contentBackground">
             {this.getSectionInner()}
-          </Background> :
-          <div className={style.section__inner}>
-            {this.getSectionInner()}
-          </div>
-        }
+          </Background>
+        ) : (
+          <div className={style.section__inner}>{this.getSectionInner()}</div>
+        )}
       </section>
     )
   }
@@ -76,7 +94,8 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   description: {
-    content: 'Get a full-scale analysis of your business and recommended solutions to increase your profits.',
+    content:
+      'Get a full-scale analysis of your business and recommended solutions to increase your profits.',
     type: 'text',
   },
   cta: {
@@ -95,6 +114,5 @@ Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
   picture: {defaultValue: false, label: 'Picture', type: 'hidden'},
 }
-
 
 export default Block
