@@ -18,12 +18,24 @@ class Block extends React.Component {
       <div className={classNames(style.item, className)}>
         {children}
         {_.get('number-title')(modifier) && (
-          <Text tagName="h2" className={style.item__title} bind={`numbers[${index}].title`} />
+          <Text
+            tagName="h2"
+            className={classNames(style.item__title, 'subtitle')}
+            bind={`numbers[${index}].title`}
+          />
         )}
         <div className={style.item__content}>
-          <Text tagName="strong" className={style.item__number} bind={`numbers[${index}].value`} />
+          <Text
+            tagName="strong"
+            className={classNames(style.item__number, 'body')}
+            bind={`numbers[${index}].value`}
+          />
           {_.get('body')(modifier) && (
-            <Text tagName="p" className={style.item__text} bind={`numbers[${index}].label`} />
+            <Text
+              tagName="p"
+              className={classNames(style.item__text, 'title')}
+              bind={`numbers[${index}].label`}
+            />
           )}
         </div>
       </div>
@@ -47,7 +59,11 @@ class Block extends React.Component {
             <Icon className={style['top-icon']} bind="topIcon" />
           )}
           {this.getModifierValue('title') && (
-            <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
+            <Text
+              tagName="h1"
+              className={classNames(style.title, 'title', 'text-center', 'text-lg-left')}
+              bind="title"
+            />
           )}
           <Collection
             className={style['items-wrapper']}
