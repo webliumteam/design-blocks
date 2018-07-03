@@ -160,6 +160,7 @@
 
   &__desc {
     margin-bottom: 40px;
+    text-align: center;
 
     /* font-size: calc(var(--ui-text-size) * .875);
     color: var(--ui-text-color);

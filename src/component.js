@@ -31,7 +31,7 @@ class Block extends React.Component {
             />
           )}
           {_.get('body')(modifier) && (
-            <Text className={style.item__desc} bind={`partners[${index}].desc`} tagName="p" />
+            <Text className={classNames(style.item__desc, 'body', 'text-center')} bind={`partners[${index}].desc`} tagName="p" />
           )}
           {_.get('link')(modifier) && (
             <div className={style['item__link-wrapper']}>
@@ -55,7 +55,7 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-caption') && (
-            <Text bind="top-caption" className={style['caption-decorator']} tagName="div" />
+            <Text bind="top-caption" className={classNames(style['caption-decorator'], 'body', 'text-center')} tagName="div" />
           )}
           {header && (
             <header className={style.section__header}>
