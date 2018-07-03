@@ -55,7 +55,16 @@ class Block extends React.Component {
           {this.getModifierValue('social') && (
             <div className={classNames(css.footer__part, css['footer__part--last'])}>
               <div className={css.socials}>
-                <Text tagName="h2" className={classNames(css.socials__title, 'heading', 'text-center', 'text-lg-right')} bind="follow" />
+                <Text
+                  tagName="h2"
+                  className={classNames(
+                    css.socials__title,
+                    'heading',
+                    'text-center',
+                    'text-lg-right',
+                  )}
+                  bind="follow"
+                />
                 <SocialIcons bind="socialIcons" className={css.socials__icons} />
               </div>
             </div>
