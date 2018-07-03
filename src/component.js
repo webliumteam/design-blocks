@@ -12,14 +12,7 @@ class Block extends React.Component {
     nav2: null,
   }
 
-  /* eslint-disable */
-  componentDidMount() {
-    this.setState({
-      nav1: this.slider1,
-      nav2: this.slider2,
-    })
-  }
-  /* eslint-enable */
+  setSliderRef = key => ref => this.setState({[key]: ref})
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
@@ -84,7 +77,7 @@ class Block extends React.Component {
             className={style['preview-slider']}
             bind="gallery"
             Item={this.collectionItemPreview}
-            setRef={slider => (this.slider1 = slider)}
+            setRef={this.setSliderRef('nav1')}
             settings={{
               dots: false,
               arrows: false,
@@ -99,7 +92,7 @@ class Block extends React.Component {
             className={style['items-wrapper']}
             bind="gallery"
             Item={this.collectionItem}
-            setRef={slider => (this.slider2 = slider)}
+            setRef={this.setSliderRef('nav2')}
             settings={{
                 dots: false,
                 arrows: true,
