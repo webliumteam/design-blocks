@@ -31,10 +31,10 @@ class Block extends React.Component {
           onOpenLightbox={openLightbox}
         />
         {_.get('body-text')(modifier) && (
-          <Text tagName="p" className={style.item__text} bind={`gallery[${index}].title`} />
+          <Text tagName="p" className={classNames(style.item__text, 'body')} bind={`gallery[${index}].title`} />
         )}
         {_.get('caption')(modifier) && (
-          <Text tagName="p" className={style.item__caption} bind={`gallery[${index}].caption`} />
+          <Text tagName="p" className={classNames(style.item__caption, 'caption')} bind={`gallery[${index}].caption`} />
         )}
       </div>
     )
