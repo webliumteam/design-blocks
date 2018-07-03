@@ -20,7 +20,9 @@
       margin: 0 auto;
 
       &__title,
-      &__heading {
+      &__heading,
+      &__subtitle,
+      &__subheading {
         text-align: center;
       }
     }
@@ -81,7 +83,10 @@
   + .btns-group {
     margin-top: 0;
   }
+}
 
+.article__subtitle {
+  text-align: left;
 }
 
 @media (--ui-tablet-devices) {
@@ -94,11 +99,13 @@
   width: 100%;
   margin-top: 5px;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .article__subheading {
   width: 100%;
   margin-bottom: 10px;
+  text-align: left;
 
   + .socials {
     margin-top: 10px;
