@@ -17,20 +17,20 @@ class Block extends React.Component {
         {children}
 
         <div className={style.item__container}>
-          <Text bind={`products[${index}].title`} className={style.item__title} tagName="h2" />
+          <Text bind={`products[${index}].title`} className={classNames(style.item__title, 'heading', 'text-center')} tagName="h2" />
           {_.get('icon')(modifier) && (
             <Icon bind={`products[${index}.icon`} className={style.item__icon} />
           )}
           {_.get('price')(modifier) && (
             <div className={style.item__price}>
-              <Text bind={`products[${index}.price`} className={style['item__price-numbers']} tagName="strong" />
+              <Text bind={`products[${index}.price`} className={classNames(style['item__price-numbers'], 'heading-lg', 'text-center')} tagName="strong" />
               {_.get('price-info')(modifier) && (
-                <Text bind={`products[${index}['price-info']`} className={style['item__price-info']} tagName="span" />
+                <Text bind={`products[${index}['price-info']`} className={classNames(style['item__price-info'], 'caption', 'text-center')} tagName="span" />
               )}
             </div>
           )}
           {_.get('body')(modifier) && (
-            <Text className={style.item__desc} bind={`products[${index}].body`} tagName="p" />
+            <Text className={classNames(style.item__desc, 'body', 'text-center')} bind={`products[${index}].body`} tagName="p" />
           )}
           {_.get('product-button')(modifier) && (
             <div className={style['item__link-wrapper']}>
