@@ -22,7 +22,7 @@ class Block extends React.Component {
             {collectionIcon && <Icon bind={`careers[${index}].icon`} />}
           </div>
         )}
-        <Text tagName="span" className={style['list__item-text']} bind={`careers[${index}].title`} />
+        <Text tagName="span" className={classNames(style['list__item-text'], 'heading')} bind={`careers[${index}].title`} />
       </li>
     )
   }
@@ -55,7 +55,7 @@ class Block extends React.Component {
             )}
             <div className={style.content__main}>
               {this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
-              {this.getModifierValue('body') && <Text tagName="p" className={style.content__text} bind="text" />}
+              {this.getModifierValue('body') && <Text tagName="p" className={classNames(style.content__text, 'body')} bind="text" />}
               <Collection
                 className={style.list}
                 TagName="ul"
