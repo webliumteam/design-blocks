@@ -16,15 +16,15 @@ class Block extends React.Component {
         {children}
 
         <div className={style.item__inner}>
-          <Text bind={`testimonials[${index}].description`} className={style.item__desc} tagName="p" />
+          <Text bind={`testimonials[${index}].description`} className={classNames(style.item__desc, 'text-center', 'body')} tagName="p" />
           {_.get('date')(modifier) && (
-            <Text bind={`testimonials[${index}].date`} className={style.item__time} tagName="time" />
+            <Text bind={`testimonials[${index}].date`} className={classNames(style.item__time, 'text-center', 'caption')} tagName="time" />
           )}
           {_.get('heading')(modifier) && (
-            <Text bind={`testimonials[${index}].title`} className={style.item__title} tagName="h2" />
+            <Text bind={`testimonials[${index}].title`} className={classNames(style.item__title, 'text-center', 'heading')} tagName="h2" />
           )}
           {_.get('position')(modifier) && (
-            <Text bind={`testimonials[${index}].position`} className={style.item__position} tagName="p" />
+            <Text bind={`testimonials[${index}].position`} className={classNames(style.item__position, 'text-center', 'caption')} tagName="p" />
           )}
         </div>
       </article>
