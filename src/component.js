@@ -33,8 +33,8 @@ class Block extends React.Component {
             )}
           </div>
           <Background className={style.form__wrapper} bind="formBackground">
-            {this.getModifierValue('form-title') && <Text tagName="h2" className={style.heading} bind="formTitle" />}
-            {this.getModifierValue('form-description') && <Text tagName="p" className={style.subheading} bind="formDescription" />}
+            {this.getModifierValue('form-title') && <Text tagName="h2" className={classNames(style.heading, 'tex-center', 'heading')} bind="formTitle" />}
+            {this.getModifierValue('form-description') && <Text tagName="p" className={classNames(style.subheading, 'tex-center', 'subheading')} bind="formDescription" />}
             <ContactForm
               bind="contactForm"
               className={style.form}
