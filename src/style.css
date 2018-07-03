@@ -55,6 +55,7 @@
 
   + .article__subtitle {
     margin-top: 5px;
+    text-align: center;
   }
 
   + .btns-group {

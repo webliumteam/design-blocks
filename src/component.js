@@ -40,17 +40,17 @@ class Block extends React.Component {
                 <Text bind="title" className={classNames(style.article__title, 'title', 'text-center')} tagName="h1" />
               )}
               {this.getModifierValue('heading') && (
-                <Text bind="heading" className={style.article__heading} tagName="h2" />
+                <Text bind="heading" className={classNames(style.article__heading, 'body', 'text-center')} tagName="h2" />
               )}
               {this.getModifierValue('subheading') && (
                 <Text bind="subheading" className={classNames(style.article__subheading, 'subtitle', 'text-center')} tagName="p" />
               )}
               {this.getModifierValue('text') && (
-                <Text bind="text" className={style.article__text} tagName="p" />
+                <Text bind="text" className={classNames(style.article__text, 'body', 'text-center')} tagName="p" />
               )}
               {this.getModifierValue('social-icons') && (
                 <div className={style['socials-wrapper']}>
-                  <SocialIcons bind="social-icons" className={style.socials} />
+                  <SocialIcons bind="social-icons" className={classNames(style.socials, 'body', 'text-center')} />
                 </div>
               )}
               {showButtonGroups && (
