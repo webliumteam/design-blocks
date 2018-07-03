@@ -25,12 +25,12 @@ class Block extends React.Component {
           })}
         >
           {_.get('heading')(modifier) && (
-            <Text bind={`steps[${index}].title`} className={style.article__title} tagName="h2" />
+            <Text bind={`steps[${index}].title`} className={classNames(style.article__title, 'heading')} tagName="h2" />
           )}
           {_.get('body')(modifier) && (
             <Text
               bind={`steps[${index}].description`}
-              className={style.article__text}
+              className={classNames(style.article__text, 'body')}
               tagName="p"
             />
           )}
