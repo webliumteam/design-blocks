@@ -22,16 +22,16 @@ class Wireframe extends React.Component {
     return (
       <div className={classNames(style.item, className)}>
         {children}
-        <Text tagName="h2" className={style.item__title} bind={`collection[${index}].title`} />
+        <Text tagName="h2" className={classNames(style.item__title, 'heading', 'text-center')} bind={`collection[${index}].title`} />
         {body && (
           <ul className={style.schedule}>
             {_.map(n => (
               <li className={style.schedule__item} key={n}>
                 {time && (
-                  <Text tagName="time" className={style.schedule__time} bind={`collection[${index}].body[${n}].time`} />
+                  <Text tagName="time" className={classNames(style.schedule__time, 'body')} bind={`collection[${index}].body[${n}].time`} />
                 )}
                 {event && (
-                  <Text tagName="span" className={style.schedule__event} bind={`collection[${index}].body[${n}].event`} />
+                  <Text tagName="span" className={classNames(style.schedule__event, 'body')} bind={`collection[${index}].body[${n}].event`} />
                 )}
               </li>
             ), bodyItems)}

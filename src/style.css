@@ -134,6 +134,7 @@
     max-width: 20%;
     flex-basis: 20%;
     margin-right: 10px;
+    text-align: left;
 
     @media (--ui-tablet-devices) {
       max-width: 70px;
@@ -143,6 +144,7 @@
 
   &__event {
     max-width: calc(80% - 10px);
+    text-align: left;
 
     @media (--ui-tablet-devices) {
       max-width: calc(100% - 80px);
