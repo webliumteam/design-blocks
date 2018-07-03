@@ -244,6 +244,11 @@
 .socials__title {
   max-width: 100%;
   margin-bottom: 14px;
+  text-align: center;
+  
+  @media (--ui-medium-devices) {
+    text-align: right;
+  }
 }
 
 .socials__icons {

@@ -13,7 +13,10 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Text, Menu, Logo, SocialIcons}, style: css} = this.props
+    const {
+      components: {Text, Menu, Logo, SocialIcons},
+      style: css,
+    } = this.props
     const withoutLeftPart = this.getModifierValue('title') || this.getModifierValue('description')
     const bottomtext = this.getModifierValue('leftText') || this.getModifierValue('rightText')
 
@@ -33,7 +36,11 @@ class Block extends React.Component {
                 </div>
               )}
               {this.getModifierValue('description') && (
-                <Text tagName="p" className={css.footer__text} bind="description" />
+                <Text
+                  tagName="p"
+                  className={classNames(css.footer__text, 'body', 'text-center', 'text-lg-left')}
+                  bind="description"
+                />
               )}
             </div>
           )}
@@ -48,7 +55,7 @@ class Block extends React.Component {
           {this.getModifierValue('social') && (
             <div className={classNames(css.footer__part, css['footer__part--last'])}>
               <div className={css.socials}>
-                <Text tagName="h2" className={css.socials__title} bind="follow" />
+                <Text tagName="h2" className={classNames(css.socials__title, 'heading', 'text-center', 'text-lg-right')} bind="follow" />
                 <SocialIcons bind="socialIcons" className={css.socials__icons} />
               </div>
             </div>
@@ -56,10 +63,18 @@ class Block extends React.Component {
           {bottomtext && (
             <div className={css.footer__bottom}>
               {this.getModifierValue('leftText') && (
-                <Text tagName="small" className={css.footer__meta} bind="copyright" />
+                <Text
+                  tagName="small"
+                  className={classNames(css.footer__meta, 'caption', 'text-center')}
+                  bind="copyright"
+                />
               )}
               {this.getModifierValue('rightText') && (
-                <Text tagName="small" className={css.footer__meta} bind="additional" />
+                <Text
+                  tagName="small"
+                  className={classNames(css.footer__meta, 'caption', 'text-center')}
+                  bind="additional"
+                />
               )}
             </div>
           )}
@@ -80,7 +95,8 @@ Block.defaultContent = {
   },
   description: {
     type: 'text',
-    content: 'Our company will go the extra mile to analyze the particular project in detail, and offer a business solution that will meet your requirements.',
+    content:
+      'Our company will go the extra mile to analyze the particular project in detail, and offer a business solution that will meet your requirements.',
   },
   menu: [
     {
@@ -311,7 +327,6 @@ Block.defaultContent = {
     content: 'All rights Reserved',
   },
 }
-
 
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
