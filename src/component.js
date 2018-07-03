@@ -16,7 +16,7 @@ class Block extends React.Component {
         {children}
 
         {_.get('heading')(modifier) && (
-          <Text bind={`contacts[${index}].title`} className={style.article__title} tagName="h2" />
+          <Text bind={`contacts[${index}].title`} className={classNames(style.article__title, 'heading')} tagName="h2" />
         )}
         {_.get('image')(modifier) && (
           <Image
@@ -26,12 +26,12 @@ class Block extends React.Component {
           />
         )}
         <div className={style.article__text}>
-          <Text bind={`contacts[${index}].address`} tagName="p" />
+          <Text bind={`contacts[${index}].address`} tagName="p" className={classNames(style.article__text, 'body', 'text-center')} />
           {_.get('phone')(modifier) && (
-            <Text bind={`contacts[${index}].phone`} tagName="p" />
+            <Text bind={`contacts[${index}].phone`} tagName="p" className={classNames(style.article__text, 'body', 'text-center')} />
           )}
           {_.get('email')(modifier) && (
-            <Text bind={`contacts[${index}].email`} tagName="p" />
+            <Text bind={`contacts[${index}].email`} tagName="p" className={classNames(style.article__text, 'body', 'text-center')} />
           )}
         </div>
       </article>
