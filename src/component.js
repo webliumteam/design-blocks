@@ -55,10 +55,10 @@ class Block extends React.Component {
             (event.key === 'Enter' || event.key === ' ') && this.toggleItemOpening(index)
           }
         >
-          <Text tagName="h2" className={style.item__title} bind={`faq[${index}].title`} />
+          <Text tagName="h2" className={classNames(style.item__title, 'heading')} bind={`faq[${index}].title`} />
           {this.getOptionValue('toogle-item-controls') && controlIcons}
         </div>
-        <Text tagName="div" className={style.item__content} bind={`faq[${index}].description`} />
+        <Text tagName="div" className={classNames(style.item__content, 'text')} bind={`faq[${index}].description`} />
       </article>
     )
   }
