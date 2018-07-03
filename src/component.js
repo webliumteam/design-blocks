@@ -59,10 +59,10 @@ class Block extends React.Component {
             resize={{disable: true}}
           />
           <div className={style['tabs-item__content']}>
-            <Text bind={`collection[${index}].itemPosition`} tagName="small" className={style['tabs-item__position']} />
-            <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={style['tabs-item__title']} />
+            <Text bind={`collection[${index}].itemPosition`} tagName="small" className={classNames(style['tabs-item__position'], 'caption')} />
+            <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={classNames(style['tabs-item__title'], 'heading')} />
             {this.getModifierValue('item_body') && (
-              <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'])} tagName="p" />
+              <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'], 'body')} tagName="p" />
             )}
             {itemBottom && (
               <div className={classNames(style.item__bottom, style['tabs-item__bottom'], style['item__bottom--mobile'])}>
@@ -70,7 +70,7 @@ class Block extends React.Component {
                   <div className={style['item__bottom-side']}>
                     {this.getModifierValue('item_contacts') && (
                       <div className={style['item__email-wrapper']}>
-                        <Text bind={`collection[${index}].itemEmail`} className={style.item__email} />
+                        <Text bind={`collection[${index}].itemEmail`} className={classNames(style.item__email, 'caption')} />
                       </div>
                     )}
                     {this.getModifierValue('item_socials') && (
