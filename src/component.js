@@ -37,13 +37,13 @@ class Block extends React.Component {
             {_.get('project-category')(modifier) && (
               <Text
                 bind={`projects[${index}].subtitle`}
-                className={style.article__caption}
+                className={classNames(style.article__caption, 'caption')}
                 tagName="p"
               />
             )}
-            <Text bind={`projects[${index}].title`} className={style.article__title} tagName="h2" />
+            <Text bind={`projects[${index}].title`} className={classNames(style.article__title, 'heading')} tagName="h2" />
             {_.get('project-description')(modifier) && (
-              <Text bind={`projects[${index}].text`} className={style.article__text} tagName="p" />
+              <Text bind={`projects[${index}].text`} className={classNames(style.article__text, 'body')} tagName="p" />
             )}
             {(_.get('project-button')(modifier) || _.get('project-button-2')(modifier)) && (
               <div className={style.article__buttons}>
