@@ -23,7 +23,7 @@ class Block extends React.Component {
           />
         </div>
         {showHeading && (
-          <Text bind={`awards[${index}].title`} className={style.item__title} tagName="p" />
+          <Text bind={`awards[${index}].title`} className={classNames(style.item__title, 'heading', 'text-center')} tagName="p" />
         )}
       </article>
     )
