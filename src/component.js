@@ -108,25 +108,25 @@ class Block extends React.Component {
                   {this.getModifierValue('address') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-address-title') && (
-                        <Text bind="address-title" className={style.contacts__title} tagName="h3" />
+                        <Text bind="address-title" className={classNames(style.contacts__title, 'heading')} tagName="h3" />
                       )}
-                      <Text bind="address-content" className={classNames(style.contacts__desc, style['contacts__desc--adress'])} tagName="p" />
+                      <Text bind="address-content" className={classNames(style.contacts__desc, style['contacts__desc--adress'], 'body')} tagName="p" />
                     </li>
                   )}
                   {this.getModifierValue('phone') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-phone-title') && (
-                        <Text bind="phone-title" className={style.contacts__title} tagName="h3" />
+                        <Text bind="phone-title" className={classNames(style.contacts__title, 'heading')} tagName="h3" />
                       )}
-                      <Text bind="phone-link" className={classNames(style.contacts__desc, style['contacts__desc--phone'])} tagName="p" />
+                      <Text bind="phone-link" className={classNames(style.contacts__desc, style['contacts__desc--phone'], 'body')} tagName="p" />
                     </li>
                   )}
                   {this.getModifierValue('email') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-email-title') && (
-                        <Text bind="email-title" className={style.contacts__title} tagName="h3" />
+                        <Text bind="email-title" className={classNames(style.contacts__title, 'heading')} tagName="h3" />
                       )}
-                      <Text bind="email-link" className={classNames(style.contacts__desc, style['contacts__desc--email'])} tagName="p" />
+                      <Text bind="email-link" className={classNames(style.contacts__desc, style['contacts__desc--email'], 'body')} tagName="p" />
                     </li>
                   )}
                 </ul>
