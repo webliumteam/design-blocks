@@ -22,7 +22,7 @@ class Block extends React.Component {
           size={{'min-width: 992px': 200, 'min-width: 320px': 480}}
         />
         {_.get('heading')(modifier) && (
-          <Text bind={`awards[${index}].title`} tagName="h2" className={style.item__title} />
+          <Text bind={`awards[${index}].title`} tagName="h2" className={classNames(style.item__title, 'heading', 'text-center')} />
         )}
       </div>
     )
