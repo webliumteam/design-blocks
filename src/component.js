@@ -44,14 +44,14 @@ class Block extends React.Component {
                 />
               )}
               {this.getModifierValue('heading') && (
-                <Text tagName="h2" className={css.heading} bind="heading" />
+                <Text tagName="h2" className={classNames(css.heading, 'text-center', 'heading')} bind="heading" />
               )}
               <ul className={css['contacts-list']}>
                 {this.getModifierValue('address') && (
                   <li className={css['contacts-list__item']}>
                     <Text
                       bind="address-content"
-                      className={classNames(css.contacts__desc, css['contacts__desc--adress'])}
+                      className={classNames(css.contacts__desc, css['contacts__desc--adress'], 'text-center', 'body')}
                       tagName="p"
                     />
                   </li>
@@ -60,7 +60,7 @@ class Block extends React.Component {
                   <li className={css['contacts-list__item']}>
                     <Text
                       bind="phone-link"
-                      className={classNames(css.contacts__desc, css['contacts__desc--phone'])}
+                      className={classNames(css.contacts__desc, css['contacts__desc--phone'], 'body', 'text-center')}
                       tagName="p"
                     />
                   </li>
@@ -69,7 +69,7 @@ class Block extends React.Component {
                   <li className={css['contacts-list__item']}>
                     <Text
                       bind="email-link"
-                      className={classNames(css.contacts__desc, css['contacts__desc--email'])}
+                      className={classNames(css.contacts__desc, css['contacts__desc--email'], 'body', 'text-center')}
                       tagName="p"
                     />
                   </li>
