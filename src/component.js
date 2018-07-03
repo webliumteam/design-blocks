@@ -48,6 +48,7 @@ class Block extends React.Component {
                     classNames(
                       css.footer__meta,
                       css['footer__meta--copyright'],
+                      'caption',
                     )
                   }
                 bind="copyright"
@@ -59,6 +60,7 @@ class Block extends React.Component {
                   classNames(
                     css.footer__meta,
                     css['footer__meta--additional'],
+                    'caption',
                   )
                 }
                 bind="additional"
