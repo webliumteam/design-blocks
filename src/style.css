@@ -60,6 +60,10 @@
   object-fit: cover;
 }
 
+.btns-group {
+  text-align: center;
+}
+
 .button {
   width: 100%;
 
