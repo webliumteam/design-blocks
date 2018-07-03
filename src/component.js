@@ -29,9 +29,9 @@ class Block extends React.Component {
           resize={{disable: true}}
         />
         <div className={style.article__content}>
-          <Text bind={`steps[${index}].heading`} className={style.article__title} tagName="h2" />
+          <Text bind={`steps[${index}].heading`} className={classNames(style.article__title, 'heading')} tagName="h2" />
           {_.get('body')(modifier) && (
-            <Text bind={`steps[${index}].description`} className={style.article__text} tagName="p" />
+            <Text bind={`steps[${index}].description`} className={classNames(style.article__text, 'body')} tagName="p" />
           )}
         </div>
       </article>
