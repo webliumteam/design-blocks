@@ -70,13 +70,13 @@ class Block extends React.Component {
         <small className={style.article__meta}>
           {!this.getOptionValue('hidden-category') && (
             isBlog
-              ? <SsrText tagName="span" value={{content: post.articleCategory}} className={style.article__category} />
-              : <Text tagName="span" bind={`collection[${index}].item_category`} className={style.article__category} />
+              ? <SsrText tagName="span" value={{content: post.articleCategory}} className={classNames(style.article__category, 'caption')} />
+              : <Text tagName="span" bind={`collection[${index}].item_category`} className={classNames(style.article__category, 'caption')} />
           )}
           {!this.getOptionValue('hidden-date') && (
             isBlog
-              ? <SsrText tagName="span" value={{content: post.subtitle}} className={style.article__date} />
-              : <Text tagName="span" bind={`collection[${index}].item_date`} className={style.article__date} />
+              ? <SsrText tagName="span" value={{content: post.subtitle}} className={classNames(style.article__date, 'caption')} />
+              : <Text tagName="span" bind={`collection[${index}].item_date`} className={classNames(style.article__date, 'caption')} />
           )}
         </small>
       ),
@@ -136,13 +136,13 @@ class Block extends React.Component {
         {children}
         {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(index, post)}</div> : this.itemHeader(index, post)}
         {isBlog
-          ? <SsrText tagName="h2" className={style.article__title} value={{content: post.title, type: 'subtitle'}} />
-          : <Text tagName="h2" className={style.article__title} bind={`collection[${index}].item_heading`} />
+          ? <SsrText tagName="h2" className={classNames(style.article__title, 'heading')} value={{content: post.title, type: 'subtitle'}} />
+          : <Text tagName="h2" className={classNames(style.article__title, 'heading')} bind={`collection[${index}].item_heading`} />
         }
         {this.getModifierValue('item_body') && (
           isBlog
-            ? <SsrText tagName="p" className={style.article__text} value={{content: converter.makeHtml(post.content)}} />
-            : <Text tagName="p" className={style.article__text} bind={`collection[${index}].item_body`} />
+            ? <SsrText tagName="p" className={classNames(style.article__text, 'body')} value={{content: converter.makeHtml(post.content)}} />
+            : <Text tagName="p" className={classNames(style.article__text, 'body')} bind={`collection[${index}].item_body`} />
         )}
         {this.getModifierValue('item_button') && (
         <Button
