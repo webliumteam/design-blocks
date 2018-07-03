@@ -18,12 +18,12 @@ class Block extends React.Component {
       <article className={classNames(style.article, className)}>
         {children}
         <div className={style.article__content}>
-          <Text bind={`services[${index}].title`} className={style.article__title} tagName="h3" />
+          <Text bind={`services[${index}].title`} className={classNames(style.article__title, 'heading', 'text-center')} tagName="h3" />
           {_.get('item-desc')(modifier) && (
-            <Text bind={`services[${index}].subtitle`} className={style.article__subtitle} tagName="p" />
+            <Text bind={`services[${index}].subtitle`} className={classNames(style.article__subtitle, 'subtitle', 'text-center')} tagName="p" />
           )}
           {_.get('body-text')(modifier) && (
-            <Text bind={`services[${index}].text`} className={style.article__text} tagName="p" />
+            <Text bind={`services[${index}].text`} className={classNames(style.article__text, 'body')} tagName="p" />
           )}
           {_.get('service-button')(modifier) && (
             <Button
