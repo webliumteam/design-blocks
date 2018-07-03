@@ -28,7 +28,7 @@ class Block extends React.Component {
       ),
       text: () => (
         <Text
-          className={style['item__icon-text']}
+          className={classNames(style['item__icon-text'], 'body')}
           bind={`articles[${index}].iconText`}
           tagName="span"
         />
@@ -49,10 +49,18 @@ class Block extends React.Component {
           </div>
         )}
         {_.get('item-heading')(modifier) && (
-          <Text bind={`articles[${index}].title`} className={style.item__title} tagName="h2" />
+          <Text
+            bind={`articles[${index}].title`}
+            className={classNames(style.item__title, 'heading')}
+            tagName="h2"
+          />
         )}
         {_.get('item-description')(modifier) && (
-          <Text bind={`articles[${index}].description`} className={style.item__desc} tagName="p" />
+          <Text
+            bind={`articles[${index}].description`}
+            className={classNames(style.item__desc, 'body')}
+            tagName="p"
+          />
         )}
       </article>
     )
