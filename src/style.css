@@ -9,7 +9,9 @@
   word-wrap: break-word;
 }
 
-.section--center {
+.section--center .title,
+.section--center .subtitle,
+.section--center .btns-group {
   text-align: center;
 }
 
@@ -25,7 +27,9 @@
   }
 }
 
-.section--right {
+.section--right .title,
+.section--right .subtitle,
+.section--right .btns-group {
   text-align: right;
 }
 

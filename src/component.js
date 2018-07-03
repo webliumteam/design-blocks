@@ -15,19 +15,19 @@ class Block extends React.Component {
     const alignClass = this.getModifierValue('align') !== 'left'
       ? css[`section--${this.getModifierValue('align')}`]
       : ''
-    const subtitleAlignClass = this.getModifierValue('align') !== 'left'
-    ? `text-${this.getModifierValue('align')}`
-    : ''
+    const themeAlignClass = this.getModifierValue('align') !== 'left'
+      ? `text-${this.getModifierValue('align')}`
+      : ''
 
     return (
       <section className={classNames(css.section, alignClass)}>
         <div className={css.section__inner}>
           {this.getModifierValue('caption-decorator') && (
             <div className={css['caption-decorator']}>
-              <Text bind="topCaption" />
+              <Text bind="topCaption" className="body" />
             </div>
           )}
-          <Text bind="title" tagName="h1" className={css.title} />
+          <Text bind="title" tagName="h1" className={classNames(css.title, 'hero-title', themeAlignClass)} />
           {this.getModifierValue('subtitle') && (
             <Text bind="subtitle" tagName="p" className={classNames(css.subtitle, 'subtitle', themeAlignClass)} />
           )}
