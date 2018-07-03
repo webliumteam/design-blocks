@@ -32,9 +32,9 @@ class Wireframe extends React.Component {
           {children}
           <Background tagName="div" bind={`collection[${index}].item_panel`} className={style.item__panel}>
             {_.get('item_category')(modifier) && (
-              <Text tagName="p" className={style.item__category} bind={`collection[${index}].item_category`} />
+              <Text tagName="p" className={classNames(style.item__category, 'caption')} bind={`collection[${index}].item_category`} />
             )}
-            <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].item_heading`} />
+            <Text tagName="h3" className={classNames(style.item__heading, 'heading')} bind={`collection[${index}].item_heading`} />
             {metaShown && (
               <div className={style.item__meta}>
                 {personShown && (
@@ -54,7 +54,7 @@ class Wireframe extends React.Component {
                       />
                     )}
                     {_.get('item_person')(modifier) && (
-                      <Text tagName="div" bind={`collection[${index}].item_person`} className={style.author__name} />
+                      <Text tagName="div" bind={`collection[${index}].item_person`} className={classNames(style.author__name, 'body')} />
                     )}
                   </div>
                 )}
@@ -64,7 +64,7 @@ class Wireframe extends React.Component {
                       <Icon bind={`collection[${index}].item_date_icon`} className={style.date__icon} />
                     )}
                     {_.get('item_date')(modifier) && (
-                      <Text tagName="time" className={style.date__value} bind={`collection[${index}].item_date`} />
+                      <Text tagName="time" className={classNames(style.date__value, 'body')} bind={`collection[${index}].item_date`} />
                     )}
                   </div>
                 )}

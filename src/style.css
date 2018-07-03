@@ -74,6 +74,7 @@
 
   &__heading {
     margin-bottom: 5px;
+    text-align-last: left;
   }
 
   &__meta {
@@ -81,6 +82,7 @@
     margin: -5px -10px;
     flex-wrap: wrap;
     align-items: center;
+    text-align: left;
   }
 }
 
@@ -111,6 +113,7 @@
 
   &__name {
     max-width: calc(100% - 35px);
+    text-align: left;
   }
 }
 
@@ -129,6 +132,7 @@
 
   &__value {
     max-width: calc(100% - 30px);
+    text-align: left;
   }
 }
 
