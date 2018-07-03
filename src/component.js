@@ -8,8 +8,7 @@ class Block extends React.Component {
 
   getModifierValue = (path) => _.get(['modifier', path], this.props.$block)
 
-  getOptionValue = (path, defaultValue = false) =>
-    _.getOr(defaultValue, ['options', path], this.props.$block)
+  getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
 
   getImageSize = (fullWidth) =>
     fullWidth
@@ -17,7 +16,11 @@ class Block extends React.Component {
       : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
   render() {
-    const {components: {Text, Image, Button, SocialIcons, Icon}, mods, style: css} = this.props
+    const {
+      components: {Text, Image, Button, SocialIcons, Icon},
+      mods,
+      style: css,
+    } = this.props
     const columnLayout = !(
       this.getModifierValue('title') ||
       this.getModifierValue('subtitle') ||
@@ -37,7 +40,9 @@ class Block extends React.Component {
       this.getModifierValue('button')
     )
 
-    const getTitle = this.getModifierValue('title') && <Text tagName="h1" className={classNames(css.article__title, 'title')} bind="title" />
+    const getTitle = this.getModifierValue('title') && (
+      <Text tagName="h1" className={classNames(css.article__title, 'title')} bind="title" />
+    )
 
     const getIconDecorator = this.getModifierValue('top-icon') && <Icon className={css['top-icon']} bind="topIcon" />
 
@@ -47,7 +52,13 @@ class Block extends React.Component {
     const arrange = this.getModifierValue('arrange-elements')
 
     return (
-      <section className={classNames(css.section, {[css['section--column']]: columnLayout}, arrange && css['section--reverse'])}>
+      <section
+        className={classNames(
+          css.section,
+          {[css['section--column']]: columnLayout},
+          arrange && css['section--reverse']
+        )}
+      >
         <div className={css.section__inner}>
           {this.getOptionValue('icon-decorator-in-top') && getIconDecorator}
           {this.getOptionValue('title-in-top') && getTitle}
@@ -70,32 +81,26 @@ class Block extends React.Component {
                   <Text tagName="p" className={classNames(css.article__subtitle, 'subtitle')} bind="subtitle" />
                 )}
                 {this.getModifierValue('text') && (
-                  <Text tagName="p" className={css.article__text} bind="text" />
+                  <Text tagName="p" className={classNames(css.article__text, 'body')} bind="text" />
                 )}
                 {this.getModifierValue('additional-text') && (
                   <Text tagName="p" className={classNames(css['article__additional-text'])} bind="text-2" />
                 )}
                 {this.getModifierValue('socialIcons') && (
                   <div className={css.article__socials}>
-                    {!this.getOptionValue('hidden-social-heading') && <Text tagName="h2" className={css['social-title']} bind="social-title" />}
-                    <SocialIcons bind="socialIcons" className={css.socials}/>
+                    {!this.getOptionValue('hidden-social-heading') && (
+                      <Text tagName="h2" className={classNames(css['social-title'], 'heading')} bind="social-title" />
+                    )}
+                    <SocialIcons bind="socialIcons" className={css.socials} />
                   </div>
                 )}
                 {showButtonGroups && (
                   <div className={css['btns-group']}>
                     {this.getModifierValue('button') && (
-                      <Button
-                        buttonClassName={css.button}
-                        linkClassName={css.link}
-                        bind="button-1"
-                      />
+                      <Button buttonClassName={css.button} linkClassName={css.link} bind="button-1" />
                     )}
                     {this.getModifierValue('additional-button') && (
-                      <Button
-                        buttonClassName={css.button}
-                        linkClassName={css.link}
-                        bind="button-2"
-                      />
+                      <Button buttonClassName={css.button} linkClassName={css.link} bind="button-2" />
                     )}
                   </div>
                 )}
@@ -124,11 +129,13 @@ Block.defaultContent = {
     type: 'subtitle',
   },
   text: {
-    content: 'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding.',
+    content:
+      'Our team consists of highly motivated and skilled specialists who know how to deal with any issue that you may come across. This creates a basis for lasting relationships with our clients built on trust and mutual understanding.',
     type: 'text',
   },
   'text-2': {
-    content: 'We are devoted to creating unique and innovative solutions along with the high-quality supporting services.',
+    content:
+      'We are devoted to creating unique and innovative solutions along with the high-quality supporting services.',
     type: 'text',
   },
   picture: {
@@ -194,7 +201,8 @@ Block.defaultContent = {
     },
   },
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
 }
@@ -205,11 +213,11 @@ Block.modifierScheme = {
     name: 'Arrange elements',
     type: 'swap',
   },
-  'title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  'subtitle': {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
-  'text': {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  'socialIcons': {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
-  'button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
+  text: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
+  socialIcons: {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
+  button: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
   'additional-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
   'article-picture': {defaultValue: true, label: 'Article picture', type: 'hidden'},
