@@ -19,9 +19,9 @@ class Block extends React.Component {
           </div>
         )}
         <div className={style.article__content}>
-          <Text bind={`why[${index}].title`} className={style.article__title} tagName="h2" />
+          <Text bind={`why[${index}].title`} className={classNames(style.article__title, 'heading', 'text-center', 'text-md-left')} tagName="h2" />
           {_.get('body')(modifier) && (
-            <Text bind={`why[${index}].description`} className={style.article__text} tagName="p" />
+            <Text bind={`why[${index}].description`} className={classNames(style.article__text, 'body')} tagName="p" />
           )}
         </div>
 
