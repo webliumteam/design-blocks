@@ -23,12 +23,12 @@ class Block extends React.Component {
     const showHeading = _.get('heading')(modifier)
     const itemContent = [
       showHeading && (
-        <Text tagName="h2" className={style.item__title} bind={`partners[${index}].title`} />
+        <Text tagName="h2" className={classNames(style.item__title, 'heading')} bind={`partners[${index}].title`} />
       ),
       showContent && (
         <div className={style.item__content}>
           {_.get('body')(modifier) && (
-            <Text tagName="p" className={style.item__desc} bind={`partners[${index}].desc`} />
+            <Text tagName="p" className={classNames(style.item__desc, 'body')} bind={`partners[${index}].desc`} />
           )}
           {_.get('link')(modifier) && (
             <Button
