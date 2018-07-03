@@ -27,7 +27,7 @@ class Block extends React.Component {
             </div>
           )}
           <div className={style.blockquote}>
-            <Text className={style.blockquote__inner} tagName="blockquote" bind="blockquote" />
+            <Text className={classNames(style.blockquote__inner, 'quote', 'text-center')} tagName="blockquote" bind="blockquote" />
             <div className={style.blockquote__line} aria-hidden="true">
               <div className={style.blockquote__icon}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 18">
@@ -41,7 +41,7 @@ class Block extends React.Component {
             </div>
           </div>
           {this.getModifierValue('author') && (
-            <Text tagName="p" className={style.author} bind="author" />
+            <Text tagName="p" className={classNames(style.author, 'body', 'text-center')} bind="author" />
           )}
         </div>
       </section>
