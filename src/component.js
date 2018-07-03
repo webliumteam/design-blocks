@@ -19,7 +19,7 @@ class Block extends React.Component {
     } = this.props
     const memberContacts = [
       _.get('member-email')(modifier) && (
-        <Text tagName="div" className={style.item__email} bind={`team[${index}].email`} />
+        <Text tagName="div" className={classNames(style.item__email, 'caption')} bind={`team[${index}].email`} />
       ),
       _.get('member-social')(modifier) && (
         <SocialIcons className={style.socials} bind={`team[${index}].socialIcons`} />
@@ -37,10 +37,10 @@ class Block extends React.Component {
             size={{'min-width: 320px': 150}}
             resize={{disable: true}}
           />
-          <Text tagName="h2" className={style.item__title} bind={`team[${index}].name`} />
-          <Text tagName="p" className={style.item__position} bind={`team[${index}].position`} />
+          <Text tagName="h2" className={classNames(style.item__title, 'heading')} bind={`team[${index}].name`} />
+          <Text tagName="p" className={classNames(style.item__position, 'caption')} bind={`team[${index}].position`} />
           {_.get('member-desc')(modifier) && (
-            <Text tagName="p" className={style.item__desc} bind={`team[${index}].description`} />
+            <Text tagName="p" className={classNames(style.item__desc, 'body')} bind={`team[${index}].description`} />
           )}
           {_.get('member-link')(modifier) && (
             <Button
