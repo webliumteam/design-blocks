@@ -116,6 +116,7 @@
 
   &__text {
     margin-bottom: 6px;
+    text-align: left;
 
     &:last-of-type {
       margin-bottom: 0;

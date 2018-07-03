@@ -26,12 +26,12 @@ class Block extends React.Component {
           )}
           <div className={style.item__content}>
             <div className={style.item__info}>
-              <Text tagName="h2" className={style.item__title} bind={`items[${index}].heading`} />
+              <Text tagName="h2" className={classNames(style.item__title, 'heading')} bind={`items[${index}].heading`} />
               {this.getModifierValue('employment') && (
-                <Text tagName="p" className={style.item__text} bind={`items[${index}].employment`} />
+                <Text tagName="p" className={classNames(style.item__text, 'body')} bind={`items[${index}].employment`} />
               )}
               {this.getModifierValue('position') && (
-                <Text tagName="p" className={style.item__text} bind={`items[${index}].location`} />
+                <Text tagName="p" className={classNames(style.item__text, 'body')} bind={`items[${index}].location`} />
               )}
             </div>
             <Button
