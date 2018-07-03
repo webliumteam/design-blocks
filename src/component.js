@@ -18,8 +18,10 @@ class Block extends React.Component {
       this.getModifierValue('align') !== 'center'
         ? style[`section--${this.getModifierValue('align')}`]
         : ''
-    const headerAlignClass =
+    const headingsAlignClass =
       this.getModifierValue('align') !== 'left' ? `text-${this.getModifierValue('align')}` : ''
+    const bodyAlignClass =
+      (this.getModifierValue('align') !== 'left' && this.getModifierValue('align') !== 'center') ? `text-${this.getModifierValue('align')}` : ''
 
     return (
       <section className={classNames(style.section, alignClass)}>
@@ -31,25 +33,25 @@ class Block extends React.Component {
             {this.getModifierValue('title') && (
               <Text
                 tagName="h1"
-                className={classNames(style.title, 'title', headerAlignClass)}
+                className={classNames(style.title, 'title', headingsAlignClass)}
                 bind="title"
               />
             )}
             {this.getModifierValue('subtitle') && (
               <Text
                 tagName="p"
-                className={classNames(style.subtitle, 'subtitle', headerAlignClass)}
+                className={classNames(style.subtitle, 'subtitle', headingsAlignClass)}
                 bind="subtitle"
               />
             )}
           </header>
           {this.getModifierValue('heading') && (
-            <Text tagName="h2" className={style.heading} bind="heading" />
+            <Text tagName="h2" className={classNames(style.heading, 'heading', headingsAlignClass)} bind="heading" />
           )}
           {this.getModifierValue('subheading') && (
-            <Text tagName="p" className={style.subheading} bind="subheading" />
+            <Text tagName="p" className={classNames(style.subheading, 'heading', headingsAlignClass)} bind="subheading" />
           )}
-          {this.getModifierValue('text') && <Text tagName="p" className={style.text} bind="text" />}
+          {this.getModifierValue('text') && <Text tagName="p" className={classNames(style.text, 'body', bodyAlignClass)} bind="text" />}
         </div>
       </section>
     )
