@@ -16,11 +16,11 @@ class Block extends React.Component {
         {children}
         <div className={style.item__inner}>
           <div className={style['item__desc-wrapper']}>
-            <Text bind={`numbers[${index}].body`} className={style.item__desc} tagName="p" />
+            <Text bind={`numbers[${index}].body`} className={classNames(style.item__desc, 'body')} tagName="p" />
           </div>
         </div>
         <Background tagName="div" className={style['item__numbers-bg']} bind="numbersBackground">
-          <Text bind={`numbers[${index}].number`} className={style.item__numbers} tagName="strong" />
+          <Text bind={`numbers[${index}].number`} className={classNames(style.item__numbers, 'heading', 'text-center')} tagName="strong" />
         </Background>
       </div>
     )

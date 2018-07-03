@@ -64,10 +64,15 @@
 
 .title {
   margin-bottom: 15px;
+  text-align: left;
 
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.subtitle {
+  text-align: left;
 }
 
 .picture-wrapper {
@@ -150,6 +155,7 @@
 
   &__desc {
     max-width: 100%;
+    text-align: left;
 
     &-wrapper {
       display: flex;
