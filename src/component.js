@@ -28,12 +28,16 @@ class Block extends React.Component {
           size={{'min-width: 320px': 446, 'min-width: 480px': 738, 'min-width: 768px': 460}}
         />
         {_.get('heading')(modifier) && (
-          <Text tagName="h2" className={style.article__title} bind={`services[${index}].title`} />
+          <Text
+            tagName="h2"
+            className={classNames(style.article__title, 'heading')}
+            bind={`services[${index}].title`}
+          />
         )}
         {_.get('body')(modifier) && (
           <Text
             tagName="p"
-            className={style.article__text}
+            className={classNames(style.article__text, 'body')}
             bind={`services[${index}].description`}
           />
         )}
