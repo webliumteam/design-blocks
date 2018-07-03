@@ -22,7 +22,7 @@ class Block extends React.Component {
         {children}
         <Text
           tagName="span"
-          className={style['plan__list-item-text']}
+          className={classNames(style['plan__list-item-text'], 'body', 'text-center')}
           bind={`plan-list-${planIndex}[${index}].text`}
         />
       </li>
@@ -35,7 +35,7 @@ class Block extends React.Component {
       style,
     } = this.props
     return [
-      <Text tagName="h2" className={style.plan__title} bind={`plan-title-${itemNumber}`} />,
+      <Text tagName="h2" className={classNames(style.plan__title, 'heading', 'text-center')} bind={`plan-title-${itemNumber}`} />,
       this.getModifierValue('plan-icon') && (
         <div className={style['plan__icon-wrapper']}>
           <Icon bind={`plan-icon-${itemNumber}`} />
@@ -45,13 +45,13 @@ class Block extends React.Component {
         <p className={style.plan__price}>
           <Text
             tagName="strong"
-            className={style['plan__price-count']}
+            className={classNames(style['plan__price-count'], 'heading-lg', 'text-center')}
             bind={`plan-price-count-${itemNumber}`}
           />
           {this.getModifierValue('plan-additional-info') && (
             <Text
               tagName="span"
-              className={style['plan__price-text']}
+              className={classNames(style['plan__price-text'], 'caption', 'text-center')}
               bind={`plan-price-text-${itemNumber}`}
             />
           )}
