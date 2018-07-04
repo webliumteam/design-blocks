@@ -173,8 +173,8 @@ Block.modifierScheme = {
   subheading: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 40},
   text: {defaultValue: true, label: 'Main text', type: 'checkbox', sortOrder: 50},
   'social-icons': {defaultValue: false, label: 'Social media buttons', type: 'checkbox', sortOrder: 60},
-  button: {defaultValue: false, label: 'Button / link', type: 'checkbox', sortOrder: 70},
-  'additional-button': {defaultValue: true, label: 'Additional button / link', type: 'checkbox', sortOrder: 80},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
+  'additional-button': {defaultValue: true, label: 'Additional button (link)', type: 'checkbox', sortOrder: 80},
 }
 
 export default Block
