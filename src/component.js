@@ -24,12 +24,12 @@ class Block extends React.Component {
           </div>
         )}
         <div className={style.item__info}>
-          <Text tagName="h2" className={style.item__title} bind={`collection[${index}].item_heading`} />
-          <Text tagName="p" className={style.item__text} bind={`collection[${index}].item_body`} />
+          <Text tagName="h2" className={classNames(style.item__title, 'heading')} bind={`collection[${index}].item_heading`} />
+          <Text tagName="p" className={classNames(style.item__text, 'body')} bind={`collection[${index}].item_body`} />
           {this.getModifierValue('item_price') && (
             <div className={style['item__price-wrapper']}>
-              <Text tagName="p" className={style.item__price} bind={`collection[${index}].item_price`} />
-              {this.getModifierValue('item_caption') && (<Text tagName="p" className={style.item__caption} bind={`collection[${index}].item_caption`} />)}
+              <Text tagName="p" className={classNames(style.item__price, 'heading-lg')} bind={`collection[${index}].item_price`} />
+              {this.getModifierValue('item_caption') && (<Text tagName="p" className={classNames(style.item__caption, 'caption')} bind={`collection[${index}].item_caption`} />)}
             </div>
           )}
         </div>
