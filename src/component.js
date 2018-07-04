@@ -200,10 +200,10 @@ Block.modifierScheme = {
     type: 'checkbox',
     sortOrder: 60,
   },
-  button: {defaultValue: false, label: 'Button / link', type: 'checkbox', sortOrder: 70},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
   'additional-button': {
     defaultValue: true,
-    label: 'Additional button / link',
+    label: 'Additional button (link)',
     type: 'checkbox',
     sortOrder: 80,
   },
