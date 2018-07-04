@@ -30,9 +30,9 @@ class Block extends React.Component {
         {children}
         <div className={style.item__inner}>
           <Image
-            wrapperClassName={style['item__pic-link']}
-            pictureClassName={style.item__pic}
-            imgClassName={style.item__img}
+            wrapperClassName={classNames(style['item__pic-link'], 'picture-wrapper')}
+            pictureClassName={classNames(style.item__pic, 'picture')}
+            imgClassName={classNames(style.item__img, 'picture__image')}
             bind={`team[${index}].picture`}
             size={{'min-width: 320px': 150}}
             resize={{disable: true}}
