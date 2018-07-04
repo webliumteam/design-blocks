@@ -28,13 +28,13 @@ class Wireframe extends React.Component {
           <Text
             tagName="span"
             bind={`collection[${index}].item__caption`}
-            className={classNames(style.icon, style.item__caption)}
+            className={classNames(style.icon, style.item__caption, 'caption', 'text-center')}
           />
         )}
         <div className={style.item__text}>
-          <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].item__heading`} />
+          <Text tagName="h3" className={classNames(style.item__heading, 'heading', 'text-center')} bind={`collection[${index}].item__heading`} />
           {this.getModifierValue('text') && (
-            <Text tagName="p" className={style.item__body} bind={`collection[${index}].item__body`} />
+            <Text tagName="p" className={classNames(style.item__body, 'body', 'text-center')} bind={`collection[${index}].item__body`} />
           )}
         </div>
         {this.getModifierValue('itemButton') && (

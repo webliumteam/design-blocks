@@ -58,7 +58,6 @@
   min-height: 230px;
   padding: 20px 10px;
   flex-direction: column;
-  text-align: center;
   border-bottom: 1px solid var(--ui-dark-accent-color);
 
   @media (--ui-tablet-devices) {
@@ -121,6 +120,7 @@
   }
 
   &__caption {
+    text-align: center;
 
     @media (--ui-medium-devices) {
       margin-bottom: 15px;
@@ -136,6 +136,7 @@
 
   &__heading {
     margin-top: 40px;
+    text-align: center;
 
     &:only-child {
       margin-top: 0;
@@ -151,6 +152,7 @@
   &__body {
     margin-top: 10px;
     transition: opacity 0.2s ease-in;
+    text-align: center;
 
     @media (--ui-medium-devices) {
       opacity: 0;
