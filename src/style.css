@@ -3,7 +3,6 @@
 .section {
   min-width: 320px;
   padding: 50px 0;
-  text-align: center;
   word-wrap: break-word;
 
   @media (--ui-tablet-devices) {
@@ -45,11 +44,16 @@
   &__text {
     margin-bottom: 10px;
     font-size: calc(var(--ui-heading-size) * 0.6666);
+    text-align: center;
 
     @media (--ui-tablet-devices) {
       margin-bottom: 10px;
       font-size: var(--ui-heading-size);
     }
+  }
+
+  &__date {
+    text-align: center;
   }
 }
 
@@ -212,10 +216,12 @@
     font-size: var(--ui-subtitle-size);
     line-height: var(--ui-subtitle-line-height);
     font-weight: var(--ui-subtitle-font-weight);
+    text-align: center;
   }
 
   &__position {
     margin-bottom: 10px;
+    text-align: center;
   }
 
   &__socials {
@@ -227,6 +233,7 @@
 
 .btns-group {
   padding-top: 40px;
+  text-align: center;
 }
 
 .button {

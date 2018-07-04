@@ -32,9 +32,9 @@ class Block extends React.Component {
     return (
       <div className={style.testimonial}>
         <div className={style.testimonial__inner}>
-          <Text tagName="p" className={style.testimonial__text} bind={`testimonials[${index}].text`} />
+          <Text tagName="p" className={classNames(style.testimonial__text, 'heading')} bind={`testimonials[${index}].text`} />
           {_.get('item-date')(modifier) && (
-            <Text tagName="p" className={style.testimonial__date} bind={`testimonials[${index}].date`} />
+            <Text tagName="p" className={classNames(style.testimonial__date, 'caption')} bind={`testimonials[${index}].date`} />
           )}
         </div>
       </div>
@@ -62,9 +62,9 @@ class Block extends React.Component {
             />
           )}
           <div className="item__person-info--global">
-            <Text tagName="h2" className={classNames(style.item__author)} bind={`testimonials[${index}].author`} />
+            <Text tagName="h2" className={classNames(style.item__author, 'heading')} bind={`testimonials[${index}].author`} />
             {_.get('item-position')(modifier) && (
-              <Text tagName="p" className={style.item__position} bind={`testimonials[${index}].position`} />
+              <Text tagName="p" className={classNames(style.item__position, 'body')} bind={`testimonials[${index}].position`} />
             )}
           </div>
           {_.get('item-socials')(modifier) && (
