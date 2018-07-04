@@ -23,7 +23,7 @@ class Wireframe extends React.Component {
           <Background tagName="div" bind="content-bg" className={style.section__content}>
             <div className={style['caption-wrapper']}>
               {this.getModifierValue('caption') && (
-                <Text bind="caption" className={style.caption} tagName="p" />
+                <Text bind="caption" className={classNames(style.caption, 'caption', textAlignmentClass)} tagName="p" />
               )}
             </div>
             {this.getModifierValue('title') && (
@@ -32,11 +32,13 @@ class Wireframe extends React.Component {
             {this.getModifierValue('subtitle') && (
               <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', textAlignmentClass)} tagName="p" />
               )}
-            <Button
-              bind="secondary-button"
-              className={style.button}
-              linkClassName={style.link}
-            />
+            <div className={style['btns-group']}>
+              <Button
+                bind="secondary-button"
+                className={style.button}
+                linkClassName={style.link}
+              />
+            </div>
             {this.getModifierValue('socials') && (
               <SocialIcons className={style.socials} bind="socialIcons" />
             )}

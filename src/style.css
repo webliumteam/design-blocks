@@ -17,10 +17,19 @@
 
       @media (--ui-tablet-devices) {
         margin: 0 auto;
-        text-align: center;
 
         .socials {
           justify-content: center;
+        }
+      }
+
+      .caption-wrapper,
+      .title,
+      .subtitle,
+      .btns-group {
+
+        @media (--ui-tablet-devices) {
+          text-align: center;
         }
       }
     }
