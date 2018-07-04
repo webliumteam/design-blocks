@@ -56,9 +56,9 @@ class Block extends React.Component {
     return [
       this.getModifierValue('item_image') && (
         <Image
-          wrapperClassName={style['article__picture-wrapper']}
-          pictureClassName={style.article__picture}
-          imgClassName={style.article__image}
+          wrapperClassName={classNames(style['article__picture-wrapper'], 'picture-wrapper')}
+          pictureClassName={classNames(style.article__picture, 'picture')}
+          imgClassName={classNames(style.article__image, 'picture__image')}
           {...isBlog
             ? {value: {src: imageUrl}, disabledControls: ['toolbar', 'scale'], resize: {bindToModifier: 'author_picture'}}
             : {bind: `collection[${index}].item_image`}
