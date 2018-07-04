@@ -142,7 +142,7 @@ Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 20},
   heading: {defaultValue: true, label: 'Award name', type: 'checkbox', sortOrder: 30},
   button: {defaultValue: false, label: 'Button / link', type: 'checkbox', sortOrder: 40},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden', sortOrder: 50}, 
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden', sortOrder: 50},
 }
 
 
