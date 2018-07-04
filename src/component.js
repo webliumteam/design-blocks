@@ -13,15 +13,20 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   render() {
-    const {components: {Background, ContactForm, Text, SocialIcons}, style: css} = this.props
+    const {
+      components: {Background, ContactForm, Text, SocialIcons},
+      style: css,
+    } = this.props
     const addressItem = this.getModifierValue('address-title') || this.getModifierValue('address')
     const hoursItem = this.getModifierValue('hours-title') || this.getModifierValue('hours')
-    const contactsItem = this.getModifierValue('contacts-title') ||
+    const contactsItem =
+      this.getModifierValue('contacts-title') ||
       this.getModifierValue('phone') ||
       this.getModifierValue('email') ||
       this.getModifierValue('social')
     const contactsList = addressItem || hoursItem || contactsItem
-    const contactsBlock = this.getModifierValue('title') || this.getModifierValue('subtitle') || contactsList
+    const contactsBlock =
+      this.getModifierValue('title') || this.getModifierValue('subtitle') || contactsList
 
     return (
       <section className={css.section}>
@@ -32,41 +37,81 @@ class Wireframe extends React.Component {
                 <Text tagName="h1" className={classNames(css.title, 'title')} bind="title" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text tagName="p" className={classNames(css.subtitle, 'subtitle')} bind="subtitle" />
+                <Text
+                  tagName="p"
+                  className={classNames(css.subtitle, 'subtitle')}
+                  bind="subtitle"
+                />
               )}
               {contactsList && (
                 <ul className={css['contacts-list']}>
                   {addressItem && (
                     <li className={css['contacts-list__item']}>
                       {this.getModifierValue('address-title') && (
-                        <Text bind="address-title" className={css.contacts__title} tagName="h2" />
+                        <Text
+                          bind="address-title"
+                          className={classNames(css.contacts__title, 'heading')}
+                          tagName="h2"
+                        />
                       )}
                       {this.getModifierValue('address') && (
-                        <Text bind="address-content" className={classNames(css.contacts__desc, css['contacts__desc--address'])} tagName="p" />
+                        <Text
+                          bind="address-content"
+                          className={classNames(
+                            css.contacts__desc,
+                            css['contacts__desc--address'],
+                            'subheading',
+                          )}
+                          tagName="p"
+                        />
                       )}
                     </li>
                   )}
                   {hoursItem && (
                     <li className={css['contacts-list__item']}>
                       {this.getModifierValue('hours-title') && (
-                        <Text bind="hours-title" className={css.contacts__title} tagName="h2" />
+                        <Text
+                          bind="hours-title"
+                          className={classNames(css.contacts__title, 'heading')}
+                          tagName="h2"
+                        />
                       )}
                       {this.getModifierValue('hours') && (
-                        <Text bind="hours-content" className={classNames(css.contacts__desc, css['contacts__desc--hours'])} tagName="p" />
+                        <Text
+                          bind="hours-content"
+                          className={classNames(
+                            css.contacts__desc,
+                            css['contacts__desc--hours'],
+                            'subheading',
+                          )}
+                          tagName="p"
+                        />
                       )}
                     </li>
                   )}
                   {contactsItem && (
                     <li className={css['contacts-list__item']}>
                       {this.getModifierValue('contacts-title') && (
-                        <Text bind="contacts-title" className={css.contacts__title} tagName="h2" />
+                        <Text
+                          bind="contacts-title"
+                          className={classNames(css.contacts__title, 'heading')}
+                          tagName="h2"
+                        />
                       )}
                       <div className={css.contacts__desc}>
                         {this.getModifierValue('phone') && (
-                          <Text bind="phone-link" className={css['contacts__desc--phone']} tagName="p" />
+                          <Text
+                            bind="phone-link"
+                            className={classNames(css['contacts__desc--phone'], 'subheading')}
+                            tagName="p"
+                          />
                         )}
                         {this.getModifierValue('email') && (
-                          <Text bind="email-link" className={css['contacts__desc--email']} tagName="p" />
+                          <Text
+                            bind="email-link"
+                            className={classNames(css['contacts__desc--email'], 'subheading')}
+                            tagName="p"
+                          />
                         )}
                         {this.getModifierValue('social') && (
                           <SocialIcons className={css.socials} bind="socialIcons" />
@@ -95,7 +140,14 @@ class Wireframe extends React.Component {
   }
 }
 
-Wireframe.components = _.pick(['Background', 'ContactForm', 'Text', 'Map', 'SocialIcons', 'Button'])($editor.components)
+Wireframe.components = _.pick([
+  'Background',
+  'ContactForm',
+  'Text',
+  'Map',
+  'SocialIcons',
+  'Button',
+])($editor.components)
 
 Wireframe.defaultContent = {
   formBackground: {
@@ -107,7 +159,8 @@ Wireframe.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'If you are planning on visiting us it’s advisable to call ahead for and appointment. We got some beer in case you need to wait.',
+    content:
+      'If you are planning on visiting us it’s advisable to call ahead for and appointment. We got some beer in case you need to wait.',
     type: 'subtitle',
   },
   'address-title': {
