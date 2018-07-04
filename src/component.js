@@ -57,7 +57,7 @@ class Block extends React.Component {
           />
         )}
           {this.getModifierValue('subtitle') && (
-          <Text tagName="p" className={style.subtitle} bind="subtitle" />
+          <Text tagName="p" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />
         )}
         </div>
       )
