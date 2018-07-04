@@ -31,9 +31,9 @@ class Wireframe extends React.Component {
           />
         )}
         <div className={style.item__text}>
-          <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].title`} />
+          <Text tagName="h3" className={classNames(style.item__heading, 'heading', 'text-center', 'text-md-left')} bind={`collection[${index}].title`} />
           {this.getModifierValue('item-body') && (
-            <Text tagName="p" className={style.item__description} bind={`collection[${index}].desc`} />
+            <Text tagName="p" className={classNames(style.item__description, 'body')} bind={`collection[${index}].desc`} />
           )}
         </div>
         {this.getModifierValue('item-button') && (
