@@ -25,14 +25,14 @@ class Wireframe extends React.Component {
         <div className={style.item__inner}>
           <div className={style.item__text}>
             {this.getModifierValue('item-title') && (
-              <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].heading`} />
+              <Text tagName="h3" className={classNames(style.item__heading, 'heading')} bind={`collection[${index}].heading`} />
             )}
             {this.getModifierValue('item-body') && (
-              <Text tagName="p" className={style.item__description} bind={`collection[${index}].text`} />
+              <Text tagName="p" className={classNames(style.item__description, 'body')} bind={`collection[${index}].text`} />
             )}
           </div>
           {this.getModifierValue('item-link') && (
-            <Text tagName="p" className={style.item__link} bind={`collection[${index}].link`} />
+            <Text tagName="p" className={classNames(style.item__link, 'body')} bind={`collection[${index}].link`} />
           )}
         </div>
       </div>
