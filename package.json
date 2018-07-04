@@ -1,6 +1,6 @@
 {
   "name": "wireframe-zapdos-gallery",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "",
   "category": "gallery",
   "main": "src/index.js",
