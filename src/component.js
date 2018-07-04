@@ -48,7 +48,7 @@ class Block extends React.Component {
         <div className={style['header__top-line']}>
           <div className={style['header__top-line-inner']}>
             {this.getModifierValue('text') && (
-              <Text tagName="p" className={style.header__text} bind="topLineText" />
+              <Text tagName="p" className={classNames(style.header__text, 'body')} bind="topLineText" />
             )}
             {this.getModifierValue('social-icons') && (
               <div className={style.header__socials}>
