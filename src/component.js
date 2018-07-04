@@ -27,10 +27,10 @@ class Wireframe extends React.Component {
         )}
         <div className={style.item__text}>
           {this.getModifierValue('heading') && (
-            <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].heading`} />
+            <Text tagName="h3" className={classNames(style.item__heading, 'heading', 'text-center', 'text-md-left')} bind={`collection[${index}].heading`} />
           )}
           {this.getModifierValue('text') && (
-            <Text tagName="p" className={style.item__description} bind={`collection[${index}].text`} />
+            <Text tagName="p" className={classNames(style.item__description, 'body', 'text-center', 'text-md-left')} bind={`collection[${index}].text`} />
           )}
           {this.getModifierValue('itemButton') && (
             <Button
@@ -55,10 +55,10 @@ class Wireframe extends React.Component {
           {header && (
             <div className={style.section__header} >
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title')} tagName="h2" />
+                <Text bind="title" className={classNames(style.title, 'title', 'text-center', 'text-md-left')} tagName="h2" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle')} tagName="p" />
+                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center', 'text-md-left')} tagName="p" />
               )}
             </div>
           )}
