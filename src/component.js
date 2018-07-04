@@ -21,7 +21,9 @@ class Block extends React.Component {
     const cases = {
       image: () => (
         <Image
-          pictureClassName={style['item__icon-picture']}
+          wrapperClassName="picture-wrapper"
+          pictureClassName={classNames(style['item__icon-picture'], 'picture')}
+          imgClassName="picture__image"
           bind={`articles[${index}].iconImage`}
           resize={{disable: this.getOptionValue('disable-resizer')}}
         />
