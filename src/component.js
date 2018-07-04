@@ -38,7 +38,7 @@ class Block extends React.Component {
         <div className={style.article__wrapper}>
           <Text
             tagName="h2"
-            className={style.article__title}
+            className={classNames(style.article__title, 'heading')}
             bind={`collection[${index}].item_heading`}
           />
           {categoryShow && (
@@ -46,14 +46,14 @@ class Block extends React.Component {
               {this.getModifierValue('item_date') && (
                 <Text
                   tagName="p"
-                  className={style.article__date}
+                  className={classNames(style.article__date, 'caption')}
                   bind={`collection[${index}].item_date`}
                 />
               )}
               {this.getModifierValue('item_category') && (
                 <Text
                   tagName="p"
-                  className={style.article__category}
+                  className={classNames(style.article__category, 'caption')}
                   bind={`collection[${index}].item_category`}
                 />
               )}
@@ -62,7 +62,7 @@ class Block extends React.Component {
           {this.getModifierValue('item_body') && (
             <Text
               tagName="p"
-              className={style.article__text}
+              className={classNames(style.article__text, 'body')}
               bind={`collection[${index}].item_body`}
             />
           )}
