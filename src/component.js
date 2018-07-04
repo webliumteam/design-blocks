@@ -44,7 +44,7 @@ class Block extends React.Component {
                 </div>
               )}
               {this.getModifierValue('caption') && (
-                <Text tagName="p" className={style.footer__text} bind="mainText" />
+                <Text tagName="p" className={classNames(style.footer__text, 'body')} bind="mainText" />
               )}
             </div>
           )}
@@ -59,7 +59,7 @@ class Block extends React.Component {
           {this.getModifierValue('social') && (
             <div className={classNames(style.footer__part, style['footer__part--third'])}>
               <div className={style.socials}>
-                <Text tagName="h2" className={style.socials__title} bind="follow" />
+                <Text tagName="h2" className={classNames(style.socials__title, 'body')} bind="follow" />
                 <SocialIcons bind="socialIcons" className={style.socials__icons} />
               </div>
             </div>
@@ -75,8 +75,8 @@ class Block extends React.Component {
             />
           )}
           <div className={style.footer__bottom}>
-            <Text tagName="small" className={style.footer__meta} bind="copyright" />
-            <Text tagName="small" className={style.footer__meta} bind="additional" />
+            <Text tagName="small" className={classNames(style.footer__meta, 'caption')} bind="copyright" />
+            <Text tagName="small" className={classNames(style.footer__meta, 'caption')} bind="additional" />
           </div>
         </div>
       </footer>
