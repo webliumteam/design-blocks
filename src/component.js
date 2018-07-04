@@ -100,9 +100,9 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Awards description', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Award title', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  heading: {defaultValue: true, label: 'Award name', type: 'checkbox', sortOrder: 30},
 }
 
 export default Block
