@@ -28,10 +28,10 @@ class Wireframe extends React.Component {
         {showMainText && (
           <div className={style.item__text}>
             {this.getModifierValue('item-title') && (
-              <Text tagName="h3" className={style.item__heading} bind={`collection[${index}].title`} />
+              <Text tagName="h3" className={classNames(style.item__heading, 'heading')} bind={`collection[${index}].title`} />
             )}
             {this.getModifierValue('item-body') && (
-              <Text tagName="p" className={style.item__desc} bind={`collection[${index}].desc`} />
+              <Text tagName="p" className={classNames(style.item__desc, 'body')} bind={`collection[${index}].desc`} />
             )}
           </div>
         )}
@@ -43,7 +43,7 @@ class Wireframe extends React.Component {
                   <Icon bind={`collection[${index}].advantages[0].icon`} />
                 </div>
               )}
-              <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[0].desc`} />
+              <Text tagName="p" className={classNames(style.advantages__desc, 'body')} bind={`collection[${index}].advantages[0].desc`} />
             </li>
             <li className={style.advantages__item}>
               {this.getModifierValue('list-icon') && (
@@ -51,7 +51,7 @@ class Wireframe extends React.Component {
                   <Icon bind={`collection[${index}].advantages[0].icon`} />
                 </div>
               )}
-              <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[1].desc`} />
+              <Text tagName="p" className={classNames(style.advantages__desc, 'body')} bind={`collection[${index}].advantages[1].desc`} />
             </li>
             <li className={style.advantages__item}>
               {this.getModifierValue('list-icon') && (
@@ -59,7 +59,7 @@ class Wireframe extends React.Component {
                   <Icon bind={`collection[${index}].advantages[0].icon`} />
                 </div>
               )}
-              <Text tagName="p" className={style.advantages__desc} bind={`collection[${index}].advantages[2].desc`} />
+              <Text tagName="p" className={classNames(style.advantages__desc, 'body')} bind={`collection[${index}].advantages[2].desc`} />
             </li>
           </ul>
         )}
