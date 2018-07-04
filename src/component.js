@@ -20,12 +20,12 @@ class Wireframe extends React.Component {
         />)}
         {this.getModifierValue('heading') && (<Text
           tagName="h3"
-          className={classNames(style.heading, style.item__heading)}
+          className={classNames(style.heading, style.item__heading, 'heading', 'text-center')}
           bind={`collection[${index}].heading`}
         />)}
         {this.getModifierValue('subheading') && (<Text
           tagName="p"
-          className={classNames(style.subheading, style.item__subheading)}
+          className={classNames(style.subheading, style.item__subheading, 'subheading', 'text-center')}
           bind={`collection[${index}].subheading`}
         />)}
       </div>
