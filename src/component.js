@@ -35,9 +35,9 @@ class Block extends React.Component {
           {children}
           <div className={style.item__inner}>
             <div className={style.item__text}>
-              <Text tagName="h2" className={style.item__heading} bind={`collection[${index}].heading`} />
+              <Text tagName="h2" className={classNames(style.item__heading, 'heading', 'text-center')} bind={`collection[${index}].heading`} />
               {this.getModifierValue('item-body') && (
-                <Text tagName="p" className={style.item__description} bind={`collection[${index}].text`} />
+                <Text tagName="p" className={classNames(style.item__description, 'body')} bind={`collection[${index}].text`} />
               )}
             </div>
           </div>
