@@ -27,7 +27,7 @@ class Wireframe extends React.Component {
           }}
           resize={{disable: true}}
         />
-        {this.getModifierValue('item_title') && <Text tagName="h3" className={style.item__title} bind={`collection[${index}].item_title`} />}
+        {this.getModifierValue('item_title') && <Text tagName="h3" className={classNames(style.item__title, 'heading', 'text-center')} bind={`collection[${index}].item_title`} />}
       </div>
     )
   }
