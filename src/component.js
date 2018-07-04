@@ -158,8 +158,8 @@ class Block extends React.Component {
                 {this.getModifierValue('category') &&
                   (
                     isBlog
-                      ? <SsrText tagName="p" className={style.article__category} value={{type: 'caption', content: post.articleCategory}} />
-                      : <Text tagName="p" className={style.article__category} bind="category" />
+                      ? <SsrText tagName="p" className={classNames(style.article__category, 'caption')} value={{type: 'caption', content: post.articleCategory}} />
+                      : <Text tagName="p" className={classNames(style.article__category, 'caption')} bind="category" />
                   )
                 }
                 {
@@ -187,8 +187,8 @@ class Block extends React.Component {
                       <div className={style.author__info}>
                         {this.getModifierValue('name') && (
                           isBlog
-                            ? <SsrText tagName="span" className={style.author__name} value={{type: 'subheading', content: _.get('author.fields.authorName')(post)}} />
-                            : <Text tagName="span" className={style.author__name} bind="author_name" />
+                            ? <SsrText tagName="span" className={classNames(style.author__name, 'subheading')} value={{type: 'subheading', content: _.get('author.fields.authorName')(post)}} />
+                            : <Text tagName="span" className={classNames(style.author__name, 'subheading')} bind="author_name" />
                         )}
                         <div className={style.author__bottom}>
                           {this.getModifierValue('date') && (
@@ -198,8 +198,8 @@ class Block extends React.Component {
                           )}
                           {this.getModifierValue('time') && (
                             isBlog
-                              ? <SsrText tagName="span" className={style.author__time} value={{type: 'small', content: post.articleTime}} />
-                              : <Text tagName="span" className={style.author__time} bind="article_time" />
+                              ? <SsrText tagName="span" className={classNames(style.author__time, 'small')} value={{type: 'small', content: post.articleTime}} />
+                              : <Text tagName="span" className={classNames(style.author__time, 'small')} bind="article_time" />
                           )}
                         </div>
                       </div>
@@ -211,8 +211,8 @@ class Block extends React.Component {
             <div className={style.article__content}>
               {
                 isBlog
-                  ? <SsrText tagName="p" className={style.article__body} value={{content: converter.makeHtml(post.content), type: 'text'}} />
-                  : <Text tagName="p" className={style.article__body} bind="body" />
+                  ? <SsrText tagName="p" className={classNames(style.article__body, 'body')} value={{content: converter.makeHtml(post.content), type: 'text'}} />
+                  : <Text tagName="p" className={classNames(style.article__body, 'body')} bind="body" />
               }
             </div>
           </article>
