@@ -62,14 +62,14 @@ class Block extends React.Component {
         >
           <Text
             tagName="h3"
-            className={style.item__title}
+            className={classNames(style.item__title, 'subtitle')}
             bind={`${collectionName}.faq[${index}].title`}
           />
           {this.getOptionValue('toogle-item-controls') && controlIcons}
         </div>
         <Text
           tagName="div"
-          className={style.item__content}
+          className={classNames(style.item__content, 'body')}
           bind={`${collectionName}.faq[${index}].description`}
         />
       </div>
@@ -105,7 +105,7 @@ class Block extends React.Component {
           <div className={style['collections-wrapper']}>
             <div className={style.items__wrapper}>
               {this.getModifierValue('heading') && (
-                <Text tagName="h2" className={style.items__title} bind="individuals.heading" />
+                <Text tagName="h2" className={classNames(style.items__title, 'heading')} bind="individuals.heading" />
               )}
               <Collection
                 className={style.items}
@@ -116,7 +116,7 @@ class Block extends React.Component {
             </div>
             <div className={style.items__wrapper}>
               {this.getModifierValue('heading') && (
-                <Text tagName="h2" className={style.items__title} bind="companies.heading" />
+                <Text tagName="h2" className={classNames(style.items__title, 'heading')} bind="companies.heading" />
               )}
               <Collection
                 className={style.items}
