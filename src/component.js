@@ -33,11 +33,11 @@ class Block extends React.Component {
           resize={{disable: true}}
         />
         <div className={classNames(css.item__content, contentModifierClass)}>
-          <Text bind={`services[${index}].title`} className={css.item__title} tagName="h2" />
+          <Text bind={`services[${index}].title`} className={classNames(css.item__title, 'heading')} tagName="h2" />
           {showBody && (
             <div className={css.item__body}>
               {_.get('body-text')(modifier) && (
-                <Text bind={`services[${index}].text`} className={css.item__text} tagName="p" />
+                <Text bind={`services[${index}].text`} className={classNames(css.item__text, 'body')} tagName="p" />
               )}
               {_.get('service-button')(modifier) && (
                 <Button
