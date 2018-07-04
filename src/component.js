@@ -255,7 +255,7 @@ Block.defaultContent = {
           alt: 'Article illustration photo',
         },
         item_button: {
-          textValue: 'Learn more',
+          textValue: 'Read more',
           type: 'link',
         },
       },
@@ -281,7 +281,7 @@ Block.defaultContent = {
           alt: 'Article illustration photo',
         },
         item_button: {
-          textValue: 'Learn more',
+          textValue: 'Read more',
           type: 'link',
         },
       },
@@ -307,7 +307,7 @@ Block.defaultContent = {
           alt: 'Article illustration photo',
         },
         item_button: {
-          textValue: 'Learn more',
+          textValue: 'Read more',
           type: 'link',
         },
       },
@@ -324,13 +324,13 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  icon_decorator: {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'hidden'},
-  item_image: {defaultValue: true, label: 'Image', type: 'checkbox'},
-  item_date: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
-  item_body: {defaultValue: true, label: 'Post main text', type: 'checkbox'},
-  item_button: {defaultValue: true, label: 'Link', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  icon_decorator: {defaultValue: false, label: 'Top icon decorator', type: 'hidden', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'hidden', sortOrder: 20},
+  item_image: {defaultValue: true, label: 'Post image', type: 'checkbox', sortOrder: 30},
+  item_date: {defaultValue: true, label: 'Post publication date', type: 'checkbox', sortOrder: 40},
+  item_body: {defaultValue: true, label: 'Post main text', type: 'checkbox', sortOrder: 50},
+  item_button: {defaultValue: true, label: 'Post link (button)', type: 'checkbox', sortOrder: 60},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
   textLabel: {defaultValue: '', label: 'Connect Contentful CMS', type: 'label', advanced: true},
   post_mount: {defaultValue: '', label: 'Post mount slug', type: 'select', data: 'pages', advanced: true},
   space: {defaultValue: '', label: 'Space ID', type: 'input', advanced: true},
