@@ -14,8 +14,13 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, itemIndex}) => {
-    const {components: {Text, Button, Background}, style, content} = this.props
-    const showButton = this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
+    const {
+      components: {Text, Button, Background},
+      style,
+      content,
+    } = this.props
+    const showButton =
+      this.getModifierValue('primary-button') || this.getModifierValue('secondary-button')
     const itemsLength = content.cover.items.length
     const currentItem = itemIndex < 9 ? `0${itemIndex + 1}` : `${itemIndex + 1}`
     const itemsCount = itemsLength < 10 ? `/0${itemsLength}` : `/${itemsLength}`
@@ -23,10 +28,28 @@ class Wireframe extends React.Component {
     return (
       <div className={style.item}>
         <div className={style.item__inner}>
-          <Background bind={`cover[${index}].item_card_background`} tagName="div" className={style.item__content}>
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.item__subtitle, 'subtitle', 'text-center')} bind={`cover[${index}].item_subheading`} />}
-            {this.getModifierValue('title') && <Text tagName="h2" className={style.item__title} bind={`cover[${index}].item_heading`} />}
-            {this.getModifierValue('body') && <Text tagName="p" className={style.item__body} bind={`cover[${index}].item_body`} />}
+          <Background
+            bind={`cover[${index}].item_card_background`}
+            tagName="div"
+            className={style.item__content}
+          >
+            {this.getModifierValue('subtitle') && (
+              <Text
+                tagName="p"
+                className={classNames(style.item__subtitle, 'subtitle', 'text-center')}
+                bind={`cover[${index}].item_subheading`}
+              />
+            )}
+            {this.getModifierValue('title') && (
+              <Text
+                tagName="h2"
+                className={classNames(style.item__title, 'hero-title', 'text-center')}
+                bind={`cover[${index}].item_heading`}
+              />
+            )}
+            {this.getModifierValue('body') && (
+              <Text tagName="p" className={classNames(style.item__body, 'body', 'text-center')} bind={`cover[${index}].item_body`} />
+            )}
             {showButton && (
               <div className={style['btns-group']}>
                 {this.getModifierValue('primary-button') && (
@@ -58,11 +81,23 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Slider}, style, content, $block} = this.props
-    const customArrows = this.getModifierValue('arrows') && this.getOptionValue('custom-arrows') ? {
-      nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
-      prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
-    } : {}
+    const {
+      components: {Slider},
+      style,
+      content,
+      $block,
+    } = this.props
+    const customArrows =
+      this.getModifierValue('arrows') && this.getOptionValue('custom-arrows')
+        ? {
+          nextArrow: (
+            <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />
+          ),
+          prevArrow: (
+            <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />
+          ),
+        }
+        : {}
 
     return (
       <section className={style.section}>
@@ -107,7 +142,8 @@ Wireframe.defaultContent = {
           type: 'subtitle',
         },
         item_body: {
-          content: 'Take a look at our best collection of beautiful flowers from all over the world',
+          content:
+            'Take a look at our best collection of beautiful flowers from all over the world',
           type: 'text',
         },
         item_button: {
@@ -157,7 +193,8 @@ Wireframe.defaultContent = {
           type: 'subtitle',
         },
         item_body: {
-          content: 'Take a look at our best collection of beautiful flowers from all over the world',
+          content:
+            'Take a look at our best collection of beautiful flowers from all over the world',
           type: 'text',
         },
         item_button: {
@@ -207,7 +244,8 @@ Wireframe.defaultContent = {
           type: 'subtitle',
         },
         item_body: {
-          content: 'Take a look at our best collection of beautiful flowers from all over the world',
+          content:
+            'Take a look at our best collection of beautiful flowers from all over the world',
           type: 'text',
         },
         item_button: {
