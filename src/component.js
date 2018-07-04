@@ -16,8 +16,9 @@ class Block extends React.Component {
         {children}
         <div className={style['item__picture-wrapper']}>
           <Image
-            pictureClassName={style.item__picture}
-            imgClassName={style.item__image}
+            wrapperClassName="picture-wrapper"
+            pictureClassName={classNames(style.item__picture, 'picture')}
+            imgClassName={classNames(style.item__image, 'picture__image')}
             bind={`awards[${index}].picture`}
             size={{'min-width: 480px': 358, 'min-width: 320px': 450}}
           />
