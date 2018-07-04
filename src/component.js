@@ -51,9 +51,9 @@ class Block extends React.Component {
       </div>,
       this.getModifierValue('picture') && (
         <Image
-          wrapperClassName={style['section__picture-wrapper']}
-          pictureClassName={style.section__picture}
-          imgClassName={style.section__image}
+          wrapperClassName={classNames(style['section__picture-wrapper'], 'picture-wrapper')}
+          pictureClassName={classNames(style.section__picture, 'picture')}
+          imgClassName={classNames(style.section__image, 'picture__image')}
           bind="picture"
         />
       ),
