@@ -30,11 +30,11 @@ class Block extends React.Component {
           resize={{disable: true}}
         />
       ),
-      <Text bind={`testimonials[${index}].name`} className={style.item__title} tagName="h2" />,
+      <Text bind={`testimonials[${index}].name`} className={classNames(style.item__title, 'heading', 'text-center')} tagName="h2" />,
       _.get('position')(modifier) && (
         <Text
           bind={`testimonials[${index}].position`}
-          className={style.item__position}
+          className={classNames(style.item__position, 'caption', 'text-center')}
           tagName="p"
         />
       ),
@@ -47,9 +47,9 @@ class Block extends React.Component {
       style,
     } = this.props
     return [
-      <Text bind={`testimonials[${index}].description`} className={style.item__desc} tagName="p" />,
+      <Text bind={`testimonials[${index}].description`} className={classNames(style.item__desc, 'body', 'text-center')} tagName="p" />,
       _.get('publishDate')(modifier) && (
-        <Text bind={`testimonials[${index}].date`} className={style.item__time} tagName="time" />
+        <Text bind={`testimonials[${index}].date`} className={classNames(style.item__time, 'caption', 'text-center')} tagName="time" />
       ),
     ]
   }

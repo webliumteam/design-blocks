@@ -192,7 +192,6 @@
   display: flex;
   padding: 0 5px;
   outline: none;
-  text-align: center;
 }
 
 @media (--ui-tablet-devices) {
@@ -252,6 +251,13 @@
   border-radius: 50%;
 }
 
+.item__title,
+.item__position,
+.item__desc,
+.item__time {
+  text-align: center;
+}
+
 .item__title {
   max-width: 100%;
   margin-bottom: 5px;
@@ -274,7 +280,7 @@
 }
 
 .item__time {
-  display: inline-block;
+  display: block;
   max-width: 100%;
   margin-top: 20px;
 }
