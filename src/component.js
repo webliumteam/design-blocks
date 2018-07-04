@@ -74,24 +74,24 @@ class Block extends React.Component {
                     {this.getModifierValue('date') && (
                       <Text
                         tagName="p"
-                        className={css.article__date}
+                        className={classNames(css.article__date, 'caption')}
                         bind="date"
                       />
                     )}
                     {this.getModifierValue('category') && (
                       <Text
                         tagName="p"
-                        className={css.article__category}
+                        className={classNames(css.article__category, 'category')}
                         bind="category"
                       />
                     )}
                   </div>
                 )}
                 {this.getModifierValue('heading') && (
-                  <Text tagName="p" className={classNames(css.article__heading)} bind="heading" />
+                  <Text tagName="p" className={classNames(css.article__heading, 'heading')} bind="heading" />
                 )}
                 {this.getModifierValue('body') && (
-                  <Text tagName="p" className={css.article__text} bind="body" />
+                  <Text tagName="p" className={classNames(css.article__text, 'body')} bind="body" />
                 )}
                 {this.getModifierValue('button') && (
                   <Button
