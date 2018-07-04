@@ -26,31 +26,31 @@ class Wireframe extends React.Component {
         {children}
         <div className={classNames(style.item__main, minimalState && style['item__main--center'])}>
           <div className={classNames(style.item__desc, minimalState && (style['item__desc--center']))}>
-            <Text bind={`events[${index}].heading`} className={style.item__heading} tagName="h2" />
+            <Text bind={`events[${index}].heading`} className={classNames(style.item__heading, 'heading', 'text-center', 'text-md-left')} tagName="h2" />
             {this.getModifierValue('type') && (
-              <Text bind={`events[${index}].descCaption`} className={style['item__desc-caption']} tagName="p" />
+              <Text bind={`events[${index}].descCaption`} className={classNames(style['item__desc-caption'], 'caption', 'text-center', 'text-md-left')} tagName="p" />
             )}
           </div>
           {locInfo && (
             <div className={classNames(style.loc)}>
               {this.getModifierValue('location') && (
-                <Text bind={`events[${index}].address`} className={style.loc__address} tagName="p" />
+                <Text bind={`events[${index}].address`} className={classNames(style.loc__address, 'body', 'text-center', 'text-md-left')} tagName="p" />
               )}
               {this.getModifierValue('time') && (
-                <Text bind={`events[${index}].time`} className={style.loc__time} tagName="time" />
+                <Text bind={`events[${index}].time`} className={classNames(style.loc__time, 'caption', 'text-center', 'text-md-left')} tagName="time" />
               )}
             </div>
           )}
         </div>
         <time className={classNames(style.date, minimalState && style['date--center'])}>
-          <Text bind={`events[${index}].day`} className={style.date__day} tagName="span" />
+          <Text bind={`events[${index}].day`} className={classNames(style.date__day, 'hero-title', 'text-center', 'text-md-left')} tagName="span" />
           {!onlyDayNumber && (
             <span className={style.date__text}>
               {this.getModifierValue('month') && (
-                <Text bind={`events[${index}].month`} className={style.date__month} tagName="span" />
+                <Text bind={`events[${index}].month`} className={classNames(style.date__month, 'body', 'text-center', 'text-md-left')} tagName="span" />
               )}
               {this.getModifierValue('day') && (
-                <Text bind={`events[${index}].weekDay`} className={style['date__week-day']} tagName="span" />
+                <Text bind={`events[${index}].weekDay`} className={classNames(style['date__week-day'], 'caption', 'text-center', 'text-md-left')} tagName="span" />
               )}
             </span>
           )}
