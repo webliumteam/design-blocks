@@ -18,9 +18,9 @@ class Wireframe extends React.Component {
     return (
       <div className={style.item}>
         <Image
-          wrapperClassName={style['item__picture-wrapper']}
-          pictureClassName={style.item__picture}
-          imgClassName={style.item__image}
+          wrapperClassName={classNames(style['item__picture-wrapper'], 'picture-wrapper')}
+          pictureClassName={classNames(style.item__picture, 'picture')}
+          imgClassName={classNames(style.item__image, 'picture__image')}
           bind={`collection[${index}].item_image`}
           size={{
             'min-width: 480px': 600,
