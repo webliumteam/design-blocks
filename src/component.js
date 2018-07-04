@@ -148,9 +148,9 @@ class Block extends React.Component {
           <article className={style.article}>
             <div className={style.article__top}>
               <Image
-                wrapperClassName={style['article__picture-wrapper']}
-                pictureClassName={style.article__picture}
-                imgClassName={style.article__image}
+                wrapperClassName={classNames(style['article__picture-wrapper'], 'picture-wrapper')}
+                pictureClassName={classNames(style.article__picture, 'picture')}
+                imgClassName={classNames(style.article__image, 'picture__image')}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer'), bindToModifier: 'picture'}}
                 {...isBlog ? {value: {src: _.get('image.fields.file.url')(post)}, disabledControls: ['toolbar', 'scale']} : {bind: 'picture', size: this.getImageSize(columnLayout)}}
               />
@@ -176,9 +176,9 @@ class Block extends React.Component {
                   <div className={style.author}>
                     {this.getModifierValue('avatar') && (
                       <Image
-                        wrapperClassName={style['author__picture-wrapper']}
-                        pictureClassName={style.author__picture}
-                        imgClassName={style.author__image}
+                        wrapperClassName={classNames(style['author__picture-wrapper'], 'picture-wrapper')}
+                        pictureClassName={classNames(style.author__picture, 'picture')}
+                        imgClassName={classNames(style.author__image, 'picture__image')}
                         resize={{disable: true, bindToModifier: 'author_picture'}}
                         {...isBlog ? {value: {src: _.get('author.fields.avatar.fields.file.url')(post)}, disabledControls: ['toolbar', 'scale']} : {bind: 'author_picture', size: this.getImageSize(columnLayout)}}
                       />
