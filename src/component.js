@@ -123,11 +123,12 @@ Wireframe.modifierScheme = {
     name: 'Block alignment',
     type: 'radio-button-group',
     style: 'buttons',
+    sortOrder: 10,
   },
-  caption: {defaultValue: true, label: 'Block caption', type: 'checkbox'},
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
-  socials: {defaultValue: true, label: 'Social icons', type: 'checkbox'},
+  caption: {defaultValue: true, label: 'Block caption', type: 'checkbox', sortOrder: 20},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 30},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 40},
+  socials: {defaultValue: true, label: 'Social media buttons', type: 'checkbox', sortOrder: 50},
 }
 
 export default Wireframe
