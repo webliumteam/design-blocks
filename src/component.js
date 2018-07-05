@@ -21,9 +21,9 @@ class Block extends React.Component {
       <div className={classNames(css.item, className)}>
         {children}
         <Image
-          wrapperClassName={css['item__picture-wrapper']}
-          pictureClassName={css.item__picture}
-          imgClassName={css.item__image}
+          wrapperClassName={classNames(css['item__picture-wrapper'], 'picture-wrapper')}
+          pictureClassName={classNames(css.item__picture, 'picture')}
+          imgClassName={classNames(css.item__image, 'picture__image')}
           bind={`services[${index}].picture`}
           size={{
             'min-width: 992px': 600,
