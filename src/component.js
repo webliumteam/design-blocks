@@ -222,13 +222,14 @@ Block.modifierScheme = {
     defaultValue: false,
     name: 'Arrange elements',
     type: 'swap',
+    sortOrder: 10,
   },
-  item_image: {defaultValue: true, label: 'Image', type: 'checkbox'},
-  item_date: {defaultValue: false, label: 'Date of publishing', type: 'checkbox'},
-  item_category: {defaultValue: true, label: 'Category of publishing', type: 'checkbox'},
-  item_body: {defaultValue: true, label: 'Post main text', type: 'checkbox'},
-  item_button: {defaultValue: true, label: 'Link', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  item_image: {defaultValue: true, label: 'Post image', type: 'checkbox', sortOrder: 20},
+  item_date: {defaultValue: false, label: 'Post publication date', type: 'checkbox', sortOrder: 30},
+  item_category: {defaultValue: true, label: 'Post category', type: 'checkbox', sortOrder: 40},
+  item_body: {defaultValue: true, label: 'Post main text', type: 'checkbox', sortOrder: 50},
+  item_button: {defaultValue: true, label: 'Post link (button)', type: 'checkbox', sortOrder: 60},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
 }
 
 export default Block
