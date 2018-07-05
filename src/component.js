@@ -16,8 +16,9 @@ class Block extends React.Component {
         {children}
 
         <Image
-          pictureClassName={style.article__picture}
-          imgClassName={style.article__image}
+          wrapperClassName={classNames(style['article__picture-wrapper'], 'picture-wrapper')}
+          pictureClassName={classNames(style.article__picture, 'picture')}
+          imgClassName={classNames(style.article__image, 'picture__image')}
           bind={`steps[${index}].picture`}
           size={
             {
