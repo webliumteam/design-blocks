@@ -24,8 +24,9 @@ class Block extends React.Component {
           <div className={style.article}>
             {this.getModifierValue('image') && (
               <Image
-                pictureClassName={style.article__picture}
-                imgClassName={style.article__image}
+                wrapperClassName={classNames(style['article__picture-wrapper'], 'picture-wrapper')}
+                pictureClassName={classNames(style.article__picture, 'picture')}
+                imgClassName={classNames(style.article__image, 'picture__image')}
                 bind="image"
                 size={{
                   'min-width: 992px': 1200,
