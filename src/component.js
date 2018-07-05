@@ -223,18 +223,18 @@ Wireframe.defaultContent = {
   },
   button: {
     type: 'secondary',
-    textValue: 'Medium button',
+    textValue: 'Learn more',
   },
 }
 
 Wireframe.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  item_category: {defaultValue: true, label: 'Blog category', type: 'checkbox'},
-  item_person_image: {defaultValue: true, label: 'Author picture', type: 'checkbox'},
-  item_person: {defaultValue: true, label: 'Author name', type: 'checkbox'},
-  item_date_icon: {defaultValue: true, label: 'Blog date icon', type: 'checkbox'},
-  item_date: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Block button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  item_category: {defaultValue: true, label: 'Post category', type: 'checkbox', sortOrder: 20},
+  item_person_image: {defaultValue: true, label: 'Post author photo', type: 'checkbox', sortOrder: 30},
+  item_person: {defaultValue: true, label: 'Post author photo', type: 'checkbox', sortOrder: 40},
+  item_date_icon: {defaultValue: true, label: 'Post time icon', type: 'checkbox', sortOrder: 50},
+  item_date: {defaultValue: true, label: 'Post publication time', type: 'checkbox', sortOrder: 60},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
 }
 
 export default Wireframe
