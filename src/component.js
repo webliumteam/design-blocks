@@ -191,13 +191,13 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Location heading', type: 'checkbox'},
-  address: {defaultValue: true, label: 'Address', type: 'checkbox'},
-  phone: {defaultValue: true, label: 'Phone', type: 'checkbox'},
-  email: {defaultValue: true, label: 'Email', type: 'checkbox'},
-  social: {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  heading: {defaultValue: true, label: 'Location heading', type: 'checkbox', sortOrder: 20},
+  address: {defaultValue: true, label: 'Address', type: 'checkbox', sortOrder: 30},
+  phone: {defaultValue: true, label: 'Phone', type: 'checkbox', sortOrder: 40},
+  email: {defaultValue: true, label: 'Email', type: 'checkbox', sortOrder: 50},
+  social: {defaultValue: false, label: 'Social media buttons', type: 'checkbox', sortOrder: 60},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
 }
 
 export default Block
