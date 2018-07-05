@@ -28,7 +28,7 @@ class Wireframe extends React.Component {
 
     const imageCount = parseInt(this.getModifierValue('imagesQuantity'), 10)
 
-    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 300
+    const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 200
     const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 800
 
     return (

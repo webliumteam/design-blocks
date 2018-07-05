@@ -41,10 +41,10 @@
 }
 
 .picture-wrapper {
+  display: flex;
   margin: 0 -15px 20px;
 
   @media (--ui-tablet-devices) {
-    display: flex;
     flex-wrap: wrap;
     margin-left: -10px;
     margin-right: -10px;
@@ -74,20 +74,16 @@
   }
 
   &__picture {
-    height: 200px;
+    height: 100%;
     padding-top: 0;
 
-    @media (--ui-tablet-devices) {
-      height: 300px;
-    }
-
     @media (--ui-medium-devices) {
-      height: 100%;
       min-height: 200px;
     }
   }
 
   &__picture-wrapper {
+    min-height: 200px;
 
     @media (--ui-tablet-devices) {
       max-width: calc(50% - 30px);
