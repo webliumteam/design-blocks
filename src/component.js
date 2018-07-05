@@ -203,7 +203,7 @@ Block.modifierScheme = {
   phone: {defaultValue: true, label: 'Phone', type: 'checkbox', sortOrder: 40},
   email: {defaultValue: true, label: 'Email', type: 'checkbox', sortOrder: 50},
   button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
-  'button-secondary': {defaultValue: false, label: 'Additional button (link) ', type: 'checkbox', sortOrder: 0},
+  'button-secondary': {defaultValue: false, label: 'Additional button (link) ', type: 'checkbox', sortOrder: 70},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
