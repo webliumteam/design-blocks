@@ -52,9 +52,9 @@ class Wireframe extends React.Component {
           >
             {_.map(n => (
               <Image
-                wrapperClassName={classNames(style['item__picture-wrapper'], style[`item__picture-wrapper--${imageCount}-items`])}
-                pictureClassName={style.item__picture}
-                imageClassName={style.item__image}
+                wrapperClassName={classNames(style['item__picture-wrapper'], style[`item__picture-wrapper--${imageCount}-items`], 'picture-wrapper')}
+                pictureClassName={classNames(style.item__picture, 'picture')}
+                imageClassName={classNames(style.item__image, 'picture__image')}
                 bind={`items[${index}].picture[${n}]`}
                 size={{
                   'min-width: 320px': 480,
@@ -75,38 +75,38 @@ class Wireframe extends React.Component {
               <ul className={style.item__list}>
                 {this.getModifierValue('name') && (
                   <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[0].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[0].desc`} />
+                    <Text tagName="h3" className={classNames(style.brief__title, 'subheading')} bind={`items[${index}].brief[0].title`} />
+                    <Text tagName="p" className={classNames(style.brief__desc, 'subheading')} bind={`items[${index}].brief[0].desc`} />
                   </li>
                 )}
                 {this.getModifierValue('hours') && (
                   <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[1].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[1].desc`} />
+                    <Text tagName="h3" className={classNames(style.brief__title, 'subheading')} bind={`items[${index}].brief[1].title`} />
+                    <Text tagName="p" className={classNames(style.brief__desc, 'subheading')} bind={`items[${index}].brief[1].desc`} />
                   </li>
                 )}
                 {this.getModifierValue('date') && (
                   <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[2].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[2].desc`} />
+                    <Text tagName="h3" className={classNames(style.brief__title, 'subheading')} bind={`items[${index}].brief[2].title`} />
+                    <Text tagName="p" className={classNames(style.brief__desc, 'subheading')} bind={`items[${index}].brief[2].desc`} />
                   </li>
                 )}
                 {this.getModifierValue('location') && (
                   <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[3].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[3].desc`} />
+                    <Text tagName="h3" className={classNames(style.brief__title, 'subheading')} bind={`items[${index}].brief[3].title`} />
+                    <Text tagName="p" className={classNames(style.brief__desc, 'subheading')} bind={`items[${index}].brief[3].desc`} />
                   </li>
                 )}
                 {this.getModifierValue('cost') && (
                   <li className={style.brief}>
-                    <Text tagName="h3" className={style.brief__title} bind={`items[${index}].brief[4].title`} />
-                    <Text tagName="p" className={style.brief__desc} bind={`items[${index}].brief[4].desc`} />
+                    <Text tagName="h3" className={classNames(style.brief__title, 'subheading')} bind={`items[${index}].brief[4].title`} />
+                    <Text tagName="p" className={classNames(style.brief__desc, 'subheading')} bind={`items[${index}].brief[4].desc`} />
                   </li>
                 )}
               </ul>
             )}
             {this.getModifierValue('body') && (
-              <Text tagName="p" className={style.item__body} bind={`items[${index}].body`} />
+              <Text tagName="p" className={classNames(style.item__body, 'body')} bind={`items[${index}].body`} />
             )}
             {this.getModifierValue('primary-button') && (
               <Button
