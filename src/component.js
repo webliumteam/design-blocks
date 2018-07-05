@@ -265,17 +265,17 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Contacts description', type: 'checkbox'},
-  'address-title': {defaultValue: true, label: 'Address title', type: 'checkbox'},
-  address: {defaultValue: true, label: 'First address', type: 'checkbox'},
-  'hours-title': {defaultValue: true, label: 'Hours title', type: 'checkbox'},
-  hours: {defaultValue: true, label: 'Working hours', type: 'checkbox'},
-  'contacts-title': {defaultValue: true, label: 'Contacts title', type: 'checkbox'},
-  phone: {defaultValue: true, label: 'Phone', type: 'checkbox'},
-  email: {defaultValue: true, label: 'E-mail', type: 'checkbox'},
-  social: {defaultValue: true, label: 'Social media icons', type: 'checkbox'},
-  'contact-form': {defaultValue: true, label: 'Contact form', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  'address-title': {defaultValue: true, label: 'Address heading', type: 'checkbox', sortOrder: 30},
+  address: {defaultValue: true, label: 'Address', type: 'checkbox', sortOrder: 40},
+  'hours-title': {defaultValue: true, label: 'Hours heading', type: 'checkbox', sortOrder: 50},
+  hours: {defaultValue: true, label: 'Working hours', type: 'checkbox', sortOrder: 60},
+  'contacts-title': {defaultValue: true, label: 'Contacts heading', type: 'checkbox', sortOrder: 70},
+  phone: {defaultValue: true, label: 'Phone', type: 'checkbox', sortOrder: 80},
+  email: {defaultValue: true, label: 'Email', type: 'checkbox', sortOrder: 90},
+  social: {defaultValue: false, label: 'Social media buttons', type: 'checkbox', sortOrder: 100},
+  'contact-form': {defaultValue: true, label: 'Contact form', type: 'checkbox', sortOrder: 110},
 }
 
 export default Wireframe
