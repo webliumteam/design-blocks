@@ -228,11 +228,11 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Careers description', type: 'checkbox'},
-  'item-icon': {defaultValue: true, label: 'Vacancy icon', type: 'checkbox'},
-  employment: {defaultValue: true, label: 'Type of employment (full-time/part-time)', type: 'checkbox'},
-  position: {defaultValue: true, label: 'Vacancy location', type: 'checkbox'},
-  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 10},
+  'item-icon': {defaultValue: true, label: 'Vacancy icon', type: 'checkbox', sortOrder: 20},
+  employment: {defaultValue: true, label: 'Employment type', type: 'checkbox', sortOrder: 30},
+  position: {defaultValue: true, label: 'Vacancy location', type: 'checkbox', sortOrder: 40},
+  'secondary-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
