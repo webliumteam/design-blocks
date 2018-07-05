@@ -186,7 +186,7 @@ Block.modifierScheme = {
       {id: 'right', label: 'Right'},
     ],
     defaultValue: 'left',
-    name: 'Aligning',
+    name: 'Block alignment',
     type: 'radio-button-group',
     sortOrder: 10,
   },
