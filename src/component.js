@@ -19,9 +19,9 @@ class Block extends React.Component {
         {children}
         <div className={style.item__inner}>
           <Image
-            wrapperClassName={style['item__picture-wrapper']}
-            pictureClassName={style.item__picture}
-            imgClassName={style.item__image}
+            wrapperClassName={classNames(style['item__picture-wrapper'], 'picture-wrapper')}
+            pictureClassName={classNames(style.item__picture, 'picture')}
+            imgClassName={classNames(style.item__image, 'picture__image')}
             bind={`projects[${index}].picture`}
             resize={{disable: true}}
           />
