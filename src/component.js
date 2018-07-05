@@ -162,14 +162,15 @@ Block.defaultContent = {
 Block.modifierScheme = {
   'arrange-elements': {
     type: 'swap',
-    title: 'Arrange elements',
+    title: 'Swap text with image',
     defaultValue: false,
+    sortOrder: 10,
   },
-  subtitle: {defaultValue: true, label: 'Careers description', type: 'checkbox'},
-  image: {defaultValue: true, label: 'Сareers photo', type: 'checkbox'},
-  body: {defaultValue: true, label: 'Careers main text', type: 'checkbox'},
-  icon: {defaultValue: true, label: 'Careers icon', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  image: {defaultValue: true, label: 'Image', type: 'checkbox', sortOrder: 30},
+  body: {defaultValue: true, label: 'Main text', type: 'checkbox', sortOrder: 40},
+  icon: {defaultValue: true, label: 'Icons', type: 'checkbox', sortOrder: 50},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
