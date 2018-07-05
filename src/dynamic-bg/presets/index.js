@@ -63,7 +63,7 @@ export const bubble = () => ({
     },
   },
   interactivity: {
-    detect_on: 'canvas',
+    detect_on: 'window',
     events: {
       onhover: {
         enable: false,
@@ -174,14 +174,14 @@ export const lines = () => ({
     },
   },
   interactivity: {
-    detect_on: 'canvas',
+    detect_on: 'window',
     events: {
       onhover: {
         enable: true,
         mode: 'repulse',
       },
       onclick: {
-        enable: true,
+        enable: false,
         mode: 'push',
       },
       resize: true,
@@ -201,7 +201,7 @@ export const lines = () => ({
         speed: 3,
       },
       repulse: {
-        distance: 200,
+        distance: 100,
         duration: 0.4,
       },
       push: {
@@ -285,7 +285,7 @@ export const nasa = () => ({
     },
   },
   interactivity: {
-    detect_on: 'canvas',
+    detect_on: 'window',
     events: {
       onhover: {
         enable: true,
@@ -305,11 +305,11 @@ export const nasa = () => ({
         },
       },
       bubble: {
-        distance: 250,
+        distance: 450,
         size: 0,
         duration: 200,
-        opacity: 0,
-        speed: 3,
+        opacity: 0.3,
+        speed: 8,
       },
       repulse: {
         distance: 400,
@@ -326,10 +326,10 @@ export const nasa = () => ({
   retina_detect: true,
 })
 
-export const snow = () => ({
+export const snow = ({value, speed, distance}) => ({
   particles: {
     number: {
-      value: 400,
+      value,
       density: {
         enable: true,
         value_area: 800,
@@ -368,7 +368,7 @@ export const snow = () => ({
       random: true,
       anim: {
         enable: false,
-        speed: 40,
+        speed: 10,
         size_min: 0.1,
         sync: false,
       },
@@ -382,7 +382,7 @@ export const snow = () => ({
     },
     move: {
       enable: true,
-      speed: 3,
+      speed,
       direction: 'bottom',
       random: false,
       straight: false,
@@ -396,7 +396,7 @@ export const snow = () => ({
     },
   },
   interactivity: {
-    detect_on: 'canvas',
+    detect_on: 'window',
     events: {
       onhover: {
         enable: true,
@@ -423,7 +423,7 @@ export const snow = () => ({
         speed: 3,
       },
       repulse: {
-        distance: 200,
+        distance,
         duration: 0.4,
       },
       push: {

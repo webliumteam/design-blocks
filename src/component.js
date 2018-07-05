@@ -10,9 +10,19 @@ class Block extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
+  snowValues = {}
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  getPreset = (value) => {
+  componentDidMount() {
+    return this.snowValues = {
+      speed: window.innerWidth < 800 ? 1 : 3,
+      value: window.innerWidth < 800 ? 100 : 400,
+      distance: window.innerWidth < 800 ? 70 : 200,
+    }
+  }
+
+  getPreset = (value, params) => {
     switch (value) {
       case 'lines':
         return lines()
@@ -21,7 +31,7 @@ class Block extends React.Component {
         return bubble()
         break
       case 'snow':
-        return snow()
+        return snow(this.snowValues)
         break
       case 'nasa':
         return nasa()
@@ -41,6 +51,7 @@ class Block extends React.Component {
       ? `text-${this.getModifierValue('align')}`
       : ''
 
+    const re = this.snowValues
     return (
       <section className={classNames(css.section, alignClass)}>
         <div className={css.section__inner}>
