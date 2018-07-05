@@ -25,9 +25,9 @@ class Block extends React.Component {
         {children}
         {this.getModifierValue('item_image') && (
           <Image
-            wrapperClassName={style['article__picture-wrapper']}
-            pictureClassName={style.article__picture}
-            imgClassName={style.article__image}
+            wrapperClassName={classNames(style['article__picture-wrapper'], 'picture-wrapper')}
+            pictureClassName={classNames(style.article__picture, 'picture')}
+            imgClassName={classNames(style.article__image, 'picture__image')}
             bind={`collection[${index}].item_image`}
             size={{
               'min-width: 320px': 230,
