@@ -30,10 +30,12 @@
 }
 
 .section__inner {
+  position: relative;
   width: 100%;
   max-width: var(--ui-content-container);
   margin: 0 auto;
   padding: var(--ui-content-gutter);
+  z-index: 1;
 }
 
 .title {
@@ -84,4 +86,13 @@
 
 .caption-decorator {
   color: var(--ui-brand-color);
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
 }

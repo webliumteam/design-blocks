@@ -1,4 +1,7 @@
 import $editor from 'weblium/editor'
+import Wave from './dynamic-bg/waves'
+import Particles from 'react-particles-js'
+import {bubble, lines, nasa, snow} from './dynamic-bg/presets'
 
 class Block extends React.Component {
   static propTypes = {
@@ -9,6 +12,25 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  getPreset = (value) => {
+    switch (value) {
+      case 'lines':
+        return lines()
+        break
+      case 'bubble':
+        return bubble()
+        break
+      case 'snow':
+        return snow()
+        break
+      case 'nasa':
+        return nasa()
+        break
+      default:
+        console.log('no preset')
+    }
+  }
+
   render() {
     const {components: {Text, Button}, style: css} = this.props
     const showButtonGroups = this.getModifierValue('primary-btn') || this.getModifierValue('secondary-btn')
@@ -16,8 +38,8 @@ class Block extends React.Component {
       ? css[`section--${this.getModifierValue('align')}`]
       : ''
     const subtitleAlignClass = this.getModifierValue('align') !== 'left'
-    ? `text-${this.getModifierValue('align')}`
-    : ''
+      ? `text-${this.getModifierValue('align')}`
+      : ''
 
     return (
       <section className={classNames(css.section, alignClass)}>
@@ -29,7 +51,7 @@ class Block extends React.Component {
           )}
           <Text bind="title" tagName="h1" className={css.title} />
           {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" tagName="p" className={classNames(css.subtitle, 'subtitle', themeAlignClass)} />
+            <Text bind="subtitle" tagName="p" className={classNames(css.subtitle, 'subtitle')} />
           )}
           {showButtonGroups && (
             <div className={css['btns-group']}>
@@ -50,6 +72,24 @@ class Block extends React.Component {
             </div>
           )}
         </div>
+        {this.getModifierValue('dynamic') !== 'none' ?
+        (this.getModifierValue('dynamic') === 'waves' ?
+          <Wave {...{
+            color: '#fff',
+            separation: 50,
+            height: 30,
+            amountX: 50,
+            amountY: 50,
+            speed: 0.3,
+            className: css['vawe-canvas'],
+            scale: 0.5,
+          }}
+          /> :
+          <Particles
+            canvasClassName={css.canvas}
+            params={(this.getPreset(this.getModifierValue('dynamic')))}
+          />) : null
+        }
       </section>
     )
   }
@@ -114,6 +154,20 @@ Block.modifierScheme = {
     name: 'Aligning',
     type: 'radio-button-group',
     style: 'buttons',
+  },
+  dynamic: {
+    children: [
+      {id: 'none', label: 'None'},
+      {id: 'waves', label: 'Waves'},
+      {id: 'lines', label: 'Lines'},
+      {id: 'snow', label: 'Snow'},
+      {id: 'nasa', label: 'Space'},
+      {id: 'bubble', label: 'Circles'},
+    ],
+    defaultValue: 'none',
+    name: 'Dynamic background',
+    type: 'radio-button-group',
+    style: 'column',
   },
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
   'primary-btn': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
