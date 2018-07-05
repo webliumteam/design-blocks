@@ -41,9 +41,9 @@ class Wireframe extends React.Component {
                   <div className={style.author}>
                     {_.get('item_person_image')(modifier) && (
                       <Image
-                        wrapperClassName={style['author__picture-wrapper']}
-                        pictureClassName={style.author__picture}
-                        imgClassName={style.author__image}
+                        wrapperClassName={classNames(style['author__picture-wrapper'], 'picture-wrapper')}
+                        pictureClassName={classNames(style.author__picture, 'picture')}
+                        imgClassName={classNames(style.author__image, 'picture__image')}
                         bind={`collection[${index}].item_person_image`}
                         size={
                           {
