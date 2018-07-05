@@ -52,9 +52,9 @@ class Wireframe extends React.Component {
           >
             {_.map(n => (
               <Image
-                wrapperClassName={classNames(style['item__picture-wrapper'], style[`item__picture-wrapper--${imageCount}-items`])}
-                pictureClassName={style.item__picture}
-                imageClassName={style.item__image}
+                wrapperClassName={classNames(style['item__picture-wrapper'], style[`item__picture-wrapper--${imageCount}-items`], 'picture-wrapper')}
+                pictureClassName={classNames(style.item__picture, 'picture')}
+                imageClassName={classNames(style.item__image, 'picture__image')}
                 bind={`items[${index}].picture[${n}]`}
                 size={{
                   'min-width: 320px': 480,
