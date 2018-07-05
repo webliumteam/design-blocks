@@ -186,18 +186,18 @@ Block.defaultContent = {
       },
     },
     type: 'primary',
-    textValue: 'Contact us',
+    textValue: 'Request a quote',
   },
 }
 
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Location title', type: 'checkbox'},
-  address: {defaultValue: true, label: 'Location address', type: 'checkbox'},
+  heading: {defaultValue: true, label: 'Location heading', type: 'checkbox'},
+  address: {defaultValue: true, label: 'Address', type: 'checkbox'},
   phone: {defaultValue: true, label: 'Phone', type: 'checkbox'},
-  email: {defaultValue: true, label: 'E-mail', type: 'checkbox'},
-  social: {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Primary button', type: 'checkbox'},
+  email: {defaultValue: true, label: 'Email', type: 'checkbox'},
+  social: {defaultValue: false, label: 'Social media buttons', type: 'checkbox'},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox'},
 }
 
 export default Block
