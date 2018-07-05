@@ -231,7 +231,7 @@ Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
   item_category: {defaultValue: true, label: 'Post category', type: 'checkbox', sortOrder: 20},
   item_person_image: {defaultValue: true, label: 'Post author photo', type: 'checkbox', sortOrder: 30},
-  item_person: {defaultValue: true, label: 'Post author photo', type: 'checkbox', sortOrder: 40},
+  item_person: {defaultValue: true, label: 'Post author name', type: 'checkbox', sortOrder: 40},
   item_date_icon: {defaultValue: true, label: 'Post time icon', type: 'checkbox', sortOrder: 50},
   item_date: {defaultValue: true, label: 'Post publication time', type: 'checkbox', sortOrder: 60},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
