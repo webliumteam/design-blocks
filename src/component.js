@@ -49,9 +49,9 @@ class Block extends React.Component {
         <div className={style.item__inner}>
           {_.get('item-image')(modifier) && (
             <Image
-              wrapperClassName={style['item__picture-wrapper']}
-              pictureClassName={classNames(style.item__picture, 'item__picture--global')}
-              imgClassName={style.item__image}
+              wrapperClassName={classNames(style['item__picture-wrapper'], 'picture-wrapper')}
+              pictureClassName={classNames(style.item__picture, 'item__picture--global', 'picture')}
+              imgClassName={classNames(style.item__image, 'picture__image')}
               bind={`testimonials[${index}].image`}
               size={{
                 'min-width: 992px': 1200,
