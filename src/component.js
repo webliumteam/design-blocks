@@ -61,7 +61,7 @@ class Wireframe extends React.Component {
                 {dateShown && (
                   <div className={style.date}>
                     {_.get('item_date_icon')(modifier) && (
-                      <Icon bind={`collection[${index}].item_date_icon`} className={style.date__icon} />
+                      <Icon bind={`collection[${index}].item_date_icon`} className={classNames(style.date__icon, 'icon')} />
                     )}
                     {_.get('item_date')(modifier) && (
                       <Text tagName="time" className={classNames(style.date__value, 'body')} bind={`collection[${index}].item_date`} />
