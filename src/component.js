@@ -44,7 +44,9 @@ class Block extends React.Component {
       <Text tagName="h1" className={classNames(css.article__title, 'title')} bind="title" />
     )
 
-    const getIconDecorator = this.getModifierValue('top-icon') && <Icon className={css['top-icon']} bind="topIcon" />
+    const getIconDecorator = this.getModifierValue('top-icon') && (
+      <Icon className={classNames(css['top-icon'], 'icon')} bind="topIcon" />
+    )
 
     const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 46
     const getMaxResize = this.getOptionValue('max-resize') ? this.getOptionValue('max-resize') : 100
