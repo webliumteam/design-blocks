@@ -109,150 +109,6 @@ ExtendedWireframe.defaultContent = {
         alt: 'Service illustration photo',
       },
     },
-    {
-      ...Component.defaultContent.services[6],
-      title: {
-        content: 'Underfloor heating and thermostat<br>installation',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $35',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '7.png',
-        alt: 'Service illustration photo',
-      },
-    },
-    {
-      ...Component.defaultContent.services[7],
-      title: {
-        content: 'Air conditioning and heating systems',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $30',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '8.png',
-        alt: 'Service illustration photo',
-      },
-    },
-    {
-      ...Component.defaultContent.services[8],
-      title: {
-        content: 'Fuse box installation and replacement',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $50',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '9.png',
-        alt: 'Service illustration photo',
-      },
-    },
-    {
-      ...Component.defaultContent.services[9],
-      title: {
-        content: 'Voltage regulators installation<br>service',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $45',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '10.png',
-        alt: 'Service illustration photo',
-      },
-    },
-    {
-      ...Component.defaultContent.services[10],
-      title: {
-        content: 'Data network and service facilities for<br>businesses',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $30',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '11.png',
-        alt: 'Service illustration photo',
-      },
-    },
-    {
-      ...Component.defaultContent.services[11],
-      title: {
-        content: 'Security surveillance system<br>installation',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $50',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '12.png',
-        alt: 'Service illustration photo',
-      },
-    },
-    {
-      ...Component.defaultContent.services[12],
-      title: {
-        content: 'Video intercom systems installation',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $25',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '13.png',
-        alt: 'Service illustration photo',
-      },
-    },
-    {
-      ...Component.defaultContent.services[13],
-      title: {
-        content: 'Satellite TV installations',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $30',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '14.png',
-        alt: 'Service illustration photo',
-      },
-    },
-    {
-      ...Component.defaultContent.services[14],
-      title: {
-        content: 'Emergency & backup generator<br> Instllation',
-        type: 'heading',
-      },
-      description: {
-        content: 'From $30',
-        type: 'subheading',
-        color: 'brand-color',
-      },
-      picture: {
-        resourceRef: '15.png',
-        alt: 'Service illustration photo',
-      },
-    },
   ],
   title: {
     content: 'Services',
@@ -266,9 +122,9 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'button-primary': {defaultValue: false, label: 'Additional button', type: 'hidden'},
-  'button-secondary': {defaultValue: false, label: 'Button', type: 'hidden'},
-  link: {defaultValue: false, label: 'Link', type: 'hidden'},
+  'button-primary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Button', type: 'checkbox'},
+  link: {defaultValue: false, label: 'Link', type: 'checkbox'},
   subtitle: {defaultValue: true, label: 'Services description', type: 'checkbox'},
 }
 
