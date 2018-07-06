@@ -11,21 +11,27 @@ class Block extends React.Component {
   }
 
   snowValues = {}
+  linesValue = {}
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   componentDidMount() {
-    return this.snowValues = {
+    this.snowValues = {
       speed: window.innerWidth < 800 ? 1 : 3,
-      value: window.innerWidth < 800 ? 100 : 400,
+      val: window.innerWidth < 800 ? 100 : 400,
       distance: window.innerWidth < 800 ? 70 : 200,
+    }
+
+    this.linesValue = {
+      val: window.innerWidth < 800 ? 30 : 22,
+      distance: window.innerWidth < 800 ? 70 : 300,
     }
   }
 
   getPreset = (value, params) => {
     switch (value) {
       case 'lines':
-        return lines()
+        return lines(this.linesValue)
         break
       case 'bubble':
         return bubble()

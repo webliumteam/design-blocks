@@ -104,10 +104,10 @@ export const bubble = () => ({
   retina_detect: true,
 })
 
-export const lines = () => ({
+export const lines = ({val = 10, distance = 70}) => ({
   particles: {
     number: {
-      value: 20,
+      value: val,
       density: {
         enable: true,
         value_area: 800,
@@ -153,7 +153,7 @@ export const lines = () => ({
     },
     line_linked: {
       enable: true,
-      distance: 400,
+      distance,
       color: '#ffffff',
       opacity: 0.4,
       width: 1,
@@ -326,10 +326,10 @@ export const nasa = () => ({
   retina_detect: true,
 })
 
-export const snow = ({value, speed, distance}) => ({
+export const snow = ({val = 60, speed = 2, distance = 100}) => ({
   particles: {
     number: {
-      value,
+      value: val,
       density: {
         enable: true,
         value_area: 800,
