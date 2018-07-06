@@ -19,7 +19,7 @@ class Block extends React.Component {
         {children}
         {this.getModifierValue('icon') && (
           <div className={classNames(style['list__item-icon'], {[style['list__item-icon--counter-none']]: collectionIcon})}>
-            {collectionIcon && <Icon bind={`careers[${index}].icon`} />}
+            {collectionIcon && <Icon bind={`careers[${index}].icon`} className="icon" />}
           </div>
         )}
         <Text tagName="span" className={classNames(style['list__item-text'], 'heading')} bind={`careers[${index}].title`} />
@@ -35,7 +35,7 @@ class Block extends React.Component {
       <section className={classNames(style.section, arrange && style['section--reverse'])}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={style['top-icon']} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
           )}
           {!this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />}
           {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />}
