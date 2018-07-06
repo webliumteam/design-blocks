@@ -63,7 +63,7 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={style['top-icon']} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
           )}
           <header className={style.section__header}>
             {!this.getOptionValue('disabled-title') && (
