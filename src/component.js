@@ -20,9 +20,9 @@ class Block extends React.Component {
     return [
       _.get('image')(modifier) && (
         <Image
-          wrapperClassName={style['item__pic-wrapper']}
-          pictureClassName={style.item__pic}
-          imgClassName={style.item__img}
+          wrapperClassName={classNames(style['item__pic-wrapper'], 'picture-wrapper')}
+          pictureClassName={classNames(style.item__pic, 'picture')}
+          imgClassName={classNames(style.item__img, 'picture__image')}
           bind={`testimonials[${index}].image`}
           size={{
             'min-width: 320px': 120,
