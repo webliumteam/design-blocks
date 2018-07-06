@@ -141,7 +141,6 @@ Block.defaultContent = {
     type: 'text',
   },
   picture: {
-    src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
     alt: 'Picture about the company',
   },
   'button-1': {
