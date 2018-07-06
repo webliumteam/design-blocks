@@ -10,27 +10,49 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Icon}, style} = this.props
+    const {
+      components: {Text, Button, Icon},
+      style,
+    } = this.props
 
     return (
       <article className={classNames(style.item, className)}>
         {children}
 
         <div className={style.item__container}>
-          <Text bind={`products[${index}].title`} className={classNames(style.item__title, 'heading', 'text-center')} tagName="h2" />
+          <Text
+            bind={`products[${index}].title`}
+            className={classNames(style.item__title, 'heading', 'text-center')}
+            tagName="h2"
+          />
           {_.get('icon')(modifier) && (
-            <Icon bind={`products[${index}.icon`} className={style.item__icon} />
+            <Icon
+              bind={`products[${index}.icon`}
+              className={classNames(style.item__icon, 'icon')}
+            />
           )}
           {_.get('price')(modifier) && (
             <div className={style.item__price}>
-              <Text bind={`products[${index}.price`} className={classNames(style['item__price-numbers'], 'heading-lg', 'text-center')} tagName="strong" />
+              <Text
+                bind={`products[${index}.price`}
+                className={classNames(style['item__price-numbers'], 'heading-lg', 'text-center')}
+                tagName="strong"
+              />
               {_.get('price-info')(modifier) && (
-                <Text bind={`products[${index}['price-info']`} className={classNames(style['item__price-info'], 'caption', 'text-center')} tagName="span" />
+                <Text
+                  bind={`products[${index}['price-info']`}
+                  className={classNames(style['item__price-info'], 'caption', 'text-center')}
+                  tagName="span"
+                />
               )}
             </div>
           )}
           {_.get('body')(modifier) && (
-            <Text className={classNames(style.item__desc, 'body', 'text-center')} bind={`products[${index}].body`} tagName="p" />
+            <Text
+              className={classNames(style.item__desc, 'body', 'text-center')}
+              bind={`products[${index}].body`}
+              tagName="p"
+            />
           )}
           {_.get('product-button')(modifier) && (
             <div className={style['item__link-wrapper']}>
@@ -47,17 +69,29 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Collection, Text, Button}, style, $block} = this.props
+    const {
+      components: {Collection, Text, Button},
+      style,
+      $block,
+    } = this.props
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />
+                <Text
+                  bind="title"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  tagName="h1"
+                />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+                <Text
+                  bind="subtitle"
+                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  tagName="p"
+                />
               )}
             </header>
           )}
@@ -71,11 +105,7 @@ class Block extends React.Component {
           />
           {this.getModifierValue('button') && (
             <div className={style['btns-group']}>
-              <Button
-                linkClassName={style.link}
-                buttonClassName={style.button}
-                bind="button"
-              />
+              <Button linkClassName={style.link} buttonClassName={style.button} bind="button" />
             </div>
           )}
         </div>
@@ -98,10 +128,13 @@ Block.defaultContent = {
   products: {
     background: {
       'nth-child': [
-        ['n', {
-          type: 'color',
-          color: 'light-accent-color',
-        }],
+        [
+          'n',
+          {
+            type: 'color',
+            color: 'light-accent-color',
+          },
+        ],
       ],
     },
     items: [
