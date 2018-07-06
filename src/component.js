@@ -38,7 +38,7 @@ class Block extends React.Component {
       <Text tagName="h2" className={classNames(style.plan__title, 'heading', 'text-center')} bind={`plan-title-${itemNumber}`} />,
       this.getModifierValue('plan-icon') && (
         <div className={style['plan__icon-wrapper']}>
-          <Icon bind={`plan-icon-${itemNumber}`} />
+          <Icon bind={`plan-icon-${itemNumber}`} className="icon" />
         </div>
       ),
       this.getModifierValue('plan-price') && (
@@ -70,7 +70,7 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={style['top-icon']} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
           )}
           {this.getModifierValue('block-title') && (
             <Text
