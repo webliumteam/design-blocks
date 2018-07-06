@@ -1,6 +1,6 @@
 {
   "name": "wireframe-zapdos-faq",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "",
   "category": "faq",
   "main": "src/index.js",
