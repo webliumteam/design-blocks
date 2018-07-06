@@ -97,6 +97,7 @@
 
     @media (--ui-medium-devices) {
       height: calc(100% - 30px);
+      min-height: calc(100% - 30px);
     }
 
     &:only-of-type {
