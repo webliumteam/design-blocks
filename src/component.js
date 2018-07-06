@@ -14,7 +14,10 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Icon, Text}, style} = this.props
+    const {
+      components: {Icon, Text},
+      style,
+    } = this.props
     const showMainText = this.getModifierValue('item-title') || this.getModifierValue('item-body')
 
     return (
@@ -22,16 +25,24 @@ class Wireframe extends React.Component {
         {children}
         {this.getModifierValue('item-icon') && (
           <div className={style.item__icon}>
-            <Icon bind={`collection[${index}].icon`} />
+            <Icon bind={`collection[${index}].icon`} className={style.icon} />
           </div>
         )}
         {showMainText && (
           <div className={style.item__text}>
             {this.getModifierValue('item-title') && (
-              <Text tagName="h3" className={classNames(style.item__heading, 'heading')} bind={`collection[${index}].title`} />
+              <Text
+                tagName="h3"
+                className={classNames(style.item__heading, 'heading')}
+                bind={`collection[${index}].title`}
+              />
             )}
             {this.getModifierValue('item-body') && (
-              <Text tagName="p" className={classNames(style.item__desc, 'body')} bind={`collection[${index}].desc`} />
+              <Text
+                tagName="p"
+                className={classNames(style.item__desc, 'body')}
+                bind={`collection[${index}].desc`}
+              />
             )}
           </div>
         )}
@@ -40,26 +51,38 @@ class Wireframe extends React.Component {
             <li className={style.advantages__item}>
               {this.getModifierValue('list-icon') && (
                 <div className={style.advantages__icon}>
-                  <Icon bind={`collection[${index}].advantages[0].icon`} />
+                  <Icon bind={`collection[${index}].advantages[0].icon`} className={style.icon} />
                 </div>
               )}
-              <Text tagName="p" className={classNames(style.advantages__desc, 'body')} bind={`collection[${index}].advantages[0].desc`} />
+              <Text
+                tagName="p"
+                className={classNames(style.advantages__desc, 'body')}
+                bind={`collection[${index}].advantages[0].desc`}
+              />
             </li>
             <li className={style.advantages__item}>
               {this.getModifierValue('list-icon') && (
                 <div className={style.advantages__icon}>
-                  <Icon bind={`collection[${index}].advantages[0].icon`} />
+                  <Icon bind={`collection[${index}].advantages[0].icon`} className={style.icon} />
                 </div>
               )}
-              <Text tagName="p" className={classNames(style.advantages__desc, 'body')} bind={`collection[${index}].advantages[1].desc`} />
+              <Text
+                tagName="p"
+                className={classNames(style.advantages__desc, 'body')}
+                bind={`collection[${index}].advantages[1].desc`}
+              />
             </li>
             <li className={style.advantages__item}>
               {this.getModifierValue('list-icon') && (
                 <div className={style.advantages__icon}>
-                  <Icon bind={`collection[${index}].advantages[0].icon`} />
+                  <Icon bind={`collection[${index}].advantages[0].icon`} className={style.icon} />
                 </div>
               )}
-              <Text tagName="p" className={classNames(style.advantages__desc, 'body')} bind={`collection[${index}].advantages[2].desc`} />
+              <Text
+                tagName="p"
+                className={classNames(style.advantages__desc, 'body')}
+                bind={`collection[${index}].advantages[2].desc`}
+              />
             </li>
           </ul>
         )}
@@ -68,7 +91,12 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Text, Collection, Button}, style, $block, content} = this.props
+    const {
+      components: {Text, Collection, Button},
+      style,
+      $block,
+      content,
+    } = this.props
     const showButton = this.getModifierValue('button') || this.getModifierValue('additional-button')
     const collectionLength = _.get('collection.items.length', content) || 3
     const shrinkItems = collectionLength % 4 === 0 || collectionLength === 7
@@ -77,13 +105,24 @@ class Wireframe extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <div className={style.section__header}>
-            <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h2" />
+            <Text
+              bind="title"
+              className={classNames(style.title, 'title', 'text-center')}
+              tagName="h2"
+            />
             {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+              <Text
+                bind="subtitle"
+                className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                tagName="p"
+              />
             )}
           </div>
           <Collection
-            className={classNames(style['items-wrapper'], shrinkItems && style['items-wrapper--shink-items'])}
+            className={classNames(
+              style['items-wrapper'],
+              shrinkItems && style['items-wrapper--shink-items'],
+            )}
             bind="collection"
             Item={this.collectionItem}
             itemProps={{
@@ -93,18 +132,10 @@ class Wireframe extends React.Component {
           {showButton && (
             <div className={style['btns-group']}>
               {this.getModifierValue('button') && (
-                <Button
-                  linkClassName={style.link}
-                  className={style.button}
-                  bind="cta"
-                />
+                <Button linkClassName={style.link} className={style.button} bind="cta" />
               )}
               {this.getModifierValue('additional-button') && (
-                <Button
-                  linkClassName={style.link}
-                  className={style.button}
-                  bind="cta-2"
-                />
+                <Button linkClassName={style.link} className={style.button} bind="cta-2" />
               )}
             </div>
           )}
@@ -122,7 +153,8 @@ Wireframe.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Still have some hesitations whether cooperation with us is worth the trouble? Check the reasons why you should choose us among other companies!',
+    content:
+      'Still have some hesitations whether cooperation with us is worth the trouble? Check the reasons why you should choose us among other companies!',
     type: 'subtitle',
   },
   collection: {
@@ -143,7 +175,8 @@ Wireframe.defaultContent = {
         advantages: [
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
@@ -153,7 +186,8 @@ Wireframe.defaultContent = {
           },
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
@@ -163,7 +197,8 @@ Wireframe.defaultContent = {
           },
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
@@ -184,12 +219,14 @@ Wireframe.defaultContent = {
         },
         desc: {
           type: 'text',
-          content: 'We value each client and always respond to feedback throughout our cooperation.',
+          content:
+            'We value each client and always respond to feedback throughout our cooperation.',
         },
         advantages: [
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
@@ -199,7 +236,8 @@ Wireframe.defaultContent = {
           },
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
@@ -209,7 +247,8 @@ Wireframe.defaultContent = {
           },
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
@@ -230,12 +269,14 @@ Wireframe.defaultContent = {
         },
         desc: {
           type: 'text',
-          content: 'We create our products using the latest technologies to ensure the best experience.',
+          content:
+            'We create our products using the latest technologies to ensure the best experience.',
         },
         advantages: [
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
@@ -245,7 +286,8 @@ Wireframe.defaultContent = {
           },
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
@@ -255,7 +297,8 @@ Wireframe.defaultContent = {
           },
           {
             icon: {
-              svg: '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
+              svg:
+                '<svg viewBox="0 0 510 510"><path d="M255 0C114.75 0 0 114.75 0 255s114.75 255 255 255 255-114.75 255-255S395.25 0 255 0zm-51 382.5L76.5 255l35.7-35.7 91.8 91.8 193.8-193.8 35.7 35.7L204 382.5z"/></svg>',
               fill: 'brand-color',
             },
             desc: {
