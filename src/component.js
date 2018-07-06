@@ -35,7 +35,7 @@ class Block extends React.Component {
           tagName="span"
         />
       ),
-      icon: () => <Icon bind={`articles[${index}].icon`} />,
+      icon: () => <Icon className="icon" bind={`articles[${index}].icon`} />,
     }
     const selectedElement = cases[topElement] ? topElement : 'empty'
     const imageWrapperClass = selectedElement === 'image' ? style['image-wrapper'] : ''
@@ -85,7 +85,7 @@ class Block extends React.Component {
       <section className={classNames(style.section, noIconClass)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={style['top-icon']} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
           )}
           {sectionHeader && (
             <div className={style.section__header}>
