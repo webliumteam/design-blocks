@@ -182,7 +182,7 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('icon_decorator') && (
-            <Icon className={style['top-icon']} bind="icon_decorator" />
+            <Icon className={classNames(style['top-icon'], 'icon')} bind="icon_decorator" />
           )}
           <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />
           {this.getModifierValue('subtitle') && (
