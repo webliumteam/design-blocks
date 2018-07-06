@@ -64,7 +64,10 @@
     word-break: break-word;
 
     .item {
-      padding-right: 100px;
+
+      @media (--ui-tablet-devices) {
+        padding-right: 100px;
+      }
 
       &__info {
 
