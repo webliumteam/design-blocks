@@ -31,8 +31,8 @@ class Block extends React.Component {
     }
 
     this.linesValue = {
-      val: this.state.mobile ? 30 : 22,
-      distance: this.state.mobile ? 70 : 300,
+      val: canusedom && window.innerWidth < 800 ? 10 : 30,
+      distance: canusedom && window.innerWidth < 800 ? 70 : 300,
     }
 
     this.getPreset(this.getModifierValue('dTorusBufferGeometryynamic'))

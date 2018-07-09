@@ -164,7 +164,7 @@ export const lines = ({val = 10, distance = 70}) => ({
       direction: 'none',
       random: false,
       straight: false,
-      out_mode: 'out',
+      out_mode: 'bounce',
       bounce: false,
       attract: {
         enable: false,
@@ -396,7 +396,7 @@ export const snow = ({val = 60, speed = 2, distance = 100}) => ({
     },
   },
   interactivity: {
-    detect_on: 'window',
+    detect_on: 'canvas',
     events: {
       onhover: {
         enable: true,
