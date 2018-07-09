@@ -13,9 +13,15 @@ class Block extends React.Component {
   snowValues = {}
   linesValue = {}
 
+  state = {
+    mobile: false,
+  }
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
-  componentDidMount() {
+  componentWillMount() {
+    window.innerWidth < 800 && this.setState({mobile: true})
+
     this.snowValues = {
       speed: window.innerWidth < 800 ? 1 : 3,
       val: window.innerWidth < 800 ? 100 : 400,
@@ -23,25 +29,27 @@ class Block extends React.Component {
     }
 
     this.linesValue = {
-      val: window.innerWidth < 800 ? 30 : 22,
-      distance: window.innerWidth < 800 ? 70 : 300,
+      val: this.state.mobile ? 30 : 22,
+      distance: this.state.mobile ? 70 : 300,
     }
+
+    this.getPreset(this.getModifierValue('dTorusBufferGeometryynamic'))
   }
 
-  getPreset = (value, params) => {
+  componentDidMount() {
+    window.innerWidth < 800 && this.setState({mobile: true})
+  }
+
+  getPreset = (value) => {
     switch (value) {
       case 'lines':
         return lines(this.linesValue)
-        break
       case 'bubble':
         return bubble()
-        break
       case 'snow':
         return snow(this.snowValues)
-        break
       case 'nasa':
         return nasa()
-        break
       default:
         console.log('no preset')
     }
@@ -56,8 +64,6 @@ class Block extends React.Component {
     const themeAlignClass = this.getModifierValue('align') !== 'left'
       ? `text-${this.getModifierValue('align')}`
       : ''
-
-    const re = this.snowValues
     return (
       <section className={classNames(css.section, alignClass)}>
         <div className={css.section__inner}>
@@ -90,22 +96,22 @@ class Block extends React.Component {
           )}
         </div>
         {this.getModifierValue('dynamic') !== 'none' ?
-        (this.getModifierValue('dynamic') === 'waves' ?
-          <Wave {...{
-            color: '#fff',
-            separation: 50,
-            height: 30,
-            amountX: 50,
-            amountY: 50,
-            speed: 0.3,
-            className: css['vawe-canvas'],
-            scale: 0.5,
-          }}
-          /> :
-          <Particles
-            canvasClassName={css.canvas}
-            params={(this.getPreset(this.getModifierValue('dynamic')))}
-          />) : null
+          (this.getModifierValue('dynamic') === 'waves' ?
+            <Wave {...{
+              color: '#fff',
+              separation: 50,
+              height: 30,
+              amountX: 50,
+              amountY: 50,
+              speed: 0.3,
+              className: css['vawe-canvas'],
+              scale: 0.5,
+            }}
+            /> :
+            <Particles
+              canvasClassName={css.canvas}
+              params={(this.getPreset(this.getModifierValue('dynamic')))}
+            />) : null
         }
       </section>
     )

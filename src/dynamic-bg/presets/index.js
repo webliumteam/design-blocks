@@ -160,7 +160,7 @@ export const lines = ({val = 10, distance = 70}) => ({
     },
     move: {
       enable: true,
-      speed: 2,
+      speed: 1,
       direction: 'none',
       random: false,
       straight: false,
