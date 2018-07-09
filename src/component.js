@@ -212,4 +212,8 @@ Block.modifierScheme = {
   'secondary-button': {defaultValue: false, label: 'Additional button (link) ', type: 'hidden', sortOrder: 50},
 }
 
+Block.configuration = {
+  enableCoverSlider: true,
+}
+
 export default Block
