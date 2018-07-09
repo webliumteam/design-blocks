@@ -94,12 +94,21 @@ class Wireframe extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                className={style.button}
-                linkClassName={style.link}
-                bind="button"
-              />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                <Button
+                  className={classNames(style.button, 'button')}
+                  linkClassName={style.link}
+                  bind="button"
+                />
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'button')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -225,6 +234,10 @@ Wireframe.defaultContent = {
     type: 'secondary',
     textValue: 'Learn more',
   },
+  button_additional: {
+    type: 'primary',
+    textValue: 'Learn more',
+  },
 }
 
 Wireframe.modifierScheme = {
@@ -235,6 +248,7 @@ Wireframe.modifierScheme = {
   item_date_icon: {defaultValue: true, label: 'Post time icon', type: 'checkbox', sortOrder: 50},
   item_date: {defaultValue: true, label: 'Post publication time', type: 'checkbox', sortOrder: 60},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
+  button_additional: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
 }
 
 export default Wireframe
