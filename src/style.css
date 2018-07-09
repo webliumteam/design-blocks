@@ -52,7 +52,7 @@
   min-height: 273px;
   padding: 42px 20px;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
 
   @media (--ui-tablet-devices) {
     max-width: 50%;
