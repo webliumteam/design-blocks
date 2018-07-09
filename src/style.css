@@ -49,6 +49,9 @@
   &__top-element {
     margin-bottom: 0;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &::after {
       content: "";
