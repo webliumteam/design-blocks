@@ -1,6 +1,8 @@
 import $editor from 'weblium/editor'
 import Wave from './dynamic-bg/waves'
 import Particles from 'react-particles-js'
+import canusedom from 'can-use-dom'
+
 import {bubble, lines, nasa, snow} from './dynamic-bg/presets'
 
 class Block extends React.Component {
@@ -20,12 +22,12 @@ class Block extends React.Component {
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   componentWillMount() {
-    window.innerWidth < 800 && this.setState({mobile: true})
+    canusedom && window.innerWidth < 800 && this.setState({mobile: true})
 
     this.snowValues = {
-      speed: window.innerWidth < 800 ? 1 : 3,
-      val: window.innerWidth < 800 ? 100 : 400,
-      distance: window.innerWidth < 800 ? 70 : 200,
+      speed: canusedom && window.innerWidth < 800 ? 1 : 3,
+      val: canusedom && window.innerWidth < 800 ? 100 : 400,
+      distance: canusedom && window.innerWidth < 800 ? 70 : 200,
     }
 
     this.linesValue = {
@@ -37,7 +39,7 @@ class Block extends React.Component {
   }
 
   componentDidMount() {
-    window.innerWidth < 800 && this.setState({mobile: true})
+    canusedom && window.innerWidth < 800 && this.setState({mobile: true})
   }
 
   getPreset = (value) => {
