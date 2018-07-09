@@ -248,7 +248,7 @@ Wireframe.modifierScheme = {
   item_date_icon: {defaultValue: true, label: 'Post time icon', type: 'checkbox', sortOrder: 50},
   item_date: {defaultValue: true, label: 'Post publication time', type: 'checkbox', sortOrder: 60},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
-  button_additional: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
+  button_additional: {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', sortOrder: 80},
 }
 
 export default Wireframe
