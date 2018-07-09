@@ -128,11 +128,14 @@
 }
 
 .btns-group {
+  margin: 30px -10px -10px;
+}
+
+.btns-group__inner {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin: 30px -10px -10px;
 }
 
 .button {

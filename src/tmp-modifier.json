@@ -1,1 +1,4 @@
-{}
+{
+  "button-primary": {"defaultValue": true, "label": "Primary button", "type": "checkbox"},
+  "button-secondary": {"defaultValue": true, "label": "Secondary button", "type": "checkbox"}
+}
