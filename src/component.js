@@ -296,9 +296,9 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Description of FAQ', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Type/Category of questions', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 10},
+  heading: {defaultValue: true, label: 'Type/Category of questions', type: 'checkbox', sortOrder: 20},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 30},
 }
 
 export default Block
