@@ -285,10 +285,10 @@ Wireframe.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox', sortOrder: 10},
   title: {defaultValue: true, label: 'Panel title', type: 'checkbox', sortOrder: 20},
   body: {defaultValue: true, label: 'Panel text', type: 'checkbox', sortOrder: 30},
-  'primary-button': {defaultValue: false, label: 'Panel button (link) ', type: 'checkbox', sortOrder: 60},
-  'secondary-button': {defaultValue: false, label: 'Panel additional button (link) ', type: 'checkbox', sortOrder: 70},
-  counter: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox', sortOrder: 40},
-  arrows: {defaultValue: true, label: 'Navigation arrows', type: 'checkbox', sortOrder: 50},
+  'primary-button': {defaultValue: false, label: 'Panel button (link) ', type: 'checkbox', sortOrder: 40},
+  'secondary-button': {defaultValue: false, label: 'Panel additional button (link) ', type: 'checkbox', sortOrder: 50},
+  counter: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox', sortOrder: 60},
+  arrows: {defaultValue: true, label: 'Navigation arrows', type: 'checkbox', sortOrder: 70},
 }
 
 export default Wireframe
