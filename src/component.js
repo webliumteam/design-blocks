@@ -112,8 +112,8 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Title description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 20},
   picture: {defaultValue: false, label: 'Picture', type: 'hidden'},
 }
 
