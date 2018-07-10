@@ -74,7 +74,7 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'CTA description', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 10},
 }
 
 export default Block
