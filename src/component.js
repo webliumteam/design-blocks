@@ -121,12 +121,13 @@ Wireframe.modifierScheme = {
       {id: 'right', label: 'right'},
     ],
     defaultValue: 'center',
-    name: 'Items alignment',
+    name: 'Block alignment',
     type: 'radio-button-group',
     style: 'buttons',
+    sortOrder: 10,
   },
-  title: {defaultValue: true, label: 'Title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 20},
+  subtitle: {defaultValue: true, label: 'Block  description', type: 'checkbox', sortOrder: 30},
 }
 
 export default Wireframe
