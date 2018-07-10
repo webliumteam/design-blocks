@@ -70,13 +70,15 @@ class Block extends React.Component {
               </div>
             )}
             {showButtonGroups && (
-              <div className={style['btns-group']}>
-                {this.getModifierValue('button') && (
-                  <Button className={style.button} linkClassName={style.link} bind="button-1" />
-                )}
-                {this.getModifierValue('additional-button') && (
-                  <Button className={style.button} linkClassName={style.link} bind="button-2" />
-                )}
+              <div className={classNames(style['btns-group'], 'btns-group')}>
+                <div className="btns-group__inner">
+                  {this.getModifierValue('button') && (
+                    <Button className={classNames(style.button, 'button')} linkClassName={style.link} bind="button-1" />
+                  )}
+                  {this.getModifierValue('additional-button') && (
+                    <Button className={classNames(style.button, 'button')} linkClassName={style.link} bind="button-2" />
+                  )}
+                </div>
               </div>
             )}
           </article>
