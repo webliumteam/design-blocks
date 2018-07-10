@@ -61,8 +61,8 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'hidden'},
-  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'hidden', sortOrder: 10},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 20},
 }
 
 export default Wireframe
