@@ -98,7 +98,7 @@ Block.components = _.pick(['Text', 'Menu', 'Logo', 'SocialIcons'])($editor.compo
 Block.defaultContent = {
   logo: {
     text: {
-      value: 'Company Logo',
+      value: 'Quantum Company',
       fontSize: 24,
     },
   },
@@ -338,11 +338,11 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
-  description: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  social: {defaultValue: true, label: 'Social media icons', type: 'checkbox'},
-  leftText: {defaultValue: true, label: 'Left text', type: 'checkbox'},
-  rightText: {defaultValue: true, label: 'Right text', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Name / logo', type: 'checkbox', sortOrder: 10},
+  description: {defaultValue: true, label: 'Description', type: 'checkbox', sortOrder: 20},
+  social: {defaultValue: true, label: 'Social media buttons', type: 'checkbox', sortOrder: 30},
+  leftText: {defaultValue: true, label: 'Bottom  left text', type: 'checkbox', sortOrder: 40},
+  rightText: {defaultValue: true, label: 'Bottom right text', type: 'checkbox', sortOrder: 50},
 }
 
 export default Block
