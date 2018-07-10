@@ -315,10 +315,11 @@ Block.modifierScheme = {
     name: 'Menu alignment',
     type: 'radio-button-group',
     style: 'buttons',
+    sortOrder: 10,
   },
-  text: {defaultValue: true, label: 'Contact information', type: 'checkbox'},
-  'social-icons': {defaultValue: true, label: 'Social buttons', type: 'checkbox'},
-  logo: {defaultValue: true, label: 'Company name', type: 'checkbox'},
+  text: {defaultValue: true, label: 'Contact information', type: 'checkbox', sortOrder: 20},
+  'social-icons': {defaultValue: true, label: 'Social media buttons', type: 'checkbox', sortOrder: 30},
+  logo: {defaultValue: true, label: 'Name / logo', type: 'checkbox', sortOrder: 40},
 }
 
 export default Block
