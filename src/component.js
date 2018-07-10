@@ -483,7 +483,7 @@ Wireframe.defaultContent = {
         },
       },
     },
-    textValue: 'All events',
+    textValue: 'Show all events',
     type: 'secondary',
   },
 }
