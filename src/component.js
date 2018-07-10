@@ -78,7 +78,7 @@ Block.components = _.pick(['Text', 'Menu', 'Logo'])($editor.components)
 Block.defaultContent = {
   logo: {
     text: {
-      value: 'Company Logo',
+      value: 'Quantum Company',
       fontSize: 24,
     },
   },
@@ -170,9 +170,9 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
-  'text-left': {defaultValue: true, label: 'Left text', type: 'checkbox'},
-  'text-right': {defaultValue: true, label: 'Right text', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Name / logo', type: 'checkbox', sortOrder: 10},
+  'text-left': {defaultValue: true, label: 'Bottom  left text', type: 'checkbox', sortOrder: 20},
+  'text-right': {defaultValue: true, label: 'Bottom right text', type: 'checkbox', sortOrder: 30},
 }
 
 
