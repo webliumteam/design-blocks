@@ -278,11 +278,11 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: false, label: "Event's description", type: 'checkbox'},
-  badge: {defaultValue: true, label: "Event's type", type: 'checkbox'},
-  location: {defaultValue: true, label: "Event's location", type: 'checkbox'},
-  link: {defaultValue: true, label: "Event's link", type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 10},
+  badge: {defaultValue: true, label: 'Event type', type: 'checkbox', sortOrder: 20},
+  location: {defaultValue: true, label: 'Event location', type: 'checkbox', sortOrder: 30},
+  link: {defaultValue: true, label: 'Event link (button)', type: 'checkbox', sortOrder: 40},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
