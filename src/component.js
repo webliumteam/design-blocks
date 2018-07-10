@@ -267,8 +267,8 @@ Block.defaultContent = {
       },
     ],
     submitButton: {
-      title: 'subscribe',
-      textValue: 'subscribe',
+      title: 'Subscribe',
+      textValue: 'Subscribe',
       type: 'primary',
     },
     className: 'form',
@@ -286,10 +286,10 @@ Block.defaultContent = {
 
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Company name', type: 'checkbox'},
-  caption: {defaultValue: true, label: 'Company main text', type: 'checkbox'},
-  social: {defaultValue: true, label: 'Social buttons', type: 'checkbox'},
-  'subscribe-form': {defaultValue: true, label: 'Subscribe form', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Name / logo', type: 'checkbox', sortOrder: 10},
+  caption: {defaultValue: true, label: 'Description', type: 'checkbox', sortOrder: 20},
+  social: {defaultValue: true, label: 'Social media buttons', type: 'checkbox', sortOrder: 30},
+  'subscribe-form': {defaultValue: true, label: 'Subscription form', type: 'checkbox', sortOrder: 40},
 }
 
 
