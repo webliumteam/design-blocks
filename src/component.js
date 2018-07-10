@@ -268,9 +268,9 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  logo: {defaultValue: true, label: 'Company name', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Company slogan', type: 'checkbox'},
-  socials: {defaultValue: true, label: 'Social icons', type: 'checkbox'},
+  logo: {defaultValue: true, label: 'Name / logo', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: true, label: 'Slogan', type: 'checkbox', sortOrder: 20},
+  socials: {defaultValue: true, label: 'Social media buttons', type: 'checkbox', sortOrder: 30},
 }
 
 export default Block
