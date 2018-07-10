@@ -134,11 +134,12 @@ Block.modifierScheme = {
     name: 'Header alignment',
     type: 'radio-button-group',
     style: 'buttons',
+    sortOrder: 10,
   },
-  title: {defaultValue: true, label: 'Hero title', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Title description', type: 'checkbox'},
-  'form-title': {defaultValue: true, label: 'Form title', type: 'checkbox'},
-  'form-description': {defaultValue: true, label: 'Form description', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 20},
+  subtitle: {defaultValue: true, label: 'Block subtitle', type: 'checkbox', sortOrder: 30},
+  'form-title': {defaultValue: true, label: 'Form title', type: 'checkbox', sortOrder: 40},
+  'form-description': {defaultValue: true, label: 'Form description', type: 'checkbox', sortOrder: 50},
   'header-button': {defaultValue: false, label: 'Header button', type: 'hidden'},
 }
 
