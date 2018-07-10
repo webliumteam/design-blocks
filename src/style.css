@@ -57,13 +57,15 @@
       padding-bottom: 0;
       padding-left: 12.1%;
       padding-right: 0;
-      max-width: 60%;
+      width: 60%;
+      min-width: 60%;
       margin-left: 0;
       margin-right: auto;
     }
 
     @media (min-width: 1200px) {
-      max-width: 50%;
+      width: 50%;
+      min-width: 50%;
     }
   }
 
