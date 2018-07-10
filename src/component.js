@@ -63,7 +63,7 @@ Block.defaultContent = {
       },
     ],
     submitButton: {
-      title: 'subscribe',
+      title: 'Subscribe',
       textValue: 'Subscribe',
       type: 'primary',
       size: 'lg',
