@@ -229,14 +229,14 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Subtitle', type: 'checkbox'},
-  month: {defaultValue: true, label: 'Month', type: 'checkbox'},
-  day: {defaultValue: true, label: 'Day of week', type: 'checkbox'},
-  type: {defaultValue: true, label: 'Event`s type', type: 'checkbox'},
-  location: {defaultValue: true, label: 'Event`s location', type: 'checkbox'},
-  time: {defaultValue: true, label: 'Event`s time', type: 'checkbox'},
-  line: {defaultValue: true, label: 'Line', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 10},
+  month: {defaultValue: true, label: 'Month of event', type: 'checkbox', sortOrder: 20},
+  day: {defaultValue: true, label: 'Day of the week', type: 'checkbox', sortOrder: 30},
+  type: {defaultValue: true, label: 'Event type', type: 'checkbox', sortOrder: 40},
+  location: {defaultValue: true, label: 'Event location', type: 'checkbox', sortOrder: 50},
+  time: {defaultValue: true, label: 'Event time', type: 'checkbox', sortOrder: 60},
+  line: {defaultValue: true, label: 'Line', type: 'checkbox', sortOrder: 70},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 80},
 }
 
 export default Wireframe
