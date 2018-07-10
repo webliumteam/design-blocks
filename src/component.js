@@ -289,8 +289,8 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'company-slogan': {defaultValue: true, label: 'Company slogan', type: 'checkbox'},
-  'company-contacts': {defaultValue: true, label: 'Contact information', type: 'checkbox'},
+  'company-slogan': {defaultValue: true, label: 'Slogan', type: 'checkbox', sortOrder: 10},
+  'company-contacts': {defaultValue: true, label: 'Contact information', type: 'checkbox', sortOrder: 20},
 }
 
 export default Block
