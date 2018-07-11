@@ -173,7 +173,7 @@ Block.defaultContent = {
             },
           },
           type: 'primary',
-          textValue: 'Choose plan',
+          textValue: 'Select plan',
         },
       },
       {
@@ -210,7 +210,7 @@ Block.defaultContent = {
             },
           },
           type: 'primary',
-          textValue: 'Choose plan',
+          textValue: 'Select plan',
         },
       },
       {
@@ -247,7 +247,7 @@ Block.defaultContent = {
             },
           },
           type: 'primary',
-          textValue: 'Choose plan',
+          textValue: 'Select plan',
         },
       },
     ],
@@ -265,18 +265,18 @@ Block.defaultContent = {
     },
     type: 'secondary',
     size: 'md',
-    textValue: 'Additional button',
+    textValue: 'Learn more',
   },
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Pricing title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Pricing description', type: 'checkbox'},
-  item_icon: {defaultValue: true, label: 'Pricing icon', type: 'checkbox'},
-  item_price: {defaultValue: true, label: 'Price', type: 'checkbox'},
-  item_caption: {defaultValue: true, label: 'Price period', type: 'checkbox'},
-  item_button: {defaultValue: true, label: 'Price button', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
+  item_icon: {defaultValue: true, label: 'Product icon', type: 'checkbox', sortOrder: 30},
+  item_price: {defaultValue: true, label: 'Price', type: 'checkbox', sortOrder: 40},
+  item_caption: {defaultValue: true, label: 'Price description', type: 'checkbox', sortOrder: 50},
+  item_button: {defaultValue: true, label: 'Product button (link)', type: 'checkbox', sortOrder: 60},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
 }
 
 export default Block
