@@ -241,7 +241,7 @@ Block.defaultContent = {
     type: 'subtitle',
   },
   button: {
-    textValue: 'Learn more',
+    textValue: 'Show more',
     type: 'secondary',
   },
   'top-caption': {
