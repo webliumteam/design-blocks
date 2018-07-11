@@ -177,10 +177,10 @@ Block.modifierScheme = {
     name: 'Arrange elements',
     type: 'swap',
   },
-  subtitle: {defaultValue: false, label: 'Services description', type: 'checkbox'},
-  'body-text': {defaultValue: true, label: 'Service main text', type: 'checkbox'},
-  'service-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 10},
+  'body-text': {defaultValue: true, label: 'Service description', type: 'checkbox', sortOrder: 20},
+  'service-button': {defaultValue: true, label: 'Service button (link)', type: 'checkbox', sortOrder: 30},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
 }
 
 export default Block
