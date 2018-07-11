@@ -50,13 +50,24 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="button"
-              />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -136,12 +147,27 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'primary',
+  },
 }
 
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
   subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
   button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 30},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden', sortOrder: 30},
 }
 
 
