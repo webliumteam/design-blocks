@@ -101,7 +101,7 @@ class Block extends React.Component {
             modifier: $block.modifier,
           }}
         />
-        {this.getModifierValue('button') && (
+        {this.getModifierValue('secondary-button') && (
           <div className={classNames(css['btns-group'], 'btns-group')}>
             <div className="btns-group__inner">
               <Button
@@ -298,7 +298,7 @@ Block.modifierScheme = {
   'item-icon': {defaultValue: false, label: 'Vacancy icon', type: 'checkbox', sortOrder: 20},
   employment: {defaultValue: true, label: 'Employment type', type: 'checkbox', sortOrder: 30},
   position: {defaultValue: true, label: 'Vacancy location', type: 'checkbox', sortOrder: 40},
-  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
+  'secondary-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
   button_additional: {defaultValue: false, label: 'Button Additional', type: 'hidden', sortOrder: 60},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
