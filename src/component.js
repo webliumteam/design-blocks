@@ -75,13 +75,24 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                linkClassName={style.link}
-                buttonClassName={style.button}
-                bind="button"
-              />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -244,6 +255,10 @@ Block.defaultContent = {
     textValue: 'Show more',
     type: 'secondary',
   },
+  button_additional: {
+    textValue: 'Show more',
+    type: 'primary',
+  },
   'top-caption': {
     content: 'vitae sapien ut libero',
     type: 'text',
@@ -262,6 +277,7 @@ Block.modifierScheme = {
   body: {defaultValue: true, label: 'Partner description', type: 'checkbox', sortOrder: 40},
   link: {defaultValue: true, label: 'Partner  link (button)', type: 'checkbox', sortOrder: 50},
   button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
+  button_additional: {defaultValue: false, label: 'Button (link)', type: 'hidden', sortOrder: 60},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
