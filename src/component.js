@@ -31,10 +31,18 @@ class Block extends React.Component {
           onOpenLightbox={openLightbox}
         />
         {_.get('body-text')(modifier) && (
-          <Text tagName="p" className={classNames(style.item__text, 'body')} bind={`gallery[${index}].title`} />
+          <Text
+            tagName="p"
+            className={classNames(style.item__text, 'body')}
+            bind={`gallery[${index}].title`}
+          />
         )}
         {_.get('caption')(modifier) && (
-          <Text tagName="p" className={classNames(style.item__caption, 'caption')} bind={`gallery[${index}].caption`} />
+          <Text
+            tagName="p"
+            className={classNames(style.item__caption, 'caption')}
+            bind={`gallery[${index}].caption`}
+          />
         )}
       </div>
     )
@@ -80,8 +88,14 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('secondary-button') && (
-            <div className={style['btns-group']}>
-              <Button className={style.button} linkClassName={style.link} bind="cta" />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className={classNames(style.button, 'button')}
+                  linkClassName={style.link}
+                  bind="cta"
+                />
+              </div>
             </div>
           )}
         </div>
@@ -218,7 +232,12 @@ Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
   subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
   'body-text': {defaultValue: false, label: 'Image description', type: 'checkbox', sortOrder: 30},
-  'secondary-button': {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
+  'secondary-button': {
+    defaultValue: false,
+    label: 'Button (link)',
+    type: 'checkbox',
+    sortOrder: 40,
+  },
   caption: {defaultValue: false, label: 'Image caption', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
