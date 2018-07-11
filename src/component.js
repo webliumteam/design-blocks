@@ -398,18 +398,19 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'block-title': {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Pricing description', type: 'checkbox'},
-  'plan-icon': {defaultValue: true, label: 'Product icon', type: 'checkbox'},
-  'plan-price': {defaultValue: true, label: 'Product price', type: 'checkbox'},
+  'block-title': {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
+  'plan-icon': {defaultValue: true, label: 'Product icon', type: 'checkbox', sortOrder: 30},
+  'plan-price': {defaultValue: true, label: 'Price', type: 'checkbox', sortOrder: 40},
   'plan-additional-info': {
     defaultValue: true,
-    label: 'Product additional information',
+    label: 'Price description',
     type: 'checkbox',
+    sortOrder: 50,
   },
-  'plan-description': {defaultValue: true, label: 'Product description', type: 'checkbox'},
-  'plan-button': {defaultValue: true, label: 'Primary small button', type: 'checkbox'},
-  'additional-btn': {defaultValue: true, label: 'Medium button secondary', type: 'checkbox'},
+  'plan-description': {defaultValue: true, label: 'Product description', type: 'checkbox', sortOrder: 60},
+  'plan-button': {defaultValue: true, label: 'Product button (link)', type: 'checkbox', sortOrder: 70},
+  'additional-btn': {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 80},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
