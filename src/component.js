@@ -20,21 +20,23 @@ class Block extends React.Component {
           <Text tagName="h2" className={style.item__title} bind={`cover[${index}].title`} />
           {_.get('subtitle')(modifier) && <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind={`cover[${index}].subtitle`} />}
           {(_.get('primary-button')(modifier) || _.get('secondary-button')(modifier)) && (
-            <div className={style['btns-group']}>
-              {_.get('primary-button')(modifier) && (
-                <Button
-                  buttonClassName={style.button}
-                  linkClassName={style.link}
-                  bind={`cover[${index}].cta`}
-                />
-              )}
-              {_.get('secondary-button')(modifier) && (
-                <Button
-                  buttonClassName={style.button}
-                  linkClassName={style.link}
-                  bind={`cover[${index}]cta-2]`}
-                />
-              )}
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {_.get('primary-button')(modifier) && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind={`cover[${index}].cta`}
+                  />
+                )}
+                {_.get('secondary-button')(modifier) && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind={`cover[${index}]cta-2]`}
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
