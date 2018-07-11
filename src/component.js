@@ -138,8 +138,8 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Projects description', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: true, label: 'Block  description', type: 'checkbox', sortOrder: 10},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 20},
 }
 
 
