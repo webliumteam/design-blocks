@@ -120,10 +120,10 @@ class Block extends React.Component {
             <div className={classNames(style['btns-group'], 'btns-group', 'btns-group--align-center')}>
               <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
                 {this.getModifierValue('button-primary') && (
-                  <Button buttonClassName={style.button} linkClassName={style.link} bind="button-2" />
+                  <Button buttonClassName={classNames(style.button, 'button')} linkClassName={style.link} bind="button-2" />
                 )}
                 {this.getModifierValue('button-secondary') && (
-                  <Button className={style.button} linkClassName={style.link} bind="button-1" />
+                  <Button className={classNames(style.button, 'button')} linkClassName={style.link} bind="button-1" />
                 )}
               </div>
             </div>
