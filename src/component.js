@@ -242,7 +242,7 @@ Block.defaultContent = {
               },
             },
           },
-          textValue: 'Request a quote',
+          textValue: 'Select plan',
           type: 'primary',
         },
       },
@@ -269,14 +269,14 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Pricing description', type: 'checkbox'},
-  icon: {defaultValue: true, label: 'Product icon', type: 'checkbox'},
-  price: {defaultValue: true, label: 'Product price', type: 'checkbox'},
-  'price-info': {defaultValue: true, label: 'Price additional info', type: 'checkbox'},
-  body: {defaultValue: true, label: 'Product details', type: 'checkbox'},
-  'product-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
+  icon: {defaultValue: true, label: 'Product icon', type: 'checkbox', sortOrder: 30},
+  price: {defaultValue: true, label: 'Price', type: 'checkbox', sortOrder: 40},
+  'price-info': {defaultValue: true, label: 'Price description', type: 'checkbox', sortOrder: 50},
+  body: {defaultValue: true, label: 'Product description', type: 'checkbox', sortOrder: 60},
+  'product-button': {defaultValue: true, label: 'Product button (link)', type: 'checkbox', sortOrder: 70},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 80},
 }
 
 export default Block
