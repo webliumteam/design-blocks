@@ -68,3 +68,11 @@
     margin-top: 17px;
   }
 }
+
+.item__position,
+.item__title,
+.item__desc,
+.item__email {
+  word-break: break-word;
+  text-align: center;
+}
