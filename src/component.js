@@ -35,7 +35,11 @@ class Wireframe extends React.Component {
             onOpenLightbox={openLightbox}
           />
           {this.getModifierValue('item-heading') && (
-            <Text tagName="h2" className={classNames(style.item__heading, 'subtitle', 'text-center', 'text-lg-left')} bind={`gallery[${index}].heading`} />
+            <Text
+              tagName="h2"
+              className={classNames(style.item__heading, 'subtitle', 'text-center', 'text-lg-left')}
+              bind={`gallery[${index}].heading`}
+            />
           )}
         </div>
       </div>
@@ -115,9 +119,24 @@ class Wireframe extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('secondary-button') && (
-            <div className={style['btns-group']}>
-              <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
+          {(this.getModifierValue('secondary-button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('secondary-button') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="cta"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -236,13 +255,33 @@ Wireframe.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+  button_additional: {
+    textValue: 'Learn more',
+    type: 'primary',
+  },
 }
 
 Wireframe.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
   subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
-  'item-heading': {defaultValue: false, label: 'Image description', type: 'checkbox', sortOrder: 30},
-  'secondary-button': {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
+  'item-heading': {
+    defaultValue: false,
+    label: 'Image description',
+    type: 'checkbox',
+    sortOrder: 30,
+  },
+  'secondary-button': {
+    defaultValue: false,
+    label: 'Button (link)',
+    type: 'checkbox',
+    sortOrder: 40,
+  },
+  button_additional: {
+    defaultValue: false,
+    label: 'Button additional',
+    type: 'hidden',
+    sortOrder: 50,
+  },
 }
 
 export default Wireframe
