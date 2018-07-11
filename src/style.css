@@ -135,13 +135,28 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: var(--ui-brand-color);
+    background-color: transparent;
     color: currentColor;
     font-family: var(--ui-text-font-family);
     font-size: var(--ui-text-size);
     line-height: var(--ui-text-line-height);
     font-weight: var(--ui-text-font-weight);
+    z-index: 1;
   }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 36px;
+    min-width: 36px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: var(--ui-brand-color);
+    opacity: 0.6;
+  }
+  
 
   &--icon {
     &-none {
