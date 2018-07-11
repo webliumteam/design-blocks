@@ -712,16 +712,16 @@ Wireframe.modifierScheme = {
       {id: '7', label: '7'},
     ],
     defaultValue: '4',
-    name: 'Text items in day',
+    name: 'Text fields in day',
     type: 'radio-button-group',
     style: 'buttons',
   },
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Schedule description', type: 'checkbox'},
-  time: {defaultValue: true, label: 'Time', type: 'checkbox'},
-  event: {defaultValue: true, label: 'Event', type: 'checkbox'},
-  // button: {defaultValue: true, label: 'Button', type: 'checkbox'},
-  // 'additional-button': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
+  time: {defaultValue: true, label: 'Time', type: 'checkbox', sortOrder: 30},
+  event: {defaultValue: true, label: 'Event name', type: 'checkbox', sortOrder: 40},
+  // button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
+  // 'additional-button': {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', sortOrder: 60},
 }
 
 export default Wireframe
