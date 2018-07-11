@@ -206,12 +206,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: false, label: 'Service description', type: 'checkbox'},
-  'item-desc': {defaultValue: false, label: 'Service details', type: 'checkbox'},
-  'body-text': {defaultValue: true, label: 'Service main text', type: 'checkbox'},
-  'service-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
-  button_additional: {defaultValue: false, label: 'Additional button', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 10},
+  'item-desc': {defaultValue: false, label: 'Service subtitle', type: 'checkbox', sortOrder: 20},
+  'body-text': {defaultValue: true, label: 'Service description', type: 'checkbox', sortOrder: 30},
+  'service-button': {defaultValue: true, label: 'Service link (button)', type: 'checkbox', sortOrder: 40},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
+  button_additional: {defaultValue: false, label: 'Additional button (link)', type: 'hidden', sortOrder: 60},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
