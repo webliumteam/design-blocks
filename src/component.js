@@ -46,8 +46,15 @@ class Block extends React.Component {
       ) : (
         this.getContent()
       ),
-      <div className={style['btns-group']}>
-        <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
+      <div className={classNames(style['btns-group'], 'btns-group')}>
+        <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+          <Button
+            className="butttton"
+            buttonClassName={style.button}
+            linkClassName={style.link}
+            bind="cta"
+          />
+        </div>
       </div>,
       this.getModifierValue('picture') && (
         <Image
