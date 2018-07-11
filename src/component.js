@@ -41,9 +41,17 @@ class Block extends React.Component {
                 tagName="p"
               />
             )}
-            <Text bind={`projects[${index}].title`} className={classNames(style.article__title, 'heading')} tagName="h2" />
+            <Text
+              bind={`projects[${index}].title`}
+              className={classNames(style.article__title, 'heading')}
+              tagName="h2"
+            />
             {_.get('project-description')(modifier) && (
-              <Text bind={`projects[${index}].text`} className={classNames(style.article__text, 'body')} tagName="p" />
+              <Text
+                bind={`projects[${index}].text`}
+                className={classNames(style.article__text, 'body')}
+                tagName="p"
+              />
             )}
             {(_.get('project-button')(modifier) || _.get('project-button-2')(modifier)) && (
               <div className={style.article__buttons}>
@@ -110,8 +118,14 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('block-button') && (
-            <div className={style['btns-group']}>
-              <Button className={style.button} linkClassName={style.link} bind="cta" />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className={classNames(style.button, 'butttton')}
+                  linkClassName={style.link}
+                  bind="cta"
+                />
+              </div>
             </div>
           )}
         </div>
@@ -120,14 +134,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick([
-  'Collection',
-  'Text',
-  'Button',
-  'Image',
-  'Icon',
-  'Resizer',
-])($editor.components)
+Block.components = _.pick(['Collection', 'Text', 'Button', 'Image', 'Icon', 'Resizer'])($editor.components)
 
 Block.defaultContent = {
   projects: [
