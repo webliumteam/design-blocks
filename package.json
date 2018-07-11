@@ -1,6 +1,6 @@
 {
   "name": "wireframe-series-2-pricing",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "category": "pricing",
   "main": "src/index.js",
