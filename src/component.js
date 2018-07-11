@@ -35,7 +35,11 @@ class Block extends React.Component {
       style,
     } = this.props
     return [
-      <Text tagName="h2" className={classNames(style.plan__title, 'heading', 'text-center')} bind={`plan-title-${itemNumber}`} />,
+      <Text
+        tagName="h2"
+        className={classNames(style.plan__title, 'heading', 'text-center')}
+        bind={`plan-title-${itemNumber}`}
+      />,
       this.getModifierValue('plan-icon') && (
         <div className={style['plan__icon-wrapper']}>
           <Icon bind={`plan-icon-${itemNumber}`} className="icon" />
@@ -170,8 +174,15 @@ class Block extends React.Component {
             </Background>
           </div>
           {this.getModifierValue('additional-btn') && (
-            <div className={style['btns-group']}>
-              <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className="butttton"
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind="cta"
+                />
+              </div>
             </div>
           )}
         </div>
