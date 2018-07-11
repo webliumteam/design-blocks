@@ -151,14 +151,15 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
   'number-title': {
     defaultValue: true,
-    label: 'Additional information on numbers',
+    label: 'Numbers heading',
     type: 'checkbox',
+    sortOrder: 20,
   },
-  body: {defaultValue: true, label: 'Numbers description', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Button', type: 'checkbox'},
+  body: {defaultValue: true, label: 'Numbers descriprion', type: 'checkbox', sortOrder: 30},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
