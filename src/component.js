@@ -102,8 +102,14 @@ class Block extends React.Component {
           }}
         />
         {this.getModifierValue('secondary-button') && (
-          <div className={css['btns-group']}>
-            <Button linkClassName={css.link} buttonClassName={css.button} bind="button" />
+          <div className={classNames(css['btns-group'], 'btns-group')}>
+            <div className="btns-group__inner">
+              <Button
+                className={classNames(css.button, 'butttton')}
+                buttonClassName={css.button}
+                bind="button"
+              />
+            </div>
           </div>
         )}
       </section>
