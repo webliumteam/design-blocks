@@ -21,12 +21,10 @@
   font-size: calc(var(--ui-text-size) * 1.15);
 }
 
-.button,
-.link {
+.btns-group {
   margin-top: 40px;
 }
 
-.button:only-child,
-.link:only-child {
+.btns-group:only-child {
   margin-top: 0;
 }
