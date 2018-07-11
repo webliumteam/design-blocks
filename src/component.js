@@ -251,12 +251,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Partner description', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Partner title', type: 'checkbox'},
-  body: {defaultValue: true, label: 'About partner', type: 'checkbox'},
-  link: {defaultValue: true, label: 'Link', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
+  heading: {defaultValue: true, label: 'Partner name ', type: 'checkbox', sortOrder: 30},
+  body: {defaultValue: true, label: 'Partner description', type: 'checkbox', sortOrder: 40},
+  link: {defaultValue: true, label: 'Partner  link (button)', type: 'checkbox', sortOrder: 50},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
