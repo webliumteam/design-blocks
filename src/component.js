@@ -101,14 +101,21 @@ class Block extends React.Component {
             modifier: $block.modifier,
           }}
         />
-        {this.getModifierValue('secondary-button') && (
+        {this.getModifierValue('button') && (
           <div className={classNames(css['btns-group'], 'btns-group')}>
             <div className="btns-group__inner">
               <Button
-                className={classNames(css.button, 'butttton')}
-                buttonClassName={css.button}
+                className={classNames(css.button, 'button')}
+                linkClassName={css.link}
                 bind="button"
               />
+              {this.getModifierValue('button_additional') && (
+                <Button
+                  className={classNames(css.button, 'button')}
+                  linkClassName={css.link}
+                  bind="button_additional"
+                />
+              )}
             </div>
           </div>
         )}
@@ -265,6 +272,21 @@ Block.defaultContent = {
     size: 'md',
     textValue: 'Learn more',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    type: 'primary',
+    size: 'md',
+    textValue: 'Learn more',
+  },
   'top-caption': {
     content: 'sapien ut libero',
     type: 'text',
@@ -276,7 +298,8 @@ Block.modifierScheme = {
   'item-icon': {defaultValue: false, label: 'Vacancy icon', type: 'checkbox', sortOrder: 20},
   employment: {defaultValue: true, label: 'Employment type', type: 'checkbox', sortOrder: 30},
   position: {defaultValue: true, label: 'Vacancy location', type: 'checkbox', sortOrder: 40},
-  'secondary-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
+  button_additional: {defaultValue: false, label: 'Button Additional', type: 'hidden', sortOrder: 60},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
