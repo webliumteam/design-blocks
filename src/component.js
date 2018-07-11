@@ -208,7 +208,7 @@ Wireframe.defaultContent = {
   },
   button: {
     type: 'secondary',
-    textValue: 'Learn more',
+    textValue: 'Show more',
   },
 }
 
