@@ -57,13 +57,24 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                linkClassName={style.link}
-                buttonClassName={style.button}
-                bind="button"
-              />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -172,6 +183,20 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'primary',
+  },
   'top-caption': {
     content: 'vitae sapien ut libero',
     type: 'text',
@@ -185,6 +210,7 @@ Block.modifierScheme = {
   heading: {defaultValue: true, label: 'Reviewer name', type: 'checkbox'},
   position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  button_additional: {defaultValue: false, label: 'Additional button', type: 'hidden'},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
