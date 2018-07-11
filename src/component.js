@@ -240,7 +240,7 @@ Block.defaultContent = {
     },
   ],
   button: {
-    textValue: 'Learn more',
+    textValue: 'Show more',
     type: 'secondary',
   },
   topIcon: {
