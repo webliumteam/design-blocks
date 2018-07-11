@@ -216,23 +216,23 @@ Block.defaultContent = {
     type: 'subtitle',
   },
   'button-1': {
-    textValue: 'Request a quote',
+    textValue: 'Learn more',
     type: 'secondary',
   },
   'button-2': {
-    textValue: 'Learn more',
+    textValue: 'Request a quote',
     type: 'primary',
   },
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: false, label: 'Services description', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Heading', type: 'checkbox'},
-  body: {defaultValue: true, label: 'Service main text', type: 'checkbox'},
-  link: {defaultValue: true, label: 'Link', type: 'checkbox'},
-  'button-secondary': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
-  'button-primary': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 10},
+  heading: {defaultValue: true, label: 'Service title', type: 'checkbox', sortOrder: 20},
+  body: {defaultValue: true, label: 'Service description', type: 'checkbox', sortOrder: 30},
+  link: {defaultValue: true, label: 'Service link (button)', type: 'checkbox', sortOrder: 40},
+  'button-secondary': {defaultValue: true, label: 'Additional button (link)', type: 'checkbox', sortOrder: 50},
+  'button-primary': {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden', sortOrder: 70},
 }
 
 export default Block
