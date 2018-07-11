@@ -1,7 +1,3 @@
 @import "wireframe-zapdos-process/src/style.css";
 
 /* start here */
-
-.article__content::before {
-  color: var(--ui-brand-color);
-}
