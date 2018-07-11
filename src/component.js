@@ -55,10 +55,18 @@ class Block extends React.Component {
             (event.key === 'Enter' || event.key === ' ') && this.toggleItemOpening(index)
           }
         >
-          <Text tagName="h2" className={classNames(style.item__title, 'heading')} bind={`faq[${index}].title`} />
+          <Text
+            tagName="h2"
+            className={classNames(style.item__title, 'heading')}
+            bind={`faq[${index}].title`}
+          />
           {this.getOptionValue('toogle-item-controls') && controlIcons}
         </div>
-        <Text tagName="div" className={classNames(style.item__content, 'text')} bind={`faq[${index}].description`} />
+        <Text
+          tagName="div"
+          className={classNames(style.item__content, 'text')}
+          bind={`faq[${index}].description`}
+        />
       </article>
     )
   }
@@ -95,8 +103,15 @@ class Block extends React.Component {
             Item={this.collectionItem}
           />
           {this.getModifierValue('secondary-button') && (
-            <div className={style['btns-group']}>
-              <Button buttonClassName={style.button} linkClassName={style.link} bind="cta" />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className="butttton"
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind="cta"
+                />
+              </div>
             </div>
           )}
         </div>
