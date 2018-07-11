@@ -146,10 +146,10 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Process description', type: 'checkbox'},
-  body: {defaultValue: true, label: 'Step main text', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
+  body: {defaultValue: true, label: 'Step description', type: 'checkbox', sortOrder: 30},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
 }
 
 
