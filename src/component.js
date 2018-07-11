@@ -226,13 +226,13 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Project description', type: 'checkbox'},
-  'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox'},
-  'project-description': {defaultValue: true, label: 'Project main text', type: 'checkbox'},
-  'project-button-2': {defaultValue: false, label: 'Project button', type: 'checkbox'},
-  'project-button': {defaultValue: true, label: 'Project link', type: 'checkbox'},
-  'block-button': {defaultValue: true, label: 'Block button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
+  'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox', sortOrder: 30},
+  'project-description': {defaultValue: true, label: 'Project  description', type: 'checkbox', sortOrder: 40},
+  'project-button-2': {defaultValue: false, label: 'Project additional button', type: 'hidden', sortOrder: 50},
+  'project-button': {defaultValue: true, label: 'Project link (button)', type: 'checkbox', sortOrder: 60},
+  'block-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
