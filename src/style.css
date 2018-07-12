@@ -82,9 +82,11 @@
 
   &__picture-wrapper {
     min-height: 100%;
+    padding-top: 3px;
     border-top: 1px solid var(--ui-dark-accent-color);
 
     &:first-of-type {
+      padding-top: 0;
       border-top: 0;
     }
 
