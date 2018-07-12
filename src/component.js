@@ -61,14 +61,25 @@ class Wireframe extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('cta') && (
-            <div className={style['btns-group']}>
-              <Button
-                className={style['btns-group__button']}
-                linkClassName={style.link}
-                buttonClassName={style.button}
-                bind="cta"
-              />
+          {(this.getModifierValue('cta') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('cta') && (
+                  <Button
+                    className={classNames(style['btns-group__button'], 'butttton')}
+                    linkClassName={style.link}
+                    buttonClassName={style.button}
+                    bind="cta"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -156,6 +167,11 @@ Wireframe.defaultContent = {
     type: 'secondary',
     size: 'lg',
   },
+  button_additional: {
+    textValue: 'More about our flowers',
+    type: 'primary',
+    size: 'lg',
+  },
 }
 
 Wireframe.modifierScheme = {
@@ -164,6 +180,7 @@ Wireframe.modifierScheme = {
   body: {defaultValue: true, label: 'Title description', type: 'checkbox', sortOrder: 30},
   'item-button': {defaultValue: false, label: 'Panel button (link) ', type: 'checkbox', sortOrder: 40},
   cta: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden', sortOrder: 60},
 }
 
 export default Wireframe
