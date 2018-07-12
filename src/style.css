@@ -59,7 +59,7 @@
   padding-bottom: 0;
 }
 
-.section--column .btns-group {
+.section--column .btns-group__inner {
   justify-content: center;
 }
 
@@ -227,13 +227,16 @@
 }
 
 .btns-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   margin-top: 20px;
   margin-left: -10px;
   margin-right: -10px;
   margin-bottom: -10px;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
 .btns-group:only-child {
