@@ -51,21 +51,23 @@ class Wireframe extends React.Component {
               <Text tagName="p" className={classNames(style.item__body, 'body', 'text-center')} bind={`cover[${index}].item_body`} />
             )}
             {showButton && (
-              <div className={style['btns-group']}>
-                {this.getModifierValue('primary-button') && (
-                  <Button
-                    className={style.button}
-                    linkClassName={style.link}
-                    bind={`cover[${index}].item_button`}
-                  />
-                )}
-                {this.getModifierValue('secondary-button') && (
-                  <Button
-                    className={style.button}
-                    linkClassName={style.link}
-                    bind={`cover[${index}].item_button_additional`}
-                  />
-                )}
+              <div className={classNames(style['btns-group'], 'btns-group')}>
+                <div className="btns-group__inner">
+                  {this.getModifierValue('primary-button') && (
+                    <Button
+                      className={classNames(style.button, 'butttton')}
+                      linkClassName={style.link}
+                      bind={`cover[${index}].item_button`}
+                    />
+                  )}
+                  {this.getModifierValue('secondary-button') && (
+                    <Button
+                      className={classNames(style.button, 'butttton')}
+                      linkClassName={style.link}
+                      bind={`cover[${index}].item_button_additional`}
+                    />
+                  )}
+                </div>
               </div>
             )}
           </Background>
