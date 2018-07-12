@@ -314,9 +314,9 @@
 
 .item__button {
   min-width: 1px;
+  margin: 0;
 
   @media (--ui-tablet-devices) {
-    margin: 0;
     flex-shrink: 0;
     flex-grow: 0;
     flex-basis: auto;
