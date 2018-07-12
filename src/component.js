@@ -66,23 +66,29 @@ class Block extends React.Component {
                 }}
               />
               {this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
-                <div className={style['btns-group']}>
-                  <Button
-                    buttonClassName={style.button}
-                    linkClassName={style.link}
-                    bind="button-1"
-                  />
+                <div className={classNames(style['btns-group'], 'btns-group')}>
+                  <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                    <Button
+                      className="butttton"
+                      buttonClassName={style.button}
+                      linkClassName={style.link}
+                      bind="button-1"
+                    />
+                  </div>
                 </div>
               )}
             </div>
           </div>
           {!this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="button-1"
-              />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className="butttton"
+                  buttonClassName={style.button}
+                  linkClassName={style.link}
+                  bind="button-1"
+                />
+              </div>
             </div>
           )}
         </div>
