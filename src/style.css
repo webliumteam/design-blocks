@@ -316,7 +316,8 @@
 }
 
 @media (--ui-phone-devices) {
-  .button {
+  .button,
+  .link {
     width: auto;
     max-width: calc(100% - 30px);
   }
