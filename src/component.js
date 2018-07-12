@@ -71,13 +71,24 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                className={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="cta"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -169,6 +180,20 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'primary',
+  },
 }
 
 Block.modifierScheme = {
@@ -181,6 +206,7 @@ Block.modifierScheme = {
   'body-text': {defaultValue: true, label: 'Service description', type: 'checkbox', sortOrder: 20},
   'service-button': {defaultValue: true, label: 'Service button (link)', type: 'checkbox', sortOrder: 30},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
+  button_additional: {defaultValue: false, label: 'Button (link)', type: 'hidden', sortOrder: 50},
 }
 
 export default Block
