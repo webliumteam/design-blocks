@@ -32,12 +32,14 @@ class Wireframe extends React.Component {
             {this.getModifierValue('subtitle') && (
               <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', textAlignmentClass)} tagName="p" />
               )}
-            <div className={style['btns-group']}>
-              <Button
-                bind="secondary-button"
-                className={style.button}
-                linkClassName={style.link}
-              />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                <Button
+                  bind="secondary-button"
+                  className={classNames(style.button, 'butttton')}
+                  linkClassName={style.link}
+                />
+              </div>
             </div>
             {this.getModifierValue('socials') && (
               <SocialIcons className={style.socials} bind="socialIcons" />
