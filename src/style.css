@@ -117,12 +117,14 @@
   }
 }
 
-.section--column.section--state-11 .contacts {
+.section--column {
+  &.section--state-11 .contacts {
 
-  @media (--ui-tablet-devoces) {
-    order: -1;
-    padding-left: 0;
-    padding-right: 30px;
+    @media (--ui-tablet-devoces) {
+      order: -1;
+      padding-left: 0;
+      padding-right: 30px;
+    }
   }
 }
 
