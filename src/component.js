@@ -23,12 +23,20 @@ class Block extends React.Component {
     const showHeading = _.get('heading')(modifier)
     const itemContent = [
       showHeading && (
-        <Text tagName="h2" className={classNames(style.item__title, 'heading')} bind={`partners[${index}].title`} />
+        <Text
+          tagName="h2"
+          className={classNames(style.item__title, 'heading')}
+          bind={`partners[${index}].title`}
+        />
       ),
       showContent && (
         <div className={style.item__content}>
           {_.get('body')(modifier) && (
-            <Text tagName="p" className={classNames(style.item__desc, 'body')} bind={`partners[${index}].desc`} />
+            <Text
+              tagName="p"
+              className={classNames(style.item__desc, 'body')}
+              bind={`partners[${index}].desc`}
+            />
           )}
           {_.get('link')(modifier) && (
             <Button
@@ -128,11 +136,18 @@ class Block extends React.Component {
           />
           {this.getModifierValue('button') && (
             <div
-              className={classNames(style['btns-group'], {
+              className={classNames(style['btns-group'], 'btns-group', {
                 [style['btns-group--offset-sm']]: onlyLogo,
               })}
             >
-              <Button linkClassName={style.link} buttonClassName={style.button} bind="button" />
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className="butttton"
+                  linkClassName={style.link}
+                  buttonClassName={style.button}
+                  bind="button"
+                />
+              </div>
             </div>
           )}
         </div>
