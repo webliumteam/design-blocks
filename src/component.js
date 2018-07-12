@@ -204,13 +204,13 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Testimonials description', type: 'checkbox'},
-  date: {defaultValue: true, label: 'Date of publishing', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Reviewer name', type: 'checkbox'},
-  position: {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
-  button: {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
-  button_additional: {defaultValue: false, label: 'Additional button', type: 'hidden'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
+  date: {defaultValue: true, label: 'Comment date', type: 'checkbox', sortOrder: 30},
+  heading: {defaultValue: true, label: "Client's name", type: 'checkbox', sortOrder: 40},
+  position: {defaultValue: true, label: "Client's job position", type: 'checkbox', sortOrder: 50},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
+  button_additional: {defaultValue: false, label: 'Additional button (link) ', type: 'hidden', sortOrder: 70},
   'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
 }
 
