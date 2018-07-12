@@ -204,23 +204,23 @@ Wireframe.defaultContent = {
     ],
   },
   button: {
-    textValue: 'Medium button',
+    textValue: 'Request a quote',
     type: 'primary',
   },
   secondaryButton: {
-    textValue: 'Medium button',
+    textValue: 'Learn more',
     type: 'secondary',
   },
 }
 
 Wireframe.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Why Us description', type: 'checkbox'},
-  icon: {defaultValue: true, label: 'Advantage icon ', type: 'checkbox'},
-  heading: {defaultValue: true, label: 'Advantage title', type: 'checkbox'},
-  subheading: {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
-  'primary-button': {defaultValue: true, label: 'Primary button', type: 'checkbox'},
-  'secondary-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  icon: {defaultValue: true, label: 'Advantage icon ', type: 'checkbox', sortOrder: 30},
+  heading: {defaultValue: true, label: 'Advantage heading', type: 'checkbox', sortOrder: 40},
+  subheading: {defaultValue: true, label: 'Advantage description', type: 'checkbox', sortOrder: 50},
+  'primary-button': {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
+  'secondary-button': {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', sortOrder: 70},
 }
 
 export default Wireframe
