@@ -201,12 +201,14 @@ class Block extends React.Component {
        />
           }
           {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                className={style.button}
-                linkClassName={style.link}
-                bind="button"
-              />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className={classNames(style.button, 'butttton')}
+                  linkClassName={style.link}
+                  bind="button"
+                />
+              </div>
             </div>
           )}
         </div>
