@@ -442,16 +442,16 @@ Block.defaultContent = {
   },
   button: {
     type: 'secondary',
-    textValue: 'All team members',
+    textValue: 'Learn more',
   },
 }
 
 Block.modifierScheme = {
-  item_body: {defaultValue: true, label: 'Employee bio', type: 'checkbox'},
-  item_contacts: {defaultValue: true, label: 'Employee contacts', type: 'checkbox'},
-  item_socials: {defaultValue: true, label: 'Socials buttons', type: 'checkbox'},
-  item_link: {defaultValue: true, label: 'Link', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
+  item_body: {defaultValue: true, label: "Team member's description", type: 'checkbox', sortOrder: 10},
+  item_contacts: {defaultValue: true, label: "Team member's contacts", type: 'checkbox', sortOrder: 20},
+  item_socials: {defaultValue: true, label: "Team member's social media buttons", type: 'checkbox', sortOrder: 30},
+  item_link: {defaultValue: true, label: "Team member's link (button)", type: 'checkbox', sortOrder: 40},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
 }
 
 export default Block
