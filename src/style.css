@@ -216,17 +216,6 @@
     }
   }
 
-  &__button {
-    min-width: 1px;
-
-    @media (--ui-tablet-devices) {
-      margin: 0;
-      flex-shrink: 0;
-      flex-grow: 0;
-      flex-basis: auto;
-    }
-  }
-
   &--list-hidden,
   &--body-hidden {
     .item__content {
@@ -320,5 +309,16 @@
   .link {
     width: auto;
     max-width: calc(100% - 30px);
+  }
+}
+
+.item__button {
+  min-width: 1px;
+
+  @media (--ui-tablet-devices) {
+    margin: 0;
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: auto;
   }
 }
