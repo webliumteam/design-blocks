@@ -176,7 +176,7 @@ Block.defaultContent = {
 Block.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Block  description', type: 'checkbox', sortOrder: 10},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 20},
-  button_additional: {defaultValue: false, label: 'Button (link)', type: 'hidden', sortOrder: 30},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden', sortOrder: 30},
 }
 
 export default Block
