@@ -50,13 +50,26 @@ class Block extends React.Component {
             Item={this.collectionItem}
             galleryId="projects"
           />
-          {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="button"
-              />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={style.butttton}
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind="button"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={style.butttton}
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -146,11 +159,26 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'primary',
+  },
 }
 
 Block.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Block  description', type: 'checkbox', sortOrder: 10},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 20},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden', sortOrder: 30},
 }
 
 
