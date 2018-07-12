@@ -19,20 +19,17 @@
       margin-left: 0;
       padding-left: 78px;
       padding-right: 50px;
-      text-align: left;
     }
   }
 }
 
 .title {
   position: relative;
-  line-height: calc(var(--ui-block-title-line-height) * 0.79);
-  text-transform: capitalize;
   margin-bottom: 55px;
-  letter-spacing: 0.6px;
 
   @media (min-width: 992px) {
     font-size: calc(var(--ui-block-title-size) * 0.95);
+    text-align: left;
   }
 
   &::after {
@@ -67,11 +64,17 @@
 }
 
 .description {
-  font-family: var(--ui-subheading-font-family);
-  letter-spacing: 0.2px;
 
   @media (min-width: 992px) {
     font-size: calc(var(--ui-text-size) * 1.375);
     margin-bottom: 50px;
+    text-align: left;
+  }
+}
+
+.btns-group {
+
+  @media (min-width: 992px) {
+    text-align: left;
   }
 }
