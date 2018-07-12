@@ -165,7 +165,7 @@ Block.defaultContent = {
       },
     },
     type: 'primary',
-    textValue: 'Learn more',
+    textValue: 'Request a quote',
   },
   additionalButton: {
     actionConfig: {
@@ -184,11 +184,11 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Why us description', type: 'checkbox'},
-  'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
-  'main-button': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
-  'additional-button': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  'item-body': {defaultValue: true, label: 'Advantage description', type: 'checkbox', sortOrder: 30},
+  'main-button': {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
+  'additional-button': {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', sortOrder: 50},
 }
 
 export default Block
