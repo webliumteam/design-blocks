@@ -58,6 +58,11 @@
 .section--column .section__main {
   flex-direction: column;
   align-items: center;
+
+  @media (--ui-tablet-devices) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 .section--state-11 {
@@ -87,6 +92,10 @@
 .section--column .map-wrapper {
   width: 100%;
   margin-bottom: 0;
+
+  @media (--ui-tablet-devices) {
+    width: 66%;
+  }
 }
 
 .section--column .logo-wrapper {
@@ -95,15 +104,20 @@
 
 .section--column .map {
   position: relative;
-  margin-bottom: 50px;
   flex: auto;
 }
 
 .section--column .contacts {
   width: auto;
-  padding-left: 0;
+  padding-left: 30px;
   padding-right: 0;
   order: 2;
+}
+
+.section--column.section--state-11 .contacts {
+  order: -1;
+  padding-left: 0;
+  padding-right: 30px;
 }
 
 .section--column .socials__item {
