@@ -127,7 +127,6 @@ class Block extends React.Component {
                   <Button
                     className={classNames(style.button, 'butttton')}
                     buttonClassName={style['button--view-default']}
-                    linkClassName={style.link}
                     bind="button"
                   />
                 )}
