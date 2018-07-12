@@ -85,6 +85,10 @@
     padding-top: 3px;
     border-top: 1px solid var(--ui-dark-accent-color);
 
+    @media (--ui-tablet-devices) {
+      padding-top: 0;
+    }
+
     &:first-of-type {
       padding-top: 0;
       border-top: 0;
