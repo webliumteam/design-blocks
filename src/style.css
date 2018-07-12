@@ -95,17 +95,11 @@
     flex-direction: column;
     flex: 1;
 
-    &:first-of-type {
-      margin-top: 0;
-    }
-
     @media (--ui-tablet-devices) {
       display: block;
       max-width: calc(50% - 30px);
       margin: 15px;
       flex-basis: calc(50% - 30px);
-      margin-top: 0;
-      flex: initial;
     }
 
     @media (--ui-medium-devices) {
