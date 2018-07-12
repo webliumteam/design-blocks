@@ -149,14 +149,25 @@ class Wireframe extends React.Component {
               images,
             }}
           />
-          {this.getModifierValue('secondary-button') && (
-            <div className={style['btns-group']}>
-              <Button
-                className={style['btns-group__button']}
-                linkClassName={style.link}
-                buttonClassName={style.button}
-                bind="cta"
-              />
+          {(this.getModifierValue('secondary-button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('secondary-button') && (
+                  <Button
+                    className={classNames(style['btns-group__button'], 'butttton')}
+                    linkClassName={style.link}
+                    buttonClassName={style.button}
+                    bind="button"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -486,6 +497,20 @@ Wireframe.defaultContent = {
     textValue: 'Show all events',
     type: 'secondary',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Show all events',
+    type: 'primary',
+  },
 }
 
 Wireframe.modifierScheme = {
@@ -514,6 +539,7 @@ Wireframe.modifierScheme = {
   body: {defaultValue: true, label: 'Event description', type: 'checkbox', sortOrder: 90},
   'primary-button': {defaultValue: true, label: 'Event link (button)', type: 'checkbox', sortOrder: 100},
   'secondary-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 110},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'checkbox', sortOrder: 120},
 }
 
 export default Wireframe
