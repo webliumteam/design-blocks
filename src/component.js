@@ -105,7 +105,11 @@ class Block extends React.Component {
           <div className={style['collections-wrapper']}>
             <div className={style.items__wrapper}>
               {this.getModifierValue('heading') && (
-                <Text tagName="h2" className={classNames(style.items__title, 'heading')} bind="individuals.heading" />
+                <Text
+                  tagName="h2"
+                  className={classNames(style.items__title, 'heading')}
+                  bind="individuals.heading"
+                />
               )}
               <Collection
                 className={style.items}
@@ -116,7 +120,11 @@ class Block extends React.Component {
             </div>
             <div className={style.items__wrapper}>
               {this.getModifierValue('heading') && (
-                <Text tagName="h2" className={classNames(style.items__title, 'heading')} bind="companies.heading" />
+                <Text
+                  tagName="h2"
+                  className={classNames(style.items__title, 'heading')}
+                  bind="companies.heading"
+                />
               )}
               <Collection
                 className={style.items}
@@ -126,9 +134,24 @@ class Block extends React.Component {
               />
             </div>
           </div>
-          {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button className={style.button} linkClassName={style.link} bind="cta" />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="cta"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -288,6 +311,20 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'primary',
+  },
   topIcon: {
     svg:
       '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
@@ -297,8 +334,14 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 10},
-  heading: {defaultValue: true, label: 'Type/Category of questions', type: 'checkbox', sortOrder: 20},
+  heading: {
+    defaultValue: true,
+    label: 'Type/Category of questions',
+    type: 'checkbox',
+    sortOrder: 20,
+  },
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 30},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden', sortOrder: 40},
 }
 
 export default Block
