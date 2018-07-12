@@ -81,7 +81,7 @@ class Block extends React.Component {
             <div className={classNames(style['btns-group'], 'btns-group')}>
               <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
                 <Button
-                  className="button"
+                  className="butttton"
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="cta"
