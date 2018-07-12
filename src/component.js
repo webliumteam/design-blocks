@@ -14,7 +14,11 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Text, Button}, style, content} = this.props
+    const {
+      components: {Text, Button},
+      style,
+      content,
+    } = this.props
     const collectionLength = content.collection.items.length
     const oneLastItems = collectionLength % 3 === 1 && style['item--one-last-items']
     const twoLastItems = collectionLength % 3 === 2 && style['item--two-last-items']
@@ -32,9 +36,17 @@ class Wireframe extends React.Component {
           />
         )}
         <div className={style.item__text}>
-          <Text tagName="h3" className={classNames(style.item__heading, 'heading', 'text-center')} bind={`collection[${index}].item__heading`} />
+          <Text
+            tagName="h3"
+            className={classNames(style.item__heading, 'heading', 'text-center')}
+            bind={`collection[${index}].item__heading`}
+          />
           {this.getModifierValue('text') && (
-            <Text tagName="p" className={classNames(style.item__body, 'body', 'text-center')} bind={`collection[${index}].item__body`} />
+            <Text
+              tagName="p"
+              className={classNames(style.item__body, 'body', 'text-center')}
+              bind={`collection[${index}].item__body`}
+            />
           )}
         </div>
         {this.getModifierValue('itemButton') && (
@@ -49,7 +61,12 @@ class Wireframe extends React.Component {
   }
 
   render() {
-    const {components: {Text, Collection, Button}, style, $block, content} = this.props
+    const {
+      components: {Text, Collection, Button},
+      style,
+      $block,
+      content,
+    } = this.props
     const header = this.getModifierValue('title') || this.getModifierValue('subtitle')
     const btnsGroup = this.getModifierValue('button')
 
@@ -57,12 +74,20 @@ class Wireframe extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {header && (
-            <div className={style.section__header} >
+            <div className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h2" />
+                <Text
+                  bind="title"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  tagName="h2"
+                />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+                <Text
+                  bind="subtitle"
+                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  tagName="p"
+                />
               )}
             </div>
           )}
@@ -76,14 +101,16 @@ class Wireframe extends React.Component {
             }}
           />
           {btnsGroup && (
-            <div className={style['btns-group']}>
-              {this.getModifierValue('button') && (
-                <Button
-                  className={classNames(style['btns-group__button'], style.button)}
-                  linkClassName={style['btns-group__link']}
-                  bind="button"
-                />
-              )}
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={classNames(style['btns-group__button'], style.button, 'butttton')}
+                    linkClassName={style['btns-group__link']}
+                    bind="button"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -106,10 +133,13 @@ Wireframe.defaultContent = {
   collection: {
     background: {
       'nth-child': [
-        ['n', {
-          type: 'color',
-          color: 'light-accent-color',
-        }],
+        [
+          'n',
+          {
+            type: 'color',
+            color: 'light-accent-color',
+          },
+        ],
       ],
     },
     items: [
@@ -124,7 +154,8 @@ Wireframe.defaultContent = {
         },
         item__body: {
           type: 'text',
-          content: 'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
+          content:
+            'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
         },
         item__button: {
           type: 'link',
@@ -142,7 +173,8 @@ Wireframe.defaultContent = {
         },
         item__body: {
           type: 'text',
-          content: 'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
+          content:
+            'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
         },
         item__button: {
           type: 'link',
@@ -160,7 +192,8 @@ Wireframe.defaultContent = {
         },
         item__body: {
           type: 'text',
-          content: 'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
+          content:
+            'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
         },
         item__button: {
           type: 'link',
@@ -178,7 +211,8 @@ Wireframe.defaultContent = {
         },
         item__body: {
           type: 'text',
-          content: 'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
+          content:
+            'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
         },
         item__button: {
           type: 'link',
@@ -196,7 +230,8 @@ Wireframe.defaultContent = {
         },
         item__body: {
           type: 'text',
-          content: 'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
+          content:
+            'Innovative digital solution for a marketing company. We worked on UX for the company website to make it more effective and increase the number of leads.',
         },
         item__button: {
           type: 'link',
@@ -214,7 +249,8 @@ Wireframe.defaultContent = {
         },
         item__body: {
           type: 'text',
-          content: 'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
+          content:
+            'Branding of legal firm. Our work on this project included creating a logo, motto, website, advertising strategy, and other details that help to build a well-known brand.',
         },
         item__button: {
           type: 'link',
