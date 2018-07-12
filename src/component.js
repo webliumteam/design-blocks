@@ -238,14 +238,14 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
-  'item-icon': {defaultValue: true, label: 'Advantages icon', type: 'checkbox'},
-  'item-heading': {defaultValue: true, label: 'Advantages title', type: 'checkbox'},
-  'item-description': {defaultValue: true, label: 'Advantages description', type: 'checkbox'},
-  'button-primary': {defaultValue: false, label: 'Primary button', type: 'checkbox'},
-  'button-secondary': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  'item-icon': {defaultValue: true, label: 'Advantage icon', type: 'checkbox', sortOrder: 30},
+  'item-heading': {defaultValue: true, label: 'Advantage heading', type: 'checkbox', sortOrder: 40},
+  'item-description': {defaultValue: true, label: 'Advantage description', type: 'checkbox', sortOrder: 50},
+  'button-primary': {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
+  'button-secondary': {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', sortOrder: 70},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden', sortOrder: 80},
 }
 
 export default Block
