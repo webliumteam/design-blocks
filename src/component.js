@@ -215,13 +215,13 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
-  subtitle: {defaultValue: false, label: 'Subtitle', type: 'checkbox'},
-  icon: {defaultValue: true, label: 'Advantage icon', type: 'checkbox'},
-  body: {defaultValue: true, label: 'Advantage description', type: 'checkbox'},
-  button: {defaultValue: false, label: 'Primary button', type: 'checkbox'},
-  'button-secondary': {defaultValue: false, label: 'Secondary button', type: 'checkbox'},
-  'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden'},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  icon: {defaultValue: true, label: 'Advantage icon', type: 'checkbox', sortOrder: 30},
+  body: {defaultValue: true, label: 'Advantage description', type: 'checkbox', sortOrder: 40},
+  button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
+  'button-secondary': {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', sortOrder: 60},
+  'top-caption': {defaultValue: false, label: 'Top caption', type: 'hidden', sortOrder: 0},
 }
 
 export default Block
