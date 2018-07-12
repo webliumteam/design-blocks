@@ -89,12 +89,15 @@ class Wireframe extends React.Component {
             TagName="ul"
           />
           {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                linkClassName={style.link}
-                buttonClassName={style.button}
-                bind="button"
-              />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className="butttton"
+                  linkClassName={style.link}
+                  buttonClassName={style.button}
+                  bind="button"
+                />
+              </div>
             </div>
           )}
         </div>
