@@ -177,11 +177,11 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Services description', type: 'checkbox'},
-  'item-image': {defaultValue: true, label: 'Service icon', type: 'checkbox'},
-  'item-body': {defaultValue: true, label: 'Service main text', type: 'checkbox'},
-  'item-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
-  cta: {defaultValue: false, label: 'Primary button', type: 'hidden'},
+  subtitle: {defaultValue: true, label: 'Block  description', type: 'checkbox', sortOrder: 10},
+  'item-image': {defaultValue: true, label: 'Service icon', type: 'checkbox', sortOrder: 20},
+  'item-body': {defaultValue: true, label: 'Service description', type: 'checkbox', sortOrder: 30},
+  'item-button': {defaultValue: true, label: 'Service button (link)', type: 'checkbox', sortOrder: 40},
+  cta: {defaultValue: false, label: 'Button (link)', type: 'hidden', sortOrder: 50},
 }
 
 export default Wireframe
