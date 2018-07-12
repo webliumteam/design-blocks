@@ -89,14 +89,14 @@ class Wireframe extends React.Component {
             <div className={classNames(style['btn-group__inner'], 'btns-group__inner')}>
               {this.getModifierValue('primary-button') && (
                 <Button
-                  className={classNames(style.button, 'button')}
+                  className={classNames(style.button, 'butttton')}
                   linkClassName={style.link}
                   bind="button"
                 />
               )}
               {this.getModifierValue('secondary-button') && (
                 <Button
-                  className={classNames(style.button, 'button')}
+                  className={classNames(style.button, 'butttton')}
                   linkClassName={style.link}
                   bind="secondaryButton"
                 />
