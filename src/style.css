@@ -96,6 +96,10 @@
   @media (--ui-tablet-devices) {
     width: 66%;
   }
+
+  @media (--ui-tablet-devices) {
+    width: 74.4%;
+  }
 }
 
 .section--column .logo-wrapper {
@@ -109,10 +113,12 @@
 
 .section--column .contacts {
   width: auto;
+  margin-top: 30px;
   padding-right: 0;
   order: 2;
 
   @media (--ui-tablet-devices) {
+    margin-top: 0;
     padding-left: 30px;
     flex: 1;
   }
