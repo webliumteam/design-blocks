@@ -42,7 +42,7 @@
       flex-basis: 50%;
     }
 
-    &--left {
+    &--right {
 
       @media (--ui-medium-devices) {
         text-align: left;
@@ -51,7 +51,7 @@
       }
     }
 
-    &--right {
+    &--left {
 
       @media (--ui-medium-devices) {
         padding-right: 100px;
