@@ -37,7 +37,7 @@ class Wireframe extends React.Component {
         [style['item--list-hidden']]: withoutList,
         [style['item--body-hidden']]: withoutBody,
         [style['item--content-hidden']]: withoutContent,
-        [style['item__picture-wrapper--only-image']]: onlyImage,
+        [style['item--only-image']]: onlyImage,
       })}
       >
         {children}
