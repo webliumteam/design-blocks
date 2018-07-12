@@ -64,7 +64,7 @@ class Wireframe extends React.Component {
                 size={{
                   'min-width: 320px': 480,
                   'min-width: 480px': 768,
-                  'min-width: 768px': 570,
+                  'min-width: 768px': 1200,
                 }}
                 resize={{
                   disable: true,
