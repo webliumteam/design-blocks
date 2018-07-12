@@ -114,6 +114,7 @@
 
   @media (--ui-tablet-devices) {
     padding-left: 30px;
+    flex: 1;
   }
 }
 
