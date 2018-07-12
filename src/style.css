@@ -142,23 +142,32 @@
     &--5-items {
 
       @media (--ui-tablet-devices) {
-        height: calc(50% - 30px);
         min-width: calc(33.3333% - 30px);
-        min-height: calc(50% - 30px);
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: auto;
       }
+
+      @media (--ui-medium-devices) {
+        height: calc(50% - 30px);
+        min-height: calc(50% - 30px);
+      }
     }
 
     &--4-items {
-      height: calc(50% - 30px);
-      min-height: calc(50% - 30px);
+
+      @media (--ui-medium-devices) {
+        height: calc(50% - 30px);
+        min-height: calc(50% - 30px);
+      }
     }
 
     &--6-items {
-      height: calc(33.3333% - 30px);
-      min-height: calc(33.3333% - 30px);
+
+      @media (--ui-medium-devices) {
+        height: calc(33.3333% - 30px);
+        min-height: calc(33.3333% - 30px);
+      }
     }
   }
 
@@ -271,12 +280,6 @@
         flex-basis: 100%;
         text-align: center;
       }
-    }
-  }
-
-  &--two-rows {
-    .item__content {
-      align-self: center;
     }
   }
 }
