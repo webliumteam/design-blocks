@@ -134,7 +134,7 @@ Block.defaultContent = {
         alt: 'Andrew Shimmer photo',
       },
       more: {
-        textValue: 'Learn more',
+        textValue: 'Know more',
         type: 'link',
       },
       email: {
@@ -190,7 +190,7 @@ Block.defaultContent = {
         alt: 'Ann Maisner photo',
       },
       more: {
-        textValue: 'Learn more',
+        textValue: 'Know more',
         type: 'link',
       },
       email: {
@@ -246,7 +246,7 @@ Block.defaultContent = {
         alt: 'Tomas Abbar photo',
       },
       more: {
-        textValue: 'Learn more',
+        textValue: 'Know more',
         type: 'link',
       },
       email: {
