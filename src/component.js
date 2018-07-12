@@ -63,6 +63,13 @@ class Block extends React.Component {
       this.getModifierValue('address')
     )
 
+    const logoWithSocials = !this.getModifierValue('map') &&
+      this.getModifierValue('social') && !(
+      this.getModifierValue('phone') ||
+      this.getModifierValue('email') ||
+      this.getModifierValue('address')
+    )
+
     const blockHeader = [
       <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />,
       this.getModifierValue('subtitle') && <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />,
@@ -74,6 +81,7 @@ class Block extends React.Component {
           [style['section--column']]: mapWithSocials,
           [style['section--state-3']]: listWithSocials,
           [style['section--state-4']]: onlyList,
+          [style['section--state-12']]: logoWithSocials,
           [style['section--state-11']]: this.getModifierValue('map-arrangement') === 'right',
         })}
       >
