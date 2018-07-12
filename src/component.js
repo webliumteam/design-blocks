@@ -14,7 +14,10 @@ class Wireframe extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index}) => {
-    const {components: {Image, Text}, style} = this.props
+    const {
+      components: {Image, Text},
+      style,
+    } = this.props
     return (
       <div className={style.item}>
         <Image
@@ -27,17 +30,34 @@ class Wireframe extends React.Component {
           }}
           resize={{disable: true}}
         />
-        {this.getModifierValue('item_title') && <Text tagName="h3" className={classNames(style.item__title, 'heading', 'text-center')} bind={`collection[${index}].item_title`} />}
+        {this.getModifierValue('item_title') && (
+          <Text
+            tagName="h3"
+            className={classNames(style.item__title, 'heading', 'text-center')}
+            bind={`collection[${index}].item_title`}
+          />
+        )}
       </div>
     )
   }
 
   render() {
-    const {components: {Text, Slider, Button}, style, content, $block} = this.props
-    const customArrows = this.getOptionValue('custom-arrows') ? {
-      nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
-      prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
-    } : {}
+    const {
+      components: {Text, Slider, Button},
+      style,
+      content,
+      $block,
+    } = this.props
+    const customArrows = this.getOptionValue('custom-arrows')
+      ? {
+        nextArrow: (
+          <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />
+        ),
+        prevArrow: (
+          <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />
+        ),
+      }
+      : {}
     const sectionHeader = this.getModifierValue('title') || this.getModifierValue('subtitle')
     const lessFourItems = content.collection.items.length < 4
     const oneItem = content.collection.items.length === 1
@@ -47,12 +67,28 @@ class Wireframe extends React.Component {
         <div className={style.section__inner}>
           {sectionHeader && (
             <div className={style.section__header}>
-              {this.getModifierValue('title') && <Text tagName="h2" className={classNames(style.title, 'title', 'text-center')} bind="title" />}
-              {this.getModifierValue('subtitle') && <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />}
+              {this.getModifierValue('title') && (
+                <Text
+                  tagName="h2"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  bind="title"
+                />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text
+                  bind="subtitle"
+                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  tagName="p"
+                />
+              )}
             </div>
           )}
           <Slider
-            className={classNames(style['items-wrapper'], lessFourItems && style['items-wrapper--less-four-items'], oneItem && style['items-wrapper--one-item'])}
+            className={classNames(
+              style['items-wrapper'],
+              lessFourItems && style['items-wrapper--less-four-items'],
+              oneItem && style['items-wrapper--one-item'],
+            )}
             bind="collection"
             Item={this.collectionItem}
             settings={{
@@ -81,12 +117,14 @@ class Wireframe extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                className={style.button}
-                buttonClassName={style['button--view-default']}
-                bind="button"
-              />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  className={classNames(style.button, 'butttton')}
+                  buttonClassName={style['button--view-default']}
+                  bind="button"
+                />
+              </div>
             </div>
           )}
         </div>
@@ -103,108 +141,118 @@ Wireframe.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
+    content:
+      'Over the history of our company, we cooperated with many well-known brands. We are proud of working with each of our partners as they gave us enough support to become one of the leading companies. Here’s a short list of those who have already seen the quality of our services in practice:',
     type: 'subtitle',
   },
   collection: {
-    items: [{
-      item_image: {
-        type: 'image',
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Partner logo',
-          fitBy: 'contain',
+    items: [
+      {
+        item_image: {
+          type: 'image',
+          image: {
+            src:
+              'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+            alt: 'Partner logo',
+            fitBy: 'contain',
+          },
+        },
+        item_title: {
+          content: 'Partners 1',
+          type: 'heading',
         },
       },
-      item_title: {
-        content: 'Partners 1',
-        type: 'heading',
-      },
-    },
-    {
-      item_image: {
-        type: 'image',
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Partner logo',
-          fitBy: 'contain',
+      {
+        item_image: {
+          type: 'image',
+          image: {
+            src:
+              'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+            alt: 'Partner logo',
+            fitBy: 'contain',
+          },
+        },
+        item_title: {
+          content: 'Partners 2',
+          type: 'heading',
         },
       },
-      item_title: {
-        content: 'Partners 2',
-        type: 'heading',
-      },
-    },
-    {
-      item_image: {
-        type: 'image',
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Partner logo',
-          fitBy: 'contain',
+      {
+        item_image: {
+          type: 'image',
+          image: {
+            src:
+              'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+            alt: 'Partner logo',
+            fitBy: 'contain',
+          },
+        },
+        item_title: {
+          content: 'Partners 3',
+          type: 'heading',
         },
       },
-      item_title: {
-        content: 'Partners 3',
-        type: 'heading',
-      },
-    },
-    {
-      item_image: {
-        type: 'image',
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Partner logo',
-          fitBy: 'contain',
+      {
+        item_image: {
+          type: 'image',
+          image: {
+            src:
+              'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+            alt: 'Partner logo',
+            fitBy: 'contain',
+          },
+        },
+        item_title: {
+          content: 'Partners 4',
+          type: 'heading',
         },
       },
-      item_title: {
-        content: 'Partners 4',
-        type: 'heading',
-      },
-    },
-    {
-      item_image: {
-        type: 'image',
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Partner logo',
-          fitBy: 'contain',
+      {
+        item_image: {
+          type: 'image',
+          image: {
+            src:
+              'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+            alt: 'Partner logo',
+            fitBy: 'contain',
+          },
+        },
+        item_title: {
+          content: 'Partners 5',
+          type: 'heading',
         },
       },
-      item_title: {
-        content: 'Partners 5',
-        type: 'heading',
-      },
-    },
-    {
-      item_image: {
-        type: 'image',
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Partner logo',
-          fitBy: 'contain',
+      {
+        item_image: {
+          type: 'image',
+          image: {
+            src:
+              'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+            alt: 'Partner logo',
+            fitBy: 'contain',
+          },
+        },
+        item_title: {
+          content: 'Partners 6',
+          type: 'heading',
         },
       },
-      item_title: {
-        content: 'Partners 6',
-        type: 'heading',
-      },
-    },
-    {
-      item_image: {
-        type: 'image',
-        image: {
-          src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
-          alt: 'Partner logo',
-          fitBy: 'contain',
+      {
+        item_image: {
+          type: 'image',
+          image: {
+            src:
+              'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+            alt: 'Partner logo',
+            fitBy: 'contain',
+          },
+        },
+        item_title: {
+          content: 'Partners 7',
+          type: 'heading',
         },
       },
-      item_title: {
-        content: 'Partners 7',
-        type: 'heading',
-      },
-    }],
+    ],
   },
   button: {
     type: 'secondary',
