@@ -305,12 +305,12 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: false, label: 'Team description', type: 'checkbox'},
-  'member-desc': {defaultValue: true, label: 'Team member bio', type: 'checkbox'},
-  'member-link': {defaultValue: true, label: 'Link', type: 'checkbox'},
-  'member-email': {defaultValue: true, label: 'Team member contacts', type: 'checkbox'},
-  'member-social': {defaultValue: true, label: 'Social buttons', type: 'checkbox'},
-  'block-button': {defaultValue: true, label: 'Secondary button', type: 'checkbox'},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'checkbox', sortOrder: 10},
+  'member-desc': {defaultValue: true, label: "Team member's description", type: 'checkbox', sortOrder: 20},
+  'member-link': {defaultValue: true, label: "Team member's link (button)", type: 'checkbox', sortOrder: 30},
+  'member-email': {defaultValue: true, label: "Team member's contacts", type: 'checkbox', sortOrder: 40},
+  'member-social': {defaultValue: true, label: "Team member's social media buttons", type: 'checkbox', sortOrder: 50},
+  'block-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 60},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
