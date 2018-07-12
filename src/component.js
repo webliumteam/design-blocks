@@ -114,9 +114,25 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
-            <div className={css['btns-group']}>
-              <Button linkClassName={css.link} buttonClassName={css.button} bind="button" />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(css['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={css.butttton}
+                    buttonClassName={css.button}
+                    linkClassName={css.link}
+                    bind="button"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(css.button, 'butttton')}
+                    linkClassName={css.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -267,6 +283,21 @@ Block.defaultContent = {
     size: 'md',
     textValue: 'Learn more',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    type: 'primary',
+    size: 'md',
+    textValue: 'Learn more',
+  },
 }
 
 Block.modifierScheme = {
@@ -275,8 +306,14 @@ Block.modifierScheme = {
   item_icon: {defaultValue: true, label: 'Product icon', type: 'checkbox', sortOrder: 30},
   item_price: {defaultValue: true, label: 'Price', type: 'checkbox', sortOrder: 40},
   item_caption: {defaultValue: true, label: 'Price description', type: 'checkbox', sortOrder: 50},
-  item_button: {defaultValue: true, label: 'Product button (link)', type: 'checkbox', sortOrder: 60},
+  item_button: {
+    defaultValue: true,
+    label: 'Product button (link)',
+    type: 'checkbox',
+    sortOrder: 60,
+  },
   button: {defaultValue: false, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden', sortOrder: 80},
 }
 
 export default Block
