@@ -13,7 +13,10 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className}) => {
-    const {components: {Image}, style} = this.props
+    const {
+      components: {Image},
+      style,
+    } = this.props
     return (
       <div className={classNames(style.item, className)}>
         {children}
@@ -30,9 +33,11 @@ class Block extends React.Component {
     )
   }
 
-
   render() {
-    const {components: {Text, Button, Collection}, style} = this.props
+    const {
+      components: {Text, Button, Collection},
+      style,
+    } = this.props
 
     return (
       <section className={style.section}>
@@ -40,7 +45,11 @@ class Block extends React.Component {
           <header className={style.section__header}>
             <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />
             {this.getModifierValue('subtitle') && (
-              <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
+              <Text
+                tagName="p"
+                className={classNames(style.subtitle, 'subtitle')}
+                bind="subtitle"
+              />
             )}
           </header>
           <Collection
@@ -48,13 +57,25 @@ class Block extends React.Component {
             bind="projects"
             Item={this.collectionItem}
           />
-          {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="button"
-              />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={style.butttton}
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind="button"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -71,7 +92,8 @@ Block.defaultContent = {
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Over more than 15 years of our practice, we have completed a number of projects for our clients and have helped them generate more than $15 million in revenues. Browse through our selected projects to get the idea of what we do on a daily basis.',
+    content:
+      'Over more than 15 years of our practice, we have completed a number of projects for our clients and have helped them generate more than $15 million in revenues. Browse through our selected projects to get the idea of what we do on a daily basis.',
     type: 'subtitle',
   },
   projects: [
@@ -135,12 +157,26 @@ Block.defaultContent = {
     textValue: 'Learn more',
     type: 'secondary',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'primary',
+  },
 }
 
 Block.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Block  description', type: 'checkbox', sortOrder: 10},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 20},
+  button_additional: {defaultValue: false, label: 'Button (link)', type: 'hidden', sortOrder: 30},
 }
-
 
 export default Block
