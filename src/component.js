@@ -244,14 +244,6 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  map: {defaultValue: true, label: 'Map', type: 'checkbox', sortOrder: 10},
-  logo: {defaultValue: true, label: 'Name / logo', type: 'checkbox', sortOrder: 20},
-  address: {defaultValue: true, label: 'Address', type: 'checkbox', sortOrder: 30},
-  phone: {defaultValue: true, label: 'Phone', type: 'checkbox', sortOrder: 40},
-  email: {defaultValue: true, label: 'Email', type: 'checkbox', sortOrder: 50},
-  social: {defaultValue: true, label: 'Social media buttons', type: 'checkbox', sortOrder: 60},
-  subtitle: {defaultValue: false, label: 'Block description', type: 'hidden', sortOrder: 70},
-  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden', sortOrder: 80},
   'map-arrangement': {
     children: [
       {id: 'left', label: 'Left'},
@@ -261,8 +253,16 @@ Block.modifierScheme = {
     name: 'Map arrangement',
     type: 'radio-button-group',
     style: 'buttons',
-    sortOrder: 90,
+    sortOrder: 10,
   },
+  map: {defaultValue: true, label: 'Map', type: 'checkbox', sortOrder: 20},
+  logo: {defaultValue: true, label: 'Name / logo', type: 'checkbox', sortOrder: 30},
+  address: {defaultValue: true, label: 'Address', type: 'checkbox', sortOrder: 40},
+  phone: {defaultValue: true, label: 'Phone', type: 'checkbox', sortOrder: 50},
+  email: {defaultValue: true, label: 'Email', type: 'checkbox', sortOrder: 60},
+  social: {defaultValue: true, label: 'Social media buttons', type: 'checkbox', sortOrder: 70},
+  subtitle: {defaultValue: false, label: 'Block description', type: 'hidden', sortOrder: 80},
+  'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden', sortOrder: 90},
 }
 
 export default Block
