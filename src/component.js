@@ -206,7 +206,7 @@ Block.modifierScheme = {
   'body-text': {defaultValue: true, label: 'Service description', type: 'checkbox', sortOrder: 20},
   'service-button': {defaultValue: true, label: 'Service button (link)', type: 'checkbox', sortOrder: 30},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
-  button_additional: {defaultValue: false, label: 'Button (link)', type: 'hidden', sortOrder: 50},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden', sortOrder: 50},
 }
 
 export default Block
