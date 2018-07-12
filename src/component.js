@@ -27,14 +27,25 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   testimonialsItem = ({index, modifier}) => {
-    const {components: {Text}, style} = this.props
+    const {
+      components: {Text},
+      style,
+    } = this.props
 
     return (
       <div className={style.testimonial}>
         <div className={style.testimonial__inner}>
-          <Text tagName="p" className={classNames(style.testimonial__text, 'heading')} bind={`testimonials[${index}].text`} />
+          <Text
+            tagName="p"
+            className={classNames(style.testimonial__text, 'heading')}
+            bind={`testimonials[${index}].text`}
+          />
           {_.get('item-date')(modifier) && (
-            <Text tagName="p" className={classNames(style.testimonial__date, 'caption')} bind={`testimonials[${index}].date`} />
+            <Text
+              tagName="p"
+              className={classNames(style.testimonial__date, 'caption')}
+              bind={`testimonials[${index}].date`}
+            />
           )}
         </div>
       </div>
@@ -42,7 +53,10 @@ class Block extends React.Component {
   }
 
   collectionItem = ({index, modifier}) => {
-    const {components: {Image, Text, SocialIcons}, style} = this.props
+    const {
+      components: {Image, Text, SocialIcons},
+      style,
+    } = this.props
 
     return (
       <div className={style.item}>
@@ -62,13 +76,24 @@ class Block extends React.Component {
             />
           )}
           <div className="item__person-info--global">
-            <Text tagName="h2" className={classNames(style.item__author, 'heading')} bind={`testimonials[${index}].author`} />
+            <Text
+              tagName="h2"
+              className={classNames(style.item__author, 'heading')}
+              bind={`testimonials[${index}].author`}
+            />
             {_.get('item-position')(modifier) && (
-              <Text tagName="p" className={classNames(style.item__position, 'body')} bind={`testimonials[${index}].position`} />
+              <Text
+                tagName="p"
+                className={classNames(style.item__position, 'body')}
+                bind={`testimonials[${index}].position`}
+              />
             )}
           </div>
           {_.get('item-socials')(modifier) && (
-            <SocialIcons bind={`testimonials[${index}].socialIcons`} className={classNames(style.item__socials, 'item__socials--global')} />
+            <SocialIcons
+              bind={`testimonials[${index}].socialIcons`}
+              className={classNames(style.item__socials, 'item__socials--global')}
+            />
           )}
         </div>
       </div>
@@ -76,20 +101,41 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Slider, Text, Button}, style, $block} = this.props
-    const customArrows = this.getOptionValue('custom-arrows') ? {
-      nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
-      prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
-    } : {}
-    const onlyNameState = !this.getModifierValue('item-image') && !this.getModifierValue('item-position') && !this.getModifierValue('item-socials')
+    const {
+      components: {Slider, Text, Button},
+      style,
+      $block,
+    } = this.props
+    const customArrows = this.getOptionValue('custom-arrows')
+      ? {
+        nextArrow: (
+          <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />
+        ),
+        prevArrow: (
+          <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />
+        ),
+      }
+      : {}
+    const onlyNameState =
+      !this.getModifierValue('item-image') &&
+      !this.getModifierValue('item-position') &&
+      !this.getModifierValue('item-socials')
     const onlyNameClass = onlyNameState && style['items-wrapper--only-name']
 
     return (
       <section className={style.section}>
         <div className={style.section__inner}>
-          <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />
+          <Text
+            bind="title"
+            className={classNames(style.title, 'title', 'text-center')}
+            tagName="h1"
+          />
           {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+            <Text
+              bind="subtitle"
+              className={classNames(style.subtitle, 'subtitle', 'text-center')}
+              tagName="p"
+            />
           )}
           <Slider
             className={style['preview-slider']}
@@ -138,13 +184,25 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
-            <div className={style['btns-group']}>
-              <Button
-                buttonClassName={style.button}
-                linkClassName={style.link}
-                bind="cta"
-              />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className="btns-group__inner">
+                {this.getModifierValue('button') && (
+                  <Button
+                    className={style.butttton}
+                    buttonClassName={style.button}
+                    linkClassName={style.link}
+                    bind="cta"
+                  />
+                )}
+                {this.getModifierValue('button_additional') && (
+                  <Button
+                    className={classNames(style.button, 'butttton')}
+                    linkClassName={style.link}
+                    bind="button_additional"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
@@ -167,7 +225,8 @@ Block.defaultContent = {
   testimonials: [
     {
       text: {
-        content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+        content:
+          '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
         type: 'heading',
       },
       date: {
@@ -175,7 +234,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        src:
+          'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Gallery image',
       },
       author: {
@@ -223,7 +283,8 @@ Block.defaultContent = {
     },
     {
       text: {
-        content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+        content:
+          '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
         type: 'heading',
       },
       date: {
@@ -231,7 +292,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        src:
+          'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Gallery image',
       },
       author: {
@@ -279,7 +341,8 @@ Block.defaultContent = {
     },
     {
       text: {
-        content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+        content:
+          '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
         type: 'heading',
       },
       date: {
@@ -287,7 +350,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        src:
+          'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Gallery image',
       },
       author: {
@@ -335,7 +399,8 @@ Block.defaultContent = {
     },
     {
       text: {
-        content: '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
+        content:
+          '“I am happy to work with BeZee. They know how to handle even the most challenging tasks and find the best solutions for customers.”',
         type: 'heading',
       },
       date: {
@@ -343,7 +408,8 @@ Block.defaultContent = {
         type: 'caption',
       },
       image: {
-        src: 'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
+        src:
+          'https://weblium-prod.storage.googleapis.com/res/5a4b747cd294a10025a2a530/5a4baf9cd294a10025a2b305.png',
         alt: 'Gallery image',
       },
       author: {
@@ -404,8 +470,23 @@ Block.defaultContent = {
     type: 'secondary',
     textValue: 'Learn more',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    type: 'primary',
+    textValue: 'Learn more',
+  },
   topIcon: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
 }
@@ -417,6 +498,7 @@ Block.modifierScheme = {
   'item-position': {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
   'item-socials': {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary buttons', type: 'checkbox'},
+  button_additional: {defaultValue: false, label: 'Button buttons', type: 'additional'},
 }
 
 export default Block
