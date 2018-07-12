@@ -69,12 +69,14 @@ class Wireframe extends React.Component {
             }}
           />
           {this.getModifierValue('cta') && (
-            <div className={style['btns-group']}>
-              <Button
-                linkClassName={style.link}
-                className={style.button}
-                bind="cta"
-              />
+            <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <Button
+                  linkClassName={style.link}
+                  className={classNames(style.button, 'butttton')}
+                  bind="cta"
+                />
+              </div>
             </div>
           )}
         </div>
