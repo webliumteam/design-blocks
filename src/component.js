@@ -37,6 +37,7 @@ class Wireframe extends React.Component {
         [style['item--list-hidden']]: withoutList,
         [style['item--body-hidden']]: withoutBody,
         [style['item--content-hidden']]: withoutContent,
+        [style['item__picture-wrapper--only-image']]: onlyImage,
       })}
       >
         {children}
@@ -52,7 +53,11 @@ class Wireframe extends React.Component {
           >
             {_.map(n => (
               <Image
-                wrapperClassName={classNames(style['item__picture-wrapper'], style[`item__picture-wrapper--${imageCount}-items`], 'picture-wrapper')}
+                wrapperClassName={classNames(
+                  style['item__picture-wrapper'],
+                  style[`item__picture-wrapper--${imageCount}-items`],
+                  'picture-wrapper',
+                )}
                 pictureClassName={classNames(style.item__picture, 'picture')}
                 imageClassName={classNames(style.item__image, 'picture__image')}
                 bind={`items[${index}].picture[${n}]`}
@@ -157,7 +162,7 @@ class Wireframe extends React.Component {
                     className={classNames(style['btns-group__button'], 'butttton')}
                     linkClassName={style.link}
                     buttonClassName={style.button}
-                    bind="button"
+                    bind="cta"
                   />
                 )}
                 {this.getModifierValue('button_additional') && (
