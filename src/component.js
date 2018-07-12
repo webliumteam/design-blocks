@@ -498,7 +498,7 @@ Block.modifierScheme = {
   'item-position': {defaultValue: true, label: 'Reviewer job position', type: 'checkbox'},
   'item-socials': {defaultValue: true, label: 'Social media buttons', type: 'checkbox'},
   button: {defaultValue: true, label: 'Secondary buttons', type: 'checkbox'},
-  button_additional: {defaultValue: false, label: 'Button buttons', type: 'additional'},
+  button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden'},
 }
 
 export default Block
