@@ -200,6 +200,6 @@ Block.modifierScheme = {
   'secondary-btn': {defaultValue: true, label: 'Additional button (link) ', type: 'checkbox', sortOrder: 30},
   'caption-decorator': {defaultValue: false, label: 'Pretitle', type: 'hidden'},
   undefined: {type: 'separator'},
-}
+ }
 
 export default Block
