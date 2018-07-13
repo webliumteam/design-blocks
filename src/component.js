@@ -9,22 +9,37 @@ class Wireframe extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  content = () => {
+    const {components: {Text, ContactForm}, style} = this.props
+
+    return [
+      <header className={style.section__header}>
+        {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />}
+        {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />}
+      </header>,
+      <ContactForm
+        bind="contactForm"
+        className={style.form}
+        fieldClassName={style.form__field}
+        buttonClassName={style.form__button}
+      />,
+    ]
+  }
+
   render() {
-    const {components: {Text, ContactForm, Background}, style} = this.props
+    const {components: {Background}, style} = this.props
+    const formBackground = this.getModifierValue('background')
     return (
-      <section className={style.section}>
-        <Background className={style.section__inner} bind="formBackground">
-          <header className={style.section__header}>
-            {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />}
-            {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />}
-          </header>
-          <ContactForm
-            bind="contactForm"
-            className={style.form}
-            fieldClassName={style.form__field}
-            buttonClassName={style.form__button}
-          />
-        </Background>
+      <section className={classNames(style.section, !formBackground && style['section--background-hidden'])}>
+        {formBackground ? (
+          <Background className={style.section__inner} bind="formBackground">
+            {this.content()}
+          </Background>
+        ) : (
+          <div className={classNames(style.section__inner, style['section__inner--background-hidden'])}>
+            {this.content()}
+          </div>
+        )}
       </section>
     )
   }
@@ -83,8 +98,9 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
-  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  background: {defaultValue: true, label: 'Form background', type: 'checkbox', sortOrder: 10},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 20},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 30},
 }
 
 export default Wireframe

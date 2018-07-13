@@ -17,8 +17,21 @@
     padding: 75px 0;
   }
 
+  &--background-hidden {
+
+    @media (--ui-tablet-devices) {
+      padding-top: 120px;
+      padding-bottom: 120px;
+    }
+
+    @media (--ui-medium-devices) {
+      padding-top: 175px;
+      padding-bottom: 175px;
+    }
+  }
+
   &__header {
-    padding: 40px 20px 0;
+    padding: 0 20px;
     margin-bottom: 25px;
 
     &:empty {
@@ -30,16 +43,28 @@
     margin: 0 auto;
 
     @media (--ui-phone-devices) {
-      padding: 7.2727% 10% 9.0909%;
+      padding: 50px 10%;
     }
 
     @media (--ui-tablet-devices) {
       max-width: 550px;
+      padding-top: 60px;
+      padding-bottom: 60px;
       border-radius: 3px;
     }
 
     @media (--ui-medium-devices) {
       max-width: 90%;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    &--background-hidden {
+
+      @media (--ui-tablet-devices) {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
     }
   }
 }
