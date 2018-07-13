@@ -4,7 +4,7 @@ import Particles from 'react-particles-js'
 import canusedom from 'can-use-dom'
 
 import {bubble, lines, nasa, snow} from './dynamic-bg/presets'
-
+/* eslint-disable */
 class Block extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
@@ -58,18 +58,14 @@ class Block extends React.Component {
   }
 
   render() {
-    const {
-      components: {Text, Button},
-      style: css,
-    } = this.props
-    const showButtonGroups =
-      this.getModifierValue('primary-btn') || this.getModifierValue('secondary-btn')
-    const alignClass =
-      this.getModifierValue('align') !== 'left'
-        ? css[`section--${this.getModifierValue('align')}`]
-        : ''
-    const themeAlignClass =
-      this.getModifierValue('align') !== 'left' ? `text-${this.getModifierValue('align')}` : ''
+    const {components: {Text, Button}, style: css} = this.props
+    const showButtonGroups = this.getModifierValue('primary-btn') || this.getModifierValue('secondary-btn')
+    const alignClass = this.getModifierValue('align') !== 'left'
+      ? css[`section--${this.getModifierValue('align')}`]
+      : ''
+    const themeAlignClass = this.getModifierValue('align') !== 'left'
+      ? `text-${this.getModifierValue('align')}`
+      : ''
     return (
       <section className={classNames(css.section, alignClass)}>
         <div className={css.section__inner}>
@@ -78,56 +74,47 @@ class Block extends React.Component {
               <Text bind="topCaption" className="body" />
             </div>
           )}
-          <Text
-            bind="title"
-            tagName="h1"
-            className={classNames(css.title, 'hero-title', themeAlignClass)}
-          />
+          <Text bind="title" tagName="h1" className={classNames(css.title, 'hero-title', themeAlignClass)} />
           {this.getModifierValue('subtitle') && (
             <Text bind="subtitle" tagName="p" className={classNames(css.subtitle, 'subtitle')} />
           )}
           {showButtonGroups && (
-            <div className={classNames(css['btns-group'], 'btns-group')}>
-              <div className={classNames(css['btns-group__inner'], 'btns-group__inner')}>
-                {this.getModifierValue('primary-btn') && (
-                  <Button
-                    linkClassName={css.link}
-                    className={classNames(css.button, 'butttton')}
-                    bind="cta-1"
-                  />
-                )}
-                {this.getModifierValue('secondary-btn') && (
-                  <Button
-                    linkClassName={css.link}
-                    className={classNames(css.button, 'butttton')}
-                    bind="cta-2"
-                  />
-                )}
-              </div>
+            <div className={css['btns-group']}>
+              {this.getModifierValue('primary-btn') && (
+                <Button
+                  linkClassName={css.link}
+                  className={css.button}
+                  bind="cta-1"
+                />
+              )}
+              {this.getModifierValue('secondary-btn') && (
+                <Button
+                  linkClassName={css.link}
+                  className={css.button}
+                  bind="cta-2"
+                />
+              )}
             </div>
           )}
         </div>
-        {this.getModifierValue('dynamic') !== 'none' ? (
-          this.getModifierValue('dynamic') === 'waves' ? (
-            <Wave
-              {...{
-                color: '#fff',
-                separation: 50,
-                height: 30,
-                amountX: 50,
-                amountY: 50,
-                speed: 0.3,
-                className: css['vawe-canvas'],
-                scale: 0.5,
-              }}
-            />
-          ) : (
+        {this.getModifierValue('dynamic') !== 'none' ?
+          (this.getModifierValue('dynamic') === 'waves' ?
+            <Wave {...{
+              color: '#fff',
+              separation: 50,
+              height: 30,
+              amountX: 50,
+              amountY: 50,
+              speed: 0.3,
+              className: css['vawe-canvas'],
+              scale: 0.5,
+            }}
+            /> :
             <Particles
               canvasClassName={css.canvas}
-              params={this.getPreset(this.getModifierValue('dynamic'))}
-            />
-          )
-        ) : null}
+              params={(this.getPreset(this.getModifierValue('dynamic')))}
+            />) : null
+        }
       </section>
     )
   }
