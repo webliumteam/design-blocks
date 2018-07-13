@@ -17,19 +17,6 @@
     padding: 75px 0;
   }
 
-  &--background-hidden {
-
-    @media (--ui-tablet-devices) {
-      padding-top: 120px;
-      padding-bottom: 120px;
-    }
-
-    @media (--ui-medium-devices) {
-      padding-top: 175px;
-      padding-bottom: 175px;
-    }
-  }
-
   &__header {
     padding: 0 20px;
     margin-bottom: 25px;
