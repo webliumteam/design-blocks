@@ -16,15 +16,15 @@ class Block extends React.Component {
         {children}
 
         <div className={style.item__inner}>
-          <Text bind={`testimonials[${index}].description`} className={classNames(style.item__desc, 'text-center', 'body')} tagName="p" />
+          <Text bind={`testimonials[${index}].description`} className={classNames(style.item__desc, 'wt-text-center', 'wt-body')} tagName="p" />
           {_.get('date')(modifier) && (
-            <Text bind={`testimonials[${index}].date`} className={classNames(style.item__time, 'text-center', 'caption')} tagName="time" />
+            <Text bind={`testimonials[${index}].date`} className={classNames(style.item__time, 'wt-text-center', 'caption')} tagName="time" />
           )}
           {_.get('heading')(modifier) && (
-            <Text bind={`testimonials[${index}].title`} className={classNames(style.item__title, 'text-center', 'heading')} tagName="h2" />
+            <Text bind={`testimonials[${index}].title`} className={classNames(style.item__title, 'wt-text-center', 'wt-heading')} tagName="h2" />
           )}
           {_.get('position')(modifier) && (
-            <Text bind={`testimonials[${index}].position`} className={classNames(style.item__position, 'text-center', 'caption')} tagName="p" />
+            <Text bind={`testimonials[${index}].position`} className={classNames(style.item__position, 'wt-text-center', 'caption')} tagName="p" />
           )}
         </div>
       </article>
@@ -42,10 +42,10 @@ class Block extends React.Component {
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />
+                <Text bind="title" className={classNames(style.title, 'wt-title', 'wt-text-center')} tagName="h1" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+                <Text bind="subtitle" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
               )}
             </header>
           )}
@@ -58,18 +58,18 @@ class Block extends React.Component {
             }}
           />
           {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
               <div className="btns-group__inner">
                 {this.getModifierValue('button') && (
                   <Button
-                    className={classNames(style.button, 'butttton')}
+                    className={classNames(style.button, 'wt-btns-group__item')}
                     linkClassName={style.link}
                     bind="button"
                   />
                 )}
                 {this.getModifierValue('button_additional') && (
                   <Button
-                    className={classNames(style.button, 'butttton')}
+                    className={classNames(style.button, 'wt-btns-group__item')}
                     linkClassName={style.link}
                     bind="button_additional"
                   />
