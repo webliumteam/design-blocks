@@ -25,14 +25,14 @@ class Wireframe extends React.Component {
         <div className={style.item__inner}>
           <div className={style.item__text}>
             {this.getModifierValue('item-title') && (
-              <Text tagName="h3" className={classNames(style.item__heading, 'heading')} bind={`collection[${index}].heading`} />
+              <Text tagName="h3" className={classNames(style.item__heading, 'wt-heading')} bind={`collection[${index}].heading`} />
             )}
             {this.getModifierValue('item-body') && (
-              <Text tagName="p" className={classNames(style.item__description, 'body')} bind={`collection[${index}].text`} />
+              <Text tagName="p" className={classNames(style.item__description, 'wt-body')} bind={`collection[${index}].text`} />
             )}
           </div>
           {this.getModifierValue('item-link') && (
-            <Text tagName="p" className={classNames(style.item__link, 'body')} bind={`collection[${index}].link`} />
+            <Text tagName="p" className={classNames(style.item__link, 'wt-body')} bind={`collection[${index}].link`} />
           )}
         </div>
       </div>
@@ -48,9 +48,9 @@ class Wireframe extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <div className={style.section__header}>
-            <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h2" />
+            <Text bind="title" className={classNames(style.title, 'wt-title', 'wt-text-center')} tagName="h2" />
             {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+              <Text bind="subtitle" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
             )}
           </div>
           <Collection
@@ -62,11 +62,11 @@ class Wireframe extends React.Component {
             }}
           />
           {showButtonGroups &&
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 {this.getModifierValue('button') && (
                   <Button
-                    className="butttton"
+                    className="wt-btns-group__item"
                     buttonClassName={style['btns-group__button']}
                     linkClassName={style['btns-group__link']}
                     bind="mainButton"
