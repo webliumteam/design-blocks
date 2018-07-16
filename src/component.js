@@ -29,14 +29,14 @@ class Wireframe extends React.Component {
               {this.getModifierValue('title') && (
                 <Text
                   bind="title"
-                  className={classNames(style.title, 'title', headerAlignmentClass)}
+                  className={classNames(style.title, 'wt-title', headerAlignmentClass)}
                   tagName="h2"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   bind="subtitle"
-                  className={classNames(style.subtitle, 'subtitle', headerAlignmentClass)}
+                  className={classNames(style.subtitle, 'wt-subtitle', headerAlignmentClass)}
                   tagName="p"
                 />
               )}
