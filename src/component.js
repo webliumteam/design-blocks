@@ -71,8 +71,8 @@ class Block extends React.Component {
     )
 
     const blockHeader = [
-      <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />,
-      this.getModifierValue('subtitle') && <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />,
+      <Text bind="title" className={classNames(style.title,'wt-title','wt-text-center')} tagName="h1" />,
+      this.getModifierValue('subtitle') && <Text bind="subtitle" className={classNames(style.subtitle,'wt-subtitle','wt-text-center')} tagName="p" />,
     ]
 
     return (
@@ -87,7 +87,7 @@ class Block extends React.Component {
       >
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'],'wt-icon')} bind="topIcon" />
           )}
           {!this.getOptionValue('title-in-contacts') && blockHeader}
           <div className={style.section__main}>
@@ -116,25 +116,25 @@ class Block extends React.Component {
                   {this.getModifierValue('address') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-address-title') && (
-                        <Text bind="address-title" className={classNames(style.contacts__title, 'heading')} tagName="h3" />
+                        <Text bind="address-title" className={classNames(style.contacts__title,'wt-heading')} tagName="h3" />
                       )}
-                      <Text bind="address-content" className={classNames(style.contacts__desc, style['contacts__desc--adress'], 'body')} tagName="p" />
+                      <Text bind="address-content" className={classNames(style.contacts__desc, style['contacts__desc--adress'],'wt-body')} tagName="p" />
                     </li>
                   )}
                   {this.getModifierValue('phone') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-phone-title') && (
-                        <Text bind="phone-title" className={classNames(style.contacts__title, 'heading')} tagName="h3" />
+                        <Text bind="phone-title" className={classNames(style.contacts__title,'wt-heading')} tagName="h3" />
                       )}
-                      <Text bind="phone-link" className={classNames(style.contacts__desc, style['contacts__desc--phone'], 'body')} tagName="p" />
+                      <Text bind="phone-link" className={classNames(style.contacts__desc, style['contacts__desc--phone'],'wt-body')} tagName="p" />
                     </li>
                   )}
                   {this.getModifierValue('email') && (
                     <li className={style['contacts-list__item']}>
                       {!this.getOptionValue('hidden-email-title') && (
-                        <Text bind="email-title" className={classNames(style.contacts__title, 'heading')} tagName="h3" />
+                        <Text bind="email-title" className={classNames(style.contacts__title,'wt-heading')} tagName="h3" />
                       )}
-                      <Text bind="email-link" className={classNames(style.contacts__desc, style['contacts__desc--email'], 'body')} tagName="p" />
+                      <Text bind="email-link" className={classNames(style.contacts__desc, style['contacts__desc--email'],'wt-body')} tagName="p" />
                     </li>
                   )}
                 </ul>
