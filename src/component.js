@@ -18,9 +18,9 @@ class Block extends React.Component {
       <div className={classNames(style.item, className)}>
         {children}
         <Image
-          wrapperClassName={classNames(style['item__picture-wrapper'], 'picture-wrapper')}
-          pictureClassName={classNames(style.item__picture, 'picture')}
-          imgClassName={classNames(style.item__image, 'picture__image')}
+          wrapperClassName={classNames(style['item__picture-wrapper'], 'wt-picture-wrapper')}
+          pictureClassName={classNames(style.item__picture, 'wt-picture')}
+          imgClassName={classNames(style.item__image, 'wt-picture__image')}
           bind={`gallery[${index}].picture`}
           size={{
             'min-width: 320px': 480,
@@ -33,7 +33,7 @@ class Block extends React.Component {
         {_.get('body-text')(modifier) && (
           <Text
             tagName="p"
-            className={classNames(style.item__text, 'body')}
+            className={classNames(style.item__text, 'wt-body')}
             bind={`gallery[${index}].title`}
           />
         )}
@@ -58,21 +58,21 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
           )}
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
                 <Text
                   tagName="h1"
-                  className={classNames(style.title, 'title', 'text-center')}
+                  className={classNames(style.title, 'wt-title', 'wt-text-center')}
                   bind="title"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   tagName="p"
-                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
                   bind="subtitle"
                 />
               )}
@@ -88,10 +88,10 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('secondary-button') && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 <Button
-                  className={classNames(style.button, 'butttton')}
+                  className={classNames(style.button, 'wt-btns-group__item')}
                   linkClassName={style.link}
                   bind="cta"
                 />
