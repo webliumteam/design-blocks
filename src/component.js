@@ -48,9 +48,9 @@ class Block extends React.Component {
 
         <button type="button" role="tab" className={style['tabs-item__button']}>
           <Image
-            wrapperClassName={classNames(style['tabs-item__picture-wrapper'], 'picture-wrapper')}
-            pictureClassName={classNames(style['tabs-item__picture'], 'picture')}
-            imgClassName={classNames(style['tabs-item__image'], 'picture__image')}
+            wrapperClassName={classNames(style['tabs-item__picture-wrapper'], 'wt-picture-wrapper')}
+            pictureClassName={classNames(style['tabs-item__picture'], 'wt-picture')}
+            imgClassName={classNames(style['tabs-item__image'], 'wt-picture__image')}
             bind={`collection[${index}].itemPicture`}
             size={
               {
@@ -61,9 +61,9 @@ class Block extends React.Component {
           />
           <div className={style['tabs-item__content']}>
             <Text bind={`collection[${index}].itemPosition`} tagName="small" className={classNames(style['tabs-item__position'], 'caption')} />
-            <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={classNames(style['tabs-item__title'], 'heading')} />
+            <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={classNames(style['tabs-item__title'], 'wt-heading')} />
             {this.getModifierValue('item_body') && (
-              <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'], 'body')} tagName="p" />
+              <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'], 'wt-body')} tagName="p" />
             )}
             {itemBottom && (
               <div className={classNames(style.item__bottom, style['tabs-item__bottom'], style['item__bottom--mobile'])}>
@@ -102,9 +102,9 @@ class Block extends React.Component {
       _.map(index => (
         <SsrOnly>
           <Image
-            wrapperClassName={classNames(style['tabs-item__picture-wrapper'], 'picture-wrapper')}
-            pictureClassName={classNames(style['tabs-item__picture'], 'picture')}
-            imgClassName={classNames(style['tabs-item__image'], 'picture__image')}
+            wrapperClassName={classNames(style['tabs-item__picture-wrapper'], 'wt-picture-wrapper')}
+            pictureClassName={classNames(style['tabs-item__picture'], 'wt-picture')}
+            imgClassName={classNames(style['tabs-item__image'], 'wt-picture__image')}
             bind={`collection.items[${index}].itemPicture`}
             size={{
               'min-width: 480px': 800,
