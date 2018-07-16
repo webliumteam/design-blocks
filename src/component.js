@@ -99,10 +99,10 @@ class Block extends React.Component {
     return (
       <div className={css['header__company-info']}>
         {this.getModifierValue('company-slogan') && (
-          <Text tagName="div" className={classNames(css.header__slogan, 'body', 'text-center')} bind="slogan" />
+          <Text tagName="div" className={classNames(css.header__slogan, 'wt-body', 'wt-text-center')} bind="slogan" />
         )}
         {this.getModifierValue('company-contacts') && (
-          <Text tagName="div" className={classNames(css.header__email, 'body', 'text-center')} bind="email" />
+          <Text tagName="div" className={classNames(css.header__email, 'wt-body', 'wt-text-center')} bind="email" />
         )}
       </div>
     )
