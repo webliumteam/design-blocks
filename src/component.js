@@ -32,19 +32,19 @@ class Wireframe extends React.Component {
           <Text
             tagName="span"
             bind={`collection[${index}].item__caption`}
-            className={classNames(style.icon, style.item__caption, 'caption', 'text-center')}
+            className={classNames(style.icon, style.item__caption, 'caption', 'wt-text-center')}
           />
         )}
         <div className={style.item__text}>
           <Text
             tagName="h3"
-            className={classNames(style.item__heading, 'heading', 'text-center')}
+            className={classNames(style.item__heading, 'wt-heading', 'wt-text-center')}
             bind={`collection[${index}].item__heading`}
           />
           {this.getModifierValue('text') && (
             <Text
               tagName="p"
-              className={classNames(style.item__body, 'body', 'text-center')}
+              className={classNames(style.item__body, 'wt-body', 'wt-text-center')}
               bind={`collection[${index}].item__body`}
             />
           )}
@@ -78,14 +78,14 @@ class Wireframe extends React.Component {
               {this.getModifierValue('title') && (
                 <Text
                   bind="title"
-                  className={classNames(style.title, 'title', 'text-center')}
+                  className={classNames(style.title, 'wt-title', 'wt-text-center')}
                   tagName="h2"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   bind="subtitle"
-                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
                   tagName="p"
                 />
               )}
@@ -101,11 +101,11 @@ class Wireframe extends React.Component {
             }}
           />
           {btnsGroup && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 {this.getModifierValue('button') && (
                   <Button
-                    className={classNames(style['btns-group__button'], style.button, 'butttton')}
+                    className={classNames(style['btns-group__button'], style.button, 'wt-btns-group__item')}
                     linkClassName={style['btns-group__link']}
                     bind="button"
                   />
