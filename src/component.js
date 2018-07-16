@@ -74,9 +74,9 @@ class Block extends React.Component {
               <Text bind="topCaption" className="body" />
             </div>
           )}
-          <Text bind="title" tagName="h1" className={classNames(css.title, 'hero-title', themeAlignClass)} />
+          <Text bind="title" tagName="h1" className={classNames(css.title,'wt-hero-title', themeAlignClass)} />
           {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" tagName="p" className={classNames(css.subtitle, 'subtitle')} />
+            <Text bind="subtitle" tagName="p" className={classNames(css.subtitle,'wt-subtitle')} />
           )}
           {showButtonGroups && (
             <div className={css['btns-group']}>
