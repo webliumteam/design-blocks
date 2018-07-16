@@ -16,14 +16,14 @@ class Block extends React.Component {
         {children}
 
         <Image
-          wrapperClassName={classNames(style['item__picture-wrapper'], 'picture-wrapper')}
-          pictureClassName={classNames(style.item__picture, 'picture')}
-          imgClassName={classNames(style.item__image, 'picture__image')}
+          wrapperClassName={classNames(style['item__picture-wrapper'], 'wt-picture-wrapper')}
+          pictureClassName={classNames(style.item__picture, 'wt-picture')}
+          imgClassName={classNames(style.item__image, 'wt-picture__image')}
           bind={`awards[${index}].picture`}
           size={{'min-width: 992px': 200, 'min-width: 320px': 480}}
         />
         {_.get('heading')(modifier) && (
-          <Text bind={`awards[${index}].title`} tagName="h2" className={classNames(style.item__title, 'heading', 'text-center')} />
+          <Text bind={`awards[${index}].title`} tagName="h2" className={classNames(style.item__title, 'wt-heading', 'wt-text-center')} />
         )}
       </div>
     )
@@ -37,10 +37,10 @@ class Block extends React.Component {
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />
+                <Text bind="title" className={classNames(style.title, 'wt-title', 'wt-text-center')} tagName="h1" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+                <Text bind="subtitle" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
               )}
             </header>
           )}
