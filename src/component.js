@@ -32,7 +32,7 @@ class Block extends React.Component {
           {_.get('badge')(modifier) && (
             <Text
               tagName="div"
-              className={classNames(style.article__badge, 'caption', 'text-center')}
+              className={classNames(style.article__badge, 'caption', 'wt-text-center')}
               bind={`events[${index}].badge`}
             />
           )}
@@ -40,18 +40,18 @@ class Block extends React.Component {
             <div className={style.article__top}>
               <Text
                 tagName="time"
-                className={classNames(style.article__date, 'subtitle')}
+                className={classNames(style.article__date, 'wt-subtitle')}
                 bind={`events[${index}].date`}
               />
               <Text
                 tagName="time"
-                className={classNames(style.article__time, 'body')}
+                className={classNames(style.article__time, 'wt-body')}
                 bind={`events[${index}].time`}
               />
             </div>
             <Text
               tagName="h3"
-              className={classNames(style.article__title, 'heading')}
+              className={classNames(style.article__title, 'wt-heading')}
               bind={`events[${index}].title`}
             />
             <div className={style.article__bottom}>
@@ -73,9 +73,9 @@ class Block extends React.Component {
             </div>
           </div>
           <Image
-            wrapperClassName={classNames(style['article__picture-wrapper'], 'picture-wrapper')}
-            pictureClassName={classNames(style.article__picture, 'picture')}
-            imgClassName={classNames(style.article__image, 'picture__image')}
+            wrapperClassName={classNames(style['article__picture-wrapper'], 'wt-picture-wrapper')}
+            pictureClassName={classNames(style.article__picture, 'wt-picture')}
+            imgClassName={classNames(style.article__image, 'wt-picture__image')}
             bind={`events[${index}].picture`}
             size={{
               'min-width: 992px': 540,
@@ -100,11 +100,11 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
           )}
-          <Text tagName="h2" className={classNames(style.title, 'title')} bind="title" />
+          <Text tagName="h2" className={classNames(style.title, 'wt-title')} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="p" className={classNames(style.subtitle, 'subtitle')} bind="subtitle" />
+            <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle')} bind="subtitle" />
           )}
           <Collection
             className={style['articles-wrapper']}
@@ -115,10 +115,10 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 <Button
-                  className="butttton"
+                  className="wt-btns-group__item"
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="cta"
