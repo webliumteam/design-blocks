@@ -38,7 +38,7 @@ class Block extends React.Component {
               {this.getModifierValue('description') && (
                 <Text
                   tagName="p"
-                  className={classNames(css.footer__text, 'body', 'text-center', 'text-lg-left')}
+                  className={classNames(css.footer__text, 'wt-body', 'wt-text-center', 'wt-text-lg-left')}
                   bind="description"
                 />
               )}
@@ -74,14 +74,14 @@ class Block extends React.Component {
               {this.getModifierValue('leftText') && (
                 <Text
                   tagName="small"
-                  className={classNames(css.footer__meta, 'caption', 'text-center')}
+                  className={classNames(css.footer__meta, 'caption', 'wt-text-center')}
                   bind="copyright"
                 />
               )}
               {this.getModifierValue('rightText') && (
                 <Text
                   tagName="small"
-                  className={classNames(css.footer__meta, 'caption', 'text-center')}
+                  className={classNames(css.footer__meta, 'caption', 'wt-text-center')}
                   bind="additional"
                 />
               )}
