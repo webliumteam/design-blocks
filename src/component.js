@@ -31,7 +31,7 @@ class Block extends React.Component {
             />
           )}
           {_.get('body')(modifier) && (
-            <Text className={classNames(style.item__desc, 'body', 'text-center')} bind={`partners[${index}].desc`} tagName="p" />
+            <Text className={classNames(style.item__desc, 'wt-body', 'wt-text-center')} bind={`partners[${index}].desc`} tagName="p" />
           )}
           {_.get('link')(modifier) && (
             <div className={style['item__link-wrapper']}>
@@ -55,15 +55,15 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-caption') && (
-            <Text bind="top-caption" className={classNames(style['caption-decorator'], 'body', 'text-center')} tagName="div" />
+            <Text bind="top-caption" className={classNames(style['caption-decorator'], 'wt-body', 'wt-text-center')} tagName="div" />
           )}
           {header && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />
+                <Text bind="title" className={classNames(style.title, 'wt-title', 'wt-text-center')} tagName="h1" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+                <Text bind="subtitle" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
               )}
             </header>
           )}
@@ -76,18 +76,18 @@ class Block extends React.Component {
             }}
           />
           {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
               <div className="btns-group__inner">
                 {this.getModifierValue('button') && (
                   <Button
-                    className={classNames(style.button, 'butttton')}
+                    className={classNames(style.button, 'wt-btns-group__item')}
                     linkClassName={style.link}
                     bind="button"
                   />
                 )}
                 {this.getModifierValue('button_additional') && (
                   <Button
-                    className={classNames(style.button, 'butttton')}
+                    className={classNames(style.button, 'wt-btns-group__item')}
                     linkClassName={style.link}
                     bind="button_additional"
                   />
