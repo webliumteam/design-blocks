@@ -16,11 +16,11 @@ class Block extends React.Component {
         {children}
         <div className={style.item__inner}>
           <div className={style['item__desc-wrapper']}>
-            <Text bind={`numbers[${index}].body`} className={classNames(style.item__desc, 'body')} tagName="p" />
+            <Text bind={`numbers[${index}].body`} className={classNames(style.item__desc, 'wt-body')} tagName="p" />
           </div>
         </div>
         <Background tagName="div" className={style['item__numbers-bg']} bind="numbersBackground">
-          <Text bind={`numbers[${index}].number`} className={classNames(style.item__numbers, 'heading', 'text-center')} tagName="strong" />
+          <Text bind={`numbers[${index}].number`} className={classNames(style.item__numbers, 'wt-heading', 'wt-text-center')} tagName="strong" />
         </Background>
       </div>
     )
@@ -35,10 +35,10 @@ class Block extends React.Component {
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text className={classNames(style.title, 'title')} bind="title" tagName="h1" />
+                <Text className={classNames(style.title, 'wt-title')} bind="title" tagName="h1" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text className={classNames(style.subtitle, 'subtitle')} bind="subtitle" tagName="p" />
+                <Text className={classNames(style.subtitle, 'wt-subtitle')} bind="subtitle" tagName="p" />
               )}
             </header>
           )}
@@ -51,18 +51,18 @@ class Block extends React.Component {
             }}
           />
           {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
               <div className="btns-group__inner">
                 {this.getModifierValue('button') && (
                   <Button
-                    className={classNames(style.button, 'butttton')}
+                    className={classNames(style.button, 'wt-btns-group__item')}
                     linkClassName={style.link}
                     bind="button"
                   />
                 )}
                 {this.getModifierValue('button_additional') && (
                   <Button
-                    className={classNames(style.button, 'butttton')}
+                    className={classNames(style.button, 'wt-btns-group__item')}
                     linkClassName={style.link}
                     bind="button_additional"
                   />
