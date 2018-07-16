@@ -41,11 +41,11 @@ class Block extends React.Component {
     )
 
     const getTitle = this.getModifierValue('title') && (
-      <Text tagName="h1" className={classNames(css.article__title, 'title')} bind="title" />
+      <Text tagName="h1" className={classNames(css.article__title,'wt-title')} bind="title" />
     )
 
     const getIconDecorator = this.getModifierValue('top-icon') && (
-      <Icon className={classNames(css['top-icon'], 'icon')} bind="topIcon" />
+      <Icon className={classNames(css['top-icon'],'wt-icon')} bind="topIcon" />
     )
 
     const getMinResize = this.getOptionValue('min-resize') ? this.getOptionValue('min-resize') : 46
@@ -67,9 +67,9 @@ class Block extends React.Component {
           <div className={css.article}>
             {this.getModifierValue('article-picture') && (
               <Image
-                wrapperClassName={classNames(css['article__picture-wrapper'], 'picture-wrapper')}
-                pictureClassName={classNames(css.article__picture, 'picture')}
-                imgClassName={classNames(css.article__image, 'picture__image')}
+                wrapperClassName={classNames(css['article__picture-wrapper'],'wt-picture-wrapper')}
+                pictureClassName={classNames(css.article__picture,'wt-picture')}
+                imgClassName={classNames(css.article__image,'wt-picture__image')}
                 bind="picture"
                 size={this.getImageSize(columnLayout)}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
@@ -80,10 +80,10 @@ class Block extends React.Component {
                 {!this.getOptionValue('icon-decorator-in-top') && getIconDecorator}
                 {!this.getOptionValue('title-in-top') && getTitle}
                 {this.getModifierValue('subtitle') && (
-                  <Text tagName="p" className={classNames(css.article__subtitle, 'subtitle')} bind="subtitle" />
+                  <Text tagName="p" className={classNames(css.article__subtitle,'wt-subtitle')} bind="subtitle" />
                 )}
                 {this.getModifierValue('text') && (
-                  <Text tagName="p" className={classNames(css.article__text, 'body')} bind="text" />
+                  <Text tagName="p" className={classNames(css.article__text,'wt-body')} bind="text" />
                 )}
                 {this.getModifierValue('additional-text') && (
                   <Text tagName="p" className={classNames(css['article__additional-text'])} bind="text-2" />
@@ -91,19 +91,19 @@ class Block extends React.Component {
                 {this.getModifierValue('socialIcons') && (
                   <div className={css.article__socials}>
                     {!this.getOptionValue('hidden-social-heading') && (
-                      <Text tagName="h2" className={classNames(css['social-title'], 'heading')} bind="social-title" />
+                      <Text tagName="h2" className={classNames(css['social-title'],'wt-heading')} bind="social-title" />
                     )}
                     <SocialIcons bind="socialIcons" className={css.socials} />
                   </div>
                 )}
                 {showButtonGroups && (
-                  <div className={classNames(css['btns-group'], 'btns-group')}>
-                    <div className={classNames(css['btns-group__inner'], 'btns-group__inner')}>
+                  <div className={classNames(css['btns-group'],'wt-btns-group')}>
+                    <div className={classNames(css['btns-group__inner'],'wt-btns-group__inner')}>
                       {this.getModifierValue('button') && (
-                        <Button className="butttton" buttonClassName={css.button} linkClassName={css.link} bind="button-1" />
+                        <Button className="wt-btns-group__item" buttonClassName={css.button} linkClassName={css.link} bind="button-1" />
                       )}
                       {this.getModifierValue('additional-button') && (
-                        <Button className="butttton" buttonClassName={css.button} linkClassName={css.link} bind="button-2" />
+                        <Button className="wt-btns-group__item" buttonClassName={css.button} linkClassName={css.link} bind="button-2" />
                       )}
                     </div>
                   </div>
