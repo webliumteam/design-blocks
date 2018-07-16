@@ -20,9 +20,9 @@ class Block extends React.Component {
     return [
       _.get('image')(modifier) && (
         <Image
-          wrapperClassName={classNames(style['item__pic-wrapper'], 'picture-wrapper')}
-          pictureClassName={classNames(style.item__pic, 'picture')}
-          imgClassName={classNames(style.item__img, 'picture__image')}
+          wrapperClassName={classNames(style['item__pic-wrapper'], 'wt-picture-wrapper')}
+          pictureClassName={classNames(style.item__pic, 'wt-picture')}
+          imgClassName={classNames(style.item__img, 'wt-picture__image')}
           bind={`testimonials[${index}].image`}
           size={{
             'min-width: 320px': 120,
@@ -30,11 +30,11 @@ class Block extends React.Component {
           resize={{disable: true}}
         />
       ),
-      <Text bind={`testimonials[${index}].name`} className={classNames(style.item__title, 'heading', 'text-center')} tagName="h2" />,
+      <Text bind={`testimonials[${index}].name`} className={classNames(style.item__title, 'wt-heading', 'wt-text-center')} tagName="h2" />,
       _.get('position')(modifier) && (
         <Text
           bind={`testimonials[${index}].position`}
-          className={classNames(style.item__position, 'caption', 'text-center')}
+          className={classNames(style.item__position, 'caption', 'wt-text-center')}
           tagName="p"
         />
       ),
@@ -47,9 +47,9 @@ class Block extends React.Component {
       style,
     } = this.props
     return [
-      <Text bind={`testimonials[${index}].description`} className={classNames(style.item__desc, 'body', 'text-center')} tagName="p" />,
+      <Text bind={`testimonials[${index}].description`} className={classNames(style.item__desc, 'wt-body', 'wt-text-center')} tagName="p" />,
       _.get('publishDate')(modifier) && (
-        <Text bind={`testimonials[${index}].date`} className={classNames(style.item__time, 'caption', 'text-center')} tagName="time" />
+        <Text bind={`testimonials[${index}].date`} className={classNames(style.item__time, 'caption', 'wt-text-center')} tagName="time" />
       ),
     ]
   }
@@ -97,17 +97,17 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
           )}
           <Text
             bind="title"
-            className={classNames(style.title, 'title', 'text-center')}
+            className={classNames(style.title, 'wt-title', 'wt-text-center')}
             tagName="h1"
           />
           {this.getModifierValue('subtitle') && (
             <Text
               bind="subtitle"
-              className={classNames(style.subtitle, 'subtitle', 'text-center')}
+              className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
               tagName="p"
             />
           )}
@@ -126,9 +126,9 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
               <div classNames={classNames(style['btns-group__inner'], 'btns-group__inner')}>
-                <Button buttonClassName={classNames(style.button, 'butttton')} linkClassName={style.link} bind="cta" />
+                <Button buttonClassName={classNames(style.button, 'wt-btns-group__item')} linkClassName={style.link} bind="cta" />
               </div>
             </div>
           )}
