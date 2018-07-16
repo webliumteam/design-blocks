@@ -20,13 +20,13 @@ class Wireframe extends React.Component {
         {this.getModifierValue('icon') && (
           <Icon
             bind={`collection[${index}].icon`}
-            className={classNames(style.icon, style.item__icon, 'icon')}
+            className={classNames(style.icon, style.item__icon, 'wt-icon')}
           />
         )}
         {this.getModifierValue('heading') && (
           <Text
             tagName="h3"
-            className={classNames(style.heading, style.item__heading, 'heading', 'text-center')}
+            className={classNames(style.heading, style.item__heading, 'wt-heading', 'wt-text-center')}
             bind={`collection[${index}].heading`}
           />
         )}
@@ -63,14 +63,14 @@ class Wireframe extends React.Component {
             {this.getModifierValue('title') && (
               <Text
                 tagName="h1"
-                className={classNames(style.title, 'title', 'text-center')}
+                className={classNames(style.title, 'wt-title', 'wt-text-center')}
                 bind="title"
               />
             )}
             {this.getModifierValue('subtitle') && (
               <Text
                 tagName="p"
-                className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
                 bind="subtitle"
               />
             )}
@@ -85,18 +85,18 @@ class Wireframe extends React.Component {
           }}
         />
         {buttonsGroup && (
-          <div className={classNames(style['btn-group'], 'btns-group')}>
-            <div className={classNames(style['btn-group__inner'], 'btns-group__inner')}>
+          <div className={classNames(style['btn-group'], 'wt-btns-group')}>
+            <div className={classNames(style['btn-group__inner'], 'wt-btns-group__inner')}>
               {this.getModifierValue('primary-button') && (
                 <Button
-                  className={classNames(style.button, 'butttton')}
+                  className={classNames(style.button, 'wt-btns-group__item')}
                   linkClassName={style.link}
                   bind="button"
                 />
               )}
               {this.getModifierValue('secondary-button') && (
                 <Button
-                  className={classNames(style.button, 'butttton')}
+                  className={classNames(style.button, 'wt-btns-group__item')}
                   linkClassName={style.link}
                   bind="secondaryButton"
                 />
