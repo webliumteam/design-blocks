@@ -22,7 +22,7 @@ class Block extends React.Component {
             {collectionIcon && <Icon bind={`careers[${index}].icon`} className="icon" />}
           </div>
         )}
-        <Text tagName="span" className={classNames(style['list__item-text'], 'heading')} bind={`careers[${index}].title`} />
+        <Text tagName="span" className={classNames(style['list__item-text'], 'wt-heading')} bind={`careers[${index}].title`} />
       </li>
     )
   }
@@ -35,16 +35,16 @@ class Block extends React.Component {
       <section className={classNames(style.section, arrange && style['section--reverse'])}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
           )}
-          {!this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />}
-          {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />}
+          {!this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'wt-title', 'wt-text-center')} bind="title" />}
+          {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} bind="subtitle" />}
           <div className={style.content}>
             {this.getModifierValue('image') && (
               <Image
-                wrapperClassName={classNames(style.media, 'picture-wrapper')}
-                pictureClassName={classNames(style.media__picture, 'picture')}
-                imgClassName={classNames(style.media__image, 'picture__image')}
+                wrapperClassName={classNames(style.media, 'wt-picture-wrapper')}
+                pictureClassName={classNames(style.media__picture, 'wt-picture')}
+                imgClassName={classNames(style.media__image, 'wt-picture__image')}
                 bind="picture"
                 size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
               >
@@ -54,8 +54,8 @@ class Block extends React.Component {
               </Image>
             )}
             <div className={style.content__main}>
-              {this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'title')} bind="title" />}
-              {this.getModifierValue('body') && <Text tagName="p" className={classNames(style.content__text, 'body')} bind="text" />}
+              {this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'wt-title')} bind="title" />}
+              {this.getModifierValue('body') && <Text tagName="p" className={classNames(style.content__text, 'wt-body')} bind="text" />}
               <Collection
                 className={style.list}
                 TagName="ul"
@@ -66,10 +66,10 @@ class Block extends React.Component {
                 }}
               />
               {this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
-                <div className={classNames(style['btns-group'], 'btns-group')}>
-                  <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+                  <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                     <Button
-                      className="butttton"
+                      className="wt-btns-group__item"
                       buttonClassName={style.button}
                       linkClassName={style.link}
                       bind="button-1"
@@ -80,10 +80,10 @@ class Block extends React.Component {
             </div>
           </div>
           {!this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 <Button
-                  className="butttton"
+                  className="wt-btns-group__item"
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="button-1"
