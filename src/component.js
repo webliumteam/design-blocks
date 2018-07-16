@@ -20,20 +20,20 @@ class Block extends React.Component {
         {_.get('number-title')(modifier) && (
           <Text
             tagName="h2"
-            className={classNames(style.item__title, 'subtitle')}
+            className={classNames(style.item__title, 'wt-subtitle')}
             bind={`numbers[${index}].title`}
           />
         )}
         <div className={style.item__content}>
           <Text
             tagName="strong"
-            className={classNames(style.item__number, 'body')}
+            className={classNames(style.item__number, 'wt-body')}
             bind={`numbers[${index}].value`}
           />
           {_.get('body')(modifier) && (
             <Text
               tagName="p"
-              className={classNames(style.item__text, 'title')}
+              className={classNames(style.item__text, 'wt-title')}
               bind={`numbers[${index}].label`}
             />
           )}
@@ -56,12 +56,12 @@ class Block extends React.Component {
       >
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
           )}
           {this.getModifierValue('title') && (
             <Text
               tagName="h1"
-              className={classNames(style.title, 'title', 'text-center', 'text-lg-left')}
+              className={classNames(style.title, 'wt-title', 'wt-text-center', 'wt-text-lg-left')}
               bind="title"
             />
           )}
@@ -78,10 +78,10 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 <Button
-                  className="butttton"
+                  className="wt-btns-group__item"
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="cta"
