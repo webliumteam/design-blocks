@@ -21,9 +21,9 @@ class Wireframe extends React.Component {
     return (
       <div className={style.item}>
         <Image
-          wrapperClassName={classNames(style['item__picture-wrapper'], 'picture-wrapper')}
-          pictureClassName={classNames(style.item__picture, 'picture')}
-          imgClassName={classNames(style.item__image, 'picture__image')}
+          wrapperClassName={classNames(style['item__picture-wrapper'], 'wt-picture-wrapper')}
+          pictureClassName={classNames(style.item__picture, 'wt-picture')}
+          imgClassName={classNames(style.item__image, 'wt-picture__image')}
           bind={`collection[${index}].item_image`}
           size={{
             'min-width: 480px': 600,
@@ -33,7 +33,7 @@ class Wireframe extends React.Component {
         {this.getModifierValue('item_title') && (
           <Text
             tagName="h3"
-            className={classNames(style.item__title, 'heading', 'text-center')}
+            className={classNames(style.item__title, 'wt-heading', 'wt-text-center')}
             bind={`collection[${index}].item_title`}
           />
         )}
@@ -70,14 +70,14 @@ class Wireframe extends React.Component {
               {this.getModifierValue('title') && (
                 <Text
                   tagName="h2"
-                  className={classNames(style.title, 'title', 'text-center')}
+                  className={classNames(style.title, 'wt-title', 'wt-text-center')}
                   bind="title"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   bind="subtitle"
-                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
                   tagName="p"
                 />
               )}
@@ -117,10 +117,10 @@ class Wireframe extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 <Button
-                  className={classNames(style.button, 'butttton')}
+                  className={classNames(style.button, 'wt-btns-group__item')}
                   buttonClassName={style['button--view-default']}
                   bind="button"
                 />
