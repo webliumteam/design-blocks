@@ -29,38 +29,38 @@ class Block extends React.Component {
       <section className={classNames(style.section, alignClass)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
           )}
 
           <article className={style.article}>
             {this.getModifierValue('top-caption') && (
-              <Text bind="top-caption" className={classNames(style['caption-decorator'], 'body', textAlignmentClass)} tagName="div" />
+              <Text bind="top-caption" className={classNames(style['caption-decorator'], 'wt-body', textAlignmentClass)} tagName="div" />
             )}
             {this.getModifierValue('title') && (
               <Text
                 bind="title"
-                className={classNames(style.article__title, 'title', textAlignmentClass)}
+                className={classNames(style.article__title, 'wt-title', textAlignmentClass)}
                 tagName="h1"
               />
             )}
             {this.getModifierValue('heading') && (
               <Text
                 bind="heading"
-                className={classNames(style.article__heading, 'heading', textAlignmentClass)}
+                className={classNames(style.article__heading, 'wt-heading', textAlignmentClass)}
                 tagName="h2"
               />
             )}
             {this.getModifierValue('subheading') && (
               <Text
                 bind="subheading"
-                className={classNames(style.article__subheading, 'subheading', textAlignmentClass)}
+                className={classNames(style.article__subheading, 'wt-subheading', textAlignmentClass)}
                 tagName="p"
               />
             )}
             {this.getModifierValue('text') && (
               <Text
                 bind="text"
-                className={classNames(style.article__text, 'body', textAlignmentClass)}
+                className={classNames(style.article__text, 'wt-body', textAlignmentClass)}
                 tagName="p"
               />
             )}
@@ -70,13 +70,13 @@ class Block extends React.Component {
               </div>
             )}
             {showButtonGroups && (
-              <div className={classNames(style['btns-group'], 'btns-group')}>
+              <div className={classNames(style['btns-group'], 'wt-btns-group')}>
                 <div className="btns-group__inner">
                   {this.getModifierValue('button') && (
-                    <Button className={classNames(style.button, 'butttton')} linkClassName={style.link} bind="button-1" />
+                    <Button className={classNames(style.button, 'wt-btns-group__item')} linkClassName={style.link} bind="button-1" />
                   )}
                   {this.getModifierValue('additional-button') && (
-                    <Button className={classNames(style.button, 'butttton')} linkClassName={style.link} bind="button-2" />
+                    <Button className={classNames(style.button, 'wt-btns-group__item')} linkClassName={style.link} bind="button-2" />
                   )}
                 </div>
               </div>
