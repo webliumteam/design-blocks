@@ -56,9 +56,9 @@ class Block extends React.Component {
     return [
       this.getModifierValue('item_image') && (
         <Image
-          wrapperClassName={classNames(style['article__picture-wrapper'], 'picture-wrapper')}
-          pictureClassName={classNames(style.article__picture, 'picture')}
-          imgClassName={classNames(style.article__image, 'picture__image')}
+          wrapperClassName={classNames(style['article__picture-wrapper'],'wt-picture-wrapper')}
+          pictureClassName={classNames(style.article__picture,'wt-picture')}
+          imgClassName={classNames(style.article__image,'wt-picture__image')}
           {...isBlog
             ? {value: {src: imageUrl}, disabledControls: ['toolbar', 'scale'], resize: {bindToModifier: 'author_picture'}}
             : {bind: `collection[${index}].item_image`}
@@ -136,13 +136,13 @@ class Block extends React.Component {
         {children}
         {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(index, post)}</div> : this.itemHeader(index, post)}
         {isBlog
-          ? <SsrText tagName="h2" className={classNames(style.article__title, 'heading')} value={{content: post.title, type: 'subtitle'}} />
-          : <Text tagName="h2" className={classNames(style.article__title, 'heading')} bind={`collection[${index}].item_heading`} />
+          ? <SsrText tagName="h2" className={classNames(style.article__title,'wt-heading')} value={{content: post.title, type: 'subtitle'}} />
+          : <Text tagName="h2" className={classNames(style.article__title,'wt-heading')} bind={`collection[${index}].item_heading`} />
         }
         {this.getModifierValue('item_body') && (
           isBlog
-            ? <SsrText tagName="p" className={classNames(style.article__text, 'body')} value={{content: converter.makeHtml(post.content)}} />
-            : <Text tagName="p" className={classNames(style.article__text, 'body')} bind={`collection[${index}].item_body`} />
+            ? <SsrText tagName="p" className={classNames(style.article__text,'wt-body')} value={{content: converter.makeHtml(post.content)}} />
+            : <Text tagName="p" className={classNames(style.article__text,'wt-body')} bind={`collection[${index}].item_body`} />
         )}
         {this.getModifierValue('item_button') && (
         <Button
@@ -182,11 +182,11 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('icon_decorator') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="icon_decorator" />
+            <Icon className={classNames(style['top-icon'],'wt-icon')} bind="icon_decorator" />
           )}
-          <Text tagName="h1" className={classNames(style.title, 'title', 'text-center')} bind="title" />
+          <Text tagName="h1" className={classNames(style.title,'wt-title','wt-text-center')} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="div" className={classNames(style.subtitle, 'subtitle', 'text-center')} bind="subtitle" />
+            <Text tagName="div" className={classNames(style.subtitle,'wt-subtitle','wt-text-center')} bind="subtitle" />
             )}
           {isBlog
        ? this.renderPosts()
@@ -201,10 +201,10 @@ class Block extends React.Component {
        />
           }
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'],'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'],'wt-btns-group__inner')}>
                 <Button
-                  className={classNames(style.button, 'butttton')}
+                  className={classNames(style.button, 'wt-btns-group__item')}
                   linkClassName={style.link}
                   bind="button"
                 />
