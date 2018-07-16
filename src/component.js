@@ -27,31 +27,31 @@ class Block extends React.Component {
       <section className={classNames(style.section, alignClass)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
           )}
           <header className={style.section__header}>
             {this.getModifierValue('title') && (
               <Text
                 tagName="h1"
-                className={classNames(style.title, 'title', headingsAlignClass)}
+                className={classNames(style.title, 'wt-title', headingsAlignClass)}
                 bind="title"
               />
             )}
             {this.getModifierValue('subtitle') && (
               <Text
                 tagName="p"
-                className={classNames(style.subtitle, 'subtitle', headingsAlignClass)}
+                className={classNames(style.subtitle, 'wt-subtitle', headingsAlignClass)}
                 bind="subtitle"
               />
             )}
           </header>
           {this.getModifierValue('heading') && (
-            <Text tagName="h2" className={classNames(style.heading, 'heading', headingsAlignClass)} bind="heading" />
+            <Text tagName="h2" className={classNames(style.heading, 'wt-heading', headingsAlignClass)} bind="heading" />
           )}
           {this.getModifierValue('subheading') && (
-            <Text tagName="p" className={classNames(style.subheading, 'heading', headingsAlignClass)} bind="subheading" />
+            <Text tagName="p" className={classNames(style.subheading, 'wt-heading', headingsAlignClass)} bind="subheading" />
           )}
-          {this.getModifierValue('text') && <Text tagName="p" className={classNames(style.text, 'body', bodyAlignClass)} bind="text" />}
+          {this.getModifierValue('text') && <Text tagName="p" className={classNames(style.text, 'wt-body', bodyAlignClass)} bind="text" />}
         </div>
       </section>
     )
