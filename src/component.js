@@ -21,14 +21,14 @@ class Block extends React.Component {
       this.getModifierValue('title') && (
         <Text
           tagName="h1"
-          className={classNames(style.title, 'title', 'text-center')}
+          className={classNames(style.title, 'wt-title', 'wt-text-center')}
           bind="title"
         />
       ),
       this.getModifierValue('subtitle') && (
         <Text
           tagName="p"
-          className={classNames(style.description, 'body', 'text-center')}
+          className={classNames(style.description, 'wt-body', 'wt-text-center')}
           bind="description"
         />
       ),
@@ -46,10 +46,10 @@ class Block extends React.Component {
       ) : (
         this.getContent()
       ),
-      <div className={classNames(style['btns-group'], 'btns-group')}>
-        <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+      <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+        <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
           <Button
-            className="butttton"
+            className="wt-btns-group__item"
             buttonClassName={style.button}
             linkClassName={style.link}
             bind="cta"
@@ -58,9 +58,9 @@ class Block extends React.Component {
       </div>,
       this.getModifierValue('picture') && (
         <Image
-          wrapperClassName={classNames(style['section__picture-wrapper'], 'picture-wrapper')}
-          pictureClassName={classNames(style.section__picture, 'picture')}
-          imgClassName={classNames(style.section__image, 'picture__image')}
+          wrapperClassName={classNames(style['section__picture-wrapper'], 'wt-picture-wrapper')}
+          pictureClassName={classNames(style.section__picture, 'wt-picture')}
+          imgClassName={classNames(style.section__image, 'wt-picture__image')}
           bind="picture"
         />
       ),
