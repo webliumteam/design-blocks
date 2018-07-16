@@ -20,9 +20,9 @@ class Wireframe extends React.Component {
         {children}
         {this.getModifierValue('item-image') && (
           <Image
-            wrapperClassName={classNames(style['item__pic-wrapper'], 'picture-wrapper')}
-            pictureClassName={classNames(style.item__pic, 'picture')}
-            imgClassName={classNames(style.item__img, 'picture__image')}
+            wrapperClassName={classNames(style['item__pic-wrapper'], 'wt-picture-wrapper')}
+            pictureClassName={classNames(style.item__pic, 'wt-picture')}
+            imgClassName={classNames(style.item__img, 'wt-picture__image')}
             bind={`collection[${index}].image`}
             size={{
               'min-width: 320px': 120,
@@ -31,9 +31,9 @@ class Wireframe extends React.Component {
           />
         )}
         <div className={style.item__text}>
-          <Text tagName="h3" className={classNames(style.item__heading, 'heading', 'text-center', 'text-md-left')} bind={`collection[${index}].title`} />
+          <Text tagName="h3" className={classNames(style.item__heading, 'wt-heading', 'wt-text-center', 'wt-text-md-left')} bind={`collection[${index}].title`} />
           {this.getModifierValue('item-body') && (
-            <Text tagName="p" className={classNames(style.item__description, 'body')} bind={`collection[${index}].desc`} />
+            <Text tagName="p" className={classNames(style.item__description, 'wt-body')} bind={`collection[${index}].desc`} />
           )}
         </div>
         {this.getModifierValue('item-button') && (
@@ -55,9 +55,9 @@ class Wireframe extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <div className={style.section__header}>
-            <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h2" />
+            <Text bind="title" className={classNames(style.title, 'wt-title', 'wt-text-center')} tagName="h2" />
             {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />
+              <Text bind="subtitle" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
             )}
           </div>
           <Collection
@@ -69,11 +69,11 @@ class Wireframe extends React.Component {
             }}
           />
           {this.getModifierValue('cta') && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 <Button
                   linkClassName={style.link}
-                  className={classNames(style.button, 'butttton')}
+                  className={classNames(style.button, 'wt-btns-group__item')}
                   bind="cta"
                 />
               </div>
