@@ -50,18 +50,18 @@ class Block extends React.Component {
           {headerShow && (
             <div className={css.section__header}>
               {this.getModifierValue('title') && (
-              <Text bind="title" className={classNames(css.title, 'title', 'text-center')} tagName="h2" />)}
+              <Text bind="title" className={classNames(css.title, 'wt-title', 'wt-text-center')} tagName="h2" />)}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(css.subtitle, 'subtitle', 'text-center')} tagName="p" />
+                <Text bind="subtitle" className={classNames(css.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
               )}
             </div>
            )}
           <div className={css.article}>
             {this.getModifierValue('image') && (
               <Image
-                wrapperClassName={classNames(css['article__picture-wrapper'], 'picture-wrapper')}
-                pictureClassName={classNames(css.article__picture, 'picture')}
-                imgClassName={classNames(css.article__image, 'picture__image')}
+                wrapperClassName={classNames(css['article__picture-wrapper'], 'wt-picture-wrapper')}
+                pictureClassName={classNames(css.article__picture, 'wt-picture')}
+                imgClassName={classNames(css.article__image, 'wt-picture__image')}
                 bind="image"
                 size={this.getImageSize(columnLayout)}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
@@ -88,10 +88,10 @@ class Block extends React.Component {
                   </div>
                 )}
                 {this.getModifierValue('heading') && (
-                  <Text tagName="p" className={classNames(css.article__heading, 'heading')} bind="heading" />
+                  <Text tagName="p" className={classNames(css.article__heading, 'wt-heading')} bind="heading" />
                 )}
                 {this.getModifierValue('body') && (
-                  <Text tagName="p" className={classNames(css.article__text, 'body')} bind="body" />
+                  <Text tagName="p" className={classNames(css.article__text, 'wt-body')} bind="body" />
                 )}
                 {this.getModifierValue('button') && (
                   <Button
@@ -105,10 +105,10 @@ class Block extends React.Component {
             )}
           </div>
           {this.getModifierValue('button_additional') && (
-            <div className={classNames(css['btns-group'], 'btns-group')}>
-              <div className={classNames(css['btns-group__inner'], 'btns-group__inner')}>
+            <div className={classNames(css['btns-group'], 'wt-btns-group')}>
+              <div className={classNames(css['btns-group__inner'], 'wt-btns-group__inner')}>
                 <Button
-                  className="butttton"
+                  className="wt-btns-group__item"
                   buttonClassName={css.button}
                   linkClassName={css.link}
                   bind="button_additional"
