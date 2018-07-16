@@ -25,7 +25,7 @@ class Block extends React.Component {
       showHeading && (
         <Text
           tagName="h2"
-          className={classNames(style.item__title, 'heading')}
+          className={classNames(style.item__title, 'wt-heading')}
           bind={`partners[${index}].title`}
         />
       ),
@@ -34,7 +34,7 @@ class Block extends React.Component {
           {_.get('body')(modifier) && (
             <Text
               tagName="p"
-              className={classNames(style.item__desc, 'body')}
+              className={classNames(style.item__desc, 'wt-body')}
               bind={`partners[${index}].desc`}
             />
           )}
@@ -101,21 +101,21 @@ class Block extends React.Component {
       <section className={classNames(style.section)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
           )}
           {blockHeader && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
                 <Text
                   tagName="h1"
-                  className={classNames(style.title, 'title', 'text-center')}
+                  className={classNames(style.title, 'wt-title', 'wt-text-center')}
                   bind="title"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   tagName="p"
-                  className={classNames(style.subtitle, 'subtitle', 'text-center')}
+                  className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
                   bind="subtitle"
                 />
               )}
@@ -140,9 +140,9 @@ class Block extends React.Component {
                 [style['btns-group--offset-sm']]: onlyLogo,
               })}
             >
-              <div className={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
                 <Button
-                  className="butttton"
+                  className="wt-btns-group__item"
                   linkClassName={style.link}
                   buttonClassName={style.button}
                   bind="button"
