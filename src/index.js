@@ -63,11 +63,11 @@ ExtendedWireframe.defaultContent = {
       },
       {
         title: {
-          content: 'Choose an</br>electrician',
+          content: 'Enjoy our products',
           type: 'heading',
         },
         description: {
-          content: 'Select a highly trained & registered electrician.',
+          content: 'Get access to all available features and start attracting clients straight away.',
           type: 'text',
         },
         background: {
@@ -92,11 +92,11 @@ ExtendedWireframe.defaultContent = {
     ],
   },
   title: {
-    content: 'Enjoy our products',
+    content: 'Our process',
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Get access to all available features and start attracting clients straight away.',
+    content: 'We are guided by clear and simple cooperation with clients. Here’s how you can order our online products:',
     type: 'subtitle',
   },
   'cta-1': {
