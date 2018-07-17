@@ -101,13 +101,7 @@ ExtendedWireframe.modifierScheme = {
   },
   'form-description': {defaultValue: false, label: 'Form description', type: 'hidden'},
   'Arrange elements': {
-    children: [
-      {id: 'left', label: 'Left'},
-      {id: 'right', label: 'Right'},
-    ],
-    defaultValue: 'right',
-    name: 'Header alignment',
-    type: 'radio-button-group',
+    defaultValue: 'left',
     style: 'buttons',
   },
 }
