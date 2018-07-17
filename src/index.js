@@ -32,11 +32,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[1],
       title: {
-        content: 'Interior and exterior lighting',
+        content: 'Service 2',
         type: 'heading',
       },
       description: {
-        content: 'From $30',
+        content: 'Developing marketing and business strategy to help company grow fast.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -48,11 +48,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[2],
       title: {
-        content: 'Data network & telephone installations',
+        content: 'Service 3',
         type: 'heading',
       },
       description: {
-        content: 'From $50',
+        content: 'Building brand awareness for micro and small businesses to increase potential reach.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -64,11 +64,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[3],
       title: {
-        content: 'Power meter & electrical panel service',
+        content: 'Service 4',
         type: 'heading',
       },
       description: {
-        content: 'From $25',
+        content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -80,11 +80,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[4],
       title: {
-        content: 'Lightning protection system<br>installation',
+        content: 'Service 5',
         type: 'heading',
       },
       description: {
-        content: 'From $30',
+        content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -96,11 +96,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[5],
       title: {
-        content: 'Residential and commercial wiring',
+        content: 'Service 6',
         type: 'heading',
       },
       description: {
-        content: 'From $50',
+        content: 'Building brand awareness for micro and small businesses to increase potential reach.',
         type: 'subheading',
         color: 'brand-color',
       },
