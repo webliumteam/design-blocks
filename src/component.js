@@ -56,12 +56,14 @@ class Wireframe extends React.Component {
           )}
         </time>
         <div className={classNames(style['item__button-wrapper'], minimalState && style['item__button-wrapper--center'])}>
-          <Button
-            className={style.item__button}
-            buttonClassName={style.button}
-            linkClassName={style.link}
-            bind={`events[${index}].cta`}
-          />
+          {this.getModifierValue('item_button') && (
+            <Button
+              className={style.item__button}
+              buttonClassName={style.button}
+              linkClassName={style.link}
+              bind={`events[${index}].cta`}
+            />
+          )}
         </div>
       </li>
     )
@@ -69,9 +71,10 @@ class Wireframe extends React.Component {
 
   render() {
     const {components: {Text, Button, Collection}, style, $block} = this.props
+    const withoutButton = !this.getModifierValue('item_button') ? style['section--without-button'] : ''
 
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, withoutButton)}>
         <div className={style.section__inner}>
           <div className={style.section__header}>
             <Text bind="title" className={classNames(style.title, 'wt-title', 'wt-text-center')} tagName="h1" />
@@ -239,7 +242,8 @@ Wireframe.modifierScheme = {
   location: {defaultValue: true, label: 'Event location', type: 'checkbox', sortOrder: 50},
   time: {defaultValue: true, label: 'Event time', type: 'checkbox', sortOrder: 60},
   line: {defaultValue: true, label: 'Line', type: 'checkbox', sortOrder: 70},
-  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 80},
+  item_button: {defaultValue: true, label: 'Event button', type: 'checkbox', sortOrder: 80},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 90},
 }
 
 export default Wireframe

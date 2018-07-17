@@ -30,6 +30,28 @@
       max-width: 770px;
     }
   }
+
+  &--without-button {
+    .item__button-wrapper {
+      max-width: 0;
+      flex-basis: 0;
+    }
+
+    .item__main {
+
+      max-width: 60%;
+      flex-basis: 60%;
+
+      @media (--ui-medium-devices) {
+        max-width: 80%;
+        flex-basis: 80%;
+      }
+    }
+
+    .loc {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .title {
