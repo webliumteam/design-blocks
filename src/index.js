@@ -79,7 +79,7 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    content: 'Advantages',
+    content: 'Blog',
   },
 }
 
@@ -87,7 +87,7 @@ ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   button: {defaultValue: false},
   item_button: {defaultValue: false, label: 'Post link', type: 'hidden'},
-  item_date: {defaultValue: true, label: 'Caption', type: 'checkbox'},
+  item_date: {defaultValue: true, label: 'Caption', type: 'checkbox', sortOrder: 42},
 
 }
 
