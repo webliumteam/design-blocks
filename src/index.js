@@ -16,11 +16,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[0],
       title: {
-        content: '24-hour emergency service',
+        content: 'Service 1',
         type: 'heading',
       },
       description: {
-        content: 'From $50',
+        content: 'Multipurpose assistance for online stores and offline retail businesses.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -111,21 +111,21 @@ ExtendedWireframe.defaultContent = {
     },
   ],
   title: {
-    content: 'Services',
+    content: 'Services We Provide',
     type: 'blockTitle',
   },
   subtitle: {
-    content: "If you can't find the service you are looking for, feel free to contact us. We will be glad to answer any service-related questions. We look forward to meeting your electrical needs. Here are some services we offer:",
+    content: 'We deliver all kind of services that support small and micro businesses. Here are some of them:',
     type: 'subtitle',
   },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'button-primary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
-  'button-secondary': {defaultValue: false, label: 'Button', type: 'checkbox'},
-  link: {defaultValue: false, label: 'Link', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Services description', type: 'checkbox'},
+  'button-primary': {defaultValue: false},
+  'button-secondary': {defaultValue: false},
+  link: {defaultValue: false},
+  subtitle: {defaultValue: true},
 }
 
 export default ExtendedWireframe
