@@ -192,11 +192,11 @@ ExtendedWireframe.defaultContent = {
   },
   copyright: {
     type: 'text',
-    content: '© Produced by Weblium. All Rights Reserved',
+    content: '©Produced by Weblium.com.',
   },
   additional: {
     type: 'text',
-    content: 'Demo Preview for Plugin LLC Electrician Concept',
+    content: 'All rights Reserved',
   },
   background: {
     type: 'color',
