@@ -85,7 +85,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  button: {defaultValue: false, label: 'Button', type: 'hidden'},
+  button: {defaultValue: false},
   item_button: {defaultValue: false, label: 'Post link', type: 'hidden'},
   item_date: {defaultValue: true, label: 'Caption', type: 'checkbox'},
 
