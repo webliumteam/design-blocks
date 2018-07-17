@@ -123,9 +123,9 @@ ExtendedWireframe.defaultContent = {
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
   'button-primary': {defaultValue: false, label: 'Button (link)', type: 'checkbox'},
-  'button-secondary': {defaultValue: false},
-  link: {defaultValue: false},
-  subtitle: {defaultValue: true},
+  'button-secondary': {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', sortOrder: 50},
+  link: {defaultValue: false, label: 'Service link (button)', type: 'checkbox', sortOrder: 40},
+  subtitle: {defaultValue: true, label: 'Block  description', type: 'checkbox', sortOrder: 10},
 }
 
 export default ExtendedWireframe
