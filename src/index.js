@@ -26,17 +26,17 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    content: 'Ask our experts about your freight',
+    content: 'Want to work with us?',
     color: 'light-shade-color',
   },
   description: {
     ...Component.defaultContent.description,
-    content: 'Our experts are always ready to help. Get in touch with us and we\'ll find the right solution to meet your needs.',
+    content: 'Get a full-scale analysis of your business and recommended solutions to increase your profits.',
     color: 'light-shade-color',
   },
   cta: {
     ...Component.defaultContent.cta,
-    textValue: 'Get a quote',
+    textValue: 'Request a quote',
     type: 'primary',
     iconEnabled: true,
     iconAlignment: 'right',
