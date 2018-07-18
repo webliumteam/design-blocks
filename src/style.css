@@ -19,7 +19,7 @@
     }
 
     .article__picture {
-      padding-top: 0;
+      width: 100%;
     }
 
     .article__content {
