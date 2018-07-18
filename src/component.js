@@ -17,23 +17,23 @@ class Block extends React.Component {
     return (
       <article className={style.item}>
         <div className={style.item__inner}>
-          <Text tagName="h2" className={classNames(style.item__title, 'wt-hero-title', 'wt-text-center')} bind={`cover[${index}].title`} />
-          {_.get('subtitle')(modifier) && <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} bind={`cover[${index}].subtitle`} />}
-          {(_.get('primary-button')(modifier) || _.get('secondary-button')(modifier)) && (
+          <Text tagName="h2" className={classNames(style.item__title, 'wt-hero-title', 'wt-text-center')} bind={`collection[${index}].item_heading`} />
+          {_.get('subtitle')(modifier) && <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} bind={`collection[${index}].item_subheading`} />}
+          {(_.get('item_button')(modifier) || _.get('item_button_additional')(modifier)) && (
             <div className={classNames(style['btns-group'], 'wt-btns-group')}>
               <div className="btns-group__inner">
-                {_.get('primary-button')(modifier) && (
+                {_.get('item_button')(modifier) && (
                   <Button
                     className={classNames(style.button, 'wt-btns-group__item')}
                     linkClassName={style.link}
-                    bind={`cover[${index}].cta`}
+                    bind={`collection[${index}].item_button`}
                   />
                 )}
-                {_.get('secondary-button')(modifier) && (
+                {_.get('item_button_additional')(modifier) && (
                   <Button
                     className={classNames(style.button, 'wt-btns-group__item')}
                     linkClassName={style.link}
-                    bind={`cover[${index}]cta-2]`}
+                    bind={`collection[${index}].item_button_additional`}
                   />
                 )}
               </div>
@@ -55,7 +55,7 @@ class Block extends React.Component {
         <div className={classNames(style.section__inner, 'wt-section__inner')}>
           <Slider
             className={classNames(style['items-wrapper'], 'wt-section__content')}
-            bind="cover"
+            bind="collection"
             Item={this.collectionItem}
             settings={{
               dots: this.getModifierValue('dots'),
@@ -81,137 +81,139 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Slider', 'Text', 'Button', 'Icon'])($editor.components)
+Block.components = _.pick(['Slider', 'Text', 'Button'])($editor.components)
 
 Block.defaultContent = {
   background: {
     type: 'color',
     color: '#d8d8d8',
   },
-  cover: [
-    {
-      title: {
-        content: 'Quantum Company',
-        type: 'heroTitle',
-      },
-      subtitle: {
-        content: 'We implement Innovative Projects',
-        type: 'subtitle',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+  collection: {
+    items: [
+      {
+        item_heading: {
+          content: 'Quantum Company',
+          type: 'heroTitle',
+        },
+        item_subheading: {
+          content: 'We implement Innovative Projects',
+          type: 'subtitle',
+        },
+        item_button: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Request a quote',
+          type: 'primary',
         },
-        textValue: 'Request a quote',
-        type: 'primary',
-      },
-      'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+        item_button_additional: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Learn more',
+          type: 'secondary',
         },
-        textValue: 'Learn more',
-        type: 'secondary',
       },
-    },
-    {
-      title: {
-        content: 'Quantum Company',
-        type: 'heroTitle',
-      },
-      subtitle: {
-        content: 'We implement Innovative Projects',
-        type: 'subtitle',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+      {
+        item_heading: {
+          content: 'Quantum Company',
+          type: 'heroTitle',
+        },
+        item_subheading: {
+          content: 'We implement Innovative Projects',
+          type: 'subtitle',
+        },
+        item_button: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Request a quote',
+          type: 'primary',
         },
-        textValue: 'Request a quote',
-        type: 'primary',
-      },
-      'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+        item_button_additional: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Learn more',
+          type: 'secondary',
         },
-        textValue: 'Learn more',
-        type: 'secondary',
       },
-    },
-    {
-      title: {
-        content: 'Quantum Company',
-        type: 'heroTitle',
-      },
-      subtitle: {
-        content: 'We implement Innovative Projects',
-        type: 'subtitle',
-      },
-      cta: {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+      {
+        item_heading: {
+          content: 'Quantum Company',
+          type: 'heroTitle',
+        },
+        item_subheading: {
+          content: 'We implement Innovative Projects',
+          type: 'subtitle',
+        },
+        item_button: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Request a quote',
+          type: 'primary',
         },
-        textValue: 'Request a quote',
-        type: 'primary',
-      },
-      'cta-2': {
-        actionConfig: {
-          action: 'link',
-          actions: {
-            link: {
-              type: '',
-              innerPage: '',
-              url: '',
+        item_button_additional: {
+          actionConfig: {
+            action: 'link',
+            actions: {
+              link: {
+                type: '',
+                innerPage: '',
+                url: '',
+              },
             },
           },
+          textValue: 'Learn more',
+          type: 'secondary',
         },
-        textValue: 'Learn more',
-        type: 'secondary',
       },
-    },
-  ],
+    ],
+  },
 }
 
 Block.modifierScheme = {
   subtitle: {defaultValue: true, label: 'Block subtitle', type: 'checkbox', sortOrder: 10},
   arrows: {defaultValue: true, label: 'Navigation arrows', type: 'checkbox', sortOrder: 20},
-  'primary-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 30},
+  item_button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 30},
+  item_button_additional: {defaultValue: false, label: 'Additional button (link) ', type: 'hidden', sortOrder: 50},
   dots: {defaultValue: true, label: 'Navigation indicators', type: 'checkbox', sortOrder: 40},
-  'secondary-button': {defaultValue: false, label: 'Additional button (link) ', type: 'hidden', sortOrder: 50},
 }
 
 Block.configuration = {
