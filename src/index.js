@@ -14,9 +14,10 @@ ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
   collection: {
     ...Component.defaultContent.collection,
-    background: {
-      'nth-child': [
-        'n', {
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        background: {
           type: 'image',
           position: {
             type: 'cover',
@@ -29,8 +30,40 @@ ExtendedWireframe.defaultContent = {
             opacity: 0.55,
           },
         },
-      ],
-    },
+      },
+      {
+        ...Component.defaultContent.collection.items[1],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'img-bg.jpg',
+          overlay: {
+            type: 'color',
+            color: '#000',
+            opacity: 0.55,
+          },
+        },
+      },
+      {
+        ...Component.defaultContent.collection.items[1],
+        background: {
+          type: 'image',
+          position: {
+            type: 'cover',
+            cover: '50% 50%',
+          },
+          resourceRef: 'img-bg.jpg',
+          overlay: {
+            type: 'color',
+            color: '#000',
+            opacity: 0.55,
+          },
+        },
+      },
+    ],
   },
 }
 
