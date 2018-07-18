@@ -48,7 +48,7 @@ ExtendedWireframe.defaultContent = {
         },
       },
       {
-        ...Component.defaultContent.collection.items[1],
+        ...Component.defaultContent.collection.items[2],
         background: {
           type: 'image',
           position: {
