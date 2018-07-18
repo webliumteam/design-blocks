@@ -26,7 +26,7 @@ ExtendedWireframe.defaultContent = {
           },
           resourceRef: 'bg.png',
         },
-        cta: {
+        item_button: {
           ...Component.defaultContent.collection.items[0].item_button,
           size: 'lg',
         },
@@ -41,7 +41,7 @@ ExtendedWireframe.defaultContent = {
           },
           resourceRef: 'bg.png',
         },
-        cta: {
+        item_button: {
           ...Component.defaultContent.collection.items[1].item_button,
           size: 'lg',
         },
@@ -56,7 +56,7 @@ ExtendedWireframe.defaultContent = {
           },
           resourceRef: 'bg.png',
         },
-        cta: {
+        item_button: {
           ...Component.defaultContent.collection.items[2].item_button,
           size: 'lg',
         },
