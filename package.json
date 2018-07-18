@@ -30,7 +30,7 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
-    "wireframe-lucario-cover": "git+https://github.com/webliumteam/blocks.git#w/series-2/cover/prod"
+    "wireframe-lucario-cover": "git+https://github.com/webliumteam/blocks.git#w/lucario/cover/prod"
   },
   "editorVersion": "0.0.0"
 }
