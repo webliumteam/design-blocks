@@ -17,8 +17,8 @@ class Block extends React.Component {
     return (
       <article className={style.item}>
         <div className={style.item__inner}>
-          <Text tagName="h2" className={style.item__title} bind={`cover[${index}].title`} />
-          {_.get('subtitle')(modifier) && <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle')} bind={`cover[${index}].subtitle`} />}
+          <Text tagName="h2" className={classNames(style.item__title, 'wt-hero-title', 'wt-text-center')} bind={`cover[${index}].title`} />
+          {_.get('subtitle')(modifier) && <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} bind={`cover[${index}].subtitle`} />}
           {(_.get('primary-button')(modifier) || _.get('secondary-button')(modifier)) && (
             <div className={classNames(style['btns-group'], 'wt-btns-group')}>
               <div className="btns-group__inner">
@@ -45,16 +45,16 @@ class Block extends React.Component {
   }
 
   render() {
-    const {components: {Slider, Icon}, style, $block} = this.props
+    const {components: {Slider}, style, $block} = this.props
     const customArrows = this.getOptionValue('custom-arrows') ? {
       nextArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('next-arrow')}} />,
       prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
     } : {}
     return (
-      <section className={style.section}>
-        <div className={style.section__inner}>
+      <section className={classNames(style.section, 'wt-section')}>
+        <div className={classNames(style.section__inner, 'wt-section__inner')}>
           <Slider
-            className={style['items-wrapper']}
+            className={classNames(style['items-wrapper'], 'wt-section__content')}
             bind="cover"
             Item={this.collectionItem}
             settings={{
