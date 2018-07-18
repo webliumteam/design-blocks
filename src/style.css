@@ -74,7 +74,7 @@
 
   &__heading {
     margin-bottom: 5px;
-    text-align-last: left;
+    text-align: left;
   }
 
   &__meta {
