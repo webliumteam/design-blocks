@@ -9,6 +9,8 @@ class Wireframe extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Text, Button}, style} = this.props
     const headerContent = this.getModifierValue('title') || this.getModifierValue('subtitle')
@@ -19,10 +21,10 @@ class Wireframe extends React.Component {
           {headerContent && (
             <div className={style.section__header}>
               {this.getModifierValue('title') && (
-                <Text tagName="h1" className={classNames(style.title, 'wt-title', 'wt-text-center', 'wt-text-md-left')} bind="title" />
+                <Text tagName="h1" className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'), this.ui('ui-text-md-left'))} bind="title" />
               )}
               {this.getModifierValue('subtitle') && (
-                <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center', 'wt-text-md-left')} bind="subtitle" />
+                <Text tagName="p" className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'), this.ui('ui-text-md-left'))} bind="subtitle" />
               )}
             </div>
           )}
