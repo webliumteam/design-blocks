@@ -11,6 +11,8 @@ class Block extends React.Component {
 
   getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Text, Menu, Logo}, style: css} = this.props
 
