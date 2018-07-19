@@ -9,6 +9,8 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {
       components: {Text, ContactForm, Background},
@@ -19,12 +21,12 @@ class Block extends React.Component {
         <Background className={style.section__inner} bind="formBackground">
           <header className={style.section__header}>
             {this.getModifierValue('title') && (
-              <Text tagName="h1" className={classNames(style.title, 'wt-title', 'wt-text-center')} bind="title" />
+              <Text tagName="h1" className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))} bind="title" />
             )}
             {this.getModifierValue('subtitle') && (
               <Text
                 tagName="p"
-                className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
+                className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))}
                 bind="subtitle"
               />
             )}
