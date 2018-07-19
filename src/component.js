@@ -57,7 +57,7 @@ class Block extends React.Component {
         >
           <Text
             tagName="h2"
-            className={classNames(style.item__title, 'wt-heading')}
+            className={classNames(style.item__title, this.ui('ui-heading'))}
             bind={`faq[${index}].title`}
           />
           {this.getOptionValue('toogle-item-controls') && controlIcons}
@@ -71,6 +71,8 @@ class Block extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {
       components: {Collection, Text, Button, Icon},
@@ -82,17 +84,17 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], this.ui('ui-icon'))} bind="topIcon" />
           )}
           <Text
             tagName="h1"
-            className={classNames(style.title, 'wt-title', 'wt-text-center')}
+            className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
             bind="title"
           />
           {this.getModifierValue('subtitle') && (
             <Text
               tagName="p"
-              className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
+              className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))}
               bind="description"
             />
           )}
@@ -103,10 +105,10 @@ class Block extends React.Component {
             Item={this.collectionItem}
           />
           {this.getModifierValue('secondary-button') && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+              <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 <Button
-                  className="wt-btns-group__item"
+                  className={this.ui('ui-btns-group__item')}
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="cta"
