@@ -28,7 +28,7 @@ class Wireframe extends React.Component {
     return (
       <div className={style.item}>
         <div className={style.item__inner}>
-          <div
+          <Background
             bind={`cover[${index}].item_card_background`}
             tagName="div"
             className={style.item__content}
@@ -70,7 +70,7 @@ class Wireframe extends React.Component {
                 </div>
               </div>
             )}
-          </div>
+          </Background>
           {this.getModifierValue('counter') && (
             <div className={style.counter}>
               <span className={style.counter__current}>{currentItem}</span>
