@@ -59,6 +59,8 @@ class Block extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Text, Slider, Button}, style, $block} = this.props
     const customArrows = this.getOptionValue('custom-arrows') ? {
