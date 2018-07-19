@@ -22,10 +22,12 @@ class Block extends React.Component {
             {collectionIcon && <Icon bind={`careers[${index}].icon`} className="icon" />}
           </div>
         )}
-        <Text tagName="span" className={classNames(style['list__item-text'], 'wt-heading')} bind={`careers[${index}].title`} />
+        <Text tagName="span" className={classNames(style['list__item-text'], this.ui('ui-heading'))} bind={`careers[${index}].title`} />
       </li>
     )
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {components: {Collection, Text, Image, Button, Icon}, style} = this.props
@@ -35,16 +37,16 @@ class Block extends React.Component {
       <section className={classNames(style.section, arrange && style['section--reverse'])}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], this.ui('ui-icon'))} bind="topIcon" />
           )}
-          {!this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'wt-title', 'wt-text-center')} bind="title" />}
-          {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} bind="subtitle" />}
+          {!this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))} bind="title" />}
+          {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))} bind="subtitle" />}
           <div className={style.content}>
             {this.getModifierValue('image') && (
               <Image
-                wrapperClassName={classNames(style.media, 'wt-picture-wrapper')}
-                pictureClassName={classNames(style.media__picture, 'wt-picture')}
-                imgClassName={classNames(style.media__image, 'wt-picture__image')}
+                wrapperClassName={classNames(style.media, this.ui('ui-picture-wrapper'))}
+                pictureClassName={classNames(style.media__picture, this.ui('ui-picture'))}
+                imgClassName={classNames(style.media__image, this.ui('ui-picture__image'))}
                 bind="picture"
                 size={{'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}}
               >
@@ -54,8 +56,8 @@ class Block extends React.Component {
               </Image>
             )}
             <div className={style.content__main}>
-              {this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, 'wt-title')} bind="title" />}
-              {this.getModifierValue('body') && <Text tagName="p" className={classNames(style.content__text, 'wt-body')} bind="text" />}
+              {this.getOptionValue('title-in-content') && <Text tagName="h1" className={classNames(style.title, this.ui('ui-title'))} bind="title" />}
+              {this.getModifierValue('body') && <Text tagName="p" className={classNames(style.content__text, this.ui('ui-body'))} bind="text" />}
               <Collection
                 className={style.list}
                 TagName="ul"
@@ -66,10 +68,10 @@ class Block extends React.Component {
                 }}
               />
               {this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
-                <div className={classNames(style['btns-group'], 'wt-btns-group')}>
-                  <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+                <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+                  <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                     <Button
-                      className="wt-btns-group__item"
+                      className={this.ui('ui-btns-group__item')}
                       buttonClassName={style.button}
                       linkClassName={style.link}
                       bind="button-1"
@@ -80,10 +82,10 @@ class Block extends React.Component {
             </div>
           </div>
           {!this.getOptionValue('button-in-content') && this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+              <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 <Button
-                  className="wt-btns-group__item"
+                  className={this.ui('ui-btns-group__item')}
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="button-1"
