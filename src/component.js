@@ -114,6 +114,8 @@ class Block extends React.Component {
     return postItem
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Text, Image, SsrText}, style} = this.props
     const {post, error} = this.state
