@@ -48,9 +48,9 @@ class Block extends React.Component {
 
         <button type="button" role="tab" className={style['tabs-item__button']}>
           <Image
-            wrapperClassName={classNames(style['tabs-item__picture-wrapper'], 'wt-picture-wrapper')}
-            pictureClassName={classNames(style['tabs-item__picture'], 'wt-picture')}
-            imgClassName={classNames(style['tabs-item__image'], 'wt-picture__image')}
+            wrapperClassName={classNames(style['tabs-item__picture-wrapper'], this.ui('ui-picture-wrapper'))}
+            pictureClassName={classNames(style['tabs-item__picture'], this.ui('ui-picture'))}
+            imgClassName={classNames(style['tabs-item__image'], this.ui('ui-picture__image'))}
             bind={`collection[${index}].itemPicture`}
             size={
               {
@@ -61,9 +61,9 @@ class Block extends React.Component {
           />
           <div className={style['tabs-item__content']}>
             <Text bind={`collection[${index}].itemPosition`} tagName="small" className={classNames(style['tabs-item__position'], 'caption')} />
-            <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={classNames(style['tabs-item__title'], 'wt-heading')} />
+            <Text bind={`collection[${index}].itemTitle`} tagName="h3" className={classNames(style['tabs-item__title'], this.ui('ui-heading'))} />
             {this.getModifierValue('item_body') && (
-              <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'], 'wt-body')} tagName="p" />
+              <Text bind={`collection[${index}].itemContent`} className={classNames(style.item__text, style['tabs-item__text'], style['item__text--mobile'], this.ui('ui-body'))} tagName="p" />
             )}
             {itemBottom && (
               <div className={classNames(style.item__bottom, style['tabs-item__bottom'], style['item__bottom--mobile'])}>
@@ -102,9 +102,9 @@ class Block extends React.Component {
       _.map(index => (
         <SsrOnly>
           <Image
-            wrapperClassName={classNames(style['tabs-item__picture-wrapper'], 'wt-picture-wrapper')}
-            pictureClassName={classNames(style['tabs-item__picture'], 'wt-picture')}
-            imgClassName={classNames(style['tabs-item__image'], 'wt-picture__image')}
+            wrapperClassName={classNames(style['tabs-item__picture-wrapper'], this.ui('ui-picture-wrapper'))}
+            pictureClassName={classNames(style['tabs-item__picture'], this.ui('ui-picture'))}
+            imgClassName={classNames(style['tabs-item__image'], this.ui('ui-picture__image'))}
             bind={`collection.items[${index}].itemPicture`}
             size={{
               'min-width: 480px': 800,
@@ -118,6 +118,8 @@ class Block extends React.Component {
       )),
     )(content)
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {components: {Text, Image, Collection, Button, SocialIcons}, style, content, $block} = this.props
