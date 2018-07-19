@@ -12,6 +12,8 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {
       components: {Text, Menu, Logo, SocialIcons},
@@ -38,7 +40,7 @@ class Block extends React.Component {
               {this.getModifierValue('description') && (
                 <Text
                   tagName="p"
-                  className={classNames(css.footer__text, 'wt-body', 'wt-text-center', 'wt-text-lg-left')}
+                  className={classNames(css.footer__text, this.ui('ui-body'), this.ui('ui-text-center'), this.ui('ui-text-lg-left'))}
                   bind="description"
                 />
               )}
@@ -74,14 +76,14 @@ class Block extends React.Component {
               {this.getModifierValue('leftText') && (
                 <Text
                   tagName="small"
-                  className={classNames(css.footer__meta, 'caption', 'wt-text-center')}
+                  className={classNames(css.footer__meta, 'caption', this.ui('ui-text-center'))}
                   bind="copyright"
                 />
               )}
               {this.getModifierValue('rightText') && (
                 <Text
                   tagName="small"
-                  className={classNames(css.footer__meta, 'caption', 'wt-text-center')}
+                  className={classNames(css.footer__meta, 'caption', this.ui('ui-text-center'))}
                   bind="additional"
                 />
               )}
