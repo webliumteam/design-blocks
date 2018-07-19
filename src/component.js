@@ -25,19 +25,21 @@ class Wireframe extends React.Component {
         <div className={style.item__inner}>
           <div className={style.item__text}>
             {this.getModifierValue('item-title') && (
-              <Text tagName="h3" className={classNames(style.item__heading, 'wt-heading')} bind={`collection[${index}].heading`} />
+              <Text tagName="h3" className={classNames(style.item__heading, this.ui('ui-heading'))} bind={`collection[${index}].heading`} />
             )}
             {this.getModifierValue('item-body') && (
-              <Text tagName="p" className={classNames(style.item__description, 'wt-body')} bind={`collection[${index}].text`} />
+              <Text tagName="p" className={classNames(style.item__description, this.ui('ui-body'))} bind={`collection[${index}].text`} />
             )}
           </div>
           {this.getModifierValue('item-link') && (
-            <Text tagName="p" className={classNames(style.item__link, 'wt-body')} bind={`collection[${index}].link`} />
+            <Text tagName="p" className={classNames(style.item__link, this.ui('ui-body'))} bind={`collection[${index}].link`} />
           )}
         </div>
       </div>
     )
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {components: {Text, Collection, Button}, style, $block, content} = this.props
@@ -48,9 +50,9 @@ class Wireframe extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <div className={style.section__header}>
-            <Text bind="title" className={classNames(style.title, 'wt-title', 'wt-text-center')} tagName="h2" />
+            <Text bind="title" className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))} tagName="h2" />
             {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
+              <Text bind="subtitle" className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))} tagName="p" />
             )}
           </div>
           <Collection
@@ -62,11 +64,11 @@ class Wireframe extends React.Component {
             }}
           />
           {showButtonGroups &&
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+              <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 {this.getModifierValue('button') && (
                   <Button
-                    className="wt-btns-group__item"
+                    className={this.ui('ui-btns-group__item')}
                     buttonClassName={style['btns-group__button']}
                     linkClassName={style['btns-group__link']}
                     bind="mainButton"
