@@ -9,6 +9,8 @@ class Block extends React.Component {
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {
       components: {Text, Image},
@@ -21,14 +23,14 @@ class Block extends React.Component {
             <div className={style['picture-wrapper']}>
               <Image
                 wrapperClassName="picture-wrapper"
-                pictureClassName={classNames(style.picture, 'wt-picture')}
-                imgClassName={classNames(style.picture__image, 'wt-picture__image')}
+                pictureClassName={classNames(style.picture, this.ui('ui-picture'))}
+                imgClassName={classNames(style.picture__image, this.ui('ui-picture__image'))}
                 bind="picture"
               />
             </div>
           )}
           <div className={style.blockquote}>
-            <Text className={classNames(style.blockquote__inner, 'wt-quote', 'wt-text-center')} tagName="blockquote" bind="blockquote" />
+            <Text className={classNames(style.blockquote__inner, this.ui('ui-quote'), this.ui('ui-text-center'))} tagName="blockquote" bind="blockquote" />
             <div className={style.blockquote__line} aria-hidden="true">
               <div className={style.blockquote__icon}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 18">
@@ -42,7 +44,7 @@ class Block extends React.Component {
             </div>
           </div>
           {this.getModifierValue('author') && (
-            <Text tagName="p" className={classNames(style.author, 'wt-body', 'wt-text-center')} bind="author" />
+            <Text tagName="p" className={classNames(style.author, this.ui('ui-body'), this.ui('ui-text-center'))} bind="author" />
           )}
         </div>
       </section>
