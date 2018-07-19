@@ -57,6 +57,8 @@ class Block extends React.Component {
     }
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Text, Button}, style: css} = this.props
     const showButtonGroups = this.getModifierValue('primary-btn') || this.getModifierValue('secondary-btn')
@@ -74,9 +76,9 @@ class Block extends React.Component {
               <Text bind="topCaption" className="body" />
             </div>
           )}
-          <Text bind="title" tagName="h1" className={classNames(css.title,'wt-hero-title', themeAlignClass)} />
+          <Text bind="title" tagName="h1" className={classNames(css.title,this.ui('ui-hero-title'), themeAlignClass)} />
           {this.getModifierValue('subtitle') && (
-            <Text bind="subtitle" tagName="p" className={classNames(css.subtitle,'wt-subtitle')} />
+            <Text bind="subtitle" tagName="p" className={classNames(css.subtitle,this.ui('ui-subtitle'))} />
           )}
           {showButtonGroups && (
             <div className={css['btns-group']}>
