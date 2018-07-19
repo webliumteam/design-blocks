@@ -17,21 +17,21 @@ class Block extends React.Component {
     return (
       <article className={style.item}>
         <div className={style.item__inner}>
-          <Text tagName="h2" className={classNames(style.item__title, 'wt-hero-title', 'wt-text-center')} bind={`collection[${index}].item_heading`} />
-          {_.get('subtitle')(modifier) && <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} bind={`collection[${index}].item_subheading`} />}
+          <Text tagName="h2" className={classNames(style.item__title, this.ui('ui-hero-title'), this.ui('ui-text-center'))} bind={`collection[${index}].item_heading`} />
+          {_.get('subtitle')(modifier) && <Text tagName="p" className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))} bind={`collection[${index}].item_subheading`} />}
           {(_.get('item_button')(modifier) || _.get('item_button_additional')(modifier)) && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
               <div className="btns-group__inner">
                 {_.get('item_button')(modifier) && (
                   <Button
-                    className={classNames(style.button, 'wt-btns-group__item')}
+                    className={classNames(style.button, this.ui('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind={`collection[${index}].item_button`}
                   />
                 )}
                 {_.get('item_button_additional')(modifier) && (
                   <Button
-                    className={classNames(style.button, 'wt-btns-group__item')}
+                    className={classNames(style.button, this.ui('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind={`collection[${index}].item_button_additional`}
                   />
@@ -44,6 +44,8 @@ class Block extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Slider}, style, $block} = this.props
     const customArrows = this.getOptionValue('custom-arrows') ? {
@@ -51,10 +53,10 @@ class Block extends React.Component {
       prevArrow: <button dangerouslySetInnerHTML={{__html: this.getOptionValue('prev-arrow')}} />,
     } : {}
     return (
-      <section className={classNames(style.section, 'wt-section')}>
-        <div className={classNames(style.section__inner, 'wt-section__inner')}>
+      <section className={classNames(style.section, this.ui('ui-section'))}>
+        <div className={classNames(style.section__inner, this.ui('ui-section__inner'))}>
           <Slider
-            className={classNames(style['items-wrapper'], 'wt-section__content')}
+            className={classNames(style['items-wrapper'], this.ui('ui-section__content'))}
             bind="collection"
             Item={this.collectionItem}
             settings={{
