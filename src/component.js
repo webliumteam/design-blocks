@@ -54,6 +54,8 @@ class Block extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Collection, Text, Button}, style, $block} = this.props
     return (
