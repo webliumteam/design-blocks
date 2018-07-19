@@ -21,9 +21,9 @@ class Wireframe extends React.Component {
     return (
       <div className={style.item}>
         <Image
-          wrapperClassName={classNames(style['item__picture-wrapper'], 'wt-picture-wrapper')}
-          pictureClassName={classNames(style.item__picture, 'wt-picture')}
-          imgClassName={classNames(style.item__image, 'wt-picture__image')}
+          wrapperClassName={classNames(style['item__picture-wrapper'], this.ui('ui-picture-wrapper'))}
+          pictureClassName={classNames(style.item__picture, this.ui('ui-picture'))}
+          imgClassName={classNames(style.item__image, this.ui('ui-picture__image'))}
           bind={`collection[${index}].item_image`}
           size={{
             'min-width: 480px': 600,
@@ -33,13 +33,15 @@ class Wireframe extends React.Component {
         {this.getModifierValue('item_title') && (
           <Text
             tagName="h3"
-            className={classNames(style.item__title, 'wt-heading', 'wt-text-center')}
+            className={classNames(style.item__title, this.ui('ui-heading'), this.ui('ui-text-center'))}
             bind={`collection[${index}].item_title`}
           />
         )}
       </div>
     )
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {
@@ -70,14 +72,14 @@ class Wireframe extends React.Component {
               {this.getModifierValue('title') && (
                 <Text
                   tagName="h2"
-                  className={classNames(style.title, 'wt-title', 'wt-text-center')}
+                  className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
                   bind="title"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   bind="subtitle"
-                  className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
+                  className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))}
                   tagName="p"
                 />
               )}
@@ -117,10 +119,10 @@ class Wireframe extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+              <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 <Button
-                  className={classNames(style.button, 'wt-btns-group__item')}
+                  className={classNames(style.button, this.ui('ui-btns-group__item'))}
                   buttonClassName={style['button--view-default']}
                   bind="button"
                 />
