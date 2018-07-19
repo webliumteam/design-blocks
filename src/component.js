@@ -25,7 +25,7 @@ class Block extends React.Component {
           {this.getModifierValue('item-icon') && (
             <div className={style['item__icon-wrapper']}>
               <Icon
-                className={classNames(style.item__icon, 'wt-icon')}
+                className={classNames(style.item__icon, this.ui('ui-icon'))}
                 bind={`items[${index}].icon`}
               />
             </div>
@@ -34,20 +34,20 @@ class Block extends React.Component {
             <div className={style.item__info}>
               <Text
                 tagName="h2"
-                className={classNames(style.item__title, 'wt-heading')}
+                className={classNames(style.item__title, this.ui('ui-heading'))}
                 bind={`items[${index}].heading`}
               />
               {this.getModifierValue('employment') && (
                 <Text
                   tagName="p"
-                  className={classNames(style.item__text, 'wt-body')}
+                  className={classNames(style.item__text, this.ui('ui-body'))}
                   bind={`items[${index}].employment`}
                 />
               )}
               {this.getModifierValue('position') && (
                 <Text
                   tagName="p"
-                  className={classNames(style.item__text, 'wt-body')}
+                  className={classNames(style.item__text, this.ui('ui-body'))}
                   bind={`items[${index}].location`}
                 />
               )}
@@ -63,6 +63,8 @@ class Block extends React.Component {
       </article>
     )
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {
@@ -80,13 +82,13 @@ class Block extends React.Component {
             )}
             <Text
               tagName="h1"
-              className={classNames(css.title, 'wt-title', 'wt-text-center')}
+              className={classNames(css.title, this.ui('ui-title'), this.ui('ui-text-center'))}
               bind="title"
             />
             {this.getModifierValue('subtitle') && (
               <Text
                 tagName="p"
-                className={classNames(css.subtitle, 'wt-subtitle', 'wt-text-center')}
+                className={classNames(css.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))}
                 bind="subtitle"
               />
             )}
@@ -102,7 +104,7 @@ class Block extends React.Component {
           }}
         />
         {this.getModifierValue('secondary-button') && (
-          <div className={classNames(css['btns-group'], 'wt-btns-group')}>
+          <div className={classNames(css['btns-group'], this.ui('ui-btns-group'))}>
             <div className="btns-group__inner">
               <Button
                 className={classNames(css.button, 'button')}
