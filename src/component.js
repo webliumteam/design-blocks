@@ -17,6 +17,8 @@ class Block extends React.Component {
       ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
       : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Text, Image, Button}, style: css} = this.props
     const columnLayout = !(
@@ -50,18 +52,18 @@ class Block extends React.Component {
           {headerShow && (
             <div className={css.section__header}>
               {this.getModifierValue('title') && (
-              <Text bind="title" className={classNames(css.title, 'wt-title', 'wt-text-center')} tagName="h2" />)}
+              <Text bind="title" className={classNames(css.title, this.ui('ui-title'), this.ui('ui-text-center'))} tagName="h2" />)}
               {this.getModifierValue('subtitle') && (
-                <Text bind="subtitle" className={classNames(css.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
+                <Text bind="subtitle" className={classNames(css.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))} tagName="p" />
               )}
             </div>
            )}
           <div className={css.article}>
             {this.getModifierValue('image') && (
               <Image
-                wrapperClassName={classNames(css['article__picture-wrapper'], 'wt-picture-wrapper')}
-                pictureClassName={classNames(css.article__picture, 'wt-picture')}
-                imgClassName={classNames(css.article__image, 'wt-picture__image')}
+                wrapperClassName={classNames(css['article__picture-wrapper'], this.ui('ui-picture-wrapper'))}
+                pictureClassName={classNames(css.article__picture, this.ui('ui-picture'))}
+                imgClassName={classNames(css.article__image, this.ui('ui-picture__image'))}
                 bind="image"
                 size={this.getImageSize(columnLayout)}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
@@ -88,10 +90,10 @@ class Block extends React.Component {
                   </div>
                 )}
                 {this.getModifierValue('heading') && (
-                  <Text tagName="p" className={classNames(css.article__heading, 'wt-heading')} bind="heading" />
+                  <Text tagName="p" className={classNames(css.article__heading, this.ui('ui-heading'))} bind="heading" />
                 )}
                 {this.getModifierValue('body') && (
-                  <Text tagName="p" className={classNames(css.article__text, 'wt-body')} bind="body" />
+                  <Text tagName="p" className={classNames(css.article__text, this.ui('ui-body'))} bind="body" />
                 )}
                 {this.getModifierValue('button') && (
                   <Button
@@ -105,10 +107,10 @@ class Block extends React.Component {
             )}
           </div>
           {this.getModifierValue('button_additional') && (
-            <div className={classNames(css['btns-group'], 'wt-btns-group')}>
-              <div className={classNames(css['btns-group__inner'], 'wt-btns-group__inner')}>
+            <div className={classNames(css['btns-group'], this.ui('ui-btns-group'))}>
+              <div className={classNames(css['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 <Button
-                  className="wt-btns-group__item"
+                  className={this.ui('ui-btns-group__item')}
                   buttonClassName={css.button}
                   linkClassName={css.link}
                   bind="button_additional"
