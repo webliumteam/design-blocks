@@ -17,7 +17,6 @@ class Wireframe extends React.Component {
       components: {Image, Text},
       style,
     } = this.props
-    console.log(openLightbox)
     return (
       <div className={style.item}>
         <div className={style.item__inner}>
@@ -103,6 +102,7 @@ class Wireframe extends React.Component {
                   breakpoint: 767,
                   settings: {
                     slidesToShow: mobileSlidesCount,
+                    swipeToSlide: false,
                   },
                 },
                 {
