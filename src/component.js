@@ -26,31 +26,31 @@ class Wireframe extends React.Component {
         {children}
         <div className={classNames(style.item__main, minimalState && style['item__main--center'])}>
           <div className={classNames(style.item__desc, minimalState && (style['item__desc--center']))}>
-            <Text bind={`events[${index}].heading`} className={classNames(style.item__heading, 'wt-heading', 'wt-text-center', 'wt-text-md-left')} tagName="h2" />
+            <Text bind={`events[${index}].heading`} className={classNames(style.item__heading, this.ui('ui-heading'), this.ui('ui-text-center'), this.ui('ui-text-md-left'))} tagName="h2" />
             {this.getModifierValue('type') && (
-              <Text bind={`events[${index}].descCaption`} className={classNames(style['item__desc-caption'], 'caption', 'wt-text-center', 'wt-text-md-left')} tagName="p" />
+              <Text bind={`events[${index}].descCaption`} className={classNames(style['item__desc-caption'], 'caption', this.ui('ui-text-center'), this.ui('ui-text-md-left'))} tagName="p" />
             )}
           </div>
           {locInfo && (
             <div className={classNames(style.loc)}>
               {this.getModifierValue('location') && (
-                <Text bind={`events[${index}].address`} className={classNames(style.loc__address, 'wt-body', 'wt-text-center', 'wt-text-md-left')} tagName="p" />
+                <Text bind={`events[${index}].address`} className={classNames(style.loc__address, this.ui('ui-body'), this.ui('ui-text-center'), this.ui('ui-text-md-left'))} tagName="p" />
               )}
               {this.getModifierValue('time') && (
-                <Text bind={`events[${index}].time`} className={classNames(style.loc__time, 'caption', 'wt-text-center', 'wt-text-md-left')} tagName="time" />
+                <Text bind={`events[${index}].time`} className={classNames(style.loc__time, 'caption', this.ui('ui-text-center'), this.ui('ui-text-md-left'))} tagName="time" />
               )}
             </div>
           )}
         </div>
         <time className={classNames(style.date, minimalState && style['date--center'])}>
-          <Text bind={`events[${index}].day`} className={classNames(style.date__day, 'wt-hero-title', 'wt-text-center', 'wt-text-md-left')} tagName="span" />
+          <Text bind={`events[${index}].day`} className={classNames(style.date__day, this.ui('ui-hero-title'), this.ui('ui-text-center'), this.ui('ui-text-md-left'))} tagName="span" />
           {!onlyDayNumber && (
             <span className={style.date__text}>
               {this.getModifierValue('month') && (
-                <Text bind={`events[${index}].month`} className={classNames(style.date__month, 'wt-body', 'wt-text-center', 'wt-text-md-left')} tagName="span" />
+                <Text bind={`events[${index}].month`} className={classNames(style.date__month, this.ui('ui-body'), this.ui('ui-text-center'), this.ui('ui-text-md-left'))} tagName="span" />
               )}
               {this.getModifierValue('day') && (
-                <Text bind={`events[${index}].weekDay`} className={classNames(style['date__week-day'], 'caption', 'wt-text-center', 'wt-text-md-left')} tagName="span" />
+                <Text bind={`events[${index}].weekDay`} className={classNames(style['date__week-day'], 'caption', this.ui('ui-text-center'), this.ui('ui-text-md-left'))} tagName="span" />
               )}
             </span>
           )}
@@ -69,6 +69,8 @@ class Wireframe extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Text, Button, Collection}, style, $block} = this.props
     const withoutButton = !this.getModifierValue('item_button') ? style['section--without-button'] : ''
@@ -77,9 +79,9 @@ class Wireframe extends React.Component {
       <section className={classNames(style.section, withoutButton)}>
         <div className={style.section__inner}>
           <div className={style.section__header}>
-            <Text bind="title" className={classNames(style.title, 'wt-title', 'wt-text-center')} tagName="h1" />
+            <Text bind="title" className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))} tagName="h1" />
             {this.getModifierValue('subtitle') && (
-              <Text bind="subtitle" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} tagName="p" />
+              <Text bind="subtitle" className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))} tagName="p" />
             )}
           </div>
           <Collection
@@ -92,10 +94,10 @@ class Wireframe extends React.Component {
             TagName="ul"
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+              <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 <Button
-                  className="wt-btns-group__item"
+                  className={this.ui('ui-btns-group__item')}
                   linkClassName={style.link}
                   buttonClassName={style.button}
                   bind="button"
