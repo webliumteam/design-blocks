@@ -22,26 +22,26 @@ class Block extends React.Component {
         <div className={style.item__container}>
           <Text
             bind={`products[${index}].title`}
-            className={classNames(style.item__title, 'wt-heading', 'wt-text-center')}
+            className={classNames(style.item__title, this.ui('ui-heading'), this.ui('ui-text-center'))}
             tagName="h2"
           />
           {_.get('icon')(modifier) && (
             <Icon
               bind={`products[${index}.icon`}
-              className={classNames(style.item__icon, 'wt-icon')}
+              className={classNames(style.item__icon, this.ui('ui-icon'))}
             />
           )}
           {_.get('price')(modifier) && (
             <div className={style.item__price}>
               <Text
                 bind={`products[${index}.price`}
-                className={classNames(style['item__price-numbers'], 'wt-heading-lg', 'wt-text-center')}
+                className={classNames(style['item__price-numbers'], this.ui('ui-heading-lg'), this.ui('ui-text-center'))}
                 tagName="strong"
               />
               {_.get('price-info')(modifier) && (
                 <Text
                   bind={`products[${index}['price-info']`}
-                  className={classNames(style['item__price-info'], 'caption', 'wt-text-center')}
+                  className={classNames(style['item__price-info'], 'caption', this.ui('ui-text-center'))}
                   tagName="span"
                 />
               )}
@@ -49,7 +49,7 @@ class Block extends React.Component {
           )}
           {_.get('body')(modifier) && (
             <Text
-              className={classNames(style.item__desc, 'wt-body', 'wt-text-center')}
+              className={classNames(style.item__desc, this.ui('ui-body'), this.ui('ui-text-center'))}
               bind={`products[${index}].body`}
               tagName="p"
             />
@@ -68,6 +68,8 @@ class Block extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {
       components: {Collection, Text, Button},
@@ -82,14 +84,14 @@ class Block extends React.Component {
               {this.getModifierValue('title') && (
                 <Text
                   bind="title"
-                  className={classNames(style.title, 'wt-title', 'wt-text-center')}
+                  className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
                   tagName="h1"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   bind="subtitle"
-                  className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
+                  className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))}
                   tagName="p"
                 />
               )}
@@ -104,18 +106,18 @@ class Block extends React.Component {
             }}
           />
           {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
               <div className="btns-group__inner">
                 {this.getModifierValue('button') && (
                   <Button
-                    className={classNames(style.button, 'wt-btns-group__item')}
+                    className={classNames(style.button, this.ui('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind="button"
                   />
                 )}
                 {this.getModifierValue('button_additional') && (
                   <Button
-                    className={classNames(style.button, 'wt-btns-group__item')}
+                    className={classNames(style.button, this.ui('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind="button_additional"
                   />
