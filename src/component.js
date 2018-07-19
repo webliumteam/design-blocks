@@ -12,6 +12,8 @@ class Wireframe extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {
       components: {Text, SocialIcons},
@@ -29,14 +31,14 @@ class Wireframe extends React.Component {
               {this.getModifierValue('title') && (
                 <Text
                   bind="title"
-                  className={classNames(style.title, 'wt-title', headerAlignmentClass)}
+                  className={classNames(style.title, this.ui('ui-title'), headerAlignmentClass)}
                   tagName="h2"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   bind="subtitle"
-                  className={classNames(style.subtitle, 'wt-subtitle', headerAlignmentClass)}
+                  className={classNames(style.subtitle, this.ui('ui-subtitle'), headerAlignmentClass)}
                   tagName="p"
                 />
               )}
