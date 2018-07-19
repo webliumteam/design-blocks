@@ -14,8 +14,8 @@ class Wireframe extends React.Component {
 
     return [
       <header className={style.section__header}>
-        {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, 'wt-title', 'wt-text-center')} bind="title" />}
-        {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')} bind="subtitle" />}
+        {this.getModifierValue('title') && <Text tagName="h1" className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))} bind="title" />}
+        {this.getModifierValue('subtitle') && <Text tagName="p" className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))} bind="subtitle" />}
       </header>,
       <ContactForm
         bind="contactForm"
@@ -25,6 +25,8 @@ class Wireframe extends React.Component {
       />,
     ]
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {components: {Background}, style} = this.props
