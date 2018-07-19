@@ -127,6 +127,8 @@ class Wireframe extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Text, Collection, Button}, style, $block} = this.props
     const header = this.getModifierValue('title') || this.getModifierValue('subtitle')
