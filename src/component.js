@@ -22,7 +22,7 @@ class Wireframe extends React.Component {
         <div className={style.item__inner}>
           <Image
             wrapperClassName={style['item__picture-wrapper']}
-            pictureClassName={classNames(style.item__picture, 'wt-picture')}
+            pictureClassName={classNames(style.item__picture, this.ui('ui-picture'))}
             imgClassName={style.item__image}
             bind={`gallery[${index}].image`}
             size={{
@@ -36,7 +36,7 @@ class Wireframe extends React.Component {
           {this.getModifierValue('item-heading') && (
             <Text
               tagName="h2"
-              className={classNames(style.item__heading, 'wt-subtitle', 'wt-text-center', 'wt-text-lg-left')}
+              className={classNames(style.item__heading, this.ui('ui-subtitle'), this.ui('ui-text-center'), this.ui('ui-text-lg-left'))}
               bind={`gallery[${index}].heading`}
             />
           )}
@@ -44,6 +44,8 @@ class Wireframe extends React.Component {
       </div>
     )
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {
@@ -71,14 +73,14 @@ class Wireframe extends React.Component {
             {this.getModifierValue('title') && (
               <Text
                 bind="title"
-                className={classNames(style.title, 'wt-title', 'wt-text-center')}
+                className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
                 tagName="h1"
               />
             )}
             {this.getModifierValue('subtitle') && (
               <Text
                 bind="subtitle"
-                className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
+                className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))}
                 tagName="p"
               />
             )}
@@ -120,18 +122,18 @@ class Wireframe extends React.Component {
             }}
           />
           {(this.getModifierValue('secondary-button') || this.getModifierValue('button_additional')) && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
               <div className="btns-group__inner">
                 {this.getModifierValue('secondary-button') && (
                   <Button
-                    className={classNames(style.button, 'wt-btns-group__item')}
+                    className={classNames(style.button, this.ui('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind="cta"
                   />
                 )}
                 {this.getModifierValue('button_additional') && (
                   <Button
-                    className={classNames(style.button, 'wt-btns-group__item')}
+                    className={classNames(style.button, this.ui('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind="button_additional"
                   />
