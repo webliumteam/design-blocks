@@ -25,7 +25,7 @@ class Block extends React.Component {
       showHeading && (
         <Text
           tagName="h2"
-          className={classNames(style.item__title, 'wt-heading')}
+          className={classNames(style.item__title, this.ui('ui-heading'))}
           bind={`partners[${index}].title`}
         />
       ),
@@ -34,7 +34,7 @@ class Block extends React.Component {
           {_.get('body')(modifier) && (
             <Text
               tagName="p"
-              className={classNames(style.item__desc, 'wt-body')}
+              className={classNames(style.item__desc, this.ui('ui-body'))}
               bind={`partners[${index}].desc`}
             />
           )}
@@ -82,6 +82,8 @@ class Block extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {
       components: {Collection, Text, Button, Icon},
@@ -101,21 +103,21 @@ class Block extends React.Component {
       <section className={classNames(style.section)}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], this.ui('ui-icon'))} bind="topIcon" />
           )}
           {blockHeader && (
             <header className={style.section__header}>
               {this.getModifierValue('title') && (
                 <Text
                   tagName="h1"
-                  className={classNames(style.title, 'wt-title', 'wt-text-center')}
+                  className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
                   bind="title"
                 />
               )}
               {this.getModifierValue('subtitle') && (
                 <Text
                   tagName="p"
-                  className={classNames(style.subtitle, 'wt-subtitle', 'wt-text-center')}
+                  className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))}
                   bind="subtitle"
                 />
               )}
@@ -140,9 +142,9 @@ class Block extends React.Component {
                 [style['btns-group--offset-sm']]: onlyLogo,
               })}
             >
-              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+              <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 <Button
-                  className="wt-btns-group__item"
+                  className={this.ui('ui-btns-group__item')}
                   linkClassName={style.link}
                   buttonClassName={style.button}
                   bind="button"
