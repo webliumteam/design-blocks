@@ -32,7 +32,7 @@ class Block extends React.Component {
           {_.get('badge')(modifier) && (
             <Text
               tagName="div"
-              className={classNames(style.article__badge, 'caption', 'wt-text-center')}
+              className={classNames(style.article__badge, 'caption', this.ui('ui-text-center'))}
               bind={`events[${index}].badge`}
             />
           )}
@@ -40,18 +40,18 @@ class Block extends React.Component {
             <div className={style.article__top}>
               <Text
                 tagName="time"
-                className={classNames(style.article__date, 'wt-subtitle')}
+                className={classNames(style.article__date, this.ui('ui-subtitle'))}
                 bind={`events[${index}].date`}
               />
               <Text
                 tagName="time"
-                className={classNames(style.article__time, 'wt-body')}
+                className={classNames(style.article__time, this.ui('ui-body'))}
                 bind={`events[${index}].time`}
               />
             </div>
             <Text
               tagName="h3"
-              className={classNames(style.article__title, 'wt-heading')}
+              className={classNames(style.article__title, this.ui('ui-heading'))}
               bind={`events[${index}].title`}
             />
             <div className={style.article__bottom}>
@@ -73,9 +73,9 @@ class Block extends React.Component {
             </div>
           </div>
           <Image
-            wrapperClassName={classNames(style['article__picture-wrapper'], 'wt-picture-wrapper')}
-            pictureClassName={classNames(style.article__picture, 'wt-picture')}
-            imgClassName={classNames(style.article__image, 'wt-picture__image')}
+            wrapperClassName={classNames(style['article__picture-wrapper'], this.ui('ui-picture-wrapper'))}
+            pictureClassName={classNames(style.article__picture, this.ui('ui-picture'))}
+            imgClassName={classNames(style.article__image, this.ui('ui-picture__image'))}
             bind={`events[${index}].picture`}
             size={{
               'min-width: 992px': 540,
@@ -89,6 +89,8 @@ class Block extends React.Component {
     )
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {
       components: {Collection, Text, Button, Icon},
@@ -100,11 +102,11 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], this.ui('ui-icon'))} bind="topIcon" />
           )}
-          <Text tagName="h2" className={classNames(style.title, 'wt-title')} bind="title" />
+          <Text tagName="h2" className={classNames(style.title, this.ui('ui-title'))} bind="title" />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="p" className={classNames(style.subtitle, 'wt-subtitle')} bind="subtitle" />
+            <Text tagName="p" className={classNames(style.subtitle, this.ui('ui-subtitle'))} bind="subtitle" />
           )}
           <Collection
             className={style['articles-wrapper']}
@@ -115,10 +117,10 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+              <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 <Button
-                  className="wt-btns-group__item"
+                  className={this.ui('ui-btns-group__item')}
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="cta"
