@@ -20,20 +20,20 @@ class Block extends React.Component {
         {_.get('number-title')(modifier) && (
           <Text
             tagName="h2"
-            className={classNames(style.item__title, 'wt-subtitle')}
+            className={classNames(style.item__title, this.ui('ui-subtitle'))}
             bind={`numbers[${index}].title`}
           />
         )}
         <div className={style.item__content}>
           <Text
             tagName="strong"
-            className={classNames(style.item__number, 'wt-body')}
+            className={classNames(style.item__number, this.ui('ui-body'))}
             bind={`numbers[${index}].value`}
           />
           {_.get('body')(modifier) && (
             <Text
               tagName="p"
-              className={classNames(style.item__text, 'wt-title')}
+              className={classNames(style.item__text, this.ui('ui-title'))}
               bind={`numbers[${index}].label`}
             />
           )}
@@ -41,6 +41,8 @@ class Block extends React.Component {
       </div>
     )
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {
@@ -56,12 +58,12 @@ class Block extends React.Component {
       >
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
-            <Icon className={classNames(style['top-icon'], 'wt-icon')} bind="topIcon" />
+            <Icon className={classNames(style['top-icon'], this.ui('ui-icon'))} bind="topIcon" />
           )}
           {this.getModifierValue('title') && (
             <Text
               tagName="h1"
-              className={classNames(style.title, 'wt-title', 'wt-text-center', 'wt-text-lg-left')}
+              className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'), this.ui('ui-text-lg-left'))}
               bind="title"
             />
           )}
@@ -78,10 +80,10 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'], 'wt-btns-group')}>
-              <div className={classNames(style['btns-group__inner'], 'wt-btns-group__inner')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+              <div className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}>
                 <Button
-                  className="wt-btns-group__item"
+                  className={this.ui('ui-btns-group__item')}
                   buttonClassName={style.button}
                   linkClassName={style.link}
                   bind="cta"
