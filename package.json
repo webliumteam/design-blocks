@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "can-use-dom": "^0.1.0",
     "eslint": "^4.15.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
@@ -37,6 +36,7 @@
   ],
   "editorVersion": "0.0.0",
   "dependencies": {
+    "can-use-dom": "^0.1.0",
     "react-particles-js": "^2.2.0",
     "three": "^0.94.0"
   }
