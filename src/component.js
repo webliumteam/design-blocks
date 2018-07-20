@@ -150,6 +150,7 @@ class Wireframe extends React.Component {
 Wireframe.components = _.pick(['Text', 'Button', 'Slider', 'Image', 'Background'])($editor.components)
 
 Wireframe.defaultContent = {
+  background: {},
   title: {
     content: 'Our customers say',
     type: 'blockTitle',

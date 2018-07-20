@@ -45,6 +45,10 @@
   display: flex;
   margin: 0 -15px;
 
+  @media (min-width: 768px) {
+    display: none;
+  }
+
   .title {
     display: block;
 
