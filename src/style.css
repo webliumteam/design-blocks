@@ -52,7 +52,7 @@
 
   @media (min-width: 768px) {
     padding-top: 0;
-    display: flex;
+    display: block;
   }
 
   .title {
