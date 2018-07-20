@@ -1,6 +1,27 @@
 @import "media.css";
 
 .section {
+  :global {
+    .slick-dots {
+      bottom: 0;
+    }
+
+    .slick-dots li {
+      margin-right: 9px;
+      margin-left: 9px;
+    }
+
+    .slick-dots li button::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: currentColor;
+    }
+  }
+}
+
+.section {
   min-width: 320px;
   padding: 50px 0;
   word-wrap: break-word;
@@ -22,6 +43,25 @@
 
 .article {
   display: flex;
+  margin: 0 -15px;
+
+  .title {
+    display: block;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  @media (min-width: 992px) {
+    margin: 0;
+  }
+
+  &--reverse {
+    .article__content {
+      order: -1;
+    }
+  }
 
   &__preview,
   &__content {
@@ -30,8 +70,33 @@
     flex-basis: 50%;
   }
 
-  &__title {
+  &__content {
+    padding: 45px 40px 30px;
+
+    .title {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    @media (min-width: 992px) {
+      padding: 55px 65px 30px;
+    }
+  }
+
+  &__picture {
+    padding-top: 164%;
+
+    @media (min-width: 992px) {
+      padding-top: 94.018%;
+    }
+  }
+
+  .title {
     position: relative;
+    padding-bottom: 20px;
     text-align: center;
 
     &::after {
@@ -43,24 +108,31 @@
       left: 50%;
       transform: translateX(-50%);
       border-radius: 3px;
+      background-color: currentColor;
     }
   }
 }
 
 .item {
+  padding-bottom: 64px;
+
   &__body {
+    margin-top: 40px;
     text-align: center;
   }
 
   &__person {
+    margin-top: 30px;
     text-align: center;
   }
 
   &__category {
+    margin-top: 5px;
     text-align: center;
   }
 
   &__category_additional {
+    margin-top: 15px;
     text-align: center;
   }
 

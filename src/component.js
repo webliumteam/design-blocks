@@ -26,16 +26,35 @@ class Wireframe extends React.Component {
     } = this.props
     return (
       <div className={style.item}>
-        <Text bind={`collection[${index}].item_body`} className={style.item__body} />
-        <Text bind={`collection[${index}].item_person`} className={style.item__person} />
-        <Text bind={`collection[${index}].item_category`} className={style.item__category} />
-        <Text
-          bind={`collection[${index}].item_category_additional`}
-          className={style.item__category_additional}
-        />
-        <div className={style['item__btns-group']}>
-          <Button bind={`collection[${index}].item_button`} className={style.item__button} />
-        </div>
+        {this.getModifierValue('item_body') && (
+          <Text tagName="p" bind={`collection[${index}].item_body`} className={style.item__body} />
+        )}
+        {this.getModifierValue('item_person') && (
+          <Text
+            tagName="p"
+            bind={`collection[${index}].item_person`}
+            className={style.item__person}
+          />
+        )}
+        {this.getModifierValue('item_category') && (
+          <Text
+            tagName="p"
+            bind={`collection[${index}].item_category`}
+            className={style.item__category}
+          />
+        )}
+        {this.getModifierValue('item_category_additional') && (
+          <Text
+            tagName="p"
+            bind={`collection[${index}].item_category_additional`}
+            className={style.item__category_additional}
+          />
+        )}
+        {this.getModifierValue('item_button') && (
+          <div className={style['item__btns-group']}>
+            <Button bind={`collection[${index}].item_button`} className={style.item__button} />
+          </div>
+        )}
       </div>
     )
   }
@@ -57,23 +76,31 @@ class Wireframe extends React.Component {
           'min-width: 768px': 1000,
           'min-width: 480px': 800,
         }}
-        resize={{disable: true}}
+        // resize={{disable: true}}
       />
     )
   }
 
   render() {
     const {
-      components: {Text, Slider},
+      components: {Text, Slider, Background},
       style,
       $block,
     } = this.props
+
+    const arrange = this.getModifierValue('arrange-elements')
+    const noCompany = this.getModifierValue('item_category_additional')
 
     return (
       <section className={classNames(style.section, 'section')}>
         <div className={classNames(style.section__inner, 'section__inner')}>
           <div className={classNames('section__content')}>
-            <div className={style.article}>
+            <Background bind="article_background" className={classNames(style.article, arrange && style['article--reverse'])}>
+              <Text
+                bind="title"
+                className={classNames(style.title, 'title', 'text-center')}
+                tagName="h2"
+              />
               <Slider
                 className={style.article__preview}
                 bind="collection"
@@ -112,7 +139,7 @@ class Wireframe extends React.Component {
                   }}
                 />
               </div>
-            </div>
+            </Background>
           </div>
         </div>
       </section>
@@ -120,7 +147,7 @@ class Wireframe extends React.Component {
   }
 }
 
-Wireframe.components = _.pick(['Text', 'Button', 'Slider', 'Image'])($editor.components)
+Wireframe.components = _.pick(['Text', 'Button', 'Slider', 'Image', 'Background'])($editor.components)
 
 Wireframe.defaultContent = {
   title: {
@@ -133,6 +160,10 @@ Wireframe.defaultContent = {
   button_additional: {
     type: 'secondary',
     textValue: 'Learn More',
+  },
+  article_background: {
+    type: 'color',
+    color: 'rgba(216, 216, 216, 0.3)',
   },
   collection: {
     items: [
@@ -219,7 +250,17 @@ Wireframe.defaultContent = {
 }
 
 Wireframe.modifierScheme = {
-  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox'},
+  'arrange-elements': {
+    defaultValue: false,
+    name: 'Arrange elements',
+    type: 'swap',
+  },
+  item_image: {defaultValue: true, label: 'Testimonial image', type: 'checkbox'},
+  item_body: {defaultValue: true, label: 'Testimonial body', type: 'checkbox'},
+  item_person: {defaultValue: true, label: 'Person', type: 'checkbox'},
+  item_category: {defaultValue: true, label: 'Person position', type: 'checkbox'},
+  item_category_additional: {defaultValue: true, label: 'Person company', type: 'checkbox'},
+  item_button: {defaultValue: true, label: 'Person website', type: 'checkbox'},
 }
 
 export default Wireframe
