@@ -88,6 +88,10 @@
       max-width: 50%;
       flex: 1;
       flex-basis: 50%;
+
+      [class*="item-wrapper"] {
+        display: block !important;
+      }
     }
   }
 
