@@ -95,7 +95,7 @@ class Wireframe extends React.Component {
       <section className={classNames(style.section, 'section')}>
         <div className={classNames(style.section__inner, 'section__inner')}>
           <div className={classNames('section__content')}>
-            <Background bind="article_background" className={classNames(style.article, arrange && style['article--reverse'])}>
+            <div className={classNames(style.article, arrange && style['article--reverse'])}>
               <Text
                 bind="title"
                 className={classNames(style.title, 'title', 'text-center')}
@@ -116,7 +116,7 @@ class Wireframe extends React.Component {
                 }}
                 disableControls
               />
-              <div className={style.article__content}>
+              <Background bind="article_background" className={style.article__content}>
                 <Text
                   bind="title"
                   className={classNames(style.title, 'title', 'text-center')}
@@ -138,8 +138,8 @@ class Wireframe extends React.Component {
                     modifier: $block.modifier,
                   }}
                 />
-              </div>
-            </Background>
+              </Background>
+            </div>
           </div>
         </div>
       </section>
