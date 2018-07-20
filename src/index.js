@@ -32,6 +32,10 @@ ExtendedWireframe.modifierScheme = {
   phone: {defaultValue: false, label: 'Phone text block', type: 'hidden'},
   social: {defaultValue: false, label: 'Social Media Buttons', type: 'hidden'},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  'map-arrangement': {
+    defaultValue: false,
+    sortOrder: 90,
+  },
 }
 
 export default ExtendedWireframe
