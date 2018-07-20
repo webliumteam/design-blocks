@@ -28,6 +28,7 @@
 
   &__picture {
     padding-top: 77%;
+    background-color: transparent;
   }
 
   &__meta {
