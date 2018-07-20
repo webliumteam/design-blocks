@@ -19,3 +19,52 @@
     padding: var(--ui-content-gutter);
   }
 }
+
+.article {
+  display: flex;
+
+  &__preview,
+  &__content {
+    max-width: 50%;
+    flex: 1;
+    flex-basis: 50%;
+  }
+
+  &__title {
+    position: relative;
+    text-align: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 2px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+  }
+}
+
+.item {
+  &__body {
+    text-align: center;
+  }
+
+  &__person {
+    text-align: center;
+  }
+
+  &__category {
+    text-align: center;
+  }
+
+  &__category_additional {
+    text-align: center;
+  }
+
+  &__btns-group {
+    text-align: center;
+  }
+}

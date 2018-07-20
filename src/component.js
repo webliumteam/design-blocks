@@ -7,121 +7,125 @@ class Wireframe extends React.Component {
     style: PropTypes.object.isRequired,
   }
 
+  state = {
+    nav1: null,
+    nav2: null,
+  }
+
+  setSliderRef = key => ref => this.setState({[key]: ref})
+
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, children, className}) => {
+  collectionItem = ({index, modifier}) => {
+    const {
+      components: {Text, Button},
+      style,
+    } = this.props
+    return (
+      <div className={style.item}>
+        <Text bind={`collection[${index}].item_body`} className={style.item__body} />
+        <Text bind={`collection[${index}].item_person`} className={style.item__person} />
+        <Text bind={`collection[${index}].item_category`} className={style.item__category} />
+        <Text
+          bind={`collection[${index}].item_category_additional`}
+          className={style.item__category_additional}
+        />
+        <div className={style['item__btns-group']}>
+          <Button bind={`collection[${index}].item_button`} className={style.item__button} />
+        </div>
+      </div>
+    )
+  }
+
+  collectionItemPreview = ({index, modifier}) => {
     const {
       components: {Image},
       style,
     } = this.props
 
     return (
-      <div className={classNames(style.item, className)}>
-        {children}
-        <Image bind={`collection[${index}].image`} />
-      </div>
+      <Image
+        wrapperClassName={style['article__picture-wrapper']}
+        pictureClassName={style.article__picture}
+        imgClassName={style.article__image}
+        bind={`collection[${index}].item_image`}
+        size={{
+          'min-width: 992px': 1200,
+          'min-width: 768px': 1000,
+          'min-width: 480px': 800,
+        }}
+        resize={{disable: true}}
+      />
     )
   }
 
   render() {
     const {
-      components: {Text, Button, Collection},
+      components: {Text, Slider},
       style,
+      $block,
     } = this.props
 
     return (
       <section className={classNames(style.section, 'section')}>
         <div className={classNames(style.section__inner, 'section__inner')}>
-          <header className={classNames(style.section__header, 'section__header')}>
-            <Text
-              bind="title"
-              className={classNames(style.title, 'title', 'text-center')}
-              tagName="h2"
-            />
-            {this.getModifierValue('subtitle') && (
-              <Text
-                bind="subtitle"
-                className={classNames(style.subtitle, 'subtitle', 'text-center')}
-                tagName="p"
-              />
-            )}
-          </header>
           <div className={classNames('section__content')}>
-            <Slider
-              className={style['preview-slider']}
-              bind="gallery"
-              Item={this.collectionItemPreview}
-              setRef={this.setSliderRef('nav1')}
-              settings={{
-                dots: false,
-                arrows: false,
-                asNavFor: this.state.nav2,
-              }}
-              itemProps={{
-                modifier: $block.modifier,
-              }}
-              disableControls
-            />
-            <Slider
-              className={style['items-wrapper']}
-              bind="gallery"
-              Item={this.collectionItem}
-              setRef={this.setSliderRef('nav2')}
-              settings={{
-                dots: false,
-                arrows: true,
-                focusOnSelect: true,
-                slidesToScroll: 1,
-                slidesToShow: 5,
-                asNavFor: this.state.nav1,
-                responsive: [
-                  {
-                    breakpoint: 767,
-                    settings: {
-                      slidesToShow: 1,
-                    },
-                  },
-                  {
-                    breakpoint: 991,
-                    settings: {
-                      slidesToShow: 4,
-                    },
-                  },
-                ],
-                ...customArrows,
-              }}
-              itemProps={{
-                modifier: $block.modifier,
-              }}
-            />
-          </div>
-          <footer className={classNames(style.section__footer, 'section__footer')}>
-            <div className="btns-group">
-              <div className="btns-group__inner">
-                <Button className="btns-group__item" bind="button" />
-                <Button className="btns-group__item" bind="button_additional" />
+            <div className={style.article}>
+              <Slider
+                className={style.article__preview}
+                bind="collection"
+                Item={this.collectionItemPreview}
+                setRef={this.setSliderRef('nav1')}
+                settings={{
+                  dots: false,
+                  arrows: false,
+                  asNavFor: this.state.nav2,
+                }}
+                itemProps={{
+                  modifier: $block.modifier,
+                }}
+                disableControls
+              />
+              <div className={style.article__content}>
+                <Text
+                  bind="title"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  tagName="h2"
+                />
+                <Slider
+                  className={style['items-wrapper']}
+                  bind="collection"
+                  Item={this.collectionItem}
+                  setRef={this.setSliderRef('nav2')}
+                  settings={{
+                    dots: true,
+                    arrows: false,
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    asNavFor: this.state.nav1,
+                  }}
+                  itemProps={{
+                    modifier: $block.modifier,
+                  }}
+                />
               </div>
             </div>
-          </footer>
+          </div>
         </div>
       </section>
     )
   }
 }
 
-Wireframe.components = _.pick(['Text', 'Button', 'Collection', 'Image'])($editor.components)
+Wireframe.components = _.pick(['Text', 'Button', 'Slider', 'Image'])($editor.components)
 
 Wireframe.defaultContent = {
   title: {
-    content: 'Hello world',
+    content: 'Our customers say',
     type: 'blockTitle',
-  },
-  subtitle: {
-    content: 'Type here something',
-    type: 'subtitle',
   },
   button: {
     textValue: 'Request a quote',
@@ -133,8 +137,81 @@ Wireframe.defaultContent = {
   collection: {
     items: [
       {
-        image: {
+        item_image: {
           src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        },
+        item_body: {
+          type: 'subtitle',
+          content:
+            'I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services.',
+        },
+        item_person: {
+          type: 'heading',
+          content: 'Kate Holmes',
+        },
+        item_category: {
+          type: 'caption',
+          content: 'Freelance artist',
+        },
+        item_category_additional: {
+          type: 'text',
+          content: 'Kate Holmes Performance Art',
+        },
+        item_button: {
+          type: 'link',
+          textValue: 'kateholms.com',
+        },
+      },
+      {
+        item_image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        },
+        item_body: {
+          type: 'subtitle',
+          content:
+            'I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services.',
+        },
+        item_person: {
+          type: 'heading',
+          content: '2 Kate Holmes',
+        },
+        item_category: {
+          type: 'caption',
+          content: 'Freelance artist',
+        },
+        item_category_additional: {
+          type: 'text',
+          content: 'Kate Holmes Performance Art',
+        },
+        item_button: {
+          type: 'link',
+          textValue: 'kateholms.com',
+        },
+      },
+      {
+        item_image: {
+          src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
+        },
+        item_body: {
+          type: 'subtitle',
+          content:
+            'I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services.',
+        },
+        item_person: {
+          type: 'heading',
+          content: '3 Kate Holmes',
+        },
+        item_category: {
+          type: 'caption',
+          content: 'Freelance artist',
+        },
+        item_category_additional: {
+          type: 'text',
+          content: 'Kate Holmes Performance Art',
+        },
+        item_button: {
+          type: 'link',
+          textValue: 'kateholms.com',
         },
       },
     ],
