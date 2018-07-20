@@ -256,7 +256,6 @@ Wireframe.modifierScheme = {
     name: 'Arrange elements',
     type: 'swap',
   },
-  item_image: {defaultValue: true, label: 'Testimonial image', type: 'checkbox'},
   item_body: {defaultValue: true, label: 'Testimonial body', type: 'checkbox'},
   item_person: {defaultValue: true, label: 'Person', type: 'checkbox'},
   item_category: {defaultValue: true, label: 'Person position', type: 'checkbox'},

@@ -11,12 +11,17 @@
       margin-left: 9px;
     }
 
+    .slick-dots li button {
+      color: inherit;
+    }
+
     .slick-dots li button::before {
       content: "";
       width: 20px;
       height: 20px;
       border-radius: 50%;
       background-color: currentColor;
+      color: inherit;
     }
   }
 }
@@ -114,7 +119,7 @@
     }
 
     @media (min-width: 992px) {
-      padding-top: 94.018%;
+      padding-top: 95.5%;
     }
   }
 
