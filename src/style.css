@@ -46,6 +46,11 @@
   }
 }
 
+.btns-group {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .title,
 .subtitle,
 .btns-group {
