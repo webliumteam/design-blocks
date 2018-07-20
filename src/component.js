@@ -95,7 +95,13 @@ class Wireframe extends React.Component {
       <section className={classNames(style.section, 'section')}>
         <div className={classNames(style.section__inner, 'section__inner')}>
           <div className={classNames('section__content')}>
-            <div className={classNames(style.article, arrange && style['article--reverse'])}>
+            <div
+              className={classNames(
+                style.article,
+                arrange && style['article--reverse'],
+                noCompany && style['section--no-company'],
+              )}
+            >
               <Text
                 bind="title"
                 className={classNames(style.title, 'title', 'text-center')}
