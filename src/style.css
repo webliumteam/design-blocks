@@ -114,7 +114,7 @@
   &__picture {
     padding-top: 78.125%;
 
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       padding-top: 164%;
     }
 
