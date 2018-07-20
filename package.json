@@ -30,7 +30,9 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
-    "wireframe-zapdos-cover": "https://github.com/webliumteam/blocks#w/zapdos/cover/prod"
+    "wireframe-zapdos-cover": "https://github.com/webliumteam/blocks#w/zapdos/cover/prod",
+    "react-particles-js": "^2.2.0",
+    "three": "^0.94.0"
   },
   "editorVersion": "4.13.0"
 }
