@@ -84,7 +84,7 @@
   &__preview,
   &__content {
 
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       max-width: 50%;
       flex: 1;
       flex-basis: 50%;
