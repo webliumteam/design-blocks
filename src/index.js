@@ -26,15 +26,15 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.team[0],
         name: {
           ...Component.defaultContent.team[0].name,
-          content: 'Dave Reez',
+          content: 'Andrew Shimmer',
         },
         position: {
           ...Component.defaultContent.team[0].position,
-          content: 'President',
+          content: 'CEO',
         },
         description: {
           ...Component.defaultContent.team[0].description,
-          content: 'Dave is a business owner and a second generation electrician. He has over 20 years of experience in the electrical industry. He strives to provide the excellent customer service where the quality comes first.',
+          content: 'Andrew Shimmer has more than 15 years of experience in IT development and marketing. He has successfully run companies specializing in innovative technologies.',
         },
         picture: {
           ...Component.defaultContent.team[0].picture,
@@ -45,15 +45,15 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.team[1],
         name: {
           ...Component.defaultContent.team[0].name,
-          content: 'John Davidson',
+          content: 'Tomas Abbar',
         },
         position: {
           ...Component.defaultContent.team[0].position,
-          content: 'Master Electrician',
+          content: 'Product Manager',
         },
         description: {
           ...Component.defaultContent.team[0].description,
-          content: 'John is committed to delivering excellence in everything he does. He is highly trained, very knowledgeable, and experienced. John is focused on the complete customer satisfaction with the job. ',
+          content: 'For 13 years, Tomas has been taking a position of product manager at Quantum. He successfully launched several best-selling products. Now he is working on 3 new products.',
         },
         picture: {
           ...Component.defaultContent.team[0].picture,
@@ -64,15 +64,15 @@ ExtendedWireframe.defaultContent = {
         ...Component.defaultContent.team[2],
         name: {
           ...Component.defaultContent.team[0].name,
-          content: 'Anthony Taylor',
+          content: 'Jeff Bin',
         },
         position: {
           ...Component.defaultContent.team[0].position,
-          content: 'Founder',
+          content: 'Marketing Director',
         },
         description: {
           ...Component.defaultContent.team[0].description,
-          content: 'Anthony has over 28 years of experience in the electrical contracting industry. His knowledge in various aspects of the industry places him at the forefront to deliver the experience and high quality of end product.',
+          content: 'Jeff is a highly skilled professional with over 10 years of experience in marketing. He has been rewarded by the Association of Marketing as one of the most successful directors.',
         },
         picture: {
           ...Component.defaultContent.team[0].picture,
