@@ -13,33 +13,21 @@ class Block extends React.Component {
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
   collectionItem = ({index, children, className, modifier}) => {
-    const {components: {Text, Button, Image}, style: css} = this.props
-    const showBody = _.get('body-text')(modifier) || _.get('service-button')(modifier)
-    const contentModifierClass = _.get('content-arrangement')(modifier) && css['item__content--reverse']
+    const {components: {Text, Button}, style: css} = this.props
+    const showBody = _.get('item_body')(modifier) || _.get('item_button')(modifier)
+    const contentModifierClass = _.get('texts_swap')(modifier) && css['item__content--reverse']
 
     return (
       <div className={classNames(css.item, className)}>
         {children}
-        <Image
-          wrapperClassName={classNames(css['item__picture-wrapper'], 'picture-wrapper')}
-          pictureClassName={classNames(css.item__picture, 'picture')}
-          imgClassName={classNames(css.item__image, 'picture__image')}
-          bind={`services[${index}].picture`}
-          size={{
-            'min-width: 992px': 600,
-            'min-width: 768px': 1000,
-            'min-width: 480px': 800,
-          }}
-          resize={{disable: true}}
-        />
         <div className={classNames(css.item__content, contentModifierClass)}>
-          <Text bind={`services[${index}].title`} className={classNames(css.item__title, 'heading')} tagName="h2" />
+          <Text bind={`services[${index}].title`} className={classNames(css.item__title, this.ui('ui-heading'))} tagName="h2" />
           {showBody && (
             <div className={css.item__body}>
-              {_.get('body-text')(modifier) && (
-                <Text bind={`services[${index}].text`} className={classNames(css.item__text, 'body')} tagName="p" />
+              {_.get('item_body')(modifier) && (
+                <Text bind={`services[${index}].text`} className={classNames(css.item__text, this.ui('ui-body'))} tagName="p" />
               )}
-              {_.get('service-button')(modifier) && (
+              {_.get('item_button')(modifier) && (
                 <Button
                   linkClassName={css.link}
                   buttonClassName={css.button}
@@ -62,8 +50,8 @@ class Block extends React.Component {
       <section className={style.section}>
         <div className={style.section__inner}>
           <header className={style.section__header}>
-            <Text bind="title" className={classNames(style.title, 'title', 'text-center')} tagName="h1" />
-            {this.getModifierValue('subtitle') && <Text bind="subtitle" className={classNames(style.subtitle, 'subtitle', 'text-center')} tagName="p" />}
+            <Text bind="title" className={classNames(style.title, this.ui('ui-title'), this.ui('text-center'))} tagName="h1" />
+            {this.getModifierValue('subtitle') && <Text bind="subtitle" className={classNames(style.subtitle, this.ui('ui-subtitle'), this.ui('ui-text-center'))} tagName="p" />}
           </header>
           <Collection
             className={style['items-wrapper']}
@@ -74,18 +62,18 @@ class Block extends React.Component {
             }}
           />
           {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
-            <div className={classNames(style['btns-group'], 'btns-group')}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
               <div className="btns-group__inner">
                 {this.getModifierValue('button') && (
                   <Button
-                    className={classNames(style.button, 'butttton')}
+                    className={classNames(style.button, this.ui('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind="cta"
                   />
                 )}
                 {this.getModifierValue('button_additional') && (
                   <Button
-                    className={classNames(style.button, 'butttton')}
+                    className={classNames(style.button, this.ui('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind="button_additional"
                   />
@@ -199,14 +187,14 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  'content-arrangement': {
+  texts_swap: {
     defaultValue: false,
-    name: 'Arrange elements',
+    name: 'Swap text with heading',
     type: 'swap',
   },
   subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 10},
-  'body-text': {defaultValue: true, label: 'Service description', type: 'checkbox', sortOrder: 20},
-  'service-button': {defaultValue: true, label: 'Service button (link)', type: 'checkbox', sortOrder: 30},
+  item_body: {defaultValue: true, label: 'Service description', type: 'checkbox', sortOrder: 20},
+  item_button: {defaultValue: true, label: 'Service button (link)', type: 'checkbox', sortOrder: 30},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 40},
   button_additional: {defaultValue: false, label: 'Button additional', type: 'hidden', sortOrder: 50},
 }
