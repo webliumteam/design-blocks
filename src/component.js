@@ -8,8 +8,9 @@ class Wireframe extends React.Component {
   }
 
   state = {
-    nav1: null,
-    nav2: null,
+    // nav1: null,
+    // nav2: null,
+    activeSlide: 0,
   }
 
   setSliderRef = key => ref => this.setState({[key]: ref})
@@ -83,7 +84,7 @@ class Wireframe extends React.Component {
 
   render() {
     const {
-      components: {Text, Slider, Background},
+      components: {Text, Slider, Background, Image},
       style,
       $block,
     } = this.props
@@ -113,7 +114,7 @@ class Wireframe extends React.Component {
                   tagName="h2"
                 />
               )}
-              <Slider
+              {/* <Slider
                 className={style.article__preview}
                 bind="collection"
                 Item={this.collectionItemPreview}
@@ -127,7 +128,21 @@ class Wireframe extends React.Component {
                   modifier: $block.modifier,
                 }}
                 disableControls
-              />
+              /> */}
+              <div className={style.article__preview}>
+                <Image
+                  wrapperClassName={style['article__picture-wrapper']}
+                  pictureClassName={style.article__picture}
+                  imgClassName={style.article__image}
+                  bind={`collection.items[${this.state.activeSlide}].item_image`}
+                  size={{
+                    'min-width: 992px': 1200,
+                    'min-width: 768px': 1000,
+                    'min-width: 480px': 800,
+                  }}
+                  // resize={{disable: true}}
+                />
+              </div>
               <Background bind="article_background" className={style.article__content}>
                 {this.getModifierValue('title') && (
                   <Text
@@ -140,13 +155,14 @@ class Wireframe extends React.Component {
                   className={style['items-wrapper']}
                   bind="collection"
                   Item={this.collectionItem}
-                  setRef={this.setSliderRef('nav2')}
+                  // setRef={this.setSliderRef('nav2')}
                   settings={{
                     dots: true,
                     arrows: false,
                     slidesToScroll: 1,
                     slidesToShow: 1,
-                    asNavFor: this.state.nav1,
+                    // asNavFor: this.state.nav1,
+                    afterChange: activeSlide => this.setState({activeSlide}),
                   }}
                   itemProps={{
                     modifier: $block.modifier,
