@@ -149,6 +149,7 @@
 
   &__picture,
   &__picture-wrapper {
+    padding-top: 0;
     position: absolute;
     top: 0;
     right: 0;

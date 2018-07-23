@@ -5,6 +5,7 @@ class Wireframe extends React.Component {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   state = {
@@ -20,7 +21,7 @@ class Wireframe extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  collectionItem = ({index, modifier}) => {
+  collectionItem = ({index}) => {
     const {
       components: {Text, Button},
       style,
@@ -60,27 +61,33 @@ class Wireframe extends React.Component {
     )
   }
 
-  // collectionItemPreview = ({index, modifier}) => {
-  //   const {
-  //     components: {Image},
-  //     style,
-  //   } = this.props
+  renderShadowImages = () => {
+    const {
+      content,
+      components: {SsrOnly, Image},
+      style,
+    } = this.props
 
-  //   return (
-  //     <Image
-  //       wrapperClassName={style['article__picture-wrapper']}
-  //       pictureClassName={style.article__picture}
-  //       imgClassName={style.article__image}
-  //       bind={`collection[${index}].item_image`}
-  //       size={{
-  //         'min-width: 992px': 1200,
-  //         'min-width: 768px': 1000,
-  //         'min-width: 480px': 800,
-  //       }}
-  //       // resize={{disable: true}}
-  //     />
-  //   )
-  // }
+    return _.flow(
+      () => _.range(0, content.collection.items.length),
+      _.map(index => (
+        <SsrOnly>
+          <Image
+            wrapperClassName={style['article__picture-wrapper']}
+            pictureClassName={style.article__picture}
+            imgClassName={style.article__image}
+            bind={`collection.items[${index}].item_image`}
+            size={{
+              'min-width: 992px': 1200,
+              'min-width: 768px': 1000,
+              'min-width: 480px': 800,
+            }}
+            resize={{disable: true}}
+          />
+        </SsrOnly>
+      )),
+    )(content)
+  }
 
   render() {
     const {
@@ -130,6 +137,7 @@ class Wireframe extends React.Component {
                 disableControls
               /> */}
               <div className={style.article__preview}>
+                {this.renderShadowImages()}
                 <Image
                   wrapperClassName={style['article__picture-wrapper']}
                   pictureClassName={style.article__picture}
