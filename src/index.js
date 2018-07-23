@@ -1,9 +1,9 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-default-master/src/component'
+import Component from 'wireframe-series-12-testimonials/src/component'
 import style from './style.css'
 
-import defaultOptions from 'wireframe-default-master/src/options.json'
+import defaultOptions from 'wireframe-series-12-testimonials/src/options.json'
 import options from './options.json'
 
 const {enhancers: {withProps}, hoistStatics} = $editor
@@ -12,6 +12,32 @@ const ExtendedWireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _
 
 ExtendedWireframe.defaultContent = {
   ...Component.defaultContent,
+  collection: {
+    ...Component.defaultContent.collection,
+    items: [
+      {
+        ...Component.defaultContent.collection.items[0],
+        item_image: {
+          ...Component.defaultContent.collection.items[0].item_image,
+          resourceRef: '1.jpg',
+        },
+      },
+      {
+        ...Component.defaultContent.collection.items[1],
+        item_image: {
+          ...Component.defaultContent.collection.items[1].item_image,
+          resourceRef: '2.jpg',
+        },
+      },
+      {
+        ...Component.defaultContent.collection.items[2],
+        item_image: {
+          ...Component.defaultContent.collection.items[2].item_image,
+          resourceRef: '3.jpg',
+        },
+      },
+    ],
+  },
 }
 
 ExtendedWireframe.modifierScheme = {
