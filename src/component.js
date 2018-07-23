@@ -149,6 +149,7 @@ class Wireframe extends React.Component {
                     'min-width: 480px': 800,
                   }}
                   resize={{disable: true}}
+                  key={`testimonial-image-${this.state.activeSlide}`}
                 />
               </div>
               <Background bind="article_background" className={style.article__content}>
