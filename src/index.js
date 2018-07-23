@@ -35,11 +35,11 @@ ExtendedWireframe.defaultContent = {
     items: [
       {
         title: {
-          content: 'Schedule an</br>appointment',
+          content: 'Pick a plan',
           type: 'heading',
         },
         description: {
-          content: 'Choose the date and time that suits you.',
+          content: 'Compare all available plans to choose the one that will best meet your requirements.',
           type: 'text',
         },
         background: {
@@ -49,11 +49,11 @@ ExtendedWireframe.defaultContent = {
       },
       {
         title: {
-          content: 'Request your</br>service',
+          content: 'Make a payment',
           type: 'heading',
         },
         description: {
-          content: 'Specify the service you need for your project.',
+          content: 'Choose the most suitable payment method. We guarantee the security of all payments.',
           type: 'text',
         },
         background: {
@@ -63,11 +63,11 @@ ExtendedWireframe.defaultContent = {
       },
       {
         title: {
-          content: 'Choose an</br>electrician',
+          content: 'Enjoy our products',
           type: 'heading',
         },
         description: {
-          content: 'Select a highly trained & registered electrician.',
+          content: 'Get access to all available features and start attracting clients straight away.',
           type: 'text',
         },
         background: {
@@ -77,11 +77,11 @@ ExtendedWireframe.defaultContent = {
       },
       {
         title: {
-          content: 'Request a free</br>estimate',
+          content: 'Enjoy our products',
           type: 'heading',
         },
         description: {
-          content: 'We offer free estimates on any service.',
+          content: 'Get access to all available features and start attracting clients straight away.',
           type: 'text',
         },
         background: {
@@ -92,7 +92,7 @@ ExtendedWireframe.defaultContent = {
     ],
   },
   title: {
-    content: 'How to get started',
+    content: 'Our process',
     type: 'blockTitle',
   },
   subtitle: {
@@ -110,7 +110,7 @@ ExtendedWireframe.defaultContent = {
         },
       },
     },
-    textValue: 'make an order',
+    textValue: 'Learn more',
     type: 'secondary',
   },
   'cta-2': {
