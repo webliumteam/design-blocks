@@ -185,7 +185,7 @@ class Wireframe extends React.Component {
   }
 }
 
-Wireframe.components = _.pick(['Text', 'Button', 'Slider', 'Image', 'Background'])($editor.components)
+Wireframe.components = _.pick(['Text', 'Button', 'Slider', 'Image', 'Background', 'SsrOnly'])($editor.components)
 
 Wireframe.defaultContent = {
   background: {},
