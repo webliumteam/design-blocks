@@ -92,6 +92,10 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Image'])($editor.com
 Block.defaultContent = {
   services: [
     {
+      background: {
+        type: 'color',
+        color: 'light-accent-color',
+      },
       title: {
         content: 'Manufacturing',
         type: 'heading',
@@ -120,6 +124,10 @@ Block.defaultContent = {
       },
     },
     {
+      background: {
+        type: 'color',
+        color: 'light-accent-color',
+      },
       title: {
         content: 'Delivery and Support',
         type: 'heading',
