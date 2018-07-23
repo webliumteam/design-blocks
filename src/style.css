@@ -105,6 +105,7 @@
   }
 
   &__preview {
+    position: relative;
     margin-top: 40px;
 
     @media (min-width: 768px) {
@@ -146,16 +147,13 @@
     }
   }
 
-  &__picture {
-    padding-top: 78.125%;
-
-    @media (min-width: 768px) {
-      padding-top: 164%;
-    }
-
-    @media (min-width: 992px) {
-      padding-top: 95.5%;
-    }
+  &__picture,
+  &__picture-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   .title {

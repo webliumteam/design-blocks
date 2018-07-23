@@ -60,27 +60,27 @@ class Wireframe extends React.Component {
     )
   }
 
-  collectionItemPreview = ({index, modifier}) => {
-    const {
-      components: {Image},
-      style,
-    } = this.props
+  // collectionItemPreview = ({index, modifier}) => {
+  //   const {
+  //     components: {Image},
+  //     style,
+  //   } = this.props
 
-    return (
-      <Image
-        wrapperClassName={style['article__picture-wrapper']}
-        pictureClassName={style.article__picture}
-        imgClassName={style.article__image}
-        bind={`collection[${index}].item_image`}
-        size={{
-          'min-width: 992px': 1200,
-          'min-width: 768px': 1000,
-          'min-width: 480px': 800,
-        }}
-        // resize={{disable: true}}
-      />
-    )
-  }
+  //   return (
+  //     <Image
+  //       wrapperClassName={style['article__picture-wrapper']}
+  //       pictureClassName={style.article__picture}
+  //       imgClassName={style.article__image}
+  //       bind={`collection[${index}].item_image`}
+  //       size={{
+  //         'min-width: 992px': 1200,
+  //         'min-width: 768px': 1000,
+  //         'min-width: 480px': 800,
+  //       }}
+  //       // resize={{disable: true}}
+  //     />
+  //   )
+  // }
 
   render() {
     const {
@@ -140,7 +140,7 @@ class Wireframe extends React.Component {
                     'min-width: 768px': 1000,
                     'min-width: 480px': 800,
                   }}
-                  // resize={{disable: true}}
+                  resize={{disable: true}}
                 />
               </div>
               <Background bind="article_background" className={style.article__content}>
