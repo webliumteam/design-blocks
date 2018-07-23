@@ -18,6 +18,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.projects[0].picture,
         resourceRef: 'nicolas-ukrman-592561-unsplash.jpg',
+        size: {
+          'min-width: 992px': 1200,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
     },
     {
@@ -25,6 +31,12 @@ ExtendedWireframe.defaultContent = {
       picture: {
         ...Component.defaultContent.projects[1].picture,
         resourceRef: 'noe-araujo-721-unsplash.jpg',
+        size: {
+          'min-width: 992px': 1200,
+          'min-width: 768px': 992,
+          'min-width: 480px': 768,
+          'min-width: 320px': 480,
+        },
       },
     },
   ],
