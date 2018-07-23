@@ -18,11 +18,11 @@ ExtendedWireframe.defaultContent = {
   },
   text: {
     ...Component.defaultContent.text,
-    content: 'Acrozz Logistics Company expands targeted, complete logistics solutions that meet each client’s special set of challenges, products, systems, and vision since 1983. Companies with diversified and complicated transportation needs trust our innovative technologies to deliver comprehensive, high-value logistics strategies. We guarantee our clients their shipment delivery in time and in the most secure and optimal way. ',
+    content: 'We provide a whole bulk of services to ensure stable growth of the company. The profound expertise of our team, deep understanding of all business aspects, ideal knowledge of processes will help to deal with various issues.',
   },
   'text-2': {
     ...Component.defaultContent['text-2'],
-    content: 'We are committed to quality, honesty, and integrity, so you can be sure that Acrozz will take care of your supply chain and logistics needs. Regardless of the type of transportation, our main goal is to ensure the safety of your cargo during transportation and minimize all possible risks.',
+    content: ' We create unique and innovative solutions for our customers along with the high-quality support services and personal approach to any case. Feel free to entrust your business to our experts, and you’ll see the difference!',
   },
   picture: {
     ...Component.defaultContent.picture,
