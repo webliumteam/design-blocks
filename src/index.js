@@ -186,11 +186,11 @@ ExtendedWireframe.defaultContent = {
   },
   copyright: {
     type: 'caption',
-    content: 'Produced by Weblium. All Rights Reserved',
+    content: 'Produced by Weblium.com.',
   },
   additional: {
     type: 'caption',
-    content: 'Demo Preview for Acrozz Logistics Company Concept',
+    content: 'All rights Reserved',
   },
 }
 
