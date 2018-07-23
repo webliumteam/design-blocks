@@ -32,11 +32,13 @@ class Block extends React.Component {
 
   ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
+  notUi = value => !_.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   render() {
     const {components: {Collection, Text, Button, Icon}, style} = this.props
 
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, this.notUi(style['section--disabled-themes']))}>
         <div className={style.section__inner}>
           {this.getModifierValue('top-icon') && (
             <Icon className={classNames(style['top-icon'],this.ui('ui-icon'))} bind="topIcon" />
