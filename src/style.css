@@ -18,6 +18,14 @@
   }
 }
 
+.section--disabled-themes {
+  .subtitle {
+    max-width: 688px;
+    margin: 15px auto 0;
+    text-align: center;
+  }
+}
+
 .section__inner {
   max-width: var(--ui-content-container);
   margin: 0 auto;
@@ -26,12 +34,6 @@
 
 .title {
   width: 100%;
-  text-align: center;
-}
-
-.subtitle {
-  max-width: 688px;
-  margin: 15px auto 0;
   text-align: center;
 }
 
