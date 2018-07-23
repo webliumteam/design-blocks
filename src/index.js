@@ -31,15 +31,15 @@ ExtendedWireframe.defaultContent = {
   },
   title: {
     ...Component.defaultContent.title,
-    content: 'Safe and Secure<br>Transportation',
+    content: 'BeZee Company',
   },
   subtitle: {
     ...Component.defaultContent.subtitle,
-    content: 'Acrozz Logistics provides trustworthy transportation, freight, warehousing, and distribution services across over 180 countries all over the world.',
+    content: 'Products and services of the highest quality',
   },
   formTitle: {
     ...Component.defaultContent.formTitle,
-    content: 'Request a Quote',
+    content: 'Send a request and get a complete list of our offers!',
   },
   contactForm: {
     ...Component.defaultContent.contactForm,
@@ -74,7 +74,7 @@ ExtendedWireframe.defaultContent = {
       },
     ],
     submitButton: {
-      title: 'send',
+      title: 'Request a quote',
       type: 'primary',
     },
   },
@@ -91,12 +91,13 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'header-button': {defaultValue: true, label: 'Header button', type: 'checkbox'},
+  'header-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 32},
   'title-decorator': {
     defaultValue: true,
     label: 'Title decorator',
     type: 'checkbox',
     classNameOnActive: style['section--with-title-decorator'],
+    sortOrder: 22,
   },
   'form-description': {defaultValue: false, label: 'Form description', type: 'hidden'},
   'Arrange elements': {

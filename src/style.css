@@ -13,8 +13,8 @@
       width: 53px;
       height: 5px;
       bottom: 0;
-      left: 0;
-      transform: skewX(-25deg);
+      left: 50%;
+      transform: translateX(-50%) skewX(-25deg);
       background: linear-gradient(
         to right, var(--ui-brand-color) 0%,
         var(--ui-brand-color) 60%,
@@ -26,6 +26,11 @@
         rgba(0, 0, 0, 0) 90%,
         var(--ui-brand-color) 90%,
         var(--ui-brand-color) 100%);
+
+      @media (min-width: 992px) {
+        left: 0;
+        transform: translateX(0) skewX(-25deg);
+      }
     }
   }
 
@@ -47,6 +52,15 @@
 
     &--right {
 
+      @media (min-width: 992px) {
+        padding-right: 20px;
+        padding-left: 45px;
+        text-align: left;
+      }
+    }
+
+    &--left {
+      
       @media (min-width: 992px) {
         padding-right: 0;
         padding-left: 45px;
