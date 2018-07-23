@@ -9,12 +9,8 @@ class Wireframe extends React.Component {
   }
 
   state = {
-    // nav1: null,
-    // nav2: null,
     activeSlide: 0,
   }
-
-  setSliderRef = key => ref => this.setState({[key]: ref})
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
 
@@ -121,21 +117,6 @@ class Wireframe extends React.Component {
                   tagName="h2"
                 />
               )}
-              {/* <Slider
-                className={style.article__preview}
-                bind="collection"
-                Item={this.collectionItemPreview}
-                setRef={this.setSliderRef('nav1')}
-                settings={{
-                  dots: false,
-                  arrows: false,
-                  asNavFor: this.state.nav2,
-                }}
-                itemProps={{
-                  modifier: $block.modifier,
-                }}
-                disableControls
-              /> */}
               <div className={style.article__preview}>
                 {this.renderShadowImages()}
                 <Image
@@ -164,13 +145,11 @@ class Wireframe extends React.Component {
                   className={style['items-wrapper']}
                   bind="collection"
                   Item={this.collectionItem}
-                  // setRef={this.setSliderRef('nav2')}
                   settings={{
                     dots: true,
                     arrows: false,
                     slidesToScroll: 1,
                     slidesToShow: 1,
-                    // asNavFor: this.state.nav1,
                     afterChange: activeSlide => this.setState({activeSlide}),
                   }}
                   itemProps={{
@@ -186,7 +165,14 @@ class Wireframe extends React.Component {
   }
 }
 
-Wireframe.components = _.pick(['Text', 'Button', 'Slider', 'Image', 'Background', 'SsrOnly'])($editor.components)
+Wireframe.components = _.pick([
+  'Text',
+  'Button',
+  'Slider',
+  'Image',
+  'Background',
+  'SsrOnly',
+])($editor.components)
 
 Wireframe.defaultContent = {
   background: {},
