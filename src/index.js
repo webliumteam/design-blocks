@@ -16,11 +16,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[0],
       title: {
-        content: '24-hour emergency service',
+        content: 'Service 1',
         type: 'heading',
       },
       description: {
-        content: 'From $50',
+        content: 'Multipurpose assistance for online stores and offline retail businesses.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -32,11 +32,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[1],
       title: {
-        content: 'Interior and exterior lighting',
+        content: 'Service 2',
         type: 'heading',
       },
       description: {
-        content: 'From $30',
+        content: 'Developing marketing and business strategy to help company grow fast.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -48,11 +48,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[2],
       title: {
-        content: 'Data network & telephone installations',
+        content: 'Service 3',
         type: 'heading',
       },
       description: {
-        content: 'From $50',
+        content: 'Building brand awareness for micro and small businesses to increase potential reach.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -64,11 +64,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[3],
       title: {
-        content: 'Power meter & electrical panel service',
+        content: 'Service 4',
         type: 'heading',
       },
       description: {
-        content: 'From $25',
+        content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -80,11 +80,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[4],
       title: {
-        content: 'Lightning protection system<br>installation',
+        content: 'Service 5',
         type: 'heading',
       },
       description: {
-        content: 'From $30',
+        content: 'Aftersales support in marketing, sales, and staff training for enhanced performance.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -96,11 +96,11 @@ ExtendedWireframe.defaultContent = {
     {
       ...Component.defaultContent.services[5],
       title: {
-        content: 'Residential and commercial wiring',
+        content: 'Service 6',
         type: 'heading',
       },
       description: {
-        content: 'From $50',
+        content: 'Building brand awareness for micro and small businesses to increase potential reach.',
         type: 'subheading',
         color: 'brand-color',
       },
@@ -111,21 +111,21 @@ ExtendedWireframe.defaultContent = {
     },
   ],
   title: {
-    content: 'Services',
+    content: 'Services We Provide',
     type: 'blockTitle',
   },
   subtitle: {
-    content: "If you can't find the service you are looking for, feel free to contact us. We will be glad to answer any service-related questions. We look forward to meeting your electrical needs. Here are some services we offer:",
+    content: 'We deliver all kind of services that support small and micro businesses. Here are some of them:',
     type: 'subtitle',
   },
 }
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
-  'button-primary': {defaultValue: false, label: 'Additional button', type: 'checkbox'},
-  'button-secondary': {defaultValue: false, label: 'Button', type: 'checkbox'},
-  link: {defaultValue: false, label: 'Link', type: 'checkbox'},
-  subtitle: {defaultValue: true, label: 'Services description', type: 'checkbox'},
+  'button-primary': {defaultValue: false, label: 'Button (link)', type: 'checkbox'},
+  'button-secondary': {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', sortOrder: 50},
+  link: {defaultValue: false, label: 'Service link (button)', type: 'checkbox', sortOrder: 40},
+  subtitle: {defaultValue: true, label: 'Block  description', type: 'checkbox', sortOrder: 10},
 }
 
 export default ExtendedWireframe
