@@ -21,11 +21,11 @@ ExtendedWireframe.defaultContent = {
     resourceRef: 'img-bg.jpg',
   },
   title: {
-    content: 'Stay Informed',
+    content: 'Subscribe Now',
     type: 'blockTitle',
   },
   subtitle: {
-    content: 'Receive timely transportation and supply chain insights',
+    content: 'Enter your email and get our latest news, special offers, and useful content about our products and services.',
     type: 'subtitle',
   },
   contactForm: {
@@ -38,8 +38,8 @@ ExtendedWireframe.defaultContent = {
       },
     ],
     submitButton: {
-      title: 'submit',
-      textValue: 'submit',
+      title: 'Subscribe',
+      textValue: 'Subscribe',
       type: 'primary',
       size: 'lg',
     },
