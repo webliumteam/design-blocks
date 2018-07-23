@@ -1,5 +1,7 @@
 @import "media.css";
 
+/* stylelint-disable */
+
 .section {
   :global {
     .slick-dots {
@@ -70,6 +72,35 @@
   &--reverse {
     .article__content {
       order: -1;
+    }
+  }
+
+  &--no-title {
+    .article__content {
+
+      @media (min-width: 992px) {
+        padding-top: 90px;
+      }
+    }
+  }
+
+  &--no-line {
+    .article__content {
+      .title {
+        padding-bottom: 0;
+
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  &--no-company {
+    .item {
+      &__btns-group {
+        margin-top: 15px;
+      }
     }
   }
 
@@ -177,3 +208,5 @@
     text-align: center;
   }
 }
+
+/* stylelint-enable */

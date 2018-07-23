@@ -89,7 +89,9 @@ class Wireframe extends React.Component {
     } = this.props
 
     const arrange = this.getModifierValue('arrange-elements')
-    const noCompany = this.getModifierValue('item_category_additional')
+    const noCompany = !this.getModifierValue('item_category_additional')
+    const noTitle = !this.getModifierValue('title')
+    const noLine = !this.getModifierValue('line')
 
     return (
       <section className={classNames(style.section, 'section')}>
@@ -99,14 +101,18 @@ class Wireframe extends React.Component {
               className={classNames(
                 style.article,
                 arrange && style['article--reverse'],
-                noCompany && style['section--no-company'],
+                noCompany && style['article--no-company'],
+                noTitle && style['article--no-title'],
+                noLine && style['article--no-line'],
               )}
             >
-              <Text
-                bind="title"
-                className={classNames(style.title, 'title', 'text-center')}
-                tagName="h2"
-              />
+              {this.getModifierValue('title') && (
+                <Text
+                  bind="title"
+                  className={classNames(style.title, 'title', 'text-center')}
+                  tagName="h2"
+                />
+              )}
               <Slider
                 className={style.article__preview}
                 bind="collection"
@@ -123,11 +129,13 @@ class Wireframe extends React.Component {
                 disableControls
               />
               <Background bind="article_background" className={style.article__content}>
-                <Text
-                  bind="title"
-                  className={classNames(style.title, 'title', 'text-center')}
-                  tagName="h2"
-                />
+                {this.getModifierValue('title') && (
+                  <Text
+                    bind="title"
+                    className={classNames(style.title, 'title', 'text-center')}
+                    tagName="h2"
+                  />
+                )}
                 <Slider
                   className={style['items-wrapper']}
                   bind="collection"
@@ -262,6 +270,8 @@ Wireframe.modifierScheme = {
     name: 'Arrange elements',
     type: 'swap',
   },
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox'},
+  line: {defaultValue: true, label: 'Block title line', type: 'checkbox'},
   item_body: {defaultValue: true, label: 'Testimonial body', type: 'checkbox'},
   item_person: {defaultValue: true, label: 'Person', type: 'checkbox'},
   item_category: {defaultValue: true, label: 'Person position', type: 'checkbox'},
