@@ -19,7 +19,7 @@
 
     @media (--ui-medium-devices) {
       .logo {
-        max-width: 250px;
+        max-width: 270px;
       }
 
       .header__button {
