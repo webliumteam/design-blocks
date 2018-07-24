@@ -16,6 +16,7 @@ ExtendedWireframe.defaultContent = {
     ...Component.defaultContent.map,
     preset: 'dafault',
     zoom: 12,
+    offset: {x: -283, y: 0},
     markers: [
       ...Component.defaultContent.map.markers[0],
       {
