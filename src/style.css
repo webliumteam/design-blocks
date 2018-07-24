@@ -5,6 +5,28 @@
   padding-top: 15px;
   padding-bottom: 15px;
   word-wrap: break-word;
+
+  &--two-buttons {
+    .header__inner--fixed {
+      .header__button {
+        margin: 15px 0;
+      }
+
+      .nav-list {
+        margin-bottom: auto;
+      }
+    }
+
+    @media (--ui-medium-devices) {
+      .logo {
+        flex: 0;
+      }
+
+      .header__button {
+        flex-shrink: 0;
+      }
+    }
+  }
 }
 
 .header__inner {

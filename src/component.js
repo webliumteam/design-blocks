@@ -40,16 +40,18 @@ class Block extends React.Component {
     this.setState({opened: false})
   }
 
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
+
   wrapImage = Component => <div className={this.props.style.image__wrapper}>{Component}</div>
 
   renderLogo = () => {
-    const {components: {Logo}, style: css} = this.props
+    const {components: {Logo}, style} = this.props
     return (
       this.getModifierValue('logo') && (
         <Logo
           bind="logo"
-          className={css.logo}
-          textClassName={css.logo__title}
+          className={style.logo}
+          textClassName={style.logo__title}
           maxWidth={this.getOptionValue('logo-max-width')}
           maxHeight={this.getOptionValue('logo-max-height')}
         />
@@ -58,23 +60,31 @@ class Block extends React.Component {
   }
 
   renderNav = () => {
-    const {components: {Menu, Button}, style: css} = this.props
+    const {components: {Menu, Button}, style} = this.props
     return (
-      <nav className={css.nav}>
+      <nav className={style.nav}>
         <Menu
-          className={css['nav-list']}
-          itemClassName={css['nav-list__item']}
-          linkClassName={css['nav-list__link']}
-          submenuClassName={css['nav-list__submenu']}
+          className={style['nav-list']}
+          itemClassName={style['nav-list__item']}
+          linkClassName={style['nav-list__link']}
+          submenuClassName={style['nav-list__submenu']}
           bind="menu"
           onClickItem={this.closeMenu}
         />
         {this.getModifierValue('button') && (
           <Button
-            className={css.header__button}
-            buttonClassName={css.button}
-            linkClassName={css.link}
-            bind="cta"
+            className={style.header__button}
+            buttonClassName={style.button}
+            linkClassName={style.link}
+            bind="button"
+          />
+        )}
+        {this.getModifierValue('button_additional') && (
+          <Button
+            className={style.header__button}
+            buttonClassName={style.button}
+            linkClassName={style.link}
+            bind="button_additional"
           />
         )}
       </nav>
@@ -82,40 +92,39 @@ class Block extends React.Component {
   }
 
   renderBtn = () => {
-    const {style: css} = this.props
+    const {style} = this.props
     return (
       <button
         type="button"
-        className={classNames(css['nav-button'])}
+        className={classNames(style['nav-button'])}
         onClick={this.toggleOpened}
         title="Switch menu"
       >
-        <span className={css['nav-button__line']} aria-hidden="true" />
-        <span className={css['nav-button__line']} aria-hidden="true" />
-        <span className={css['nav-button__line']} aria-hidden="true" />
+        <span className={style['nav-button__line']} aria-hidden="true" />
+        <span className={style['nav-button__line']} aria-hidden="true" />
+        <span className={style['nav-button__line']} aria-hidden="true" />
       </button>
     )
   }
 
-  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
-
   render() {
-    const {components: {Background}, style: css} = this.props
+    const {components: {Background}, style} = this.props
     const {opened} = this.state
+    const twoButtons = this.getModifierValue('button') && this.getModifierValue('button_additional')
 
     return (
       <header
-        className={classNames(css.header, opened && css['header--opened'])}
+        className={classNames(style.header, opened && style['header--opened'], twoButtons && style['header--two-buttons'])}
         data-header="target"
       >
-        <div className={css.header__inner}>
+        <div className={style.header__inner}>
           {this.renderLogo()}
           {this.renderNav()}
           {this.renderBtn()}
         </div>
         <Background
           bind="background"
-          className={classNames(css.header__inner, css['header__inner--fixed'])}
+          className={classNames(style.header__inner, style['header__inner--fixed'])}
         >
           {this.renderLogo()}
           {this.renderNav()}
@@ -219,7 +228,7 @@ Block.defaultContent = {
       },
     ],
   },
-  cta: {
+  button: {
     actionConfig: {
       action: 'link',
       actions: {
@@ -234,11 +243,27 @@ Block.defaultContent = {
     type: 'primary',
     size: 'sm',
   },
+  button_additional: {
+    actionConfig: {
+      action: 'link',
+      actions: {
+        link: {
+          type: '',
+          innerPage: '',
+          url: '',
+        },
+      },
+    },
+    textValue: 'Learn more',
+    type: 'secondary',
+    size: 'sm',
+  },
 }
 
 Block.modifierScheme = {
   logo: {defaultValue: true, label: 'Name / logo', type: 'checkbox', sortOrder: 10},
-  button: {defaultValue: true, label: 'Primary button', type: 'checkbox', sortOrder: 20},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 20},
+  button_additional: {defaultValue: false, label: 'Additional button (link)', type: 'checkbox', order: 30},
 }
 
 export default Block
