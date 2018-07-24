@@ -195,8 +195,8 @@ Block.defaultContent = {
 
 Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
-  heading: {defaultValue: true, label: 'Location heading', type: 'checkbox', sortOrder: 20},
-  address: {defaultValue: true, label: 'Address', type: 'checkbox', sortOrder: 30},
+  heading: {defaultValue: true, label: 'Location heading', type: 'hidden', sortOrder: 20},
+  address: {defaultValue: true, label: 'Address', type: 'hidden', sortOrder: 30},
   phone: {defaultValue: true, label: 'Phone', type: 'checkbox', sortOrder: 40},
   email: {defaultValue: true, label: 'Email', type: 'checkbox', sortOrder: 50},
   social: {defaultValue: false, label: 'Social media buttons', type: 'checkbox', sortOrder: 60},
