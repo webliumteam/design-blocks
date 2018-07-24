@@ -10,11 +10,6 @@ class Block extends React.Component {
 
   getOptionValue = (path, defaultValue = false) => _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  getImageSize = (fullWidth) =>
-    fullWidth
-      ? {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 1170}
-      : {'min-width: 320px': 480, 'min-width: 480px': 768, 'min-width: 768px': 570}
-
   ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
@@ -73,7 +68,11 @@ class Block extends React.Component {
                 pictureClassName={classNames(css.article__picture,this.ui('ui-picture'))}
                 imgClassName={classNames(css.article__image,this.ui('ui-picture__image'))}
                 bind="picture"
-                size={this.getImageSize(columnLayout)}
+                size={{
+                  'min-width: 320px': 480,
+                  'min-width: 480px': 768,
+                  'min-width: 768px': 1200
+                }}
                 resize={{min: getMinResize, max: getMaxResize, disable: this.getOptionValue('disable-resizer')}}
               />
             )}
