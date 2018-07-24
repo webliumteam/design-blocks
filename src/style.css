@@ -113,15 +113,16 @@
 }
 
 .btns-group {
-  margin-top: 52.5px;
+  margin: -15px;
+  margin-top: 50px;
 
   .link {
     color: inherit;
-    font-weight: 600;
+  }
 
-    @media (min-width: 768px;) {
-      font-size: calc(var(--ui-text-size) * 0.78);
-    }
+  .button {
+    max-width: calc(100% - 30px);
+    margin: 15px;
   }
 }
 
