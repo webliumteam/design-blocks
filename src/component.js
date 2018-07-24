@@ -125,6 +125,7 @@ Block.defaultContent = {
       lat: 50.4589633,
       lng: 30.5247585,
     },
+    offset: {x: -420, y: 0},
     zoom: 18,
     activeMarker: '2aceeb6f-623c-41f8-b0d3-6f0f085e8e48',
     disableDefaultUI: true,
