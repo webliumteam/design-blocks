@@ -101,17 +101,27 @@ class Wireframe extends React.Component {
               adaptiveHeight: false,
               responsive: [
                 {
+                  breakpoint: 100000,
+                  settings: {
+                    slidesToShow: desktopSlidesCount,
+                    slidesToScroll: 1,
+                    arrows: true,
+                  },
+                },
+                {
                   breakpoint: 767,
                   settings: {
                     slidesToShow: mobileSlidesCount,
+                    slidesToScroll: 1,
                     swipeToSlide: false,
                   },
                 },
                 {
-                  breakpoint: 100000,
+                  breakpoint: 480,
                   settings: {
-                    slidesToShow: desktopSlidesCount,
-                    arrows: true,
+                    slidesToShow: mobileSlidesCount,
+                    slidesToScroll: 1,
+                    swipeToSlide: false,
                   },
                 },
               ],
