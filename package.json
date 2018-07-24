@@ -1,6 +1,6 @@
 {
   "name": "wireframe-zapdos-about",
-  "version": "0.0.69",
+  "version": "0.0.70",
   "description": "",
   "category": "about",
   "main": "src/index.js",
