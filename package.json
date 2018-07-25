@@ -1,6 +1,6 @@
 {
   "name": "design-meowth-gallery",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
-    "wireframe-zapdos-gallery": "https://github.com/webliumteam/blocks#w/zapdos/gallery/prod"
+    "wireframe-zapdos-gallery_old": "https://github.com/webliumteam/blocks#w/zapdos/gallery/old"
   },
   "editorVersion": "0.0.0"
 }
