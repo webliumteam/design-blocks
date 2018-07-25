@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-10-services": "https://github.com/webliumteam/blocks#w/series-10/services/prod"
+    "wireframe-series-10-services_old": "https://github.com/webliumteam/blocks#w/series-10/services/old"
   },
   "editorVersion": "0.0.0"
 }
