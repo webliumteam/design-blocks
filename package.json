@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-6-blog": "https://github.com/webliumteam/blocks#w/series-6/blog/prod"
+    "wireframe-series-6-blog_old": "https://github.com/webliumteam/blocks#w/series-6/blog/old"
   },
   "editorVersion": "4.13.0"
 }
