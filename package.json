@@ -31,6 +31,6 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-3-pricing": "https://github.com/webliumteam/blocks#w/series-3/pricing/prod"
+    "wireframe-series-3-pricing_old": "https://github.com/webliumteam/blocks#w/series-3/pricing/old"
   }
 }
