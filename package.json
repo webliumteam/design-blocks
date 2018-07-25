@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-9-partners": "https://github.com/webliumteam/blocks#w/series-9/partners/prod"
+    "wireframe-series-9-partners_old": "https://github.com/webliumteam/blocks#w/series-9/partners/old"
   },
   "editorVersion": "0.0.0"
 }
