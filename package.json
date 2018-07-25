@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-2-why": "https://github.com/webliumteam/blocks#w/series-2/why/prod"
+    "wireframe-series-2-why_old": "https://github.com/webliumteam/blocks#w/series-2/why/old"
   },
   "editorVersion": "0.0.0"
 }
