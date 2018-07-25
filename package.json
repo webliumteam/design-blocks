@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-2-footer": "https://github.com/webliumteam/blocks#w/series-2/footer/prod"
+    "wireframe-series-2-footer_old": "https://github.com/webliumteam/blocks#w/series-2/footer/old"
   },
   "editorVersion": "0.0.0"
 }
