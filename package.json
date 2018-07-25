@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-4-careers": "https://github.com/webliumteam/blocks#w/series-4/careers/prod"
+    "wireframe-series-4-careers_old": "https://github.com/webliumteam/blocks#w/series-4/careers/old"
   },
   "editorVersion": "4.13.0"
 }
