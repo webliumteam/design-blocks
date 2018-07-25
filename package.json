@@ -30,7 +30,7 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
-    "wireframe-series-2-testimonials": "https://github.com/webliumteam/blocks#w/series-2/testimonials/prod"
+    "wireframe-series-2-testimonials_old": "https://github.com/webliumteam/blocks#w/series-2/testimonials/old"
   },
   "editorVersion": "0.0.0"
 }
