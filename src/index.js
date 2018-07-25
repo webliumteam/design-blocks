@@ -45,6 +45,7 @@ ExtendedWireframe.defaultContent = {
   },
   'top-caption': {
     ...Component.defaultContent['top-caption'],
+    content: 'Category',
     type: 'blockTitle',
   },
   text: {
