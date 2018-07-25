@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-9-events": "https://github.com/webliumteam/blocks#w/series-9/events/prod"
+    "wireframe-series-9-events_old": "https://github.com/webliumteam/blocks#w/series-9/events/old"
   },
   "editorVersion": "0.0.0"
 }
