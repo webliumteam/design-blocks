@@ -1,6 +1,6 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-series-10-projects/src/component'
+import Component from 'wireframe-series-10-projects_old/src/component'
 import style from './style.css'
 
 import options from './options.json'
