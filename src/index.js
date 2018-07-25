@@ -1,9 +1,9 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-zapdos-gallery/src/component'
+import Component from 'wireframe-zapdos-gallery_old/src/component'
 import style from './style.css'
 
-import defaultOptions from 'wireframe-zapdos-gallery/src/options.json'
+import defaultOptions from 'wireframe-zapdos-gallery_old/src/options.json'
 import options from './options.json'
 
 const {
