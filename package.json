@@ -31,7 +31,7 @@
     "stylelint-order": "latest"
   },
   "dependencies": {
-    "wireframe-series-2-numbers": "https://github.com/webliumteam/blocks#w/series-2/numbers/prod"
+    "wireframe-series-2-numbers_old": "https://github.com/webliumteam/blocks#w/series-2/numbers/old"
   },
   "editorVersion": "0.0.0"
 }
