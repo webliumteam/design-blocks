@@ -20,18 +20,6 @@
 }
 
 .article {
-  &__picture {
-    padding-top: 75%;
-
-    @media (min-width: 768px) {
-      padding-top: 75%;
-    }
-
-    @media (min-width: 992px) {
-      padding-top: 75%;
-    }
-  }
-
   &__content {
     display: flex;
     flex-direction: column;
