@@ -3,7 +3,11 @@
 /* start here */
 
 .article__picture {
-  padding-top: 74%;
+  padding-top: 86.21%;
+
+  @media (--ui-tablet-devices) {
+    padding-top: 74%;
+  }
 }
 
 .section--reverse {
