@@ -1,9 +1,9 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-zapdos-projects/src/component'
+import Component from 'wireframe-zapdos-projects_old/src/component'
 import style from './style.css'
 
-import defaultOptions from 'wireframe-zapdos-projects/src/options.json'
+import defaultOptions from 'wireframe-zapdos-projects_old/src/options.json'
 import options from './options.json'
 
 const {enhancers: {withProps}, hoistStatics} = $editor
