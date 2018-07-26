@@ -60,3 +60,7 @@
     flex-basis: 41.66%;
   }
 }
+
+.link {
+  max-width: calc(100% - 20px);
+}
