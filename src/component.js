@@ -233,7 +233,7 @@ Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
   subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
   'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox', sortOrder: 30},
-  'project-title': {defaultValue: true, label: 'Project category', type: 'checkbox', sortOrder: 40},
+  'project-title': {defaultValue: true, label: 'Project title', type: 'checkbox', sortOrder: 40},
   'project-description': {defaultValue: true, label: 'Project  description', type: 'checkbox', sortOrder: 50},
   'project-button-2': {defaultValue: false, label: 'Project additional button', type: 'hidden', sortOrder: 60},
   'project-button': {defaultValue: true, label: 'Project link (button)', type: 'checkbox', sortOrder: 70},
