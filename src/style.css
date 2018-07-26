@@ -84,7 +84,7 @@
   }
 
   &__picture-wrapper {
-    min-height: 200px;
+    min-height: 350px;
 
     @media (min-width: 992px) {
       order: 2;
