@@ -16,6 +16,10 @@
     text-align: center;
   }
 
+  @media (min-width: 1200px) {
+    padding: 170px 0;
+  }
+
   &__inner {
     position: relative;
     max-width: var(--ui-content-container);

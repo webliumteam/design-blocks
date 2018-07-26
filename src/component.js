@@ -16,7 +16,7 @@ class Wireframe extends React.Component {
 
   render() {
     const {
-      components: {Text, Button, Collection},
+      components: {Text, Button},
       style,
     } = this.props
 
@@ -47,7 +47,7 @@ class Wireframe extends React.Component {
   }
 }
 
-Wireframe.components = _.pick(['Text', 'Button', 'Collection', 'Image', 'Background'])($editor.components)
+Wireframe.components = _.pick(['Text', 'Button', 'Background'])($editor.components)
 
 Wireframe.defaultContent = {
   title: {
