@@ -41,11 +41,13 @@ class Block extends React.Component {
                 tagName="p"
               />
             )}
-            <Text
-              bind={`projects[${index}].title`}
-              className={classNames(style.article__title, this.ui('ui-heading'))}
-              tagName="h2"
-            />
+            {_.get('project-title')(modifier) && (
+              <Text
+                bind={`projects[${index}].title`}
+                className={classNames(style.article__title, this.ui('ui-heading'))}
+                tagName="h2"
+              />
+            )}
             {_.get('project-description')(modifier) && (
               <Text
                 bind={`projects[${index}].text`}
@@ -231,10 +233,11 @@ Block.modifierScheme = {
   title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
   subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 20},
   'project-category': {defaultValue: true, label: 'Project category', type: 'checkbox', sortOrder: 30},
-  'project-description': {defaultValue: true, label: 'Project  description', type: 'checkbox', sortOrder: 40},
-  'project-button-2': {defaultValue: false, label: 'Project additional button', type: 'hidden', sortOrder: 50},
-  'project-button': {defaultValue: true, label: 'Project link (button)', type: 'checkbox', sortOrder: 60},
-  'block-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
+  'project-title': {defaultValue: true, label: 'Project category', type: 'checkbox', sortOrder: 40},
+  'project-description': {defaultValue: true, label: 'Project  description', type: 'checkbox', sortOrder: 50},
+  'project-button-2': {defaultValue: false, label: 'Project additional button', type: 'hidden', sortOrder: 60},
+  'project-button': {defaultValue: true, label: 'Project link (button)', type: 'checkbox', sortOrder: 70},
+  'block-button': {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 80},
   'top-icon': {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
