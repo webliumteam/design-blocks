@@ -15,16 +15,26 @@ ExtendedWireframe.defaultContent = {
   services: [
     {
       ...Component.defaultContent.services[0],
-      picture: {
-        ...Component.defaultContent.services[0].picture,
+      background: {
+        type: 'image',
         resourceRef: 'joanna-kosinska-340749-unsplash.jpg',
+        overlay: {
+          type: 'color',
+          color: 'dark-shade',
+          opacity: 0.6,
+        },
       },
     },
     {
       ...Component.defaultContent.services[1],
-      picture: {
-        ...Component.defaultContent.services[1].picture,
+      background: {
+        type: 'image',
         resourceRef: 'lior-mazliah-111379-unsplash.jpg',
+        overlay: {
+          type: 'color',
+          color: 'dark-shade',
+          opacity: 0.6,
+        },
       },
     },
   ],
