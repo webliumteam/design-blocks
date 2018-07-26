@@ -3,7 +3,7 @@
 /* start here */
 
 .article__picture {
-  min-height: 420px;
+  padding-top: 100%;
 }
 
 .section--reverse {
