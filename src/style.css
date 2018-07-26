@@ -11,6 +11,7 @@
     padding: 0;
     order: -1;
     margin-bottom: 30px;
+    margin-top: 0;
 
     @media (--ui-tablet-devices) {
       max-width: calc(58.33% - 20px);
@@ -35,4 +36,27 @@
 .article__picture-wrapper:only-child {
   max-width: 100%;
   flex-basis: auto;
+}
+
+.article__content {
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 30px;
+
+  @media (--ui-tablet-devices) {
+    max-width: calc(58.33% - 20px);
+    flex-basis: calc(58.33% - 20px);
+    margin-left: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+  }
+}
+
+.article__picture-wrapper {
+
+  @media (--ui-tablet-devices) {
+    max-width: 41.66%;
+    flex-basis: 41.66%;
+  }
 }
