@@ -21,7 +21,7 @@
   } 
 
   .article__picture-wrapper {
-    
+
     @media (--ui-tablet-devices) {
       max-width: 41.66%;
       flex-basis: 41.66%;
@@ -29,3 +29,7 @@
   }
 }
 
+.article__picture-wrapper:only-child {
+  max-width: 100%;
+  flex-basis: auto;
+}
