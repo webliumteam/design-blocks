@@ -5,3 +5,27 @@
 .article__picture {
   min-height: 420px;
 }
+
+.section--reverse {
+  .article__content {
+    order: -1;
+    margin-bottom: 30px;
+
+    @media (--ui-tablet-devices) {
+      max-width: calc(58.33% - 20px);
+      padding: 0;
+      flex-basis: calc(58.33% - 20px);
+      margin-right: 20px;
+      order: -1;
+    }
+  } 
+
+  .article__picture-wrapper {
+    
+    @media (--ui-tablet-devices) {
+      max-width: 41.66%;
+      flex-basis: 41.66%;
+    }
+  }
+}
+
