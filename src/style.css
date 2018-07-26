@@ -18,6 +18,8 @@
       flex-basis: calc(58.33% - 20px);
       margin-right: 20px;
       order: -1;
+      margin-top: auto;
+      margin-bottom: auto;
     }
   } 
 
@@ -33,9 +35,4 @@
 .article__picture-wrapper:only-child {
   max-width: 100%;
   flex-basis: auto;
-}
-
-.article__content {
-  margin-top: auto;
-  margin-bottom: auto;
 }
