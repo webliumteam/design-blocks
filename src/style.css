@@ -8,6 +8,7 @@
 
 .section--reverse {
   .article__content {
+    padding: 0;
     order: -1;
     margin-bottom: 30px;
 
@@ -32,4 +33,9 @@
 .article__picture-wrapper:only-child {
   max-width: 100%;
   flex-basis: auto;
+}
+
+.article__content {
+  margin-top: auto;
+  margin-bottom: auto;
 }
