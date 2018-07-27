@@ -40,14 +40,6 @@
   }
 }
 
-.map {
-  padding-top: 58%;
-
-  @media (--ui-tablet-devices) {
-    padding-top: 40%;
-  }
-}
-
 .map__preview {
   position: absolute;
   width: 100%;
