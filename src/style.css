@@ -1,3 +1,70 @@
-@import "wireframe-default-master/src/style.css";
+@import "wireframe-zapdos-about_old/src/style.css";
 
 /* start here */
+
+.article__picture {
+  padding-top: 86.21%;
+
+  @media (--ui-tablet-devices) {
+    padding-top: 74%;
+  }
+}
+
+.section--reverse {
+  .article__content {
+    padding: 0;
+    order: -1;
+    margin-bottom: 30px;
+    margin-top: 0;
+
+    @media (--ui-tablet-devices) {
+      max-width: calc(58.33% - 20px);
+      padding: 0;
+      flex-basis: calc(58.33% - 20px);
+      margin-right: 20px;
+      order: -1;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  } 
+
+  .article__picture-wrapper {
+
+    @media (--ui-tablet-devices) {
+      max-width: 41.66%;
+      flex-basis: 41.66%;
+    }
+  }
+}
+
+.article__picture-wrapper:only-child {
+  max-width: 100%;
+  flex-basis: auto;
+}
+
+.article__content {
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 30px;
+
+  @media (--ui-tablet-devices) {
+    max-width: calc(58.33% - 20px);
+    flex-basis: calc(58.33% - 20px);
+    margin-left: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+  }
+}
+
+.article__picture-wrapper {
+
+  @media (--ui-tablet-devices) {
+    max-width: 41.66%;
+    flex-basis: 41.66%;
+  }
+}
+
+.link {
+  max-width: calc(100% - 20px);
+}
