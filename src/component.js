@@ -8,6 +8,7 @@ class Block extends React.Component {
     $block: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
     pages: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
   state = {}
 
@@ -34,7 +35,6 @@ class Block extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-
   getPostMount = () => {
     const pageBySlug = _.flow(
       _.filter(({slug}) => slug),
@@ -43,41 +43,70 @@ class Block extends React.Component {
     const postMountId = this.getModifierValue('post_mount')
     const page = pageBySlug[postMountId]
     if (page) {
-      const {metadata: {slug, homepage}} = page
+      const {
+        metadata: {slug, homepage},
+      } = page
       return homepage ? '/' : slug
     }
     return ''
   }
 
   itemHeader = (index, post) => {
-    const {components: {SsrText, Image, Text}, style} = this.props
+    const {
+      components: {SsrText, Image, Text},
+      style,
+    } = this.props
     const {isBlog} = this.state
     const imageUrl = _.get('image.fields.file.url')(post)
     return [
       this.getModifierValue('item_image') && (
         <Image
-          wrapperClassName={classNames(style['article__picture-wrapper'],this.ui('ui-picture-wrapper'))}
-          pictureClassName={classNames(style.article__picture,this.ui('ui-picture'))}
-          imgClassName={classNames(style.article__image,this.ui('ui-picture__image'))}
-          {...isBlog
-            ? {value: {src: imageUrl}, disabledControls: ['toolbar', 'scale'], resize: {bindToModifier: 'author_picture'}}
-            : {bind: `collection[${index}].item_image`}
-          }
+          wrapperClassName={classNames(
+            style['article__picture-wrapper'],
+            this.ui('ui-picture-wrapper'),
+          )}
+          pictureClassName={classNames(style.article__picture, this.ui('ui-picture'))}
+          imgClassName={classNames(style.article__image, this.ui('ui-picture__image'))}
+          {...(isBlog
+            ? {
+                value: {src: imageUrl},
+                disabledControls: ['toolbar', 'scale'],
+                resize: {bindToModifier: 'author_picture'},
+              }
+            : {bind: `collection[${index}].item_image`})}
           size={{'min-width: 768px': 570, 'min-width: 480px': 768, 'min-width: 320px': 480}}
         />
       ),
       this.getModifierValue('item_date') && (
         <small className={style.article__meta}>
-          {!this.getOptionValue('hidden-category') && (
-            isBlog
-              ? <SsrText tagName="span" value={{content: post.articleCategory}} className={classNames(style.article__category, 'caption')} />
-              : <Text tagName="span" bind={`collection[${index}].item_category`} className={classNames(style.article__category, 'caption')} />
-          )}
-          {!this.getOptionValue('hidden-date') && (
-            isBlog
-              ? <SsrText tagName="span" value={{content: post.subtitle}} className={classNames(style.article__date, 'caption')} />
-              : <Text tagName="span" bind={`collection[${index}].item_date`} className={classNames(style.article__date, 'caption')} />
-          )}
+          {!this.getOptionValue('hidden-category') &&
+            (isBlog ? (
+              <SsrText
+                tagName="span"
+                value={{content: post.articleCategory}}
+                className={classNames(style.article__category, 'caption')}
+              />
+            ) : (
+              <Text
+                tagName="span"
+                bind={`collection[${index}].item_category`}
+                className={classNames(style.article__category, 'caption')}
+              />
+            ))}
+          {!this.getOptionValue('hidden-date') &&
+            (isBlog ? (
+              <SsrText
+                tagName="span"
+                value={{content: post.subtitle}}
+                className={classNames(style.article__date, 'caption')}
+              />
+            ) : (
+              <Text
+                tagName="span"
+                bind={`collection[${index}].item_date`}
+                className={classNames(style.article__date, 'caption')}
+              />
+            ))}
         </small>
       ),
     ]
@@ -90,7 +119,6 @@ class Block extends React.Component {
       window.contentfulClient = client
       this.loadPosts()
     } catch (error) {
-      console.log(error)
       this.setState({error})
     }
   }
@@ -113,12 +141,14 @@ class Block extends React.Component {
     }
     if (this.state.isBlog && !this.state.posts) {
       try {
-        window.contentfulClient.getEntries({
-          content_type: 'post',
-        }).then((entries) => {
-          const posts = entries.items
-          this.setState({posts})
-        })
+        window.contentfulClient
+          .getEntries({
+            content_type: 'post',
+          })
+          .then((entries) => {
+            const posts = entries.items
+            this.setState({posts})
+          })
       } catch (error) {
         this.setState({error})
       }
@@ -126,7 +156,10 @@ class Block extends React.Component {
   }
 
   collectionItem = ({index, children = null, className}, item) => {
-    const {components: {Text, Button, SsrText}, style} = this.props
+    const {
+      components: {Text, Button, SsrText},
+      style,
+    } = this.props
     const {isBlog} = this.state
     const post = _.getOr({}, 'fields')(item)
     const postId = _.getOr('', 'sys.id')(item)
@@ -134,30 +167,61 @@ class Block extends React.Component {
     return (
       <article className={classNames(style.article, className)}>
         {children}
-        {this.getOptionValue('picture-with-date') ? <div className={style.article__header}>{this.itemHeader(index, post)}</div> : this.itemHeader(index, post)}
-        {isBlog
-          ? <SsrText tagName="h2" className={classNames(style.article__title,this.ui('ui-heading'))} value={{content: post.title, type: 'subtitle'}} />
-          : <Text tagName="h2" className={classNames(style.article__title,this.ui('ui-heading'))} bind={`collection[${index}].item_heading`} />
-        }
-        {this.getModifierValue('item_body') && (
-          isBlog
-            ? <SsrText tagName="p" className={classNames(style.article__text,this.ui('ui-body'))} value={{content: converter.makeHtml(post.content)}} />
-            : <Text tagName="p" className={classNames(style.article__text,this.ui('ui-body'))} bind={`collection[${index}].item_body`} />
+        {this.getOptionValue('picture-with-date') ? (
+          <div className={style.article__header}>{this.itemHeader(index, post)}</div>
+        ) : (
+          this.itemHeader(index, post)
         )}
+        {isBlog ? (
+          <SsrText
+            tagName="h2"
+            className={classNames(style.article__title, this.ui('ui-heading'))}
+            value={{content: post.title, type: 'subtitle'}}
+          />
+        ) : (
+          <Text
+            tagName="h2"
+            className={classNames(style.article__title, this.ui('ui-heading'))}
+            bind={`collection[${index}].item_heading`}
+          />
+        )}
+        {this.getModifierValue('item_body') &&
+          (isBlog ? (
+            <SsrText
+              tagName="p"
+              className={classNames(style.article__text, this.ui('ui-body'))}
+              value={{content: converter.makeHtml(post.content)}}
+            />
+          ) : (
+            <Text
+              tagName="p"
+              className={classNames(style.article__text, this.ui('ui-body'))}
+              bind={`collection[${index}].item_body`}
+            />
+          ))}
         {this.getModifierValue('item_button') && (
-        <Button
-          className={style.article__link}
-          buttonClassName={style.button}
-          linkClassName={style.link}
-          {...isBlog
-            ? {disabledControls: ['action'], bind: 'moreButton', to: {pathname: `/${postPage}`, search: `?postid=${encodeURIComponent(postId)}`, state: {item}}}
-            : {bind: `collection[${index}].item_button`}
-          }
-        />
-      )}
+          <Button
+            className={style.article__link}
+            buttonClassName={style.button}
+            linkClassName={style.link}
+            {...(isBlog
+              ? {
+                  disabledControls: ['action'],
+                  bind: 'moreButton',
+                  to: {
+                    pathname: `/${postPage}`,
+                    search: `?postid=${encodeURIComponent(postId)}`,
+                    state: {item},
+                  },
+                }
+              : {bind: `collection[${index}].item_button`})}
+          />
+        )}
       </article>
     )
   }
+
+  ui = value => (_.get('$block.modifier.__enableThemes', this.props) ? value : null)
 
   renderPosts = () => {
     const {posts, accessToken, space, error} = this.state
@@ -171,40 +235,65 @@ class Block extends React.Component {
     if (!posts) {
       return <div>Loading ....</div>
     }
-    return <div className={classNames('collection', style['articles-wrapper'])}>{posts.map(item => this.collectionItem({}, item))}</div>
+    return (
+      <div className={classNames('collection', style['articles-wrapper'])}>
+        {posts.map(item => this.collectionItem({}, item))}
+      </div>
+    )
   }
-
-
-  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {isBlog} = this.state
-    const {components: {Text, Button, Icon, Collection}, style} = this.props
+    const {
+      components: {Text, Button, Icon, Collection},
+      style,
+      content,
+    } = this.props
+    const itemsLength = content.collection.items.length
+
     return (
-      <section className={style.section}>
+      <section className={classNames(style.section, style[`section--${itemsLength}-items`])}>
         <div className={style.section__inner}>
           {this.getModifierValue('icon_decorator') && (
-            <Icon className={classNames(style['top-icon'],this.ui('ui-icon'))} bind="icon_decorator" />
+            <Icon
+              className={classNames(style['top-icon'], this.ui('ui-icon'))}
+              bind="icon_decorator"
+            />
           )}
-          <Text tagName="h1" className={classNames(style.title,this.ui('ui-title'),this.ui('ui-text-center'))} bind="title" />
+          <Text
+            tagName="h1"
+            className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
+            bind="title"
+          />
           {this.getModifierValue('subtitle') && (
-            <Text tagName="div" className={classNames(style.subtitle,this.ui('ui-subtitle'),this.ui('ui-text-center'))} bind="subtitle" />
-            )}
-          {isBlog
-       ? this.renderPosts()
-       : <Collection
-         className={style['articles-wrapper']}
-         bind="collection"
-         Item={this.collectionItem}
-         fakeHelpers={{
-             count: 2,
-             className: style.fake,
-           }}
-       />
-          }
+            <Text
+              tagName="div"
+              className={classNames(
+                style.subtitle,
+                this.ui('ui-subtitle'),
+                this.ui('ui-text-center'),
+              )}
+              bind="subtitle"
+            />
+          )}
+          {isBlog ? (
+            this.renderPosts()
+          ) : (
+            <Collection
+              className={style['articles-wrapper']}
+              bind="collection"
+              Item={this.collectionItem}
+              fakeHelpers={{
+                count: 2,
+                className: style.fake,
+              }}
+            />
+          )}
           {this.getModifierValue('button') && (
-            <div className={classNames(style['btns-group'],this.ui('ui-btns-group'))}>
-              <div className={classNames(style['btns-group__inner'],this.ui('ui-btns-group__inner'))}>
+            <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+              <div
+                className={classNames(style['btns-group__inner'], this.ui('ui-btns-group__inner'))}
+              >
                 <Button
                   className={classNames(style.button, this.ui('ui-btns-group__item'))}
                   linkClassName={style.link}
@@ -223,7 +312,8 @@ Block.components = _.pick(['Collection', 'Text', 'SsrText', 'Button', 'Image', '
 
 Block.defaultContent = {
   icon_decorator: {
-    svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
+    svg:
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
     fill: 'red',
   },
   title: {
@@ -243,7 +333,8 @@ Block.defaultContent = {
           type: 'heading',
         },
         item_body: {
-          content: 'Our HR Director shares his experience how to fill positions with the best candidates, where to find talents, and how to attract professionals to your business. ',
+          content:
+            'Our HR Director shares his experience how to fill positions with the best candidates, where to find talents, and how to attract professionals to your business. ',
           type: 'text',
         },
         item_category: {
@@ -269,7 +360,8 @@ Block.defaultContent = {
           type: 'heading',
         },
         item_body: {
-          content: 'Do you want to achieve higher profits this year? Our new product will help you get what you want. In this article, you will find out how to use it to get more benefits.',
+          content:
+            'Do you want to achieve higher profits this year? Our new product will help you get what you want. In this article, you will find out how to use it to get more benefits.',
           type: 'text',
         },
         item_category: {
@@ -295,7 +387,8 @@ Block.defaultContent = {
           type: 'heading',
         },
         item_body: {
-          content: 'You engineers can bring you better results! Get to know how to improve engineering department to make a new step for your company growth. ',
+          content:
+            'You engineers can bring you better results! Get to know how to improve engineering department to make a new step for your company growth. ',
           type: 'text',
         },
         item_category: {
@@ -336,10 +429,19 @@ Block.modifierScheme = {
   item_button: {defaultValue: true, label: 'Post link (button)', type: 'checkbox', sortOrder: 60},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
   textLabel: {defaultValue: '', label: 'Connect Contentful CMS', type: 'label', advanced: true},
-  post_mount: {defaultValue: '', label: 'Post mount slug', type: 'select', data: 'pages', advanced: true},
+  post_mount: {
+    defaultValue: '',
+    label: 'Post mount slug',
+    type: 'select',
+    data: 'pages',
+    advanced: true,
+  },
   space: {defaultValue: '', label: 'Space ID', type: 'input', advanced: true},
   accessToken: {defaultValue: '', label: 'Content Delivery API', type: 'input', advanced: true},
 }
 
-const {enhancers: {withConnect}, connectHelpers: {withPages}} = $editor
+const {
+  enhancers: {withConnect},
+  connectHelpers: {withPages},
+} = $editor
 export default withConnect(withPages)(Block)

@@ -12,6 +12,15 @@
   @media (--ui-medium-devices) {
     padding: 75px 0;
   }
+
+  &--1-items {
+
+    @media (--ui-tablet-devices) {
+      .articles-wrapper {
+        justify-content: center;
+      }
+    }
+  }
 }
 
 .section__inner {
