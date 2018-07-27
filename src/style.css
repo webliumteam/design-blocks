@@ -76,11 +76,16 @@
 }
 
 .decor-wrapper {
+  display: flex;
+  position: relative;
   width: 100%;
+  height: 260px;
   max-width: 280px;
   margin-top: 30px;
   margin-right: auto;
   margin-left: auto;
+  align-items: center;
+  justify-content: center;
 
   @media (min-width: 768px) {
     height: 469px;
@@ -111,64 +116,79 @@
   max-height: 100%;
 }
 
-.svg-top {
+.svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-top,
+.svg-bottom,
+.svg-big-pink,
+.svg-big-blue,
+.svg-weblium {
   display: block;
   position: absolute;
-  width: 121px;
-  height: 119px;
-  top: 0;
+}
+
+.svg-top {
+  width: 24%;
+  top: 25px;
   left: 0;
   transition: transform 100ms linear;
 
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
+  @media (min-width: 768px) {
+    top: -7px;
+  }
+
+  @media (min-width: 992px) {
+    top: 26px;
+  }
+
+  @media (min-width: 1200px) {
+    top: 0;
   }
 }
 
 .svg-bottom {
-  display: block;
-  position: absolute;
-  width: 148px;
-  height: 148px;
+  width: 29%;
   right: 0;
-  bottom: 0;
+  bottom: -40px;
 
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
+  @media (min-width: 768px) {
+    bottom: -10px;
+  }
+
+  @media (min-width: 992px) {
+    bottom: -42px;
+  }
+
+  @media (min-width: 1200px) {
+    bottom: -20px;
   }
 }
 
 .svg-big-pink {
-  display: block;
-  position: absolute;
-  width: 288px;
-  height: 322px;
+  width: 56%;
   top: 60px;
   left: 10.24%;
-
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
 }
 
 .svg-big-blue {
-  display: block;
-  position: absolute;
-  width: 288px;
-  height: 322px;
+  width: 56%;
   top: 60px;
   right: 7.5%;
+}
 
- 
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
+.svg-weblium {
+  width: 24%;
+  height: 68px;
+  top: 50%;
+  left: 50%;
+  margin-top: calc(-1 * (34px / 2));
+  margin-left: calc(-1 * (20% / 2));
+
+  @media (min-width: 768px) {
+    margin-top: calc(-1 * (68px / 2));
   }
 }

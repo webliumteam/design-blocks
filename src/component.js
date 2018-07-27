@@ -1,9 +1,6 @@
 import $editor from 'weblium/editor'
-import SvgTopLeft from './svg-top-left'
-import SvgBottomRight from './svg-bottom-right'
-import BigPink from './big-pink'
-import BigBlue from './big-blue'
 import ParallaxMousemove from './lib'
+import {BigBlue, WebliumWay, BigPink, SvgBottomRight, SvgTopLeft} from './svg-object'
 import css from './style.css'
 
 class Wireframe extends React.Component {
@@ -62,7 +59,7 @@ class Wireframe extends React.Component {
               className={css['svg-top']}
               config={{
                 xFactor: 0.02,
-                yFactor: -0.12,
+                yFactor: -0.08,
                 springSettings: {
                   stiffness: 16,
                   damping: 10,
@@ -71,7 +68,6 @@ class Wireframe extends React.Component {
             >
               <SvgTopLeft />
             </ParallaxMousemove.Layer>
-
             <ParallaxMousemove.Layer
               hoverArea={this.container}
               className={css['svg-big-blue']}
@@ -91,7 +87,7 @@ class Wireframe extends React.Component {
               className={css['svg-bottom']}
               config={{
                 xFactor: 0.02,
-                yFactor: -0.12,
+                yFactor: -0.05,
                 springSettings: {
                   stiffness: 16,
                   damping: 10,
@@ -99,6 +95,20 @@ class Wireframe extends React.Component {
               }}
             >
               <SvgBottomRight />
+            </ParallaxMousemove.Layer>
+            <ParallaxMousemove.Layer
+              hoverArea={this.container}
+              className={css['svg-weblium']}
+              config={{
+                xFactor: 0.02,
+                yFactor: 0.01,
+                springSettings: {
+                  stiffness: 16,
+                  damping: 10,
+                },
+              }}
+            >
+              <WebliumWay />
             </ParallaxMousemove.Layer>
           </div>
         </ParallaxMousemove>
