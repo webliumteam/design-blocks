@@ -99,6 +99,6 @@ export default class extends React.Component {
         </div>
       )
     }
-    return <div>Parallax hover is not yet ready.</div>
+    return ''
   }
 }
