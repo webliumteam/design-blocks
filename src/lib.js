@@ -1,57 +1,17 @@
 import {Motion, spring} from 'react-motion'
 /* eslint-disable */
 export default class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {isReady: false}
-  }
-
-  componentDidMount() {
-    this.setState({isReady: true})
-    window.addEventListener('resize', this.adjustContainer, false)
-  }
-
-  adjustContainer = e => {
-    this.setState({height: spring(e.currentTarget.innerHeight)})
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.adjustContainer, false)
-  }
-
-  render() {
-    const {children} = this.props
-
-    if (this.state.isReady) {
-      if (this.props.fullHeight) {
-        this.props.containerStyle.height = window.innerHeight
-      }
-      return (
-        <div
-          ref="container"
-          style={this.props.containerStyle}
-          className={this.props.containerClassName}
-        >
-          {children}
-        </div>
-      )
-    } else {
-      return <div>Parallax hover is not yet ready.</div>
-    }
-  }
 
   static Layer = class extends React.Component {
-    constructor(props) {
-      super(props)
-      this.resizeTimeout = false
-      this.config = this.props.config
-      this.state = {
-        toStyle: {
-          y: 0,
-          x: 0,
-        },
-      }
+    state = {
+      toStyle: {
+        y: 0,
+        x: 0,
+      },
     }
+
+    resizeTimeout = false
+    config = this.props.config
 
     componentDidMount() {
       this.props.hoverArea
@@ -59,14 +19,14 @@ export default class extends React.Component {
         : window.addEventListener('mousemove', this.updatePosition, false)
     }
 
-    updatePosition = e => {
+    updatePosition = (e) => {
       if (!this.resizeTimeout) {
         this.resizeTimeout = setTimeout(() => {
           this.resizeTimeout = null
           const xFactor = this.config.xFactor
           const yFactor = this.config.yFactor
-          var getYFromCenter = yFactor * (e.view.innerHeight / 2 - e.clientY)
-          var getXFromCenter = xFactor * (e.view.innerWidth / 2 - e.clientX)
+          const getYFromCenter = yFactor * (e.view.innerHeight / 2 - e.clientY)
+          const getXFromCenter = xFactor * (e.view.innerWidth / 2 - e.clientX)
           this.setState({
             toStyle: {
               y: spring(getYFromCenter, this.config.springSettings),
@@ -87,22 +47,59 @@ export default class extends React.Component {
       const {children} = this.props
       return (
         <Motion defaultStyle={this.props.layerStyle} style={this.state.toStyle}>
-          {({x, y}) => {
-            return (
-              <div
-                ref="layer"
-                style={{
+          {({x, y}) => (
+            <div
+              ref="layer"
+              style={{
                   transform: `translate3d(${x}px, ${y}px, 0)`,
                   ...this.props.layerStyle,
                 }}
-                className={this.props.className}
-              >
-                {children}
-              </div>
-            )
-          }}
+              className={this.props.className}
+            >
+              {children}
+            </div>
+            )}
         </Motion>
       )
     }
+  }
+
+  state = {
+    isReady: false,
+  }
+
+
+  componentDidMount() {
+   
+    this.setState({isReady: true})
+    window.addEventListener('resize', this.adjustContainer, false)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.adjustContainer, false)
+  }
+
+  adjustContainer = (e) => {
+    this.setState({height: spring(e.currentTarget.innerHeight)})
+  }
+
+  render() {
+    const {children} = this.props
+
+    if (this.state.isReady) {
+      if (this.props.fullHeight) {
+        this.props.containerStyle.height = window.innerHeight
+      }
+      return (
+        <div
+          ref="container"
+          style={this.props.containerStyle}
+          className={this.props.containerClassName}
+        >
+          {children}
+        </div>
+      )
+    }
+    return <div>Parallax hover is not yet ready.</div>
   }
 }
