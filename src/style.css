@@ -41,7 +41,7 @@
 
 .articles-wrapper {
   display: flex;
-  margin: -30px;
+  margin: -15px;
   flex-wrap: wrap;
   justify-content: center;
 }
