@@ -1,6 +1,6 @@
 {
-  "name": "wireframe-series-1-extra-cover",
-  "version": "0.0.5",
+  "name": "wireframe-series-1-extra-cover-animated",
+  "version": "0.0.6",
   "description": "",
   "category": "cover",
   "main": "src/index.js",

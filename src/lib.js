@@ -70,7 +70,6 @@ export default class extends React.Component {
 
 
   componentDidMount() {
-   
     this.setState({isReady: true})
     window.addEventListener('resize', this.adjustContainer, false)
   }
