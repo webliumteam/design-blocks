@@ -1,9 +1,9 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-series-2-cta/src/component'
+import Component from 'wireframe-series-2-cta_old/src/component'
 import style from './style.css'
 
-import defaultOptions from 'wireframe-series-2-cta/src/options.json'
+import defaultOptions from 'wireframe-series-2-cta_old/src/options.json'
 import options from './options.json'
 
 const {
