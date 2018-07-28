@@ -20,6 +20,8 @@
 }
 
 .article {
+  margin: 0;
+
   &__content {
     display: flex;
     flex-direction: column;
