@@ -1,4 +1,4 @@
-@import "wireframe-series-2-why/src/style.css";
+@import "wireframe-series-2-why_old/src/style.css";
 
 /* start here */
 
@@ -34,7 +34,6 @@
   }
 
   &__content {
-    word-break: break-all;
 
     @media (min-width: 992px) {
       max-width: calc(100% - 70px);
