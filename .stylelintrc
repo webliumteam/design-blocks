@@ -1,0 +1,116 @@
+{
+  "plugins": ["stylelint-scss", "stylelint-selector-bem-pattern", "stylelint-order"],
+  "rules": {
+    "indentation": 2,
+    "max-empty-lines": [
+      1,
+      {
+        "ignore": ["comments"]
+      }
+    ],
+    "selector-max-empty-lines": 0,
+    "selector-list-comma-newline-after": "always",
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "block-opening-brace-space-before": "always",
+    "declaration-block-single-line-max-declarations": 1,
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
+    "comment-empty-line-before": [
+      "always",
+      {
+        "ignore": ["stylelint-commands"]
+      }
+    ],
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?$",
+        "combined": "^\\.combined-{componentName}-[a-z]+$"
+      },
+      "utilitySelectors": "^\\.util-[a-z]+$"
+    },
+    "declaration-property-value-blacklist": {
+      "/^border/": ["none"]
+    },
+    "at-rule-blacklist": ["extend"],
+    "at-rule-no-vendor-prefix": true,
+    "max-nesting-depth": 4,
+    "declaration-no-important": true,
+    "selector-max-compound-selectors": 3,
+    "selector-no-qualifying-type": true,
+    "selector-combinator-space-after": "always",
+    "selector-attribute-quotes": "always",
+    "selector-attribute-operator-space-before": "never",
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-brackets-space-inside": "never",
+    "selector-pseudo-element-colon-notation": "double",
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "selector-no-vendor-prefix": true,
+    "no-duplicate-selectors": true,
+    "block-no-empty": true,
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "ignoreAtRules": ["import", "first-nested"]
+      }
+    ],
+    "at-rule-name-case": "lower",
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "color-no-invalid-hex": true,
+    "color-named": "never",
+    "string-quotes": "double",
+    "value-no-vendor-prefix": true,
+    "value-list-comma-space-after": "always-single-line",
+    "shorthand-property-no-redundant-values": true,
+    "comment-whitespace-inside": "always",
+    "function-comma-space-after": "always-single-line",
+    "function-comma-space-before": "never",
+    "length-zero-no-unit": true,
+    "number-no-trailing-zeros": true,
+    "number-leading-zero": "always",
+    "function-url-quotes": "always",
+    "font-weight-notation": "numeric",
+    "font-family-name-quotes": "always-where-recommended",
+    "declaration-block-trailing-semicolon": "always",
+    "declaration-block-no-duplicate-properties": true,
+    "scss/selector-no-redundant-nesting-selector": true,
+    "media-feature-range-operator-space-before": "always",
+    "media-feature-range-operator-space-after": "always",
+    "media-feature-parentheses-space-inside": "never",
+    "media-feature-name-no-vendor-prefix": true,
+    "media-feature-colon-space-before": "never",
+    "media-feature-colon-space-after": "always",
+    "no-eol-whitespace": true,
+    "order/properties-order": [
+      [
+        "content",
+        "display",
+        "position",
+        "width",
+        "height",
+        "min-width",
+        "max-width",
+        "min-height",
+        "max-height",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "margin",
+        "padding",
+        "transform"
+      ],
+      {
+        "unspecified": "bottom"
+      }
+    ]
+  },
+  "ignoreFiles": "**/dist/**/*.css"
+}
