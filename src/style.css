@@ -48,10 +48,6 @@
   @media (--ui-medium-devices) {
     display: none;
   }
-
-  .logo {
-    align-self: center;
-  }
 }
 
 .header__company-info {
@@ -277,6 +273,7 @@
   flex-direction: column;
   justify-content: center;
   text-decoration: none;
+  align-self: center;
 
   img {
     display: block;
