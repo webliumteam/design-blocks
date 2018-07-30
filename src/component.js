@@ -22,12 +22,12 @@ class Block extends React.Component {
 
   setStylesForBody = (reset = false) => {
     const {opened} = this.state
-    const nodes = [document.getElementsByTagName('html')[0], document.body]
+    const nodes = [document.getElementsByTagName('html')[0]]
 
     if (!reset && opened) {
-      nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
+      nodes.forEach(setStyleProperties([['overflow-y', 'hidden']]))
     } else {
-      nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
+      nodes.forEach(resetStyleProperties(['overflow-y']))
     }
   }
 
