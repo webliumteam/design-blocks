@@ -22,12 +22,12 @@ class Block extends React.Component {
 
   setStylesForBody = (reset = false) => {
     const {opened} = this.state
-    const nodes = [document.getElementsByTagName('html')[0], document.body]
+    const nodes = [document.getElementsByTagName('html')[0]]
 
     if (!reset && opened && document.body.offsetWidth < 992) {
-      nodes.forEach(setStyleProperties([['overflow-y', 'hidden'], ['height', '100%']]))
+      nodes.forEach(setStyleProperties([['overflow-y', 'hidden']]))
     } else {
-      nodes.forEach(resetStyleProperties(['overflow-y', 'height']))
+      nodes.forEach(resetStyleProperties(['overflow-y']))
     }
   }
 
@@ -39,6 +39,8 @@ class Block extends React.Component {
     this.setStylesForBody(true)
     this.setState({opened: false})
   }
+
+  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   renderLogo = () => {
     const {components: {Logo, Text}, style} = this.props
@@ -106,8 +108,6 @@ class Block extends React.Component {
         null
     )
   }
-
-  ui = value => _.get('$block.modifier.__enableThemes', this.props) ? value : null
 
   render() {
     const {components: {Background}, style} = this.props
