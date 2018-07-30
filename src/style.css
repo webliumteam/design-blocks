@@ -1,4 +1,4 @@
-@import "wireframe-series-2-cta/src/style.css";
+@import "wireframe-series-2-cta_old/src/style.css";
 
 /* start here */
 
@@ -70,6 +70,7 @@
 .form {
   padding-right: 15px;
   padding-left: 15px;
+  text-align: center;
 
   @media (min-width: 768px) {
     padding-right: 20%;
