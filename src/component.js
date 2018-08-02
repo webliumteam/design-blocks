@@ -108,12 +108,14 @@ Block.components = _.pick(['Collection', 'Text', 'Button', 'Logo'])($editor.comp
 Block.defaultContent = {
   partners: {
     background: {
-      'nth-child': [
-        ['n', {
-          color: 'light-shade-color',
+      id: 'monochrome',
+      colors: {
+        background: {
           type: 'color',
-        }],
-      ],
+          color: 'light-shade-color',
+        },
+      },
+      preset: [['n', {type: 'color', color: 'light-shade-color'}]],
     },
     items: [
       {
