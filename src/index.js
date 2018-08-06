@@ -26,6 +26,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  map: {defaultValue: true, label: 'Map', type: 'hidden'},
   social: {defaultValue: false, label: 'Social Media Buttons', type: 'hidden'},
 }
 
