@@ -82,7 +82,6 @@
   }
 
   .logo {
-    min-height: 105px;
     justify-content: left;
 
     &-wrapper {
