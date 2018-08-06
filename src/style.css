@@ -423,9 +423,6 @@
   display: flex;
   width: 100%;
   max-width: 270px;
-  min-height: 120px;
-  padding-left: 15px;
-  padding-right: 15px;
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -445,7 +442,6 @@
 .logo__pic {
   height: auto;
   max-width: 100%;
-  background-color: var(--ui-media-bg);
 }
 
 .logo__title {
