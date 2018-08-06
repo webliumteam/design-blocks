@@ -65,14 +65,11 @@ export default class extends React.Component {
   }
 
   state = {
-    // isReady: false,
   }
 
 
   componentDidMount() {
-    if (this.props.fullHeight) {
-      this.props.containerStyle.height = window.innerHeight
-    }
+    this.props.fullHeight && this.setState({containerStyle: {height: window.innerHeight}})
     window.addEventListener('resize', this.adjustContainer, false)
   }
 
@@ -89,7 +86,7 @@ export default class extends React.Component {
     return (
       <div
         ref="container"
-        style={this.props.containerStyle}
+        style={this.state.containerStyle}
         className={this.props.containerClassName}
         >
         {children}
