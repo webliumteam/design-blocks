@@ -422,6 +422,7 @@
 .logo {
   display: flex;
   width: 100%;
+  min-height: var(--ui-block-title-size);
   max-width: 270px;
   align-items: center;
   justify-content: center;
