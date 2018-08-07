@@ -32,7 +32,7 @@ class Block extends React.Component {
       ),
       <Text
         bind={`collection[${index}].item_person`}
-        className={classNames(style.item__title, this.ui('ui-heading'), this.ui('ui-text-center'))}
+        className={classNames(style.item__title, this.ui('ui-heading-mp'), this.ui('ui-text-center'))}
         tagName="h2"
       />,
       _.get('item_category')(modifier) && (
