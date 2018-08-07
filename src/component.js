@@ -131,7 +131,7 @@ class Block extends React.Component {
                 bind="subtitle"
                 className={classNames(
                   style.subtitle,
-                  this.ui('ui-subtitle'),
+                  this.ui('ui-subtitle-mp'),
                   this.ui('ui-text-center'),
                 )}
                 tagName="p"
