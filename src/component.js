@@ -40,7 +40,7 @@ class Block extends React.Component {
           bind={`collection[${index}].item_category`}
           className={classNames(
             style.item__position,
-            this.ui('ui-caption'),
+            this.ui('ui-caption-mp'),
             this.ui('ui-text-center'),
           )}
           tagName="p"
@@ -63,7 +63,7 @@ class Block extends React.Component {
       _.get('item_date')(modifier) && (
         <Text
           bind={`collection[${index}].item_date`}
-          className={classNames(style.item__time, this.ui('ui-caption'), this.ui('ui-text-center'))}
+          className={classNames(style.item__time, this.ui('ui-caption-mp'), this.ui('ui-text-center'))}
           tagName="time"
         />
       ),
