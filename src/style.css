@@ -1,34 +1,8 @@
-@import "wireframe-zapdos-contacts/src/style.css";
-
-.title {
-  letter-spacing: -2px;
-}
-
-.logo {
-  background: none;
-
-  &__title {
-    font-size: var(--ui-heading-size);
-    line-height: var(--ui-heading-line-height);
-    font-weight: var(--ui-heading-font-weight);
-    letter-spacing: -0.5px;
-    color: var(--ui-heading-color);
-  }
-}
+@import "wireframe-zapdos-contacts_old/src/style.css";
 
 .contacts {
   &-list {
     text-align: center;
-  }
-
-  &__title {
-    font-size: var(--ui-subtitle-size);
-    line-height: var(--ui-subtitle-line-height);
-    font-weight: 600;
-  }
-
-  &__desc {
-    font-size: var(--ui-text-size);
   }
 
   &:first-child {
@@ -108,8 +82,11 @@
   }
 
   .logo {
-    min-height: 105px;
     justify-content: left;
+
+    img {
+      margin: 10px auto;
+    }
 
     &-wrapper {
       margin-bottom: 15px;
