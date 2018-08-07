@@ -123,7 +123,7 @@ class Block extends React.Component {
             )}
             <Text
               bind="title"
-              className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
+              className={classNames(style.title, this.ui('ui-title-mp'), this.ui('ui-text-center'))}
               tagName="h1"
             />
             {this.getModifierValue('subtitle') && (
