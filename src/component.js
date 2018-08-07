@@ -57,7 +57,7 @@ class Block extends React.Component {
     return [
       <Text
         bind={`collection[${index}].item_body`}
-        className={classNames(style.item__desc, this.ui('ui-body'), this.ui('ui-text-center'))}
+        className={classNames(style.item__desc, this.ui('ui-body-mp'), this.ui('ui-text-center'))}
         tagName="p"
       />,
       _.get('item_date')(modifier) && (
