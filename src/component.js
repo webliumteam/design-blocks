@@ -32,7 +32,7 @@ class Block extends React.Component {
       ),
       <Text
         bind={`collection[${index}].item_person`}
-        className={classNames(style.item__title, this.ui('ui-heading'), this.ui('ui-text-center'))}
+        className={classNames(style.item__title, this.ui('ui-heading-mp'), this.ui('ui-text-center'))}
         tagName="h2"
       />,
       _.get('item_category')(modifier) && (
@@ -40,7 +40,7 @@ class Block extends React.Component {
           bind={`collection[${index}].item_category`}
           className={classNames(
             style.item__position,
-            this.ui('ui-caption'),
+            this.ui('ui-caption-mp'),
             this.ui('ui-text-center'),
           )}
           tagName="p"
@@ -57,13 +57,13 @@ class Block extends React.Component {
     return [
       <Text
         bind={`collection[${index}].item_body`}
-        className={classNames(style.item__desc, this.ui('ui-body'), this.ui('ui-text-center'))}
+        className={classNames(style.item__desc, this.ui('ui-body-mp'), this.ui('ui-text-center'))}
         tagName="p"
       />,
       _.get('item_date')(modifier) && (
         <Text
           bind={`collection[${index}].item_date`}
-          className={classNames(style.item__time, this.ui('ui-caption'), this.ui('ui-text-center'))}
+          className={classNames(style.item__time, this.ui('ui-caption-mp'), this.ui('ui-text-center'))}
           tagName="time"
         />
       ),
@@ -123,7 +123,7 @@ class Block extends React.Component {
             )}
             <Text
               bind="title"
-              className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
+              className={classNames(style.title, this.ui('ui-title-mp'), this.ui('ui-text-center'))}
               tagName="h1"
             />
             {this.getModifierValue('subtitle') && (
@@ -131,7 +131,7 @@ class Block extends React.Component {
                 bind="subtitle"
                 className={classNames(
                   style.subtitle,
-                  this.ui('ui-subtitle'),
+                  this.ui('ui-subtitle-mp'),
                   this.ui('ui-text-center'),
                 )}
                 tagName="p"
