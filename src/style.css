@@ -1,4 +1,4 @@
-@import "wireframe-zapdos-contacts/src/style.css";
+@import "wireframe-zapdos-contacts_old/src/style.css";
 
 /* start here */
 .title {
@@ -48,7 +48,6 @@
 }
 
 .logo {
-  background-color: transparent;
   padding-left: 0;
   padding-right: 0;
   justify-content: flex-start;

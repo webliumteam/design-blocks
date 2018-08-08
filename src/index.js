@@ -1,9 +1,9 @@
 import $editor from 'weblium/editor'
 
-import Component from 'wireframe-zapdos-contacts/src/component'
+import Component from 'wireframe-zapdos-contacts_old/src/component'
 import style from './style.css'
 
-import defaultOptions from 'wireframe-zapdos-contacts/src/options.json'
+import defaultOptions from 'wireframe-zapdos-contacts_old/src/options.json'
 import options from './options.json'
 
 const {enhancers: {withProps}, hoistStatics} = $editor
@@ -26,6 +26,7 @@ ExtendedWireframe.defaultContent = {
 
 ExtendedWireframe.modifierScheme = {
   ...Component.modifierScheme,
+  map: {defaultValue: true, label: 'Map', type: 'hidden'},
   social: {defaultValue: false, label: 'Social Media Buttons', type: 'hidden'},
 }
 
