@@ -32,5 +32,6 @@
   },
   "dependencies": {
     "wireframe-default-master": "https://github.com/webliumteam/blocks#w/default/master/prod"
-  }
+  },
+  "editorVersion": "4.16.0"
 }
