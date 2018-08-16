@@ -14,7 +14,7 @@ class Block extends React.Component {
 
   getPersonInfo = ({index, modifier}) => {
     const {
-      components: {Text, Image},
+      components: {Text, Image, SocialIcons},
       style,
     } = this.props
     return [
@@ -32,7 +32,11 @@ class Block extends React.Component {
       ),
       <Text
         bind={`collection[${index}].item_person`}
-        className={classNames(style.item__title, this.ui('ui-heading-mp'), this.ui('ui-text-center'))}
+        className={classNames(
+          style.item__title,
+          this.ui('ui-heading-mp'),
+          this.ui('ui-text-center'),
+        )}
         tagName="h2"
       />,
       _.get('item_category')(modifier) && (
@@ -45,6 +49,9 @@ class Block extends React.Component {
           )}
           tagName="p"
         />
+      ),
+      _.get('item_socials')(modifier) && (
+        <SocialIcons className={style.item__socials} bind={`collection[${index}].item_socials`} />
       ),
     ]
   }
@@ -63,7 +70,11 @@ class Block extends React.Component {
       _.get('item_date')(modifier) && (
         <Text
           bind={`collection[${index}].item_date`}
-          className={classNames(style.item__time, this.ui('ui-caption-mp'), this.ui('ui-text-center'))}
+          className={classNames(
+            style.item__time,
+            this.ui('ui-caption-mp'),
+            this.ui('ui-text-center'),
+          )}
           tagName="time"
         />
       ),
@@ -175,7 +186,7 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Slider', 'Text', 'Button', 'Image', 'Icon'])($editor.components)
+Block.components = _.pick(['Slider', 'Text', 'Button', 'Image', 'Icon', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
   icon_decorator: {
@@ -202,6 +213,30 @@ Block.defaultContent = {
         item_category: {
           content: 'Marketing Director at Fresh Food Co.',
           type: 'caption',
+        },
+        item_socials: {
+          networks: [
+            {
+              id: 'facebook',
+              name: 'Facebook',
+              url: 'http://facebook.com/',
+            },
+            {
+              id: 'linkedin',
+              name: 'LinkedIn',
+              url: 'http://linkedin.com/',
+            },
+          ],
+          target: '_blank',
+          design: {
+            border: 'softRect',
+            innerFill: true,
+            preset: 'preset001',
+            offset: 11,
+            color: '#979797',
+            sizes: [20, 24, 40],
+            size: 24,
+          },
         },
         item_body: {
           content:
@@ -249,16 +284,18 @@ Block.defaultContent = {
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 10},
-  item_image: {defaultValue: true, label: "Client's photo", type: 'checkbox', sortOrder: 20},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  item_image: {defaultValue: true, label: "Client's photo", type: 'checkbox', sortOrder: 30},
   item_category: {
     defaultValue: true,
     label: "Client's job position",
     type: 'checkbox',
-    sortOrder: 30,
+    sortOrder: 40,
   },
-  item_date: {defaultValue: true, label: 'Comment date', type: 'checkbox', sortOrder: 40},
-  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
+  item_socials: {defaultValue: true, label: "Client's contacts", type: 'checkbox', sortOrder: 50},
+  item_date: {defaultValue: true, label: 'Comment date', type: 'checkbox', sortOrder: 60},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
   icon_decorator: {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
