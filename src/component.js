@@ -7,6 +7,7 @@ class Wireframe extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    $theme: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
@@ -23,8 +24,6 @@ class Wireframe extends React.Component {
   getOptionValue = (path, defaultValue = false) =>
     _.getOr(defaultValue, ['options', path], this.props.$block)
 
-  ui = value => (_.get('$block.modifier.__enableThemes', this.props) ? value : null)
-
   render() {
     const {
       components: {Text, Image},
@@ -32,16 +31,16 @@ class Wireframe extends React.Component {
     } = this.props
 
     return (
-      <section className={classNames(style.section, this.ui('ui-section'))}>
-        <div className={classNames(style.section__inner, this.ui('ui-section__inner'))}>
-          <header className={classNames(style.section__header, this.ui('ui-section__header'))}>
+      <section className={classNames(style.section, this.props.$theme.enabled('ui-section'))}>
+        <div className={classNames(style.section__inner, this.props.$theme.enabled('ui-section__inner'))}>
+          <header className={classNames(style.section__header, this.props.$theme.enabled('ui-section__header'))}>
             <Text
               bind="title"
-              className={classNames(style.title, this.ui('ui-title'), this.ui('ui-text-center'))}
+              className={classNames(style.title, this.props.$theme.enabled('ui-title'), this.props.$theme.enabled('ui-text-center'))}
               tagName="h2"
             />
           </header>
-          <div className={classNames(this.ui('ui-section__content'))}>
+          <div className={classNames(this.props.$theme.enabled('ui-section__content'))}>
             <div className={style['map-wrapper']}>
               <Image
                 bind="picture"
