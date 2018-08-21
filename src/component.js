@@ -5,6 +5,7 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    $theme: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
@@ -20,9 +21,9 @@ class Block extends React.Component {
     return [
       _.get('item_image')(modifier) && (
         <Image
-          wrapperClassName={classNames(style['item__pic-wrapper'], this.ui('ui-picture-wrapper'))}
-          pictureClassName={classNames(style.item__pic, this.ui('ui-picture'))}
-          imgClassName={classNames(style.item__img, this.ui('ui-picture__image'))}
+          wrapperClassName={classNames(style['item__pic-wrapper'], this.props.$theme.enabled('ui-picture-wrapper'))}
+          pictureClassName={classNames(style.item__pic, this.props.$theme.enabled('ui-picture'))}
+          imgClassName={classNames(style.item__img, this.props.$theme.enabled('ui-picture__image'))}
           bind={`collection[${index}].item_image`}
           size={{
             'min-width: 320px': 120,
@@ -34,8 +35,8 @@ class Block extends React.Component {
         bind={`collection[${index}].item_person`}
         className={classNames(
           style.item__title,
-          this.ui('ui-heading-mp'),
-          this.ui('ui-text-center'),
+          this.props.$theme.enabled('ui-heading-mp'),
+          this.props.$theme.enabled('ui-text-center'),
         )}
         tagName="h2"
       />,
@@ -44,8 +45,8 @@ class Block extends React.Component {
           bind={`collection[${index}].item_category`}
           className={classNames(
             style.item__position,
-            this.ui('ui-caption-mp'),
-            this.ui('ui-text-center'),
+            this.props.$theme.enabled('ui-caption-mp'),
+            this.props.$theme.enabled('ui-text-center'),
           )}
           tagName="p"
         />
@@ -64,7 +65,7 @@ class Block extends React.Component {
     return [
       <Text
         bind={`collection[${index}].item_body`}
-        className={classNames(style.item__desc, this.ui('ui-body-mp'), this.ui('ui-text-center'))}
+        className={classNames(style.item__desc, this.props.$theme.enabled('ui-body-mp'), this.props.$theme.enabled('ui-text-center'))}
         tagName="p"
       />,
       _.get('item_date')(modifier) && (
@@ -72,8 +73,8 @@ class Block extends React.Component {
           bind={`collection[${index}].item_date`}
           className={classNames(
             style.item__time,
-            this.ui('ui-caption-mp'),
-            this.ui('ui-text-center'),
+            this.props.$theme.enabled('ui-caption-mp'),
+            this.props.$theme.enabled('ui-text-center'),
           )}
           tagName="time"
         />
@@ -104,8 +105,6 @@ class Block extends React.Component {
     )
   }
 
-  ui = value => (_.get('$block.modifier.__enableThemes', this.props) ? value : null)
-
   render() {
     const {
       components: {Slider, Text, Button, Icon},
@@ -123,18 +122,18 @@ class Block extends React.Component {
       }
       : {}
     return (
-      <section className={classNames(style.section, this.ui('ui-section'))}>
-        <div className={classNames(style.section__inner, this.ui('ui-section__inner'))}>
-          <header className={classNames(this.ui('ui-section__header'))}>
+      <section className={classNames(style.section, this.props.$theme.enabled('ui-section'))}>
+        <div className={classNames(style.section__inner, this.props.$theme.enabled('ui-section__inner'))}>
+          <header className={classNames(this.props.$theme.enabled('ui-section__header'))}>
             {this.getModifierValue('icon_decorator') && (
               <Icon
-                className={classNames(style['top-icon'], this.ui('ui-icon'))}
+                className={classNames(style['top-icon'], this.props.$theme.enabled('ui-icon'))}
                 bind="icon_decorator"
               />
             )}
             <Text
               bind="title"
-              className={classNames(style.title, this.ui('ui-title-mp'), this.ui('ui-text-center'))}
+              className={classNames(style.title, this.props.$theme.enabled('ui-title-mp'), this.props.$theme.enabled('ui-text-center'))}
               tagName="h1"
             />
             {this.getModifierValue('subtitle') && (
@@ -142,8 +141,8 @@ class Block extends React.Component {
                 bind="subtitle"
                 className={classNames(
                   style.subtitle,
-                  this.ui('ui-subtitle-mp'),
-                  this.ui('ui-text-center'),
+                  this.props.$theme.enabled('ui-subtitle-mp'),
+                  this.props.$theme.enabled('ui-text-center'),
                 )}
                 tagName="p"
               />
@@ -155,7 +154,7 @@ class Block extends React.Component {
               {
                 [style['items-wrapper--image-none']]: !this.getModifierValue('item_image'),
               },
-              this.ui('ui-section__content'),
+              this.props.$theme.enabled('ui-section__content'),
             )}
             bind="collection"
             Item={this.collectionItem}
@@ -168,11 +167,11 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <footer className={classNames(this.ui('ui-section__footer'))}>
-              <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
+            <footer className={classNames(this.props.$theme.enabled('ui-section__footer'))}>
+              <div className={classNames(style['btns-group'], this.props.$theme.enabled('ui-btns-group'))}>
                 <div classNames={classNames(style['btns-group__inner'], 'btns-group__inner')}>
                   <Button
-                    buttonClassName={classNames(style.button, this.ui('ui-btns-group__item'))}
+                    buttonClassName={classNames(style.button, this.props.$theme.enabled('ui-btns-group__item'))}
                     linkClassName={style.link}
                     bind="button"
                   />
