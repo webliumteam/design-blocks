@@ -1,18 +1,56 @@
 import $editor from 'weblium/editor'
+import {updateStatics, withWrapper} from './utils'
 
 const {
+  hoistStatics,
   enhancers: {mapProps},
 } = $editor
 
-const withTheme = (Component) => {
-  Component.modifierScheme = _.set(
-    '__enableThemes',
-    {defaultValue: false, label: 'Experimental: Enable Themes', type: 'checkbox', sortOrder: 10001, experimental: true},
-    Component.modifierScheme
+class ThemeWrapper extends React.Component {
+  static propTypes = {
+    children: PropTypes.func.isRequired,
+    components: PropTypes.object.isRequired,
+  }
+
+  checkEnableThemes = () => _.prop('$block.modifier.__enableThemes', this.props)
+
+  enabled = value => (this.checkEnableThemes() ? value : null)
+
+  components = _.update(
+    'Text',
+    mapProps(_.update('textClassNames', textClassNames =>
+      _.mergeWith(
+        (a, b) => classNames(a, b),
+        {
+          'text-block': this.enabled('ui-text-block'),
+          'text-content': this.enabled('ui-text-content'),
+          'text-left': this.enabled('ui-text-left'),
+          'text-center': this.enabled('ui-text-center'),
+          'text-right': this.enabled('ui-text-right'),
+        },
+        textClassNames,
+      ))),
+  )(this.props.components)
+
+  mapProps = _.pipe(
+    _.set('$theme.enabled', this.enabled),
+    _.set('components', this.components),
   )
-  return mapProps((props) =>
-    _.set('$theme.enabled', (value) => (_.prop('$block.modifier.__enableThemes', props) ? value : null), props)
-  )(Component)
+
+  render() {
+    return this.props.children(this.mapProps)
+  }
 }
 
-export default withTheme
+export default _.compose(
+  updateStatics({
+    modifierScheme: _.set('__enableThemes', {
+      defaultValue: false,
+      label: 'Experimental: Enable Themes',
+      type: 'checkbox',
+      sortOrder: 10001,
+      experimental: true,
+    }),
+  }),
+  hoistStatics(withWrapper(ThemeWrapper)),
+)
