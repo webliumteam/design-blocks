@@ -18,18 +18,16 @@ class ThemeWrapper extends React.Component {
 
   components = evolve(
     {
-      Text: mapProps(_.update('textClassNames', textClassNames =>
-        _.mergeWith(
-          (a, b) => classNames(a, b),
-          {
-            'text-block': this.enabled('ui-text-block'),
-            'text-content': this.enabled('ui-text-content'),
-            'text-left': this.enabled('ui-text-left'),
-            'text-center': this.enabled('ui-text-center'),
-            'text-right': this.enabled('ui-text-right'),
-          },
-          textClassNames,
-        ))),
+      Text: mapProps(_.update(
+        'textClassNames',
+        _.mergeWith((a, b) => classNames(a, b), {
+          'text-block': this.enabled('ui-text-block'),
+          'text-content': this.enabled('ui-text-content'),
+          'text-left': this.enabled('ui-text-left'),
+          'text-center': this.enabled('ui-text-center'),
+          'text-right': this.enabled('ui-text-right'),
+        }),
+      )),
     },
     this.props.components,
   )
