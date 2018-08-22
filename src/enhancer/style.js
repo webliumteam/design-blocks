@@ -2,9 +2,8 @@ import $editor from 'weblium/editor'
 import style from '../style.css'
 
 const {
+  hoistStatics,
   enhancers: {mapProps},
 } = $editor
 
-const withStyle = mapProps(_.set('style', style))
-
-export default withStyle
+export default hoistStatics(mapProps(_.set('style', style)))

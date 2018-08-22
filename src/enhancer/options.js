@@ -1,8 +1,9 @@
 import $editor from 'weblium/editor'
 import options from '../options.json'
 
-const {enhancers: {mapProps}} = $editor
+const {
+  hoistStatics,
+  enhancers: {mapProps},
+} = $editor
 
-const withOptions = mapProps(_.set('$block.options', options))
-
-export default withOptions
+export default hoistStatics(mapProps(_.set('$block.options', options)))
