@@ -10,3 +10,9 @@ export const updateStatics = updaters => (Component) => {
 export const withWrapper = Wrapper => Component => props => (
   <Wrapper {...props}>{mapProps => <Component {...mapProps(props)} />}</Wrapper>
 )
+
+export const evolve = (transformations, list) =>
+  _.mapValues.convert({cap: false})(
+    (value, key) => (transformations[key] ? transformations[key](value) : value),
+    list,
+  )
