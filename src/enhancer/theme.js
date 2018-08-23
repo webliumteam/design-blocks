@@ -1,5 +1,5 @@
 import $editor from 'weblium/editor'
-import {updateStatics, withWrapper, evolve} from './utils'
+import {updateStatics, withWrapper} from './utils'
 
 const {
   hoistStatics,
@@ -9,35 +9,13 @@ const {
 class ThemeWrapper extends React.Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
-    components: PropTypes.object.isRequired,
   }
 
   checkEnableThemes = () => _.prop('$block.modifier.__enableThemes', this.props)
 
   enabled = value => (this.checkEnableThemes() ? value : null)
 
-  components = evolve(
-    {
-      Text: mapProps(_.update('textClassNames', list =>
-        _.mergeWith(
-          (a, b) => classNames(a, b),
-          {
-            'text-block': this.enabled('ui-text-block'),
-            'text-content': this.enabled('ui-text-content'),
-            'text-left': this.enabled('ui-text-left'),
-            'text-center': this.enabled('ui-text-center'),
-            'text-right': this.enabled('ui-text-right'),
-          },
-          list,
-        ))),
-    },
-    this.props.components,
-  )
-
-  mapProps = _.pipe(
-    _.set('$theme.enabled', this.enabled),
-    _.set('components', this.components),
-  )
+  mapProps = _.set('$theme.enabled', this.enabled)
 
   render() {
     return this.props.children(this.mapProps)
