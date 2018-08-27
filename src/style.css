@@ -30,26 +30,10 @@
 
 .title {
   margin-bottom: 20px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 32px;
-  }
 }
 
 .subtitle {
-  margin-bottom: 20px;
-
-  @media (min-width: 768px) {
-    margin-bottom: 46px;
-  }
-
-  @media (min-width: 992px) {
-    margin-bottom: 23px;
-  }
-
-  @media (min-width: 1200px) {
-    margin-bottom: 28px;
-  }
+  margin-bottom: 40px;
 }
 
 .btn {
@@ -76,21 +60,26 @@
 }
 
 .decor-wrapper {
+  display: flex;
+  position: relative;
   width: 100%;
+  height: 260px;
   max-width: 280px;
   margin-top: 30px;
   margin-right: auto;
   margin-left: auto;
+  align-items: center;
+  justify-content: center;
 
   @media (min-width: 768px) {
+    height: 469px;
     max-width: 505px;
-    max-height: 469px;
   }
 
   @media (min-width: 992px) {
     position: absolute;
+    height: 351px;
     max-width: 379px;
-    max-height: 351px;
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
@@ -98,8 +87,8 @@
   }
 
   @media (min-width: 1200px) {
+    height: 476px;
     max-width: 512px;
-    max-height: 476px;
   }
 }
 
@@ -109,4 +98,81 @@
   height: 100%;
   max-width: 100%;
   max-height: 100%;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-top,
+.svg-bottom,
+.svg-big-pink,
+.svg-big-blue,
+.svg-weblium {
+  display: block;
+  position: absolute;
+}
+
+.svg-top {
+  width: 24%;
+  top: 25px;
+  left: 0;
+  transition: transform 100ms linear;
+
+  @media (min-width: 768px) {
+    top: -7px;
+  }
+
+  @media (min-width: 992px) {
+    top: 26px;
+  }
+
+  @media (min-width: 1200px) {
+    top: 0;
+  }
+}
+
+.svg-bottom {
+  width: 29%;
+  right: 0;
+  bottom: -40px;
+
+  @media (min-width: 768px) {
+    bottom: -10px;
+  }
+
+  @media (min-width: 992px) {
+    bottom: -42px;
+  }
+
+  @media (min-width: 1200px) {
+    bottom: -20px;
+  }
+}
+
+.svg-big-pink {
+  width: 56%;
+  top: 60px;
+  left: 10.24%;
+}
+
+.svg-big-blue {
+  width: 56%;
+  top: 60px;
+  right: 7.5%;
+}
+
+.svg-weblium {
+  width: 24%;
+  height: 68px;
+  top: 50%;
+  left: 50%;
+  margin-top: calc(-1 * (34px / 2));
+  margin-left: calc(-1 * (20% / 2));
+
+  @media (min-width: 768px) {
+    margin-top: calc(-1 * (68px / 2));
+  }
 }
