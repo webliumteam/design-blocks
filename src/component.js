@@ -107,7 +107,7 @@ class Block extends React.Component {
 
   render() {
     const {
-      components: {Slider, Text, Button, Icon},
+      components: {Slider, Text, Button},
       style,
       $block,
     } = this.props
@@ -124,30 +124,28 @@ class Block extends React.Component {
     return (
       <section className={classNames(style.section, this.props.$theme.enabled('ui-section'))}>
         <div className={classNames(style.section__inner, this.props.$theme.enabled('ui-section__inner'))}>
-          <header className={classNames(this.props.$theme.enabled('ui-section__header'))}>
-            {this.getModifierValue('icon_decorator') && (
-              <Icon
-                className={classNames(style['top-icon'], this.props.$theme.enabled('ui-icon'))}
-                bind="icon_decorator"
-              />
-            )}
-            <Text
-              bind="title"
-              className={classNames(style.title, this.props.$theme.enabled('ui-title-mp'), this.props.$theme.enabled('ui-text-center'))}
-              tagName="h1"
-            />
-            {this.getModifierValue('subtitle') && (
-              <Text
-                bind="subtitle"
-                className={classNames(
-                  style.subtitle,
-                  this.props.$theme.enabled('ui-subtitle-mp'),
-                  this.props.$theme.enabled('ui-text-center'),
-                )}
-                tagName="p"
-              />
-            )}
-          </header>
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+            <header className={classNames(this.props.$theme.enabled('ui-section__header'))}>
+              {this.getModifierValue('title') && (
+                <Text
+                  bind="title"
+                  className={classNames(style.title, this.props.$theme.enabled('ui-title-mp'), this.props.$theme.enabled('ui-text-center'))}
+                  tagName="h2"
+                />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text
+                  bind="subtitle"
+                  className={classNames(
+                    style.subtitle,
+                    this.props.$theme.enabled('ui-subtitle-mp'),
+                    this.props.$theme.enabled('ui-text-center'),
+                  )}
+                  tagName="p"
+                />
+              )}
+            </header>
+          )}
           <Slider
             className={classNames(
               style['items-wrapper'],
@@ -185,14 +183,9 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Slider', 'Text', 'Button', 'Image', 'Icon', 'SocialIcons'])($editor.components)
+Block.components = _.pick(['Slider', 'Text', 'Button', 'Image', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
-  icon_decorator: {
-    svg:
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
-    fill: 'red',
-  },
   title: {
     content: 'Testimonials',
     type: 'blockTitle',
@@ -253,25 +246,49 @@ Block.defaultContent = {
       },
       {
         item_person: {
-          content: 'Amanda Peterson',
+          content: 'Jeff Gordons',
           type: 'heading',
         },
         item_category: {
-          content: 'Marketing Director at Fresh Food Co.',
+          content: 'CEO at Clear Thinking',
           type: 'caption',
+        },
+        item_socials: {
+          networks: [
+            {
+              id: 'facebook',
+              name: 'Facebook',
+              url: 'http://facebook.com/',
+            },
+            {
+              id: 'linkedin',
+              name: 'LinkedIn',
+              url: 'http://linkedin.com/',
+            },
+          ],
+          target: '_blank',
+          design: {
+            border: 'softRect',
+            innerFill: true,
+            preset: 'preset001',
+            offset: 11,
+            color: '#979797',
+            sizes: [20, 24, 40],
+            size: 24,
+          },
         },
         item_body: {
           content:
-            '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
+            '“Our company started to work with Quantum 4 years ago. We had only positive experience and implemented a lot of projects together. We’re totally satisfied and now we know that we can rely on Quantum experts any time.”',
           type: 'text',
         },
         item_date: {
-          content: 'December 15, 2017',
+          content: 'October 28, 2017',
           type: 'caption',
         },
         item_image: {
           src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Amanda Peterson photo',
+          alt: 'Jeff Gordons photo',
         },
       },
     ],
@@ -295,7 +312,6 @@ Block.modifierScheme = {
   item_socials: {defaultValue: true, label: "Client's contacts", type: 'checkbox', sortOrder: 50},
   item_date: {defaultValue: true, label: 'Comment date', type: 'checkbox', sortOrder: 60},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
-  icon_decorator: {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
 }
 
 export default Block
