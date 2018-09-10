@@ -250,16 +250,23 @@
 }
 
 .btns-group {
-  padding-top: 20px;
+  margin-top: 20px;
   text-align: center;
 
   @media (--ui-tablet-devices) {
-    padding-top: 25px;
+    margin-top: 25px;
   }
 }
 
-.button {
+.btns-group__inner {
+  margin: 0 -15px -10px;
+}
+
+.button,
+.link {
   width: 100%;
+  max-width: calc(100% - 30px);
+  margin: 10px 15px;
 
   @media (--ui-phone-devices) {
     width: auto;

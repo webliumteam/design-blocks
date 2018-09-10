@@ -167,7 +167,7 @@ class Block extends React.Component {
           {this.getModifierValue('button') && (
             <footer className={classNames(this.props.$theme.enabled('ui-section__footer'))}>
               <div className={classNames(style['btns-group'], this.props.$theme.enabled('ui-btns-group'))}>
-                <div classNames={classNames(style['btns-group__inner'], 'btns-group__inner')}>
+                <div className={classNames(style['btns-group__inner'], this.props.$theme.enabled('btns-group__inner'))}>
                   <Button
                     buttonClassName={classNames(style.button, this.props.$theme.enabled('ui-btns-group__item'))}
                     linkClassName={style.link}
