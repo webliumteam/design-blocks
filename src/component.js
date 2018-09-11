@@ -21,9 +21,9 @@ class Block extends React.Component {
     return [
       _.get('item_image')(modifier) && (
         <Image
-          wrapperClassName={classNames(style['item__pic-wrapper'], this.props.$theme.enabled('ui-picture-wrapper'))}
-          pictureClassName={classNames(style.item__pic, this.props.$theme.enabled('ui-picture'))}
-          imgClassName={classNames(style.item__img, this.props.$theme.enabled('ui-picture__image'))}
+          wrapperClassName={classNames(style['item__pic-wrapper'], this.props.$theme.enabled('w-picture-wrapper'))}
+          pictureClassName={classNames(style.item__pic, this.props.$theme.enabled('w-picture'))}
+          imgClassName={classNames(style.item__img, this.props.$theme.enabled('w-picture__image'))}
           bind={`collection[${index}].item_image`}
           size={{
             'min-width: 320px': 120,
@@ -35,8 +35,8 @@ class Block extends React.Component {
         bind={`collection[${index}].item_person`}
         className={classNames(
           style.item__title,
-          this.props.$theme.enabled('ui-heading-mp'),
-          this.props.$theme.enabled('ui-text-center'),
+          this.props.$theme.enabled('w-heading'),
+          this.props.$theme.enabled('w-text-center'),
         )}
         tagName="h2"
       />,
@@ -45,8 +45,8 @@ class Block extends React.Component {
           bind={`collection[${index}].item_category`}
           className={classNames(
             style.item__position,
-            this.props.$theme.enabled('ui-caption-mp'),
-            this.props.$theme.enabled('ui-text-center'),
+            this.props.$theme.enabled('w-caption'),
+            this.props.$theme.enabled('w-text-center'),
           )}
           tagName="p"
         />
@@ -65,7 +65,7 @@ class Block extends React.Component {
     return [
       <Text
         bind={`collection[${index}].item_body`}
-        className={classNames(style.item__desc, this.props.$theme.enabled('ui-body-mp'), this.props.$theme.enabled('ui-text-center'))}
+        className={classNames(style.item__desc, this.props.$theme.enabled('w-body'), this.props.$theme.enabled('w-text-center'))}
         tagName="p"
       />,
       _.get('item_date')(modifier) && (
@@ -73,8 +73,8 @@ class Block extends React.Component {
           bind={`collection[${index}].item_date`}
           className={classNames(
             style.item__time,
-            this.props.$theme.enabled('ui-caption-mp'),
-            this.props.$theme.enabled('ui-text-center'),
+            this.props.$theme.enabled('w-caption'),
+            this.props.$theme.enabled('w-text-center'),
           )}
           tagName="time"
         />
@@ -122,14 +122,14 @@ class Block extends React.Component {
       }
       : {}
     return (
-      <section className={classNames(style.section, this.props.$theme.enabled('ui-section'))}>
-        <div className={classNames(style.section__inner, this.props.$theme.enabled('ui-section__inner'))}>
+      <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
+        <div className={classNames(style.section__inner, this.props.$theme.enabled('w-section__inner'))}>
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
-            <header className={classNames(this.props.$theme.enabled('ui-section__header'))}>
+            <header className={classNames(this.props.$theme.enabled('w-section__header'))}>
               {this.getModifierValue('title') && (
                 <Text
                   bind="title"
-                  className={classNames(style.title, this.props.$theme.enabled('ui-title-mp'), this.props.$theme.enabled('ui-text-center'))}
+                  className={classNames(style.title, this.props.$theme.enabled('w-title'), this.props.$theme.enabled('w-text-center'))}
                   tagName="h2"
                 />
               )}
@@ -138,8 +138,8 @@ class Block extends React.Component {
                   bind="subtitle"
                   className={classNames(
                     style.subtitle,
-                    this.props.$theme.enabled('ui-subtitle-mp'),
-                    this.props.$theme.enabled('ui-text-center'),
+                    this.props.$theme.enabled('w-subtitle'),
+                    this.props.$theme.enabled('w-text-center'),
                   )}
                   tagName="p"
                 />
@@ -152,7 +152,7 @@ class Block extends React.Component {
               {
                 [style['items-wrapper--image-none']]: !this.getModifierValue('item_image'),
               },
-              this.props.$theme.enabled('ui-section__content'),
+              this.props.$theme.enabled('w-section__content'),
             )}
             bind="collection"
             Item={this.collectionItem}
@@ -165,11 +165,11 @@ class Block extends React.Component {
             }}
           />
           {this.getModifierValue('button') && (
-            <footer className={classNames(this.props.$theme.enabled('ui-section__footer'))}>
-              <div className={classNames(style['btns-group'], this.props.$theme.enabled('ui-btns-group'))}>
+            <footer className={classNames(this.props.$theme.enabled('w-section__footer'))}>
+              <div className={classNames(style['btns-group'], this.props.$theme.enabled('w-btns-group'))}>
                 <div className={classNames(style['btns-group__inner'], this.props.$theme.enabled('btns-group__inner'))}>
                   <Button
-                    buttonClassName={classNames(style.button, this.props.$theme.enabled('ui-btns-group__item'))}
+                    buttonClassName={classNames(style.button, this.props.$theme.enabled('w-btns-group__item'))}
                     linkClassName={style.link}
                     bind="button"
                   />
