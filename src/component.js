@@ -31,16 +31,16 @@ class Wireframe extends React.Component {
     } = this.props
 
     return (
-      <section className={classNames(style.section, this.props.$theme.enabled('ui-section'))}>
-        <div className={classNames(style.section__inner, this.props.$theme.enabled('ui-section__inner'))}>
-          <header className={classNames(style.section__header, this.props.$theme.enabled('ui-section__header'))}>
+      <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
+        <div className={classNames(style.section__inner, this.props.$theme.enabled('w-section__inner'))}>
+          <header className={classNames(style.section__header, this.props.$theme.enabled('w-section__header'))}>
             <Text
               bind="title"
-              className={classNames(style.title, this.props.$theme.enabled('ui-title'), this.props.$theme.enabled('ui-text-center'))}
+              className={classNames(style.title, this.props.$theme.enabled('w-title'), this.props.$theme.enabled('w-text-center'))}
               tagName="h2"
             />
           </header>
-          <div className={classNames(this.props.$theme.enabled('ui-section__content'))}>
+          <div className={classNames(this.props.$theme.enabled('w-section__content'))}>
             <div className={style['map-wrapper']}>
               <Image
                 bind="picture"
