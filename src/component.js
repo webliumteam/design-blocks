@@ -164,15 +164,24 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
+          {(this.getModifierValue('button') && this.getModifierValue('button_additional')) && (
             <footer className={classNames(this.props.$theme.enabled('w-section__footer'))}>
               <div className={classNames(style['btns-group'], this.props.$theme.enabled('w-btns-group'))}>
                 <div className={classNames(style['btns-group__inner'], this.props.$theme.enabled('btns-group__inner'))}>
-                  <Button
-                    buttonClassName={classNames(style.button, this.props.$theme.enabled('w-btns-group__item'))}
-                    linkClassName={style.link}
-                    bind="button"
-                  />
+                  {this.getModifierValue('button') && (
+                    <Button
+                      buttonClassName={classNames(style.button, this.props.$theme.enabled('w-btns-group__item'))}
+                      linkClassName={style.link}
+                      bind="button"
+                    />
+                  )}
+                  {this.getModifierValue('button_additional') && (
+                    <Button
+                      buttonClassName={classNames(style.button, this.props.$theme.enabled('w-btns-group__item'))}
+                      linkClassName={style.link}
+                      bind="button_additional"
+                    />
+                   )}
                 </div>
               </div>
             </footer>
@@ -297,6 +306,10 @@ Block.defaultContent = {
     type: 'secondary',
     textValue: 'Learn more',
   },
+  button_additional: {
+    type: 'primary',
+    textValue: 'Request a quote',
+  },
 }
 
 Block.modifierScheme = {
@@ -312,6 +325,7 @@ Block.modifierScheme = {
   item_socials: {defaultValue: true, label: "Client's contacts", type: 'checkbox', sortOrder: 50},
   item_date: {defaultValue: true, label: 'Comment date', type: 'checkbox', sortOrder: 60},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
+  button_additional: {defaultValue: true, label: 'Additional button (link)', type: 'checkbox', sortOrder: 80},
 }
 
 export default Block
