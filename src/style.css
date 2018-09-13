@@ -12,12 +12,16 @@
   @media (--ui-medium-devices) {
     padding: 75px 0;
   }
-}
 
-.section__inner {
-  max-width: var(--ui-content-container);
-  margin: 0 auto;
-  padding: var(--ui-content-gutter);
+  &__inner {
+    max-width: var(--ui-content-container);
+    margin: 0 auto;
+    padding: var(--ui-content-gutter);
+  }
+
+  &__header {
+    margin-bottom: 5px;
+  }
 }
 
 .title {
@@ -37,7 +41,6 @@
 .items-wrapper {
   position: relative;
   max-width: 1200px;
-  margin-top: 5px;
 
   :global {
 
@@ -214,6 +217,7 @@
   }
 
   &__socials {
+    display: flex;
     justify-content: center;
     margin-bottom: 20px;
 
