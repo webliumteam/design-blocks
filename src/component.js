@@ -164,7 +164,7 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {(this.getModifierValue('button') && this.getModifierValue('button_additional')) && (
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
             <footer className={classNames(this.props.$theme.enabled('w-section__footer'))}>
               <div className={classNames(style['btns-group'], this.props.$theme.enabled('w-btns-group'))}>
                 <div className={classNames(style['btns-group__inner'], this.props.$theme.enabled('btns-group__inner'))}>
