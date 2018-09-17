@@ -21,7 +21,10 @@ class Block extends React.Component {
     return [
       _.get('item_image')(modifier) && (
         <Image
-          wrapperClassName={classNames(style['item__pic-wrapper'], this.props.$theme.enabled('w-picture-wrapper'))}
+          wrapperClassName={classNames(
+            style['item__pic-wrapper'],
+            this.props.$theme.enabled('w-picture-wrapper'),
+          )}
           pictureClassName={classNames(style.item__pic, this.props.$theme.enabled('w-picture'))}
           imgClassName={classNames(style.item__img, this.props.$theme.enabled('w-picture__image'))}
           bind={`collection[${index}].item_image`}
@@ -65,7 +68,11 @@ class Block extends React.Component {
     return [
       <Text
         bind={`collection[${index}].item_body`}
-        className={classNames(style.item__desc, this.props.$theme.enabled('w-body'), this.props.$theme.enabled('w-text-center'))}
+        className={classNames(
+          style.item__desc,
+          this.props.$theme.enabled('w-body'),
+          this.props.$theme.enabled('w-text-center'),
+        )}
         tagName="p"
       />,
       _.get('item_date')(modifier) && (
@@ -123,13 +130,27 @@ class Block extends React.Component {
       : {}
     return (
       <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
-        <div className={classNames(style.section__inner, this.props.$theme.enabled('w-section__inner'))}>
+        <div
+          className={classNames(
+            style.section__inner,
+            this.props.$theme.enabled('w-section__inner'),
+          )}
+        >
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
-            <header className={classNames(style.section__header, this.props.$theme.enabled('w-section__header'))}>
+            <header
+              className={classNames(
+                style.section__header,
+                this.props.$theme.enabled('w-section__header'),
+              )}
+            >
               {this.getModifierValue('title') && (
                 <Text
                   bind="title"
-                  className={classNames(style.title, this.props.$theme.enabled('w-title'), this.props.$theme.enabled('w-text-center'))}
+                  className={classNames(
+                    style.title,
+                    this.props.$theme.enabled('w-title'),
+                    this.props.$theme.enabled('w-text-center'),
+                  )}
                   tagName="h2"
                 />
               )}
@@ -166,22 +187,38 @@ class Block extends React.Component {
           />
           {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
             <footer className={classNames(this.props.$theme.enabled('w-section__footer'))}>
-              <div className={classNames(style['btns-group'], this.props.$theme.enabled('w-btns-group'))}>
-                <div className={classNames(style['btns-group__inner'], this.props.$theme.enabled('btns-group__inner'))}>
+              <div
+                className={classNames(
+                  style['btns-group'],
+                  this.props.$theme.enabled('w-btns-group'),
+                )}
+              >
+                <div
+                  className={classNames(
+                    style['btns-group__inner'],
+                    this.props.$theme.enabled('btns-group__inner'),
+                  )}
+                >
                   {this.getModifierValue('button') && (
                     <Button
-                      buttonClassName={classNames(style.button, this.props.$theme.enabled('w-btns-group__item'))}
+                      buttonClassName={classNames(
+                        style.button,
+                        this.props.$theme.enabled('w-btns-group__item'),
+                      )}
                       linkClassName={style.link}
                       bind="button"
                     />
                   )}
                   {this.getModifierValue('button_additional') && (
                     <Button
-                      buttonClassName={classNames(style.button, this.props.$theme.enabled('w-btns-group__item'))}
+                      buttonClassName={classNames(
+                        style.button,
+                        this.props.$theme.enabled('w-btns-group__item'),
+                      )}
                       linkClassName={style.link}
                       bind="button_additional"
                     />
-                   )}
+                  )}
                 </div>
               </div>
             </footer>
@@ -325,7 +362,12 @@ Block.modifierScheme = {
   item_socials: {defaultValue: true, label: "Client's contacts", type: 'checkbox', sortOrder: 50},
   item_date: {defaultValue: true, label: 'Comment date', type: 'checkbox', sortOrder: 60},
   button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
-  button_additional: {defaultValue: true, label: 'Additional button (link)', type: 'checkbox', sortOrder: 80},
+  button_additional: {
+    defaultValue: true,
+    label: 'Additional button (link)',
+    type: 'checkbox',
+    sortOrder: 80,
+  },
 }
 
 export default Block
