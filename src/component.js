@@ -5,6 +5,7 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    $theme: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
@@ -14,15 +15,18 @@ class Block extends React.Component {
 
   getPersonInfo = ({index, modifier}) => {
     const {
-      components: {Text, Image},
+      components: {Text, Image, SocialIcons},
       style,
     } = this.props
     return [
       _.get('item_image')(modifier) && (
         <Image
-          wrapperClassName={classNames(style['item__pic-wrapper'], this.ui('ui-picture-wrapper'))}
-          pictureClassName={classNames(style.item__pic, this.ui('ui-picture'))}
-          imgClassName={classNames(style.item__img, this.ui('ui-picture__image'))}
+          wrapperClassName={classNames(
+            style['item__pic-wrapper'],
+            this.props.$theme.enabled('w-picture-wrapper'),
+          )}
+          pictureClassName={classNames(style.item__pic, this.props.$theme.enabled('w-picture'))}
+          imgClassName={classNames(style.item__img, this.props.$theme.enabled('w-picture__image'))}
           bind={`collection[${index}].item_image`}
           size={{
             'min-width: 320px': 120,
@@ -32,7 +36,11 @@ class Block extends React.Component {
       ),
       <Text
         bind={`collection[${index}].item_person`}
-        className={classNames(style.item__title, this.ui('ui-heading-mp'), this.ui('ui-text-center'))}
+        className={classNames(
+          style.item__title,
+          this.props.$theme.enabled('w-heading'),
+          this.props.$theme.enabled('w-text-center'),
+        )}
         tagName="h2"
       />,
       _.get('item_category')(modifier) && (
@@ -40,11 +48,14 @@ class Block extends React.Component {
           bind={`collection[${index}].item_category`}
           className={classNames(
             style.item__position,
-            this.ui('ui-caption-mp'),
-            this.ui('ui-text-center'),
+            this.props.$theme.enabled('w-caption'),
+            this.props.$theme.enabled('w-text-center'),
           )}
           tagName="p"
         />
+      ),
+      _.get('item_socials')(modifier) && (
+        <SocialIcons className={style.item__socials} bind={`collection[${index}].item_socials`} />
       ),
     ]
   }
@@ -57,13 +68,21 @@ class Block extends React.Component {
     return [
       <Text
         bind={`collection[${index}].item_body`}
-        className={classNames(style.item__desc, this.ui('ui-body-mp'), this.ui('ui-text-center'))}
+        className={classNames(
+          style.item__desc,
+          this.props.$theme.enabled('w-body'),
+          this.props.$theme.enabled('w-text-center'),
+        )}
         tagName="p"
       />,
       _.get('item_date')(modifier) && (
         <Text
           bind={`collection[${index}].item_date`}
-          className={classNames(style.item__time, this.ui('ui-caption-mp'), this.ui('ui-text-center'))}
+          className={classNames(
+            style.item__time,
+            this.props.$theme.enabled('w-caption'),
+            this.props.$theme.enabled('w-text-center'),
+          )}
           tagName="time"
         />
       ),
@@ -93,11 +112,9 @@ class Block extends React.Component {
     )
   }
 
-  ui = value => (_.get('$block.modifier.__enableThemes', this.props) ? value : null)
-
   render() {
     const {
-      components: {Slider, Text, Button, Icon},
+      components: {Slider, Text, Button},
       style,
       $block,
     } = this.props
@@ -112,39 +129,51 @@ class Block extends React.Component {
       }
       : {}
     return (
-      <section className={classNames(style.section, this.ui('ui-section'))}>
-        <div className={classNames(style.section__inner, this.ui('ui-section__inner'))}>
-          <header className={classNames(this.ui('ui-section__header'))}>
-            {this.getModifierValue('icon_decorator') && (
-              <Icon
-                className={classNames(style['top-icon'], this.ui('ui-icon'))}
-                bind="icon_decorator"
-              />
-            )}
-            <Text
-              bind="title"
-              className={classNames(style.title, this.ui('ui-title-mp'), this.ui('ui-text-center'))}
-              tagName="h1"
-            />
-            {this.getModifierValue('subtitle') && (
-              <Text
-                bind="subtitle"
-                className={classNames(
-                  style.subtitle,
-                  this.ui('ui-subtitle-mp'),
-                  this.ui('ui-text-center'),
-                )}
-                tagName="p"
-              />
-            )}
-          </header>
+      <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
+        <div
+          className={classNames(
+            style.section__inner,
+            this.props.$theme.enabled('w-section__inner'),
+          )}
+        >
+          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+            <header
+              className={classNames(
+                style.section__header,
+                this.props.$theme.enabled('w-section__header'),
+              )}
+            >
+              {this.getModifierValue('title') && (
+                <Text
+                  bind="title"
+                  className={classNames(
+                    style.title,
+                    this.props.$theme.enabled('w-title'),
+                    this.props.$theme.enabled('w-text-center'),
+                  )}
+                  tagName="h2"
+                />
+              )}
+              {this.getModifierValue('subtitle') && (
+                <Text
+                  bind="subtitle"
+                  className={classNames(
+                    style.subtitle,
+                    this.props.$theme.enabled('w-subtitle'),
+                    this.props.$theme.enabled('w-text-center'),
+                  )}
+                  tagName="p"
+                />
+              )}
+            </header>
+          )}
           <Slider
             className={classNames(
               style['items-wrapper'],
               {
                 [style['items-wrapper--image-none']]: !this.getModifierValue('item_image'),
               },
-              this.ui('ui-section__content'),
+              this.props.$theme.enabled('w-section__content'),
             )}
             bind="collection"
             Item={this.collectionItem}
@@ -156,15 +185,40 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {this.getModifierValue('button') && (
-            <footer className={classNames(this.ui('ui-section__footer'))}>
-              <div className={classNames(style['btns-group'], this.ui('ui-btns-group'))}>
-                <div classNames={classNames(style['btns-group__inner'], 'btns-group__inner')}>
-                  <Button
-                    buttonClassName={classNames(style.button, this.ui('ui-btns-group__item'))}
-                    linkClassName={style.link}
-                    bind="button"
-                  />
+          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+            <footer className={classNames(this.props.$theme.enabled('w-section__footer'))}>
+              <div
+                className={classNames(
+                  style['btns-group'],
+                  this.props.$theme.enabled('w-btns-group'),
+                )}
+              >
+                <div
+                  className={classNames(
+                    style['btns-group__inner'],
+                    this.props.$theme.enabled('btns-group__inner'),
+                  )}
+                >
+                  {this.getModifierValue('button') && (
+                    <Button
+                      buttonClassName={classNames(
+                        style.button,
+                        this.props.$theme.enabled('w-btns-group__item'),
+                      )}
+                      linkClassName={style.link}
+                      bind="button"
+                    />
+                  )}
+                  {this.getModifierValue('button_additional') && (
+                    <Button
+                      buttonClassName={classNames(
+                        style.button,
+                        this.props.$theme.enabled('w-btns-group__item'),
+                      )}
+                      linkClassName={style.link}
+                      bind="button_additional"
+                    />
+                  )}
                 </div>
               </div>
             </footer>
@@ -175,14 +229,9 @@ class Block extends React.Component {
   }
 }
 
-Block.components = _.pick(['Slider', 'Text', 'Button', 'Image', 'Icon'])($editor.components)
+Block.components = _.pick(['Slider', 'Text', 'Button', 'Image', 'SocialIcons'])($editor.components)
 
 Block.defaultContent = {
-  icon_decorator: {
-    svg:
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42"><path d="M37.059 16H26V4.941C26 2.224 23.718 0 21 0s-5 2.224-5 4.941V16H4.941C2.224 16 0 18.282 0 21s2.224 5 4.941 5H16v11.059C16 39.776 18.282 42 21 42s5-2.224 5-4.941V26h11.059C39.776 26 42 23.718 42 21s-2.224-5-4.941-5z"/></svg>',
-    fill: 'red',
-  },
   title: {
     content: 'Testimonials',
     type: 'blockTitle',
@@ -203,6 +252,30 @@ Block.defaultContent = {
           content: 'Marketing Director at Fresh Food Co.',
           type: 'caption',
         },
+        item_socials: {
+          networks: [
+            {
+              id: 'facebook',
+              name: 'Facebook',
+              url: 'http://facebook.com/',
+            },
+            {
+              id: 'linkedin',
+              name: 'LinkedIn',
+              url: 'http://linkedin.com/',
+            },
+          ],
+          target: '_blank',
+          design: {
+            border: 'softRect',
+            innerFill: true,
+            preset: 'preset001',
+            offset: 11,
+            color: '#979797',
+            sizes: [20, 24, 40],
+            size: 24,
+          },
+        },
         item_body: {
           content:
             '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
@@ -219,25 +292,49 @@ Block.defaultContent = {
       },
       {
         item_person: {
-          content: 'Amanda Peterson',
+          content: 'Jeff Gordons',
           type: 'heading',
         },
         item_category: {
-          content: 'Marketing Director at Fresh Food Co.',
+          content: 'CEO at Clear Thinking',
           type: 'caption',
+        },
+        item_socials: {
+          networks: [
+            {
+              id: 'facebook',
+              name: 'Facebook',
+              url: 'http://facebook.com/',
+            },
+            {
+              id: 'linkedin',
+              name: 'LinkedIn',
+              url: 'http://linkedin.com/',
+            },
+          ],
+          target: '_blank',
+          design: {
+            border: 'softRect',
+            innerFill: true,
+            preset: 'preset001',
+            offset: 11,
+            color: '#979797',
+            sizes: [20, 24, 40],
+            size: 24,
+          },
         },
         item_body: {
           content:
-            '“I was happy to work with Quantum because their efficient solutions helped us improve plenty of business processes. As a result, our clients receive their products faster and are more satisfied with our services. They deserve the highest grade!”',
+            '“Our company started to work with Quantum 4 years ago. We had only positive experience and implemented a lot of projects together. We’re totally satisfied and now we know that we can rely on Quantum experts any time.”',
           type: 'text',
         },
         item_date: {
-          content: 'December 15, 2017',
+          content: 'October 28, 2017',
           type: 'caption',
         },
         item_image: {
           src: 'https://www.vms.ro/wp-content/uploads/2015/04/mobius-placeholder-2.png',
-          alt: 'Amanda Peterson photo',
+          alt: 'Jeff Gordons photo',
         },
       },
     ],
@@ -246,20 +343,31 @@ Block.defaultContent = {
     type: 'secondary',
     textValue: 'Learn more',
   },
+  button_additional: {
+    type: 'primary',
+    textValue: 'Request a quote',
+  },
 }
 
 Block.modifierScheme = {
-  subtitle: {defaultValue: false, label: 'Block  description', type: 'checkbox', sortOrder: 10},
-  item_image: {defaultValue: true, label: "Client's photo", type: 'checkbox', sortOrder: 20},
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
+  subtitle: {defaultValue: true, label: 'Block description', type: 'checkbox', sortOrder: 20},
+  item_image: {defaultValue: true, label: "Client's photo", type: 'checkbox', sortOrder: 30},
   item_category: {
     defaultValue: true,
     label: "Client's job position",
     type: 'checkbox',
-    sortOrder: 30,
+    sortOrder: 40,
   },
-  item_date: {defaultValue: true, label: 'Comment date', type: 'checkbox', sortOrder: 40},
-  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 50},
-  icon_decorator: {defaultValue: false, label: 'Top icon decorator', type: 'hidden'},
+  item_socials: {defaultValue: true, label: "Client's contacts", type: 'checkbox', sortOrder: 50},
+  item_date: {defaultValue: true, label: 'Comment date', type: 'checkbox', sortOrder: 60},
+  button: {defaultValue: true, label: 'Button (link)', type: 'checkbox', sortOrder: 70},
+  button_additional: {
+    defaultValue: true,
+    label: 'Additional button (link)',
+    type: 'checkbox',
+    sortOrder: 80,
+  },
 }
 
 export default Block
