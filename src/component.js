@@ -125,7 +125,7 @@ class Block extends React.Component {
       <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
         <div className={classNames(style.section__inner, this.props.$theme.enabled('w-section__inner'))}>
           {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
-            <header className={classNames(this.props.$theme.enabled('w-section__header'))}>
+            <header className={classNames(style.section__header, this.props.$theme.enabled('w-section__header'))}>
               {this.getModifierValue('title') && (
                 <Text
                   bind="title"
