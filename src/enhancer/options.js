@@ -6,4 +6,4 @@ const {
   enhancers: {mapProps},
 } = $editor
 
-export default hoistStatics(mapProps(_.set('$block.options', options)))
+export default hoistStatics(mapProps(_.update('$block.options', _.assign(options))))
