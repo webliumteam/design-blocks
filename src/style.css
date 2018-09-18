@@ -14,8 +14,151 @@
   }
 
   &__inner {
-    max-width: var(--ui-content-container);
+    max-width: 1090px;
     margin: 0 auto;
     padding: var(--ui-content-gutter);
+  }
+}
+
+.title {
+  text-align: center;
+}
+
+.section__header {
+  margin-bottom: 60px;
+}
+
+.map-wrapper {
+  position: relative;
+}
+
+.map {
+  padding-top: 48.5%;
+}
+
+.point {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  background-color: rgba(100, 44, 131, 0.8);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  will-change: transform, box-shadow;
+  box-shadow: 0 0 0 rgba(100, 44, 131, 0.4);
+  animation: pulse 10s infinite;
+
+  @media(min-width: 768px) {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.point:hover {
+  transform: translate(-50%, -50%) scale3D(1.35, 1.35, 1);
+  animation: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.canada {
+  top: 21.4%;
+  left: 19.81%;
+  animation-delay: 2s;
+}
+
+.usa {
+  top: 26.26%;
+  left: 9.15%;
+  animation-delay: 2.5s;
+}
+
+.usa2 {
+  top: 29.76%;
+  left: 15%;
+  animation-delay: 3s;
+}
+
+.russia {
+  top: 13.42%;
+  left: 63.2%;
+  animation-delay: 4s;
+}
+
+.arabia {
+  top: 41.83%;
+  left: 58.58%;
+  animation-delay: 1.5s;
+}
+
+.spain {
+  top: 27.82%;
+  left: 42.64%;
+  animation-delay: 8s;
+}
+
+.uk {
+  top: 18.48%;
+  left: 43.58%;
+  animation-delay: 4s;
+}
+
+.germany {
+  top: 19.45%;
+  left: 48.11%;
+  animation-delay: 5s;
+}
+
+.italy {
+  top: 26.84%;
+  left: 48.39%;
+  animation-delay: 7s;
+}
+
+.hungary {
+  top: 22.76%;
+  left: 50.75%;
+  animation-delay: 2s;
+}
+
+.israel {
+  top: 32.87%;
+  left: 55.28%;
+  animation-delay: 6s;
+}
+
+.india {
+  top: 37.74%;
+  left: 69.34%;
+  animation-delay: 10s;
+}
+
+.ukraine {
+  top: 19.45%;
+  left: 53.3%;
+  animation-delay: 8s;
+}
+
+:global {
+  .tippy-popper {
+    font-family: var(--ui-text-font-family);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(100, 44, 131, 0.5);
+  }
+
+  30% {
+    box-shadow: 0 0 0 15px rgba(100, 44, 131, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 0 rgba(100, 44, 131, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(100, 44, 131, 0);
   }
 }

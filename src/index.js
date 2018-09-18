@@ -1,11 +1,6 @@
-import $editor from 'weblium/editor'
+import Block from './component'
+import enhancer from './enhancer'
 
-import Component from './component'
-import style from './style.css'
-import options from './options.json'
+const BlockEnhanced = enhancer(Block)
 
-const {enhancers: {withProps}, hoistStatics} = $editor
-
-const Wireframe = hoistStatics(withProps(_.pipe(_.set('style', style), _.set('$block.options', options))))(Component)
-
-export default Wireframe
+export default BlockEnhanced
