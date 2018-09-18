@@ -186,7 +186,12 @@ class Block extends React.Component {
             }}
           />
           {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
-            <footer className={classNames(this.props.$theme.enabled('w-section__footer'))}>
+            <footer
+              className={classNames(
+                style.section__footer,
+                this.props.$theme.enabled('w-section__footer'),
+              )}
+            >
               <div
                 className={classNames(
                   style['btns-group'],
