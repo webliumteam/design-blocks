@@ -128,6 +128,10 @@ class Block extends React.Component {
         ),
       }
       : {}
+
+    const header = this.getModifierValue('title') || this.getModifierValue('subtitle')
+    const footer = this.getModifierValue('button') || this.getModifierValue('button_additional')
+
     return (
       <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
         <div
@@ -136,7 +140,7 @@ class Block extends React.Component {
             this.props.$theme.enabled('w-section__inner'),
           )}
         >
-          {(this.getModifierValue('title') || this.getModifierValue('subtitle')) && (
+          {header && (
             <header
               className={classNames(
                 style.section__header,
@@ -185,7 +189,7 @@ class Block extends React.Component {
               modifier: $block.modifier,
             }}
           />
-          {(this.getModifierValue('button') || this.getModifierValue('button_additional')) && (
+          {footer && (
             <footer
               className={classNames(
                 style.section__footer,
@@ -207,20 +211,18 @@ class Block extends React.Component {
                   {this.getModifierValue('button') && (
                     <Button
                       buttonClassName={classNames(
-                        style.button,
+                        style['btns-group__item'],
                         this.props.$theme.enabled('w-btns-group__item'),
                       )}
-                      linkClassName={style.link}
                       bind="button"
                     />
                   )}
                   {this.getModifierValue('button_additional') && (
                     <Button
                       buttonClassName={classNames(
-                        style.button,
+                        style['btns-group__item'],
                         this.props.$theme.enabled('w-btns-group__item'),
                       )}
-                      linkClassName={style.link}
                       bind="button_additional"
                     />
                   )}
