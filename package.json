@@ -33,5 +33,9 @@
   "editorVersion": "4.16.0",
   "dependencies": {
     "tippy.js": "^2.5.4"
-  }
+  },
+  "roles": [
+    "@DISABLE_FEATURE:reroll",
+    "@DISABLE_FEATURE:themes"
+  ]
 }
