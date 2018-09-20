@@ -32,7 +32,7 @@
   },
   "editorVersion": "4.16.0",
   "roles": [
-    "@DISABLE_FEATURE:reroll",
-    "@DISABLE_FEATURE:themes"
+    "@DF:reroll",
+    "@DF:themes"
   ]
 }
