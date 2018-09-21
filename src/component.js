@@ -30,41 +30,98 @@ class Wireframe extends React.Component {
       style,
     } = this.props
 
+    const header = this.getModifierValue('title')
+
     return (
       <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
-        <div className={classNames(style.section__inner, this.props.$theme.enabled('w-section__inner'))}>
-          <header className={classNames(style.section__header, this.props.$theme.enabled('w-section__header'))}>
-            <Text
-              bind="title"
-              className={classNames(style.title, this.props.$theme.enabled('w-title'), this.props.$theme.enabled('w-text-center'))}
-              tagName="h2"
-            />
-          </header>
+        <div
+          className={classNames(
+            style.section__inner,
+            this.props.$theme.enabled('w-section__inner'),
+          )}
+        >
+          {header && (
+            <header
+              className={classNames(
+                style.section__header,
+                this.props.$theme.enabled('w-section__header'),
+              )}
+            >
+              {this.getModifierValue('title') && (
+                <Text
+                  bind="title"
+                  className={classNames(
+                    style.title,
+                    this.props.$theme.enabled('w-title'),
+                    this.props.$theme.enabled('w-text-center'),
+                  )}
+                  tagName="h2"
+                />
+              )}
+            </header>
+          )}
           <div className={classNames(this.props.$theme.enabled('w-section__content'))}>
             <div className={style['map-wrapper']}>
               <Image
                 bind="picture"
                 pictureClassName={style.map}
-                size={
-                  {
-                    'min-width: 320px': 1060,
-                  }
-                }
+                size={{
+                  'min-width: 320px': 1060,
+                }}
                 resize={{disable: true}}
               />
-              <div className={classNames(style.point, style.canada, 'tippy', 'tippy-mark')} title="Canada" />
-              <div className={classNames(style.point, style.usa, 'tippy', 'tippy-mark')} title="USA" />
-              <div className={classNames(style.point, style.usa2, 'tippy', 'tippy-mark')} title="USA" />
-              <div className={classNames(style.point, style.russia, 'tippy', 'tippy-mark')} title="Russia" />
-              <div className={classNames(style.point, style.arabia, 'tippy', 'tippy-mark')} title="Saudi Arabia" />
-              <div className={classNames(style.point, style.spain, 'tippy', 'tippy-mark')} title="Spain" />
-              <div className={classNames(style.point, style.uk, 'tippy', 'tippy-mark')} title="UK" />
-              <div className={classNames(style.point, style.germany, 'tippy', 'tippy-mark')} title="Germany" />
-              <div className={classNames(style.point, style.italy, 'tippy', 'tippy-mark')} title="Italy" />
-              <div className={classNames(style.point, style.hungary, 'tippy', 'tippy-mark')} title="Hungary" />
-              <div className={classNames(style.point, style.israel, 'tippy', 'tippy-mark')} title="Israel" />
-              <div className={classNames(style.point, style.india, 'tippy', 'tippy-mark')} title="India" />
-              <div className={classNames(style.point, style.ukraine, 'tippy', 'tippy-mark')} title="Ukraine" />
+              <div
+                className={classNames(style.point, style.canada, 'tippy', 'tippy-mark')}
+                title="Canada"
+              />
+              <div
+                className={classNames(style.point, style.usa, 'tippy', 'tippy-mark')}
+                title="USA"
+              />
+              <div
+                className={classNames(style.point, style.usa2, 'tippy', 'tippy-mark')}
+                title="USA"
+              />
+              <div
+                className={classNames(style.point, style.russia, 'tippy', 'tippy-mark')}
+                title="Russia"
+              />
+              <div
+                className={classNames(style.point, style.arabia, 'tippy', 'tippy-mark')}
+                title="Saudi Arabia"
+              />
+              <div
+                className={classNames(style.point, style.spain, 'tippy', 'tippy-mark')}
+                title="Spain"
+              />
+              <div
+                className={classNames(style.point, style.uk, 'tippy', 'tippy-mark')}
+                title="UK"
+              />
+              <div
+                className={classNames(style.point, style.germany, 'tippy', 'tippy-mark')}
+                title="Germany"
+              />
+              <div
+                className={classNames(style.point, style.italy, 'tippy', 'tippy-mark')}
+                title="Italy"
+              />
+              <div
+                className={classNames(style.point, style.hungary, 'tippy', 'tippy-mark')}
+                title="Hungary"
+              />
+              <div
+                className={classNames(style.point, style.israel, 'tippy', 'tippy-mark')}
+                title="Israel"
+              />
+              <div
+                className={classNames(style.point, style.india, 'tippy', 'tippy-mark')}
+                title="India"
+              />
+              <div
+                className={classNames(style.point, style.ukraine, 'tippy', 'tippy-mark')}
+                title="Ukraine"
+              />
             </div>
           </div>
         </div>
@@ -84,6 +141,10 @@ Wireframe.defaultContent = {
     resourceRef: 'map-image1x.png',
     alt: 'Picture about the company',
   },
+}
+
+Wireframe.modifierScheme = {
+  title: {defaultValue: true, label: 'Block title', type: 'checkbox', sortOrder: 10},
 }
 
 export default Wireframe

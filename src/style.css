@@ -2,7 +2,7 @@
 
 .section {
   min-width: 320px;
-  padding: 50px 0;
+  padding: 30px 0;
   word-wrap: break-word;
 
   @media (min-width: 768px) {
@@ -18,14 +18,18 @@
     margin: 0 auto;
     padding: var(--ui-content-gutter);
   }
+
+  &__header {
+    margin-bottom: 30px;
+
+    @media (--ui-tablet-devices) {
+      margin-bottom: 40px;
+    }
+  }
 }
 
 .title {
   text-align: center;
-}
-
-.section__header {
-  margin-bottom: 60px;
 }
 
 .map-wrapper {
