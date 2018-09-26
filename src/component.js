@@ -7,7 +7,6 @@ class Wireframe extends React.Component {
   static propTypes = {
     components: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
-    $theme: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
   }
 
@@ -33,18 +32,18 @@ class Wireframe extends React.Component {
     const header = this.getModifierValue('title')
 
     return (
-      <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
+      <section className={classNames(style.section, 'w-section')}>
         <div
           className={classNames(
             style.section__inner,
-            this.props.$theme.enabled('w-section__inner'),
+            'w-section__inner',
           )}
         >
           {header && (
             <header
               className={classNames(
                 style.section__header,
-                this.props.$theme.enabled('w-section__header'),
+                'w-section__header',
               )}
             >
               {this.getModifierValue('title') && (
@@ -52,15 +51,15 @@ class Wireframe extends React.Component {
                   bind="title"
                   className={classNames(
                     style.title,
-                    this.props.$theme.enabled('w-title'),
-                    this.props.$theme.enabled('w-text-center'),
+                    'w-title',
+                    'w-text-center',
                   )}
                   tagName="h2"
                 />
               )}
             </header>
           )}
-          <div className={classNames(this.props.$theme.enabled('w-section__content'))}>
+          <div className={classNames('w-section__content')}>
             <div className={style['map-wrapper']}>
               <Image
                 bind="picture"
