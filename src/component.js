@@ -5,7 +5,6 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
-    $theme: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
@@ -23,10 +22,10 @@ class Block extends React.Component {
         <Image
           wrapperClassName={classNames(
             style['item__pic-wrapper'],
-            this.props.$theme.enabled('w-picture-wrapper'),
+            'w-picture-wrapper',
           )}
-          pictureClassName={classNames(style.item__pic, this.props.$theme.enabled('w-picture'))}
-          imgClassName={classNames(style.item__img, this.props.$theme.enabled('w-picture__image'))}
+          pictureClassName={classNames(style.item__pic, 'w-picture')}
+          imgClassName={classNames(style.item__img, 'w-picture__image')}
           bind={`collection[${index}].item_image`}
           size={{
             'min-width: 320px': 120,
@@ -38,8 +37,8 @@ class Block extends React.Component {
         bind={`collection[${index}].item_person`}
         className={classNames(
           style.item__title,
-          this.props.$theme.enabled('w-heading'),
-          this.props.$theme.enabled('w-text-center'),
+          'w-heading',
+          'w-text-center',
         )}
         tagName="h2"
       />,
@@ -48,8 +47,8 @@ class Block extends React.Component {
           bind={`collection[${index}].item_category`}
           className={classNames(
             style.item__position,
-            this.props.$theme.enabled('w-caption'),
-            this.props.$theme.enabled('w-text-center'),
+            'w-caption',
+            'w-text-center',
           )}
           tagName="p"
         />
@@ -70,8 +69,8 @@ class Block extends React.Component {
         bind={`collection[${index}].item_body`}
         className={classNames(
           style.item__desc,
-          this.props.$theme.enabled('w-body'),
-          this.props.$theme.enabled('w-text-center'),
+          'w-body',
+          'w-text-center',
         )}
         tagName="p"
       />,
@@ -80,8 +79,8 @@ class Block extends React.Component {
           bind={`collection[${index}].item_date`}
           className={classNames(
             style.item__time,
-            this.props.$theme.enabled('w-caption'),
-            this.props.$theme.enabled('w-text-center'),
+            'w-caption',
+            'w-text-center',
           )}
           tagName="time"
         />
@@ -133,18 +132,18 @@ class Block extends React.Component {
     const footer = this.getModifierValue('button') || this.getModifierValue('button_additional')
 
     return (
-      <section className={classNames(style.section, this.props.$theme.enabled('w-section'))}>
+      <section className={classNames(style.section, 'w-section')}>
         <div
           className={classNames(
             style.section__inner,
-            this.props.$theme.enabled('w-section__inner'),
+            'w-section__inner',
           )}
         >
           {header && (
             <header
               className={classNames(
                 style.section__header,
-                this.props.$theme.enabled('w-section__header'),
+                'w-section__header',
               )}
             >
               {this.getModifierValue('title') && (
@@ -152,8 +151,8 @@ class Block extends React.Component {
                   bind="title"
                   className={classNames(
                     style.title,
-                    this.props.$theme.enabled('w-title'),
-                    this.props.$theme.enabled('w-text-center'),
+                    'w-title',
+                    'w-text-center',
                   )}
                   tagName="h2"
                 />
@@ -163,8 +162,8 @@ class Block extends React.Component {
                   bind="subtitle"
                   className={classNames(
                     style.subtitle,
-                    this.props.$theme.enabled('w-subtitle'),
-                    this.props.$theme.enabled('w-text-center'),
+                    'w-subtitle',
+                    'w-text-center',
                   )}
                   tagName="p"
                 />
@@ -177,7 +176,7 @@ class Block extends React.Component {
               {
                 [style['items-wrapper--image-none']]: !this.getModifierValue('item_image'),
               },
-              this.props.$theme.enabled('w-section__content'),
+              'w-section__content',
             )}
             bind="collection"
             Item={this.collectionItem}
@@ -193,26 +192,26 @@ class Block extends React.Component {
             <footer
               className={classNames(
                 style.section__footer,
-                this.props.$theme.enabled('w-section__footer'),
+                'w-section__footer',
               )}
             >
               <div
                 className={classNames(
                   style['btns-group'],
-                  this.props.$theme.enabled('w-btns-group'),
+                  'w-btns-group',
                 )}
               >
                 <div
                   className={classNames(
                     style['btns-group__inner'],
-                    this.props.$theme.enabled('btns-group__inner'),
+                    'btns-group__inner',
                   )}
                 >
                   {this.getModifierValue('button') && (
                     <Button
                       buttonClassName={classNames(
                         style['btns-group__item'],
-                        this.props.$theme.enabled('w-btns-group__item'),
+                        'w-btns-group__item',
                       )}
                       bind="button"
                     />
@@ -221,7 +220,7 @@ class Block extends React.Component {
                     <Button
                       buttonClassName={classNames(
                         style['btns-group__item'],
-                        this.props.$theme.enabled('w-btns-group__item'),
+                        'w-btns-group__item',
                       )}
                       bind="button_additional"
                     />
