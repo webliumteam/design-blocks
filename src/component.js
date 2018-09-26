@@ -350,7 +350,6 @@ Block.defaultContent = {
     textValue: 'Learn more',
   },
   button_additional: {
-    type: 'primary',
     textValue: 'Request a quote',
   },
 }
