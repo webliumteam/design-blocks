@@ -34,6 +34,12 @@
       margin-top: 40px;
     }
   }
+
+  &--one-item {
+    .items-wrapper {
+      padding-bottom: 0;
+    }
+  }
 }
 
 .title {

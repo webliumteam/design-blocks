@@ -5,6 +5,7 @@ class Block extends React.Component {
     components: PropTypes.object.isRequired,
     style: PropTypes.object.isRequired,
     $block: PropTypes.object.isRequired,
+    content: PropTypes.object.isRequired,
   }
 
   getModifierValue = path => _.get(['modifier', path], this.props.$block)
@@ -116,6 +117,7 @@ class Block extends React.Component {
       components: {Slider, Text, Button},
       style,
       $block,
+      content,
     } = this.props
     const customArrows = this.getOptionValue('custom-arrows')
       ? {
@@ -130,9 +132,10 @@ class Block extends React.Component {
 
     const header = this.getModifierValue('title') || this.getModifierValue('subtitle')
     const footer = this.getModifierValue('button') || this.getModifierValue('button_additional')
+    const oneItem = content.collection.items.length === 1 && style['section--one-item']
 
     return (
-      <section className={classNames(style.section, 'w-section')}>
+      <section className={classNames(style.section, 'w-section', oneItem)}>
         <div
           className={classNames(
             style.section__inner,
