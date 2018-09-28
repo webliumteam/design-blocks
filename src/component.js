@@ -187,6 +187,7 @@ class Block extends React.Component {
             itemProps={{
               modifier: $block.modifier,
             }}
+            hideBackgroundControl
           />
           {footer && (
             <footer

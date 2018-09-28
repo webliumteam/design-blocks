@@ -96,7 +96,7 @@
     }
 
     .slick-prev {
-      left: 35%;
+      left: 30%;
       transform: translateY(60%);
 
       @media (--ui-tablet-devices) {
@@ -110,7 +110,7 @@
     }
 
     .slick-next {
-      right: 35%;
+      right: 30%;
       transform: translateY(60%);
 
       @media (--ui-tablet-devices) {
