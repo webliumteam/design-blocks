@@ -52,6 +52,11 @@
 .items-wrapper {
   position: relative;
   max-width: 1200px;
+  padding-bottom: 80px;
+
+  @media (--ui-tablet-devices) {
+    padding-bottom: 0;
+  }
 
   :global {
 
@@ -60,8 +65,9 @@
     /* stylelint-disable */
     .slick-arrow {
       width: 40px;
-      height: 75%;
-      top: 75px;
+      height: 40px;
+      bottom: 0;
+      top: 100%;
       color: var(--ui-brand-color);
       z-index: 1;
       opacity: 1;
@@ -83,16 +89,18 @@
       }
 
       @media (--ui-tablet-devices) {
+        height: 75%;
         top: 50%;
         transform: translateY(-50%);
       }
     }
 
     .slick-prev {
-      transform: translateY(-50%) translateX(0);
-      left: 0;
+      left: 35%;
+      transform: translateY(60%);
 
       @media (--ui-tablet-devices) {
+        transform: translateY(-50%) translateX(0);
         left: 30px;
       }
 
@@ -102,10 +110,11 @@
     }
 
     .slick-next {
-      transform: translateY(-50%) translateX(0);
-      right: 0;
+      right: 35%;
+      transform: translateY(60%);
 
       @media (--ui-tablet-devices) {
+        transform: translateY(-50%) translateX(0);
         right: 30px;
       }
 
