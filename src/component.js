@@ -267,12 +267,12 @@ Block.defaultContent = {
             {
               id: 'facebook',
               name: 'Facebook',
-              /url: 'https:\/\//facebook.com/',
+              url: 'https://facebook.com/',
             },
             {
               id: 'linkedin',
               name: 'LinkedIn',
-              /url: 'https:\/\//linkedin.com/',
+              url: 'https://linkedin.com/',
             },
           ],
           target: '_blank',
@@ -314,12 +314,12 @@ Block.defaultContent = {
             {
               id: 'facebook',
               name: 'Facebook',
-              /url: 'https:\/\//facebook.com/',
+              url: 'https://facebook.com/',
             },
             {
               id: 'linkedin',
               name: 'LinkedIn',
-              /url: 'https:\/\//linkedin.com/',
+              url: 'https://linkedin.com/',
             },
           ],
           target: '_blank',
