@@ -30,6 +30,7 @@ class Block extends React.Component {
           bind={`collection[${index}].item_image`}
           size={{
             'min-width: 320px': 120,
+            'min-width: 768px': 250,
           }}
           resize={{disable: true}}
         />
